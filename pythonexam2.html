@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Exam - Set 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+    .mcq-card {
+      margin-bottom: 20px;
+    }
+    .correct {
+      border-left: 5px solid #198754 !important;
+      background-color: #d1e7dd;
+    }
+    .wrong {
+      border-left: 5px solid #dc3545 !important;
+      background-color: #f8d7da;
+    }
+    #result {
+      margin-top: 30px;
+    }
+    .programming-section {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-center text-success mb-4">Python MCQs and Programming Questions (Set 2)</h1>
+    <br>
+    <form id="quizForm">
+      <h2 class="text-danger text-center">Multiple Choice Questions (MCQs)</h2>
+      <div id="mcq-container" class="mt-3"></div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-primary px-5 mt-3" onclick="checkAnswers()">Submit</button>
+      </div>
+      <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
+
+      <div class="programming-section">
+  <h2 class="text-danger text-center">Programming Questions with Example Outputs</h2><br>
+  <ol class="list-group list-group-numbered mt-3">
+    <li class="list-group-item">
+      Write a program to check whether a number is a multiple of 7.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 21<br>Output: Yes, multiple of 7</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to calculate Celsius to Fahrenheit using the formula: <code>F = (C × 9/5) + 32</code>.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 25<br>Output: 77.0</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to find the largest digit in a number.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 2945<br>Output: 9</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to check if the input string is lowercase.<br>
+      <strong>Example:</strong><br>
+      <code>Input: hello<br>Output: True</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to find the sum of squares of first n natural numbers.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 4<br>
+      Steps: 1² + 2² + 3² + 4² = 1 + 4 + 9 + 16 = 30<br>
+      Output: 30</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to print the multiplication table of a number.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 3<br>Output: 3 6 9 12 15 18 21 24 27 30</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to count the number of words in a sentence.<br>
+      <strong>Example:</strong><br>
+      <code>Input: I love Python<br>Output: 3</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to print a diamond pattern using loops.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 3<br>Output:<br>
+        &nbsp;&nbsp;*<br>
+        &nbsp;***<br>
+        *****<br>
+        &nbsp;***<br>
+        &nbsp;&nbsp;*</code>
+    </li>
+    <li class="list-group-item">
+      Write a function to count the number of prime numbers between 1 to n.<br>
+      <strong>Example:</strong><br>
+      <code>Input: 10<br>Output: 4 (2, 3, 5, 7)</code>
+    </li>
+    <li class="list-group-item">
+      Write a program to find the second largest number in a list.<br>
+      <strong>Example:</strong><br>
+      <code>Input: [4, 1, 9, 7]<br>Output: 7</code>
+    </li>
+  </ol>
+</div>
+
+    </form>
+  </div>
+
+  <script>
+    const questions = [
+      { question: "Which keyword is used to create a loop in Python?", options: ["loop", "iterate", "while", "repeat"], answer: "while" },
+      { question: "What will be the output of: print(type([1,2,3]))?", options: ["list", "tuple", "array", "dict"], answer: "list" },
+      { question: "Which of these is not a valid Python data type?", options: ["int", "float", "real", "bool"], answer: "real" },
+      { question: "Which of the following is a correct variable name?", options: ["2var", "var_name", "var-name", "var name"], answer: "var_name" },
+      { question: "What is the result of: 7 % 3?", options: ["1", "2", "3", "4"], answer: "1" },
+      { question: "Which function is used to get input from user?", options: ["scan()", "input()", "read()", "get()"], answer: "input()" },
+      { question: "Which keyword is used for conditional branching?", options: ["switch", "choose", "if", "case"], answer: "if" },
+      { question: "Which operator is used to check equality?", options: ["=", "==", "!=", "equals"], answer: "==" },
+      { question: "What does the 'break' statement do in a loop?", options: ["Restarts loop", "Skips current iteration", "Ends loop", "Repeats loop"], answer: "Ends loop" },
+      { question: "Which of these is used to start a function block?", options: ["function", "start", "def", "begin"], answer: "def" },
+      { question: "What is the output of: print('Python'[0])?", options: ["P", "y", "n", "Error"], answer: "P" },
+      { question: "Which method is used to add an item to a list?", options: ["add()", "append()", "insert()", "push()"], answer: "append()" },
+      { question: "What does the expression 'not True' return?", options: ["True", "False", "None", "0"], answer: "False" },
+      { question: "Which built-in function is used to find max of numbers?", options: ["maximum()", "top()", "max()", "high()"], answer: "max()" },
+      { question: "How do you comment a single line in Python?", options: ["//", "#", "/*", "--"], answer: "#" },
+      { question: "What is the output of: print(len('abcde'))?", options: ["4", "5", "6", "3"], answer: "5" },
+      { question: "Which of the following is an immutable data type?", options: ["list", "set", "dict", "tuple"], answer: "tuple" },
+      { question: "Which method converts a string to lower case?", options: ["lowercase()", "toLower()", "lower()", "small()"], answer: "lower()" },
+      { question: "What will be the output of: print(10//3)?", options: ["3.33", "3", "4", "3.0"], answer: "3" },
+      { question: "What is the output of: print(bool(0))?", options: ["True", "False", "None", "Error"], answer: "False" }
+    ];
+
+    const container = document.getElementById('mcq-container');
+
+    questions.forEach((q, index) => {
+      const card = document.createElement('div');
+      card.className = 'card mcq-card';
+      card.innerHTML = `
+        <div class="card-body">
+          <p class="card-text fw-semibold">${q.question}</p>
+          ${q.options.map(opt => `
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
+              <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
+            </div>`).join('')}
+        </div>`;
+      container.appendChild(card);
+    });
+
+    function checkAnswers() {
+      let score = 0;
+      const resultDiv = document.getElementById("result");
+      const cards = document.querySelectorAll(".mcq-card");
+
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const card = cards[i];
+        card.classList.remove("correct", "wrong");
+
+        if (selected) {
+          if (selected.value === q.answer) {
+            score++;
+            card.classList.add("correct");
+          } else {
+            card.classList.add("wrong");
+          }
+        } else {
+          card.classList.add("wrong");
+        }
+      });
+
+      resultDiv.classList.remove("d-none");
+      resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
