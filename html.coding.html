@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Practice Questions</title>
+   <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .header {
+ background-color: rgb(23, 41, 84);
+ background-position: center;
+ background-size: cover;
+ position: fixed;
+ top: 0;
+ width: 100%;
+ z-index: 1000; /* Ensure the navbar appears above other content while scrolling down */
+ display: flex;
+ justify-content: center; /* Center content horizontally */
+ align-items: center; /* Center content vertically */
+ padding: 10px 0;
+}
+
+.logo {
+ width: 100px; /* Adjust width as needed */
+ height: 100px; /* Maintains aspect ratio */
+ border-radius: 50%;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+ .header {
+     justify-content: center; /* Ensure the logo stays centered on small devices */
+ }
+}
+#footer {
+ background-color: rgb(23, 41, 84); /* White background */
+ color: #ffffff; /* Dark blue text color */
+ padding: 10px 0;
+}
+    #userName {
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 100% {
+        border-color: red;
+        box-shadow: 0 0 8px red;
+      }
+      50% {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+    #generateBtn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+.task { margin-bottom: 20px; padding: 15px; border-left: 5px solid #fd510d; background: #f1f9ff; border-radius: 6px; }
+button { margin-top: 10px; padding: 6px 12px; background-color: #9f10bc; color: white; border: none; border-radius: 5px; cursor: pointer; }
+button:hover { background-color: #084298; }
+.answer { margin-top: 10px; background: #f8f9fa; padding: 10px; border-left: 3px solid #dadd1d; border-radius: 5px; white-space: pre-wrap; font-family: monospace; }
+
+  </style>
+  <script>
+    function toggleAnswer(id) {
+      var ans = document.getElementById(id);
+      ans.style.display = ans.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</head>
+<body>
+    <section class="header" style="font-family: sans-serif;color: rgb(23, 41, 84);">
+    <nav>
+        <img src="logo.png" alt="" class="logo">    
+    </nav>   
+  </section>
+  <br><br><br><br><br><br><br>
+<div class="container">
+  <h2 class="mt-4 mb-4 text-center">HTML Practice Tasks</h2>
+
+  <!-- 1 to 12 already included before -->
+  <!-- We'll continue from 1 to 25 here -->
+  
+  <!-- Question 1 -->
+  <div class="task">
+    1. Write HTML to display a paragraph and a heading.
+    <br><button onclick="toggleAnswer('html1')">Show Answer</button>
+    <div id="html1" class="answer" style="display: none;">
+&lt;h1&gt;Welcome to HTML&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+    </div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="task">
+    2. Write HTML to add a link that opens in a new tab.
+    <br><button onclick="toggleAnswer('html2')">Show Answer</button>
+    <div id="html2" class="answer" style="display: none;">
+&lt;a href="https://example.com" target="_blank"&gt;Visit Example&lt;/a&gt;
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="task">
+    3. Write all types of HTML headings and one paragraph.
+    <br><button onclick="toggleAnswer('html3')">Show Answer</button>
+    <div id="html3" class="answer" style="display: none;">
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="task">
+    4. Make a paragraph red and bold using inline style.
+    <br><button onclick="toggleAnswer('html4')">Show Answer</button>
+    <div id="html4" class="answer" style="display: none;">
+&lt;p style="color:red; font-weight:bold;"&gt;This is styled text.&lt;/p&gt;
+    </div>
+  </div>
+
+  <!-- Question 5 -->
+  <div class="task">
+    5. Add a blockquote and a comment in HTML.
+    <br><button onclick="toggleAnswer('html5')">Show Answer</button>
+    <div id="html5" class="answer" style="display: none;">
+&lt;!-- This is a comment --&gt;
+&lt;blockquote&gt;
+  HTML is a markup language.
+&lt;/blockquote&gt;
+    </div>
+  </div>
+
+  <!-- Question 6 -->
+  <div class="task">
+    6. Write a paragraph and color it green using CSS class.
+    <br><button onclick="toggleAnswer('html6')">Show Answer</button>
+    <div id="html6" class="answer" style="display: none;">
+&lt;style&gt;
+.green-text { color: green; }
+&lt;/style&gt;
+
+&lt;p class="green-text"&gt;This is green text.&lt;/p&gt;
+    </div>
+  </div>
+
+  <!-- Question 7 -->
+  <div class="task">
+    7. Insert a clickable image that links to Google.
+    <br><button onclick="toggleAnswer('html7')">Show Answer</button>
+    <div id="html7" class="answer" style="display: none;">
+&lt;a href="https://google.com"&gt;
+  &lt;img src="https://via.placeholder.com/100" alt="Google"&gt;
+&lt;/a&gt;
+    </div>
+  </div>
+
+  <!-- Question 8 -->
+  <div class="task">
+    8. Add a favicon and set page title.
+    <br><button onclick="toggleAnswer('html8')">Show Answer</button>
+    <div id="html8" class="answer" style="display: none;">
+&lt;head&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
+  &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+&lt;/head&gt;
+    </div>
+  </div>
+
+  <!-- Question 9 -->
+  <div class="task">
+    9. Create a table with 2 rows and 2 columns.
+    <br><button onclick="toggleAnswer('html9')">Show Answer</button>
+    <div id="html9" class="answer" style="display: none;">
+&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;B1&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;A2&lt;/td&gt;&lt;td&gt;B2&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+    </div>
+  </div>
+
+  <!-- Question 10 -->
+  <div class="task">
+    10. Create an unordered list with 3 items.
+    <br><button onclick="toggleAnswer('html10')">Show Answer</button>
+    <div id="html10" class="answer" style="display: none;">
+&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+  &lt;li&gt;Cherry&lt;/li&gt;
+&lt;/ul&gt;
+    </div>
+  </div>
+
+  <!-- Question 11 -->
+  <div class="task">
+    11. Create a div with a class and an ID.
+    <br><button onclick="toggleAnswer('html11')">Show Answer</button>
+    <div id="html11" class="answer" style="display: none;">
+&lt;div id="box1" class="highlight"&gt;
+  Content inside div.
+&lt;/div&gt;
+    </div>
+  </div>
+
+  <!-- Question 12 -->
+  <div class="task">
+    12. Embed a website using iframe.
+    <br><button onclick="toggleAnswer('html12')">Show Answer</button>
+    <div id="html12" class="answer" style="display: none;">
+&lt;iframe src="https://example.com" width="300" height="200"&gt;&lt;/iframe&gt;
+    </div>
+  </div>
+
+  <!-- Question 13 -->
+  <div class="task">
+    13. Show relative path for an image.
+    <br><button onclick="toggleAnswer('html13')">Show Answer</button>
+    <div id="html13" class="answer" style="display: none;">
+&lt;img src="images/photo.jpg" alt="Photo"&gt;
+    </div>
+  </div>
+
+  <!-- Question 14 -->
+  <div class="task">
+    14. Add meta tag for responsive layout.
+    <br><button onclick="toggleAnswer('html14')">Show Answer</button>
+    <div id="html14" class="answer" style="display: none;">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    </div>
+  </div>
+
+  <!-- Question 15 -->
+  <div class="task">
+    15. Create an ordered list of 3 items.
+    <br><button onclick="toggleAnswer('html15')">Show Answer</button>
+    <div id="html15" class="answer" style="display: none;">
+&lt;ol&gt;
+  &lt;li&gt;Step One&lt;/li&gt;
+  &lt;li&gt;Step Two&lt;/li&gt;
+  &lt;li&gt;Step Three&lt;/li&gt;
+&lt;/ol&gt;
+    </div>
+  </div>
+
+  <!-- Question 16 -->
+  <div class="task">
+    16. Insert an input field and button.
+    <br><button onclick="toggleAnswer('html16')">Show Answer</button>
+    <div id="html16" class="answer" style="display: none;">
+&lt;input type="text" placeholder="Enter name"&gt;
+&lt;button&gt;Submit&lt;/button&gt;
+    </div>
+  </div>
+
+  <!-- Question 17 -->
+  <div class="task">
+    17. Create a horizontal line and a line break.
+    <br><button onclick="toggleAnswer('html17')">Show Answer</button>
+    <div id="html17" class="answer" style="display: none;">
+&lt;hr&gt;
+&lt;br&gt;
+    </div>
+  </div>
+
+  <!-- Question 18 -->
+  <div class="task">
+    18. Make bold and italic text.
+    <br><button onclick="toggleAnswer('html18')">Show Answer</button>
+    <div id="html18" class="answer" style="display: none;">
+&lt;b&gt;Bold&lt;/b&gt; and &lt;i&gt;Italic&lt;/i&gt;
+    </div>
+  </div>
+
+  <!-- Question 19 -->
+  <div class="task">
+    19. Add a label and a checkbox.
+    <br><button onclick="toggleAnswer('html19')">Show Answer</button>
+    <div id="html19" class="answer" style="display: none;">
+&lt;label&gt;
+  &lt;input type="checkbox"&gt; I agree
+&lt;/label&gt;
+    </div>
+  </div>
+
+  <!-- Question 20 -->
+  <div class="task">
+    20. Add an image with width 200px.
+    <br><button onclick="toggleAnswer('html20')">Show Answer</button>
+    <div id="html20" class="answer" style="display: none;">
+&lt;img src="logo.png" width="200" alt="Logo"&gt;
+    </div>
+  </div>
+
+  <!-- Question 21 -->
+  <div class="task">
+    21. Add title and alt to image.
+    <br><button onclick="toggleAnswer('html21')">Show Answer</button>
+    <div id="html21" class="answer" style="display: none;">
+&lt;img src="pic.jpg" alt="Mountain" title="Nature"&gt;
+    </div>
+  </div>
+
+  <!-- Question 22 -->
+  <div class="task">
+    22. Use span tag with inline color.
+    <br><button onclick="toggleAnswer('html22')">Show Answer</button>
+    <div id="html22" class="answer" style="display: none;">
+&lt;p&gt;This is &lt;span style="color:blue"&gt;blue text&lt;/span&gt;&lt;/p&gt;
+    </div>
+  </div>
+
+  <!-- Question 23 -->
+  <div class="task">
+    23. Add a dropdown (select) menu.
+    <br><button onclick="toggleAnswer('html23')">Show Answer</button>
+    <div id="html23" class="answer" style="display: none;">
+&lt;select&gt;
+  &lt;option&gt;HTML&lt;/option&gt;
+  &lt;option&gt;CSS&lt;/option&gt;
+&lt;/select&gt;
+    </div>
+  </div>
+
+  <!-- Question 24 -->
+  <div class="task">
+    24. Write doctype declaration for HTML5.
+    <br><button onclick="toggleAnswer('html24')">Show Answer</button>
+    <div id="html24" class="answer" style="display: none;">
+&lt;!DOCTYPE html&gt;
+    </div>
+  </div>
+
+  <!-- Question 25 -->
+  <div class="task">
+    25. Create a button with an alert using onclick.
+    <br><button onclick="toggleAnswer('html25')">Show Answer</button>
+    <div id="html25" class="answer" style="display: none;">
+&lt;button onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer">
+        
+    <div class="container text-center">
+        <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+        <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+    </div> 
+  </footer>
+</body>
+</html>
