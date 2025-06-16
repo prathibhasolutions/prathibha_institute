@@ -87,6 +87,9 @@
         .java-card {
             background: linear-gradient(135deg, #28a745, #28a745);
         }
+        .html-card {
+            background: linear-gradient(135deg, #d44be3, #9f10bc);
+        }
         
         
         
@@ -100,6 +103,9 @@
             color: #5fcb11; /* Purple color for Physics */
         }
         .java-heading {
+            color: #28a745; /* Green color for Mathematics */
+        }
+        .html-heading {
             color: #28a745; /* Green color for Mathematics */
         }
         
@@ -272,8 +278,11 @@
     <div class="col-12 col-sm-6 col-md-3 mb-3">
         <button class="btn btn-warning w-100" onclick="toggleSubcategories('python')"><b>Python</b></button>
     </div>
-     <div class="col-md-3">
-        <button class="btn btn-warning w-100" onclick="toggleSubcategories('java')">Java</button>
+    <div class="col-md-3">
+        <button class="btn btn-warning w-100" onclick="toggleSubcategories('java')"><b>Java</b></button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-warning w-100" onclick="toggleSubcategories('html')"><b>HTML</b></button>
     </div>
     <!-- Add more buttons like Java, HTML in future -->
 </div>
@@ -547,6 +556,42 @@
             </div>
 
 
+
+
+
+            
+        </div>
+    </div>    
+</div>
+
+
+
+
+    <!-- HTML Language Content -->
+<div id="html-content" style="display: none; margin-top: 10px;">
+    <div class="container-fluid">
+       
+        <!-- Duplicate card structure here for Python topics -->
+        <!-- Example row -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
+            <div class="col mb-3">
+                <div class="card html-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Html Basic</h5>
+                    </div>
+                    <div class="card-footer text-center">
+                       
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <!-- <button class="custom-btn practice" onclick="window.location.href='python_loops_practice.html'">Practice</button> -->
+                            <button class="custom-btn test" onclick="window.location.href='htmlbasic.html'">Take Test</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>    
+           
+</div>               
         
 
 
@@ -565,7 +610,7 @@
 
   <script>
     function toggleSubcategories(showId) {
-        var sections = ["C", "python","java"]; // Add more ids as needed
+        var sections = ["C", "python","java","html"]; // Add more ids as needed
         sections.forEach(id => {
             var content = document.getElementById(id + '-content');
             if (content) {
