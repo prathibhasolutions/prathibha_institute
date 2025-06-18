@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <title>Data Structures and Algorithms in Java</title>
+      <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card-header {
+      background-color: #343a40;
+      color: white;
+      font-weight: bold;
+    }
+    .container {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+    .card {
+      margin-bottom: 30px;
+      border-radius: 15px;
+    }
+    .code-box {
+  background-color: #f1f1f1;
+  border-left: 5px solid #007bff;
+  padding: 15px;
+  font-family: Consolas, monospace;
+  white-space: pre-wrap;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+ .header {
+ background-color: rgb(23, 41, 84);
+ background-position: center;
+ background-size: cover;
+ position: fixed;
+ top: 0;
+ width: 100%;
+ z-index: 1000; /* Ensure the navbar appears above other content while scrolling down */
+ display: flex;
+ justify-content: center; /* Center content horizontally */
+ align-items: center; /* Center content vertically */
+ padding: 10px 0;
+}
+
+.logo {
+ width: 100px; /* Adjust width as needed */
+ height: 100px; /* Maintains aspect ratio */
+ border-radius: 50%;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+ .header {
+     justify-content: center; /* Ensure the logo stays centered on small devices */
+ }
+}
+#footer {
+ background-color: rgb(23, 41, 84); /* White background */
+ color: #ffffff; /* Dark blue text color */
+ padding: 10px 0;
+}
+    #userName {
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 100% {
+        border-color: red;
+        box-shadow: 0 0 8px red;
+      }
+      50% {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+    <section class="header" style="font-family: sans-serif;color: rgb(23, 41, 84);">
+    <nav>
+        <img src="logo.png" alt="" class="logo">    
+    </nav>   
+  </section>
+  <br><br><br><br><br><br><br>
+  <div class="container">
+    <h1 class="text-center mb-5">Data Structures and Algorithms in Java</h1>
+
+    <!-- Data Structure Introduction -->
+    <div class="card">
+      <div class="card-header">
+        What is a Data Structure?
+      </div>
+      <div class="card-body">
+        <p>A data structure is a way of organizing and storing data so that it can be accessed and modified efficiently.</p>
+        <p><strong>Why Use Data Structures?</strong> Because they help in:</p>
+        <ul>
+          <li>Efficient data access</li>
+          <li>Memory management</li>
+          <li>Speeding up processing</li>
+        </ul>
+        <p><strong>Real-life Example:</strong> Think of a data structure like a bookshelf. You can organize books (data) in rows, by category (array, stack, etc.), so it’s easier to find and use them quickly.</p>
+      </div>
+    </div>
+
+    <!-- Algorithm Introduction -->
+    <div class="card">
+      <div class="card-header">
+        What is an Algorithm?
+      </div>
+      <div class="card-body">
+        <p>An algorithm is a step-by-step procedure to solve a problem or perform a computation.</p>
+        <p><strong>Why Use Algorithms?</strong></p>
+        <ul>
+          <li>To solve problems efficiently</li>
+          <li>To automate processes</li>
+          <li>To improve time and space performance</li>
+        </ul>
+        <p><strong>Real-life Example:</strong> Making tea. Your algorithm could be:<br>
+          1. Boil water<br>
+          2. Add tea leaves<br>
+          3. Pour into a cup<br>
+          4. Add sugar/milk</p>
+      </div>
+    </div>
+
+    <!-- Java + DSA Introduction -->
+    <div class="card">
+      <div class="card-header">
+        Why Learn DSA with Java?
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Java provides built-in libraries for many data structures.</li>
+          <li>Object-Oriented approach makes code reusable and scalable.</li>
+          <li>Popular in job interviews and competitive programming.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Example Topics in DSA -->
+    <div class="card">
+      <div class="card-header bg-primary">
+        Topics Covered in Data Structures
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Arrays</li>
+          <li>Linked Lists</li>
+          <li>Stacks and Queues</li>
+          <li>Trees and Graphs</li>
+          <li>Hashing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header bg-success">
+        Topics Covered in Algorithms
+      </div>
+      <div class="card-body">
+        <ul>
+          <li>Searching and Sorting</li>
+          <li>Recursion and Backtracking</li>
+          <li>Dynamic Programming</li>
+          <li>Greedy Algorithms</li>
+          <li>Graph Algorithms (DFS, BFS, Dijkstra)</li>
+        </ul>
+      </div>
+    </div>
+
+<!-- Array -->
+<div class="card">
+  <div class="card-header bg-info text-white">
+    Arrays
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> When you need fast access using index and a fixed-size collection.</p>
+    <p><strong>Why:</strong> Simple structure with O(1) access time.</p>
+    <p><strong>Real-life Example:</strong> Seats in a theater — fixed position, numbered.</p>
+    <div class="code-box">
+int[] numbers = {1, 2, 3, 4};
+System.out.println(numbers[2]); // Output: 3
+    </div>
+  </div>
+</div>
+
+<!-- Linked List -->
+<div class="card">
+  <div class="card-header bg-warning text-dark">
+    Linked List
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> When frequent insertion/deletion is required.</p>
+    <p><strong>Why:</strong> No need to shift elements; dynamic size.</p>
+    <p><strong>Real-life Example:</strong> Train compartments linked together.</p>
+    <div class="code-box">
+class Node {
+  int data;
+  Node next;
+  Node(int d) { data = d; next = null; }
+}
+    </div>
+  </div>
+</div>
+
+<!-- Stack -->
+<div class="card">
+  <div class="card-header bg-danger text-white">
+    Stack
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> When you need Last-In-First-Out (LIFO) behavior.</p>
+    <p><strong>Why:</strong> Ideal for undo operations, expression parsing, etc.</p>
+    <p><strong>Real-life Example:</strong> Stack of plates.</p>
+    <div class="code-box">
+Stack<Integer> stack = new Stack&lt;&gt;();
+stack.push(10);
+stack.push(20);
+System.out.println(stack.pop()); // Output: 20
+    </div>
+  </div>
+</div>
+
+<!-- Queue -->
+<div class="card">
+  <div class="card-header bg-success text-white">
+    Queue
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> First-In-First-Out (FIFO) scenarios like print queues.</p>
+    <p><strong>Why:</strong> Useful in scheduling and buffering.</p>
+    <p><strong>Real-life Example:</strong> People standing in line.</p>
+    <div class="code-box">
+Queue&lt;Integer&gt; queue = new LinkedList&lt;&gt;();
+queue.add(1);
+queue.add(2);
+System.out.println(queue.remove()); // Output: 1
+    </div>
+  </div>
+</div>
+
+<!-- HashMap -->
+<div class="card">
+  <div class="card-header bg-secondary text-white">
+    HashMap
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> When you need fast lookup using keys.</p>
+    <p><strong>Why:</strong> Offers O(1) average time for get/put.</p>
+    <p><strong>Real-life Example:</strong> Dictionary (word → meaning).</p>
+    <div class="code-box">
+Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+map.put("name", "Alice");
+System.out.println(map.get("name")); // Output: Alice
+    </div>
+  </div>
+</div>
+
+<!-- Tree -->
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    Tree
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> To maintain hierarchical data (e.g., file system, DOM).</p>
+    <p><strong>Why:</strong> Efficient searching, insertion, traversal.</p>
+    <p><strong>Real-life Example:</strong> Organization chart or folder structure.</p>
+    <div class="code-box">
+class TreeNode {
+  int val;
+  TreeNode left, right;
+  TreeNode(int x) { val = x; }
+}
+    </div>
+  </div>
+</div>
+
+<!-- Graph -->
+<div class="card">
+  <div class="card-header bg-dark text-white">
+    Graph
+  </div>
+  <div class="card-body">
+    <p><strong>When to Use:</strong> When dealing with networks, routes, social connections.</p>
+    <p><strong>Why:</strong> Models complex relationships effectively.</p>
+    <p><strong>Real-life Example:</strong> Google Maps, Facebook friends.</p>
+    <div class="code-box">
+Map&lt;Integer, List&lt;Integer&gt;&gt; graph = new HashMap&lt;&gt;();
+graph.put(0, Arrays.asList(1, 2));
+    </div>
+  </div>
+</div>
+
+
+<!-- Time Complexity Card -->
+<div class="card mb-4">
+  <div class="card-header bg-primary text-white">
+    Time Complexity
+  </div>
+  <div class="card-body">
+    <p><strong>Definition:</strong> Time complexity is a measure of the time an algorithm takes to run as a function of the input size.</p>
+    <p><strong>Why It Matters:</strong> Helps estimate performance and scalability of algorithms.</p>
+    
+    <p><strong>Common Time Complexities:</strong></p>
+    <ul>
+      <li><strong>O(1)</strong> – Constant Time (e.g., accessing array element)</li>
+      <li><strong>O(log n)</strong> – Logarithmic Time (e.g., binary search)</li>
+      <li><strong>O(n)</strong> – Linear Time (e.g., traversing an array)</li>
+      <li><strong>O(n log n)</strong> – Linearithmic Time (e.g., merge sort)</li>
+      <li><strong>O(n²)</strong> – Quadratic Time (e.g., bubble sort)</li>
+      <li><strong>O(2ⁿ)</strong> – Exponential Time (e.g., recursive Fibonacci)</li>
+      <li><strong>O(n!)</strong> – Factorial Time (e.g., permutations)</li>
+    </ul>
+
+    <p><strong>Real-Life Examples:</strong></p>
+    <ul>
+      <li>O(1): Getting a book by index from a shelf</li>
+      <li>O(n): Checking all items in a shopping list</li>
+      <li>O(log n): Binary search in a sorted phone book</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Space Complexity Card -->
+<div class="card mb-4">
+  <div class="card-header bg-success text-white">
+    Space Complexity
+  </div>
+  <div class="card-body">
+    <p><strong>Definition:</strong> Space complexity is a measure of the total memory used by an algorithm relative to input size.</p>
+    <p><strong>Why It Matters:</strong> Crucial in memory-limited environments and large-scale systems.</p>
+
+    <p><strong>Components:</strong></p>
+    <ul>
+      <li><strong>Input space:</strong> Memory for input values</li>
+      <li><strong>Auxiliary space:</strong> Temporary space used during execution</li>
+    </ul>
+
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li>Bubble Sort – O(1) space (in-place)</li>
+      <li>Merge Sort – O(n) space (extra array)</li>
+      <li>Quick Sort – O(log n) space (recursive stack)</li>
+      <li>Fibonacci with memoization – O(n) space</li>
+    </ul>
+
+    <p><strong>Tip:</strong> In-place algorithms (like Quick Sort) are memory efficient.</p>
+  </div>
+</div>
+
+<!-- Trade-off Card -->
+<div class="card mb-4">
+  <div class="card-header bg-warning text-dark">
+    Time vs Space Trade-off
+  </div>
+  <div class="card-body">
+    <p>Sometimes improving time complexity increases space usage and vice versa.</p>
+    <ul>
+      <li><strong>Hashing:</strong> Fast lookups (O(1)) but uses extra memory</li>
+      <li><strong>Memoization:</strong> Faster recursion with more space usage</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Bubble Sort -->
+<div class="card">
+  <div class="card-header bg-danger text-white">
+    Bubble Sort
+  </div>
+  <div class="card-body">
+    <p><strong>Idea:</strong> Repeatedly swap adjacent elements if they are in the wrong order.</p>
+    <p><strong>Time Complexity:</strong> O(n²)</p>
+    <div class="code-box">
+void bubbleSort(int[] arr) {
+  int n = arr.length;
+  for (int i = 0; i &lt; n - 1; i++) {
+    for (int j = 0; j &lt; n - i - 1; j++) {
+      if (arr[j] &gt; arr[j + 1]) {
+        int temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+}
+    </div>
+  </div>
+</div>
+
+<!-- Selection Sort -->
+<div class="card">
+  <div class="card-header bg-warning text-dark">
+    Selection Sort
+  </div>
+  <div class="card-body">
+    <p><strong>Idea:</strong> Find the smallest element and place it at the beginning.</p>
+    <p><strong>Time Complexity:</strong> O(n²)</p>
+    <div class="code-box">
+void selectionSort(int[] arr) {
+  int n = arr.length;
+  for (int i = 0; i &lt; n - 1; i++) {
+    int minIdx = i;
+    for (int j = i + 1; j &lt; n; j++) {
+      if (arr[j] &lt; arr[minIdx]) {
+        minIdx = j;
+      }
+    }
+    int temp = arr[minIdx];
+    arr[minIdx] = arr[i];
+    arr[i] = temp;
+  }
+}
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Merge Sort -->
+<div class="card">
+  <div class="card-header bg-primary text-white">
+    Merge Sort
+  </div>
+  <div class="card-body">
+    <p><strong>Idea:</strong> Divide the array into halves, sort and merge them recursively.</p>
+    <p><strong>Time Complexity:</strong> O(n log n)</p>
+    <div class="code-box">
+void merge(int[] arr, int l, int m, int r) {
+  int n1 = m - l + 1;
+  int n2 = r - m;
+  int[] L = new int[n1];
+  int[] R = new int[n2];
+  for (int i = 0; i &lt; n1; i++) L[i] = arr[l + i];
+  for (int j = 0; j &lt; n2; j++) R[j] = arr[m + 1 + j];
+
+  int i = 0, j = 0, k = l;
+  while (i &lt; n1 &amp;&amp; j &lt; n2) {
+    arr[k++] = (L[i] &lt;= R[j]) ? L[i++] : R[j++];
+  }
+  while (i &lt; n1) arr[k++] = L[i++];
+  while (j &lt; n2) arr[k++] = R[j++];
+}
+
+void mergeSort(int[] arr, int l, int r) {
+  if (l &lt; r) {
+    int m = l + (r - l) / 2;
+    mergeSort(arr, l, m);
+    mergeSort(arr, m + 1, r);
+    merge(arr, l, m, r);
+  }
+}
+    </div>
+  </div>
+</div>
+
+
+    <!-- Linear Search -->
+<div class="card mb-4">
+  <div class="card-header bg-primary text-white">
+    Linear Search
+  </div>
+  <div class="card-body">
+    <p><strong>Idea:</strong> Traverse the array and compare each element to the target.</p>
+    <p><strong>Time Complexity:</strong> O(n)</p>
+    <p><strong>Use Case:</strong> Unsorted arrays, small datasets</p>
+    <div class="code-box">
+int linearSearch(int[] arr, int key) {
+  for (int i = 0; i &lt; arr.length; i++) {
+    if (arr[i] == key) return i;
+  }
+  return -1;
+}
+    </div>
+  </div>
+</div>
+
+<!-- Binary Search -->
+<div class="card mb-4">
+  <div class="card-header bg-success text-white">
+    Binary Search
+  </div>
+  <div class="card-body">
+    <p><strong>Idea:</strong> Divide the sorted array in half and compare mid with the key.</p>
+    <p><strong>Time Complexity:</strong> O(log n)</p>
+    <p><strong>Use Case:</strong> Sorted arrays</p>
+    <div class="code-box">
+int binarySearch(int[] arr, int key) {
+  int low = 0, high = arr.length - 1;
+  while (low &lt;= high) {
+    int mid = low + (high - low) / 2;
+    if (arr[mid] == key) return mid;
+    else if (arr[mid] &lt; key) low = mid + 1;
+    else high = mid - 1;
+  }
+  return -1;
+}
+    </div>
+  </div>
+</div>
+
+
+<!-- LeetCode Easy Array Problem Card - 1 -->
+<div class="card mb-4">
+  <div class="card-header bg-info text-white">
+    1. LeetCode #1: Two Sum
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <code>target</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums = [2, 7, 11, 15], target = 9
+Output: [0, 1]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code1')">Show Answer</button>
+    <div id="code1" class="code-box mt-3" style="display:none;">
+public int[] twoSum(int[] nums, int target) {
+  Map<Integer, Integer> map = new HashMap<>();
+  for (int i = 0; i < nums.length; i++) {
+    int complement = target - nums[i];
+    if (map.containsKey(complement)) {
+      return new int[] { map.get(complement), i };
+    }
+    map.put(nums[i], i);
+  }
+  return new int[] {};
+}
+    </div>
+  </div>
+</div>
+
+<!-- LeetCode Easy Array Problem Card - 2 -->
+<div class="card mb-4">
+  <div class="card-header bg-success text-white">
+    2. LeetCode #26: Remove Duplicates from Sorted Array
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given a sorted array <code>nums</code>, remove the duplicates in-place such that each element appears only once and return the new length.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code2')">Show Answer</button>
+    <div id="code2" class="code-box mt-3" style="display:none;">
+public int removeDuplicates(int[] nums) {
+  if (nums.length == 0) return 0;
+  int i = 0;
+  for (int j = 1; j < nums.length; j++) {
+    if (nums[j] != nums[i]) {
+      i++;
+      nums[i] = nums[j];
+    }
+  }
+  return i + 1;
+}
+    </div>
+  </div>
+</div>
+
+<!-- LeetCode Easy Array Problem Card - 3 -->
+<div class="card mb-4">
+  <div class="card-header bg-warning text-dark">
+    3. LeetCode #53: Maximum Subarray
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given an integer array <code>nums</code>, find the contiguous subarray with the largest sum and return its sum.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6 (subarray: [4,-1,2,1])</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code3')">Show Answer</button>
+    <div id="code3" class="code-box mt-3" style="display:none;">
+public int maxSubArray(int[] nums) {
+  int maxSum = nums[0];
+  int currentSum = nums[0];
+  for (int i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+  return maxSum;
+}
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header bg-danger text-white">
+    4. LeetCode #1346: Check If N and Its Double Exist
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given an array <code>arr</code>, check if there exists two indices <code>i</code> and <code>j</code> such that <code>i != j</code> and <code>arr[i] == 2 * arr[j]</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: arr = [10,2,5,3]
+Output: true</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code4')">Show Answer</button>
+    <div id="code4" class="code-box mt-3" style="display:none;">
+public boolean checkIfExist(int[] arr) {
+  Set<Integer> set = new HashSet<>();
+  for (int num : arr) {
+    if (set.contains(2 * num) || (num % 2 == 0 && set.contains(num / 2)))
+      return true;
+    set.add(num);
+  }
+  return false;
+}
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-header bg-primary text-white">
+    5. LeetCode #1470: Shuffle the Array
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given the array <code>nums</code> consisting of <code>2n</code> elements in the form <code>[x1,x2,...,xn,y1,y2,...,yn]</code>, return the array in the form <code>[x1,y1,x2,y2,...,xn,yn]</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums = [2,5,1,3,4,7], n = 3
+Output: [2,3,5,4,1,7]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code7')">Show Answer</button>
+    <div id="code7" class="code-box mt-3" style="display:none;">
+public int[] shuffle(int[] nums, int n) {
+  int[] result = new int[2 * n];
+  for (int i = 0; i < n; i++) {
+    result[2 * i] = nums[i];
+    result[2 * i + 1] = nums[i + n];
+  }
+  return result;
+}
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-header bg-warning text-dark">
+    6. LeetCode #1365: How Many Numbers Are Smaller Than the Current Number
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> For each number in the array <code>nums</code>, count how many numbers are smaller than it and return the result as an array.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums = [8,1,2,2,3]
+Output: [4,0,1,1,3]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code8')">Show Answer</button>
+    <div id="code8" class="code-box mt-3" style="display:none;">
+public int[] smallerNumbersThanCurrent(int[] nums) {
+  int[] count = new int[101];
+  for (int num : nums) count[num]++;
+  for (int i = 1; i < 101; i++) count[i] += count[i - 1];
+  
+  int[] result = new int[nums.length];
+  for (int i = 0; i < nums.length; i++) {
+    result[i] = nums[i] == 0 ? 0 : count[nums[i] - 1];
+  }
+  return result;
+}
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-header bg-info text-white">
+    7. LeetCode #1480: Running Sum of 1d Array
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Return the running sum of the given array. The running sum is defined as: <code>runningSum[i] = sum(nums[0]...nums[i])</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums = [1,2,3,4]
+Output: [1,3,6,10]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code9')">Show Answer</button>
+    <div id="code9" class="code-box mt-3" style="display:none;">
+public int[] runningSum(int[] nums) {
+  for (int i = 1; i < nums.length; i++) {
+    nums[i] += nums[i - 1];
+  }
+  return nums;
+}
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header bg-primary text-white">
+    8. LeetCode #1672: Richest Customer Wealth
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given a 2D array <code>accounts</code> where <code>accounts[i][j]</code> is the amount of money the i-th customer has in the j-th bank, return the wealth that the richest customer has.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: accounts = [[1,2,3],[3,2,1]]
+Output: 6</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code11')">Show Answer</button>
+    <div id="code11" class="code-box mt-3" style="display:none;">
+public int maximumWealth(int[][] accounts) {
+  int maxWealth = 0;
+  for (int[] customer : accounts) {
+    int sum = 0;
+    for (int money : customer) {
+      sum += money;
+    }
+    maxWealth = Math.max(maxWealth, sum);
+  }
+  return maxWealth;
+}
+    </div>
+  </div>
+</div>
+
+
+<!-- Script to toggle answer boxes -->
+<script>
+function toggleCode(id) {
+  const code = document.getElementById(id);
+  code.style.display = code.style.display === "none" ? "block" : "none";
+}
+</script>
+
+<!-- Code Box Styling -->
+<style>
+.code-box {
+  background-color: #f8f9fa;
+  border-left: 5px solid #0d6efd;
+  padding: 12px;
+  font-family: Consolas, monospace;
+  white-space: pre-wrap;
+  border-radius: 8px;
+}
+</style>
+
+
+  </div>
+<footer id="footer" class="footer">
+        
+    <div class="container text-center">
+        <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+        <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+    </div> 
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

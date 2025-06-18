@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+      <link rel="icon" type="image/png" href="logo.png">
   <title>Python Exam - Set 2</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -29,10 +31,59 @@
     .programming-section {
       margin-top: 50px;
     }
+     .header {
+ background-color: rgb(23, 41, 84);
+ background-position: center;
+ background-size: cover;
+ position: fixed;
+ top: 0;
+ width: 100%;
+ z-index: 1000; /* Ensure the navbar appears above other content while scrolling down */
+ display: flex;
+ justify-content: center; /* Center content horizontally */
+ align-items: center; /* Center content vertically */
+ padding: 10px 0;
+}
+
+.logo {
+ width: 100px; /* Adjust width as needed */
+ height: 100px; /* Maintains aspect ratio */
+ border-radius: 50%;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+ .header {
+     justify-content: center; /* Ensure the logo stays centered on small devices */
+ }
+}
+#footer {
+ background-color: rgb(23, 41, 84); /* White background */
+ color: #ffffff; /* Dark blue text color */
+ padding: 10px 0;
+}
+    #userName {
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0%, 100% {
+        border-color: red;
+        box-shadow: 0 0 8px red;
+      }
+      50% {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
   </style>
 </head>
 <body>
-
+<section class="header" style="font-family: sans-serif;color: rgb(23, 41, 84);">
+    <nav>
+        <img src="logo.png" alt="" class="logo">    
+    </nav>   
+  </section>
+  <br><br><br><br><br><br><br>
   <div class="container">
     <h1 class="text-center text-success mb-4">Python MCQs and Programming Questions (Set 2)</h1>
     <br>
@@ -178,7 +229,13 @@
       resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
     }
   </script>
-
+<footer id="footer" class="footer">
+        
+    <div class="container text-center">
+        <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+        <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+    </div> 
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
