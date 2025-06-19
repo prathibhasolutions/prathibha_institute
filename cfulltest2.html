@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>C Language Exam - Set 2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+    .mcq-card {
+      margin-bottom: 20px;
+    }
+    .correct {
+      border-left: 5px solid #198754 !important;
+      background-color: #d1e7dd;
+    }
+    .wrong {
+      border-left: 5px solid #dc3545 !important;
+      background-color: #f8d7da;
+    }
+    #result {
+      margin-top: 30px;
+    }
+    .programming-section, .theory-section {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center text-success mb-4">C Language MCQs and Programming Questions (Set 2)</h1>
+  <form id="quizForm">
+    <h2 class="text-danger text-center">Multiple Choice Questions (MCQs)</h2>
+    <div id="mcq-container" class="mt-3"></div>
+
+    <div class="text-center">
+      <button type="button" class="btn btn-primary px-5 mt-3" onclick="checkAnswers()">Submit</button>
+    </div>
+    <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
+
+    <div class="programming-section">
+      <h2 class="text-danger text-center">Programming Questions with Example Outputs</h2><br>
+      <ol class="list-group list-group-numbered mt-3">
+        <li class="list-group-item">Write a program to print even numbers from 1 to n.<br><code>Input: 10<br>Output: 2 4 6 8 10</code></li>
+        <li class="list-group-item">Write a program to count digits in a number.<br><code>Input: 4562<br>Output: 4</code></li>
+        <li class="list-group-item">Find sum of all elements in an array.<br><code>Input: [1,2,3,4]<br>Output: 10</code></li>
+        <li class="list-group-item">Convert a string to uppercase.<br><code>Input: c language<br>Output: C LANGUAGE</code></li>
+        <li class="list-group-item">Print Fibonacci series up to n terms.<br><code>Input: 5<br>Output: 0 1 1 2 3</code></li>
+        <li class="list-group-item">Search an element in an array.<br><code>Input: [1,3,5,7], 5<br>Output: Found at index 2</code></li>
+        <li class="list-group-item">Find the length of a string without using strlen().<br><code>Input: hello<br>Output: 5</code></li>
+        <li class="list-group-item">Check whether a character is a vowel using if-else.<br><code>Input: a<br>Output: Vowel</code></li>
+        <li class="list-group-item">Find largest number in a 2D array.<br><code>Input: 2x2 matrix<br>Output: Largest = ___</code></li>
+        <li class="list-group-item">Copy contents of one file to another.<br><code>Output: file copied successfully</code></li>
+      </ol>
+    </div>
+
+    <div class="theory-section">
+      <h2 class="text-danger text-center">Theory Questions</h2><br>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item">Explain the syntax and use of for loop in C.</li>
+        <li class="list-group-item">What is the difference between actual and formal parameters?</li>
+        <li class="list-group-item">Explain the difference between call by value and call by reference.</li>
+        <li class="list-group-item">What is a NULL pointer? Why is it used?</li>
+        <li class="list-group-item">Write the syntax and use of fopen(), fclose() with example.</li>
+      </ol>
+    </div>
+  </form>
+</div>
+
+<script>
+const questions = [
+  { question: "Which keyword is used to define a constant?", options: ["const", "constant", "define", "#define"], answer: "#define" },
+  { question: "What is the size of char in C?", options: ["2", "4", "1", "8"], answer: "1" },
+  { question: "Which function is used to write a string to a file?", options: ["fput()", "fprintf()", "fputs()", "write()"], answer: "fputs()" },
+  { question: "Which of these is a loop structure?", options: ["if", "else", "for", "goto"], answer: "for" },
+  { question: "How to declare a 2D array in C?", options: ["int arr[];", "int arr[2][3];", "array arr[2];", "int arr{};"], answer: "int arr[2][3];" },
+  { question: "Which header file is used for file functions?", options: ["stdio.h", "string.h", "conio.h", "stdlib.h"], answer: "stdio.h" },
+  { question: "What is the result of 5 != 3?", options: ["true", "1", "false", "0"], answer: "1" },
+  { question: "Which character ends every C statement?", options: ["#", ":", ";", "."], answer: ";" },
+  { question: "How do you read a character in C?", options: ["read()", "input()", "getchar()", "getc()"], answer: "getchar()" },
+  { question: "Which function checks for end-of-file?", options: ["eof()", "feof()", "check()", "end()"], answer: "feof()" },
+  { question: "How are strings represented in C?", options: ["char array", "int", "string class", "word"], answer: "char array" },
+  { question: "Which function is used to concatenate strings?", options: ["stradd()", "strcat()", "strmerge()", "combine()"], answer: "strcat()" },
+  { question: "Which function is used to allocate memory?", options: ["malloc()", "int()", "alloc()", "create()"], answer: "malloc()" },
+  { question: "What does *ptr return?", options: ["Address", "Value", "NULL", "Pointer"], answer: "Value" },
+  { question: "How is a function declared in C?", options: ["void func()", "func void()", "function()", "define func()"], answer: "void func()" },
+  { question: "What is the value of 3 && 0?", options: ["1", "0", "3", "Error"], answer: "0" },
+  { question: "What is the default return type of a function if not specified?", options: ["void", "int", "float", "error"], answer: "int" },
+  { question: "Which operator is used for address?", options: ["*", "&", "@", "#"], answer: "&" },
+  { question: "Which of the following is a relational operator?", options: ["=", "==", "&&", "||"], answer: "==" },
+  { question: "What is used to terminate a string?", options: ["\\0", "NULL", "#", "\\n"], answer: "\\0" }
+];
+
+const container = document.getElementById('mcq-container');
+
+questions.forEach((q, index) => {
+  const card = document.createElement('div');
+  card.className = 'card mcq-card';
+  card.innerHTML = `
+    <div class="card-body">
+      <p class="card-text fw-semibold">${q.question}</p>
+      ${q.options.map(opt => `
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
+          <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
+        </div>`).join('')}
+    </div>`;
+  container.appendChild(card);
+});
+
+function checkAnswers() {
+  let score = 0;
+  const resultDiv = document.getElementById("result");
+  const cards = document.querySelectorAll(".mcq-card");
+
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const card = cards[i];
+    card.classList.remove("correct", "wrong");
+
+    if (selected) {
+      if (selected.value === q.answer) {
+        score++;
+        card.classList.add("correct");
+      } else {
+        card.classList.add("wrong");
+      }
+    } else {
+      card.classList.add("wrong");
+    }
+  });
+
+  resultDiv.classList.remove("d-none");
+  resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
