@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>C Programming Exam - Set 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    .container { margin-top: 40px; margin-bottom: 50px; }
+    .mcq-card { margin-bottom: 20px; }
+    .correct { border-left: 5px solid #198754 !important; background-color: #d1e7dd; }
+    .wrong { border-left: 5px solid #dc3545 !important; background-color: #f8d7da; }
+    #result { margin-top: 30px; }
+    .programming-section { margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center text-success mb-4">C Programming Exam - Set 3</h1>
+  <form id="quizForm">
+    <h2 class="text-danger text-center">Multiple Choice Questions (MCQs)</h2>
+    <div id="mcq-container" class="mt-3"></div>
+
+    <div class="text-center">
+      <button type="button" class="btn btn-primary px-5 mt-3" onclick="checkAnswers()">Submit</button>
+    </div>
+    <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
+
+    <div class="programming-section">
+      <h2 class="text-danger text-center">Programming Questions</h2><br>
+      <ol class="list-group list-group-numbered mt-3">
+        <li class="list-group-item">Write a C program to check whether a number is positive, negative or zero using if-else.</li>
+        <li class="list-group-item">Write a C program to print the sum of all even numbers between 1 and 50 using loop.</li>
+        <li class="list-group-item">Write a program to calculate factorial of a number using loop.</li>
+        <li class="list-group-item">Write a C program to print a triangle pattern using nested loops.</li>
+        <li class="list-group-item">Write a program to find the maximum element in an integer array.</li>
+        <li class="list-group-item">Write a C program to count the number of vowels in a string.</li>
+        <li class="list-group-item">Write a C program to reverse a string without using strrev().</li>
+        <li class="list-group-item">Write a C program to copy one string to another using pointers.</li>
+        <li class="list-group-item">Write a program to swap two numbers using pointers.</li>
+        <li class="list-group-item">Write a C program to print all prime numbers between 1 and 100.</li>
+      </ol>
+    </div>
+  </form>
+</div>
+
+<script>
+const questions = [
+  { question: "Which of the following is the correct syntax for if-else in C?", options: ["if (x) then {}", "if x {}", "if (x) {}", "if x then {}"], answer: "if (x) {}" },
+  { question: "What is the output of: printf(\"%d\", 5 % 2);", options: ["1", "2", "0", "5"], answer: "1" },
+  { question: "Which loop checks the condition after executing the loop body?", options: ["for", "while", "do-while", "foreach"], answer: "do-while" },
+  { question: "Which of the following is not a valid loop in C?", options: ["for", "while", "repeat", "do-while"], answer: "repeat" },
+  { question: "What will be the value of x after this code: int x = 5; x += 2;", options: ["5", "7", "2", "10"], answer: "7" },
+  { question: "How do you declare a string in C?", options: ["char str[];", "string str;", "char str;", "str char[];"], answer: "char str[];" },
+  { question: "Which header file is required for printf and scanf?", options: ["conio.h", "math.h", "stdio.h", "stdlib.h"], answer: "stdio.h" },
+  { question: "What is the output of: printf(\"%c\", 'A'+1);", options: ["B", "A1", "1", "C"], answer: "B" },
+  { question: "What will *p point to after: int a = 10; int *p = &a;", options: ["value of a", "address of a", "NULL", "pointer to pointer"], answer: "address of a" },
+  { question: "Which function is used to get input from the user?", options: ["print()", "scan()", "scanf()", "input()"], answer: "scanf()" },
+  { question: "Which operator is used to access value at the address in pointers?", options: ["&", "*", "#", "$"], answer: "*" },
+  { question: "Which function returns the length of a string?", options: ["strlen()", "strlength()", "length()", "size()"], answer: "strlen()" },
+  { question: "How to declare an integer array of size 10?", options: ["int arr;", "int arr(10);", "int arr[10];", "array arr[10];"], answer: "int arr[10];" },
+  { question: "Which keyword is used to declare a pointer?", options: ["ptr", "pointer", "*", "&"], answer: "*" },
+  { question: "Which function is used to concatenate two strings?", options: ["strcat()", "stradd()", "concat()", "addstr()"], answer: "strcat()" },
+  { question: "What is the size of int (assuming 32-bit system)?", options: ["2", "4", "8", "1"], answer: "4" },
+  { question: "What is the correct way to increment a pointer?", options: ["p+1", "*p+1", "p++", "++*p"], answer: "p++" },
+  { question: "Which loop is best when number of iterations is known?", options: ["while", "do-while", "for", "goto"], answer: "for" },
+  { question: "What is the output of: int a = 5; if (a > 3) printf(\"Hi\"); else printf(\"Bye\");", options: ["Hi", "Bye", "HiBye", "Error"], answer: "Hi" },
+  { question: "Which symbol is used to write a single-line comment in C?", options: ["//", "#", "--", "/*"], answer: "//" }
+];
+
+const container = document.getElementById('mcq-container');
+
+questions.forEach((q, index) => {
+  const card = document.createElement('div');
+  card.className = 'card mcq-card';
+  card.innerHTML = `
+    <div class="card-body">
+      <p class="card-text fw-semibold">${q.question}</p>
+      ${q.options.map(opt => `
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
+          <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
+        </div>`).join('')}
+    </div>`;
+  container.appendChild(card);
+});
+
+function checkAnswers() {
+  let score = 0;
+  const resultDiv = document.getElementById("result");
+  const cards = document.querySelectorAll(".mcq-card");
+
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const card = cards[i];
+    card.classList.remove("correct", "wrong");
+
+    if (selected) {
+      if (selected.value === q.answer) {
+        score++;
+        card.classList.add("correct");
+      } else {
+        card.classList.add("wrong");
+      }
+    } else {
+      card.classList.add("wrong");
+    }
+  });
+
+  resultDiv.classList.remove("d-none");
+  resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
