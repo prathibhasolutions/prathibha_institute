@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Exam</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 80px;
+      margin-bottom: 50px;
+    }
+    .mcq-card {
+      margin-bottom: 20px;
+    }
+    .correct {
+      border-left: 5px solid #198754 !important;
+      background-color: #d1e7dd;
+    }
+    .wrong {
+      border-left: 5px solid #dc3545 !important;
+      background-color: #f8d7da;
+    }
+    #result {
+      margin-top: 30px;
+    }
+    .programming-section {
+      margin-top: 50px;
+    }
+    .header {
+      background-color: rgb(23, 41, 84);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+    #footer {
+      background-color: rgb(23, 41, 84);
+      color: #ffffff;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="header">
+    <nav><img src="logo.png" alt="Logo" class="logo" /></nav>
+  </section>
+  <div class="container">
+    <h1 class="text-center text-success mb-4">Python MCQs and Programming Questions</h1>
+
+    <form id="quizForm">
+      <h2 class="text-danger text-center">Multiple Choice Questions (MCQs)</h2>
+      <div id="mcq-container" class="mt-3"></div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-primary px-5 mt-3" onclick="checkAnswers()">Submit</button>
+      </div>
+      <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
+
+      <div class="programming-section">
+        <h2 class="text-danger text-center">Programming Questions</h2><br />
+        <ol class="list-group list-group-numbered mt-3">
+          <li class="list-group-item">
+            Write a program to check if a number is positive, negative or zero using if-else.<br />
+            <strong>Example:</strong><br />
+            <code>Input: -5<br />Output: Negative</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to print the first N even numbers using a loop.<br />
+            <strong>Example:</strong><br />
+            <code>Input: 5<br />Output: 2 4 6 8 10</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to print a half pyramid pattern using '*'.<br />
+            <strong>Example:</strong><br />
+            <code>Input: 3<br />Output:<br />*<br />**<br />***</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to print multiplication table of a number using a loop.<br />
+            <strong>Example:</strong><br />
+            <code>Input: 3<br />Output:<br />3 6 9 12 15 18 21 24 27 30</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to check if a string is a palindrome.<br />
+            <strong>Example:</strong><br />
+            <code>Input: madam<br />Output: Palindrome</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to remove duplicates from a list.<br />
+            <strong>Example:</strong><br />
+            <code>Input: [1, 2, 2, 3, 1]<br />Output: [1, 2, 3]</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to count the number of vowels in a string.<br />
+            <strong>Example:</strong><br />
+            <code>Input: "education"<br />Output: 5</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to store student marks in a dictionary and display them.<br />
+            <strong>Example:</strong><br />
+            <code>Input: {'John': 85, 'Amit': 92}<br />Output: John: 85, Amit: 92</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to swap first and last elements of a tuple.<br />
+            <strong>Example:</strong><br />
+            <code>Input: (1, 2, 3, 4)<br />Output: (4, 2, 3, 1)</code>
+          </li>
+          <li class="list-group-item">
+            Write a program to find the intersection of two sets.<br />
+            <strong>Example:</strong><br />
+            <code>Input: {1,2,3} & {2,3,4}<br />Output: {2, 3}</code>
+          </li>
+        </ol>
+      </div>
+    </form>
+  </div>
+
+  <footer id="footer" class="footer text-center">
+    <div class="container">
+      <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+      <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      { question: "Which statement is used for decision making in Python?", options: ["loop", "switch", "if", "for"], answer: "if" },
+      { question: "Which keyword is used for loops in Python?", options: ["iterate", "loop", "for", "if"], answer: "for" },
+      { question: "What is the correct syntax for an if-else block?", options: ["if () else", "if: else:", "if condition: else:", "if condition: else"], answer: "if condition: else:" },
+      { question: "Which of the following is a mutable data type?", options: ["tuple", "list", "string", "int"], answer: "list" },
+      { question: "Which function adds a value to a set?", options: ["insert()", "add()", "append()", "update()"], answer: "add()" },
+      { question: "What does len() return for a dictionary?", options: ["Size in bytes", "Number of keys", "Nothing", "Number of values"], answer: "Number of keys" },
+      { question: "Which of these is a correct tuple?", options: ["[1,2,3]", "{1,2,3}", "(1,2,3)", "<1,2,3>"], answer: "(1,2,3)" },
+      { question: "What is the result of: 'abc' * 2?", options: ["abcabc", "abc2", "Error", "abc abc"], answer: "abcabc" },
+      { question: "Which keyword is used to exit a loop?", options: ["return", "stop", "break", "exit"], answer: "break" },
+      { question: "What is the output of: 10 % 3?", options: ["3", "1", "0", "10"], answer: "1" },
+      { question: "Which method is used to convert a string to lowercase?", options: ["upper()", "lower()", "down()", "strlow()"], answer: "lower()" },
+      { question: "Which operator is used to check membership in Python?", options: ["exists", "has", "in", "is"], answer: "in" },
+      { question: "What will print(type([])) return?", options: ["<class 'list'>", "<list>", "list", "type list"], answer: "<class 'list'>" },
+      { question: "Which loop will run at least once even if the condition is false (in other languages)?", options: ["for", "while", "do-while", "if"], answer: "do-while" },
+      { question: "What is the output of: list('abc')?", options: ["['abc']", "['a','b','c']", "[abc]", "('a','b','c')"], answer: "['a','b','c']" },
+      { question: "Which method returns keys in a dictionary?", options: ["values()", "get()", "keys()", "items()"], answer: "keys()" },
+      { question: "What will be the output of: 'Hello'[::-1]?", options: ["olleH", "Hello", "Error", "None"], answer: "olleH" },
+      { question: "Which symbol is used for comments in Python?", options: ["//", "#", "/*", "--"], answer: "#" },
+      { question: "How do you initialize an empty set?", options: ["{}", "set()", "[]", "()"], answer: "set()" },
+      { question: "What is the data type of (1,)?", options: ["int", "tuple", "list", "float"], answer: "tuple" }
+    ];
+
+    const container = document.getElementById('mcq-container');
+    questions.forEach((q, index) => {
+      const card = document.createElement('div');
+      card.className = 'card mcq-card';
+      card.innerHTML = `
+        <div class="card-body">
+          <p class="card-text fw-semibold">${index + 1}. ${q.question}</p>
+          ${q.options.map(opt => `
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
+              <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
+            </div>`).join('')}
+        </div>`;
+      container.appendChild(card);
+    });
+
+    function checkAnswers() {
+      let score = 0;
+      const resultDiv = document.getElementById("result");
+      const cards = document.querySelectorAll(".mcq-card");
+
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const card = cards[i];
+        card.classList.remove("correct", "wrong");
+
+        if (selected) {
+          if (selected.value === q.answer) {
+            score++;
+            card.classList.add("correct");
+          } else {
+            card.classList.add("wrong");
+          }
+        } else {
+          card.classList.add("wrong");
+        }
+      });
+
+      resultDiv.classList.remove("d-none");
+      resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
+    }
+  </script>
+</body>
+</html>
