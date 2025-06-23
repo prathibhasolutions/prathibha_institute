@@ -96,88 +96,93 @@
       </div>
       <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
 
-      <div class="programming-section">
+     <div class="programming-section">
   <h2 class="text-danger text-center">Programming Questions with Example Outputs</h2><br>
   <ol class="list-group list-group-numbered mt-3">
     <li class="list-group-item">
-      Write a program to check if a number is even or odd.<br>
+      Write a program to find the largest even number in a list.<br>
       <strong>Example:</strong><br>
-      <code>Input: 5<br>Output: Odd</code>
+      <code>Input: [3, 7, 2, 8, 5]<br>Output: 8</code>
     </li>
     <li class="list-group-item">
-      Write a program to print the factorial of a number using recursion.<br>
+      Write a program to count how many times a character appears in a string.<br>
       <strong>Example:</strong><br>
-      <code>Input: 4<br>Output: 24</code>
+      <code>Input: string = "banana", character = "a"<br>Output: 3</code>
     </li>
     <li class="list-group-item">
-      Write a program to reverse a string entered by the user.<br>
+      Write a program to check if a number is prime.<br>
       <strong>Example:</strong><br>
-      <code>Input: hello<br>Output: olleh</code>
+      <code>Input: 11<br>Output: Prime</code>
     </li>
     <li class="list-group-item">
-      Write a program to check if a string is palindrome.<br>
+      Write a program to calculate the sum of digits of a number.<br>
       <strong>Example:</strong><br>
-      <code>Input: madam<br>Output: Palindrome</code>
+      <code>Input: 1234<br>Output: 10</code>
     </li>
     <li class="list-group-item">
-      Write a program to find the sum of elements in a list.<br>
+      Write a program to find the second largest number in a list.<br>
       <strong>Example:</strong><br>
-      <code>Input: [1, 2, 3, 4]<br>Output: 10</code>
+      <code>Input: [4, 1, 9, 3, 6]<br>Output: 6</code>
     </li>
     <li class="list-group-item">
-      Write a program to print Fibonacci series using a loop.<br>
+      Write a program to print all even numbers between 1 and N.<br>
       <strong>Example:</strong><br>
-      <code>Input: 5<br>Output: 0 1 1 2 3</code>
+      <code>Input: 10<br>Output: 2 4 6 8 10</code>
     </li>
     <li class="list-group-item">
-      Write a program to count vowels in a given string.<br>
+      Write a program to sort a list without using built-in sort functions.<br>
       <strong>Example:</strong><br>
-      <code>Input: education<br>Output: 5</code>
+      <code>Input: [5, 2, 9, 1]<br>Output: [1, 2, 5, 9]</code>
     </li>
     <li class="list-group-item">
-      Write a program to print a pyramid pattern using nested loops.<br>
+      Write a program to remove vowels from a string.<br>
       <strong>Example:</strong><br>
-      <code>Input: 3<br>Output:<br>&nbsp;&nbsp;&nbsp;*<br>&nbsp;&nbsp;***<br>&nbsp;*****</code>
+      <code>Input: education<br>Output: dctn</code>
     </li>
     <li class="list-group-item">
-      Write a function that returns the maximum of three numbers.<br>
+      Write a program to print a number triangle.<br>
       <strong>Example:</strong><br>
-      <code>Input: 12, 45, 23<br>Output: 45</code>
+      <code>Input: 4<br>Output:<br>1<br>2 3<br>4 5 6<br>7 8 9 10</code>
     </li>
     <li class="list-group-item">
-      Write a program to remove duplicates from a list.<br>
+      Write a function to check if a number is a perfect square.<br>
       <strong>Example:</strong><br>
-      <code>Input: [1, 2, 2, 3, 1]<br>Output: [1, 2, 3]</code>
+      <code>Input: 25<br>Output: Perfect Square</code>
     </li>
   </ol>
 </div>
+
+  
 
     </form>
   </div>
 
   <script>
-    const questions = [
-      { question: "What will be the output of: print(2 if 1>2 else 3)?", options: ["2", "3", "Error", "None"], answer: "3" },
-      { question: "Which loop is used when the number of iterations is not known?", options: ["for", "while", "do-while", "loop"], answer: "while" },
-      { question: "What is the output of: print('abc' * 3)?", options: ["abcabcabc", "abc3", "Error", "abc abc abc"], answer: "abcabcabc" },
-      { question: "What does the len() function return?", options: ["Number of characters", "Number of lines", "Size in bytes", "Nothing"], answer: "Number of characters" },
-      { question: "What is the base case in recursion?", options: ["Initial value", "Stop condition", "Loop condition", "Break statement"], answer: "Stop condition" },
-      { question: "What keyword is used to define a function?", options: ["def", "function", "fun", "define"], answer: "def" },
-      { question: "Which of the following is a mutable data type?", options: ["str", "tuple", "list", "int"], answer: "list" },
-      { question: "How do you access the 3rd element in a list ‘l’?", options: ["l(2)", "l[3]", "l[2]", "l{2}"], answer: "l[2]" },
-      { question: "What does 'continue' do in a loop?", options: ["Stops the loop", "Skips the current iteration", "Breaks the loop", "Restarts loop"], answer: "Skips the current iteration" },
-      { question: "What is the result of: bool('False')?", options: ["False", "True", "None", "Error"], answer: "True" },
-      { question: "What is the result of: 3**2?", options: ["6", "9", "8", "None"], answer: "9" },
-      { question: "What type is the result of: range(5)?", options: ["list", "range", "tuple", "set"], answer: "range" },
-      { question: "Which function converts string to integer?", options: ["str()", "int()", "float()", "char()"], answer: "int()" },
-      { question: "What is the output of: print(len([1, 2, 3]))?", options: ["3", "2", "1", "Error"], answer: "3" },
-      { question: "Which character is used for comments in Python?", options: ["/", "//", "#", "--"], answer: "#" },
-      { question: "What is the result of: 'a' in 'apple'?", options: ["True", "False", "None", "Error"], answer: "True" },
-      { question: "Which loop is best for definite iteration?", options: ["while", "for", "if", "recursion"], answer: "for" },
-      { question: "What will print('Hello\\nWorld') do?", options: ["Hello World", "Hello\\nWorld", "Hello\nWorld", "Error"], answer: "Hello\nWorld" },
-      { question: "How do you define a list?", options: ["{}", "()", "[]", "<>"], answer: "[]" },
-      { question: "Which keyword is used to return a value from function?", options: ["return", "break", "exit", "end"], answer: "return" }
-    ];
+
+  const questions = [
+    { question: "Which of the following is used to define a block of code in Python?", options: ["Brackets", "Indentation", "Parentheses", "Quotes"], answer: "Indentation" },
+    { question: "Which of the following is not a valid Python data type?", options: ["set", "dictionary", "array", "list"], answer: "array" },
+    { question: "What is the output of: print(type({}))?", options: ["list", "set", "dict", "tuple"], answer: "dict" },
+    { question: "What does the 'pass' keyword do in Python?", options: ["Terminates loop", "Skips iteration", "Does nothing", "Throws error"], answer: "Does nothing" },
+    { question: "Which function is used to get input from the user?", options: ["get()", "input()", "scan()", "read()"], answer: "input()" },
+    { question: "What is the output of: print(bool(0))?", options: ["True", "False", "0", "None"], answer: "False" },
+    { question: "How do you start a comment in Python?", options: ["//", "<!--", "#", "/*"], answer: "#" },
+    { question: "Which keyword is used to handle exceptions?", options: ["try", "except", "catch", "both try and except"], answer: "both try and except" },
+    { question: "Which function returns the length of a list?", options: ["size()", "length()", "len()", "count()"], answer: "len()" },
+    { question: "Which keyword is used to define a class in Python?", options: ["class", "Class", "struct", "def"], answer: "class" },
+    { question: "What will be the output of: print(10//3)?", options: ["3.33", "3", "4", "Error"], answer: "3" },
+    { question: "What is the output of: print([1,2]*2)?", options: ["[1,2,1,2]", "[2,4]", "[1,2]*2", "[1,2,2,4]"], answer: "[1,2,1,2]" },
+    { question: "Which keyword is used to define an anonymous function in Python?", options: ["def", "lambda", "anonymous", "fun"], answer: "lambda" },
+    { question: "Which method is used to add an item at the end of a list?", options: ["insert()", "add()", "append()", "extend()"], answer: "append()" },
+    { question: "What is the output of: print(2 in [1,2,3])?", options: ["True", "False", "None", "Error"], answer: "True" },
+    { question: "Which operator is used for exponentiation in Python?", options: ["^", "**", "//", "%"], answer: "**" },
+    { question: "Which method is used to get all keys from a dictionary?", options: ["values()", "items()", "keys()", "allKeys()"], answer: "keys()" },
+    { question: "Which of the following is immutable?", options: ["list", "set", "tuple", "dictionary"], answer: "tuple" },
+    { question: "Which method converts all characters of a string to uppercase?", options: ["upper()", "capitalize()", "uppercase()", "toUpper()"], answer: "upper()" },
+    { question: "What does the strip() function do in Python?", options: ["Removes all spaces", "Trims whitespace from ends", "Splits the string", "Joins strings"], answer: "Trims whitespace from ends" }
+  ];
+
+
 
     const container = document.getElementById('mcq-container');
 
