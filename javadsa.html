@@ -707,6 +707,133 @@ public int maximumWealth(int[][] accounts) {
 </div>
 
 
+<div class="card mb-4">
+  <div class="card-header bg-success text-white">
+    LeetCode #125: Valid Palindrome
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given a string <code>s</code>, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: "A man, a plan, a canal: Panama"
+Output: true</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code125')">Show Answer</button>
+    <div id="code125" class="code-box mt-3" style="display:none;">
+public boolean isPalindrome(String s) {
+  int left = 0, right = s.length() - 1;
+  while (left &lt; right) {
+    while (left &lt; right &amp;&amp; !Character.isLetterOrDigit(s.charAt(left))) left++;
+    while (left &lt; right &amp;&amp; !Character.isLetterOrDigit(s.charAt(right))) right--;
+    if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right))) return false;
+    left++;
+    right--;
+  }
+  return true;
+}
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-header bg-warning text-dark">
+    LeetCode #344: Reverse String
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Write a function that reverses a string. The input string is given as a char array <code>s</code>. Do it in-place.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code344')">Show Answer</button>
+    <div id="code344" class="code-box mt-3" style="display:none;">
+public void reverseString(char[] s) {
+  int left = 0, right = s.length - 1;
+  while (left &lt; right) {
+    char temp = s[left];
+    s[left] = s[right];
+    s[right] = temp;
+    left++;
+    right--;
+  }
+}
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-header bg-info text-white">
+    LeetCode #387: First Unique Character in a String
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given a string <code>s</code>, find the first non-repeating character and return its index. If it doesn't exist, return -1.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: "leetcode"
+Output: 0</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code387')">Show Answer</button>
+    <div id="code387" class="code-box mt-3" style="display:none;">
+public int firstUniqChar(String s) {
+  int[] freq = new int[26];
+  for (char c : s.toCharArray()) {
+    freq[c - 'a']++;
+  }
+  for (int i = 0; i &lt; s.length(); i++) {
+    if (freq[s.charAt(i) - 'a'] == 1) return i;
+  }
+  return -1;
+}
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-header bg-secondary text-white">
+    LeetCode #28: Find the Index of the First Occurrence in a String
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Implement <code>strStr()</code>. Return the index of the first occurrence of <code>needle</code> in <code>haystack</code>, or -1 if <code>needle</code> is not part of <code>haystack</code>.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: haystack = "hello", needle = "ll"
+Output: 2</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code28')">Show Answer</button>
+    <div id="code28" class="code-box mt-3" style="display:none;">
+public int strStr(String haystack, String needle) {
+  return haystack.indexOf(needle);
+}
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-header bg-dark text-white">
+    LeetCode #349: Intersection of Two Arrays
+  </div>
+  <div class="card-body">
+    <p><strong>Problem:</strong> Given two integer arrays <code>nums1</code> and <code>nums2</code>, return an array of their intersection. Each element in the result must be unique, and you may return the result in any order.</p>
+    <p><strong>Example:</strong></p>
+    <pre>Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]</pre>
+    <button class="btn btn-sm btn-primary mt-2" onclick="toggleCode('code349')">Show Answer</button>
+    <div id="code349" class="code-box mt-3" style="display:none;">
+public int[] intersection(int[] nums1, int[] nums2) {
+  Set&lt;Integer&gt; set1 = new HashSet&lt;&gt;();
+  for (int num : nums1) set1.add(num);
+
+  Set&lt;Integer&gt; resultSet = new HashSet&lt;&gt;();
+  for (int num : nums2) {
+    if (set1.contains(num)) resultSet.add(num);
+  }
+
+  int[] result = new int[resultSet.size()];
+  int i = 0;
+  for (int num : resultSet) result[i++] = num;
+  return result;
+}
+    </div>
+  </div>
+</div>
+
+
 <!-- Script to toggle answer boxes -->
 <script>
 function toggleCode(id) {
