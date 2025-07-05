@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript DOM - Introduction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .card-title {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center mb-4">JavaScript DOM - Introduction</h2>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">What is the DOM?</h5>
+        <p class="card-text">
+          DOM stands for <strong>Document Object Model</strong>. It is a programming interface provided by browsers that allows JavaScript to interact with and modify the content, structure, and style of a webpage.
+        </p>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Why is the DOM important?</h5>
+        <ul class="card-text">
+          <li>It allows dynamic content updates without reloading the page.</li>
+          <li>JavaScript can access and change HTML elements and attributes.</li>
+          <li>It enables event handling like clicks, form submissions, etc.</li>
+          <li>DOM helps make webpages interactive and user-friendly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">How is the DOM structured?</h5>
+        <p class="card-text">
+          The DOM represents a webpage as a <strong>tree of objects (nodes)</strong>. Each element (like &lt;div&gt;, &lt;p&gt;, &lt;img&gt;) is a node in the tree. JavaScript can traverse and modify these nodes using DOM APIs.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 1: DOM Access Methods Overview -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">DOM Access Methods</h5>
+    <p class="card-text">
+      JavaScript provides several methods to access and manipulate elements in the DOM. These methods help us select HTML elements based on their ID, class, tag, or CSS selector.
+    </p>
+  </div>
+</div>
+
+<!-- Card 2: getElementById() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. getElementById()</h5>
+    <p class="card-text">
+      Returns the element that has the specified ID.
+    </p>
+    <pre><code>document.getElementById("myId");</code></pre>
+    <p class="card-text"><strong>Note:</strong> Returns a single element or <code>null</code> if not found.</p>
+  </div>
+</div>
+
+<!-- Card 3: getElementsByClassName() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. getElementsByClassName()</h5>
+    <p class="card-text">
+      Returns a live HTMLCollection of all elements with the specified class name.
+    </p>
+    <pre><code>document.getElementsByClassName("myClass");</code></pre>
+    <p class="card-text"><strong>Note:</strong> You can access elements using array index: <code>[0]</code>, <code>[1]</code>, etc.</p>
+  </div>
+</div>
+
+<!-- Card 4: getElementsByTagName() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. getElementsByTagName()</h5>
+    <p class="card-text">
+      Returns a live HTMLCollection of all elements with the specified tag name (e.g., "p", "div").
+    </p>
+    <pre><code>document.getElementsByTagName("p");</code></pre>
+  </div>
+</div>
+
+<!-- Card 5: querySelector() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. querySelector()</h5>
+    <p class="card-text">
+      Returns the first element that matches the specified CSS selector.
+    </p>
+    <pre><code>document.querySelector(".myClass");</code></pre>
+    <p class="card-text"><strong>Tip:</strong> Use <code>#id</code> for ID, <code>.class</code> for class, or any valid CSS selector.</p>
+  </div>
+</div>
+
+<!-- Card 6: querySelectorAll() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. querySelectorAll()</h5>
+    <p class="card-text">
+      Returns a static NodeList of all elements matching the specified CSS selector.
+    </p>
+    <pre><code>document.querySelectorAll("div.note");</code></pre>
+    <p class="card-text"><strong>Note:</strong> Use <code>forEach()</code> to loop through the NodeList.</p>
+  </div>
+</div>
+
+
+<!-- getElementById with nested code card -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Example: getElementById()</h5>
+    <p class="card-text">Access a paragraph element by its ID and change its text.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;p id="demo"&gt;Hello&lt;/p&gt;
+
+&lt;script&gt;
+  document.getElementById("demo").innerText = "Hello from JavaScript!";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- getElementsByClassName with nested code card -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Example: getElementsByClassName()</h5>
+    <p class="card-text">Change the text of the first element with class 'note'.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;p class="note"&gt;Note 1&lt;/p&gt;
+&lt;p class="note"&gt;Note 2&lt;/p&gt;
+
+&lt;script&gt;
+  let notes = document.getElementsByClassName("note");
+  notes[0].innerText = "Updated Note 1";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- getElementsByTagName with nested code card -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Example: getElementsByTagName()</h5>
+    <p class="card-text">Change the first paragraph tag.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+
+&lt;script&gt;
+  let paras = document.getElementsByTagName("p");
+  paras[0].style.color = "blue";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- querySelector with nested code card -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Example: querySelector()</h5>
+    <p class="card-text">Select the first element with class 'highlight' and make it bold.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div class="highlight"&gt;First&lt;/div&gt;
+&lt;div class="highlight"&gt;Second&lt;/div&gt;
+
+&lt;script&gt;
+  document.querySelector(".highlight").style.fontWeight = "bold";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- querySelectorAll with nested code card -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">Example: querySelectorAll()</h5>
+    <p class="card-text">Change the text color of all elements with class 'color-box'.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;span class="color-box"&gt;One&lt;/span&gt;
+&lt;span class="color-box"&gt;Two&lt;/span&gt;
+
+&lt;script&gt;
+  let boxes = document.querySelectorAll(".color-box");
+  boxes.forEach(function(box) {
+    box.style.color = "green";
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- document Object - Introduction -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">The <code>document</code> Object</h5>
+    <p class="card-text">
+      In JavaScript, <code>document</code> is the entry point to the DOM. It represents the entire HTML page loaded in the browser. 
+      Using the <code>document</code> object, we can access and manipulate all HTML elements, attributes, content, and styles.
+    </p>
+  </div>
+</div>
+
+<!-- document.title -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><code>document.title</code></h5>
+    <p class="card-text">Returns or sets the title of the document (seen in the browser tab).</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;script&gt;
+  document.title = "My Custom Title";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- document.body -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><code>document.body</code></h5>
+    <p class="card-text">Returns the <code>&lt;body&gt;</code> element of the document.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;script&gt;
+  document.body.style.backgroundColor = "lightyellow";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- document.URL -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><code>document.URL</code></h5>
+    <p class="card-text">Returns the complete URL of the current page.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;script&gt;
+  console.log(document.URL);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- document.getElementById example -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><code>document.getElementById()</code></h5>
+    <p class="card-text">Selects a single element by its ID and allows us to manipulate it.</p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;p id="greet"&gt;Hi&lt;/p&gt;
+
+&lt;script&gt;
+  document.getElementById("greet").innerText = "Hello, DOM!";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- document.write -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><code>document.write()</code></h5>
+    <p class="card-text">
+      Writes content directly to the document. It should only be used during page load.
+      Using it after the page is loaded can overwrite the entire page.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;script&gt;
+  document.write("&lt;h2&gt;Welcome to JavaScript DOM&lt;/h2&gt;");
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- document.all (not recommended) -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title"><code>document.all</code> <small class="text-danger">(Deprecated)</small></h5>
+    <p class="card-text">
+      Returns a collection of all HTML elements. <br>
+      <strong>⚠️ Not recommended for modern use</strong>.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;script&gt;
+  console.log(document.all[0]);  // Prints &lt;!DOCTYPE html&gt;
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1. What are DOM Elements? -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What are DOM Elements?</h5>
+    <p class="card-text">
+      DOM elements are the HTML elements represented as JavaScript objects in the browser. Each HTML tag is a node, and when parsed by the browser, it becomes an element node that can be accessed and manipulated using JavaScript.
+    </p>
+  </div>
+</div>
+
+<!-- 2. Accessing Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Accessing DOM Elements</h5>
+    <p class="card-text">
+      You can access DOM elements using various methods:
+    </p>
+    <ul>
+      <li><code>document.getElementById()</code></li>
+      <li><code>document.getElementsByClassName()</code></li>
+      <li><code>document.getElementsByTagName()</code></li>
+      <li><code>document.querySelector()</code></li>
+      <li><code>document.querySelectorAll()</code></li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="demo"&gt;Hello&lt;/div&gt;
+&lt;script&gt;
+  let el = document.getElementById("demo");
+  console.log(el.innerText);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Modifying Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Modifying Element Content</h5>
+    <p class="card-text">
+      You can change the text or HTML inside an element using:
+    </p>
+    <ul>
+      <li><code>innerText</code></li>
+      <li><code>innerHTML</code></li>
+      <li><code>textContent</code> (includes hidden text)</li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;p id="greeting"&gt;Welcome&lt;/p&gt;
+
+&lt;script&gt;
+  let p = document.getElementById("greeting");
+  p.innerText = "Hello, User!";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Creating Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Creating and Appending Elements</h5>
+    <p class="card-text">
+      You can dynamically create and add new elements using:
+    </p>
+    <ul>
+      <li><code>document.createElement()</code></li>
+      <li><code>parent.appendChild()</code></li>
+      <li><code>parent.append()</code></li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="container"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let newEl = document.createElement("p");
+  newEl.innerText = "This is a new paragraph.";
+  document.getElementById("container").appendChild(newEl);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Removing Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Removing Elements</h5>
+    <p class="card-text">
+      You can remove elements from the DOM using:
+    </p>
+    <ul>
+      <li><code>element.remove()</code></li>
+      <li><code>parent.removeChild(child)</code></li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="removeMe"&gt;Delete me&lt;/div&gt;
+
+&lt;script&gt;
+  document.getElementById("removeMe").remove();
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Replacing Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Replacing Elements</h5>
+    <p class="card-text">
+      Use <code>replaceChild()</code> to replace an element with another.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="parent"&gt;
+  &lt;p id="old"&gt;Old Paragraph&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  let newPara = document.createElement("p");
+  newPara.innerText = "New Paragraph";
+  let old = document.getElementById("old");
+  let parent = document.getElementById("parent");
+  parent.replaceChild(newPara, old);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Working with Attributes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Attributes and Classes</h5>
+    <p class="card-text">
+      Use the following methods to work with element attributes:
+    </p>
+    <ul>
+      <li><code>setAttribute()</code></li>
+      <li><code>getAttribute()</code></li>
+      <li><code>removeAttribute()</code></li>
+      <li><code>classList.add()</code>, <code>classList.remove()</code></li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;img id="myImg" src="old.jpg"&gt;
+
+&lt;script&gt;
+  let img = document.getElementById("myImg");
+  img.setAttribute("src", "new.jpg");
+  img.classList.add("rounded");
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Styling Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Styling Elements</h5>
+    <p class="card-text">
+      Use <code>element.style</code> to change inline styles of elements dynamically.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;h2 id="heading"&gt;Hello&lt;/h2&gt;
+
+&lt;script&gt;
+  let h = document.getElementById("heading");
+  h.style.color = "red";
+  h.style.fontSize = "30px";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. Element Properties -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">9. Element Properties</h5>
+    <p class="card-text">
+      DOM elements have many useful properties like:
+    </p>
+    <ul>
+      <li><code>tagName</code> – returns tag name</li>
+      <li><code>className</code> – returns class value</li>
+      <li><code>id</code> – returns id of the element</li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="box" class="container"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let box = document.getElementById("box");
+  console.log(box.tagName);     // DIV
+  console.log(box.className);   // container
+  console.log(box.id);          // box
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 10. Practical Use Case -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">10. Mini Practical Example: Adding List Items</h5>
+    <p class="card-text">
+      Add new items to a list dynamically using DOM manipulation.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;ul id="myList"&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  let ul = document.getElementById("myList");
+  let newItem = document.createElement("li");
+  newItem.innerText = "Item 2";
+  ul.appendChild(newItem);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 1. innerHTML -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. innerHTML</h5>
+    <p class="card-text">
+      <code>element.innerHTML</code> gets or sets the HTML content inside an element.
+    </p>
+    <ul>
+      <li>It can return or inject HTML.</li>
+      <li>It replaces the entire content inside the element.</li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="content"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  document.getElementById("content").innerHTML = "&lt;b&gt;Hello&lt;/b&gt; World!";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. outerHTML -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. outerHTML</h5>
+    <p class="card-text">
+      <code>element.outerHTML</code> gets or sets the HTML including the element itself.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="box"&gt;Old&lt;/div&gt;
+
+&lt;script&gt;
+  let box = document.getElementById("box");
+  box.outerHTML = "&lt;section&gt;New Content&lt;/section&gt;";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. textContent vs innerText -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. textContent vs innerText</h5>
+    <p class="card-text">
+      Both return text, but behave differently:
+    </p>
+    <ul>
+      <li><code>textContent</code> returns all text, including hidden (invisible via CSS).</li>
+      <li><code>innerText</code> respects CSS visibility and formatting.</li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="demo" style="display:none;"&gt;Hidden Text&lt;/div&gt;
+
+&lt;script&gt;
+  console.log(document.getElementById("demo").textContent);  // Outputs "Hidden Text"
+  console.log(document.getElementById("demo").innerText);    // Outputs ""
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. insertAdjacentHTML() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. insertAdjacentHTML()</h5>
+    <p class="card-text">
+      Inserts HTML relative to an existing element. It accepts two arguments:
+    </p>
+    <ul>
+      <li><code>position</code>: "beforebegin", "afterbegin", "beforeend", "afterend"</li>
+      <li><code>html</code>: the HTML string to insert</li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="container"&gt;Start&lt;/div&gt;
+
+&lt;script&gt;
+  let box = document.getElementById("container");
+  box.insertAdjacentHTML("beforeend", "&lt;span&gt; End&lt;/span&gt;");
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. document.write() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. document.write()</h5>
+    <p class="card-text text-danger">
+      This method writes directly to the HTML stream but is <strong>not recommended</strong> for use after the page has loaded.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;script&gt;
+  document.write("&lt;h3&gt;This is written to the document&lt;/h3&gt;");
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Replacing entire content dynamically -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Replacing HTML dynamically</h5>
+    <p class="card-text">
+      You can combine multiple DOM methods to replace or update part of the DOM with custom HTML content.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="main"&gt;&lt;p&gt;Old paragraph&lt;/p&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  document.getElementById("main").innerHTML = "&lt;h3&gt;New heading inserted&lt;/h3&gt;";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Real-World Use Case -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Real-World Use Case: Load Comments</h5>
+    <p class="card-text">
+      Load dynamic HTML content from server or user input using <code>innerHTML</code> or <code>insertAdjacentHTML()</code>.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;div id="comments"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let comment = "&lt;p&gt;&lt;strong&gt;John:&lt;/strong&gt; Nice tutorial!&lt;/p&gt;";
+  document.getElementById("comments").insertAdjacentHTML("beforeend", comment);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. Accessing Form Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. Accessing Form Elements</h5>
+    <p class="card-text">
+      Form elements can be accessed in various ways using JavaScript:
+    </p>
+    <ul>
+      <li>By <code>id</code>: <code>document.getElementById("formId")</code></li>
+      <li>Using <code>document.forms</code>: <code>document.forms["formName"]</code></li>
+      <li>Accessing individual inputs: <code>form.elements["inputName"]</code></li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="myForm"&gt;
+  &lt;input type="text" name="username"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  let form = document.getElementById("myForm");
+  console.log(form.elements["username"].value);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. value, checked, selectedIndex -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. value, checked, and selectedIndex</h5>
+    <p class="card-text">
+      Use these properties to access the current state/value of input elements.
+    </p>
+    <ul>
+      <li><code>value</code> – input fields (text, number, etc.)</li>
+      <li><code>checked</code> – checkboxes and radio buttons</li>
+      <li><code>selectedIndex</code> – select dropdowns</li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;input type="checkbox" id="agree"&gt;
+
+&lt;script&gt;
+  let isChecked = document.getElementById("agree").checked;
+  console.log("Checked:", isChecked);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Handling Form Submission -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Handling Form Submission</h5>
+    <p class="card-text">
+      Use the <code>submit</code> event to run logic when the form is submitted.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="loginForm"&gt;
+  &lt;input type="text" id="user"&gt;
+  &lt;button type="submit"&gt;Login&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    alert("Form submitted!");
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Prevent Default Submission -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Preventing Default Behavior</h5>
+    <p class="card-text">
+      Use <code>e.preventDefault()</code> to stop the form from actually submitting.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="emailForm"&gt;
+  &lt;input type="email" required&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById("emailForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form not submitted to server.");
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Validating Form Fields -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Validating Form Fields</h5>
+    <p class="card-text">
+      Validate values before submission using conditions and alerts/messages.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="checkForm"&gt;
+  &lt;input type="text" id="name"&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById("checkForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    if (name === "") {
+      alert("Name cannot be empty.");
+    } else {
+      alert("Hello " + name);
+    }
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Getting All Form Data -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Getting All Form Values Dynamically</h5>
+    <p class="card-text">
+      Loop through all elements and collect data.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="dataForm"&gt;
+  &lt;input name="email"&gt;
+  &lt;input name="phone"&gt;
+  &lt;button&gt;Go&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById("dataForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let form = e.target;
+    for (let el of form.elements) {
+      if (el.name) {
+        console.log(el.name + ": " + el.value);
+      }
+    }
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Resetting a Form -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Resetting a Form</h5>
+    <p class="card-text">
+      Use <code>form.reset()</code> to clear all input values.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="resetForm"&gt;
+  &lt;input name="name"&gt;
+  &lt;button type="button" onclick="resetForm()"&gt;Reset&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  function resetForm() {
+    document.getElementById("resetForm").reset();
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Disabling/Enabling Inputs -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Disabling or Enabling Inputs</h5>
+    <p class="card-text">
+      Use <code>input.disabled = true/false</code> to disable or enable a form input.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;input type="text" id="userField"&gt;
+&lt;button onclick="disableInput()"&gt;Disable&lt;/button&gt;
+
+&lt;script&gt;
+  function disableInput() {
+    document.getElementById("userField").disabled = true;
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. Mini Practical Example -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">9. Practical Form Example</h5>
+    <p class="card-text">
+      A working mini-form with validation, display of values, and form control.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+        <pre><code>&lt;form id="miniForm"&gt;
+  &lt;input type="text" id="fname" placeholder="First Name"&gt;
+  &lt;input type="text" id="lname" placeholder="Last Name"&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById("miniForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
+    if (fname === "" || lname === "") {
+      alert("Please fill all fields.");
+    } else {
+      alert("Welcome " + fname + " " + lname);
+    }
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1. Accessing CSS with .style -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. Accessing and Modifying CSS with <code>element.style</code></h5>
+    <p class="card-text">
+      You can use <code>element.style</code> to directly apply inline styles to an element.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="box"&gt;Hello&lt;/div&gt;
+
+&lt;script&gt;
+  let box = document.getElementById("box");
+  box.style.color = "white";
+  box.style.backgroundColor = "green";
+  box.style.padding = "10px";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Changing Multiple Styles -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Changing Multiple Styles at Once</h5>
+    <p class="card-text">
+      You can apply multiple styles line-by-line using the <code>.style</code> object.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;h2 id="header"&gt;Heading&lt;/h2&gt;
+
+&lt;script&gt;
+  let h = document.getElementById("header");
+  h.style.fontSize = "30px";
+  h.style.border = "2px solid black";
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Using classList -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Using <code>classList</code> to Manage CSS Classes</h5>
+    <p class="card-text">
+      <code>classList</code> provides powerful methods to add, remove, toggle, or check CSS classes:
+    </p>
+    <ul>
+      <li><code>add("className")</code></li>
+      <li><code>remove("className")</code></li>
+      <li><code>toggle("className")</code></li>
+      <li><code>contains("className")</code></li>
+    </ul>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="box2" class="card"&gt;Box&lt;/div&gt;
+
+&lt;script&gt;
+  let box2 = document.getElementById("box2");
+  box2.classList.add("bg-primary", "text-white");
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Toggling Styles Dynamically -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Toggle Class Dynamically</h5>
+    <p class="card-text">
+      Toggle classes on click or other events to dynamically show/hide or restyle elements.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;button onclick="toggleTheme()"&gt;Toggle Theme&lt;/button&gt;
+&lt;div id="themeBox"&gt;Dark/Light&lt;/div&gt;
+
+&lt;script&gt;
+  function toggleTheme() {
+    document.getElementById("themeBox").classList.toggle("dark-mode");
+  }
+&lt;/script&gt;
+
+&lt;style&gt;
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+&lt;/style&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Checking Applied Style -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Checking If a Style is Applied</h5>
+    <p class="card-text">
+      Use <code>classList.contains()</code> or check style properties directly.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="checkBox" class="highlight"&gt;Box&lt;/div&gt;
+
+&lt;script&gt;
+  let el = document.getElementById("checkBox");
+  if (el.classList.contains("highlight")) {
+    alert("Highlight class is applied!");
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Inline vs Computed Styles -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Inline vs Computed Styles</h5>
+    <p class="card-text">
+      <strong>Inline styles:</strong> directly set using <code>element.style</code><br>
+      <strong>Computed styles:</strong> include inherited and CSS file styles, accessed using <code>getComputedStyle()</code>
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="compBox" style="margin: 10px;"&gt;Box&lt;/div&gt;
+
+&lt;script&gt;
+  let computed = getComputedStyle(document.getElementById("compBox"));
+  console.log("Margin is: " + computed.margin);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. getComputedStyle() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Using <code>getComputedStyle()</code></h5>
+    <p class="card-text">
+      Use <code>window.getComputedStyle(element)</code> to access final, rendered styles including CSS rules from stylesheets.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="textBox" class="my-box"&gt;Hello CSS&lt;/div&gt;
+
+&lt;style&gt;
+  .my-box {
+    font-size: 20px;
+    color: blue;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+  let box = document.getElementById("textBox");
+  let styles = window.getComputedStyle(box);
+  console.log(styles.color);  // Outputs computed color
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Mini Project: Theme Switcher -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Mini Project: Light/Dark Mode Toggle</h5>
+    <p class="card-text">
+      A simple project toggling between light and dark themes using DOM CSS.
+    </p>
+
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;button onclick="toggleMode()"&gt;Toggle Mode&lt;/button&gt;
+&lt;div id="page"&gt;Welcome to Theme Demo&lt;/div&gt;
+
+&lt;style&gt;
+  .dark {
+    background-color: #121212;
+    color: white;
+    padding: 20px;
+  }
+
+  .light {
+    background-color: white;
+    color: black;
+    padding: 20px;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+  function toggleMode() {
+    let page = document.getElementById("page");
+    if (page.classList.contains("light")) {
+      page.classList.replace("light", "dark");
+    } else {
+      page.classList.replace("dark", "light");
+    }
+  }
+
+  // Initialize mode
+  document.getElementById("page").classList.add("light");
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1. What is DOM Animation? -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What is DOM Animation?</h5>
+    <p class="card-text">
+      DOM Animation refers to programmatically changing an element’s styles or positions over time using JavaScript.
+      This includes:
+    </p>
+    <ul>
+      <li>Moving, rotating, resizing elements</li>
+      <li>Fading, sliding, or scaling</li>
+      <li>Using JavaScript timers or `requestAnimationFrame()`</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 2. Using setInterval for Animation -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Using <code>setInterval()</code></h5>
+    <p class="card-text">
+      Move an element continuously by updating its position every few milliseconds.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="box" style="width:50px;height:50px;position:absolute;background:red;"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let pos = 0;
+  const box = document.getElementById("box");
+  const move = setInterval(() =&gt; {
+    if (pos &gt;= 300) clearInterval(move);
+    else {
+      pos += 2;
+      box.style.left = pos + "px";
+    }
+  }, 10);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Using setTimeout for Step Animation -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Using <code>setTimeout()</code></h5>
+    <p class="card-text">
+      <code>setTimeout()</code> can be used recursively for a frame-by-frame animation.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="circle" style="width:40px;height:40px;border-radius:50%;background:blue;position:absolute;"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let left = 0;
+  function animate() {
+    if (left &gt;= 300) return;
+    left += 3;
+    document.getElementById("circle").style.left = left + "px";
+    setTimeout(animate, 20);
+  }
+  animate();
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. CSS Transition Controlled by JavaScript -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. CSS Transitions + JavaScript</h5>
+    <p class="card-text">
+      You can use CSS transitions for smooth animation and control them via JavaScript.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="fadeBox" style="width:100px;height:100px;background:green;transition:all 1s;"&gt;&lt;/div&gt;
+&lt;button onclick="animateFade()"&gt;Animate&lt;/button&gt;
+
+&lt;script&gt;
+  function animateFade() {
+    let el = document.getElementById("fadeBox");
+    el.style.transform = "translateX(200px)";
+    el.style.opacity = "0.5";
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. requestAnimationFrame -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Using <code>requestAnimationFrame()</code></h5>
+    <p class="card-text">
+      This is the most efficient and smoothest way to perform animations in the browser.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="animateBox" style="width:60px;height:60px;background:orange;position:absolute;"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let x = 0;
+  function moveBox() {
+    if (x &gt;= 300) return;
+    x += 2;
+    document.getElementById("animateBox").style.left = x + "px";
+    requestAnimationFrame(moveBox);
+  }
+  requestAnimationFrame(moveBox);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Toggle Animation with Button -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Toggle Animation with Button</h5>
+    <p class="card-text">
+      Create an animation that starts/stops with a button click.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="ball" style="width:30px;height:30px;background:black;border-radius:50%;position:absolute;"&gt;&lt;/div&gt;
+&lt;button onclick="startStop()"&gt;Toggle Move&lt;/button&gt;
+
+&lt;script&gt;
+  let running = false;
+  let posX = 0;
+  let interval;
+  function startStop() {
+    if (!running) {
+      interval = setInterval(() =&gt; {
+        posX += 2;
+        document.getElementById("ball").style.left = posX + "px";
+      }, 10);
+      running = true;
+    } else {
+      clearInterval(interval);
+      running = false;
+    }
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Mini Animation Project -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Mini Project: Bouncing Ball</h5>
+    <p class="card-text">
+      Animate a ball bouncing left to right using `requestAnimationFrame()`.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="bounceBall" style="width:40px;height:40px;background:red;border-radius:50%;position:absolute;"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let bx = 0;
+  let direction = 1;
+  function bounce() {
+    if (bx &gt;= 300 || bx &lt;= 0) direction *= -1;
+    bx += 3 * direction;
+    document.getElementById("bounceBall").style.left = bx + "px";
+    requestAnimationFrame(bounce);
+  }
+  bounce();
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1. What Are DOM Events? -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What Are DOM Events?</h5>
+    <p class="card-text">
+      Events are actions that occur in the browser (e.g., user clicks, typing, submitting forms).
+      JavaScript allows you to listen and respond to these events.
+    </p>
+    <ul>
+      <li>Examples: <code>click</code>, <code>mouseover</code>, <code>keydown</code>, <code>submit</code>, etc.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 2. onclick Event -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Using <code>onclick</code> Attribute</h5>
+    <p class="card-text">
+      Directly set event handler in HTML tag.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;button onclick="sayHello()"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  function sayHello() {
+    alert("Hello from button!");
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Using addEventListener() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. addEventListener()</h5>
+    <p class="card-text">
+      The modern and preferred way to attach events in JavaScript.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;button id="btn"&gt;Greet&lt;/button&gt;
+
+&lt;script&gt;
+  document.getElementById("btn").addEventListener("click", function() {
+    alert("Greetings!");
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. event Object -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. The <code>event</code> Object</h5>
+    <p class="card-text">
+      The event object (usually <code>e</code>) gives details about the triggered event.
+    </p>
+    <ul>
+      <li><code>e.target</code> – the element that triggered the event</li>
+      <li><code>e.type</code> – type of event (click, mouseover, etc.)</li>
+      <li><code>e.key</code> – which key was pressed (in keyboard events)</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;button id="showEvent"&gt;Show Event&lt;/button&gt;
+
+&lt;script&gt;
+  document.getElementById("showEvent").addEventListener("click", function(e) {
+    console.log("Event type:", e.type);
+    console.log("Clicked on:", e.target);
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Mouse Events -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Mouse Events</h5>
+    <p class="card-text">
+      Common mouse-related events:
+    </p>
+    <ul>
+      <li><code>click</code></li>
+      <li><code>dblclick</code></li>
+      <li><code>mouseover</code> / <code>mouseout</code></li>
+      <li><code>mousedown</code> / <code>mouseup</code></li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="hoverBox" style="width:100px;height:100px;background:lightgray;"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  document.getElementById("hoverBox").addEventListener("mouseover", function() {
+    this.style.backgroundColor = "skyblue";
+  });
+  document.getElementById("hoverBox").addEventListener("mouseout", function() {
+    this.style.backgroundColor = "lightgray";
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Keyboard Events -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Keyboard Events</h5>
+    <p class="card-text">
+      Detect when a user presses a key in an input field or anywhere on the document.
+    </p>
+    <ul>
+      <li><code>keydown</code></li>
+      <li><code>keyup</code></li>
+      <li><code>keypress</code> (deprecated)</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;input type="text" id="nameInput" placeholder="Type something..."&gt;
+
+&lt;script&gt;
+  document.getElementById("nameInput").addEventListener("keydown", function(e) {
+    console.log("Key pressed:", e.key);
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Form Events -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Form Events</h5>
+    <p class="card-text">
+      Monitor user interaction with form elements:
+    </p>
+    <ul>
+      <li><code>submit</code> – when the form is submitted</li>
+      <li><code>focus</code> – when an input gains focus</li>
+      <li><code>change</code> – when value of input changes</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;form id="loginForm"&gt;
+  &lt;input type="text" id="username"&gt;
+  &lt;button&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Form submitted!");
+  });
+
+  document.getElementById("username").addEventListener("focus", function() {
+    console.log("Input focused");
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Removing Event Listeners -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Removing Event Listeners</h5>
+    <p class="card-text">
+      Use <code>removeEventListener()</code> to stop listening to an event.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;button id="stopClick"&gt;Click Me&lt;/button&gt;
+
+&lt;script&gt;
+  function clickHandler() {
+    alert("Clicked!");
+    document.getElementById("stopClick").removeEventListener("click", clickHandler);
+  }
+
+  document.getElementById("stopClick").addEventListener("click", clickHandler);
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. Mini Project: Toggle Text Color -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">9. Mini Project: Toggle Text Color on Click</h5>
+    <p class="card-text">
+      A simple project where clicking text toggles its color.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;p id="colorText"&gt;Click me to change color!&lt;/p&gt;
+
+&lt;script&gt;
+  let colorToggle = false;
+  document.getElementById("colorText").addEventListener("click", function() {
+    this.style.color = colorToggle ? "black" : "red";
+    colorToggle = !colorToggle;
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1. What is addEventListener() -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What is <code>addEventListener()</code>?</h5>
+    <p class="card-text">
+      It’s a method that attaches an event handler to a DOM element without overwriting existing handlers.
+    </p>
+    <p>It allows multiple listeners for the same event.</p>
+  </div>
+</div>
+
+<!-- 2. Syntax and Parameters -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Syntax</h5>
+    <p class="card-text">
+      <code>element.addEventListener(event, handler, useCapture);</code>
+    </p>
+    <ul>
+      <li><strong>event</strong>: Type of event like <code>'click'</code>, <code>'keydown'</code></li>
+      <li><strong>handler</strong>: The function to run</li>
+      <li><strong>useCapture</strong>: Optional boolean for event phase (default: <code>false</code>)</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>document.getElementById("btn").addEventListener("click", function() {
+  alert("Button clicked!");
+});</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Attaching Multiple Events -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Attaching Multiple Events</h5>
+    <p class="card-text">
+      You can add more than one event of the same type or different types.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>let box = document.getElementById("box");
+
+box.addEventListener("mouseover", () =&gt; {
+  box.style.backgroundColor = "lightgreen";
+});
+
+box.addEventListener("mouseout", () =&gt; {
+  box.style.backgroundColor = "white";
+});</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Anonymous vs Named Functions -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Anonymous vs Named Functions</h5>
+    <p class="card-text">
+      Using a named function allows removal of the listener later.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>function showAlert() {
+  alert("Hello!");
+}
+button.addEventListener("click", showAlert);</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Using `this` Inside Listener -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Using <code>this</code> in Event Listeners</h5>
+    <p class="card-text">
+      Inside a regular function, <code>this</code> refers to the element triggering the event.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>document.getElementById("demo").addEventListener("click", function() {
+  this.style.color = "blue";
+});</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Passing Arguments to Event Handlers -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Passing Arguments to Event Handlers</h5>
+    <p class="card-text">
+      Use an arrow or anonymous function to pass arguments.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>let greet = (name) =&gt; alert("Hello, " + name);
+document.getElementById("btn").addEventListener("click", function() {
+  greet("Student");
+});</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Removing Event Listener -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Removing Event Listener</h5>
+    <p class="card-text">
+      Use <code>removeEventListener()</code> with the same function reference used in <code>addEventListener()</code>.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>function logMessage() {
+  console.log("Clicked!");
+}
+let btn = document.getElementById("logBtn");
+
+btn.addEventListener("click", logMessage);
+
+// To remove later:
+btn.removeEventListener("click", logMessage);</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. One-Time Event Listener -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. One-Time Event Listener</h5>
+    <p class="card-text">
+      Use `{ once: true }` as the third parameter to auto-remove after first trigger.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>document.getElementById("onceBtn").addEventListener("click", () =&gt; {
+  alert("This works only once!");
+}, { once: true });</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 9. Mini Project: Multiple Boxes with Listeners -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">9. Mini Project: Multiple Boxes with Listeners</h5>
+    <p class="card-text">
+      Add click listeners to multiple elements using a loop.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div class="box" style="width:50px;height:50px;background:red;margin:5px;"&gt;&lt;/div&gt;
+&lt;div class="box" style="width:50px;height:50px;background:red;margin:5px;"&gt;&lt;/div&gt;
+&lt;div class="box" style="width:50px;height:50px;background:red;margin:5px;"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let boxes = document.querySelectorAll(".box");
+  boxes.forEach(box =&gt; {
+    box.addEventListener("click", function() {
+      this.style.backgroundColor = "green";
+    });
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1. What is DOM Navigation -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What is DOM Navigation?</h5>
+    <p class="card-text">
+      DOM Navigation (Traversal) means accessing and moving through nodes in the DOM tree using JavaScript.
+    </p>
+    <ul>
+      <li><strong>Upward</strong>: to parent</li>
+      <li><strong>Downward</strong>: to children</li>
+      <li><strong>Sideways</strong>: to siblings</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 2. Accessing Parent Node -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Accessing Parent Node</h5>
+    <p class="card-text">
+      Use <code>.parentNode</code> or <code>.parentElement</code> to access the parent of a given element.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div id="outer"&gt;
+  &lt;p id="child"&gt;Child Element&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  const child = document.getElementById("child");
+  console.log(child.parentNode); // returns outer div
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. childNodes vs children -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. childNodes vs children</h5>
+    <p class="card-text">
+      <code>childNodes</code> returns all nodes (including text), while <code>children</code> returns only element nodes.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;ul id="list"&gt;
+  &lt;li&gt;One&lt;/li&gt;
+  &lt;li&gt;Two&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  const ul = document.getElementById("list");
+  console.log(ul.childNodes);  // Includes text nodes
+  console.log(ul.children);    // Only <li> elements
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. First and Last Element Child -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. First and Last Child Element</h5>
+    <p class="card-text">
+      Access first and last children using <code>firstElementChild</code> and <code>lastElementChild</code>.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>const ul = document.getElementById("list");
+console.log(ul.firstElementChild.textContent);  // "One"
+console.log(ul.lastElementChild.textContent);   // "Two"</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Accessing Sibling Elements -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Accessing Sibling Elements</h5>
+    <p class="card-text">
+      Use <code>nextElementSibling</code> and <code>previousElementSibling</code> to navigate between siblings.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;ul&gt;
+  &lt;li id="item1"&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  const item = document.getElementById("item1");
+  console.log(item.nextElementSibling.textContent); // "Item 2"
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Traversing Multiple Levels -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Traversing Up and Down</h5>
+    <p class="card-text">
+      You can chain navigation to move across the DOM tree.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>let target = document.querySelector("#list li");
+let grandParent = target.parentElement.parentElement;
+console.log(grandParent.tagName);</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 7. Practical Example -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Practical Example: Highlight All Children</h5>
+    <p class="card-text">
+      Access and loop through all child elements to apply a style.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;ul id="menu"&gt;
+  &lt;li&gt;Home&lt;/li&gt;
+  &lt;li&gt;About&lt;/li&gt;
+  &lt;li&gt;Contact&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+  let menu = document.getElementById("menu");
+  for (let item of menu.children) {
+    item.style.color = "blue";
+  }
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. Mini Project: Toggle Next Sibling -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Mini Project: Toggle Next Sibling on Click</h5>
+    <p class="card-text">
+      Click a header to toggle the next sibling’s visibility.
+    </p>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;h3 class="toggle"&gt;Section 1&lt;/h3&gt;
+&lt;div&gt;This is section content.&lt;/div&gt;
+&lt;h3 class="toggle"&gt;Section 2&lt;/h3&gt;
+&lt;div&gt;This is section content.&lt;/div&gt;
+
+&lt;script&gt;
+  let toggles = document.querySelectorAll(".toggle");
+  toggles.forEach((el) =&gt; {
+    el.addEventListener("click", function() {
+      let content = this.nextElementSibling;
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    });
+  });
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 1. What are DOM Nodes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What are DOM Nodes?</h5>
+    <p class="card-text">
+      Everything in the DOM is a node:
+    </p>
+    <ul>
+      <li>HTML elements → Element nodes</li>
+      <li>Text inside elements → Text nodes</li>
+      <li>Comments → Comment nodes</li>
+      <li>The entire document → Document node</li>
+    </ul>
+    <p>JavaScript lets you access and manipulate these nodes.</p>
+  </div>
+</div>
+
+<!-- 2. Types of DOM Nodes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Types of Nodes</h5>
+    <p class="card-text">Important DOM node types:</p>
+    <ul>
+      <li><code>1</code>: Element</li>
+      <li><code>3</code>: Text</li>
+      <li><code>8</code>: Comment</li>
+      <li><code>9</code>: Document</li>
+      <li><code>10</code>: DocumentType</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let node = document.body;
+console.log(node.nodeType); // 1 = element node</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 3. Node Properties -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Common Node Properties</h5>
+    <ul>
+      <li><code>nodeName</code>: The name of the node (e.g. DIV, TEXT, #comment)</li>
+      <li><code>nodeType</code>: The numeric code of the node type</li>
+      <li><code>nodeValue</code>: Content for text and comment nodes</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let p = document.getElementById("para");
+console.log(p.nodeName); // P
+console.log(p.nodeType); // 1
+console.log(p.firstChild.nodeValue); // text content</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 4. Navigating Nodes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Navigating Nodes</h5>
+    <p class="card-text">Use these properties to move around the DOM:</p>
+    <ul>
+      <li><code>parentNode</code>, <code>childNodes</code></li>
+      <li><code>firstChild</code>, <code>lastChild</code></li>
+      <li><code>nextSibling</code>, <code>previousSibling</code></li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let parent = document.getElementById("content").parentNode;
+let children = document.getElementById("content").childNodes;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 5. Creating and Appending Nodes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Creating and Appending Nodes</h5>
+    <p class="card-text">
+      Use <code>createElement</code>, <code>createTextNode</code> and <code>appendChild</code> to add nodes dynamically.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let newPara = document.createElement("p");
+let text = document.createTextNode("This is new.");
+newPara.appendChild(text);
+document.body.appendChild(newPara);</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 6. Cloning and Removing Nodes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Cloning and Removing Nodes</h5>
+    <p class="card-text">Duplicate or delete nodes using:</p>
+    <ul>
+      <li><code>cloneNode(true)</code> – clone node with children</li>
+      <li><code>removeChild()</code> – delete a specific node</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let node = document.getElementById("box");
+let clone = node.cloneNode(true);
+document.body.appendChild(clone);
+
+// Remove
+document.body.removeChild(node);</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 7. Mini Project: Dynamic List Builder -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Mini Project: Add Items Dynamically</h5>
+    <p class="card-text">
+      Add new list items to an existing <code>&lt;ul&gt;</code> using DOM nodes.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;ul id="myList"&gt;&lt;/ul&gt;
+&lt;button onclick="addItem()"&gt;Add Item&lt;/button&gt;
+
+&lt;script&gt;
+  function addItem() {
+    let li = document.createElement("li");
+    let text = document.createTextNode("New Item");
+    li.appendChild(text);
+    document.getElementById("myList").appendChild(li);
+  }
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- 1. What are DOM Collections -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What are DOM Collections?</h5>
+    <p class="card-text">
+      DOM collections are list-like objects that contain groups of elements retrieved from the DOM.
+      Examples: <code>HTMLCollection</code> and <code>NodeList</code>.
+    </p>
+    <ul>
+      <li>Returned by functions like <code>getElementsByTagName</code> or <code>querySelectorAll</code></li>
+      <li>Can be looped, indexed, and manipulated</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 2. Types of DOM Collections -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Types of DOM Collections</h5>
+    <ul>
+      <li><code>HTMLCollection</code>: live collection of elements</li>
+      <li><code>NodeList</code>: static list of nodes</li>
+    </ul>
+    <p>Returned by different DOM methods:</p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let divs = document.getElementsByTagName("div"); // HTMLCollection
+let buttons = document.querySelectorAll("button"); // NodeList</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 3. HTMLCollection vs NodeList -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. HTMLCollection vs NodeList</h5>
+    <p class="card-text">
+      Both are array-like, but there are differences:
+    </p>
+    <ul>
+      <li><strong>HTMLCollection</strong>: Live (updates when DOM changes)</li>
+      <li><strong>NodeList</strong>: Static (doesn't update after creation)</li>
+      <li>NodeList may contain other node types (e.g. text nodes)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 4. Live vs Static Collections -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Live vs Static Collections</h5>
+    <p class="card-text">HTMLCollection updates automatically. NodeList does not.</p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;div&gt;Box 1&lt;/div&gt;
+&lt;div&gt;Box 2&lt;/div&gt;
+&lt;button onclick="addBox()"&gt;Add Box&lt;/button&gt;
+
+&lt;script&gt;
+  let liveDivs = document.getElementsByTagName("div"); // Live
+  let staticDivs = document.querySelectorAll("div");   // Static
+
+  function addBox() {
+    const newDiv = document.createElement("div");
+    newDiv.textContent = "New Box";
+    document.body.appendChild(newDiv);
+    console.log("Live:", liveDivs.length);
+    console.log("Static:", staticDivs.length);
+  }
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 5. Looping through Collections -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Looping through DOM Collections</h5>
+    <p class="card-text">
+      Use <code>for</code> loops or <code>forEach</code> with NodeList.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let items = document.querySelectorAll("li");
+
+items.forEach(function(item) {
+  item.style.color = "blue";
+});
+
+// HTMLCollection - use regular loop
+let paras = document.getElementsByTagName("p");
+for (let i = 0; i &lt; paras.length; i++) {
+  paras[i].style.fontWeight = "bold";
+}</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 6. Converting to Array -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Converting Collections to Arrays</h5>
+    <p class="card-text">
+      Convert to array for advanced methods like <code>map()</code>, <code>filter()</code>, etc.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let collection = document.getElementsByClassName("box");
+let array = Array.from(collection);
+
+array.forEach(el =&gt; {
+  el.style.border = "1px solid black";
+});</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 7. Practical Example -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Practical Example: Highlight All Links</h5>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;a href="#"&gt;Link 1&lt;/a&gt;
+&lt;a href="#"&gt;Link 2&lt;/a&gt;
+&lt;a href="#"&gt;Link 3&lt;/a&gt;
+
+&lt;script&gt;
+  let links = document.getElementsByTagName("a");
+  for (let link of links) {
+    link.style.backgroundColor = "yellow";
+  }
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 8. Mini Project: Toggle All Checkboxes -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Mini Project: Toggle All Checkboxes</h5>
+    <p class="card-text">
+      Use DOM collections to select and toggle all checkboxes.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;input type="checkbox" class="check"&gt; A &lt;br&gt;
+&lt;input type="checkbox" class="check"&gt; B &lt;br&gt;
+&lt;input type="checkbox" class="check"&gt; C &lt;br&gt;
+&lt;button onclick="toggleChecks()"&gt;Toggle All&lt;/button&gt;
+
+&lt;script&gt;
+  function toggleChecks() {
+    let boxes = document.getElementsByClassName("check");
+    for (let box of boxes) {
+      box.checked = !box.checked;
+    }
+  }
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 1. What is a NodeList -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. What is a NodeList?</h5>
+    <p class="card-text">
+      A <code>NodeList</code> is a collection of DOM nodes returned by certain DOM methods. It is **array-like** (indexed), but not a true array.
+    </p>
+    <ul>
+      <li>Can be looped using <code>for</code> and <code>forEach()</code></li>
+      <li>Returned by <code>querySelectorAll()</code>, <code>childNodes</code>, etc.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 2. How NodeLists are Created -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. How are NodeLists Created?</h5>
+    <p>Returned by:</p>
+    <ul>
+      <li><code>document.querySelectorAll()</code></li>
+      <li><code>element.childNodes</code></li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let items = document.querySelectorAll("li");  // NodeList
+let nodes = document.body.childNodes;         // NodeList</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 3. NodeList vs Array -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. NodeList vs Array</h5>
+    <ul>
+      <li>NodeList is <strong>not</strong> a real array</li>
+      <li>No <code>map</code>, <code>filter</code> directly</li>
+      <li>Can use <code>forEach</code> (in modern browsers)</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let nodeList = document.querySelectorAll("p");
+
+nodeList.forEach(p =&gt; console.log(p.textContent)); // ✅ works
+
+// nodeList.map(...) ❌ will throw error</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 4. Looping Through NodeLists -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Looping Through NodeLists</h5>
+    <p>Best ways to loop:</p>
+    <ul>
+      <li><code>for</code> loop (for all browsers)</li>
+      <li><code>forEach</code> (modern)</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let listItems = document.querySelectorAll("li");
+
+// Method 1
+for (let i = 0; i &lt; listItems.length; i++) {
+  listItems[i].style.color = "green";
+}
+
+// Method 2
+listItems.forEach(function(item) {
+  item.style.fontWeight = "bold";
+});</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 5. Live vs Static NodeLists -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Live vs Static NodeLists</h5>
+    <p class="card-text">
+      Most NodeLists are static (do not auto-update when DOM changes), except <code>childNodes</code> which is live.
+    </p>
+    <ul>
+      <li><code>querySelectorAll()</code> → Static</li>
+      <li><code>childNodes</code> → Live</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 6. Accessing NodeList Items -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Accessing NodeList Items</h5>
+    <p>Use index to access items just like arrays.</p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let paragraphs = document.querySelectorAll("p");
+console.log(paragraphs[0].textContent);</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 7. Converting NodeList to Array -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">7. Converting NodeList to Array</h5>
+    <p>To use array methods like <code>map()</code>, convert NodeList to an array.</p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let nodeList = document.querySelectorAll(".box");
+
+let array = Array.from(nodeList);
+array.map(el =&gt; el.style.border = "2px dashed red");</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 8. Mini Project: Highlight Even Paragraphs -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">8. Mini Project: Highlight Even Paragraphs</h5>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
+&lt;p&gt;Paragraph 3&lt;/p&gt;
+&lt;p&gt;Paragraph 4&lt;/p&gt;
+
+&lt;script&gt;
+  let paras = document.querySelectorAll("p");
+
+  paras.forEach((para, index) =&gt; {
+    if ((index + 1) % 2 === 0) {
+      para.style.backgroundColor = "lightblue";
+    }
+  });
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+
+<!-- 1. Creating a Table with JS -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">1. Create Table Rows Dynamically</h5>
+    <p class="card-text">
+      Use <code>insertRow()</code> and <code>insertCell()</code> to create rows and cells programmatically.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;table id="myTable" class="table table-bordered"&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+  let table = document.getElementById("myTable");
+  let row = table.insertRow();
+  let cell1 = row.insertCell(0);
+  let cell2 = row.insertCell(1);
+  cell1.textContent = "John";
+  cell2.textContent = "25";
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 2. Insert Row at Specific Position -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">2. Insert Row at Specific Index</h5>
+    <p class="card-text">You can insert at any index (0 = first row).</p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>let newRow = table.insertRow(1); // Insert at 2nd position
+newRow.insertCell(0).textContent = "Emma";
+newRow.insertCell(1).textContent = "30";</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 3. Read Table Data -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">3. Read Table Data</h5>
+    <p class="card-text">
+      Loop through <code>rows</code> and <code>cells</code> to access table contents.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>for (let i = 1; i &lt; table.rows.length; i++) {
+  let name = table.rows[i].cells[0].textContent;
+  let age = table.rows[i].cells[1].textContent;
+  console.log(name, age);
+}</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 4. Update Table Data -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">4. Update Cell Content</h5>
+    <p class="card-text">
+      Access the cell and change its <code>textContent</code> or <code>innerHTML</code>.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>// Update 2nd row, 1st column
+table.rows[1].cells[0].textContent = "Updated Name";</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 5. Delete Rows -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">5. Delete Rows</h5>
+    <p class="card-text">
+      Use <code>deleteRow(index)</code> to remove rows from a table.
+    </p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>// Delete last row
+table.deleteRow(table.rows.length - 1);</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<!-- 6. Mini Project: Add and Delete Table Rows -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">6. Mini Project: Add/Delete Table Rows</h5>
+    <p class="card-text">A simple app to add new rows and delete selected ones.</p>
+    <div class="card bg-light text-dark mt-3"><div class="card-body">
+<pre><code>&lt;input type="text" id="name" placeholder="Enter name"&gt;
+&lt;input type="number" id="age" placeholder="Enter age"&gt;
+&lt;button onclick="addRow()"&gt;Add&lt;/button&gt;
+
+&lt;table id="crudTable" class="table mt-3 table-bordered"&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+  function addRow() {
+    let table = document.getElementById("crudTable");
+    let row = table.insertRow();
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    
+    cell1.textContent = name;
+    cell2.textContent = age;
+    cell3.innerHTML = "&lt;button onclick='deleteRow(this)'&gt;Delete&lt;/button&gt;";
+  }
+
+  function deleteRow(btn) {
+    let row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+  }
+&lt;/script&gt;</code></pre>
+    </div></div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">📝 Mini Project 1: Todo List App</h5>
+    <p class="card-text">
+      Build a dynamic todo list using JavaScript DOM methods. It allows users to add, mark complete, and delete tasks.
+    </p>
+    <ul>
+      <li>DOM Access & Manipulation</li>
+      <li>Event Handling</li>
+      <li>CSS Class Toggling</li>
+      <li>Form Input Handling</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;input type="text" id="taskInput"&gt;
+&lt;button id="addBtn"&gt;Add&lt;/button&gt;
+&lt;ul id="taskList"&gt;&lt;/ul&gt;
+&lt;button id="clearBtn"&gt;Clear All&lt;/button&gt;
+
+&lt;script&gt;
+  const taskInput = document.getElementById('taskInput');
+  const addBtn = document.getElementById('addBtn');
+  const taskList = document.getElementById('taskList');
+  const clearBtn = document.getElementById('clearBtn');
+
+  addBtn.addEventListener('click', () =&gt; {
+    const task = taskInput.value.trim();
+    if (task === '') return;
+    const li = document.createElement('li');
+    li.innerHTML = `
+      &lt;span class="task-text"&gt;${task}&lt;/span&gt;
+      &lt;button class="completeBtn"&gt;✓&lt;/button&gt;
+      &lt;button class="deleteBtn"&gt;X&lt;/button&gt;
+    `;
+    taskList.appendChild(li);
+    taskInput.value = '';
+  });
+
+  taskList.addEventListener('click', (e) =&gt; {
+    if (e.target.classList.contains('completeBtn')) {
+      e.target.previousElementSibling.classList.toggle('completed');
+    } else if (e.target.classList.contains('deleteBtn')) {
+      e.target.parentElement.remove();
+    }
+  });
+
+  clearBtn.addEventListener('click', () =&gt; {
+    taskList.innerHTML = '';
+  });
+&lt;/script&gt;
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">📋 Mini Project 2: Student Marksheet Table</h5>
+    <p class="card-text">
+      Create a student marksheet system that accepts Name, Subject, and Marks. It dynamically displays data in a table with edit and delete functionality.
+    </p>
+    <ul>
+      <li>DOM Forms</li>
+      <li>Table Manipulation</li>
+      <li>Event Handling</li>
+      <li>Dynamic Row Editing & Deletion</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;input id="name" placeholder="Name"&gt;
+&lt;input id="subject" placeholder="Subject"&gt;
+&lt;input id="marks" type="number" placeholder="Marks"&gt;
+&lt;button onclick="addRow()"&gt;Add&lt;/button&gt;
+
+&lt;table id="markTable"&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;th&gt;Action&lt;/th&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+  function addRow() {
+    const name = document.getElementById('name').value;
+    const subject = document.getElementById('subject').value;
+    const marks = document.getElementById('marks').value;
+
+    if (!name || !subject || !marks) return;
+
+    const table = document.getElementById('markTable');
+    const row = table.insertRow();
+    row.innerHTML = `
+      &lt;td&gt;${name}&lt;/td&gt;
+      &lt;td&gt;${subject}&lt;/td&gt;
+      &lt;td&gt;${marks}&lt;/td&gt;
+      &lt;td&gt;
+        &lt;button onclick="editRow(this)"&gt;Edit&lt;/button&gt;
+        &lt;button onclick="deleteRow(this)"&gt;Delete&lt;/button&gt;
+      &lt;/td&gt;
+    `;
+  }
+
+  function editRow(btn) {
+    const row = btn.parentNode.parentNode;
+    const name = prompt("Edit name:", row.cells[0].textContent);
+    const subject = prompt("Edit subject:", row.cells[1].textContent);
+    const marks = prompt("Edit marks:", row.cells[2].textContent);
+    if (name && subject && marks) {
+      row.cells[0].textContent = name;
+      row.cells[1].textContent = subject;
+      row.cells[2].textContent = marks;
+    }
+  }
+
+  function deleteRow(btn) {
+    const row = btn.parentNode.parentNode;
+    row.remove();
+  }
+&lt;/script&gt;
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">🖼️ Mini Project 3: Image Gallery Filter</h5>
+    <p class="card-text">
+      Create an image gallery that filters images based on category buttons (e.g., Nature, Animals, People). Demonstrates DOM access, CSS changes, and event handling.
+    </p>
+    <ul>
+      <li>DOM Content Filtering</li>
+      <li>Event Listeners</li>
+      <li>Class Manipulation</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;div class="mb-3"&gt;
+  &lt;button onclick="filterImages('all')"&gt;All&lt;/button&gt;
+  &lt;button onclick="filterImages('nature')"&gt;Nature&lt;/button&gt;
+  &lt;button onclick="filterImages('animal')"&gt;Animals&lt;/button&gt;
+  &lt;button onclick="filterImages('people')"&gt;People&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;div id="gallery" class="d-flex flex-wrap gap-3"&gt;
+  &lt;img src="nature1.jpg" class="gallery-item nature" width="100"&gt;
+  &lt;img src="animal1.jpg" class="gallery-item animal" width="100"&gt;
+  &lt;img src="people1.jpg" class="gallery-item people" width="100"&gt;
+  &lt;img src="nature2.jpg" class="gallery-item nature" width="100"&gt;
+  &lt;img src="animal2.jpg" class="gallery-item animal" width="100"&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  function filterImages(category) {
+    const items = document.querySelectorAll(".gallery-item");
+    items.forEach(item =&gt; {
+      if (category === 'all') {
+        item.style.display = 'inline-block';
+      } else {
+        item.style.display = item.classList.contains(category) ? 'inline-block' : 'none';
+      }
+    });
+  }
+&lt;/script&gt;
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">✏️ Mini Project 4: Real-time Character Counter</h5>
+    <p class="card-text">
+      Displays the number of characters typed in a textarea. Useful for tweet/post limit indicators. Demonstrates real-time DOM updates using input events.
+    </p>
+    <ul>
+      <li>DOM Input Events</li>
+      <li>Real-time Text Manipulation</li>
+      <li>Dynamic Styling</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;textarea id="messageBox" class="form-control" rows="4" placeholder="Type your message..."&gt;&lt;/textarea&gt;
+&lt;div class="mt-2"&gt;
+  Characters: &lt;span id="charCount"&gt;0&lt;/span&gt; / 100
+&lt;/div&gt;
+
+&lt;script&gt;
+  const messageBox = document.getElementById("messageBox");
+  const charCount = document.getElementById("charCount");
+
+  messageBox.addEventListener("input", () =&gt; {
+    const length = messageBox.value.length;
+    charCount.textContent = length;
+
+    // Optional: color change if limit exceeded
+    if (length &gt; 100) {
+      charCount.style.color = "red";
+    } else {
+      charCount.style.color = "black";
+    }
+  });
+&lt;/script&gt;
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">🧠 Mini Project 5: Simple Quiz App</h5>
+    <p class="card-text">
+      A basic quiz app where users select answers and get a score. Demonstrates event handling, radio inputs, condition checks, and dynamic result display.
+    </p>
+    <ul>
+      <li>DOM Access & Events</li>
+      <li>Form Input (radio buttons)</li>
+      <li>Conditional Logic</li>
+      <li>Dynamic Score Display</li>
+    </ul>
+    <div class="card bg-light text-dark mt-3">
+      <div class="card-body">
+<pre><code>&lt;form id="quizForm"&gt;
+  &lt;p&gt;1. What is the capital of France?&lt;/p&gt;
+  &lt;input type="radio" name="q1" value="Paris"&gt; Paris &lt;br&gt;
+  &lt;input type="radio" name="q1" value="London"&gt; London &lt;br&gt;
+
+  &lt;p&gt;2. What is 2 + 2?&lt;/p&gt;
+  &lt;input type="radio" name="q2" value="4"&gt; 4 &lt;br&gt;
+  &lt;input type="radio" name="q2" value="5"&gt; 5 &lt;br&gt;
+
+  &lt;button type="button" onclick="submitQuiz()"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;div id="result" class="mt-3"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  function submitQuiz() {
+    let score = 0;
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+
+    if (q1 &amp;&amp; q1.value === "Paris") score++;
+    if (q2 &amp;&amp; q2.value === "4") score++;
+
+    document.getElementById("result").innerHTML = 
+      `Your score is &lt;strong&gt;${score}/2&lt;/strong&gt;`;
+  }
+&lt;/script&gt;
+</code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>
