@@ -196,8 +196,7 @@
                 month: new Date().toLocaleString('default', { month: 'long' })
             };
 
-            addTransactionToTable(formData);
-            saveTransaction(formData);
+            
 
             fetch("https://script.google.com/macros/s/AKfycbw4pRKxyCbyBqKJ1KqA7YKtq5BBxiLBxVoxY8B2-I6MzNvJqRIhYasEyJ8GosOBx28j/exec", {
                 method: "POST",
@@ -213,6 +212,9 @@
                 console.error('Error:', error);
                 document.getElementById("response").innerText = "Error submitting transaction.";
             });
+
+addTransactionToTable(formData);
+            saveTransaction(formData);
         });
 
         function addTransactionToTable(transaction) {
