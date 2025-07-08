@@ -49,7 +49,7 @@
       <ol class="list-group list-group-numbered mt-3">
         <li class="list-group-item">Write a program to print even numbers from 1 to n.<br><code>Input: 10<br>Output: 2 4 6 8 10</code></li>
         <li class="list-group-item">Write a program to count digits in a number.<br><code>Input: 4562<br>Output: 4</code></li>
-        <li class="list-group-item">Find sum of all elements in an array.<br><code>Input: [1,2,3,4]<br>Output: 10</code></li>
+        <li class="list-group-item">Find sum of all even elements in an array.<br><code>Input: [1,2,3,4]<br>Output: 6</code></li>
         <li class="list-group-item">Convert a string to uppercase.<br><code>Input: c language<br>Output: C LANGUAGE</code></li>
         <li class="list-group-item">Print Fibonacci series up to n terms.<br><code>Input: 5<br>Output: 0 1 1 2 3</code></li>
         <li class="list-group-item">Search an element in an array.<br><code>Input: [1,3,5,7], 5<br>Output: Found at index 2</code></li>
@@ -75,9 +75,9 @@
 
 <script>
 const questions = [
-  { question: "Which keyword is used to define a constant?", options: ["const", "constant", "define", "#define"], answer: "#define" },
+  { question: "Which keyword is used to define a constant?", options: ["const", "constant", "define", "#define"], answer: "const" },
   { question: "What is the size of char in C?", options: ["2", "4", "1", "8"], answer: "1" },
-  { question: "Which function is used to write a string to a file?", options: ["fput()", "fprintf()", "fputs()", "write()"], answer: "fputs()" },
+  { question: "Which function is used to input a string from a file?", options: ["fput()", "fprintf()", "fgets()", "write()"], answer: "fgets()" },
   { question: "Which of these is a loop structure?", options: ["if", "else", "for", "goto"], answer: "for" },
   { question: "How to declare a 2D array in C?", options: ["int arr[];", "int arr[2][3];", "array arr[2];", "int arr{};"], answer: "int arr[2][3];" },
   { question: "Which header file is used for file functions?", options: ["stdio.h", "string.h", "conio.h", "stdlib.h"], answer: "stdio.h" },
@@ -93,8 +93,8 @@ const questions = [
   { question: "What is the value of 3 && 0?", options: ["1", "0", "3", "Error"], answer: "0" },
   { question: "What is the default return type of a function if not specified?", options: ["void", "int", "float", "error"], answer: "int" },
   { question: "Which operator is used for address?", options: ["*", "&", "@", "#"], answer: "&" },
-  { question: "Which of the following is a relational operator?", options: ["=", "==", "&&", "||"], answer: "==" },
-  { question: "What is used to terminate a string?", options: ["\\0", "NULL", "#", "\\n"], answer: "\\0" }
+  { question: "Which of the following is a comparison operator?", options: ["=", "==", "&&", "||"], answer: "==" },
+  { question: "What is used to terminate a string?", options: ["\0", "NULL", "#", "\\n"], answer: "\0" }
 ];
 
 const container = document.getElementById('mcq-container');
