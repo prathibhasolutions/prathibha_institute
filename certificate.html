@@ -201,43 +201,68 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp" width="70">
 </a>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const searchBtn = document.getElementById("searchBtn");
-    const resultDiv = document.getElementById("result");
-  
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchBtn = document.getElementById("searchBtn");  // Button element
+    const resultDiv = document.getElementById("result");      // Div where result will show
+
     searchBtn.addEventListener("click", async () => {
-      const certificateId = document.getElementById("certificateId").value.trim();
-  
-      // Clear previous result
-      resultDiv.innerHTML = "";
-  
+      const certificateId = document.getElementById("certificateId").value.trim();  // Get input value
+
+      resultDiv.innerHTML = ""; // Clear old result
+
+      // If input is empty
       if (!certificateId) {
         resultDiv.innerHTML = `<div class="alert alert-warning">Please enter a Certificate ID.</div>`;
         return;
       }
-  
-      // Construct the URL for the certificate
-      const certificateURL = `${certificateId}.pdf`;
-  
+
+      // ----------------------------------------------------------
+      // ✅ Certificate Path (Important!)
+      // The below line tells the browser to look for:
+      // certificates/your-id.pdf 
+      // Make sure your PDFs are stored like this:
+      // - certificates/ABC123.pdf
+      // - certificates/XYZ999.pdf
+      // ----------------------------------------------------------
+      const certificateURL = `certificates/${certificateId}.pdf`;
+
       try {
-        // Check if the certificate file exists
-        const response = await fetch(certificateURL);
-  
-        if (response.ok) {
-          // If the certificate exists, display it with an embedded viewer and download button
-          resultDiv.innerHTML = `
-            <div class="card mx-auto" style="max-width: 600px;">
-              <div class="card-body">
-                <h5 class="card-title">Certificate Found</h5>
-                <p class="card-text">Your certificate is displayed below. You can also download it:</p>
-                <iframe src="${certificateURL}" style="width: 100%; height: 500px;" frameborder="0"></iframe>
-                <a href="${certificateURL}" download class="btn btn-success mt-3">Download Certificate</a>
-              </div>
-            </div>
-          `;
-        } else {
-          // If the certificate does not exist, show an error message
-          resultDiv.innerHTML = `<div class="alert alert-danger">Invalid Certificate ID. Please try again.</div>`;
+        // 'HEAD' request checks if file exists without downloading it
+        const response = await fetch(certificateURL, { method: 'HEAD' });
+
+      if (response.ok) {
+  resultDiv.innerHTML = `
+    <style>
+      .responsive-pdf {
+        width: 100%;
+        height: 500px;
+      }
+
+      @media (max-width: 768px) {
+        .responsive-pdf {
+          height: 300px;
+        }
+      }
+    </style>
+
+    <div class="card mx-auto" style="max-width: 90%;">
+      <div class="card-body">
+        <h5 class="card-title">Certificate Found</h5>
+        <p class="card-text">Your certificate is shown below. You can also download it:</p>
+        <object data="${certificateURL}" type="application/pdf" class="responsive-pdf">
+          <p>Your browser does not support PDFs.
+            <a href="${certificateURL}" download>Download PDF</a>
+          </p>
+        </object>
+        <a href="${certificateURL}" download class="btn btn-success mt-3">Download Certificate</a>
+      </div>
+    </div>
+  `;
+}
+
+else {
+          // If certificate not found
+          resultDiv.innerHTML = `<div class="alert alert-danger">Invalid Certificate ID. Please check and try again.</div>`;
         }
       } catch (error) {
         console.error("Error checking certificate:", error);
@@ -245,7 +270,7 @@
       }
     });
   });
-  
-  </script>
+</script>
+
 </body>
 </html>
