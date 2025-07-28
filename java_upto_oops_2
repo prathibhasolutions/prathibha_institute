@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Java Programming Exam - Set 4</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    .container { margin-top: 40px; margin-bottom: 50px; }
+    .mcq-card { margin-bottom: 20px; }
+    .correct { border-left: 5px solid #198754 !important; background-color: #d1e7dd; }
+    .wrong { border-left: 5px solid #dc3545 !important; background-color: #f8d7da; }
+    #result { margin-top: 30px; }
+    .programming-section { margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="text-center text-success mb-4">Java Programming Exam - Set 4</h1>
+  <form id="quizForm">
+    <h2 class="text-danger text-center">Multiple Choice Questions (MCQs)</h2>
+    <div id="mcq-container" class="mt-3"></div>
+
+    <div class="text-center">
+      <button type="button" class="btn btn-primary px-5 mt-3" onclick="checkAnswers()">Submit</button>
+    </div>
+    <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
+
+    <div class="programming-section">
+      <h2 class="text-danger text-center">Programming Questions with Example Outputs</h2><br>
+      <ol class="list-group list-group-numbered mt-3">
+        <li class="list-group-item">
+          Write a Java program to check if a number is a prime number.<br>
+          <strong>Example:</strong> Input: 17<br>Output: Prime
+        </li>
+        <li class="list-group-item">
+          Write a program using nested loops to print a diamond pattern.<br>
+          <strong>Example:</strong> Input: 3<br>Output:<br>  &nbsp;&nbsp;&nbsp;*<br>  &nbsp;&nbsp;***<br>  *****<br>  &nbsp;&nbsp;***<br>  &nbsp;&nbsp;&nbsp;*
+        </li>
+        <li class="list-group-item">
+          Write a recursive function to calculate the GCD of two numbers.<br>
+          <strong>Example:</strong> Input: 18, 24<br>Output: 6
+        </li>
+        <li class="list-group-item">
+          Write a function that counts and returns the number of digits in an integer.<br>
+          <strong>Example:</strong> Input: 4231<br>Output: 4
+        </li>
+        <li class="list-group-item">
+          Write a program to print all prime numbers between 1 and 100 using functions and loops.<br>
+          <strong>Example:</strong> Output: 2 3 5 7 11 ...
+        </li>
+        <li class="list-group-item">
+          Write a program to reverse each word in a given sentence using functions.<br>
+          <strong>Example:</strong> Input: Java is fun<br>Output: avaJ si nuf
+        </li>
+        <li class="list-group-item">
+          Write a Java program to calculate the power of a number using recursion.<br>
+          <strong>Example:</strong> Input: base = 2, exponent = 4<br>Output: 16
+        </li>
+        <li class="list-group-item">
+          Write a program to check whether a number is an Armstrong number or not.<br>
+          <strong>Example:</strong> Input: 153<br>Output: Armstrong
+        </li>
+        <li class="list-group-item">
+          Write a Java function that prints the first N terms of the Fibonacci series using recursion.<br>
+          <strong>Example:</strong> Input: 6<br>Output: 0 1 1 2 3 5
+        </li>
+        <li class="list-group-item">
+          Write a Java program to print the sum of the digits of a number using loops and functions.<br>
+          <strong>Example:</strong> Input: 943<br>Output: 16
+        </li>
+      </ol>
+    </div>
+  </form>
+</div>
+
+<script>
+const questions = [
+  { question: "Which loop is best when number of iterations is known in Java?", options: ["while", "do-while", "for", "switch"], answer: "for" },
+  { question: "Which keyword is used to define a method in Java?", options: ["function", "define", "void", "static"], answer: "void" },
+  { question: "Which is the correct syntax to call a function in Java?", options: ["call add()", "add()", "invoke add", "use add()"], answer: "add()" },
+  { question: "Which keyword is used to stop a loop in Java?", options: ["return", "exit", "stop", "break"], answer: "break" },
+  { question: "Which keyword is used to define recursion in Java?", options: ["loop", "goto", "call", "method calling itself"], answer: "method calling itself" },
+  { question: "How do you declare a method that does not return a value?", options: ["void method()", "int method()", "null method()", "returnless method()"], answer: "void method()" },
+  { question: "What is the result of 5 + 2 * 3 in Java?", options: ["21", "11", "15", "13"], answer: "11" },
+  { question: "What is the return type of a method that returns a string?", options: ["String", "int", "char", "void"], answer: "String" },
+  { question: "What does the continue statement do in a loop?", options: ["Ends the loop", "Skips current iteration", "Restarts the loop", "Skips the loop"], answer: "Skips current iteration" },
+  { question: "Which method is used to find string length in Java?", options: ["length()", "size()", "strlen()", "count()"], answer: "length()" },
+  { question: "Which of these is a conditional operator?", options: ["? :", "==", "&&", "||"], answer: "? :" },
+  { question: "What will be the output of: int i = 5; while(i < 5){ System.out.print(i); i++; }", options: ["5", "nothing", "6", "error"], answer: "nothing" },
+  { question: "Which method is used to get input from the user in Java?", options: ["Scanner.nextLine()", "input()", "cin", "getline()"], answer: "Scanner.nextLine()" },
+  { question: "What is the base case in recursion?", options: ["Loop condition", "Endless call", "Stopping condition", "Starting point"], answer: "Stopping condition" },
+  { question: "Which of the following is valid method overloading?", options: ["Same method name with different parameters", "Two methods with same body", "Same return type only", "None"], answer: "Same method name with different parameters" },
+  { question: "What is the default return type of a method in Java?", options: ["int", "void", "Depends on declaration", "String"], answer: "Depends on declaration" },
+  { question: "Which loop executes the block at least once?", options: ["for", "do-while", "while", "nested"], answer: "do-while" },
+  { question: "How do you write a nested loop?", options: ["loop inside loop", "loop.loop", "loop:loop", "nestedloop()"], answer: "loop inside loop" },
+  { question: "What is the output of recursion with no base case?", options: ["0", "error", "infinite calls", "compilation fail"], answer: "infinite calls" },
+  { question: "How to call a method from main()?", options: ["just methodName()", "System.call()", "invoke.method()", "main.method()"], answer: "just methodName()" }
+];
+
+const container = document.getElementById('mcq-container');
+
+questions.forEach((q, index) => {
+  const card = document.createElement('div');
+  card.className = 'card mcq-card';
+  card.innerHTML = `
+    <div class="card-body">
+      <p class="card-text fw-semibold">${q.question}</p>
+      ${q.options.map(opt => `
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
+          <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
+        </div>`).join('')}
+    </div>`;
+  container.appendChild(card);
+});
+
+function checkAnswers() {
+  let score = 0;
+  const resultDiv = document.getElementById("result");
+  const cards = document.querySelectorAll(".mcq-card");
+
+  questions.forEach((q, i) => {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const card = cards[i];
+    card.classList.remove("correct", "wrong");
+
+    if (selected) {
+      if (selected.value === q.answer) {
+        score++;
+        card.classList.add("correct");
+      } else {
+        card.classList.add("wrong");
+      }
+    } else {
+      card.classList.add("wrong");
+    }
+  });
+
+  resultDiv.classList.remove("d-none");
+  resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
