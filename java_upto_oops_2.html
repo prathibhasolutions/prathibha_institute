@@ -31,8 +31,8 @@
       <h2 class="text-danger text-center">Programming Questions with Example Outputs</h2><br>
       <ol class="list-group list-group-numbered mt-3">
         <li class="list-group-item">
-          Write a Java program to check if a number is a prime number.<br>
-          <strong>Example:</strong> Input: 17<br>Output: Prime
+          Write a Java program to check if a number has same first and last digits.<br>
+          <strong>Example:</strong> Input: 1371<br>Output: Yes
         </li>
         <li class="list-group-item">
           Write a program using nested loops to print a diamond pattern.<br>
@@ -43,8 +43,8 @@
           <strong>Example:</strong> Input: 18, 24<br>Output: 6
         </li>
         <li class="list-group-item">
-          Write a function that counts and returns the number of digits in an integer.<br>
-          <strong>Example:</strong> Input: 4231<br>Output: 4
+          Write a function that counts and returns the largest digit in an integer.<br>
+          <strong>Example:</strong> Input: 42381<br>Output: 8
         </li>
         <li class="list-group-item">
           Write a program to print all prime numbers between 1 and 100 using functions and loops.<br>
@@ -59,16 +59,16 @@
           <strong>Example:</strong> Input: base = 2, exponent = 4<br>Output: 16
         </li>
         <li class="list-group-item">
-          Write a program to check whether a number is an Armstrong number or not.<br>
-          <strong>Example:</strong> Input: 153<br>Output: Armstrong
+          Write a program to check whether a number is an Perfect number or not.(If the sum of its factors excluding the number is equal to the number itself, then such numbers are called Perfect numbers)  )<br>
+          <strong>Example:</strong> Input: 6<br>Output: Perfect Number
         </li>
         <li class="list-group-item">
           Write a Java function that prints the first N terms of the Fibonacci series using recursion.<br>
           <strong>Example:</strong> Input: 6<br>Output: 0 1 1 2 3 5
         </li>
         <li class="list-group-item">
-          Write a Java program to print the sum of the digits of a number using loops and functions.<br>
-          <strong>Example:</strong> Input: 943<br>Output: 16
+          Write a Java program to print the sum of the digits of a number until it is a single digit.<br>
+          <strong>Example:</strong> Input: 943<br>Output: 7
         </li>
       </ol>
     </div>
@@ -86,17 +86,7 @@ const questions = [
   { question: "What is the result of 5 + 2 * 3 in Java?", options: ["21", "11", "15", "13"], answer: "11" },
   { question: "What is the return type of a method that returns a string?", options: ["String", "int", "char", "void"], answer: "String" },
   { question: "What does the continue statement do in a loop?", options: ["Ends the loop", "Skips current iteration", "Restarts the loop", "Skips the loop"], answer: "Skips current iteration" },
-  { question: "Which method is used to find string length in Java?", options: ["length()", "size()", "strlen()", "count()"], answer: "length()" },
-  { question: "Which of these is a conditional operator?", options: ["? :", "==", "&&", "||"], answer: "? :" },
-  { question: "What will be the output of: int i = 5; while(i < 5){ System.out.print(i); i++; }", options: ["5", "nothing", "6", "error"], answer: "nothing" },
-  { question: "Which method is used to get input from the user in Java?", options: ["Scanner.nextLine()", "input()", "cin", "getline()"], answer: "Scanner.nextLine()" },
-  { question: "What is the base case in recursion?", options: ["Loop condition", "Endless call", "Stopping condition", "Starting point"], answer: "Stopping condition" },
-  { question: "Which of the following is valid method overloading?", options: ["Same method name with different parameters", "Two methods with same body", "Same return type only", "None"], answer: "Same method name with different parameters" },
-  { question: "What is the default return type of a method in Java?", options: ["int", "void", "Depends on declaration", "String"], answer: "Depends on declaration" },
-  { question: "Which loop executes the block at least once?", options: ["for", "do-while", "while", "nested"], answer: "do-while" },
-  { question: "How do you write a nested loop?", options: ["loop inside loop", "loop.loop", "loop:loop", "nestedloop()"], answer: "loop inside loop" },
-  { question: "What is the output of recursion with no base case?", options: ["0", "error", "infinite calls", "compilation fail"], answer: "infinite calls" },
-  { question: "How to call a method from main()?", options: ["just methodName()", "System.call()", "invoke.method()", "main.method()"], answer: "just methodName()" }
+  { question: "Which method is used to find string length in Java?", options: ["length()", "size()", "strlen()", "count()"], answer: "length()" }
 ];
 
 const container = document.getElementById('mcq-container');
