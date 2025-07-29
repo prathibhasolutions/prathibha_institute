@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aptitude Exam - Easy Level</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+    .mcq-card {
+      margin-bottom: 20px;
+    }
+    .correct {
+      border-left: 5px solid #198754 !important;
+      background-color: #d1e7dd;
+    }
+    .wrong {
+      border-left: 5px solid #dc3545 !important;
+      background-color: #f8d7da;
+    }
+    #result {
+      margin-top: 30px;
+    }
+    #footer {
+      background-color: rgb(23, 41, 84);
+      color: #ffffff;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center text-primary mb-4">Aptitude Exam - Easy Level (50 MCQs)</h1>
+    <form id="quizForm">
+      <div id="mcq-container" class="mt-3"></div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-success px-5 mt-3" onclick="checkAnswers()">Submit</button>
+      </div>
+      <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
+    </form>
+  </div>
+
+  <script>
+    const questions = [
+      { question: "Solve: x + y = 10, x - y = 4. Find x.", options: ["7", "6", "5", "8"], answer: "7" },
+      { question: "Find HCF of 18 and 24.", options: ["2", "3", "6", "12"], answer: "6" },
+      { question: "Find LCM of 4, 6 and 8.", options: ["12", "24", "48", "36"], answer: "24" },
+      { question: "What is sin(30°)?", options: ["1", "1/2", "√3/2", "0"], answer: "1/2" },
+      { question: "What is cos(0°)?", options: ["0", "1", "1/2", "√3/2"], answer: "1" },
+      { question: "A is 3 years older than B. Sum of their ages is 33. What is B's age?", options: ["15", "17", "18", "20"], answer: "15" },
+      { question: "Find the value of x: 2x + 5 = 17", options: ["5", "6", "7", "8"], answer: "6" },
+      { question: "If a train runs at 60 km/h, how much time will it take to cover 180 km?", options: ["2 hr", "2.5 hr", "3 hr", "4 hr"], answer: "3 hr" },
+      { question: "What is 25% of 200?", options: ["25", "50", "75", "100"], answer: "50" },
+      { question: "Average of 5, 10, 15 is:", options: ["10", "12", "9", "8"], answer: "10" },
+      // Add 40 more MCQs here to make a total of 50
+      { question: "What is tan(45°)?", options: ["0", "1", "√3", "Undefined"], answer: "1" },
+      { question: "Find 150% of 50.", options: ["50", "160", "75", "200"], answer: "75" },
+      { question: "What is the square root of 144?", options: ["12", "14", "10", "16"], answer: "12" },
+      { question: "Ravi is twice as old as Raj. Raj is 10 years old. What is Ravi’s age?", options: ["10", "15", "20", "30"], answer: "20" },
+      { question: "If 3x = 18, then x =", options: ["5", "6", "7", "8"], answer: "6" },
+      { question: "If x = 3 and y = 4, what is x² + y² - 2xy?", options: ["1", "5", "7", "9"], answer: "1" },
+      { question: "Which is a multiple of both 3 and 4?", options: ["6", "8", "12", "24"], answer: "12" },
+      { question: "What is the value of cos(90°)?", options: ["0", "1", "-1", "undefined"], answer: "0" },
+      { question: "What is 7% of 50?", options: ["3.5", "5", "45", "10"], answer: "3.5" },
+      { question: "Solve: 2x = x + 9", options: ["7", "8", "9", "6"], answer: "9" },
+      { question: "Sum of first 5 natural numbers is:", options: ["10", "15", "20", "5"], answer: "15" },
+      { question: "The average of 4, 6, 8, 10 is:", options: ["6", "8", "7", "9"], answer: "7" },
+      { question: "What is the value of 3² + 4²?", options: ["12", "25", "7", "9"], answer: "25" },
+      { question: "Which is a prime number?", options: ["4", "6", "9", "11"], answer: "11" },
+      { question: "Simplify: 15 – (3 + 2)", options: ["10", "15", "8", "5"], answer: "10" },
+      { question: "LCM of 12 and 18 is:", options: ["36", "6", "24", "72"], answer: "36" },
+      { question: "What is the value of sin(90°)?", options: ["0", "1", "1/2", "√3/2"], answer: "1" },
+      { question: "What is 20% of 150?", options: ["15", "30", "35", "25"], answer: "30" },
+      { question: "If x - 4 = 9, find x.", options: ["10", "12", "13", "14"], answer: "13" },
+      { question: "What is 7 × 6?", options: ["42", "36", "48", "54"], answer: "42" },
+      { question: "Solve: 5x = 20", options: ["2", "3", "4", "5"], answer: "4" },
+      { question: "Find the next odd number after 99.", options: ["100", "101", "102", "103"], answer: "101" },
+      { question: "LCM of 5 and 7 is:", options: ["12", "35", "14", "10"], answer: "35" },
+      { question: "HCF of 36 and 48 is:", options: ["6", "12", "18", "24"], answer: "12" },
+      { question: "Solve: x + 7 = 13", options: ["5", "6", "7", "8"], answer: "6" },
+      { question: "If A = 4/3 and B = 1/2, A × B = ?", options: ["3/2", "2/3", "1", "1/4"], answer: "2/3" },
+      { question: "Which is greater: 2/3 or 3/5?", options: ["2/3", "3/5", "Equal", "Can't determine"], answer: "2/3" },
+      { question: "Value of √85 is:", options: ["8.2", "9.2", "9.8", "9.0"], answer: "9.2" },
+      { question: "If 12 pens cost ₹60, cost of 1 pen is:", options: ["₹6", "₹5", "₹4", "₹7"], answer: "₹5" },
+      { question: "Speed = Distance/Time. If D = 100km, T = 2hr, find speed.", options: ["100", "50", "60", "40"], answer: "50" },
+      { question: "What is the reciprocal of 5?", options: ["1/5", "5", "-5", "0.5"], answer: "1/5" },
+      { question: "Solve: 9x = 81", options: ["7", "9", "8", "6"], answer: "9" },
+      { question: "What is 15% of 200?", options: ["30", "20", "25", "35"], answer: "30" },
+      { question: "Find: 100 ÷ 25", options: ["2", "3", "4", "5"], answer: "4" },
+      { question: "What is sin(0°)?", options: ["1", "0", "0.5", "Undefined"], answer: "0" },
+      { question: "Sum of angles in a triangle:", options: ["90°", "180°", "270°", "360°"], answer: "180°" },
+      { question: "What is 2 × (3 + 4)?", options: ["10", "14", "7", "13"], answer: "14" },
+      { question: "How many prime numbers between 2 and 10?", options: ["4", "5", "6", "3"], answer: "4" },
+      { question: "What is 2/1*16-4/2*2?", options: ["31", "28", "37", "13"], answer: "28" },
+      { question: "What is the next prime number after 35?", options: ["37", "39", "41", "43"], answer: "37" }
+    ];
+
+    const container = document.getElementById('mcq-container');
+
+    questions.forEach((q, index) => {
+      const card = document.createElement('div');
+      card.className = 'card mcq-card';
+      card.innerHTML = `
+        <div class="card-body">
+          <p class="card-text fw-semibold">Q${index + 1}. ${q.question}</p>
+          ${q.options.map(opt => `
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
+              <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
+            </div>`).join('')}
+        </div>`;
+      container.appendChild(card);
+    });
+
+    function checkAnswers() {
+      let score = 0;
+      const resultDiv = document.getElementById("result");
+      const cards = document.querySelectorAll(".mcq-card");
+
+      questions.forEach((q, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const card = cards[i];
+        card.classList.remove("correct", "wrong");
+
+        if (selected) {
+          if (selected.value === q.answer) {
+            score++;
+            card.classList.add("correct");
+          } else {
+            card.classList.add("wrong");
+          }
+        } else {
+          card.classList.add("wrong");
+        }
+      });
+
+      resultDiv.classList.remove("d-none");
+      resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
+    }
+  </script>
+
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+      <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
