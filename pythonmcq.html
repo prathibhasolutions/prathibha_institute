@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python MCQs Challenge</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --light-grey: #f0f2f5;
+            --border-color: #dee2e6;
+            --text-color: #212529;
+            --white: #ffffff;
+            --green: #28a745;
+            --red: #dc3545;
+            --green-bg: #d4edda;
+            --red-bg: #f8d7da;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--light-grey);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        #quiz-container {
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+
+        #score-results {
+            display: none; /* Hidden by default */
+            background-color: var(--white);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        #score-results h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .question-container {
+            background-color: var(--white);
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .question-container:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+
+        .question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        
+        .question code {
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .options label:hover {
+            background-color: #f8f9fa;
+            border-color: #b8c0c8;
+        }
+        
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: translateY(1px);
+        }
+
+        .result {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .correct {
+            color: var(--green);
+            background-color: var(--green-bg);
+        }
+
+        .incorrect {
+            color: var(--red);
+            background-color: var(--red-bg);
+        }
+
+        #submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--white);
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        #submit-btn:hover {
+            background-color: var(--primary-hover);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quiz-container">
+        <h1>Python MCQs Challenge</h1>
+        
+        <!-- === NEW: Score Display Area === -->
+        <div id="score-results"></div>
+
+        <form id="quiz-form">
+            <!-- Questions are dynamically inserted here by JavaScript -->
+        </form>
+        <button id="submit-btn" onclick="checkAnswers()">Submit Answers</button>
+    </div>
+
+    <script>
+        const questions = [
+            // Python Basics
+            { q: "1. What is the output of <code>print(type([]))</code>?", o: ["&lt;class 'list'&gt;", "&lt;class 'tuple'&gt;", "&lt;class 'dict'&gt;", "&lt;class 'set'&gt;"], a: 0 },
+            { q: "2. Which keyword is used to define a function in Python?", o: ["<code>def</code>", "<code>function</code>", "<code>fun</code>", "<code>define</code>"], a: 0 },
+            { q: "3. How do you insert comments in Python code?", o: ["<code>//This is a comment</code>", "<code>#This is a comment</code>", "<code>/*This is a comment*/</code>", "<code>&lt;!--This is a comment--&gt;</code>"], a: 1 },
+            { q: "4. What is the correct file extension for Python files?", o: [".pyth", ".pt", ".py", ".p"], a: 2 },
+            { q: "5. Which of the following is not a core data type in Python?", o: ["List", "Dictionary", "Tuple", "Class"], a: 3 },
+            // Operators
+            { q: "6. What is the output of <code>2 ** 3</code>?", o: ["6", "8", "9", "5"], a: 1 },
+            { q: "7. Which operator has the highest precedence in Python?", o: ["<code>+</code>", "<code>*</code>", "<code>**</code>", "<code>()</code>"], a: 3 },
+            { q: "8. What is the output of <code>10 // 3</code>?", o: ["3.33", "3", "3.0", "4"], a: 1 },
+            { q: "9. What does the <code>%</code> operator do?", o: ["Exponentiation", "Floor Division", "Modulus", "Division"], a: 2 },
+            { q: "10. What is the result of <code>True and False</code>?", o: ["True", "False", "Error", "None"], a: 1 },
+            // If-Else
+            { q: "11. What is the output? <code>if False: print('Hello') else: print('Hi')</code>", o: ["Hello", "Hi", "No output", "Error"], a: 1 },
+            { q: "12. What keyword would you use to add an additional condition to an if statement?", o: ["<code>elseif</code>", "<code>elif</code>", "<code>else if</code>", "<code>or</code>"], a: 1 },
+            { q: "13. What is the output? <code>x = 5; y = 5; print('Equal') if x == y else print('Not Equal')</code>", o: ["Equal", "Not Equal", "Error", "None"], a: 0 },
+            { q: "14. An <code>if</code> statement must be followed by an <code>else</code> statement.", o: ["True", "False"], a: 1 },
+            { q: "15. What is the output? <code>if 0: print('A') elif 1: print('B')</code>", o: ["A", "B", "A B", "No output"], a: 1 },
+            // For Loops
+            { q: "16. What is the output of <code>for i in range(3): print(i)</code>?", o: ["0 1 2", "1 2 3", "0<br>1<br>2", "1 2"], a: 2, note: "The output is printed on new lines." },
+            { q: "17. Which statement can be used to stop a loop?", o: ["<code>exit</code>", "<code>stop</code>", "<code>break</code>", "<code>return</code>"], a: 2 },
+            { q: "18. What is the output? <code>for char in 'hi': print(char)</code>", o: ["h i", "hi", "h<br>i", "error"], a: 2 },
+            { q: "19. The <code>range(1, 5)</code> function generates numbers from:", o: ["1 to 5", "1 to 4", "0 to 4", "0 to 5"], a: 1 },
+            { q: "20. Which keyword is used to skip the current iteration and continue with the next?", o: ["<code>skip</code>", "<code>next</code>", "<code>pass</code>", "<code>continue</code>"], a: 3 },
+            // While Loops
+            { q: "21. What is the output? <code>i = 0; while i < 2: print(i); i += 1</code>", o: ["0 1", "0<br>1", "1 2", "1<br>2"], a: 1 },
+            { q: "22. A <code>while</code> loop with the condition <code>while True:</code> will run how many times?", o: ["Once", "Zero times", "Forever (infinite loop)", "Twice"], a: 2 },
+            { q: "23. Can a <code>while</code> loop have an <code>else</code> clause in Python?", o: ["Yes", "No"], a: 0 },
+            { q: "24. What is the output? <code>i = 5; while i > 5: print('loop')</code>", o: ["loop", "5", "No output", "Error"], a: 2 },
+            { q: "25. To create a <code>while</code> loop that runs at least once, what is a common pattern?", o: ["<code>while True: ... if condition: break</code>", "<code>while False: ...</code>", "<code>while 1 > 2: ...</code>"], a: 0 },
+            // Nested Loops
+            { q: "26. What is the output? <code>for i in range(2): for j in range(2): print(i, j)</code>", o: ["0 0<br>0 1<br>1 0<br>1 1", "0 1<br>2 3", "0<br>1<br>0<br>1", "Error"], a: 0 },
+            { q: "27. In a nested loop, the inner loop finishes its iterations for every single iteration of the outer loop.", o: ["True", "False"], a: 0 },
+            { q: "28. How many times will 'X' be printed? <code>for i in range(3): for j in range(4): print('X')</code>", o: ["3", "4", "7", "12"], a: 3 },
+            { q: "29. What is the primary use of nested loops?", o: ["Iterating over a single list", "Working with 2D data structures", "Conditional checks", "Function definitions"], a: 1 },
+            { q: "30. What is the output? <code>for i in [1, 2]: for j in [3, 4]: print(i + j)</code>", o: ["4<br>5<br>5<br>6", "4 5 5 6", "1 3 1 4 2 3 2 4", "Error"], a: 0 },
+            // Lists
+            { q: "31. Which of the following creates an empty list?", o: ["<code>list()</code>", "<code>[]</code>", "Both A and B", "None of the above"], a: 2 },
+            { q: "32. What is the output of <code>my_list = [1, 2, 3]; my_list.append(4); print(my_list)</code>?", o: ["[1, 2, 3]", "[1, 2, 3, 4]", "[4, 1, 2, 3]", "Error"], a: 1 },
+            { q: "33. How do you access the first element of a list <code>L</code>?", o: ["<code>L(0)</code>", "<code>L[0]</code>", "<code>L.first()</code>", "<code>L[1]</code>"], a: 1 },
+            { q: "34. Which method removes the last element from a list and returns it?", o: ["<code>remove()</code>", "<code>delete()</code>", "<code>pop()</code>", "<code>discard()</code>"], a: 2 },
+            { q: "35. What is the output of <code>[1, 2, 3] + [4, 5]</code>?", o: ["[1, 2, 3, 4, 5]", "[1, 2, 3, [4, 5]]", "Error", "[5, 7]"], a: 0 },
+            // Strings
+            { q: "36. Which of the following is true about strings in Python?", o: ["They are mutable", "They are immutable", "They can be resized", "They can only contain alphabets"], a: 1 },
+            { q: "37. What is the output of <code>'hello'.upper()</code>?", o: ["'Hello'", "'HELLO'", "'hELLO'", "Error"], a: 1 },
+            { q: "38. How do you find the length of a string <code>s</code>?", o: ["<code>len(s)</code>", "<code>s.length()</code>", "<code>length(s)</code>", "<code>s.len</code>"], a: 0 },
+            { q: "39. What is the output of <code>'python'[1:4]</code>?", o: ["'pyt'", "'yth'", "'ytho'", "'pyth'"], a: 1 },
+            { q: "40. How do you check if a string <code>s</code> starts with the substring 'py'?", o: ["<code>s.beginswith('py')</code>", "<code>s.startswith('py')</code>", "<code>s.starts('py')</code>", "<code>startswith(s, 'py')</code>"], a: 1 },
+            // Tuples
+            { q: "41. Which of the following is a tuple?", o: ["[1, 2]", "{1, 2}", "(1, 2)", "{'a': 1}"], a: 2 },
+            { q: "42. Are tuples mutable or immutable?", o: ["Mutable", "Immutable"], a: 1 },
+            { q: "43. What is the output of <code>my_tuple = (1,); print(type(my_tuple))</code>?", o: ["&lt;class 'int'&gt;", "&lt;class 'tuple'&gt;", "&lt;class 'str'&gt;", "Error"], a: 1 },
+            { q: "44. Can you change an element of a tuple after it's created?", o: ["Yes, using indexing", "No, they are immutable", "Yes, using append()", "Only if it's a number"], a: 1 },
+            { q: "45. What happens when you try to add an element to a tuple? <code>t = (1, 2); t.append(3)</code>", o: ["The number 3 is added", "A new tuple is created", "It raises an AttributeError", "It raises a TypeError"], a: 2 },
+            // Sets
+            { q: "46. What is a key feature of a set in Python?", o: ["They are ordered", "They allow duplicate elements", "They contain unique, unordered elements", "They are immutable"], a: 2 },
+            { q: "47. Which method is used to add an element to a set?", o: ["<code>append()</code>", "<code>add()</code>", "<code>insert()</code>", "<code>push()</code>"], a: 1 },
+            { q: "48. What is the output of <code>s = {1, 2, 2, 3}; print(s)</code>?", o: ["{1, 2, 2, 3}", "{1, 2, 3}", "[1, 2, 3]", "The order is not guaranteed, but it will be {1, 2, 3}"], a: 3 },
+            { q: "49. Which operator is used for set union?", o: ["<code>&</code>", "<code>|</code>", "<code>^</code>", "<code>-</code>"], a: 1 },
+            { q: "50. How do you create an empty set?", o: ["<code>{}</code> (This creates a dictionary)", "<code>set()</code>", "<code>[]</code>", "<code>()</code>"], a: 1 },
+            // Dictionaries
+            { q: "51. What is the correct way to create a dictionary?", o: ["<code>d = {'name': 'John', 'age': 30}</code>", "<code>d = ['name', 'John', 'age', 30]</code>", "<code>d = ('name', 'John', 'age', 30)</code>", "<code>d = {'name':'John'; 'age':30}</code>"], a: 0 },
+            { q: "52. How do you access the value associated with the key 'age' in a dictionary <code>d</code>?", o: ["<code>d('age')</code>", "<code>d['age']</code>", "<code>d.get('age')</code>", "Both B and C are valid"], a: 3 },
+            { q: "53. Are dictionary keys mutable?", o: ["Yes, any object can be a key", "No, keys must be of an immutable type"], a: 1 },
+            { q: "54. Which method returns a view of all keys in a dictionary?", o: ["<code>get_keys()</code>", "<code>keys()</code>", "<code>viewkeys()</code>", "<code>key_list()</code>"], a: 1 },
+            { q: "55. How do you add a new key-value pair to a dictionary <code>d</code>?", o: ["<code>d.add('city', 'New York')</code>", "<code>d['city'] = 'New York'</code>", "<code>d.update({'city': 'New York'})</code>", "Both B and C are valid"], a: 3 },
+            // Mixed Review
+            { q: "56. What is the output of <code>len(('a', 'b', 'c'))</code>?", o: ["1", "2", "3", "Error"], a: 2 },
+            { q: "57. Which data type is created by <code>x = {'apple', 'banana', 'cherry'}</code>?", o: ["List", "Tuple", "Set", "Dictionary"], a: 2 },
+            { q: "58. What is the result of <code>list(range(2, 5))</code>?", o: ["[2, 3, 4]", "[2, 3, 4, 5]", "[2, 5]", "[3, 4]"], a: 0 },
+            { q: "59. What is the output? <code>d = {1:'a', 2:'b'}; print(d.get(3, 'c'))</code>", o: ["a", "b", "c", "None"], a: 2 },
+            { q: "60. Which of the following is an invalid variable name in Python?", o: ["<code>my_var</code>", "<code>_myvar</code>", "<code>MyVar</code>", "<code>2myvar</code>"], a: 3 }
+        ];
+
+        const quizForm = document.getElementById('quiz-form');
+        const scoreResults = document.getElementById('score-results');
+
+        function buildQuiz() {
+            questions.forEach((currentQuestion, questionNumber) => {
+                const options = [];
+                currentQuestion.o.forEach((option, i) => {
+                    options.push(
+                        `<label>
+                            <input type="radio" name="question${questionNumber}" value="${i}">
+                            ${option}
+                        </label>`
+                    );
+                });
+
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('question-container');
+                questionDiv.innerHTML = `
+                    <div class="question">${currentQuestion.q}</div>
+                    <div class="options">${options.join('')}</div>
+                    <span class="result" id="result${questionNumber}"></span>
+                `;
+                quizForm.appendChild(questionDiv);
+            });
+        }
+
+        function checkAnswers() {
+            let score = 0; // === NEW: Initialize score counter
+
+            questions.forEach((currentQuestion, questionNumber) => {
+                const resultSpan = document.getElementById(`result${questionNumber}`);
+                const selectedOption = document.querySelector(`input[name="question${questionNumber}"]:checked`);
+                
+                resultSpan.textContent = "";
+                resultSpan.className = "result";
+
+                if (selectedOption) {
+                    const userAnswer = parseInt(selectedOption.value);
+                    if (userAnswer === currentQuestion.a) {
+                        resultSpan.textContent = "✔ Correct";
+                        resultSpan.classList.add("correct");
+                        score++; // === NEW: Increment score for correct answers
+                    } else {
+                        resultSpan.textContent = "✖ Incorrect";
+                        resultSpan.classList.add("incorrect");
+                    }
+                } else {
+                    resultSpan.textContent = "No answer selected";
+                    resultSpan.classList.add("incorrect");
+                }
+            });
+
+            // === NEW: Display the final score ===
+            scoreResults.style.display = 'block'; // Make the score div visible
+            scoreResults.innerHTML = `<h2>Your Final Score: ${score} / ${questions.length}</h2>`;
+            window.scrollTo(0, 0); // Scroll to the top to see the score
+        }
+
+        buildQuiz();
+    </script>
+
+</body>
+</html>
