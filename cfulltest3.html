@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - Final Examination (Set 3)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f8f0; /* Light green background */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #28a745; /* Green color */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #218838; /* Darker green */
+            margin: 0;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .section-title {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-style: italic;
+            color: #c0392b;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0f0e0;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #218838;
+        }
+        .example {
+            background-color: #fafffa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
+        }
+        .fill-in-the-blanks ol {
+            padding-left: 20px;
+        }
+        .fill-in-the-blanks li {
+            margin-bottom: 10px;
+        }
+        .blank {
+            font-weight: bold;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Final Examination: C Programming Fundamentals (Set 3)</h1>
+            <p>Subject: C Language Full Syllabus</p>
+            <p>Total Marks: 100</p>
+            <p>Duration: 3 Hours</p>
+        </header>
+
+        <main>
+            <!-- Section A: Programming Questions -->
+            <div class="section" id="section-a">
+                <h2 class="section-title">Section A: Programming Questions</h2>
+                <p class="instructions">Attempt any SEVEN of the following questions. Each question carries 10 marks. (7 x 10 = 70 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">1.</span> Write a C program to find the largest among three numbers entered by the user using nested `if-else` statements.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter three numbers: 15 8 22
+The largest number is: 22</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">2.</span> Write a C program to calculate the sum of the first 'n' natural numbers using a `for` loop.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a positive integer: 10
+Sum = 55</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">3.</span> Write a C program to count the total number of vowels, consonants, digits, and spaces in a given string.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a string: C language test 123
+Vowels: 5
+Consonants: 10
+Digits: 3
+Spaces: 3</code></pre>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><span class="question-number">4.</span> Write a C program to search for a specific element in an array using the linear search method. If the element is found, print its index; otherwise, print a "not found" message.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>// Array: {10, 25, 5, 40, 35}
+Enter element to search: 5
+Element found at index 2.</code></pre>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><span class="question-number">5.</span> Write a C program to calculate the power of a number using a recursive function. The function should take the base and exponent as arguments.</p>
+                     <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter base number: 3
+Enter power number(positive integer): 4
+3^4 = 81</code></pre>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">6.</span> Write a C program that defines a structure for a `Point` with `x` and `y` integer coordinates. Create a function that takes two points as arguments (by reference using pointers) and swaps their coordinates.</p>
+                    <div class="example">
+                        <strong>Example Output:</strong>
+                        <pre><code>Original points: P1(2, 3), P2(5, 7)
+Points after swapping: P1(5, 7), P2(2, 3)</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">7.</span> Using nested loops, write a C program to print Floyd's Triangle as shown below for a given number of rows.</p>
+                    <div class="example">
+                        <strong>Example (for 4 rows):</strong>
+                        <pre><code>1
+2 3
+4 5 6
+7 8 9 10</code></pre>
+                    </div>
+                </div>
+
+                 <div class="question">
+                    <p><span class="question-number">8.</span> Write a C program to read a text file character by character and count the total number of characters in the file.</p>
+                    <div class="example">
+                        <strong>Instructions:</strong>
+                        <pre><code>1. Create a file named "input.txt" with the text "Hello World".
+2. Run the program.
+3. The program should output: Total characters in file: 11</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">9.</span> Write a C function that checks if a given integer is an Armstrong number or not. (An Armstrong number is a number that is equal to the sum of cubes of its digits).</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>Enter a number: 153
+153 is an Armstrong number.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">10.</span> Write a C program to find the sum of all elements in a 2D array (matrix) of size 3x3.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>// Assume matrix is:
+// 1 2 3
+// 4 5 6
+// 7 8 9
+Sum of all elements is: 45</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section B: Theory Questions -->
+            <div class="section" id="section-b">
+                <h2 class="section-title">Section B: Theory Questions</h2>
+                <p class="instructions">Answer any FOUR of the following questions. Each question carries 5 marks. (4 x 5 = 20 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">11.</span> What is the difference between a compiler and an interpreter?</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">12.</span> What is a dangling pointer in C? Explain a situation where a dangling pointer can be created and how to avoid it.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">13.</span> Explain the `extern` and `register` storage class specifiers in C. What are their use cases?</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">14.</span> What are bitwise operators in C? Explain the bitwise AND (`&`) and bitwise OR (`|`) operators with examples.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">15.</span> Differentiate between text mode and binary mode for file I/O in C. When is it appropriate to use binary mode?</p>
+                </div>
+            </div>
+
+            <!-- Section C: Fill in the Blanks -->
+            <div class="section" id="section-c">
+                <h2 class="section-title">Section C: Fill in the Blanks</h2>
+                <p class="instructions">Fill in the blanks. Each blank carries 1 mark. (10 x 1 = 10 Marks)</p>
+
+                <div class="question fill-in-the-blanks">
+                    <ol>
+                        <li>The `#include` statement is known as a preprocessor <span class="blank">_________</span>.</li>
+                        <li>The format specifier `%p` is used to print the value of a <span class="blank">_________</span>.</li>
+                        <li>The `goto` statement provides an unconditional <span class="blank">_________</span> to a labeled statement.</li>
+                        <li>A pointer that has not been initialized with a specific memory address is called a <span class="blank">_________</span> pointer.</li>
+                        <li>The header file that must be included to use character functions like `isalpha()` and `isdigit()` is <span class="blank">_________</span>.</li>
+                        <li>The `fseek()` function is used to set the file position indicator to a specific <span class="blank">_________</span> in the file.</li>
+                        <li>`EOF` is a macro defined in `<stdio.h>` that stands for <span class="blank">_________</span>.</li>
+                        <li>The conditional operator `? :` is also known as the <span class="blank">_________</span> operator.</li>
+                        <li>The `void` type specifier in a function signature like `void func(void)` indicates that the function neither returns a value nor takes any <span class="blank">_________</span>.</li>
+                        <li>The `calloc()` function allocates memory for an array and initializes all its bits to <span class="blank">_________</span>.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

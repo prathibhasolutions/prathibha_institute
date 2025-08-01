@@ -1,204 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python Exam</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .container {
-      margin-top: 80px;
-      margin-bottom: 50px;
-    }
-    .mcq-card {
-      margin-bottom: 20px;
-    }
-    .correct {
-      border-left: 5px solid #198754 !important;
-      background-color: #d1e7dd;
-    }
-    .wrong {
-      border-left: 5px solid #dc3545 !important;
-      background-color: #f8d7da;
-    }
-    #result {
-      margin-top: 30px;
-    }
-    .programming-section {
-      margin-top: 50px;
-    }
-    .header {
-      background-color: rgb(23, 41, 84);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 0;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-    }
-    #footer {
-      background-color: rgb(23, 41, 84);
-      color: #ffffff;
-      padding: 10px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming - Final Examination (Set 3)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #6f42c1;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #4a148c;
+            margin: 0;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .section-title {
+            background-color: #6f42c1;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-style: italic;
+            color: #d9534f;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #4a148c;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border-left: 4px solid #6f42c1;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .fill-in-the-blanks ol {
+            padding-left: 20px;
+        }
+        .fill-in-the-blanks li {
+            margin-bottom: 10px;
+        }
+        .blank {
+            font-weight: bold;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="header">
-    <nav><img src="logo.png" alt="Logo" class="logo" /></nav>
-  </section>
-  <div class="container">
-    <h1 class="text-center text-success mb-4">Python MCQs and Programming Questions</h1>
 
-    <form id="quizForm">
-      <h2 class="text-danger text-center">Multiple Choice Questions (MCQs)</h2>
-      <div id="mcq-container" class="mt-3"></div>
-
-      <div class="text-center">
-        <button type="button" class="btn btn-primary px-5 mt-3" onclick="checkAnswers()">Submit</button>
-      </div>
-      <div id="result" class="alert alert-info text-center mt-4 d-none"></div>
-
-      <div class="programming-section">
-        <h2 class="text-danger text-center">Programming Questions</h2><br />
-        <ol class="list-group list-group-numbered mt-3">
-          <li class="list-group-item">
-            Write a program to check if a number is positive, negative or zero using if-else.<br />
-            <strong>Example:</strong><br />
-            <code>Input: -5<br />Output: Negative</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to print the first N even numbers using a loop.<br />
-            <strong>Example:</strong><br />
-            <code>Input: 5<br />Output: 2 4 6 8 10</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to print a half pyramid pattern using '*'.<br />
-            <strong>Example:</strong><br />
-            <code>Input: 3<br />Output:<br />*<br />**<br />***</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to print multiplication table of a number using a loop.<br />
-            <strong>Example:</strong><br />
-            <code>Input: 3<br />Output:<br />3 6 9 12 15 18 21 24 27 30</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to check if a string is a palindrome.<br />
-            <strong>Example:</strong><br />
-            <code>Input: madam<br />Output: Palindrome</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to remove duplicates from a list.<br />
-            <strong>Example:</strong><br />
-            <code>Input: [1, 2, 2, 3, 1]<br />Output: [1, 2, 3]</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to count the number of vowels in a string.<br />
-            <strong>Example:</strong><br />
-            <code>Input: "education"<br />Output: 5</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to store student marks in a dictionary and display them.<br />
-            <strong>Example:</strong><br />
-            <code>Input: {'John': 85, 'Amit': 92}<br />Output: John: 85, Amit: 92</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to swap first and last elements of a tuple.<br />
-            <strong>Example:</strong><br />
-            <code>Input: (1, 2, 3, 4)<br />Output: (4, 2, 3, 1)</code>
-          </li>
-          <li class="list-group-item">
-            Write a program to find the intersection of two sets.<br />
-            <strong>Example:</strong><br />
-            <code>Input: {1,2,3} & {2,3,4}<br />Output: {2, 3}</code>
-          </li>
-        </ol>
-      </div>
-    </form>
-  </div>
-
-  <footer id="footer" class="footer text-center">
     <div class="container">
-      <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
-      <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+        <header>
+            <h1>Final Examination: Python Fundamentals (Set 3)</h1>
+            <p>Subject: Python Basics, Data Structures, and Control Flow</p>
+            <p>Total Marks: 100</p>
+            <p>Duration: 3 Hours</p>
+        </header>
+
+        <main>
+            <!-- Section A: Programming Questions -->
+            <div class="section" id="section-a">
+                <h2 class="section-title">Section A: Programming Questions</h2>
+                <p class="instructions">Attempt any SEVEN of the following questions. Each question carries 10 marks. (7 x 10 = 70 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">1.</span> Write a Python script to calculate the simple interest. Ask the user for the principal amount, rate of interest, and time period in years.</p>
+                    <div class="example">
+                        <strong>Formula:</strong> Simple Interest = (Principal * Rate * Time) / 100
+                        <br>
+                        <strong>Example:</strong>
+                        <pre><code>Enter principal amount: 1000
+Enter rate of interest: 5
+Enter time in years: 2
+Simple Interest: 100.0</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">2.</span> Write a Python script that takes a number from the user and checks if the number is positive, negative, or zero using `if-elif-else` statements.</p>
+                    <div class="example">
+                        <strong>Example 1:</strong>
+                        <pre><code>Enter a number: -5
+The number is negative.</code></pre>
+                        <strong>Example 2:</strong>
+                        <pre><code>Enter a number: 0
+The number is zero.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">3.</span> Using a `for` loop, write a Python script to print the multiplication table for a number entered by the user.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a number: 7
+7 x 1 = 7
+7 x 2 = 14
+7 x 3 = 21
+...
+7 x 10 = 70</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">4.</span> Write a Python script to count the number of times a specific character appears in a string. The string and the character to be counted should be entered by the user.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>Enter a string: learning python is fun
+Enter a character to count: n
+The character 'n' appears 4 times.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">5.</span> You are given two lists. Write a Python script to merge them into a single list and then sort the merged list in ascending order.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>list1 = [4, 1, 8]
+list2 = [3, 9, 2]
+# Your script here...
+
+# Expected Output
+Merged and sorted list: [1, 2, 3, 4, 8, 9]</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">6.</span> Create a dictionary representing the price of fruits. Write a script that asks the user for a fruit name and prints its price. If the fruit is not in the dictionary, print a "not found" message.</p>
+                    <div class="example">
+                        <strong>Dictionary:</strong> `fruit_prices = {"Apple": 60, "Banana": 30, "Orange": 45}`
+                        <br>
+                        <strong>Example:</strong>
+                        <pre><code>Enter a fruit name: Orange
+The price of Orange is 45.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">7.</span> Using nested loops, write a Python script to print a 5x5 square of asterisks (`*`).</p>
+                    <div class="example">
+                        <strong>Expected Output:</strong>
+                        <pre><code>* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *</code></pre>
+                    </div>
+                </div>
+
+                 <div class="question">
+                    <p><span class="question-number">8.</span> Given two lists, write a script to convert them to sets and find their union and intersection.</p>
+                    <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>list_a = [1, 2, 3, 4]
+list_b = [3, 4, 5, 6]
+# Your script here...
+
+# Expected Output
+Union: {1, 2, 3, 4, 5, 6}
+Intersection: {3, 4}</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">9.</span> Create a tuple containing different data types (e.g., integer, string, float). Write a script to unpack this tuple into three different variables and print each variable on a new line.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>my_tuple = ("Alice", 25, 95.5)
+# Your unpacking script here...
+
+# Expected Output
+Alice
+25
+95.5</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">10.</span> Write a Python script that iterates through a list of numbers and creates a new list containing only the numbers that are greater than 10.</p>
+                    <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>numbers = [5, 12, 3, 25, 8, 15]
+# Your script here...
+
+# Expected Output
+Numbers greater than 10: [12, 25, 15]</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section B: Theory Questions -->
+            <div class="section" id="section-b">
+                <h2 class="section-title">Section B: Theory Questions</h2>
+                <p class="instructions">Answer any FOUR of the following questions. Each question carries 5 marks. (4 x 5 = 20 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">11.</span> What is the difference between mutable and immutable data types in Python? Give one example of each.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">12.</span> What are logical operators (`and`, `or`, `not`) in Python? Explain any two with examples.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">13.</span> Differentiate between a Python List and a Tuple. List at least two major differences.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">14.</span> What is a Set in Python? Describe two of its key characteristics.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">15.</span> Explain the purpose of the `break` and `continue` statements inside a loop. When would you use each?</p>
+                </div>
+            </div>
+
+            <!-- Section C: Fill in the Blanks -->
+            <div class="section" id="section-c">
+                <h2 class="section-title">Section C: Fill in the Blanks</h2>
+                <p class="instructions">Fill in the blanks. Each blank carries 1 mark. (10 x 1 = 10 Marks)</p>
+
+                <div class="question fill-in-the-blanks">
+                    <ol>
+                        <li>The built-in function to get input from a user in the console is <span class="blank">_________</span>().</li>
+                        <li>The operator for integer division that discards the remainder is <span class="blank">_________</span>.</li>
+                        <li>A data structure that stores key-value pairs is known as a <span class="blank">_________</span>.</li>
+                        <li>A data structure that is ordered and immutable is called a <span class="blank">_________</span>.</li>
+                        <li>A conditional statement in Python always begins with the <span class="blank">_________</span> keyword.</li>
+                        <li>A <span class="blank">_________</span> loop is used for iterating over a sequence (like a list, tuple, or string).</li>
+                        <li>To find the number of items in a list, you can use the <span class="blank">_________</span>() function.</li>
+                        <li>The `_________` method is used to add a new item to a set.</li>
+                        <li>The string method to convert all characters to lowercase is <span class="blank">_________</span>().</li>
+                        <li>The `else` clause of a loop executes only if the loop completes without being terminated by a <span class="blank">_________</span> statement.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
     </div>
-  </footer>
 
-  <script>
-    const questions = [
-      { question: "Which statement is used for decision making in Python?", options: ["loop", "switch", "if", "for"], answer: "if" },
-      { question: "Which keyword is used for loops in Python?", options: ["iterate", "loop", "for", "if"], answer: "for" },
-      { question: "What is the correct syntax for an if-else block?", options: ["if () else", "if: else:", "if condition: else:", "if condition: else"], answer: "if condition: else:" },
-      { question: "Which of the following is a mutable data type?", options: ["tuple", "list", "string", "int"], answer: "list" },
-      { question: "Which function adds a value to a set?", options: ["insert()", "add()", "append()", "update()"], answer: "add()" },
-      { question: "What does len() return for a dictionary?", options: ["Size in bytes", "Number of keys", "Nothing", "Number of values"], answer: "Number of keys" },
-      { question: "Which of these is a correct tuple?", options: ["[1,2,3]", "{1,2,3}", "(1,2,3)", "<1,2,3>"], answer: "(1,2,3)" },
-      { question: "What is the result of: 'abc' * 2?", options: ["abcabc", "abc2", "Error", "abc abc"], answer: "abcabc" },
-      { question: "Which keyword is used to exit a loop?", options: ["return", "stop", "break", "exit"], answer: "break" },
-      { question: "What is the output of: 10 % 3?", options: ["3", "1", "0", "10"], answer: "1" },
-      { question: "Which method is used to convert a string to lowercase?", options: ["upper()", "lower()", "down()", "strlow()"], answer: "lower()" },
-      { question: "Which operator is used to check membership in Python?", options: ["exists", "has", "in", "is"], answer: "in" },
-      { question: "What will print(type([])) return?", options: ["<class 'list'>", "<list>", "list", "type list"], answer: "<class 'list'>" },
-      { question: "Which loop will run at least once even if the condition is false (in other languages)?", options: ["for", "while", "do-while", "if"], answer: "do-while" },
-      { question: "What is the output of: list('abc')?", options: ["['abc']", "['a','b','c']", "[abc]", "('a','b','c')"], answer: "['a','b','c']" },
-      { question: "Which method returns keys in a dictionary?", options: ["values()", "get()", "keys()", "items()"], answer: "keys()" },
-      { question: "What will be the output of: 'Hello'[::-1]?", options: ["olleH", "Hello", "Error", "None"], answer: "olleH" },
-      { question: "Which symbol is used for comments in Python?", options: ["//", "#", "/*", "--"], answer: "#" },
-      { question: "How do you initialize an empty set?", options: ["{}", "set()", "[]", "()"], answer: "set()" },
-      { question: "What is the data type of (1,)?", options: ["int", "tuple", "list", "float"], answer: "tuple" }
-    ];
-
-    const container = document.getElementById('mcq-container');
-    questions.forEach((q, index) => {
-      const card = document.createElement('div');
-      card.className = 'card mcq-card';
-      card.innerHTML = `
-        <div class="card-body">
-          <p class="card-text fw-semibold">${index + 1}. ${q.question}</p>
-          ${q.options.map(opt => `
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="q${index}" value="${opt}" id="q${index}-${opt}">
-              <label class="form-check-label" for="q${index}-${opt}">${opt}</label>
-            </div>`).join('')}
-        </div>`;
-      container.appendChild(card);
-    });
-
-    function checkAnswers() {
-      let score = 0;
-      const resultDiv = document.getElementById("result");
-      const cards = document.querySelectorAll(".mcq-card");
-
-      questions.forEach((q, i) => {
-        const selected = document.querySelector(`input[name="q${i}"]:checked`);
-        const card = cards[i];
-        card.classList.remove("correct", "wrong");
-
-        if (selected) {
-          if (selected.value === q.answer) {
-            score++;
-            card.classList.add("correct");
-          } else {
-            card.classList.add("wrong");
-          }
-        } else {
-          card.classList.add("wrong");
-        }
-      });
-
-      resultDiv.classList.remove("d-none");
-      resultDiv.innerHTML = `<strong>Your Score:</strong> ${score} / ${questions.length}`;
-    }
-  </script>
 </body>
 </html>
