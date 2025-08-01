@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming - Final Examination (Set 2)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #218838;
+            margin: 0;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .section-title {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-style: italic;
+            color: #d9534f;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #218838;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .fill-in-the-blanks ol {
+            padding-left: 20px;
+        }
+        .fill-in-the-blanks li {
+            margin-bottom: 10px;
+        }
+        .blank {
+            font-weight: bold;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Final Examination: Introduction to Python (Set 2)</h1>
+            <p>Subject: Python Full Syllabus for Beginners</p>
+            <p>Total Marks: 100</p>
+            <p>Duration: 3 Hours</p>
+        </header>
+
+        <main>
+            <!-- Section A: Programming Questions -->
+            <div class="section" id="section-a">
+                <h2 class="section-title">Section A: Programming Questions</h2>
+                <p class="instructions">Attempt any SEVEN of the following questions. Each question carries 10 marks. (7 x 10 = 70 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">1.</span> Write a Python program to determine the price of a movie ticket based on age. The criteria are:
+                        <ul>
+                            <li>Age 0-5: Free</li>
+                            <li>Age 6-12: $10</li>
+                            <li>Age 13-60: $15</li>
+                            <li>Age > 60: $12</li>
+                        </ul>
+                         The program should ask for the user's age and print the ticket price.
+                    </p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter your age: 25
+The ticket price is $15</code></pre>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><span class="question-number">2.</span> Write a Python program that takes a sentence as input and reverses each word in the sentence while keeping the words in their original order.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a sentence: Python is fun
+Reversed sentence: nohtyP si nuf</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">3. (OOP)</span> Create a Python class `BankAccount`. The class should have a constructor that initializes the `account_holder` name and sets the initial `balance`. Include `deposit(amount)` and `withdraw(amount)` methods. The `withdraw` method must check for insufficient funds.</p>
+                    <div class="example">
+                        <strong>Example Usage:</strong>
+                        <pre><code>acc = BankAccount("John Doe", 500)
+acc.deposit(200)  # Balance becomes 700
+acc.withdraw(150) # Balance becomes 550
+acc.withdraw(600) # Should fail
+print(f"Final Balance: {acc.balance}")
+
+# Expected Output
+Final Balance: 550
+# (Your withdraw method should also print 'Insufficient funds' for the last call)
+</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">4.</span> Write a Python function `remove_duplicates(input_list)` that takes a list and returns a new list containing only the unique elements from the original list, preserving the order.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>my_list = [1, 2, 3, 2, 4, 5, 1, 6]
+unique_list = remove_duplicates(my_list)
+print(f"Unique list: {unique_list}")
+
+# Expected Output
+Unique list: [1, 2, 3, 4, 5, 6]</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">5.</span> Write a Python program to generate the Fibonacci sequence up to a specified number 'n' using a recursive function.</p>
+                     <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter the number of terms: 7
+Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8</code></pre>
+                     </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">6.</span> Write a Python program that counts the frequency of each word in a given sentence and stores it in a dictionary.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a sentence: this is a test this is only a test
+{'this': 2, 'is': 2, 'a': 2, 'test': 2, 'only': 1}</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">7.</span> Write a Python program to find the second-largest number in a list of integers without using any built-in sorting functions.</p>
+                    <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>my_list = [12, 35, 1, 10, 34, 1]
+# Your code here...
+
+# Expected Output
+The second largest number is 34</code></pre>
+                    </div>
+                </div>
+
+                 <div class="question">
+                    <p><span class="question-number">8. (OOP)</span> Demonstrate inheritance by creating a base class `Shape` with a method `area()` that prints "Area of the shape". Create a derived class `Rectangle` that inherits from `Shape`. The `Rectangle` class should have its own `__init__` method to store `length` and `width`, and it should override the `area()` method to calculate and print the rectangle's area.</p>
+                    <div class="example">
+                        <strong>Example Usage:</strong>
+                        <pre><code>rect = Rectangle(10, 5)
+rect.area()
+
+# Expected Output
+The area of the rectangle is 50</code></pre>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><span class="question-number">9.</span> Using nested loops, write a Python program to print the following asterisk pattern (a pyramid):
+                        <pre><code>   *
+  ***
+ *****
+*******</code></pre>
+                    </p>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">10. (OOP)</span> Create a Python class `Student` with an `__init__` method that takes `name`, `roll_number`, and a list of `grades`. Implement a method `calculate_average()` that returns the average of the grades and a `display_details()` method that prints the student's name, roll number, and average grade.</p>
+                    <div class="example">
+                        <strong>Example Usage:</strong>
+                        <pre><code>student1 = Student("Alice", "101", [85, 90, 78, 92])
+student1.display_details()
+
+# Expected Output
+Name: Alice
+Roll Number: 101
+Average Grade: 86.25</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section B: Theory Questions -->
+            <div class="section" id="section-b">
+                <h2 class="section-title">Section B: Theory Questions</h2>
+                <p class="instructions">Answer any FOUR of the following questions. Each question carries 5 marks. (4 x 5 = 20 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">11.</span> What are the main differences between a List and a Set in Python? Provide at least two key differences with examples.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">12.</span> In the context of a Python function, what is the difference between a parameter and an argument? Provide a clear example.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">13. (OOP)</span> What is a class and what is an object in Python? Explain the relationship between them.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">14. (OOP)</span> Explain the concept of Encapsulation in Object-Oriented Programming. How does Python support it?</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">15.</span> What is the purpose of the `range()` function in Python? Describe its three parameters (`start`, `stop`, `step`) with an example.</p>
+                </div>
+            </div>
+
+            <!-- Section C: Fill in the Blanks -->
+            <div class="section" id="section-c">
+                <h2 class="section-title">Section C: Fill in the Blanks</h2>
+                <p class="instructions">Fill in the blanks. Each blank carries 1 mark. (10 x 1 = 10 Marks)</p>
+
+                <div class="question fill-in-the-blanks">
+                    <ol>
+                        <li>The `_________` keyword is used to get input from the user in the console.</li>
+                        <li>In Python, a block of code is defined by its <span class="blank">_________</span>.</li>
+                        <li>In Object-Oriented Programming, a function defined inside a class is called a <span class="blank">_________</span>.</li>
+                        <li>The `_________` keyword is used to include external libraries or modules in your code.</li>
+                        <li>The logical data type that can only have the values `True` or `False` is called a <span class="blank">_________</span>.</li>
+                        <li>The `_________` method is used to add an element to the end of a list.</li>
+                        <li>Python's operator for exponentiation (e.g., 2 to the power of 3) is <span class="blank">_________</span>.</li>
+                        <li>The `_________` block in a try-except statement is executed when an error occurs in the `try` block.</li>
+                        <li>To delete a key-value pair from a dictionary, you can use the `_________` keyword followed by the dictionary key.</li>
+                        <li>In an f-string, variables or expressions are placed inside <span class="blank">_________</span>.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

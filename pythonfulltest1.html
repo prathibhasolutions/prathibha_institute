@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programming - Final Examination (Revised)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #0056b3;
+            margin: 0;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .section-title {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-style: italic;
+            color: #d9534f;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .example {
+            background-color: #f9f9f9;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .fill-in-the-blanks ol {
+            padding-left: 20px;
+        }
+        .fill-in-the-blanks li {
+            margin-bottom: 10px;
+        }
+        .blank {
+            font-weight: bold;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Final Examination: Introduction to Python</h1>
+            <p>Subject: Python Full Syllabus for Beginners</p>
+            <p>Total Marks: 100</p>
+            <p>Duration: 3 Hours</p>
+        </header>
+
+        <main>
+            <!-- Section A: Programming Questions -->
+            <div class="section" id="section-a">
+                <h2 class="section-title">Section A: Programming Questions</h2>
+                <p class="instructions">Attempt any SEVEN of the following questions. Each question carries 10 marks. (7 x 10 = 70 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">1.</span> Write a Python program to calculate the grade of a student based on their percentage. Use `if-elif-else` statements for the following criteria:
+                        <ul>
+                            <li>Percentage >= 90%: Grade A</li>
+                            <li>Percentage >= 80%: Grade B</li>
+                            <li>Percentage >= 70%: Grade C</li>
+                            <li>Percentage >= 60%: Grade D</li>
+                            <li>Percentage < 60%: Grade F</li>
+                        </ul>
+                    </p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter your percentage: 85
+Your Grade is: B</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">2. (OOP)</span> Create a Python class named `Calculator`. The class should have methods for `add`, `subtract`, `multiply`, and `divide`. The `divide` method should handle division by zero by returning an informative message string.</p>
+                    <div class="example">
+                        <strong>Example Usage:</strong>
+                        <pre><code>calc = Calculator()
+print(f"Addition: {calc.add(15, 5)}")
+print(f"Division: {calc.divide(15, 5)}")
+print(f"Division by zero: {calc.divide(15, 0)}")
+
+# Expected Output
+Addition: 20
+Division: 3.0
+Division by zero: Cannot divide by zero.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">3.</span> Using nested loops, write a Python program to print the following number pattern:
+                        <pre><code>1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5</code></pre>
+                    </p>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">4.</span> Write a Python function that takes a list of numbers as input and returns the largest and smallest numbers in the list without using the built-in `min()` and `max()` functions.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>my_list = [10, 5, 45, 99, 2, 17]
+smallest, largest = find_min_max(my_list)
+print(f"Smallest: {smallest}, Largest: {largest}")
+
+# Expected Output
+Smallest: 2, Largest: 99</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">5.</span> Write a Python program to find the factorial of a number using recursion.</p>
+                     <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a number: 5
+The factorial of 5 is 120</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">6.</span> Write a Python program to count the frequency of each character in a string using a dictionary.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a string: programming
+{'p': 1, 'r': 2, 'o': 1, 'g': 2, 'a': 1, 'm': 2, 'i': 1, 'n': 1}</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">7.</span> Given a list of integers, write a Python program to create two new lists: one containing all the even numbers and another containing all the odd numbers from the original list.</p>
+                    <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>original_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# Your code here...
+
+# Expected Output
+Even numbers: [2, 4, 6, 8, 10]
+Odd numbers: [1, 3, 5, 7, 9]</code></pre>
+                    </div>
+                </div>
+
+                 <div class="question">
+                    <p><span class="question-number">8. (OOP)</span> Demonstrate inheritance in Python. Create a base class `Vehicle` with an `__init__` method that takes `brand` and `year`. Then, create a derived class `Car` that inherits from `Vehicle`. The `Car` class constructor should also accept `num_doors` and have a method to display all details.</p>
+                    <div class="example">
+                        <strong>Example Usage:</strong>
+                        <pre><code>my_car = Car("Honda", 2024, 4)
+my_car.display_info()
+
+# Expected Output
+Brand: Honda, Year: 2024, Doors: 4</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">9.</span> Write a Python program that takes two lists and returns a new list that contains only the common elements between them. Use sets to solve this efficiently.</p>
+                     <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+# Your code here...
+
+# Expected Output
+Common elements: [4, 5]</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">10. (OOP)</span> Create a simple Python class named `Book`. The class should have an `__init__` method that initializes the `title`, `author`, and `pages` attributes. Also, create a method named `display_info` that prints the book's details in a readable format.</p>
+                    <div class="example">
+                        <strong>Example Usage:</strong>
+                        <pre><code># Create an object of the Book class
+my_book = Book("Pride and Prejudice", "Jane Austen", 279)
+
+# Call the display method
+my_book.display_info()
+
+# Expected Output
+Title: Pride and Prejudice
+Author: Jane Austen
+Pages: 279</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section B: Theory Questions -->
+            <div class="section" id="section-b">
+                <h2 class="section-title">Section B: Theory Questions</h2>
+                <p class="instructions">Answer any FOUR of the following questions. Each question carries 5 marks. (4 x 5 = 20 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">11.</span> What are the main differences between a List and a Tuple in Python? Provide at least two key differences with examples.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">12.</span> What is a function in Python? Explain its advantages in programming.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">13. (OOP)</span> Explain the concept of Inheritance in Object-Oriented Programming (OOP) with a simple example.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">14. (OOP)</span> Explain the purpose of the `__init__` method and the `self` parameter within a Python class.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">15.</span> What is a Dictionary in Python? Describe its structure and key properties.</p>
+                </div>
+            </div>
+
+            <!-- Section C: Fill in the Blanks -->
+            <div class="section" id="section-c">
+                <h2 class="section-title">Section C: Fill in the Blanks</h2>
+                <p class="instructions">Fill in the blanks. Each blank carries 1 mark. (10 x 1 = 10 Marks)</p>
+
+                <div class="question fill-in-the-blanks">
+                    <ol>
+                        <li>The character used to start a single-line comment in Python is <span class="blank">_________</span>.</li>
+                        <li>The special method that acts as a constructor in a Python class is named <span class="blank">_________</span>.</li>
+                        <li>To find the number of elements in a list or string, you use the built-in function <span class="blank">_________</span>().</li>
+                        <li>The <span class="blank">_________</span> keyword is used to exit a loop prematurely.</li>
+                        <li>An empty list can be created using square brackets, like this: <span class="blank">_________</span>.</li>
+                        <li>Unlike lists, tuples are <span class="blank">_________</span>, meaning they cannot be changed after creation.</li>
+                        <li>A new function is defined using the <span class="blank">_________</span> keyword.</li>
+                        <li>In a dictionary, the <span class="blank">_________</span> must be unique and immutable.</li>
+                        <li>To create an empty set, you must use the syntax <span class="blank">_________</span>.</li>
+                        <li>The parameter `self` in a class method refers to the <span class="blank">_________</span> itself.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
