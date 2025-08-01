@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Collections MCQ Quiz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+        .question-block {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question-block p {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .options div {
+            margin-bottom: 10px;
+        }
+        label {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        code {
+            background-color: #eef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .correct {
+            color: #28a745;
+            border: 1px solid #28a745;
+            background-color: #e9f7ef;
+        }
+        .incorrect {
+            color: #dc3545;
+            border: 1px solid #dc3545;
+            background-color: #f8d7da;
+        }
+        #submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #submit-btn:hover {
+            background-color: #0056b3;
+        }
+        #score-container {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #e2e3e5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Java Collections Framework Quiz</h1>
+        <form id="quiz-form">
+            <!-- Questions will be dynamically inserted here -->
+        </form>
+        <button id="submit-btn">Submit Quiz</button>
+        <div id="score-container" style="display: none;"></div>
+    </div>
+
+    <script>
+        const quizData = [
+            // Collections & Lists
+            { question: "1. Which of these is the root interface of the Java Collections Framework?", options: ["List", "Set", "Collection", "Map"], answer: "Collection" },
+            { question: "2. Which of these allows duplicate elements?", options: ["Set", "List", "Map", "All of the above"], answer: "List" },
+            { question: "3. Which class provides static methods for operations on collections, such as sorting and searching?", options: ["Collections", "Collection", "Arrays", "Objects"], answer: "Collections" },
+            // ArrayList
+            { question: "4. What is the underlying data structure of an ArrayList?", options: ["Linked List", "Dynamic Array", "Hash Table", "Balanced Tree"], answer: "Dynamic Array" },
+            { question: "5. When an ArrayList's capacity is exceeded, it grows. By approximately how much does it typically grow?", options: ["It doubles in size", "It increases by 10 elements", "It increases by 50%", "It's platform dependent"], answer: "It increases by 50%" },
+            { question: "6. Which operation is generally slowest in an ArrayList?", options: ["Accessing an element by index (get)", "Adding an element to the end (add)", "Removing an element from the beginning", "Checking the size"], answer: "Removing an element from the beginning" },
+            // LinkedList
+            { question: "7. Which collection is the best choice for frequent additions and removals from the beginning of the list?", options: ["ArrayList", "Vector", "LinkedList", "HashSet"], answer: "LinkedList" },
+            { question: "8. What is the underlying data structure of a LinkedList?", options: ["Dynamic Array", "Doubly-Linked List", "Hash Table", "Binary Tree"], answer: "Doubly-Linked List" },
+            { question: "9. Which statement is true about LinkedList?", options: ["It provides fast random access using get(index).", "It implements the Queue interface.", "It cannot contain null elements.", "Its elements are stored in contiguous memory locations."], answer: "It implements the Queue interface." },
+            // List Sorting
+            { question: "10. To sort a List of custom objects, the object's class must implement which interface for natural ordering?", options: ["Comparator", "Comparable", "Sortable", "Orderable"], answer: "Comparable" },
+            { question: "11. If you want to define a custom sorting logic without modifying the class of the objects, which interface should you use?", options: ["Comparable", "Comparator", "Serializable", "Cloneable"], answer: "Comparator" },
+            { question: "12. Which method is used to sort a List?", options: ["list.sort()", "Arrays.sort(list)", "Collections.sort(list)", "list.order()"], answer: "Collections.sort(list)" },
+            // Set
+            { question: "13. What is the primary characteristic of a Set?", options: ["It maintains insertion order.", "It allows duplicate elements.", "It contains unique elements only.", "It stores key-value pairs."], answer: "It contains unique elements only." },
+            { question: "14. Which method call on a Set returns `false` if the element is already present?", options: ["contains()", "add()", "put()", "insert()"], answer: "add()" },
+            // HashSet
+            { question: "15. What is the main principle behind HashSet's fast performance for add, remove, and contains operations?", options: ["Sorting", "Binary Search", "Hashing", "Linking nodes"], answer: "Hashing" },
+            { question: "16. Does a HashSet guarantee the order of its elements?", options: ["Yes, it guarantees insertion order.", "Yes, it guarantees natural sorting order.", "Yes, it guarantees reverse sorting order.", "No, it makes no guarantees about iteration order."], answer: "No, it makes no guarantees about iteration order." },
+            { question: "17. For a custom object to be stored correctly in a HashSet, which method(s) must be properly overridden?", options: ["equals() only", "hashCode() only", "both equals() and hashCode()", "toString()"], answer: "both equals() and hashCode()" },
+            // TreeSet
+            { question: "18. How are elements ordered in a TreeSet?", options: ["In insertion order", "In random order", "In their natural order or by a specified Comparator", "In LIFO order"], answer: "In their natural order or by a specified Comparator" },
+            { question: "19. What happens if you try to add a `null` element to a non-empty TreeSet?", options: ["It is added successfully.", "It throws a NullPointerException.", "It is ignored silently.", "It throws an IllegalArgumentException."], answer: "It throws a NullPointerException." },
+            { question: "20. What is the underlying data structure of a TreeSet?", options: ["Hash Table", "Linked List", "A balanced binary search tree (like a Red-Black Tree)", "Dynamic Array"], answer: "A balanced binary search tree (like a Red-Black Tree)" },
+            // LinkedHashSet
+            { question: "21. What is the main feature of a LinkedHashSet?", options: ["It stores elements in sorted order.", "It maintains the insertion order of elements.", "It allows duplicate elements.", "It is synchronized by default."], answer: "It maintains the insertion order of elements." },
+            { question: "22. LinkedHashSet is a combination of which two data structures conceptually?", options: ["ArrayList and LinkedList", "HashSet and LinkedList", "TreeSet and LinkedList", "HashMap and ArrayList"], answer: "HashSet and LinkedList" },
+            // Map
+            { question: "23. Which interface represents a collection of key-value pairs?", options: ["List", "Set", "Collection", "Map"], answer: "Map" },
+            { question: "24. In a Map, which of the following must be unique?", options: ["Keys", "Values", "Both keys and values", "Neither keys nor values"], answer: "Keys" },
+            { question: "25. Which method is used to retrieve a value from a Map using its key?", options: ["retrieve()", "fetch()", "get()", "value()"], answer: "get()" },
+            // HashMap
+            { question: "26. Does HashMap permit `null` keys and `null` values?", options: ["Only null values", "Only one null key and multiple null values", "No nulls allowed", "Multiple null keys and multiple null values"], answer: "Only one null key and multiple null values" },
+            { question: "27. What is the performance of `get()` and `put()` operations in a HashMap, assuming a good hash function?", options: ["O(log n)", "O(n)", "O(1) on average", "O(n^2)"], answer: "O(1) on average" },
+            { question: "28. Does HashMap maintain any order of its entries?", options: ["Yes, insertion order", "Yes, natural order of keys", "No, it is unordered", "Yes, access order"], answer: "No, it is unordered" },
+            // TreeMap
+            { question: "29. How are the entries in a TreeMap ordered?", options: ["By insertion order", "By the natural ordering of the keys or a Comparator", "By the natural ordering of the values", "They are unordered"], answer: "By the natural ordering of the keys or a Comparator" },
+            { question: "30. Can a TreeMap have a `null` key?", options: ["Yes, one null key is allowed.", "Yes, multiple null keys are allowed.", "No, it throws a NullPointerException if a null key is used.", "Only if it uses a custom Comparator that handles nulls."], answer: "Only if it uses a custom Comparator that handles nulls." },
+            { question: "31. Which of these Map implementations provides guaranteed O(log n) time cost for `containsKey`, `get`, `put` and `remove` operations?", options: ["HashMap", "WeakHashMap", "LinkedHashMap", "TreeMap"], answer: "TreeMap" },
+            // LinkedHashMap
+            { question: "32. What is the primary characteristic of a LinkedHashMap?", options: ["It sorts entries by key.", "It sorts entries by value.", "It maintains the insertion order of entries.", "It is synchronized."], answer: "It maintains the insertion order of entries." },
+            { question: "33. A LinkedHashMap can be configured to order elements by...", options: ["Key order only", "Value order only", "Insertion order or access order", "Hash code order"], answer: "Insertion order or access order" },
+            { question: "34. LinkedHashMap extends which class?", options: ["TreeMap", "Hashtable", "AbstractMap", "HashMap"], answer: "HashMap" },
+            // Iterators
+            { question: "35. What is the main purpose of an Iterator?", options: ["To add elements to a collection", "To traverse a collection", "To sort a collection", "To store elements"], answer: "To traverse a collection" },
+            { question: "36. Which method of the Iterator interface checks if there are more elements to traverse?", options: ["hasNext()", "next()", "hasMore()", "isNext()"], answer: "hasNext()" },
+            { question: "37. What exception is thrown if a collection is modified structurally while it is being iterated over (using its own iterator)?", options: ["IllegalStateException", "ConcurrentModificationException", "NoSuchElementException", "UnsupportedOperationException"], answer: "ConcurrentModificationException" },
+            { question: "38. This behavior of throwing an exception upon concurrent modification is known as:", options: ["Fail-safe", "Fail-fast", "Lazy initialization", "Thread-safe"], answer: "Fail-fast" },
+            { question: "39. Which method must be called before each call to `iterator.remove()`?", options: ["hasNext()", "next()", "peek()", "previous()"], answer: "next()" },
+            { question: "40. Which of these is NOT a method of the `Iterator` interface?", options: ["hasNext()", "next()", "remove()", "add()"], answer: "add()" }
+        ];
+
+        const quizForm = document.getElementById('quiz-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const scoreContainer = document.getElementById('score-container');
+
+        function buildQuiz() {
+            const output = [];
+            quizData.forEach((currentQuestion, questionNumber) => {
+                const options = [];
+                currentQuestion.options.forEach(option => {
+                    options.push(
+                        `<div>
+                            <input type="radio" name="question${questionNumber}" value="${option}">
+                            <label>${option}</label>
+                         </div>`
+                    );
+                });
+
+                output.push(
+                    `<div class="question-block" id="q-block-${questionNumber}">
+                        <p>${currentQuestion.question}</p>
+                        <div class="options">${options.join('')}</div>
+                        <div class="feedback" id="feedback-${questionNumber}"></div>
+                     </div>`
+                );
+            });
+            quizForm.innerHTML = output.join('');
+        }
+
+        function showResults() {
+            let score = 0;
+            quizData.forEach((currentQuestion, questionNumber) => {
+                const qBlock = document.getElementById(`q-block-${questionNumber}`);
+                const feedbackEl = document.getElementById(`feedback-${questionNumber}`);
+                const selector = `input[name=question${questionNumber}]:checked`;
+                const userAnswer = (quizForm.querySelector(selector) || {}).value;
+
+                if (userAnswer === currentQuestion.answer) {
+                    score++;
+                    feedbackEl.innerHTML = `<strong>Correct!</strong>`;
+                    feedbackEl.className = 'feedback correct';
+                } else {
+                    feedbackEl.innerHTML = `<strong>Incorrect.</strong> The correct answer is: <strong>${currentQuestion.answer}</strong>`;
+                    feedbackEl.className = 'feedback incorrect';
+                }
+
+                // Disable radio buttons after submission
+                const radios = qBlock.querySelectorAll('input[type=radio]');
+                radios.forEach(radio => radio.disabled = true);
+            });
+
+            scoreContainer.innerHTML = `<h2>Your Final Score: ${score} out of ${quizData.length}</h2>`;
+            scoreContainer.style.display = 'block';
+            submitBtn.style.display = 'none'; // Hide submit button after submission
+        }
+
+        buildQuiz();
+
+        quizForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+            showResults();
+        });
+        
+        // Use click on button to trigger submit, as form submit is cleaner
+        submitBtn.addEventListener('click', () => {
+             quizForm.dispatchEvent(new Event('submit'));
+        });
+
+    </script>
+
+</body>
+</html>
