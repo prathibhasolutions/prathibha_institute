@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C Programming - Final Examination (Set 4)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background-color: #f0f8f0; /* Light green background */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #28a745; /* Green color */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #218838; /* Darker green */
+            margin: 0;
+        }
+        header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .section-title {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            font-style: italic;
+            color: #c0392b;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0f0e0;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #218838;
+        }
+        .example {
+            background-color: #fafffa;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
+        }
+        .fill-in-the-blanks ol {
+            padding-left: 20px;
+        }
+        .fill-in-the-blanks li {
+            margin-bottom: 10px;
+        }
+        .blank {
+            font-weight: bold;
+            color: #555;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Final Examination: C Programming Fundamentals (Set 4)</h1>
+            <p>Subject: C Language Full Syllabus</p>
+            <p>Total Marks: 100</p>
+            <p>Duration: 3 Hours</p>
+        </header>
+
+        <main>
+            <!-- Section A: Programming Questions -->
+            <div class="section" id="section-a">
+                <h2 class="section-title">Section A: Programming Questions</h2>
+                <p class="instructions">Attempt any SEVEN of the following questions. Each question carries 10 marks. (7 x 10 = 70 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">1.</span> Write a C program to check whether a given number is prime or not.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a number: 29
+29 is a prime number.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">2.</span> Write a C program to find the factorial of a number using a `while` loop.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a number: 5
+Factorial of 5 is 120</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">3.</span> Write a C program to reverse a given string without using the `strrev()` function.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a string: Hello
+Reversed string: olleH</code></pre>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><span class="question-number">4.</span> Write a C program to check if an element is present in an array.</p>
+                    <div class="example">
+                        <strong>Example Input & Output:</strong>
+                        <pre><code>Array: {10, 20, 30, 40, 50}
+Enter element to search : 20
+Yes
+</code></pre>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <p><span class="question-number">5.</span> Write a recursive C function to compute the Fibonacci series up to the nth term.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter number of terms: 6
+Fibonacci Series: 0 1 1 2 3 5</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">6.</span> Define a structure `Student` with fields `id`, `name` (string), and `marks`. Write a function to input data for two students and display their details.</p>
+                    <div class="example">
+                        <strong>Example Output:</strong>
+                        <pre><code>Student 1: ID=101, Name=Ravi, Marks=85
+Student 2: ID=102, Name=Anita, Marks=92</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">7.</span> Write a program to print the multiplication table of a given number using nested loops from 1 to 10.</p>
+                    <div class="example">
+                        <strong>Example (for 3):</strong>
+                        <pre><code>3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+...
+3 x 10 = 30</code></pre>
+                    </div>
+                </div>
+
+                 <div class="question">
+                    <p><span class="question-number">8.</span> Write a C program to read a file named "data.txt" and display the number of lines in it.</p>
+                    <div class="example">
+                        <strong>Instructions:</strong>
+                        <pre><code>1. Create "data.txt" with multiple lines of text.
+2. Run the program.
+3. Output: Total lines in file: [number]</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">9.</span> Write a function in C to check if a string is a palindrome.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>Enter a string: madam
+madam is a palindrome.</code></pre>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p><span class="question-number">10.</span> Write a C program to find the transpose of a 3x3 matrix.</p>
+                    <div class="example">
+                        <strong>Example:</strong>
+                        <pre><code>// Original matrix:
+// 1 2 3
+// 4 5 6
+// 7 8 9
+// Transpose:
+// 1 4 7
+// 2 5 8
+// 3 6 9</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section B: Theory Questions -->
+            <div class="section" id="section-b">
+                <h2 class="section-title">Section B: Theory Questions</h2>
+                <p class="instructions">Answer any FOUR of the following questions. Each question carries 5 marks. (4 x 5 = 20 Marks)</p>
+
+                <div class="question">
+                    <p><span class="question-number">11.</span> Explain the difference between while and do-while loop in C with examples.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">12.</span> What are pointers in C?</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">13.</span> What is recursion? Give an example where recursion is preferable over iteration.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">14.</span> Explain the role of header files in C programming.</p>
+                </div>
+                <div class="question">
+                    <p><span class="question-number">15.</span> What are strings and string functions in C</p>
+                </div>
+            </div>
+
+            <!-- Section C: Fill in the Blanks -->
+            <div class="section" id="section-c">
+                <h2 class="section-title">Section C: Fill in the Blanks</h2>
+                <p class="instructions">Fill in the blanks. Each blank carries 1 mark. (10 x 1 = 10 Marks)</p>
+
+                <div class="question fill-in-the-blanks">
+                    <ol>
+                        <li>The `%d` format specifier is used to print a value of type <span class="blank">_________</span>.</li>
+                        <li>The `fgets` function is used to input <span class="blank">_________</span>from user.</li>
+                        <li>The keyword `const` is used to declare a <span class="blank">_________</span> variable.</li>
+                        <li>The `sizeof` operator returns the size of a data type or variable in <span class="blank">_________</span>.</li>
+                        <li>A loop that never terminates is called an <span class="blank">_________</span> loop.</li>
+                        <li>The `break` statement is used to exit from a <span class="blank">_________</span> prematurely.</li>
+                        <li>The logical AND operator in C is represented by <span class="blank">_________</span>.</li>
+                        <li>The return type of the `main` function in C is <span class="blank">_________</span>.</li>
+                        <li>The `struct` keyword is used to define a <span class="blank">_________</span> in C.</li>
+                        <li>The function `printf()` is declared in the header file <span class="blank">_________</span>.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
