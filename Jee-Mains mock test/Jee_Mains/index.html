@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Jee-Mains</h1>
+            <p>Choose your test type to begin</p>
+        </header>
+
+        <div class="test-selection-grid">
+            <div class="test-card" data-test-type="session">
+                <div class="test-icon">📝</div>
+                <h2>Session Test</h2>
+                <p>Complete mock tests with questions from 2025 sessions. Select from available sessions and take timed tests.</p>
+                <div class="test-features">
+                    <span class="feature">Timed Tests</span>
+                    <span class="feature">Mock Exam</span>
+                    <span class="feature">Performance Analysis</span>
+                </div>
+                <button class="test-btn">Start Session Test</button>
+            </div>
+
+            <div class="test-card" data-test-type="practice">
+                <div class="test-icon">💡</div>
+                <h2>Practice Test</h2>
+                <p>Practice with topic-wise questions from 2024. View solutions immediately and improve your understanding.</p>
+                <div class="test-features">
+                    <span class="feature">Topic Wise</span>
+                    <span class="feature">Instant Solutions</span>
+                    <span class="feature">Self Paced</span>
+                </div>
+                <button class="test-btn">Start Practice</button>
+            </div>
+
+            <div class="test-card" data-test-type="topic">
+                <div class="test-icon">🎯</div>
+                <h2>Topic Wise Test</h2>
+                <p>Select specific topics from 2023 questions and take focused tests. Choose multiple topics for comprehensive testing.</p>
+                <div class="test-features">
+                    <span class="feature">Custom Selection</span>
+                    <span class="feature">Focused Testing</span>
+                    <span class="feature">Random Questions</span>
+                </div>
+                <button class="test-btn">Start Topic Test</button>
+            </div>
+        </div>
+
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner"></div>
+            <p>Loading test...</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fullscreen-body">
+    <div class="fullscreen-container">
+        <header class="compact-header">
+            <div class="header-content">
+                <h1>Session Test</h1>
+                <button class="back-btn" onclick="goHome()">← Back</button>
+            </div>
+        </header>
+
+        <div id="sessionSelection" class="session-selection">
+            <h2>Select a Session</h2>
+            <div class="sessions-grid" id="sessionsGrid">
+                <!-- Sessions will be populated dynamically -->
+            </div>
+        </div>
+
+        <div class="test-with-palette" id="testWithPalette" style="display: none;">
+            <div id="questionPalette" class="question-palette">
+                <!-- Question palette will be populated dynamically -->
+            </div>
+
+            <div id="testArea" class="test-area-fullscreen">
+                <div class="test-header">
+                    <div class="test-info">
+                        <h3 id="sessionTitle">Session Test</h3>
+                        <div class="test-stats">
+                            <span>Question <span id="currentQuestion">1</span> of <span id="totalQuestions">0</span></span>
+                            <span class="timer" id="timer">Time: 00:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <div class="question-header">
+                        <span class="question-type" id="questionType">MCQ</span>
+                        <span class="subject-tag" id="subjectTag">Mathematics</span>
+                    </div>
+                    
+                    <div class="question-content" id="questionContent">
+                        <!-- Question content will be populated dynamically -->
+                    </div>
+
+                    <div class="question-image" id="questionImage">
+                        <!-- Question image will be shown here if available -->
+                    </div>
+
+                    <div class="options-container" id="optionsContainer">
+                        <!-- Options will be populated dynamically -->
+                    </div>
+
+                    <div class="numerical-input hidden" id="numericalInput">
+                        <input type="text" id="numericalAnswer" placeholder="Enter your answer">
+                    </div>
+                </div>
+
+                <div class="test-navigation">
+                    <button class="nav-btn" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                    <button class="nav-btn primary" id="nextBtn" onclick="nextQuestion()">Next</button>
+                    <button class="nav-btn submit" id="submitBtn" onclick="submitTest()" style="display: none;">Submit Test</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultArea" class="result-area hidden">
+            <div class="result-container">
+                <h2>Test Results</h2>
+                <div class="result-summary" id="resultSummary">
+                    <!-- Results will be populated dynamically -->
+                </div>
+                <button class="nav-btn primary" onclick="retakeTest()">Take Another Test</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions2025.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
