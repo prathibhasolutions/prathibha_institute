@@ -600,8 +600,8 @@ function displayPracticeQuestion() {
     
     // Handle question image
     const questionImage = document.getElementById('practiceQuestionImage');
-    if (question.imageUrl) {
-        questionImage.innerHTML = `<img src="${question.imageUrl}" alt="Question Image">`;
+    if (question.questionImageUrl) {
+        questionImage.innerHTML = `<img src="${question.questionImageUrl}" alt="Question Image">`;
         questionImage.classList.remove('hidden');
     } else {
         questionImage.classList.add('hidden');
