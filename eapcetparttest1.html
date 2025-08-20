@@ -860,9 +860,10 @@
   function closeModal() {
     document.getElementById('submitModal').style.display = 'none';
   }
-  function submitTest() {
+
+
+function submitTest() {
     closeModal();
-    // Disable submit button after submission
     document.getElementById('globalSubmitBtn').disabled = true;
 
     const total = questions.length;
@@ -870,52 +871,77 @@
 
     let tableHtml = `<table class="review-table"><thead><tr><th>Q#</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Status</th></tr></thead><tbody>`;
     questions.forEach((q, i) => {
-      const yourAnswerIdx = answers[q.id];
-      let stat = '-';
-      let rowStyle = '';
-      let yourAnswerText = yourAnswerIdx !== undefined ? q.options[yourAnswerIdx] : '-';
+        const yourAnswerIdx = answers[q.id];
+        let stat = '-';
+        let rowStyle = '';
+        let yourAnswerText = yourAnswerIdx !== undefined ? q.options[yourAnswerIdx] : '-';
 
-      if (yourAnswerIdx !== undefined) {
-        attempted++;
-        const isRight = (yourAnswerIdx === q.correct);
-        if (isRight) {
-          correct++;
-          stat = '<span class="correct">Correct</span>';
-          rowStyle = 'style="background:#e9fbe9"';
+        if (yourAnswerIdx !== undefined) {
+            attempted++;
+            const isRight = (yourAnswerIdx === q.correct);
+            if (isRight) {
+                correct++;
+                stat = '<span class="correct">Correct</span>';
+                rowStyle = 'style="background:#e9fbe9"';
+            } else {
+                incorrect++;
+                stat = '<span class="incorrect">Incorrect</span>';
+                rowStyle = 'style="background:#fee"';
+            }
         } else {
-          incorrect++;
-          stat = '<span class="incorrect">Incorrect</span>';
-          rowStyle = 'style="background:#fee"';
+            stat = 'Not Answered';
+            rowStyle = 'style="background:#f6f8fa"';
         }
-      } else {
-        stat = 'Not Answered';
-        rowStyle = 'style="background:#f6f8fa"';
-      }
-      tableHtml += `<tr ${rowStyle}>
-        <td>${i + 1}</td>
-        <td>${q.text}</td>
-        <td>${yourAnswerText}</td>
-        <td>${q.options[q.correct]}</td>
-        <td>${stat}</td>
-      </tr>`;
+        tableHtml += `<tr ${rowStyle}>
+            <td>${i + 1}</td>
+            <td>${q.text}</td>
+            <td>${yourAnswerText}</td>
+            <td>${q.options[q.correct]}</td>
+            <td>${stat}</td>
+          </tr>`;
     });
     tableHtml += '</tbody></table>';
 
     const resultHtml = `
-      <div id="result-summary">
-        <h3>Exam Completed!</h3>
-        <p><b>Attempted:</b> ${attempted} / ${total} &nbsp;&nbsp;
-           <b>Correct:</b> ${correct} &nbsp;&nbsp;
-           <b>Incorrect:</b> ${incorrect} &nbsp;&nbsp;
-           <b>Score:</b> ${correct}</p>
-        ${tableHtml}
-        <br />
-        <button onclick="location.reload()" style="padding: 8px 20px; font-weight: bold; background: #238636; color: white; border:none; border-radius: 6px; cursor: pointer;">Retake Test</button>
-      </div>`;
+        <div id="result-summary">
+            <h3>Exam Completed!</h3>
+            <p><b>Attempted:</b> ${attempted} / ${total} &nbsp;&nbsp;
+                <b>Correct:</b> ${correct} &nbsp;&nbsp;
+                <b>Incorrect:</b> ${incorrect} &nbsp;&nbsp;
+                <b>Score:</b> ${correct}</p>
+            ${tableHtml}
+            <br />
+            <button onclick="location.reload()" style="padding: 8px 20px; font-weight: bold; background: #238636; color: white; border:none; border-radius: 6px; cursor: pointer;">Retake Test</button>
+            <button id="downloadPDF" style="padding: 8px 20px; font-weight: bold; background: #0a4b96; color: white; border:none; border-radius: 6px; cursor: pointer; margin-left: 8px;">Download PDF</button>
+        </div>`;
 
     document.querySelector('.content-container').innerHTML = resultHtml;
     document.getElementById('result-summary').scrollIntoView({behavior:'smooth'});
-  }
+
+    // Attach PDF download handler
+   document.getElementById("downloadPDF").onclick = function() {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "pt",
+        format: "a4"
+    });
+
+    // Select only the result-summary div
+    pdf.html(document.getElementById('result-summary'), {
+        callback: function (doc) {
+            doc.save('Exam_Result.pdf');
+        },
+        margin: [20, 20, 20, 20],
+        x: 0,
+        y: 0,
+        autoPaging: 'text', // handles content that spans multiple pages
+        html2canvas: { scale: 0.8 } // adjust if content is too large/small
+    });
+};
+
+}
+
 
   // Timer logic - 90 minutes countdown
   let totalTime = 75 * 60;
@@ -938,6 +964,8 @@
   renderPalette();
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 </body>
 </html>
