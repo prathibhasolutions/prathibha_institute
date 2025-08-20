@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MCQ Exam - Maths, Physics, Chemistry</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fafbfc;
+  }
+  .topbar {
+    background: #24292f;
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .topbar h2 {
+    margin: 0;
+    font-weight: normal;
+  }
+  .section-tabs {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
+    gap: 8px;
+  }
+  .section-tab {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px 6px 0 0;
+    background: #e1e4e8;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .section-tab.active {
+    background: white;
+    border-bottom: 2px solid #238636;
+  }
+  .main {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    gap: 15px;
+  }
+  .sidebar {
+    min-width: 210px;
+    background: white;
+    padding: 18px 18px 18px 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 1px 3px 10px rgba(200, 200, 200, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar h4 {
+    margin: 0 0 12px 0;
+  }
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(5, 36px);
+    gap: 8px 10px;
+  }
+  .pal-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: #e1e4e8;
+    font-weight: bold;
+    color: #232323;
+    font-size: 16px;
+    transition: background 0.15s;
+  }
+  .pal-btn.unseen {
+    background: white;
+    color: #232323;
+    border: 1px solid #ccc;
+  }
+  .pal-btn.visited {
+    background: #ff4d4f; /* bright red */
+    color: white;
+  }
+  .pal-btn.answered {
+    background: #52c41a; /* green */
+    color: white;
+  }
+  .pal-btn.review {
+    background: #722ed1; /* purple */
+    color: white;
+  }
+  .legend {
+    margin-top: 18px;
+    width: 160px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .legend-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 1px solid #cfd8dc;
+  }
+  .legend-circle.unseen {
+    background: white;
+    border: 1px solid #ccc;
+  }
+  .legend-circle.visited {
+    background: #ff4d4f;
+  }
+  .legend-circle.answered {
+    background: #52c41a;
+  }
+  .legend-circle.review {
+    background: #722ed1;
+  }
+  .submit-button {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-weight: bold;
+    background: #d73a49;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.2s;
+  }
+  .submit-button:hover:not(:disabled) {
+    background: #b52d3e;
+  }
+  .submit-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  .content-container {
+    flex-grow: 1;
+    background: white;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #ddd;
+    box-shadow: 1px 3px 10px rgba(200, 200, 200, 0.12);
+    padding: 28px 36px 18px 36px;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .q-txt {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  .optlist label {
+    display: block;
+    background: #f6f8fa;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background 0.15s;
+    user-select: none;
+  }
+  .optlist input[type="radio"] {
+    margin-right: 12px;
+    cursor: pointer;
+  }
+  .optlist input[type="radio"]:checked + span {
+    background: #e7fbe7 !important;
+  }
+  .q-controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .q-controls button {
+    padding: 9px 18px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    background: #0366d6;
+    color: white;
+    transition: background 0.15s;
+  }
+  .q-controls button.secondary {
+    background: #e1e4e8;
+    color: #333;
+  }
+  .q-controls button.review {
+    background: #45a1ff;
+  }
+  .q-controls button:disabled {
+    background: #ddd;
+    color: #888;
+    cursor: default;
+  }
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 10, 0.4);
+  }
+  .modal-content {
+    background: white;
+    padding: 28px;
+    border-radius: 10px;
+    width: 360px;
+    margin: 180px auto 0 auto;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.17);
+    text-align: center;
+  }
+  .modal-content h3 {
+    margin-top: 0;
+  }
+  .modal-content button {
+    margin: 12px 10px 0 10px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    color: white;
+  }
+  .modal-content button.submit-confirm {
+    background: #238636;
+  }
+  .modal-content button.cancel {
+    background: #d73a49;
+  }
+  #result-summary {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+  .review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    font-size: 16px;
+  }
+  .review-table th,
+  .review-table td {
+    border: 1px solid #ccc;
+    padding: 9px 12px;
+  }
+  .review-table th {
+    background: #f0f0f0;
+  }
+  .correct {
+    color: #13aa3f;
+    font-weight: 700;
+  }
+  .incorrect {
+    color: #d32f2f;
+    font-weight: 700;
+  }
+  @media (max-width: 950px) {
+    .main {
+      flex-direction: column;
+    }
+    .sidebar {
+      border-radius: 10px 10px 0 0;
+      min-width: auto;
+      width: 100%;
+      display: flex;
+      overflow-x: auto;
+      padding: 10px;
+      gap: 12px;
+      box-sizing: border-box;
+      justify-content: center;
+    }
+    .palette {
+      grid-template-columns: repeat(auto-fit, 36px);
+      justify-content: center;
+      gap: 6px 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .content-container {
+      border-radius: 0 0 10px 10px;
+      margin-top: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h2>MCQ Exam - Maths, Physics, Chemistry</h2>
+  <div>
+    Time Left: <span id="timer">90:00</span>
+  </div>
+</div>
+
+<div class="section-tabs" id="sectionTabs">
+  <button class="section-tab active" data-section="Maths" onclick="switchSection('Maths')">Maths</button>
+  <button class="section-tab" data-section="Physics" onclick="switchSection('Physics')">Physics</button>
+  <button class="section-tab" data-section="Chemistry" onclick="switchSection('Chemistry')">Chemistry</button>
+</div>
+
+<div class="main">
+  <div class="sidebar">
+    <h4>Questions</h4>
+    <div class="palette" id="palette"></div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-circle unseen"></div> Not Visited</div>
+      <div class="legend-item"><div class="legend-circle visited"></div> Not Answered</div>
+      <div class="legend-item"><div class="legend-circle answered"></div> Answered</div>
+      <div class="legend-item"><div class="legend-circle review"></div> Marked for Review</div>
+    </div>
+    <button id="globalSubmitBtn" class="submit-button" onclick="confirmSubmit()">Submit Test</button>
+  </div>
+  <div class="content-container">
+    <div id="questionArea"></div>
+
+    <div class="q-controls">
+      <button onclick="prevQ()" id="btnPrev" class="secondary">Previous</button>
+      <button onclick="saveAnswer()" id="btnSave">Save & Next</button>
+      <button onclick="clearAnswer()" class="secondary">Clear</button>
+      <button onclick="markForReview()" class="review">Mark for Review</button>
+      <button onclick="nextQ()" id="btnNext" class="secondary">Next</button>
+    </div>
+    <div id="result-summary"></div>
+  </div>
+</div>
+
+<!-- Modal for submit confirmation -->
+<div class="modal" id="submitModal">
+  <div class="modal-content">
+    <h3>Submit Test?</h3>
+    <p>You cannot change answers after submission.<br />Are you sure you want to submit?</p>
+    <button class="submit-confirm" onclick="submitTest()">Yes, Submit</button>
+    <button class="cancel" onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  // Sample questions, add up to 20 per subject as needed
+  const questions = [
+    
+
+ 
+ 
+ {
+    id: 'M11',
+    section: 'Maths',
+    text: 'If sin A + cos A = &radic;2, find sin 2A.',
+    options: ['0', '1', '1/2', '&radic;2'],
+    correct: 1
+  },
+  
+  {
+    id: 'M13',
+    section: 'Maths',
+    text: 'Given cos A = 5/13 and A is acute, find sin A + tan A.',
+    options: ['216/65', '12/5', '8/13', '13/12'],
+    correct: 0
+  },
+  {
+    id: 'M14',
+    section: 'Maths',
+    text: 'If 2 cos<sup>2</sup> &theta; = 1, find the general solution of &theta;.',
+    options: [ '&pi;/3 ± 2n&pi;', '&pi;/2 + n&pi;', '&pi;/6 + n&pi;','&pi;/4 ± 2n&pi;'],
+    correct: 3
+  },
+  {
+    id: 'M15',
+    section: 'Maths',
+    text: 'The value of sin 75&deg; is?',
+    options: [ '(&radic;3) / 2', '(&radic;6 + &radic;2) / 4','1/&radic;2', '(&radic;3 - 1) / 2'],
+    correct: 1
+  },
+  {
+    id: 'M16',
+    section: 'Maths',
+    text: 'If sin x = 3/5 and x is in second quadrant, find cos x.',
+    options: ['-3/5', '4/5', '-4/5', '3/5'],
+    correct: 2
+  },
+  
+  {
+    id: 'M18',
+    section: 'Maths',
+    text: 'If sin A = 5/13 and cos B = 12/13 with A and B acute, find sin(A + B).',
+    options: ['1', '119/169', '120/169', '13/169'],
+    correct: 2
+  },
+
+
+  {
+    id: 'M26',
+    section: 'Maths',
+    text: 'If sin A = cos B, then A + B equals?',
+    options: ['90&deg;', '180&deg;', '45&deg;', '0&deg;'],
+    correct: 0
+  }, {
+    id: 'M1',
+    section: 'Maths',
+    text: 'If (sin θ - cosec θ)<sup>2</sup> + (cos θ + sec θ)<sup>2</sup> = 5 and θ lies in the third quadrant, then (sin θ + cos θ)<sup>3</sup> equals?',
+    options: ['-1', '-8', '0', '1'],
+    correct: 1
+  }, {
+    id: 'M8',
+    section: 'Maths',
+    text: 'Given tan A = -60/11 (A not in 4th quadrant), sec B = 41/9 (B not in 1st quadrant). If cosec A + cot B = K, find 24K.',
+    options: ['32', '48', '60', '19'],
+    correct: 3
+  },{
+    id: 'M5',
+    section: 'Maths',
+    text: 'If 0 < θ < π/4 and 8 cos θ + 15 sin θ = 15, then 15 cos θ - 8 sin θ equals?',
+    options: ['8', '1', '5', '7'],
+    correct: 0
+  },{
+    id: 'TE2',
+    section: 'Maths',
+    text: 'Find general solution of cos 2x = 1/2',
+    options: ['x = ±π/6 + nπ', 'x = ±π/3 + nπ', 'x = ±π/4 + nπ', 'x = ±π/2 + nπ'],
+    correct: 0
+  },{
+    id: 'TE3',
+    section: 'Maths',
+    text: 'Solve tan x = &radic;3 for x in [0, 2π]',
+    options: ['x = π/6, 7π/6', 'x = π/3, 4π/3', 'x = π/4, 5π/4', 'x = π/2, 3π/2'],
+    correct: 1
+  },{
+    id: 'TE4',
+    section: 'Maths',
+    text: 'If sin x = cos x, what is the general solution for x?',
+    options: [ 'x = π/2 + nπ', 'x = π/6 + nπ','x = π/4 + nπ', 'x = π/3 + nπ'],
+    correct: 2
+  },{
+    id: 'TE7',
+    section: 'Maths',
+    text: 'Solve for x: sin x + sin 3x = 0',
+    options: ['x = nπ/3 or x = π/4 + nπ','x = nπ or x = π/2 + nπ', 'x = π/6 + nπ or x = nπ', 'x = π/3 + nπ or x = nπ/2'],
+    correct: 1
+  },{
+    id: 'M40',
+    section: 'Maths',
+    text: 'Value of tan (π/4 + A) equals?',
+    options: [ '(tan A - 1)/(tan A + 1)', 'tan A + 1', '1 - tan A','(1 + tan A)/(1 - tan A)'],
+    correct: 3
+  },{
+    id: 'T10',
+    section: 'Maths',
+    text: 'Find the maximum value of (sin x + cos x)^2.',
+    options: ['√2','2', '1', , '0'],
+    correct: 1
+  },
+  {
+    id: 'T11',
+    section: 'Maths',
+    text: 'If sin A + sin B = √3 and cos A + cos B = 1, find A - B.',
+    options: ['60°', '30°', '0°', '90°'],
+    correct: 2
+  },{
+    id: 'MM10',
+    section: 'Maths',
+    text: 'Determine the maximum value of 3 sin x + 4 cos x.',
+    options: ['25', '7', '1', '5'],
+    correct: 3
+  }, {
+    id: 'PF3',
+    section: 'Maths',
+    text: 'The function y = tan bx has period?',
+    options: ['2π/b', 'π/b', 'π', '2π'],
+    correct: 1
+  },
+  {
+    id: 'PF4',
+    section: 'Maths',
+    text: 'Find the period of y = sin(x) + cos(2x).',
+    options: ['4π', 'π', 'π/2', '2π'],
+    correct: 3
+  },
+ 
+ 
+  
+    // Physics
+     {
+    id: 'U2',
+    section: 'Physics',
+    text: 'If V is volume and a is a constant in equation (P + a/V<sup>2</sup>)(V - b) = R T, the dimension of a is?',
+    options: ['[M L<sup>5</sup> T<sup>-2</sup>]', '[M L<sup>3</sup> T<sup>-2</sup>]', '[M L T<sup>-2</sup>]', '[M L<sup>2</sup> T<sup>-2</sup>]'],
+    correct: 0
+  },{
+    id: 'U3',
+    section: 'Physics',
+    text: 'The number of significant figures in 0.001204 is?',
+    options: ['7', '4', '5', '6'],
+    correct: 1
+  },{
+    id: 'U4',
+    section: 'Physics',
+    text: 'Which of the following pairs have the same dimensions?',
+    options: ['Force and Momentum', 'Pressure and Energy Density', 'Power and Work', 'Speed and Acceleration'],
+    correct: 1
+  }, {
+    id: 'U6',
+    section: 'Physics',
+    text: 'The relative error in density if the error in mass is 1.5% and in length is 1% is?',
+    options: ['3.5%', '5.5%', '4.5%', '6.5%'],
+    correct: 2
+  }, {
+    id: 'U7',
+    section: 'Physics',
+    text: 'The dimension of Planck’s constant (h) is?',
+    options: ['[M L<sup>2</sup> T<sup>-1</sup>]', '[M L<sup>2</sup> T<sup>-2</sup>]', '[M L T<sup>-1</sup>]', '[L<sup>2</sup> T<sup>-1</sup>]'],
+    correct: 0
+  },{
+    id: 'U16',
+    section: 'Physics',
+    text: 'If side of a cube is measured with 2% error, maximum percentage error in volume is?',
+    options: ['8%', '2%', '4%', '6%'],
+    correct: 3
+  },
+   {
+    id: 'U19',
+    section: 'Physics',
+    text: 'Relative errors in radius and height of cylinder are 3% and 4%. Percentage error in volume is?',
+    options: ['10%', '7%', '14%', '4%'],
+    correct: 0
+  },
+  {
+    id: 'U20',
+    section: 'Physics',
+    text: 'Dimension of gravitational constant G is?',
+    options: [ '[M L<sup>-3</sup> T<sup>2</sup>]', '[M L<sup>2</sup> T<sup>-2</sup>]', '[M<sup>-2</sup> L<sup>3</sup> T<sup>-2</sup>]','[M<sup>-1</sup> L<sup>3</sup> T<sup>-2</sup>]'],
+    correct: 3
+  }, {
+    id: 'MS2',
+    section: 'Physics',
+    text: 'A particle starts from rest and moves with acceleration a = 2 m/s². What distance does it cover in 4 seconds?',
+    options: ['8 m', '16 m', '32 m', '64 m'],
+    correct: 1
+  }, {
+    id: 'MS3',
+    section: 'Physics',
+    text: 'The velocity of a particle moving in a straight line is given by v = 3t² - 2t + 1. What is the acceleration at t = 2 seconds?',
+    options: ['8 m/s²', '10 m/s²', '12 m/s²', '14 m/s²'],
+    correct: 1
+  },{
+    id: 'MS4',
+    section: 'Physics',
+    text: 'If a particle moving in a straight line covers equal distances in equal intervals of time, its acceleration is?',
+    options: ['Constant', 'Zero', 'Increasing', 'Decreasing'],
+    correct: 1
+  },  {
+    id: 'MS6',
+    section: 'Physics',
+    text: 'A particle covers distances 3 m, 6 m, and 9 m in 1st, 2nd, and 3rd seconds respectively. Its acceleration is?',
+    options: ['2 m/s²', '4 m/s²', '3 m/s²', '1 m/s²'],
+    correct: 2
+  },  {
+    id: 'MS7',
+    section: 'Physics',
+    text: 'The equation of velocity-time graph is a straight line parallel to the time axis. What is acceleration?',
+    options: ['Zero', 'Constant and non-zero', 'Increasing', 'Decreasing'],
+    correct: 0
+  }, {
+    id: 'MG3',
+    section: 'Physics',
+    text: 'What is the velocity of a body after falling freely from rest through a height h?',
+    options: ['gh', '2gh','sqrt(2gh)', '2g/sqrt(h)'],
+    correct: 0
+  },{
+    id: 'MG6',
+    section: 'Physics',
+    text: 'What is the displacement of a freely falling body in the third second of motion?',
+    options: ['15 m', '25 m', '10 m', '20 m'],
+    correct: 1
+  }, {
+    id: 'MG14',
+    section: 'Physics',
+    text: 'If a body falls freely from rest, what is the ratio of velocities after 2 seconds and 4 seconds?',
+    options: ['1:1', '2:1', '4:2', '1:2'],
+    correct: 3
+  }, {
+    id: 'E1',
+    section: 'Physics',
+    text: 'A quantity Q is given by Q = (A<sup>2</sup> B<sup>3</sup>) / (C<sup>4</sup> D<sup>0.5</sup>), where A, B, C, and D are measured quantities with fractional errors 1%, 2%, 0.5%, and 3% respectively. Calculate the fractional error in Q.',
+    options: ['15.5%', '11.5%', '10%', '9.5%'],
+    correct: 1
+  }, {
+    id: 'G6',
+    section: 'Physics',
+    text: 'A stone is thrown vertically upwards with velocity 20 m/s, find time to reach the ground.',
+    options: ['4 s', '6 s', '2 s', '5 s'],
+    correct: 0
+  },{
+    id: 'MSD9',
+    section: 'Physics',
+    text: 'A car accelerates uniformly from rest to 54 km/h in 15 seconds. How long will it take to reach 108 km/h?',
+    options: ['35 s', '45 s', '30 s', '40 s'],
+    correct: 2
+  }, {
+    id: 'AV6',
+    section: 'Physics',
+    text: 'A particle moves 20 m with velocity 5 m/s and next 20 m with velocity 10 m/s. Average velocity is?',
+    options: [ '7.5 m/s', '7 m/s', '8.5 m/s','6.67 m/s'],
+    correct: 3
+  },
+
+
+
+    // Chemistry
+     {
+    id: 'C1',
+    section: 'Chemistry',
+    text: 'Which of the following quantum numbers determines the energy of an electron in the hydrogen atom?',
+    options: ['Principal quantum number (n)', 'Azimuthal quantum number (l)', 'Magnetic quantum number (m)', 'Spin quantum number (s)'],
+    correct: 0
+  }, {
+    id: 'Q7',
+    section: 'Chemistry',
+    text: 'The threshold frequency of a metal is 6 × 10¹⁴ Hz. What is the work function of the metal? (h = 6.63 × 10⁻³⁴ J·s, 1 eV = 1.6 × 10⁻¹⁹ J)',
+    options: ['1.24 eV', '3.98 eV', '2.48 eV', '4.96 eV'],
+    correct: 2
+  },{
+    id: 'Q8',
+    section: 'Chemistry',
+    text: 'The de Broglie wavelength of an electron with velocity 1 × 10⁶ m/s (mass = 9.11 × 10⁻³¹ kg, h = 6.63 × 10⁻³⁴ J·s) is approximately?',
+    options: [ '6.63 × 10⁻¹⁰ m', '1.10 × 10⁻¹⁰ m', '3.31 × 10⁻¹⁰ m','7.27 × 10⁻¹⁰ m'],
+    correct: 3
+  },{
+    id: 'Q9',
+    section: 'Chemistry',
+    text: 'In photoelectric effect, increasing the frequency of incident light above threshold frequency causes the kinetic energy of emitted electrons to?',
+    options: ['Decrease', 'Increase', 'Remain constant', 'Become zero'],
+    correct: 1
+  },{
+    id: 'Q12',
+    section: 'Chemistry',
+    text: 'Which set of quantum numbers is not possible for an electron?',
+    options: ['2, 1, 2, +½', '3, 0, 0, -½', '3, 2, -1, +½', '1, 0, 0, -½'],
+    correct: 0
+  },{
+  id: 'Q14',
+  section: 'Chemistry',
+  text: 'If uncertainty in position of an electron is 10⁻⁶ m, the minimum uncertainty in its velocity is? (h = 6.63 × 10⁻³⁴ J·s, m_e = 9.11 × 10⁻³¹ kg)',
+  options: ['11.5 m/s', '58 m/s', '115 m/s', '5.8 m/s'],
+  correct: 1
+},
+ {
+    id: 'Q18',
+    section: 'Chemistry',
+    text: 'Velocity of electron in nth Bohr orbit varies as?',
+    options: ['n', '1/n²', '1/n', 'n²'],
+    correct: 2
+  },
+   {
+    id: 'Q19',
+    section: 'Chemistry',
+    text: 'Maximum number of electrons in a shell with principal quantum number n is?',
+    options: ['n²', '2n²', '4n', '8n'],
+    correct: 1
+  },{
+    id: 'CB1',
+    section: 'Chemistry',
+    text: 'According to VSEPR theory, the shape of a molecule with AX3E (three bonding pairs, one lone pair) is?',
+    options: ['Trigonal planar', 'Trigonal pyramidal', 'Tetrahedral', 'Bent'],
+    correct: 1
+  },
+  {
+    id: 'CB2',
+    section: 'Chemistry',
+    text: 'Which of the following molecules has a linear shape?',
+    options: [ 'NH3', 'H2O','CO2', 'BF3'],
+    correct: 2
+  },{
+    id: 'CB5',
+    section: 'Chemistry',
+    text: 'Which molecule has zero dipole moment?',
+    options: ['CO2', 'H2O', 'NH3', 'HCl'],
+    correct: 0
+  }, {
+    id: 'CB9',
+    section: 'Chemistry',
+    text: 'The typical bond angle in water molecule (H2O) is approximately?',
+    options: [ '109.5°', '120°', '180°','104.5°'],
+    correct: 3
+  }, {
+    id: 'CB16',
+    section: 'Chemistry',
+    text: 'In B2 molecule, according to MO diagram, the bond order and magnetism is?',
+    options: ['1 and paramagnetic', '2 and diamagnetic', '1 and diamagnetic', '2 and paramagnetic'],
+    correct: 0
+  }, {
+    id: 'HB6',
+    section: 'Chemistry',
+    text: 'Which of the following statements is false regarding hydrogen bonding?',
+    options: ['Hydrogen bonding occurs only between molecules', 'Existence of lone pair electrons is essential', 'Hydrogen bonding is strong type of dipole-dipole interaction', 'Hydrogen bond length is longer than covalent bond length'],
+    correct: 0
+  }, {
+    id: 'FJ3',
+    section: 'Chemistry',
+    text: 'Which property increases the covalent character of an ionic bond according to Fajan’s rule?',
+    options: ['High polarizing cation', 'Large anion size', 'High polarizability of anion', 'All of these'],
+    correct: 3
+  }, {
+    id: 'ER4',
+    section: 'Chemistry',
+    text: 'Pauli\'s exclusion principle states?',
+    options: ['No two electrons can have the same four quantum numbers', 'Electrons fill lowest energy levels first', 'One orbital can hold two electrons with opposite spins only', 'Electrons occupy separate orbitals before pairing'],
+    correct: 0
+  }, {
+    id: 'ASP1',
+    section: 'Chemistry',
+    text: 'The wavelength of photon emitted during an electron transition from the 2nd to 1st orbit in hydrogen atom is approximately?',
+    options: [ '102.6 nm','121.6 nm', '656.3 nm', '486.1 nm'],
+    correct: 1
+  },{
+    id: 'ASP2',
+    section: 'Chemistry',
+    text: 'What is the energy in eV of the photon emitted when electron falls from n=3 to n=2 in hydrogen atom? (13.6 eV is the ionization energy from n=1)',
+    options: [ '3.4 eV', '10.2 eV','1.89 eV', '12.1 eV'],
+    correct: 2
+  },{
+    id: 'ASP3',
+    section: 'Chemistry',
+    text: 'Calculate the radius of the 3rd orbit of a hydrogen atom. (Radius of 1st orbit = 0.53 Å)',
+    options: ['4.77 Å', '1.59 Å', '0.177 Å', '1.06 Å'],
+    correct: 0
+  },{
+    id: 'ASP6',
+    section: 'Chemistry',
+    text: 'The de Broglie wavelength of an electron moving with velocity 3 × 10⁶ m/s (mass = 9.11 × 10⁻³¹ kg, h = 6.63 × 10⁻³⁴ Js) is approximately?',
+    options: [ '1.22 × 10⁻¹⁰ m', '5.0 × 10⁻¹⁰ m', '4.5 × 10⁻¹⁰ m','2.43 × 10⁻¹⁰ m'],
+    correct: 3
+  },
+    // Add user questions here...
+  ];
+
+  let answers = {};
+  let states = {};
+  questions.forEach(q => states[q.id] = 'unseen');
+
+  let currentSection = 'Maths';
+  let currentQIndex = questions.findIndex(q => q.section === currentSection);
+
+  function renderPalette() {
+    const palette = document.getElementById('palette');
+    palette.innerHTML = '';
+    const sectQs = questions.filter(q => q.section === currentSection);
+    const startIndex = sectionStartIndex();
+
+    sectQs.forEach((q, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'pal-btn ' + (states[q.id] || 'unseen');
+      if (i === currentQIndex - startIndex) btn.classList.add('current');
+      btn.textContent = i + 1;
+      btn.onclick = () => showQ(startIndex + i);
+      palette.appendChild(btn);
+    });
+  }
+
+  function sectionStartIndex() {
+    return questions.findIndex(q => q.section === currentSection);
+  }
+  function sectionEndIndex() {
+    return questions.map(q => q.section).lastIndexOf(currentSection);
+  }
+  function showQ(idx) {
+    currentQIndex = idx;
+    renderQuestion();
+    renderPalette();
+  }
+
+  function renderQuestion() {
+    const q = questions[currentQIndex];
+    let a = answers[q.id];
+    if (states[q.id] === 'unseen') states[q.id] = 'visited';
+
+    let html = `<div class="q-txt">${currentQIndex + 1}. ${q.text}</div>`;
+    html += '<form class="optlist" id="optForm">';
+    q.options.forEach((opt, i) => {
+      html += `<label><input type="radio" name="option" value="${i}" id="opt${i}" ${a == i ? 'checked' : ''}><span>${opt}</span></label>`;
+    });
+    html += '</form>';
+    document.getElementById('questionArea').innerHTML = html;
+
+    // Enable or disable prev/next buttons for section range
+    document.getElementById('btnPrev').disabled = (currentQIndex === sectionStartIndex());
+    document.getElementById('btnNext').disabled = (currentQIndex === sectionEndIndex());
+  }
+
+  function prevQ() {
+    if (currentQIndex > sectionStartIndex()) showQ(currentQIndex - 1);
+  }
+  function nextQ() {
+    if (currentQIndex < sectionEndIndex()) showQ(currentQIndex + 1);
+  }
+  function saveAnswer() {
+    const q = questions[currentQIndex];
+    const form = document.getElementById('optForm');
+    const sel = form.option && form.option.value !== undefined ? form.option.value : null;
+    if (sel !== null) {
+      answers[q.id] = parseInt(sel);
+      states[q.id] = 'answered';
+      if (currentQIndex < sectionEndIndex()) showQ(currentQIndex + 1);
+    } else {
+      alert('Please select an option to save.');
+      return;
+    }
+    renderPalette();
+  }
+  function clearAnswer() {
+    const q = questions[currentQIndex];
+    delete answers[q.id];
+    states[q.id] = 'visited';
+    renderQuestion();
+    renderPalette();
+  }
+  function markForReview() {
+    const q = questions[currentQIndex];
+    const form = document.getElementById('optForm');
+    const sel = form.option && form.option.value !== undefined ? form.option.value : null;
+    if (sel !== null) answers[q.id] = parseInt(sel);
+    states[q.id] = 'review';
+    renderPalette();
+    if (currentQIndex < sectionEndIndex()) showQ(currentQIndex + 1);
+  }
+  function switchSection(section) {
+    currentSection = section;
+    currentQIndex = sectionStartIndex();
+    document.querySelectorAll('.section-tab').forEach(tab => {
+      tab.classList.toggle('active', tab.dataset.section === section);
+    });
+    renderQuestion();
+    renderPalette();
+  }
+  function confirmSubmit() {
+    document.getElementById('submitModal').style.display = 'block';
+  }
+  function closeModal() {
+    document.getElementById('submitModal').style.display = 'none';
+  }
+  function submitTest() {
+    closeModal();
+    // Disable submit button after submission
+    document.getElementById('globalSubmitBtn').disabled = true;
+
+    const total = questions.length;
+    let correct = 0, attempted = 0, incorrect = 0;
+
+    let tableHtml = `<table class="review-table"><thead><tr><th>Q#</th><th>Question</th><th>Your Answer</th><th>Correct Answer</th><th>Status</th></tr></thead><tbody>`;
+    questions.forEach((q, i) => {
+      const yourAnswerIdx = answers[q.id];
+      let stat = '-';
+      let rowStyle = '';
+      let yourAnswerText = yourAnswerIdx !== undefined ? q.options[yourAnswerIdx] : '-';
+
+      if (yourAnswerIdx !== undefined) {
+        attempted++;
+        const isRight = (yourAnswerIdx === q.correct);
+        if (isRight) {
+          correct++;
+          stat = '<span class="correct">Correct</span>';
+          rowStyle = 'style="background:#e9fbe9"';
+        } else {
+          incorrect++;
+          stat = '<span class="incorrect">Incorrect</span>';
+          rowStyle = 'style="background:#fee"';
+        }
+      } else {
+        stat = 'Not Answered';
+        rowStyle = 'style="background:#f6f8fa"';
+      }
+      tableHtml += `<tr ${rowStyle}>
+        <td>${i + 1}</td>
+        <td>${q.text}</td>
+        <td>${yourAnswerText}</td>
+        <td>${q.options[q.correct]}</td>
+        <td>${stat}</td>
+      </tr>`;
+    });
+    tableHtml += '</tbody></table>';
+
+    const resultHtml = `
+      <div id="result-summary">
+        <h3>Exam Completed!</h3>
+        <p><b>Attempted:</b> ${attempted} / ${total} &nbsp;&nbsp;
+           <b>Correct:</b> ${correct} &nbsp;&nbsp;
+           <b>Incorrect:</b> ${incorrect} &nbsp;&nbsp;
+           <b>Score:</b> ${correct}</p>
+        ${tableHtml}
+        <br />
+        <button onclick="location.reload()" style="padding: 8px 20px; font-weight: bold; background: #238636; color: white; border:none; border-radius: 6px; cursor: pointer;">Retake Test</button>
+      </div>`;
+
+    document.querySelector('.content-container').innerHTML = resultHtml;
+    document.getElementById('result-summary').scrollIntoView({behavior:'smooth'});
+  }
+
+  // Timer logic - 90 minutes countdown
+  let totalTime = 75 * 60;
+  function timerTick() {
+    const timerEl = document.getElementById('timer');
+    if (totalTime < 0) {
+      confirmSubmit();
+      return;
+    }
+    const minutes = Math.floor(totalTime / 60);
+    const seconds = totalTime % 60;
+    timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    totalTime--;
+    setTimeout(timerTick, 1000);
+  }
+
+  // Initial render setup
+  timerTick();
+  renderQuestion();
+  renderPalette();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+</body>
+</html>
