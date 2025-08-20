@@ -1328,7 +1328,7 @@ const practiceQuestions2024 = [
     ],
     correctAnswer: "graph2.png",
     solution: "Due to viscous drag, velocity decreases exponentially to terminal velocity as shown in graph 2.",
-    questionImageUrl: "images/Physics/1D/option1.png",
+    questionImageUrl: "images/Physics/1D/12Qoption.png",
     solutionImageUrl: null
 },
 
