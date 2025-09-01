@@ -4,21 +4,439 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topic Wise Test</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body.fullscreen-body {
+            background: #f5f7fa;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        .fullscreen-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 15px 35px 15px;
+        }
+        .compact-header {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 14px rgba(40, 60, 110, 0.10);
+            padding: 22px 25px;
+            margin-bottom: 32px;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .compact-header h1 {
+            font-size: 2.1rem;
+            color: #4052ae;
+            margin: 0;
+            font-weight: 700;
+        }
+        .back-btn {
+            background: none;
+            border: none;
+            color: #3a4ca8;
+            font-size: 1.18rem;
+            padding: 7px 15px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: 540;
+            transition: background 0.17s;
+        }
+        .back-btn:hover {
+            background: #f2f6ff;
+        }
+        .topic-wise-selection {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(40,60,110,0.07);
+            padding: 28px 18px 24px 18px;
+            margin-bottom: 30px;
+        }
+        .topic-wise-selection h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: #4052ae;
+            margin-bottom: 8px;
+        }
+        .selection-info {
+            color: #4762b8;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            margin-top: 0;
+        }
+        .subjects-container {
+            display: flex;
+            gap: 22px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        .subject-group {
+            background: #f6f8ff;
+            border-radius: 13px;
+            box-shadow: 0 2px 10px rgba(40,60,110,0.07);
+            padding: 18px 12px;
+            min-width: 220px;
+            flex: 1 1 0px;
+        }
+        .subject-group h3 {
+            font-size: 1.08rem;
+            color: #3554a3;
+            font-weight: 650;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .topics-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .topics-checkboxes label {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 7px rgba(50,70,160,0.07);
+            padding: 9px 13px;
+            font-size: 1rem;
+            color: #29398b;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: box-shadow .15s, background .15s;
+        }
+        .topics-checkboxes label:hover {
+            box-shadow: 0 4px 14px rgba(32,40,130,0.09);
+            background: #e3eafc;
+        }
+        .topics-checkboxes input[type="checkbox"] {
+            accent-color: #4f61ff;
+            min-width: 19px;
+            min-height: 19px;
+            margin-right: 11px;
+        }
+        .selection-actions {
+            display: flex;
+            gap: 13px;
+            justify-content: flex-start;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        .nav-btn, .select-topic-btn {
+            display: inline-block;
+            min-width: 130px;
+            padding: 12px 0;
+            margin: 4px 8px 4px 0;
+            font-size: 1.09rem;
+            font-weight: 600;
+            border-radius: 9px;
+            border: none;
+            background: #e3eafc;
+            color: #4052ae;
+            cursor: pointer;
+            transition: 
+                background 0.19s,
+                color 0.18s,
+                box-shadow 0.17s,
+                transform 0.11s;
+            box-shadow: 0 2px 12px rgba(50,70,160,0.06);
+        }
+        .nav-btn.primary, .select-topic-btn {
+            background: linear-gradient(90deg, #4f61ff 0%, #8c9eff 100%);
+            color: #fff;
+            font-weight: 700;
+        }
+        .nav-btn.submit {
+            background: linear-gradient(90deg, #388e3c 0%, #76dd78 100%);
+            color: #fff;
+            font-weight: 700;
+        }
+        .nav-btn:active,
+        .nav-btn.primary:active,
+        .nav-btn.submit:active,
+        .select-topic-btn:active {
+            opacity: 0.97;
+            transform: translateY(2px) scale(0.99);
+        }
+        .nav-btn:hover,
+        .select-topic-btn:hover {
+            background: linear-gradient(90deg, #4052ae 0%, #7487e8 100%);
+            color: #fff;
+        }
+        .nav-btn.submit:hover {
+            background: linear-gradient(90deg,#2e7d32 0%, #65b76d 100%);
+            color: #fff;
+        }
+        /* Palette styling */
+        .test-with-palette {
+            display: flex;
+            flex-direction: row;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+        .question-palette {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(40,60,110,0.06);
+            padding: 16px 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+            min-width: 150px;
+            margin-bottom: 14px;
+            max-width: 250px;
+        }
+        .palette-btn {
+            width: 39px;
+            height: 39px;
+            margin: 0;
+            border-radius: 50%;
+            border: none;
+            background: #e3eafc;
+            color: #4052ae;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s, color 0.15s, box-shadow 0.12s;
+            box-shadow: 0 1px 5px rgba(40,60,110,0.06);
+            outline: none;
+            position: relative;
+        }
+        .palette-btn.active, .palette-btn:active {
+            background: linear-gradient(90deg,#4f61ff 0%,#8c9eff 100%);
+            color: #fff;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(32,40,130,0.15);
+        }
+        .palette-btn.answered {
+            background: linear-gradient(90deg, #388e3c 0%, #76dd78 100%);
+            color: #fff;
+            font-weight: 700;
+        }
+        .palette-btn.not-answered {
+            background: #fbe7e8;
+            color: #c62828;
+            font-weight: 700;
+        }
+        .palette-btn:hover, .palette-btn:focus {
+            background: #7487e8;
+            color: #fff;
+        }
+        .test-area-fullscreen {
+            flex: 1;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(40,60,110,0.07);
+            padding: 28px 18px 22px 18px;
+        }
+        .test-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 7px;
+            margin-bottom: 16px;
+        }
+        .test-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .test-info h3 {
+            font-size: 1.25rem;
+            color: #4052ae;
+            font-weight: 700;
+            margin: 0;
+        }
+        .test-stats {
+            font-size: 1rem;
+            color: #636c72;
+            display: flex;
+            gap: 18px;
+        }
+        .timer {
+            background: #ecf2fe;
+            padding: 2px 11px;
+            border-radius: 8px;
+            color: #1a3777;
+            font-weight: 520;
+        }
+        .question-container {
+            margin-bottom: 14px;
+        }
+        .question-header {
+            display: flex;
+            gap: 10px;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .question-type, .subject-tag {
+            display: inline-block;
+            padding: 2px 11px;
+            border-radius: 10px;
+            background: #f3f6fd;
+            color: #3a4ca8;
+            font-size: 0.97rem;
+            font-weight: 500;
+        }
+        .question-type {
+            background: #e8f1fa;
+            color: #2271b2;
+        }
+        .question-content {
+            font-size: 1.09rem;
+            color: #1d254f;
+            background: #f7f8fb;
+            border-radius: 7px;
+            padding: 13px 12px;
+            margin-bottom: 10px;
+        }
+        .question-image {
+            margin-bottom: 8px;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            margin-bottom: 8px;
+        }
+        .options-container button,
+        .options-container .option,
+        .options-container label {
+            background: #e3eafc;
+            color: #4052ae;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.14s;
+        }
+        .options-container button:hover,
+        .options-container .option:hover,
+        .options-container label:hover {
+            background: #c7dafc;
+        }
+        .numerical-input {
+            margin-bottom: 10px;
+        }
+        #topicNumericalAnswer {
+            padding: 7px 9px;
+            border-radius: 7px;
+            border: 1px solid #dde2eb;
+            font-size: 1rem;
+            width: 55%;
+            margin-top: 4px;
+        }
+        .test-navigation {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .result-area {
+            background: #fff;
+            border-radius: 13px;
+            box-shadow: 0 2px 13px rgba(40,60,110,0.09);
+            padding: 30px 22px;
+            margin: 28px auto 21px auto;
+            max-width: 500px;
+        }
+        .result-container h2 {
+            font-size: 1.35rem;
+            color: #4052ae;
+            margin-bottom: 17px;
+        }
+        .result-summary {
+            font-size: 1.05rem;
+            color: #374181;
+            margin-bottom: 13px;
+            background: #f5f7fe;
+            padding: 9px 12px;
+            border-radius: 10px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        @media (max-width: 900px) {
+            .fullscreen-container {
+                max-width: 99vw;
+                padding: 16px 4px 24px 4px;
+            }
+            .compact-header {
+                padding: 14px 11px;
+            }
+            .topic-wise-selection,
+            .test-area-fullscreen,
+            .result-area {
+                padding: 12px 7px 10px 7px;
+            }
+            .subjects-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .subject-group {
+                min-width: 0;
+            }
+            .test-with-palette {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .question-palette {
+                max-width: 100vw;
+                gap: 9px;
+                min-width: unset;
+                padding: 10px 4px;
+                justify-content: flex-start;
+            }
+        }
+        @media (max-width: 600px) {
+            .compact-header h1 {
+                font-size: 1.43rem;
+            }
+            .topic-wise-selection h2, .result-container h2 {
+                font-size: 1.1rem;
+            }
+            .subject-group h3 {
+                font-size: 1rem;
+            }
+            .question-palette {
+                padding: 7px 2px;
+                gap: 7px;
+                max-width: 100vw;
+                font-size: 0.97rem;
+            }
+            .palette-btn {
+                width: 33px;
+                height: 33px;
+                font-size: 0.97rem;
+            }
+            .nav-btn, .select-topic-btn {
+                min-width: 90px;
+                font-size: 0.98rem;
+                padding: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body class="fullscreen-body">
     <div class="fullscreen-container">
         <header class="compact-header">
             <div class="header-content">
                 <h1>Topic Wise Test</h1>
-                <button class="back-btn" onclick="goHome()">← Back</button>
+                <button class="back-btn" onclick="goHome()">Home</button>
+                <button class="back-btn" onclick="location.reload()">← Back</button>
             </div>
         </header>
 
         <div id="topicWiseSelection" class="topic-wise-selection">
             <h2>Select Topics for Test</h2>
             <p class="selection-info">Choose one or more topics. Maximum 25 random questions per subject will be selected.</p>
-            
             <div class="subjects-container">
                 <div class="subject-group">
                     <h3>Mathematics</h3>
@@ -26,14 +444,12 @@
                         <!-- Math topics will be populated dynamically -->
                     </div>
                 </div>
-
                 <div class="subject-group">
                     <h3>Physics</h3>
                     <div class="topics-checkboxes" id="physicsTopics">
                         <!-- Physics topics will be populated dynamically -->
                     </div>
                 </div>
-
                 <div class="subject-group">
                     <h3>Chemistry</h3>
                     <div class="topics-checkboxes" id="chemistryTopics">
@@ -41,7 +457,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="selection-actions">
                 <button class="nav-btn" onclick="selectAllTopics()">Select All</button>
                 <button class="nav-btn" onclick="clearAllTopics()">Clear All</button>
@@ -53,7 +468,6 @@
             <div id="topicQuestionPalette" class="question-palette">
                 <!-- Question palette will be populated dynamically -->
             </div>
-
             <div id="topicTestArea" class="test-area-fullscreen">
                 <div class="test-header">
                     <div class="test-info">
@@ -64,30 +478,24 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="question-container">
                     <div class="question-header">
                         <span class="question-type" id="topicQuestionType">MCQ</span>
                         <span class="subject-tag" id="topicSubjectTag">Mathematics</span>
                     </div>
-                    
                     <div class="question-content" id="topicQuestionContent">
                         <!-- Question content will be populated dynamically -->
                     </div>
-
                     <div class="question-image" id="topicQuestionImage">
                         <!-- Question image will be shown here if available -->
                     </div>
-
                     <div class="options-container" id="topicOptionsContainer">
                         <!-- Options will be populated dynamically -->
                     </div>
-
                     <div class="numerical-input hidden" id="topicNumericalInput">
                         <input type="text" id="topicNumericalAnswer" placeholder="Enter your answer">
                     </div>
                 </div>
-
                 <div class="test-navigation">
                     <button class="nav-btn" id="topicPrevBtn" onclick="previousTopicQuestion()">Previous</button>
                     <button class="nav-btn primary" id="topicNextBtn" onclick="nextTopicQuestion()">Next</button>
@@ -106,7 +514,6 @@
             </div>
         </div>
     </div>
-
     <script src="questions2023.js"></script>
     <script src="main.js"></script>
 </body>

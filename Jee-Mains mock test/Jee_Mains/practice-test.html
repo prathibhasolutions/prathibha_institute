@@ -4,21 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice Test</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body.fullscreen-body {
+            background: #f5f7fa;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        .fullscreen-container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 30px 15px 35px 15px;
+        }
+        .compact-header {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 14px rgba(40, 60, 110, 0.10);
+            padding: 22px 25px;
+            margin-bottom: 32px;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .compact-header h1 {
+            font-size: 2.1rem;
+            color: #4052ae;
+            margin: 0;
+            font-weight: 700;
+        }
+        .back-btn {
+            background: none;
+            border: none;
+            color: #3a4ca8;
+            font-size: 1.18rem;
+            padding: 7px 15px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: 540;
+            transition: background 0.17s;
+        }
+        .back-btn:hover {
+            background: #f2f6ff;
+        }
+        .topic-selection {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(40,60,110,0.07);
+            padding: 28px 18px 24px 18px;
+            margin-bottom: 30px;
+        }
+        .topic-selection h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+            color: #4052ae;
+            margin-bottom: 18px;
+        }
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+        .subject-group {
+            background: #f6f8ff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(40,60,110,0.08);
+            padding: 18px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .subject-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #3554a3;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-align: left;
+        }
+        .topic-card {
+            background: #fff;
+            border-radius: 13px;
+            box-shadow: 0 2px 7px rgba(50,70,160,0.07);
+            padding: 22px 13px 18px 13px;
+            margin-bottom: 13px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1.5px solid #e2e6f9;
+            cursor: pointer;
+            transition: box-shadow .18s, transform .12s, border .18s;
+        }
+        .topic-card:last-child {
+            margin-bottom: 0;
+        }
+        .topic-card:hover {
+            box-shadow: 0 7px 24px rgba(50,70,160,0.13);
+            transform: translateY(-2px) scale(1.03);
+            border: 1.5px solid #4f61ff;
+        }
+        .topic-icon {
+            font-size: 2.1rem;
+            margin-bottom: 13px;
+            color: #4052ae;
+            opacity: 0.87;
+        }
+        .topic-title {
+            font-size: 1.08rem;
+            color: #29398b;
+            font-weight: 560;
+            margin-bottom: 7px;
+            text-align: center;
+        }
+        .topic-desc {
+            font-size: 0.97rem;
+            color: #616177;
+            text-align: center;
+            margin-bottom: 11px;
+            min-height: 28px;
+        }
+        .select-topic-btn {
+            margin-top: auto;
+            padding: 7px 16px;
+            font-size: 0.98rem;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(90deg, #4f61ff 0%, #8c9eff 100%);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.18s;
+        }
+        .select-topic-btn:hover {
+            background: linear-gradient(90deg, #4052ae 0%, #7487e8 100%);
+        }
+        .practice-area {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 14px rgba(40,60,110,0.07);
+            padding: 28px 18px 20px 18px;
+            margin-bottom: 12px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .practice-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .practice-header h3 {
+            color: #3a4ca8;
+            font-size: 1.18rem;
+            margin: 0;
+        }
+        .practice-stats {
+            font-size: 1rem;
+            color: #636c72;
+            background: #ecf2fe;
+            padding: 2px 10px;
+            border-radius: 8px;
+        }
+        .question-container {
+            margin-bottom: 18px;
+        }
+        .question-header {
+            display: flex;
+            gap: 10px;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .question-type, .subject-tag {
+            display: inline-block;
+            padding: 2px 11px;
+            border-radius: 10px;
+            background: #f3f6fd;
+            color: #3a4ca8;
+            font-size: 0.97rem;
+            font-weight: 500;
+        }
+        .question-type {
+            background: #e8f1fa;
+            color: #2271b2;
+        }
+        .question-content {
+            font-size: 1.11rem;
+            color: #1d254f;
+            background: #f7f8fb;
+            border-radius: 7px;
+            padding: 14px 12px;
+            margin-bottom: 10px;
+        }
+        .question-image {
+            margin-bottom: 8px;
+        }
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            margin-bottom: 8px;
+        }
+        .options-container button,
+        .options-container .option,
+        .options-container label {
+            background: #e3eafc;
+            color: #4052ae;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.17s;
+        }
+        .options-container button:hover,
+        .options-container .option:hover,
+        .options-container label:hover {
+            background: #c7dafc;
+        }
+        .numerical-input {
+            margin-bottom: 10px;
+        }
+        #practiceNumericalAnswer {
+            padding: 7px 9px;
+            border-radius: 7px;
+            border: 1px solid #dde2eb;
+            font-size: 1rem;
+            width: 55%;
+            margin-top: 4px;
+        }
+        .solution-container {
+            background: #f3f7fe;
+            border-radius: 9px;
+            margin-top: 11px;
+            padding: 13px 13px;
+        }
+        .solution-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .solution-header h4 {
+            font-size: 1.02rem;
+            color: #388e3c;
+            font-weight: 700;
+            margin: 0;
+        }
+        .correct-answer {
+            background: #eafbe7;
+            color: #388e3c;
+            border-radius: 6px;
+            padding: 3px 10px;
+            font-size: 0.97rem;
+            font-weight: 500;
+        }
+        .solution-content {
+            color: #333;
+            font-size: 0.98rem;
+            margin-top: 7px;
+        }
+        .practice-navigation {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .nav-btn {
+            padding: 9px 18px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: none;
+            background: #e3eafc;
+            color: #4052ae;
+            cursor: pointer;
+            font-weight: 520;
+            transition: background 0.18s, color 0.18s;
+        }
+        .nav-btn.primary {
+            background: linear-gradient(90deg, #4f61ff 0%, #8c9eff 100%);
+            color: #fff;
+            font-weight: 600;
+        }
+        .nav-btn.answer {
+            background: #eafbe7;
+            color: #388e3c;
+            font-weight: 600;
+        }
+        .nav-btn:active,
+        .nav-btn.answer:active,
+        .nav-btn.primary:active {
+            opacity: 0.95;
+        }
+        .nav-btn:hover {
+            background: #c7dafc;
+            color: #1e2b84;
+        }
+        .nav-btn.primary:hover {
+            background: linear-gradient(90deg, #4052ae 0%, #7487e8 100%);
+            color: #fff;
+        }
+        .nav-btn.answer:hover {
+            background: #defad2;
+            color: #388e3c;
+        }
+        @media (max-width: 900px) {
+            .fullscreen-container {
+                max-width: 99vw;
+                padding: 16px 4px 24px 4px;
+            }
+            .compact-header {
+                padding: 14px 11px;
+            }
+            .topic-selection,
+            .practice-area {
+                padding: 12px 7px 10px 7px;
+            }
+            .topics-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .subject-group {
+                padding: 12px 7px;
+            }
+        }
+        @media (max-width: 600px) {
+            .compact-header h1 {
+                font-size: 1.45rem;
+            }
+            .topic-selection h2 {
+                font-size: 1rem;
+            }
+            .subject-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="fullscreen-body">
     <div class="fullscreen-container">
         <header class="compact-header">
             <div class="header-content">
                 <h1>Practice Test</h1>
-                <button class="back-btn" onclick="goHome()">← Back</button>
+                <button class="back-btn" onclick="goHome()">Home</button>
+                <button class="back-btn" onclick="location.reload()">← Back</button>
+
             </div>
         </header>
 
         <div id="topicSelection" class="topic-selection">
             <h2>Select a Topic to Practice</h2>
             <div class="topics-grid" id="topicsGrid">
-                <!-- Topics will be populated dynamically -->
+                <!-- Mathematics Group -->
+                <div class="subject-group">
+                    <div class="subject-title">Mathematics</div>
+                    <div class="topic-card" onclick="selectTopic('Algebra')">
+                        <div class="topic-icon">📐</div>
+                        <div class="topic-title">Algebra</div>
+                        <div class="topic-desc">Equations, inequalities, polynomials.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                    <div class="topic-card" onclick="selectTopic('Calculus')">
+                        <div class="topic-icon">📊</div>
+                        <div class="topic-title">Calculus</div>
+                        <div class="topic-desc">Limits, derivatives, integration.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                    <div class="topic-card" onclick="selectTopic('Coordinate Geometry')">
+                        <div class="topic-icon">🧮</div>
+                        <div class="topic-title">Coordinate Geometry</div>
+                        <div class="topic-desc">Straight lines, circles, conics.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                </div>
+                <!-- Physics Group -->
+                <div class="subject-group">
+                    <div class="subject-title">Physics</div>
+                    <div class="topic-card" onclick="selectTopic('Mechanics')">
+                        <div class="topic-icon">🛠️</div>
+                        <div class="topic-title">Mechanics</div>
+                        <div class="topic-desc">Motion, force, laws, energy.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                    <div class="topic-card" onclick="selectTopic('Electrodynamics')">
+                        <div class="topic-icon">⚡</div>
+                        <div class="topic-title">Electrodynamics</div>
+                        <div class="topic-desc">Electric fields, circuits, magnetism.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                    <div class="topic-card" onclick="selectTopic('Optics')">
+                        <div class="topic-icon">🔦</div>
+                        <div class="topic-title">Optics</div>
+                        <div class="topic-desc">Light, reflection, refraction.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                </div>
+                <!-- Chemistry Group -->
+                <div class="subject-group">
+                    <div class="subject-title">Chemistry</div>
+                    <div class="topic-card" onclick="selectTopic('Organic Chemistry')">
+                        <div class="topic-icon">🧪</div>
+                        <div class="topic-title">Organic Chemistry</div>
+                        <div class="topic-desc">Hydrocarbons, reactions, mechanisms.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                    <div class="topic-card" onclick="selectTopic('Inorganic Chemistry')">
+                        <div class="topic-icon">🏺</div>
+                        <div class="topic-title">Inorganic Chemistry</div>
+                        <div class="topic-desc">Periodic table, bonding, compounds.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                    <div class="topic-card" onclick="selectTopic('Physical Chemistry')">
+                        <div class="topic-icon">🧫</div>
+                        <div class="topic-title">Physical Chemistry</div>
+                        <div class="topic-desc">Thermodynamics, kinetics, equilibrium.</div>
+                        <button class="select-topic-btn">Practice</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -29,29 +435,23 @@
                     <span>Question <span id="currentPracticeQuestion">1</span> of <span id="totalPracticeQuestions">0</span></span>
                 </div>
             </div>
-
             <div class="question-container">
                 <div class="question-header">
                     <span class="question-type" id="practiceQuestionType">MCQ</span>
                     <span class="subject-tag" id="practiceSubjectTag">Mathematics</span>
                 </div>
-                
                 <div class="question-content" id="practiceQuestionContent">
                     <!-- Question content will be populated dynamically -->
                 </div>
-
                 <div class="question-image" id="practiceQuestionImage">
                     <!-- Question image will be shown here if available -->
                 </div>
-
                 <div class="options-container" id="practiceOptionsContainer">
                     <!-- Options will be populated dynamically -->
                 </div>
-
                 <div class="numerical-input hidden" id="practiceNumericalInput">
                     <input type="text" id="practiceNumericalAnswer" placeholder="Enter your answer">
                 </div>
-
                 <div class="solution-container hidden" id="solutionContainer">
                     <div class="solution-header">
                         <h4>Solution</h4>
@@ -62,7 +462,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="practice-navigation">
                 <button class="nav-btn" id="practicePrevBtn" onclick="previousPracticeQuestion()">Previous</button>
                 <button class="nav-btn answer" id="showAnswerBtn" onclick="showAnswer()">Show Answer</button>
@@ -70,7 +469,6 @@
             </div>
         </div>
     </div>
-
     <script src="questions2024.js"></script>
     <script src="main.js"></script>
 </body>
