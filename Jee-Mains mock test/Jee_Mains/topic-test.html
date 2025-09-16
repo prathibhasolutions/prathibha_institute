@@ -435,6 +435,11 @@
         </header>
 
         <div id="topicWiseSelection" class="topic-wise-selection">
+            <div class="selection-actions">
+                <button class="nav-btn" onclick="selectAllTopics()">Select All</button>
+                <button class="nav-btn" onclick="clearAllTopics()">Clear All</button>
+                <button class="nav-btn primary" onclick="startTopicWiseTest()">Start Test</button>
+            </div>
             <h2>Select Topics for Test</h2>
             <p class="selection-info">Choose one or more topics. Maximum 25 random questions per subject will be selected.</p>
             <div class="subjects-container">
@@ -457,11 +462,7 @@
                     </div>
                 </div>
             </div>
-            <div class="selection-actions">
-                <button class="nav-btn" onclick="selectAllTopics()">Select All</button>
-                <button class="nav-btn" onclick="clearAllTopics()">Clear All</button>
-                <button class="nav-btn primary" onclick="startTopicWiseTest()">Start Test</button>
-            </div>
+            
         </div>
 
         <div class="test-with-palette" id="topicTestWithPalette" style="display: none;">
