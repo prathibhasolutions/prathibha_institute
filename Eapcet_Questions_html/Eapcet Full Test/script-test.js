@@ -60,8 +60,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   let storedImages = [];
+  // Use correct relative path for Organic_1st_Year images
+  let imageBasePath = '';
+  if (examfolder === 'Organic_1st_Year') {
+    imageBasePath = 'Organic_1st_Year/';
+  } else {
+    imageBasePath = examfolder.endsWith('/') ? examfolder : examfolder + '/';
+  }
   for (let i = 0; i < correctAnswers.length; i++) {
-    storedImages.push({ data: `${examfolder}/${i + 1}.png`, index: i });
+    storedImages.push({ data: imageBasePath + (i + 1) + '.png', index: i });
   }
   
   
