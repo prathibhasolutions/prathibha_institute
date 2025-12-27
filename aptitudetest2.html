@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCQ Quiz - Reasoning Topics</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .correct-answer {
+        color: green;
+        font-weight: bold;
+    }
+    .wrong-answer {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body class="bg-light">
+
+<div class="container my-4">
+    <h2 class="text-center mb-4">Reasoning MCQ Quiz</h2>
+    <form id="quizForm">
+        <div id="quizContainer"></div>
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Submit Answers</button>
+        </div>
+    </form>
+    <div id="scoreContainer" class="mt-4 text-center fs-5 fw-bold"></div>
+</div>
+
+<script>
+// 30 Questions Database
+const questions = [
+    // Logical Sequence of Words
+    {
+        q: "Which of the following is the correct logical order? 1. Seed, 2. Tree, 3. Plant, 4. Fruit, 5. Flower",
+        options: ["1, 3, 5, 4, 2", "1, 3, 2, 5, 4", "1, 2, 3, 5, 4", "1, 3, 5, 2, 4"],
+        answer: 0
+    },
+    {
+        q: "Arrange the words in logical sequence: 1. Infant, 2. Man, 3. Child, 4. Adolescent, 5. Old",
+        options: ["1, 3, 4, 2, 5", "1, 4, 3, 2, 5", "3, 1, 4, 2, 5", "1, 3, 2, 4, 5"],
+        answer: 0
+    },
+    
+    // Blood Relation
+    {
+        q: "Pointing to a woman, a man says, “Her son is my son’s uncle.” How is the woman related to the man?",
+        options: ["Sister", "Mother", "Wife", "Aunt"],
+        answer: 2
+    },
+    {
+        q: "Pointing to a photograph, a man said, “I have no brothers or sisters, but that man’s father is my father's son.” Who is the person in the photograph?",
+        options: ["Son", "Father", "Nephew", "Cousin"],
+        answer: 0
+    },
+    
+    // Syllogism
+    {
+        q: "Statements: All cats are dogs. Some dogs are rats. Conclusion: I. Some cats are rats. II. Some rats are cats.",
+        options: ["Only conclusion I follows", "Only conclusion II follows", "Neither follows", "Both follow"],
+        answer: 2
+    },
+    {
+        q: "Statements: Some books are pens. All pens are pencils. Conclusion: I. Some pencils are books. II. All books are pencils.",
+        options: ["Only I follows", "Only II follows", "Both follow", "None follows"],
+        answer: 2
+    },
+    
+    // Seating Arrangement
+    {
+        q: "A, B, C, D, E sitting in a row. B is between A and C. E is to the right of A. Who is in the middle?",
+        options: ["A", "B", "C", "E"],
+        answer: 1
+    },
+    {
+        q: "Five people facing north, P is to the immediate left of Q and R is to the immediate right of Q. If S is at one end, who is at the other end?",
+        options: ["P", "Q", "R", "Cannot be determined"],
+        answer: 0
+    },
+    
+    // Classifications
+    {
+        q: "Find the odd one out: Apple, Mango, Banana, Carrot",
+        options: ["Apple", "Mango", "Banana", "Carrot"],
+        answer: 3
+    },
+    {
+        q: "Find the odd one out: Table, Chair, Bench, Bed",
+        options: ["Table", "Chair", "Bench", "Bed"],
+        answer: 3
+    },
+    
+    // Number Series
+    {
+        q: "Find the next number: 2, 6, 12, 20, 30, ?",
+        options: ["36", "40", "42", "44"],
+        answer: 2
+    },
+    {
+        q: "Next term: 3, 9, 27, 81, ?",
+        options: ["162", "243", "324", "729"],
+        answer: 1
+    },
+    
+    // Analogies
+    {
+        q: "Eye : Vision :: Ear : ?",
+        options: ["Hearing", "Sound", "Noise", "Eardrum"],
+        answer: 0
+    },
+    {
+        q: "Water : Thirst :: Food : ?",
+        options: ["Hunger", "Bread", "Rice", "Energy"],
+        answer: 0
+    },
+    
+    // Letter & Symbol Series
+    {
+        q: "Find missing letter: A, C, F, J, O, ?",
+        options: ["S", "T", "U", "V"],
+        answer: 0
+    },
+    {
+        q: "Find missing symbol: @, #, @, #, @, ?",
+        options: ["@", "#", "*", "&"],
+        answer: 1
+    },
+
+    // Additional mix to make total 30
+    {q:"Arrange: 1. Proposal, 2. Discussion, 3. Introduction, 4. Approval", options:[
+        "3,1,2,4","1,3,2,4","3,2,1,4","2,3,1,4"], answer:0},
+    {q:"If A+B means A is mother of B; A-B means A is father of B. Then what does P+Q-R mean?", options:[
+        "P is mother of R","P is mother of Q and Q is father of R","P is father of Q","P is sister of R"], answer:1},
+    {q:"Statements: All roses are flowers. Some flowers are red. Conclusions: I. Some roses are red. II. Some flowers are roses.", options:[
+        "Only I follows","Only II follows","Both follow","None follows"], answer:1},
+    {q:"Six people sit in circle facing center. A is between B and C. D is between E and F. B is opposite E. Who is opposite A?", options:[
+        "D","F","E","C"], answer:0},
+    {q:"Find odd one: Dog, Cat, Goat, Chair", options:[
+        "Dog","Cat","Goat","Chair"], answer:3},
+    {q:"Series: 5, 11, 17, 23, ?", options:[
+        "27","29","30","31"], answer:1},
+    {q:"Analogy: Planet : Galaxy :: Star : ?", options:[
+        "Sun","Universe","Milky Way","Constellation"], answer:3},
+    {q:"Letter series: B, D, G, K, P, ?", options:[
+        "R","T","U","V"], answer:2},
+    {q:"Arrange logically: 1. Purchase of raw material 2. Production 3. Advertisement 4. Sales", options:[
+        "1,2,3,4","2,1,4,3","3,2,1,4","4,3,2,1"], answer:0},
+    {q:"Ramu is maternal uncle of Ravi. How is Ravi related to Ramu?", options:[
+        "Nephew","Cousin","Uncle","Brother"], answer:0},
+    {q:"Statements: Some fruits are sweet. All sweets are tasty. Conclusions: I. Some fruits are tasty. II. All tasty things are sweets.", options:[
+        "Only I follows","Only II follows","Both follow","None follows"], answer:0},
+    {q:"Odd one: Circle, Triangle, Square, Sphere", options:[
+        "Triangle","Square","Circle","Sphere"], answer:3},
+    {q:"Number series: 1, 4, 9, 16, 25, ?", options:[
+        "30","35","36","49"], answer:2},
+    {q:"Analogy: Lion : Cub :: Horse : ?", options:[
+        "Foal","Calf","Pup","Kid"], answer:0}
+];
+
+// Render Questions
+const quizContainer = document.getElementById("quizContainer");
+
+questions.forEach((item, index) => {
+    const card = document.createElement("div");
+    card.className = "card mb-3";
+    card.innerHTML = `
+        <div class="card-body">
+            <h5 class="card-title">Q${index+1}. ${item.q}</h5>
+            ${item.options.map((opt, i) => `
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q${index}" id="q${index}opt${i}" value="${i}">
+                    <label class="form-check-label" for="q${index}opt${i}">${opt}</label>
+                </div>
+            `).join('')}
+            <div class="feedback mt-2"></div>
+        </div>
+    `;
+    quizContainer.appendChild(card);
+});
+
+// Handle Submission
+document.getElementById("quizForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let score = 0;
+    const feedbackEls = document.querySelectorAll(".feedback");
+
+    questions.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const feedbackEl = feedbackEls[index];
+        if (selected) {
+            if (parseInt(selected.value) === item.answer) {
+                score++;
+                feedbackEl.innerHTML = `<span class="correct-answer">Correct!</span>`;
+            } else {
+                feedbackEl.innerHTML = `<span class="wrong-answer">Wrong!</span> Correct Answer: <strong>${item.options[item.answer]}</strong>`;
+            }
+        } else {
+            feedbackEl.innerHTML = `<span class="wrong-answer">No answer selected.</span> Correct Answer: <strong>${item.options[item.answer]}</strong>`;
+        }
+    });
+
+    document.getElementById("scoreContainer").innerHTML = `Your Score: ${score} / ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

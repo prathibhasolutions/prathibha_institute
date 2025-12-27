@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aldehydes, Ketones & Carboxylic Acids - JEE Mains Ultimate Notes</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"></script>
+<style>
+  body { background: #f9fbfc; }
+  h1, h3 { margin-top: 1rem; }
+  .topic-card { border-left: 6px solid #0056b3; margin-bottom: 1.5rem; }
+  .subtopic-card { background: #f0f7ff; margin-bottom: 1.2rem; }
+  .nested-card { background: #e2ebff; border-left: 4px solid #004085; margin-bottom: 1rem; }
+  .reaction, .formula, .mechanism { background: #d9eaff; border-left: 4px solid #004085; padding: 0.6rem 1rem; margin-bottom: 0.7rem; font-family: monospace; }
+  .lab-test { background: #fff3cd; border-left: 4px solid #856404; padding: 0.6rem 1rem; margin-bottom: 0.7rem; }
+  .important { font-weight: bold; color: #b30000; }
+  .section-header { color: #003366; font-weight: 700; font-size: 1.4rem; margin-bottom: 1rem; }
+  table { font-size: 0.9rem; }
+  .katex-display { font-size: 1.1em; }
+  @media (max-width: 600px) {
+    .container { padding: 0 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container py-4">
+
+  <h1 class="text-center text-primary mb-4">Aldehydes, Ketones & Carboxylic Acids</h1>
+  <h4 class="text-center text-secondary mb-4">Complete JEE Mains Notes: Reactions, Mechanisms & Named Reactions</h4>
+
+  <!-- Syllabus Overview -->
+  <div class="card topic-card p-3">
+    <h3 class="section-header">JEE Mains Syllabus Coverage</h3>
+    <ul>
+      <li>Structure, nomenclature, classification of aldehydes and ketones</li>
+      <li>Preparation: Oxidation, reduction, addition reactions, Grignard, aromatic methods</li>
+      <li>Chemical Properties: Addition, oxidation, reduction, condensation, halogenation</li>
+      <li>Named reactions: Rosenmund, Cannizzaro, Aldol, Haloform, Perkin, Tollen’s, Fehling’s</li>
+      <li>Carboxylic acids: Preparation, properties, acidity, derivatives, esterification, reactions</li>
+    </ul>
+  </div>
+
+  <!-- ALDEHYDES & KETONES MAIN CARD -->
+  <div class="card topic-card p-3">
+
+    <h3 class="section-header">1. Aldehydes & Ketones</h3>
+
+    <!-- Structure & Nomenclature -->
+    <div class="card subtopic-card p-3">
+      <h4>1.1 Structure & Nomenclature</h4>
+      <p><strong>Aldehydes:</strong> Contain the –CHO group attached to an alkyl or aryl group; general formula: \( R-CHO \) or \( Ar-CHO \).</p>
+      <p><strong>Ketones:</strong> Contain a carbonyl group \( C=O \) bonded to two carbon atoms; general formula: \( R-CO-R' \).</p>
+      <p><strong>Nomenclature:</strong> For aldehydes, suffix <em>-al</em> is used (IUPAC). Ketones use suffix <em>-one</em>.</p>
+      <ul>
+        <li>Common names based on alkyl substituents (e.g., acetone for propanone).</li>
+        <li>Aromatic aldehydes are named as derivatives of benzaldehyde (e.g., vanillin).</li>
+      </ul>
+    </div>
+
+    <!-- Preparation -->
+    <div class="card subtopic-card p-3">
+      <h4>1.2 Preparation of Aldehydes & Ketones</h4>
+
+      <div class="nested-card p-3">
+        <h5>From Alcohols (Oxidation)</h5>
+        <ul>
+          <li>1° alcohols oxidized to aldehydes using PCC or controlled oxidation (prevent further oxidation to acid)</li>
+          <li>2° alcohols oxidized to ketones using \( \mathrm{KMnO_4} \), \( \mathrm{K_2Cr_2O_7} \)/\( \mathrm{H_2SO_4} \)</li>
+          <li>3° alcohols do not oxidize easily</li>
+        </ul>
+        <div class="reaction">R–CH<sub>2</sub>OH + [O] → R–CHO (aldehyde)<br>R<sub>2</sub>CHOH + [O] → R<sub>2</sub>CO (ketone)</div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>From Hydrocarbons</h5>
+        <ul>
+          <li><b>Oxymercuration of alkenes</b> to form ketones and aldehydes</li>
+          <li><b>Ketel formation by oxidation</b> of alkyl benzenes (side chain oxidation with \( \mathrm{KMnO_4} \))</li>
+        </ul>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>From Grignard Reagents</h5>
+        <ul>
+          <li>Addition of Grignard reagents to nitriles → imines → hydrolysis → ketones</li>
+          <li>Addition to acid chlorides → ketones (dialkyl cadmium reactions as well)</li>
+        </ul>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>Important Reactions & Special methods</h5>
+        <ul>
+          <li><strong>Rosenmund Reduction:</strong> Acid chlorides reduced to aldehydes using \( \mathrm{H_2} \), palladium on BaSO<sub>4</sub> poisoned catalyst.</li>
+          <li><strong>Oxo Process:</strong> Hydroformylation of alkenes (alkene + CO + H<sub>2</sub> with catalyst → aldehydes)</li>
+          <li><strong>From acid chlorides & acid anhydrides:</strong> Partial reduction or hydrolysis</li>
+          <li><strong>Dry distillation of calcium salts:</strong> Preparation of ketones and aldehydes from calcium salts</li>
+          <li><strong>Formylation of aromatic rings:</strong> Gattermann-Koch reaction (with CO/HCl/AlCl<sub>3</sub>)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Physical Properties -->
+    <div class="card subtopic-card p-3">
+      <h4>1.3 Physical Properties</h4>
+      <ul>
+        <li>Boiling points are higher than hydrocarbons but lower than alcohols due to no hydrogen bonding</li>
+        <li>Soluble in polar solvents; lower aldehydes and ketones soluble in water</li>
+        <li>Characteristic odors: aldehydes usually have pleasant odors, ketones sweet or minty</li>
+      </ul>
+    </div>
+
+    <!-- Chemical Properties & Named Reactions -->
+    <div class="card subtopic-card p-3">
+
+      <h4>1.4 Chemical Properties & Important Reactions</h4>
+
+      <!-- Addition to Carbonyl Group -->
+      <div class="nested-card p-3">
+        <h5>A. Nucleophilic Addition Reactions</h5>
+        <p>Due to partial positive charge on carbonyl carbon, nucleophiles attack producing addition products:</p>
+        <ul>
+          <li>Addition of HCN → Cyanohydrins</li>
+          <li>Addition of NaHSO<sub>3</sub> → bisulfite addition compounds (used for purification)</li>
+          <li>Addition of water → gem-diols (hydrate form); reversible</li>
+          <li>Addition of alcohols → hemiacetals and acetals (important in protection of carbonyl groups)</li>
+          <li>Addition of ammonia derivatives and hydrazines → imines, hydrazones, semicarbazones (used for identification)</li>
+        </ul>
+        <div class="reaction">
+          \( \mathrm{RCHO + HCN \xrightarrow{KCN} RCH(OH)CN} \) (cyanohydrin)
+        </div>
+      </div>
+
+      <!-- Oxidation -->
+      <div class="nested-card p-3">
+        <h5>B. Oxidation</h5>
+        <ul>
+          <li>Aldehydes easily oxidize to carboxylic acids with mild oxidants (Tollen's reagent, Fehling's, \( \mathrm{KMnO_4} \))</li>
+          <li>Ketones generally resistant to oxidation except with vigorous conditions</li>
+        </ul>
+        <div class="reaction">
+          \( \mathrm{RCHO + [O] \rightarrow RCOOH} \)
+        </div>
+      </div>
+
+      <!-- Reduction -->
+      <div class="nested-card p-3">
+        <h5>C. Reduction</h5>
+        <ul>
+          <li>Aldehydes and ketones reduced to alcohols using LiAlH<sub>4</sub> or NaBH<sub>4</sub></li>
+          <li>Clemmensen and Wolff-Kishner reductions convert carbonyls fully to alkanes</li>
+        </ul>
+        <div class="reaction">
+          \( \mathrm{RCHO + 2[H] \rightarrow RCH_2OH} \)<br>
+          \( \mathrm{RCOR' + 2[H] \rightarrow RCH(OH)R'} \)
+        </div>
+      </div>
+
+      <!-- Condensation Reactions -->
+      <div class="nested-card p-3">
+        <h5>D. Aldol Condensation</h5>
+        <p>A reaction of aldehydes or ketones with α-hydrogen under basic/acidic catalysis producing β-hydroxy aldehydes/ketones, which dehydrate to α,β-unsaturated compounds.</p>
+        <div class="reaction">
+          <small>2 RCHO &rarr; RCH(OH)CH<sub>2</sub>CHO &rarr; RCH=CHCHO + H<sub>2</sub>O</small>
+        </div>
+        <p><b>Importance:</b> C-C bond formation, formation of cinnamaldehyde, benzylideneacetone.</p>
+      </div>
+
+      <!-- Cannizzaro Reaction -->
+      <div class="nested-card p-3">
+        <h5>E. Cannizzaro Reaction</h5>
+        <p>Disproportionation of non-enolizable aldehydes (no alpha H) in strong base yielding alcohol and carboxylic acid salts.</p>
+        <div class="reaction">
+          \( 2 RCHO + OH^- \rightarrow RCH_2OH + RCOO^- \)
+        </div>
+        <p><b>Example:</b> Benzaldehyde in \( \mathrm{NaOH} \) gives benzyl alcohol + sodium benzoate.</p>
+      </div>
+
+      <!-- Haloform Reaction -->
+      <div class="nested-card p-3">
+        <h5>F. Haloform Reaction</h5>
+        <p>Reaction of methyl ketones (or ethanol, acetaldehyde) with halogens \( \mathrm{X_2} \) and base to give haloform (CHX<sub>3</sub>) and carboxylate salt.</p>
+        <div class="reaction">
+          \( \mathrm{CH_3COCH_3 + 3 X_2 + 4 OH^- \rightarrow CHX_3 + CH_3COO^- + 3 H_2O} \)
+        </div>
+        <p><b>Haloforms:</b> Chloroform, bromoform, iodoform (yellow ppt).</p>
+      </div>
+
+      <!-- Perkin Reaction -->
+      <div class="nested-card p-3">
+        <h5>G. Perkin Reaction</h5>
+        <p>Condensation of aromatic aldehydes with anhydrides in presence of sodium salt of acid to give α,β-unsaturated acids.</p>
+        <div class="reaction">
+          Benzaldehyde + Acetic anhydride + Sodium acetate → Cinnamic acid + Acetic acid
+        </div>
+      </div>
+
+      <!-- Stephen Reduction -->
+      <div class="nested-card p-3">
+        <h5>H. Stephen Reduction</h5>
+        <p>Reduction of nitriles to imines then hydrolysis to aldehydes using SnCl<sub>2</sub> and HCl followed by water.</p>
+      </div>
+
+      <!-- Identification Tests -->
+      <div class="nested-card p-3">
+        <h5>I. Identification Tests</h5>
+        <ul>
+          <li><strong>Tollen’s Test:</strong> Silver mirror on aldehyde; ketones negative except α-hydroxyketones</li>
+          <li><strong>Fehling’s Test:</strong> Brick red precipitate for aldehydes; ketones negative except α-hydroxyketones</li>
+          <li><strong>Schiff’s Test:</strong> Pink color with aldehydes</li>
+          <li><strong>Sodium bisulfite addition:</strong> Forms crystalline derivative; used for purification</li>
+          <li><strong>2,4-Dinitrophenylhydrazine (2,4-DNP):</strong> Formation of hydrazones, yellow or orange precipitates</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARBOXYLIC ACIDS -->
+  <div class="card topic-card p-3">
+
+    <h3 class="section-header">2. Carboxylic Acids</h3>
+
+    <!-- Structure & Nomenclature -->
+    <div class="card subtopic-card p-3">
+      <h4>2.1 Structure & Nomenclature</h4>
+      <p>Compounds containing the carboxyl group (-COOH). General formula: \( R-COOH \).</p>
+      <p>Naming by replacing -e of alkane with -oic acid (IUPAC); example: ethanoic acid.</p>
+    </div>
+
+    <!-- Preparation -->
+    <div class="card subtopic-card p-3">
+      <h4>2.2 Preparation of Carboxylic Acids</h4>
+
+      <div class="nested-card p-3">
+        <h5>By Oxidation</h5>
+        <ul>
+          <li>Primary alcohols or aldehydes with strong oxidizers (e.g. \( \mathrm{KMnO_4}, K_2Cr_2O_7/H_2SO_4 \))</li>
+          <li>Side chain oxidation of alkyl benzene gives benzoic acid</li>
+        </ul>
+        <div class="reaction">
+          \( \mathrm{RCH_2OH \xrightarrow{[O]} RCOOH} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>Other Methods</h5>
+        <ul>
+          <li>Hydrolysis of nitriles: \( \mathrm{R-C \equiv N + 2H_2O \rightarrow RCOOH + NH_3} \)</li>
+          <li>From Grignard reagents with dry ice (CO<sub>2</sub>): \( \mathrm{R-MgX + CO_2 \rightarrow RCOOMgX \xrightarrow{H^+} RCOOH} \)</li>
+          <li>Carbonation of Grignard reagents</li>
+          <li>Hydrolysis of acid halides and esters</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Physical Properties -->
+    <div class="card subtopic-card p-3">
+      <h4>2.3 Physical Properties</h4>
+      <ul>
+        <li>Higher boiling points due to dimer formation and hydrogen bonding</li>
+        <li>Soluble in water; solubility decreases with larger alkyl chain</li>
+        <li>Higher acidity than alcohols and phenols</li>
+      </ul>
+    </div>
+
+    <!-- Chemical Properties -->
+    <div class="card subtopic-card p-3">
+
+      <h4>2.4 Chemical Properties & Reactions</h4>
+
+      <div class="nested-card p-3">
+        <h5>A. Acid-Base Properties</h5>
+        <ul>
+          <li>Carboxylic acids are weak acids, ionize to give carboxylate anions</li>
+          <li>Resonance stabilization of carboxylate ion increases acidity</li>
+          <li>Reactions with bases to form salts</li>
+        </ul>
+        <div class="reaction">
+          \( \mathrm{RCOOH + NaOH \rightarrow RCOONa + H_2O} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>B. Reduction</h5>
+        <ul>
+          <li>Reduced to primary alcohols by LiAlH<sub>4</sub></li>
+        </ul>
+        <div class="reaction">
+          \( \mathrm{RCOOH + 4[H] \xrightarrow{LiAlH_4} RCH_2OH + H_2O} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>C. Reactions with PCl<sub>5</sub>, SOCl<sub>2</sub></h5>
+        <p>Formation of acid chlorides:</p>
+        <div class="reaction">
+          \( \mathrm{RCOOH + PCl_5 \rightarrow RCOCl + POCl_3 + HCl} \)<br>
+          \( \mathrm{RCOOH + SOCl_2 \rightarrow RCOCl + SO_2 + HCl} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>D. Esterification</h5>
+        <p>Reaction with alcohols in presence of acid catalyst forming esters and water:</p>
+        <div class="reaction">
+          \( \mathrm{RCOOH + R'OH \xrightarrow{H^+} RCOOR' + H_2O} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>E. Decarboxylation</h5>
+        <p>Removal of carboxyl group as CO<sub>2</sub>, often using soda lime:</p>
+        <div class="reaction">
+          \( \mathrm{RCOOH \xrightarrow{NaOH+CaO, \Delta} RH + CO_2} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>F. Halogenation</h5>
+        <p>Alpha-halogenation of carboxylic acids (Hell-Volhard-Zelinsky reaction):</p>
+        <div class="reaction">
+          \( \mathrm{RCH_2COOH + Br_2 \xrightarrow{PCl_3} RCHBrCOOH + HBr} \)
+        </div>
+      </div>
+
+      <div class="nested-card p-3">
+        <h5>G. Formation of Acid Derivatives</h5>
+        <p>Different derivatives and reactions:</p>
+        <ul>
+          <li>Acid chlorides: \( RCOCl \), highly reactive</li>
+          <li>Anhydrides: \( (RCO)_2O \)</li>
+          <li>Esters: \( RCOOR' \)</li>
+          <li>Amides: \( RCONH_2 \), prepared by reaction of acid chlorides with ammonia or amines</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tests to distinguish Acid Derivatives -->
+    <div class="card subtopic-card p-3">
+      <h4>2.5 Laboratory Tests & Distinctions</h4>
+      <ul>
+        <li><strong>Acid Test:</strong> Reaction with NaHCO<sub>3</sub> to give CO<sub>2</sub> effervescence (carboxylic acids positive)</li>
+        <li><strong>Tollen’s and Fehling’s tests:</strong> Positive for aldehydes, negative for ketones & acids</li>
+        <li><strong>Schotten-Baumann reaction:</strong> Acid chlorides reaction with amines to form amides</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Summary Table -->
+  <div class="card p-3">
+    <h3 class="section-header">3. Summary Table: Named Reactions and Key Processes</h3>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Reaction/Process</th>
+          <th>Reactants</th>
+          <th>Products / Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Rosenmund Reduction</td><td>Acid chlorides + H<sub>2</sub> (Pd/BaSO<sub>4</sub>)</td><td>Aldehydes</td></tr>
+        <tr><td>Cannizzaro Reaction</td><td>Aldehydes (without α-H), concentrated NaOH</td><td>Alcohol + Carboxylate</td></tr>
+        <tr><td>Aldol Condensation</td><td>Aldehydes/ketones with α-H, base/acid catalyst</td><td>β-Hydroxy aldehyde/ketone; α,β-unsaturated carbonyl compounds</td></tr>
+        <tr><td>Haloform Reaction</td><td>Methyl ketones + X<sub>2</sub> + NaOH</td><td>Haloform (CHX<sub>3</sub>) + Carboxylate</td></tr>
+        <tr><td>Perkin Reaction</td><td>Aromatic aldehyde + acid anhydride + sodium salt</td><td>α,β-unsaturated acid</td></tr>
+        <tr><td>Stephen Reduction</td><td>Nitrile + SnCl<sub>2</sub>/HCl</td><td>Aldehydes</td></tr>
+        <tr><td>Hell-Volhard-Zelinsky</td><td>Carboxylic acid + Br<sub>2</sub>, PCl<sub>3</sub></td><td>α-Bromo acid</td></tr>
+        <tr><td>Schotten-Baumann Reaction</td><td>Acid chlorides + amines</td><td>Amides</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="alert alert-info mt-4">
+    <strong>Tip for JEE Mains:</strong> Master all named reactions with their mechanisms, understand conditions, and practice numerical problems to recognize these patterns. Lab tests or identifying reactions are crucial for MCQ and subjective questions.
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

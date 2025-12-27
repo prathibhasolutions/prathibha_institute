@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Selection</title>
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .header h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        .header p {
+            color: #636c72;
+            font-size: 1.2rem;
+        }
+        .test-selection-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        .test-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(32,40,130,0.07), 0 2px 6px rgba(50,50,93,0.07);
+            padding: 32px 24px;
+            width: 297px;
+            transition: box-shadow 0.23s;
+            text-align: center;
+            position: relative;
+            border: 1px solid #e8eaf6;
+        }
+        .test-card:hover {
+            box-shadow: 0 12px 40px rgba(32,40,130,0.18), 0 2px 6px rgba(50,50,93,0.10);
+        }
+        .test-icon {
+            font-size: 2.7rem;
+            margin-bottom: 22px;
+            color: #343a40;
+        }
+        .test-card h2 {
+            font-size: 1.45rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #4052ae;
+        }
+        .test-card p {
+            font-size: 1.02rem;
+            color: #666e79;
+            margin-bottom: 18px;
+            min-height: 48px;
+        }
+        .test-features {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .feature {
+            background: #e3eafc;
+            color: #3a4ca8;
+            border-radius: 12px;
+            padding: 6px 16px;
+            font-size: 0.96rem;
+            margin: 2px 0;
+            font-weight: 500;
+        }
+        .test-btn {
+            margin-top: 8px;
+            padding: 8px 18px;
+            font-size: 1.07rem;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(94deg,#4f61ff 0%,#8c9eff 100%);
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(70,130,255,0.17);
+            transition: background 0.21s;
+        }
+        .test-btn:hover {
+            background: linear-gradient(94deg,#4052ae 0%,#7487e8 100%);
+        }
+        .loading-spinner {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 48px;
+        }
+        .spinner {
+            width: 38px;
+            height: 38px;
+            border: 5px solid #dde2eb;
+            border-top: 5px solid #4f61ff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 12px;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 1050px) {
+            .container {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .test-card {
+                padding: 24px 10px;
+            }
+            .test-selection-grid {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 930px) {
+            .test-selection-grid {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .test-card {
+                width: 97%;
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 640px) {
+            .test-card {
+                width: 98%;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Jee-Mains</h1>
+            <p>Choose your test type to begin</p>
+        </header>
+        <div class="test-selection-grid">
+            <div class="test-card" data-test-type="session">
+                <div class="test-icon">📝</div>
+                <h2>Session Test</h2>
+                <p>Complete mock tests with questions from 2025 sessions. Select from available sessions and take timed tests.</p>
+                <div class="test-features">
+                    <span class="feature">Timed Tests</span>
+                    <span class="feature">Mock Exam</span>
+                    <span class="feature">Performance Analysis</span>
+                </div>
+                <button class="test-btn">Start Session Test</button>
+            </div>
+            <div class="test-card" data-test-type="practice">
+                <div class="test-icon">💡</div>
+                <h2>Practice Test</h2>
+                <p>Practice with topic-wise questions from 2024. View solutions immediately and improve your understanding.</p>
+                <div class="test-features">
+                    <span class="feature">Topic Wise</span>
+                    <span class="feature">Instant Solutions</span>
+                    <span class="feature">Self Paced</span>
+                </div>
+                <button class="test-btn">Start Practice</button>
+            </div>
+            <div class="test-card" data-test-type="topic">
+                <div class="test-icon">🎯</div>
+                <h2>Topic Wise Test</h2>
+                <p>Select specific topics from 2023 questions and take focused tests. Choose multiple topics for comprehensive testing.</p>
+                <div class="test-features">
+                    <span class="feature">Custom Selection</span>
+                    
+                    <span class="feature">Random Questions</span>
+                </div>
+                <button class="test-btn">Start Topic Test</button>
+            </div>
+        </div>
+        <div class="loading-spinner" id="loadingSpinner">
+            <div class="spinner"></div>
+            <p>Loading test...</p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
