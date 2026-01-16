@@ -1,3 +1,80 @@
+html {
+  scroll-behavior: smooth;
+}
+
+[data-aos] {
+  transform: translateZ(0); /* Ensures AOS works with 3D */
+}
+
+  /* Add a 3D perspective to the whole page */
+body {
+  perspective: 1500px;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+}
+
+/* 3D effect for service boxes */
+.service-box {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-box:hover {
+  transform: rotateY(10deg) scale(1.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* 3D effect for .box (Values section) */
+.box {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transform-style: preserve-3d;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.box:hover {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* 3D buttons */
+.btn-custom-primary {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 25px;
+  transition: transform 0.4s, box-shadow 0.4s;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.btn-custom-primary:hover {
+  transform: scale(1.08) translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.5);
+}
+
+/* Slight float animation for images */
+.image-container img {
+  transition: transform 1s ease;
+}
+
+.image-container img:hover {
+  transform: rotateY(15deg) rotateX(5deg) scale(1.1);
+}
+
+/* Logo rotation on hover */
+.logo {
+  transition: transform 0.6s ease;
+}
+
+.logo:hover {
+  transform: rotateY(360deg);}
+
+
+
+  
 * {
     margin: 0;
     padding: 0;
