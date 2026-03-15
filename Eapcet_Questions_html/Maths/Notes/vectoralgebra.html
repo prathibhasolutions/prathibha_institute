@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vector Algebra</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Vector Algebra</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Introduction & Types of Vectors
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Introduction &amp; Types of Vectors</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>vector</strong> has both <em>direction</em> and <em>magnitude</em>, whereas a <strong>scalar</strong> has only magnitude.</p>
+      <p>e.g. Vector quantities: displacement, velocity, acceleration. Scalar quantities: length, mass, time.</p>
+
+      <!-- Nested: Characteristics -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Characteristics of a Vector</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Magnitude:</strong> The length \(|\overrightarrow{AB}|\) or \(|\mathbf{a}|\) of the vector.</li>
+            <li><strong>Sense:</strong> The direction from initial point to terminal point. Sense of \(\overrightarrow{AB}\) is from \(A\) to \(B\).</li>
+            <li><strong>Support:</strong> The line of infinite length of which the line segment \(\overrightarrow{AB}\) is a part.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Types -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Types of Vectors</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Zero (Null) Vector:</strong> Initial and terminal points coincide. Denoted by \(\mathbf{0}\).</li>
+            <li><strong>Unit Vector:</strong> Magnitude = 1. Unit vector in direction of \(\mathbf{n}\) is \(\hat{n} = \dfrac{\mathbf{n}}{|\mathbf{n}|}\).</li>
+            <li><strong>Free Vector:</strong> Initial point is not specified.</li>
+            <li><strong>Like &amp; Unlike Vectors:</strong> Like — same direction; Unlike — opposite directions.</li>
+            <li><strong>Collinear (Parallel) Vectors:</strong> Have the same or parallel supports.</li>
+            <li><strong>Equal Vectors:</strong> Same length and same direction. \(\mathbf{a} = \mathbf{b}\).</li>
+            <li><strong>Negative Vector:</strong> Same magnitude as \(\mathbf{a}\) but opposite direction: \(-\mathbf{a}\).</li>
+            <li><strong>Coinitial Vectors:</strong> Same initial point.</li>
+            <li><strong>Coterminus Vectors:</strong> Same terminal point.</li>
+            <li><strong>Localised Vector:</strong> Drawn parallel to a given vector through a specified point in space.</li>
+            <li><strong>Coplanar Vectors:</strong> Supports are parallel to the same plane.</li>
+            <li><strong>Reciprocal of a Vector:</strong> Same direction as \(\mathbf{a}\) but magnitude \(\dfrac{1}{|\mathbf{a}|}\). Denoted \(\mathbf{a}^{-1}\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Addition & Subtraction of Vectors
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Addition &amp; Subtraction of Vectors</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Triangle Law -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Triangle Law of Vector Addition</h5>
+        </div>
+        <div class="card-body">
+          <p>From the terminal point of \(\mathbf{a}\), draw \(\mathbf{b}\). Then the vector from the initial point of \(\mathbf{a}\) to the terminal point of \(\mathbf{b}\) is \(\mathbf{a} + \mathbf{b}\).</p>
+          <p><strong>Note:</strong> When sides of a triangle are taken in order: \(\overrightarrow{AB} + \overrightarrow{BC} + \overrightarrow{CA} = \mathbf{0}\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Parallelogram Law -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Parallelogram Law of Vector Addition</h5>
+        </div>
+        <div class="card-body">
+          <p>From the same initial point, draw \(\mathbf{a}\) and \(\mathbf{b}\) as adjacent sides of a parallelogram. The diagonal through the common vertex represents \(\mathbf{a} + \mathbf{b}\).</p>
+          <p>The bisector of the angle between non-collinear vectors \(\mathbf{a}\) and \(\mathbf{b}\) is \(\lambda(\hat{a} + \hat{b})\) or \(\lambda\!\left(\dfrac{\mathbf{a}}{|\mathbf{a}|} \pm \dfrac{\mathbf{b}}{|\mathbf{b}|}\right)\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Properties of Vector Addition</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Commutative:</strong> \(\mathbf{a} + \mathbf{b} = \mathbf{b} + \mathbf{a}\)</li>
+            <li><strong>Associative:</strong> \((\mathbf{a} + \mathbf{b}) + \mathbf{c} = \mathbf{a} + (\mathbf{b} + \mathbf{c})\)</li>
+            <li><strong>Additive Identity:</strong> \(\mathbf{a} + \mathbf{0} = \mathbf{a}\)</li>
+            <li><strong>Additive Inverse:</strong> \(\mathbf{a} + (-\mathbf{a}) = \mathbf{0}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Subtraction -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Subtraction of Vectors</h5>
+        </div>
+        <div class="card-body">
+          <p>The difference \(\mathbf{a} - \mathbf{b} = \mathbf{a} + (-\mathbf{b})\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Multiplication by Scalar & Components
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Multiplication by a Scalar &amp; Components</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Scalar multiplication -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white">
+          <h5>Multiplication of a Vector by a Scalar</h5>
+        </div>
+        <div class="card-body">
+          <p>For scalar \(\lambda\) and vector \(\mathbf{a}\), the product \(\lambda\mathbf{a}\) satisfies:</p>
+          <ul>
+            <li>\(|\lambda\mathbf{a}| = |\lambda||\mathbf{a}|\)</li>
+            <li>\(\lambda\mathbf{0} = \mathbf{0}\)</li>
+            <li>\((-m)\mathbf{a} = m(-\mathbf{a}) = -(m\mathbf{a})\)</li>
+            <li>\((mn)\mathbf{a} = m(n\mathbf{a})\)</li>
+            <li>\((m+n)\mathbf{a} = m\mathbf{a} + n\mathbf{a}\)</li>
+            <li>\(m(\mathbf{a} + \mathbf{b}) = m\mathbf{a} + m\mathbf{b}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Components -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Components of a Vector</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>In 2D:</strong> For point \(P(x, y)\), \(\overrightarrow{OP} = x\hat{i} + y\hat{j}\)</p>
+          <p><strong>In 3D:</strong> For point \(P(x, y, z)\), \(\overrightarrow{OP} = x\hat{i} + y\hat{j} + z\hat{k}\)</p>
+          <p><strong>Vector joining two points</strong> \(P_1(x_1, y_1, z_1)\) and \(P_2(x_2, y_2, z_2)\):</p>
+          \[\overrightarrow{P_1P_2} = (x_2 - x_1)\hat{i} + (y_2 - y_1)\hat{j} + (z_2 - z_1)\hat{k}\]
+          \[|\overrightarrow{P_1P_2}| = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2 + (z_2-z_1)^2}\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Position Vectors & Section Formulae
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Position Vectors, Section Formulae &amp; Centres of a Triangle</h4>
+    </div>
+    <div class="card-body">
+      <p>The <strong>position vector</strong> of point \(P\) w.r.t. a fixed origin \(O\) is \(\overrightarrow{OP}\).</p>
+      <p>For any vector \(\overrightarrow{PQ}\): \(\overrightarrow{PQ} = \text{PV of } Q - \text{PV of } P\)</p>
+      <p><strong>Collinear points:</strong> \(A, B, C\) are collinear \(\Leftrightarrow\) \(\overrightarrow{AB} = \lambda\,\overrightarrow{BC}\) for some scalar \(\lambda \ne 0\).</p>
+
+      <!-- Nested: Section Formula -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Section Formulae</h5>
+        </div>
+        <div class="card-body">
+          <p>If \(A\) and \(B\) have position vectors \(\mathbf{a}\) and \(\mathbf{b}\), then the point \(P\) dividing \(AB\):</p>
+          <ul>
+            <li><strong>Internally</strong> in ratio \(m:n\):
+              \[\mathbf{r} = \frac{m\mathbf{b} + n\mathbf{a}}{m + n}\]
+            </li>
+            <li><strong>Mid-point</strong> of \(AB\):
+              \[\mathbf{r} = \frac{\mathbf{a} + \mathbf{b}}{2}\]
+            </li>
+            <li><strong>Externally</strong> in ratio \(m:n\):
+              \[\mathbf{r} = \frac{m\mathbf{b} - n\mathbf{a}}{m - n}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Centres -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Position Vectors of Centres of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(\mathbf{a}, \mathbf{b}, \mathbf{c}\) be the position vectors of vertices \(A, B, C\) of \(\triangle ABC\).</p>
+          <ul>
+            <li><strong>Centroid \(G\):</strong>
+              \[\mathbf{g} = \frac{\mathbf{a} + \mathbf{b} + \mathbf{c}}{3}\]
+            </li>
+            <li><strong>Incentre \(I\):</strong> (where \(a = BC\), \(b = CA\), \(c = AB\))
+              \[\mathbf{i} = \frac{a\,\mathbf{a} + b\,\mathbf{b} + c\,\mathbf{c}}{a + b + c}\]
+            </li>
+            <li><strong>Orthocentre \(H\):</strong>
+              \[\mathbf{h} = \frac{(\tan A)\,\mathbf{a} + (\tan B)\,\mathbf{b} + (\tan C)\,\mathbf{c}}{\tan A + \tan B + \tan C}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Linear Combination & Collinearity/Coplanarity -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Linear Combination, Collinearity &amp; Coplanarity</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Linear Combination:</strong> \(x\mathbf{a} + y\mathbf{b} + z\mathbf{c} + \cdots\) is a linear combination of \(\mathbf{a}, \mathbf{b}, \mathbf{c}, \ldots\)</p>
+          <p><strong>Collinearity of 3 points</strong> (PVs \(\mathbf{a}, \mathbf{b}, \mathbf{c}\)): They are collinear iff there exist scalars \(x, y, z\) (not all zero) such that \(x\mathbf{a} + y\mathbf{b} + z\mathbf{c} = \mathbf{0}\) and \(x + y + z = 0\).</p>
+          <p><strong>Coplanarity of 4 points</strong> (PVs \(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}\)): They are coplanar iff there exist scalars \(x, y, z, t\) (not all zero) such that \(x\mathbf{a} + y\mathbf{b} + z\mathbf{c} + t\mathbf{d} = \mathbf{0}\) and \(x + y + z + t = 0\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Linearly Dependent/Independent -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Linearly Dependent &amp; Independent Vectors</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Linearly Dependent:</strong> \(\mathbf{a}, \mathbf{b}, \mathbf{c}, \ldots\) are linearly dependent if there exist scalars \(x, y, z, \ldots\) (not all zero) such that \(x\mathbf{a} + y\mathbf{b} + z\mathbf{c} + \cdots = \mathbf{0}\).</li>
+            <li><strong>Linearly Independent:</strong> \(x\mathbf{a} + y\mathbf{b} + z\mathbf{c} = \mathbf{0} \Rightarrow x = y = z = 0\).</li>
+            <li>Two non-zero, non-collinear vectors are linearly <strong>independent</strong>.</li>
+            <li>Three non-zero, non-coplanar vectors are linearly <strong>independent</strong>.</li>
+            <li>More than three vectors are always linearly <strong>dependent</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Scalar (Dot) Product
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Scalar (Dot) Product of Two Vectors</h4>
+    </div>
+    <div class="card-body">
+      <p>For non-zero vectors \(\mathbf{a}\) and \(\mathbf{b}\), the scalar product is:</p>
+      \[\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}||\mathbf{b}|\cos\theta, \quad 0 \le \theta \le \pi\]
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Properties of Dot Product</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Angle between <strong>like</strong> vectors: \(\theta = 0\); angle between <strong>unlike</strong> vectors: \(\theta = \pi\).</li>
+            <li>If either \(\mathbf{a}\) or \(\mathbf{b}\) is null, then \(\mathbf{a} \cdot \mathbf{b} = 0\).</li>
+            <li>For unit vectors: \(\hat{a} \cdot \hat{b} = \cos\theta\).</li>
+            <li><strong>Commutative:</strong> \(\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}\)</li>
+            <li>For mutually perpendicular unit vectors \(\hat{i}, \hat{j}, \hat{k}\):
+              \[\hat{i}\cdot\hat{i} = \hat{j}\cdot\hat{j} = \hat{k}\cdot\hat{k} = 1, \quad \hat{i}\cdot\hat{j} = \hat{j}\cdot\hat{k} = \hat{k}\cdot\hat{i} = 0\]
+            </li>
+            <li><strong>Distributive:</strong> \(\mathbf{a}\cdot(\mathbf{b}+\mathbf{c}) = \mathbf{a}\cdot\mathbf{b} + \mathbf{a}\cdot\mathbf{c}\) &nbsp; and &nbsp; \((\mathbf{a}+\mathbf{b})\cdot\mathbf{c} = \mathbf{a}\cdot\mathbf{c} + \mathbf{b}\cdot\mathbf{c}\)</li>
+            <li>\((m\mathbf{a})\cdot\mathbf{b} = \mathbf{a}\cdot(m\mathbf{b}) = m(\mathbf{a}\cdot\mathbf{b})\) for any scalar \(m\).</li>
+            <li>For \(\mathbf{a} = a_1\hat{i}+a_2\hat{j}+a_3\hat{k}\): \(|\mathbf{a}|^2 = \mathbf{a}\cdot\mathbf{a} = a_1^2+a_2^2+a_3^2\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Angle & Projection -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Angle Between Two Vectors &amp; Projection</h5>
+        </div>
+        <div class="card-body">
+          <p>For \(\mathbf{a} = a_1\hat{i}+a_2\hat{j}+a_3\hat{k}\) and \(\mathbf{b} = b_1\hat{i}+b_2\hat{j}+b_3\hat{k}\):</p>
+          \[\cos\theta = \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}||\mathbf{b}|} = \frac{a_1b_1+a_2b_2+a_3b_3}{\sqrt{a_1^2+a_2^2+a_3^2}\,\sqrt{b_1^2+b_2^2+b_3^2}}\]
+          <p><strong>Perpendicularity condition:</strong> \(\mathbf{a} \perp \mathbf{b} \Leftrightarrow \mathbf{a}\cdot\mathbf{b} = 0\) (for non-zero vectors)</p>
+          <p><strong>Projection of \(\mathbf{a}\) on \(\mathbf{b}\):</strong> \(\displaystyle\frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|}\)</p>
+          <p><strong>Projection of \(\mathbf{b}\) on \(\mathbf{a}\):</strong> \(\displaystyle\frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{a}|}\)</p>
+          <p><strong>Component of \(\mathbf{a}\) along \(\mathbf{b}\):</strong> \(\displaystyle\frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|^2}\,\mathbf{b}\)</p>
+          <p><strong>Component of \(\mathbf{a}\) perpendicular to \(\mathbf{b}\):</strong> \(\displaystyle\mathbf{a} - \frac{\mathbf{a}\cdot\mathbf{b}}{|\mathbf{b}|^2}\,\mathbf{b}\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Important Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Important Results of Dot Product</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\((\mathbf{a}+\mathbf{b})\cdot(\mathbf{a}-\mathbf{b}) = |\mathbf{a}|^2 - |\mathbf{b}|^2\)</li>
+            <li>\(|\mathbf{a}+\mathbf{b}|^2 = |\mathbf{a}|^2 + |\mathbf{b}|^2 + 2\,\mathbf{a}\cdot\mathbf{b}\)</li>
+            <li>\(|\mathbf{a}-\mathbf{b}|^2 = |\mathbf{a}|^2 + |\mathbf{b}|^2 - 2\,\mathbf{a}\cdot\mathbf{b}\)</li>
+            <li>\(|\mathbf{a}+\mathbf{b}|^2 + |\mathbf{a}-\mathbf{b}|^2 = 2(|\mathbf{a}|^2 + |\mathbf{b}|^2)\)</li>
+            <li>\(|\mathbf{a}+\mathbf{b}|^2 - |\mathbf{a}-\mathbf{b}|^2 = 4\,\mathbf{a}\cdot\mathbf{b} \;\Rightarrow\; \mathbf{a}\cdot\mathbf{b} = \dfrac{|\mathbf{a}+\mathbf{b}|^2 - |\mathbf{a}-\mathbf{b}|^2}{4}\)</li>
+            <li>If \(|\mathbf{a}+\mathbf{b}| = |\mathbf{a}| + |\mathbf{b}|\), then \(\mathbf{a}\) is parallel to \(\mathbf{b}\).</li>
+            <li>If \(|\mathbf{a}+\mathbf{b}| = |\mathbf{a}-\mathbf{b}|\), then \(\mathbf{a} \perp \mathbf{b}\).</li>
+            <li><strong>Cauchy-Schwarz:</strong> \((\mathbf{a}\cdot\mathbf{b})^2 \le |\mathbf{a}|^2|\mathbf{b}|^2\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Work Done -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Work Done by a Force</h5>
+        </div>
+        <div class="card-body">
+          <p>Work done by force \(\mathbf{F}\) over displacement \(\mathbf{S}\):</p>
+          \[W = \mathbf{F} \cdot \mathbf{S}\]
+          <p>For \(n\) forces \(\mathbf{F}_1, \mathbf{F}_2, \ldots, \mathbf{F}_n\) over displacement \(\mathbf{S}\), total work done:</p>
+          \[W = \sum_{i=1}^{n} \mathbf{F}_i \cdot \mathbf{S} = \mathbf{R} \cdot \mathbf{S}\]
+          <p>where \(\mathbf{R}\) is the resultant force.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Vector (Cross) Product
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Vector (Cross) Product of Two Vectors</h4>
+    </div>
+    <div class="card-body">
+      <p>The vector product of \(\mathbf{a}\) and \(\mathbf{b}\) is:</p>
+      \[\mathbf{a} \times \mathbf{b} = |\mathbf{a}||\mathbf{b}|\sin\theta\;\hat{n}\]
+      <p>where \(\hat{n}\) is the unit vector perpendicular to both \(\mathbf{a}\) and \(\mathbf{b}\), determined by the right-hand rule.</p>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Properties of Cross Product</h5>
+        </div>
+        <div class="card-body">
+          <p>For \(\mathbf{a} = a_1\hat{i}+a_2\hat{j}+a_3\hat{k}\) and \(\mathbf{b} = b_1\hat{i}+b_2\hat{j}+b_3\hat{k}\):</p>
+          \[\mathbf{a}\times\mathbf{b} = \begin{vmatrix}\hat{i} & \hat{j} & \hat{k}\\ a_1 & a_2 & a_3\\ b_1 & b_2 & b_3\end{vmatrix}\]
+          <ul>
+            <li>If \(\mathbf{a} = \mathbf{b}\) or \(\mathbf{a} \parallel \mathbf{b}\), then \(\mathbf{a}\times\mathbf{b} = \mathbf{0}\) (since \(\sin\theta = 0\)).</li>
+            <li>Unit vector perpendicular to both \(\mathbf{a}\) and \(\mathbf{b}\): \(\;\hat{n} = \dfrac{\mathbf{a}\times\mathbf{b}}{|\mathbf{a}\times\mathbf{b}|}\)</li>
+            <li>Vector product of two <strong>parallel/collinear</strong> vectors is \(\mathbf{0}\).</li>
+            <li>\(\mathbf{a}\times\mathbf{b} = \mathbf{0} \Leftrightarrow \mathbf{a} = \mathbf{0}\) or \(\mathbf{b} = \mathbf{0}\) or \(\mathbf{a} \parallel \mathbf{b}\).</li>
+            <li>If \(\theta = 90°\): \(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\)</li>
+            <li>For unit vectors: \(|\mathbf{a}\times\mathbf{b}| = \sin\theta\)</li>
+            <li><strong>Anti-commutative:</strong> \(\mathbf{a}\times\mathbf{b} = -\mathbf{b}\times\mathbf{a}\)</li>
+            <li><strong>Distributive:</strong> \(\mathbf{a}\times(\mathbf{b}+\mathbf{c}) = \mathbf{a}\times\mathbf{b} + \mathbf{a}\times\mathbf{c}\)</li>
+            <li>For \(\hat{i}, \hat{j}, \hat{k}\):
+              \[\hat{i}\times\hat{i} = \hat{j}\times\hat{j} = \hat{k}\times\hat{k} = \mathbf{0}\]
+              \[\hat{i}\times\hat{j} = \hat{k},\quad \hat{j}\times\hat{k} = \hat{i},\quad \hat{k}\times\hat{i} = \hat{j}\]
+              \[\hat{j}\times\hat{i} = -\hat{k},\quad \hat{k}\times\hat{j} = -\hat{i},\quad \hat{i}\times\hat{k} = -\hat{j}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Area Formulas -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Area Formulas Using Cross Product</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Area of \(\triangle ABC\):
+              \[\frac{1}{2}|\overrightarrow{AB}\times\overrightarrow{AC}| = \frac{1}{2}|\overrightarrow{BC}\times\overrightarrow{BA}| = \frac{1}{2}|\overrightarrow{CB}\times\overrightarrow{CA}|\]
+            </li>
+            <li>Area of \(\triangle ABC\) with PVs \(\mathbf{a}, \mathbf{b}, \mathbf{c}\):
+              \[\frac{1}{2}|\mathbf{a}\times\mathbf{b} + \mathbf{b}\times\mathbf{c} + \mathbf{c}\times\mathbf{a}|\]
+            </li>
+            <li>Points \(\mathbf{a}, \mathbf{b}, \mathbf{c}\) are collinear iff: \(\mathbf{a}\times\mathbf{b} + \mathbf{b}\times\mathbf{c} + \mathbf{c}\times\mathbf{a} = \mathbf{0}\)</li>
+            <li>Area of <strong>parallelogram</strong> with adjacent sides \(\mathbf{a}\) and \(\mathbf{b}\): \(|\mathbf{a}\times\mathbf{b}|\)</li>
+            <li>Area of <strong>parallelogram</strong> with diagonals \(\mathbf{a}\) and \(\mathbf{b}\): \(\dfrac{1}{2}|\mathbf{a}\times\mathbf{b}|\)</li>
+            <li>Area of <strong>quadrilateral ABCD</strong>: \(\dfrac{1}{2}|\overrightarrow{AC}\times\overrightarrow{BD}|\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Moment -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Moment of a Force</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Vector moment (torque)</strong> of force \(\mathbf{F}\) about point \(O\):</p>
+          \[\mathbf{M} = \mathbf{r} \times \mathbf{F}\]
+          <p>where \(\mathbf{r}\) is the position vector of the point of application referred to \(O\).</p>
+          <p><strong>Moment of force \(\mathbf{F}\) about a line \(l\)</strong> (with unit vector \(\hat{a}\) and point \(O\) on \(l\)):
+            \[= (\overrightarrow{OA} \times \mathbf{F}) \cdot \hat{a}\]
+          </p>
+          <p><strong>Moment of a couple</strong> (forces \(\mathbf{F}\) and \(-\mathbf{F}\) at points \(Q\) and \(P\)):
+            \[= \overrightarrow{PQ} \times \mathbf{F}\]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Scalar Triple Product
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Scalar Triple Product</h4>
+    </div>
+    <div class="card-body">
+      <p>For vectors \(\mathbf{a}, \mathbf{b}, \mathbf{c}\), the scalar triple product is defined as:</p>
+      \[[\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = (\mathbf{a}\times\mathbf{b})\cdot\mathbf{c}\]
+      <p>In component form, for \(\mathbf{a} = a_1\hat{i}+a_2\hat{j}+a_3\hat{k}\), etc.:</p>
+      \[[\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = \begin{vmatrix} a_1 & a_2 & a_3 \\ b_1 & b_2 & b_3 \\ c_1 & c_2 & c_3 \end{vmatrix}\]
+      <p><strong>Geometrical meaning:</strong> \([\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\) represents the <em>volume</em> of the parallelepiped whose co-terminus edges are \(\mathbf{a}, \mathbf{b}, \mathbf{c}\).</p>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Properties of Scalar Triple Product</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Dot and cross are interchangeable: \((\mathbf{a}\times\mathbf{b})\cdot\mathbf{c} = \mathbf{a}\cdot(\mathbf{b}\times\mathbf{c})\)</li>
+            <li><strong>Cyclic property</strong> (unchanged under cyclic permutation):
+              \[[\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = [\mathbf{b}\;\mathbf{c}\;\mathbf{a}] = [\mathbf{c}\;\mathbf{a}\;\mathbf{b}]\]
+            </li>
+            <li>Anti-cyclic (sign reverses): \([\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = -[\mathbf{a}\;\mathbf{c}\;\mathbf{b}]\)</li>
+            <li>Vanishes if any two vectors are <strong>equal</strong>: \([\mathbf{a}\;\mathbf{a}\;\mathbf{b}] = 0\)</li>
+            <li>Vanishes if any two vectors are <strong>parallel/collinear</strong>.</li>
+            <li>Scalar factor: \([x\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = x[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\) and \([xyz\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = xyz[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\)</li>
+            <li>Linearity: \([(\mathbf{a}+\mathbf{d})\;\mathbf{b}\;\mathbf{c}] = [\mathbf{a}\;\mathbf{b}\;\mathbf{c}] + [\mathbf{d}\;\mathbf{b}\;\mathbf{c}]\)</li>
+            <li>\([\hat{i}\;\hat{j}\;\hat{k}] = 1\)</li>
+            <li>\((\mathbf{a}\times\mathbf{b})\cdot(\mathbf{c}\times\mathbf{d}) = \begin{vmatrix}\mathbf{a}\cdot\mathbf{c} & \mathbf{a}\cdot\mathbf{d}\\ \mathbf{b}\cdot\mathbf{c} & \mathbf{b}\cdot\mathbf{d}\end{vmatrix}\)</li>
+            <li>\([\mathbf{a}\;\mathbf{b}\;\mathbf{c}][\mathbf{u}\;\mathbf{v}\;\mathbf{w}] = \begin{vmatrix}\mathbf{a}\cdot\mathbf{u} & \mathbf{a}\cdot\mathbf{v} & \mathbf{a}\cdot\mathbf{w}\\ \mathbf{b}\cdot\mathbf{u} & \mathbf{b}\cdot\mathbf{v} & \mathbf{b}\cdot\mathbf{w}\\ \mathbf{c}\cdot\mathbf{u} & \mathbf{c}\cdot\mathbf{v} & \mathbf{c}\cdot\mathbf{w}\end{vmatrix}\)</li>
+            <li>Three non-zero vectors \(\mathbf{a}, \mathbf{b}, \mathbf{c}\) are <strong>coplanar</strong> iff \([\mathbf{a}\;\mathbf{b}\;\mathbf{c}] = 0\).</li>
+            <li>Four points \(A, B, C, D\) (PVs \(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}\)) are <strong>coplanar</strong> iff \([\mathbf{b}-\mathbf{a},\;\mathbf{c}-\mathbf{a},\;\mathbf{d}-\mathbf{a}] = 0\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Volume Formulas -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Volume Formulas</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark">
+              <tr><th>Solid</th><th>Volume</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Parallelepiped (co-terminus edges \(\mathbf{a}, \mathbf{b}, \mathbf{c}\))</td>
+                <td>\(\big|[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\big|\)</td>
+              </tr>
+              <tr>
+                <td>Prism (triangular base, edges \(\mathbf{a}, \mathbf{b}, \mathbf{c}\))</td>
+                <td>\(\dfrac{1}{2}\big|[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\big|\)</td>
+              </tr>
+              <tr>
+                <td>Tetrahedron (co-terminus edges \(\mathbf{a}, \mathbf{b}, \mathbf{c}\))</td>
+                <td>\(\dfrac{1}{6}\big|[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]\big|\)</td>
+              </tr>
+              <tr>
+                <td>Tetrahedron (vertices PVs \(\mathbf{a}, \mathbf{b}, \mathbf{c}, \mathbf{d}\))</td>
+                <td>\(\dfrac{1}{6}\big|[\mathbf{b}-\mathbf{a},\;\mathbf{c}-\mathbf{a},\;\mathbf{d}-\mathbf{a}]\big|\)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Vector Triple Product
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Vector Triple Product</h4>
+    </div>
+    <div class="card-body">
+      <p>For vectors \(\mathbf{a}, \mathbf{b}, \mathbf{c}\), the vector triple products are:</p>
+      \[\mathbf{a}\times(\mathbf{b}\times\mathbf{c}) = (\mathbf{a}\cdot\mathbf{c})\,\mathbf{b} - (\mathbf{a}\cdot\mathbf{b})\,\mathbf{c}\]
+      \[(\mathbf{a}\times\mathbf{b})\times\mathbf{c} = (\mathbf{a}\cdot\mathbf{c})\,\mathbf{b} - (\mathbf{b}\cdot\mathbf{c})\,\mathbf{a}\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Properties of Vector Triple Product</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\(\mathbf{r} = \mathbf{a}\times(\mathbf{b}\times\mathbf{c})\) is <strong>perpendicular to \(\mathbf{a}\)</strong> and lies in the plane of \(\mathbf{b}\) and \(\mathbf{c}\).</li>
+            <li>Cross product is <strong>not associative</strong>: \(\mathbf{a}\times(\mathbf{b}\times\mathbf{c}) \ne (\mathbf{a}\times\mathbf{b})\times\mathbf{c}\) in general.</li>
+            <li>\(\mathbf{a}\times(\mathbf{b}\times\mathbf{c}) = (\mathbf{a}\times\mathbf{b})\times\mathbf{c}\) if and only if \(\dfrac{\mathbf{a}\cdot\mathbf{c}}{\mathbf{b}\cdot\mathbf{c}} = \dfrac{\mathbf{a}\cdot\mathbf{b}}{\mathbf{b}\cdot\mathbf{c}}\), i.e. \(\mathbf{b}\cdot\mathbf{c} = \mathbf{a}\cdot\mathbf{b}\) or \(\mathbf{a}\) and \(\mathbf{c}\) are collinear.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 9: Reciprocal System of Vectors
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Reciprocal System of Vectors</h4>
+    </div>
+    <div class="card-body">
+      <p>Let \(\mathbf{a}, \mathbf{b}, \mathbf{c}\) be three non-coplanar vectors. Their <strong>reciprocal system</strong> \(\mathbf{a}', \mathbf{b}', \mathbf{c}'\) is defined as:</p>
+      \[\mathbf{a}' = \frac{\mathbf{b}\times\mathbf{c}}{[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]}, \qquad \mathbf{b}' = \frac{\mathbf{c}\times\mathbf{a}}{[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]}, \qquad \mathbf{c}' = \frac{\mathbf{a}\times\mathbf{b}}{[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]}\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Properties of Reciprocal System</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\(\mathbf{a}\cdot\mathbf{a}' = \mathbf{b}\cdot\mathbf{b}' = \mathbf{c}\cdot\mathbf{c}' = 1\)</li>
+            <li>\(\mathbf{a}\cdot\mathbf{b}' = \mathbf{a}\cdot\mathbf{c}' = \mathbf{b}\cdot\mathbf{a}' = \mathbf{b}\cdot\mathbf{c}' = \mathbf{c}\cdot\mathbf{a}' = \mathbf{c}\cdot\mathbf{b}' = 0\)</li>
+            <li>\([\mathbf{a}'\;\mathbf{b}'\;\mathbf{c}'] = \dfrac{1}{[\mathbf{a}\;\mathbf{b}\;\mathbf{c}]}\)</li>
+            <li>\(\mathbf{a} = \dfrac{\mathbf{b}'\times\mathbf{c}'}{[\mathbf{a}'\;\mathbf{b}'\;\mathbf{c}']}\), \(\;\mathbf{b} = \dfrac{\mathbf{c}'\times\mathbf{a}'}{[\mathbf{a}'\;\mathbf{b}'\;\mathbf{c}']}\), \(\;\mathbf{c} = \dfrac{\mathbf{a}'\times\mathbf{b}'}{[\mathbf{a}'\;\mathbf{b}'\;\mathbf{c}']}\) (so \(\mathbf{a},\mathbf{b},\mathbf{c}\) is reciprocal to \(\mathbf{a}',\mathbf{b}',\mathbf{c}'\))</li>
+            <li>The orthonormal triad \(\hat{i}, \hat{j}, \hat{k}\) forms a <strong>self-reciprocal</strong> system.</li>
+            <li>Any vector \(\mathbf{r}\) can be expressed as:
+              \[\mathbf{r} = (\mathbf{r}\cdot\mathbf{a}')\,\mathbf{a} + (\mathbf{r}\cdot\mathbf{b}')\,\mathbf{b} + (\mathbf{r}\cdot\mathbf{c}')\,\mathbf{c}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

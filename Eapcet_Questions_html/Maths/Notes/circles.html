@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Circles</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Circles</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Definition & Standard Equation
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Circle — Definition &amp; Standard Equation</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>circle</strong> is defined as the locus of a point which moves in a plane such that its distance from a fixed point in that plane is <strong>constant</strong>.</p>
+      <ul>
+        <li>The fixed point is called the <strong>centre</strong>.</li>
+        <li>The constant distance is called the <strong>radius</strong>.</li>
+      </ul>
+
+      <p>The <strong>standard (central) equation</strong> of a circle with centre \((h, k)\) and radius \(a\) is:</p>
+      <p>\[ (x - h)^2 + (y - k)^2 = a^2 \]</p>
+
+      <!-- Nested: Particular Cases -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Some Particular Cases of the Central Form</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>(i) Centre at origin \((0,0)\):</strong>
+              \[ x^2 + y^2 = a^2 \]
+            </li>
+            <li><strong>(ii) Circle passes through the origin:</strong>
+              \[ x^2 + y^2 - 2hx - 2ky = 0 \]
+            </li>
+            <li><strong>(iii) Circle touches the X-axis:</strong>
+              \[ x^2 + y^2 - 2hx - 2ay + h^2 = 0 \quad \text{(radius } = |k| = a\text{)} \]
+            </li>
+            <li><strong>(iv) Circle touches the Y-axis:</strong>
+              \[ x^2 + y^2 - 2ax - 2ky + k^2 = 0 \quad \text{(radius } = |h| = a\text{)} \]
+            </li>
+            <li><strong>(v) Circle touches both axes:</strong>
+              \[ x^2 + y^2 - 2ax - 2ay + a^2 = 0 \quad \text{(centre } (a,a)\text{, radius } a\text{)} \]
+            </li>
+            <li><strong>(vi) Passes through origin, centre on X-axis:</strong>
+              \[ x^2 + y^2 - 2ax = 0 \quad \text{(centre } (a,0)\text{)} \]
+            </li>
+            <li><strong>(vii) Passes through origin, centre on Y-axis:</strong>
+              \[ x^2 + y^2 - 2ay = 0 \quad \text{(centre } (0,a)\text{)} \]
+            </li>
+            <li><strong>(viii) Passes through origin, cuts intercepts \(a\) and \(b\) on axes:</strong>
+              \[ x^2 + y^2 - ax - by = 0 \]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Diameter Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Equation When End Points of a Diameter are Given</h5>
+        </div>
+        <div class="card-body">
+          <p>If \((x_1, y_1)\) and \((x_2, y_2)\) are the end points of a diameter, then the equation of the circle is:</p>
+          \[ (x - x_1)(x - x_2) + (y - y_1)(y - y_2) = 0 \]
+        </div>
+      </div>
+
+      <!-- Nested: Three Points -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Equation of Circle Passing Through Three Points</h5>
+        </div>
+        <div class="card-body">
+          <p>The equation of a circle passing through three non-collinear points \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\) is:</p>
+          \[
+            \begin{vmatrix}
+              x^2+y^2 & x & y & 1 \\
+              x_1^2+y_1^2 & x_1 & y_1 & 1 \\
+              x_2^2+y_2^2 & x_2 & y_2 & 1 \\
+              x_3^2+y_3^2 & x_3 & y_3 & 1
+            \end{vmatrix} = 0
+          \]
+        </div>
+      </div>
+
+      <!-- Nested: Parametric -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Parametric Equation of a Circle</h5>
+        </div>
+        <div class="card-body">
+          <p>For circle \((x-h)^2 + (y-k)^2 = a^2\), the parametric equations are:</p>
+          \[ x = h + a\cos\theta, \quad y = k + a\sin\theta, \quad 0 \le \theta \le 2\pi \]
+          <p>For the standard circle \(x^2 + y^2 = a^2\):</p>
+          \[ x = a\cos\theta, \quad y = a\sin\theta \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: General Equation
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>General Equation of a Circle</h4>
+    </div>
+    <div class="card-body">
+      <p>The general equation of a circle is:</p>
+      \[ x^2 + y^2 + 2gx + 2fy + c = 0 \]
+      <ul>
+        <li><strong>Centre</strong> \( = (-g,\,-f) \)</li>
+        <li><strong>Radius</strong> \( = \sqrt{g^2 + f^2 - c} \)</li>
+      </ul>
+
+      <!-- Nested: Nature of Circle -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Nature of the Circle</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Nature</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\( g^2 + f^2 - c > 0 \)</td>
+                <td>Radius is real → <strong>Real circle</strong></td>
+              </tr>
+              <tr>
+                <td>\( g^2 + f^2 - c = 0 \)</td>
+                <td>Radius is 0 → <strong>Point circle</strong></td>
+              </tr>
+              <tr>
+                <td>\( g^2 + f^2 - c < 0 \)</td>
+                <td>Radius is imaginary → <strong>Imaginary circle</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Position of a Point -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Position of a Point w.r.t. a Circle</h5>
+        </div>
+        <div class="card-body">
+          <p>A point \((x_1, y_1)\) lies <strong>outside, on,</strong> or <strong>inside</strong> the circle \(S \equiv x^2 + y^2 + 2gx + 2fy + c = 0\) according as:</p>
+          \[ S_1 \equiv x_1^2 + y_1^2 + 2gx_1 + 2fy_1 + c \;\; >, =, \text{ or } < \;\; 0 \]
+        </div>
+      </div>
+
+      <!-- Nested: Intercepts on Axes -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Intercepts on the Axes</h5>
+        </div>
+        <div class="card-body">
+          <p>For circle \(x^2 + y^2 + 2gx + 2fy + c = 0\), the lengths of intercepts on the axes are:</p>
+          <ul>
+            <li><strong>X-axis intercept:</strong> \( 2\sqrt{g^2 - c} \)</li>
+            <li><strong>Y-axis intercept:</strong> \( 2\sqrt{f^2 - c} \)</li>
+          </ul>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Result on X-axis</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\( g^2 > c \)</td><td>Cuts X-axis at two real distinct points</td></tr>
+              <tr><td>\( g^2 = c \)</td><td>Touches X-axis (intercept = 0)</td></tr>
+              <tr><td>\( g^2 < c \)</td><td>Does not meet X-axis in real points</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-2">Similarly for Y-axis: cuts, touches, or misses according to \( f^2 >, =, < c \).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Equation of Tangent
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Equation of Tangent</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>tangent</strong> is a line that touches a circle at exactly one point.</p>
+
+      <!-- Nested: Point Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>1. Point Form</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i)</strong> Tangent at \(P(x_1, y_1)\) to the circle \(x^2 + y^2 + 2gx + 2fy + c = 0\) is:</p>
+          \[ xx_1 + yy_1 + g(x + x_1) + f(y + y_1) + c = 0 \]
+          <p><strong>(ii)</strong> Tangent at \(P(x_1, y_1)\) to the circle \(x^2 + y^2 = r^2\) is:</p>
+          \[ xx_1 + yy_1 = r^2 \]
+        </div>
+      </div>
+
+      <!-- Nested: Slope Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>2. Slope Form</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i)</strong> Tangent of slope \(m\) to the circle \(x^2 + y^2 + 2gx + 2fy + c = 0\):</p>
+          \[ y + f = m(x + g) \pm \sqrt{(g^2 + f^2 - c)(1 + m^2)} \]
+          <p><strong>(ii)</strong> Tangent of slope \(m\) to the circle \((x-a)^2 + (y-b)^2 = r^2\):</p>
+          \[ y - b = m(x - a) \pm r\sqrt{1 + m^2} \]
+          <p>Point of contact: \(\displaystyle \left(a \pm \frac{mr}{\sqrt{1+m^2}},\; b \mp \frac{r}{\sqrt{1+m^2}}\right)\)</p>
+          <p><strong>(iii)</strong> Tangent of slope \(m\) to the circle \(x^2 + y^2 = r^2\):</p>
+          \[ y = mx \pm r\sqrt{1 + m^2} \]
+          <p>Point of contact: \(\displaystyle \left(\frac{\mp mr}{\sqrt{1+m^2}},\; \frac{\pm r}{\sqrt{1+m^2}}\right)\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Parametric Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>3. Parametric Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Tangent to circle \((x-a)^2 + (y-b)^2 = r^2\) at point \((a + r\cos\theta,\; b + r\sin\theta)\):</p>
+          \[ (x - a)\cos\theta + (y - b)\sin\theta = r \]
+        </div>
+      </div>
+
+      <!-- Nested: Important Points -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Important Points to be Remembered</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>If \((x_1, y_1)\) is one end of a diameter of the circle \(x^2+y^2+2gx+2fy+c=0\), then the other end is \((-2g-x_1,\; -2f-y_1)\).</li>
+            <li>If a line is perpendicular to the radius of a circle at its end point on the circle, then the line is a tangent to the circle and vice-versa.</li>
+            <li>Normal at any point on the circle is perpendicular to the tangent at that point and passes through the centre.</li>
+            <li>The line \(y = mx + c\) touches the circle \(x^2+y^2=r^2\) if \(r = \dfrac{|c|}{\sqrt{1+m^2}}\), and the point of contact is \(\displaystyle\left(\frac{-mr}{\sqrt{1+m^2}},\; \frac{r}{\sqrt{1+m^2}}\right)\).</li>
+            <li>The line \(lx + my + n = 0\) touches \(x^2+y^2=r^2\) if \(r^2(l^2+m^2) = n^2\).</li>
+            <li>Length of intercept cut from line \(y = mx + c\) by circle \(x^2+y^2=a^2\) is \(\displaystyle 2\sqrt{\frac{a^2(1+m^2) - c^2}{1+m^2}}\).</li>
+            <li>If \(P\) is a point and \(C\) is the centre of a circle of radius \(r\), then:<br>
+              Maximum distance of \(P\) from circle \( = CP + r\)<br>
+              Minimum distance of \(P\) from circle \( = |CP - r|\)
+            </li>
+            <li><strong>Power of a point</strong> \((x_1, y_1)\) w.r.t. circle \(x^2+y^2+2gx+2fy+c=0\) is \(S_1 = x_1^2+y_1^2+2gx_1+2fy_1+c\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Equation of Normal
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Equation of Normal</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>normal</strong> is a line perpendicular to the tangent at the point of contact, and it always passes through the centre of the circle.</p>
+
+      <!-- Nested: Point Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>1. Point Form</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i)</strong> Normal at \((x_1, y_1)\) to circle \(x^2+y^2+2gx+2fy+c=0\):</p>
+          \[ \frac{x - x_1}{x_1 + g} = \frac{y - y_1}{y_1 + f} \]
+          <p>or equivalently: \((x_1 + g)(y - y_1) = (y_1 + f)(x - x_1)\)</p>
+          <p><strong>(ii)</strong> Normal at \((x_1, y_1)\) to circle \(x^2+y^2=r^2\):</p>
+          \[ \frac{x}{x_1} = \frac{y}{y_1} = \frac{r}{r} \quad \Rightarrow \quad y = \frac{y_1}{x_1}\,x \]
+        </div>
+      </div>
+
+      <!-- Nested: Slope Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>2. Slope Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Normal of slope \(m\) to the circle \(x^2 + y^2 = r^2\):</p>
+          \[ y = mx \pm r\sqrt{1 + m^2} \cdot \frac{1}{1} \quad \Rightarrow \quad y = mx \]
+          <p>(Since the normal passes through the centre \((0,0)\), any normal to \(x^2+y^2=r^2\) has the form \(y = mx\).)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Parametric Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>3. Parametric Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Normal to circle \(x^2+y^2=r^2\) at the point \((r\cos\theta, r\sin\theta)\):</p>
+          \[ \frac{x}{\cos\theta} = \frac{y}{\sin\theta} \quad \Rightarrow \quad y = x\tan\theta \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Pair of Tangents
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Pair of Tangents from an External Point</h4>
+    </div>
+    <div class="card-body">
+      <p>The combined equation of the pair of tangents drawn from point \(P(x_1, y_1)\) to the circle \(x^2+y^2=r^2\) is:</p>
+      \[ SS_1 = T^2 \]
+      <p>where:</p>
+      <ul>
+        <li>\( S \equiv x^2 + y^2 - r^2 \)</li>
+        <li>\( S_1 \equiv x_1^2 + y_1^2 - r^2 \)</li>
+        <li>\( T \equiv xx_1 + yy_1 - r^2 \)</li>
+      </ul>
+
+      <!-- Nested: Length of Tangent -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Length of Tangent</h5>
+        </div>
+        <div class="card-body">
+          <p>Length of tangent from \(P(x_1,y_1)\) to circle \(x^2+y^2+2gx+2fy+c=0\):</p>
+          \[ \text{Length} = \sqrt{x_1^2 + y_1^2 + 2gx_1 + 2fy_1 + c} = \sqrt{S_1} \]
+        </div>
+      </div>
+
+      <!-- Nested: Chord of Contact -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Chord of Contact</h5>
+        </div>
+        <div class="card-body">
+          <p>Chord of contact \(QR\) of tangents drawn from \(P(x_1, y_1)\) to circle \(x^2+y^2=r^2\):</p>
+          \[ xx_1 + yy_1 = r^2 \quad (T = 0) \]
+          <p>For general circle \(x^2+y^2+2gx+2fy+c=0\):</p>
+          \[ xx_1 + yy_1 + g(x+x_1) + f(y+y_1) + c = 0 \]
+        </div>
+      </div>
+
+      <!-- Nested: Properties of Chord of Contact -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Properties — Chord of Contact AB from \(C(x_1, y_1)\) to \(x^2+y^2=r^2\)</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(M\) be the mid-point of \(AB\):</p>
+          <ul>
+            <li>Coordinates of \(M\): \(\displaystyle\left(\frac{r^2 x_1}{x_1^2+y_1^2},\; \frac{r^2 y_1}{x_1^2+y_1^2}\right)\)</li>
+            <li>\(\displaystyle AB = \frac{r\sqrt{x_1^2+y_1^2-r^2} \cdot 2}{\sqrt{x_1^2+y_1^2}} \cdot \sqrt{x_1^2+y_1^2}\)</li>
+            <li>\( BC = \sqrt{x_1^2 + y_1^2 - r^2} \) (length of tangent)</li>
+            <li>Area of quadrilateral \(OACB = r\sqrt{x_1^2+y_1^2-r^2}\)</li>
+            <li>Area of \(\triangle ABC = \dfrac{r(x_1^2+y_1^2-r^2)^{3/2}}{x_1^2+y_1^2}\)</li>
+            <li>Area of \(\triangle OAB = \dfrac{r\sqrt{x_1^2+y_1^2-r^2}}{x_1^2+y_1^2} \cdot \sqrt{x_1^2+y_1^2-r^2}\)</li>
+            <li>Angle \(\angle ACB = 2\tan^{-1}\!\left(\dfrac{r}{\sqrt{S_1}}\right)\)</li>
+          </ul>
+          <p>Slopes of tangents from \(P(x_1,y_1)\) to circle \(x^2+y^2=a^2\): \(m_1 + m_2 = \dfrac{2x_1 y_1}{x_1^2 - a^2}\), \(\; m_1 m_2 = \dfrac{y_1^2-a^2}{x_1^2-a^2}\)</p>
+          <p>Tangents from \((0,0)\) to circle \(x^2+y^2+2gx+2fy+c=0\) are at right angles if \(g^2 + f^2 = 2c\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Chord Bisected at a Point & Director Circle
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Chord Bisected at a Given Point &amp; Director Circle</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Chord Bisected -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Equation of Chord Bisected at a Given Point</h5>
+        </div>
+        <div class="card-body">
+          <p>The equation of the chord of circle \(S \equiv x^2+y^2+2gx+2fy+c=0\) that is bisected at \((x_1, y_1)\) is given by \(T = S_1\):</p>
+          \[ xx_1 + yy_1 + g(x+x_1) + f(y+y_1) + c = x_1^2 + y_1^2 + 2gx_1 + 2fy_1 + c \]
+        </div>
+      </div>
+
+      <!-- Nested: Director Circle -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Director Circle</h5>
+        </div>
+        <div class="card-body">
+          <p>The locus of the point of intersection of two <strong>perpendicular tangents</strong> to a given circle is called a <strong>director circle</strong>.</p>
+          <p>For circle \(x^2+y^2=r^2\), the equation of director circle is:</p>
+          \[ x^2 + y^2 = 2r^2 \]
+          <p>The director circle is concentric with the given circle and its radius is \(\sqrt{2}\) times the radius of the given circle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Pole and Polar
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Pole and Polar</h4>
+    </div>
+    <div class="card-body">
+      <p>If through a point \(P(x_1, y_1)\) (within or outside a circle) any chord is drawn to meet the circle at \(Q\) and \(R\), the locus of the point of intersection of tangents at \(Q\) and \(R\) is called the <strong>polar</strong> of \(P\), and \(P\) is called the <strong>pole</strong> of the polar.</p>
+
+      <ul>
+        <li>Polar of \(P(x_1,y_1)\) w.r.t. circle \(x^2+y^2=r^2\):
+          \[ xx_1 + yy_1 = r^2 \]
+        </li>
+        <li>Polar of \(P(x_1,y_1)\) w.r.t. circle \(x^2+y^2+2gx+2fy+c=0\):
+          \[ xx_1 + yy_1 + g(x+x_1) + f(y+y_1) + c = 0 \]
+        </li>
+        <li><strong>Conjugate Points:</strong> Two points \(A\) and \(B\) are conjugate points w.r.t. a circle if each lies on the polar of the other.</li>
+        <li><strong>Conjugate Lines:</strong> If two lines are such that the pole of one lies on the other, they are called conjugate lines.</li>
+        <li>Pole of line \(lx + my + n = 0\) w.r.t. circle \(x^2+y^2=a^2\) is \(\displaystyle\left(\frac{-a^2 l}{n},\; \frac{-a^2 m}{n}\right)\).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Common Tangents of Two Circles
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Common Tangents of Two Circles</h4>
+    </div>
+    <div class="card-body">
+      <p>Let \(C_1, C_2\) be the centres and \(r_1, r_2\) be the radii of two circles. The number of common tangents depends on their relative position:</p>
+
+      <table class="table table-bordered table-sm mt-2">
+        <thead class="table-dark">
+          <tr><th>Case</th><th>Condition</th><th>No. of Common Tangents</th><th>Type</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Circles are separate (external)</td>
+            <td>\( C_1C_2 > r_1 + r_2 \)</td>
+            <td>4</td>
+            <td>2 direct + 2 transverse</td>
+          </tr>
+          <tr>
+            <td>External touch</td>
+            <td>\( C_1C_2 = r_1 + r_2 \)</td>
+            <td>3</td>
+            <td>2 direct + 1 transverse</td>
+          </tr>
+          <tr>
+            <td>Circles intersect</td>
+            <td>\( |r_1 - r_2| < C_1C_2 < r_1 + r_2 \)</td>
+            <td>2</td>
+            <td>2 direct only</td>
+          </tr>
+          <tr>
+            <td>Internal touch</td>
+            <td>\( C_1C_2 = |r_1 - r_2| \)</td>
+            <td>1</td>
+            <td>1 common tangent at point of contact</td>
+          </tr>
+          <tr>
+            <td>One circle inside other</td>
+            <td>\( C_1C_2 < |r_1 - r_2| \)</td>
+            <td>0</td>
+            <td>No common tangent</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Nested: Lengths -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Lengths of Common Tangents</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Length of direct common tangent:</strong>
+              \[ = \sqrt{(C_1C_2)^2 - (r_1 - r_2)^2} \]
+            </li>
+            <li><strong>Length of transverse common tangent:</strong>
+              \[ = \sqrt{(C_1C_2)^2 - (r_1 + r_2)^2} \]
+            </li>
+          </ul>
+          <p>The point dividing \(C_1C_2\) internally in ratio \(r_1 : r_2\) is the <strong>internal centre of similitude</strong>; externally in ratio \(r_1 : r_2\) is the <strong>external centre of similitude</strong>.</p>
+          <p>Ratios: \(\displaystyle\frac{C_1D}{C_2D} = \frac{r_1}{r_2}\) (externally), \(\displaystyle\frac{C_1T}{C_2T} = \frac{r_1}{r_2}\) (internally).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 9: Angle of Intersection & Orthogonal Circles
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Angle of Intersection &amp; Orthogonal Circles</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Angle of Intersection -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Angle of Intersection of Two Circles</h5>
+        </div>
+        <div class="card-body">
+          <p>The angle between the tangents to two circles at their point of intersection, given circles with radii \(r_1, r_2\) and centre-distance \(d\), is:</p>
+          \[ \cos\theta = \frac{d^2 - r_1^2 - r_2^2}{2r_1 r_2} \]
+        </div>
+      </div>
+
+      <!-- Nested: Orthogonal -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Orthogonal Circles</h5>
+        </div>
+        <div class="card-body">
+          <p>Two circles are <strong>orthogonal</strong> if their angle of intersection is \(90°\).</p>
+          <p>For circles \(S_1 \equiv x^2+y^2+2g_1x+2f_1y+c_1=0\) and \(S_2 \equiv x^2+y^2+2g_2x+2f_2y+c_2=0\), the condition of orthogonality is:</p>
+          \[ 2g_1g_2 + 2f_1f_2 = c_1 + c_2 \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 10: Common Chord
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Common Chord of Two Circles</h4>
+    </div>
+    <div class="card-body">
+      <p>The chord joining the points of intersection of two intersecting circles is called the <strong>common chord</strong>.</p>
+      <ul>
+        <li>If \(S_1 = 0\) and \(S_2 = 0\) are two intersecting circles, the common chord is:
+          \[ S_1 - S_2 = 0 \]
+        </li>
+        <li>Length of common chord:
+          \[ PQ = 2 \cdot PM = 2\sqrt{C_1P^2 - C_1M^2} \]
+          where \(M\) is the midpoint of chord \(PQ\).
+        </li>
+        <li>If \(r_1\) and \(r_2\) are radii of two orthogonally intersecting circles, then length of common chord:
+          \[ = \frac{2r_1 r_2}{\sqrt{r_1^2 + r_2^2}} \]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 11: Family of Circles
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Family of Circles</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li><strong>(i)</strong> Family of circles through intersection of circle \(S=0\) and line \(L = lx+my+n=0\):
+          \[ S + \lambda L = 0 \quad (\lambda \in \mathbb{R}) \]
+        </li>
+        <li><strong>(ii)</strong> Family of circles through two points \(A(x_1,y_1)\) and \(B(x_2,y_2)\):
+          \[ (x-x_1)(x-x_2) + (y-y_1)(y-y_2) + \lambda\begin{vmatrix}x & y & 1\\ x_1 & y_1 & 1\\ x_2 & y_2 & 1\end{vmatrix} = 0 \]
+        </li>
+        <li><strong>(iii)</strong> Family of circles touching circle \(S=0\) at point \(P(x_1,y_1)\):
+          \[ S + \lambda\,T = 0 \]
+          where \(T = 0\) is the tangent to \(S = 0\) at \((x_1,y_1)\).
+        </li>
+        <li><strong>(iv)</strong> Any circle through the intersection of circles \(S_1 = 0\) and \(S_2 = 0\):
+          \[ S_1 + \lambda S_2 = 0 \quad (\lambda \ne -1) \]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 12: Radical Axis
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Radical Axis &amp; Radical Centre</h4>
+    </div>
+    <div class="card-body">
+      <p>The <strong>radical axis</strong> of two circles is the locus of a point from which the <strong>lengths of tangents</strong> to the two circles are equal.</p>
+      <p>Equation of radical axis of circles \(S_1 = 0\) and \(S_2 = 0\):</p>
+      \[ S_1 - S_2 = 0 \]
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Properties of Radical Axis</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>The radical axis is always <strong>perpendicular</strong> to the line joining the centres of the two circles.</li>
+            <li>The radical axes of three circles (with non-collinear centres), taken in pairs, are <strong>concurrent</strong>.</li>
+            <li>The centre of a circle cutting two given circles orthogonally lies on their radical axis.</li>
+            <li><strong>Radical centre:</strong> The point of concurrence of the three radical axes of three circles (with non-collinear centres) taken in pairs is called the radical centre.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 13: Coaxial System & Limiting Points
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Coaxial System of Circles &amp; Limiting Points</h4>
+    </div>
+    <div class="card-body">
+      <p>A system of circles is said to be a <strong>coaxial system</strong> if every pair of circles in the system has the <strong>same radical axis</strong>.</p>
+
+      <!-- Nested: Coaxial -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Coaxial System</h5>
+        </div>
+        <div class="card-body">
+          <p>If the radical axis is \(P \equiv lx + my + n = 0\) and one circle of the system is \(S \equiv x^2+y^2+2gx+2fy+c=0\), then the family is:</p>
+          \[ S + \lambda P = 0 \quad (\lambda \text{ arbitrary}) \]
+          <p>All centres of the coaxial system lie on a line perpendicular to the common radical axis.</p>
+        </div>
+      </div>
+
+      <!-- Nested: Limiting Points -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Limiting Points</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Limiting points</strong> of a coaxial system are the centres of the <strong>point circles</strong> (radius = 0) belonging to the family.</p>
+          <p>For the coaxial system \(x^2 + y^2 - 2gx + c = 0\) (with varying \(g\)), the limiting points are \((\sqrt{c},\,0)\) and \((-\sqrt{c},\,0)\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 14: Image of Circle & Diameter
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Image of Circle by a Line &amp; Diameter of a Circle</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Image -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Image of a Circle by a Line Mirror</h5>
+        </div>
+        <div class="card-body">
+          <p>Let the circle be \(x^2+y^2+2gx+2fy+c=0\) with centre \((-g,-f)\) and radius \(r = \sqrt{g^2+f^2-c}\).</p>
+          <p>Let the mirror line be \(lx+my+n=0\).</p>
+          <p>The image circle has the same radius \(r\) and its centre \((x_1, y_1)\) is the mirror image of \((-g,-f)\) in the line \(lx+my+n=0\):</p>
+          \[ \frac{x_1-(-g)}{l} = \frac{y_1-(-f)}{m} = \frac{-2(l(-g)+m(-f)+n)}{l^2+m^2} \]
+          <p>The image circle: \((x-x_1)^2 + (y-y_1)^2 = r^2\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Diameter -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Diameter of a Circle</h5>
+        </div>
+        <div class="card-body">
+          <p>The <strong>diameter</strong> of a circle is the locus of the midpoints of a system of parallel chords.</p>
+          <ul>
+            <li>The equation of the diameter bisecting parallel chords \(y = mx + c\) of circle \(x^2+y^2=a^2\) is:
+              \[ x + my = 0 \]
+            </li>
+            <li>The diameter always passes through the <strong>centre</strong> of the circle and is <strong>perpendicular</strong> to the parallel chords.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Circumcircle -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Circumcircle of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Circumcircle of a triangle with vertices \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\) is:</p>
+          \[
+            \begin{vmatrix}
+              x^2+y^2 & x & y & 1 \\
+              x_1^2+y_1^2 & x_1 & y_1 & 1 \\
+              x_2^2+y_2^2 & x_2 & y_2 & 1 \\
+              x_3^2+y_3^2 & x_3 & y_3 & 1
+            \end{vmatrix} = 0
+          \]
+          <p>or equivalently using the cross-ratio form:</p>
+          \[
+            \frac{(x-x_1)(x-x_3)+(y-y_1)(y-y_3)}{(x-x_2)(x-x_3)+(y-y_2)(y-y_3)}
+            = \frac{(x_1-x_3)(x_1-x_2)+(y_1-y_3)(y_1-y_2)}{(x_2-x_3)^2+(y_2-y_3)^2}
+          \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

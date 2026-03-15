@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rectangular Cartesian Coordinates</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Rectangular Cartesian Coordinates</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Coordinate Geometry & Rectangular Axis
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Coordinate Geometry &amp; Rectangular Axis</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Coordinate Geometry</strong> is the branch of mathematics in which we study the position of any object lying in a plane with the help of two mutually perpendicular lines in the same plane.</p>
+
+      <!-- Nested: Rectangular Axis -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Rectangular Axis</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(XOX'\) and \(YOY'\) be two fixed straight lines which meet at right angles at \(O\). Then:</p>
+          <ul>
+            <li>\(X'OX\) is called the <strong>axis of X</strong> (abscissa) or the <strong>X-axis</strong>.</li>
+            <li>\(Y'OY\) is called the <strong>axis of Y</strong> (ordinate) or the <strong>Y-axis</strong>.</li>
+            <li>The ordered pair of real numbers \((x, y)\) is called a <strong>Cartesian coordinate</strong>.</li>
+            <li>Coordinates of the <strong>origin</strong> are \((0, 0)\).</li>
+            <li>The <strong>y-coordinate</strong> of any point on the X-axis is <strong>zero</strong>.</li>
+            <li>The <strong>x-coordinate</strong> of any point on the Y-axis is <strong>zero</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Quadrants -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Quadrants</h5>
+        </div>
+        <div class="card-body">
+          <p>The X and Y-axes divide the coordinate plane into four parts, each called a <strong>quadrant</strong>:</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Quadrant</th><th>Sign of x</th><th>Sign of y</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>I</strong> (x &gt; 0, y &gt; 0)</td><td>+</td><td>+</td></tr>
+              <tr><td><strong>II</strong> (x &lt; 0, y &gt; 0)</td><td>&minus;</td><td>+</td></tr>
+              <tr><td><strong>III</strong> (x &lt; 0, y &lt; 0)</td><td>&minus;</td><td>&minus;</td></tr>
+              <tr><td><strong>IV</strong> (x &gt; 0, y &lt; 0)</td><td>+</td><td>&minus;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Polar Coordinates
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Polar Coordinates</h4>
+    </div>
+    <div class="card-body">
+      <p>For a point \(P(x, y)\), if \(r\) is the distance from the origin and \(\theta\) is the angle made with the positive X-axis, then:</p>
+      \[ x = r\cos\theta, \qquad y = r\sin\theta \]
+      \[ r = \sqrt{x^2 + y^2}, \qquad \theta = \tan^{-1}\!\left(\frac{y}{x}\right) \]
+      <p>The polar coordinate is represented by the symbol \(P(r, \theta)\).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Conversion Between Cartesian and Polar</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Cartesian → Polar:</strong> \(\;r = \sqrt{x^2+y^2},\quad \theta = \tan^{-1}(y/x)\)</li>
+            <li><strong>Polar → Cartesian:</strong> \(\;x = r\cos\theta,\quad y = r\sin\theta\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Distance Formulae
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Distance Formulae</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Cartesian Distance -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>(i) Distance Between Two Points (Cartesian)</h5>
+        </div>
+        <div class="card-body">
+          <p>Distance between \(P(x_1, y_1)\) and \(Q(x_2, y_2)\):</p>
+          \[ PQ = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \]
+        </div>
+      </div>
+
+      <!-- Nested: Polar Distance -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>(ii) Distance Between Two Points (Polar)</h5>
+        </div>
+        <div class="card-body">
+          <p>If points are \((r_1, \theta_1)\) and \((r_2, \theta_2)\), the distance between them is:</p>
+          \[ d = \sqrt{r_1^2 + r_2^2 - 2r_1 r_2 \cos(\theta_1 - \theta_2)} \]
+        </div>
+      </div>
+
+      <!-- Nested: Distance from origin -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>(iii) Distance from Origin</h5>
+        </div>
+        <div class="card-body">
+          <p>Distance of a point \((x_1, y_1)\) from the origin:</p>
+          \[ d = \sqrt{x_1^2 + y_1^2} \]
+        </div>
+      </div>
+
+      <!-- Nested: Oblique axes distance -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>(iv) Distance When Axes are Inclined</h5>
+        </div>
+        <div class="card-body">
+          <p>If the coordinate axes are inclined at angle \(\omega\), the distance between \((x_1, y_1)\) and \((x_2, y_2)\) is:</p>
+          \[ d = \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + 2(x_1-x_2)(y_1-y_2)\cos\omega} \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Section Formulae
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Section Formulae</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Internal & External Division -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>(i) Internal &amp; External Division</h5>
+        </div>
+        <div class="card-body">
+          <p>The coordinates of the point dividing the join of \((x_1, y_1)\) and \((x_2, y_2)\) in ratio \(m_1 : m_2\):</p>
+          <p><strong>Internally:</strong></p>
+          \[ \left(\frac{m_1 x_2 + m_2 x_1}{m_1 + m_2},\; \frac{m_1 y_2 + m_2 y_1}{m_1 + m_2}\right) \]
+          <p><strong>Externally:</strong></p>
+          \[ \left(\frac{m_1 x_2 - m_2 x_1}{m_1 - m_2},\; \frac{m_1 y_2 - m_2 y_1}{m_1 - m_2}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Axes Division -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>(ii) Division by Coordinate Axes</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>X-axis</strong> divides the line joining \((x_1, y_1)\) and \((x_2, y_2)\) in the ratio \(-y_1 : y_2\).</li>
+            <li><strong>Y-axis</strong> divides the same line segment in the ratio \(-x_1 : x_2\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Mid-Point -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>(iii) Mid-Point Formula</h5>
+        </div>
+        <div class="card-body">
+          <p>Mid-point of the join of \((x_1, y_1)\) and \((x_2, y_2)\):</p>
+          \[ \left(\frac{x_1 + x_2}{2},\; \frac{y_1 + y_2}{2}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Centroid -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>(iv) Centroid of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Centroid of \(\triangle ABC\) with vertices \((x_1, y_1)\), \((x_2, y_2)\), \((x_3, y_3)\):</p>
+          \[ G = \left(\frac{x_1 + x_2 + x_3}{3},\; \frac{y_1 + y_2 + y_3}{3}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Circumcentre -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>(v) Circumcentre of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Circumcentre of \(\triangle ABC\) with vertices \(A(x_1,y_1)\), \(B(x_2,y_2)\), \(C(x_3,y_3)\):</p>
+          \[ \left(\frac{x_1\sin 2A + x_2\sin 2B + x_3\sin 2C}{\sin 2A + \sin 2B + \sin 2C},\; \frac{y_1\sin 2A + y_2\sin 2B + y_3\sin 2C}{\sin 2A + \sin 2B + \sin 2C}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Incentre -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>(vi) Incentre of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Incentre of \(\triangle ABC\) with vertices \(A(x_1,y_1)\), \(B(x_2,y_2)\), \(C(x_3,y_3)\) and opposite sides \(a, b, c\):</p>
+          \[ I = \left(\frac{ax_1 + bx_2 + cx_3}{a+b+c},\; \frac{ay_1 + by_2 + cy_3}{a+b+c}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Excentre -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>(vii) Excentres of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>The excentres opposite to vertices \(A\), \(B\), and \(C\) are:</p>
+          \[ I_1 = \left(\frac{-ax_1 + bx_2 + cx_3}{-a+b+c},\; \frac{-ay_1 + by_2 + cy_3}{-a+b+c}\right) \]
+          \[ I_2 = \left(\frac{ax_1 - bx_2 + cx_3}{a-b+c},\; \frac{ay_1 - by_2 + cy_3}{a-b+c}\right) \]
+          \[ I_3 = \left(\frac{ax_1 + bx_2 - cx_3}{a+b-c},\; \frac{ay_1 + by_2 - cy_3}{a+b-c}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Orthocentre -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>(viii) Orthocentre of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Orthocentre of \(\triangle ABC\) with vertices \(A(x_1,y_1)\), \(B(x_2,y_2)\), \(C(x_3,y_3)\):</p>
+          \[ H = \left(\frac{x_1\tan A + x_2\tan B + x_3\tan C}{\tan A + \tan B + \tan C},\; \frac{y_1\tan A + y_2\tan B + y_3\tan C}{\tan A + \tan B + \tan C}\right) \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Area Formulae
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Area of Triangle &amp; Quadrilateral</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Area of Triangle -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>(i) Area of a Triangle</h5>
+        </div>
+        <div class="card-body">
+          <p>Area of \(\triangle ABC\) with vertices \(A(x_1,y_1)\), \(B(x_2,y_2)\), \(C(x_3,y_3)\):</p>
+          \[ \Delta = \frac{1}{2}\begin{vmatrix} x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \\ x_3 & y_3 & 1 \end{vmatrix} = \frac{1}{2}\begin{vmatrix} x_1-x_3 & x_2-x_3 \\ y_1-y_3 & y_2-y_3 \end{vmatrix} \]
+          <p class="mt-2"><em>Note:</em> Points \(A\), \(B\), \(C\) are <strong>collinear</strong> if \(\Delta = 0\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Area of Quadrilateral -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>(ii) Area of a Quadrilateral</h5>
+        </div>
+        <div class="card-body">
+          <p>Area of quadrilateral with vertices \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\), \((x_4,y_4)\):</p>
+          \[ \Delta = \frac{1}{2}\begin{vmatrix} x_1-x_3 & x_2-x_4 \\ y_1-y_3 & y_2-y_4 \end{vmatrix} \]
+        </div>
+      </div>
+
+      <!-- Nested: Area of Trapezium -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>(iii) Area of a Trapezium</h5>
+        </div>
+        <div class="card-body">
+          <p>Area of trapezium with vertices \((x_1,y_1)\), \((x_2,y_2)\), \((x_3,y_3)\), \((x_4,y_4)\):</p>
+          \[ \Delta = \frac{1}{2}\left|(y_1+y_2)(x_1-x_2) + (y_2+y_3)(x_2-x_3) + (y_3+y_4)(x_3-x_4) + (y_4+y_1)(x_4-x_1)\right| \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Shifting of Origin & Rotation of Axes
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Shifting of Origin &amp; Rotation of Axes</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Shifting of Origin -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Shifting of Origin (Translation of Axes)</h5>
+        </div>
+        <div class="card-body">
+          <p>Let the origin be shifted to a new point \(O'(h, k)\). If \(P(x, y)\) are coordinates referred to the old axes and \(P'(X, Y)\) are coordinates referred to the new axes, then:</p>
+          \[ x = X + h \qquad \text{and} \qquad y = Y + k \]
+          \[ \Leftrightarrow \qquad X = x - h, \qquad Y = y - k \]
+        </div>
+      </div>
+
+      <!-- Nested: Rotation of Axes -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Rotation of Axes</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \((x, y)\) be coordinates referred to old axes and \((X, Y)\) be coordinates referred to new axes (after rotating by angle \(\theta\) anti-clockwise). Then:</p>
+          \[ X = x\cos\theta + y\sin\theta \qquad \text{and} \qquad Y = y\cos\theta - x\sin\theta \]
+          <p>Equivalently:</p>
+          \[ x = X\cos\theta - Y\sin\theta \qquad \text{and} \qquad y = X\sin\theta + Y\cos\theta \]
+        </div>
+      </div>
+
+      <!-- Nested: Combined Transformation -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Combined Transformation (Shift + Rotation)</h5>
+        </div>
+        <div class="card-body">
+          <p>If origin is shifted to point \((h, k)\) and the system is also rotated by angle \(\theta\) anti-clockwise, the new coordinates \(P'(x', y')\) are:</p>
+          \[ x' = h + x\cos\theta + y\sin\theta \]
+          \[ y' = k - x\sin\theta + y\cos\theta \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Locus
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Locus &amp; Equation of Locus</h4>
+    </div>
+    <div class="card-body">
+      <p>The curve described by a point which moves under given condition(s) is called its <strong>locus</strong>.</p>
+      <p>The equation of the curve described by a moving point is called the <strong>equation of locus</strong>.</p>
+
+      <!-- Nested: Steps to find locus -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Steps to Find the Equation of Locus</h5>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li><strong>Step I:</strong> Assume the coordinates of the moving point as \((h, k)\).</li>
+            <li><strong>Step II:</strong> Write the given condition in mathematical form involving \(h\) and \(k\).</li>
+            <li><strong>Step III:</strong> Eliminate any extra variable(s), if any.</li>
+            <li><strong>Step IV:</strong> Replace \(h\) by \(x\) and \(k\) by \(y\). The resulting equation is the equation of the locus.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Important Results to Remember
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Important Results to Remember</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>Three points \(A\), \(B\), \(C\) are <strong>collinear</strong> if any one point lies on the straight line joining the other two, i.e., \(AB + BC = AC\).</li>
+        <li>Area of triangle formed by \(y=m_1x+c_1\), \(y=m_2x+c_2\), \(y=m_3x+c_3\):
+          \[ \Delta = \frac{1}{2}\left|\sum \frac{(c_1-c_2)^2}{m_1-m_2}\right| \]
+        </li>
+        <li>Area of triangle formed by \(ax+by+c=0\) with coordinate axes:
+          \[ \Delta = \frac{c^2}{2|ab|} \]
+        </li>
+        <li>Area of rhombus formed by \(ax \pm by \pm c = 0\):
+          \[ \Delta = \frac{2c^2}{ab} \]
+        </li>
+        <li>Area of parallelogram formed by \(a_1x+b_1y+c_1=0\), \(a_1x+b_1y+d_1=0\), \(a_2x+b_2y+c_2=0\), \(a_2x+b_2y+d_2=0\):
+          \[ \Delta = \frac{(d_1-c_1)(d_2-c_2)}{|a_1b_2 - a_2b_1|} \]
+        </li>
+        <li>Area of polygon with \(n\) vertices \((x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n)\) in order:
+          \[ \Delta = \frac{1}{2}\left|\sum_{i=1}^{n}(x_i y_{i+1} - x_{i+1}y_i)\right| \quad \text{(indices mod }n\text{)} \]
+        </li>
+        <li>In an <strong>equilateral triangle</strong>, the orthocentre, centroid, circumcentre and incentre all coincide.</li>
+        <li>The <strong>circumcentre</strong> of a right-angled triangle is the mid-point of the hypotenuse.</li>
+        <li><strong>Orthocentre, centroid, circumcentre</strong> are collinear (Euler's line). Centroid divides the segment joining orthocentre and circumcentre in ratio \(2:1\).</li>
+        <li>The orthocentre of a right-angled \(\triangle ABC\), right-angled at \(A\), is the point \(A\) itself.</li>
+        <li>If \(D\), \(E\), \(F\) are midpoints of sides \(BC\), \(CA\), \(AB\) of \(\triangle ABC\), then centroid of \(\triangle ABC\) = centroid of \(\triangle DEF\).</li>
+        <li><strong>Third vertex</strong> of an equilateral triangle, given two vertices \((x_1,y_1)\) and \((x_2,y_2)\):
+          \[ \left(\frac{x_1+x_2 \pm \sqrt{3}(y_1-y_2)}{2},\; \frac{y_1+y_2 \mp \sqrt{3}(x_1-x_2)}{2}\right) \]
+        </li>
+        <li><strong>Foot of perpendicular</strong> \((h, k)\) from \((x_1, y_1)\) to line \(ax+by+c=0\):
+          \[ \frac{h-x_1}{a} = \frac{k-y_1}{b} = -\frac{ax_1+by_1+c}{a^2+b^2} \]
+        </li>
+        <li>Foot of perpendicular from \((a,b)\) on \(x - y = 0\): \(\displaystyle\left(\frac{a+b}{2},\;\frac{a+b}{2}\right)\)</li>
+        <li>Foot of perpendicular from \((a,b)\) on \(x + y = 0\): \(\displaystyle\left(\frac{a-b}{2},\;\frac{b-a}{2}\right)\)</li>
+        <li>Image of line \(a_1x+b_1y+c_1=0\) about line \(ax+by+c=0\):
+          \[ 2(aa_1+bb_1)(ax+by+c) = (a^2+b^2)(a_1x+b_1y+c_1) \]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Definite Integrals &amp; Its Applications</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Definite Integrals &amp; Its Applications</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Definition & Fundamental Theorems
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Definition &amp; Fundamental Theorems of Calculus</h4>
+    </div>
+    <div class="card-body">
+      <p>Let \(f(x)\) be a function defined on \([a,b]\) and \(F(x)\) be its anti-derivative. Then the <strong>definite integral</strong> of \(f(x)\) from \(x=a\) to \(x=b\) is defined as:</p>
+      \[\int_a^b f(x)\,dx = F(b) - F(a)\]
+      <p>Here \(a\) is the <strong>lower limit</strong> and \(b\) is the <strong>upper limit</strong> of integration.</p>
+
+      <!-- Nested: First Fundamental Theorem -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>First Fundamental Theorem</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f\) be a continuous function on \([a,b]\) and let \(A(x) = \displaystyle\int_a^x f(t)\,dt\). Then:</p>
+          \[A'(x) = f(x) \quad \text{for all } x \in [a,b]\]
+        </div>
+      </div>
+
+      <!-- Nested: Second Fundamental Theorem -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Second Fundamental Theorem</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f\) be continuous on \([a,b]\) and \(F\) be an anti-derivative of \(f\). Then:</p>
+          \[\int_a^b f(x)\,dx = \Big[F(x)\Big]_a^b = F(b) - F(a)\]
+        </div>
+      </div>
+
+      <!-- Nested: Evaluation by Substitution -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Evaluation by Substitution</h5>
+        </div>
+        <div class="card-body">
+          <p>To evaluate \(\displaystyle\int_a^b f[g(x)]\cdot g'(x)\,dx\):</p>
+          <ol>
+            <li>Substitute \(g(x) = t \Rightarrow g'(x)\,dx = dt\)</li>
+            <li>Change limits: lower limit becomes \(g(a)\), upper limit becomes \(g(b)\)</li>
+            <li>New integral: \(\displaystyle\int_{g(a)}^{g(b)} f(t)\,dt\) — evaluate as usual</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Nested: Integral Function -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Integral Function</h5>
+        </div>
+        <div class="card-body">
+          <p>The function \(\varphi(x) = \displaystyle\int_a^x f(t)\,dt,\; x\in[a,b]\) is called the <strong>integral function</strong> of \(f\).</p>
+          <ul>
+            <li>The integral function of an integrable function is <strong>continuous</strong>.</li>
+            <li>If \(\varphi(x)\) is the integral function of a continuous function \(f\), then \(\varphi'(x) = f(x)\; \forall x \in [a,b]\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Properties of Definite Integrals
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Properties of Definite Integrals</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Basic Properties -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Basic Properties (P1 – P8)</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>P1.</strong> Dummy variable property:</p>
+          \[\int_a^b f(x)\,dx = \int_a^b f(t)\,dt\]
+          <p><strong>P2.</strong> Reversing limits:</p>
+          \[\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx\]
+          <p><strong>P3.</strong> Zero-width interval:</p>
+          \[\int_a^a f(x)\,dx = 0\]
+          <p><strong>P4.</strong> Additivity (splitting limits):</p>
+          \[\int_a^b f(x)\,dx = \int_a^c f(x)\,dx + \int_c^b f(x)\,dx, \quad a < c < b\]
+          <p>Generalisation: if \(a < c_1 < c_2 < \cdots < c_n < b\), then</p>
+          \[\int_a^b f(x)\,dx = \int_a^{c_1} f(x)\,dx + \int_{c_1}^{c_2} f(x)\,dx + \cdots + \int_{c_n}^b f(x)\,dx\]
+          <p><strong>P5.</strong> King's property:</p>
+          \[\int_0^a f(x)\,dx = \int_0^a f(a-x)\,dx\]
+          <p>Deduction:</p>
+          \[\int_0^a \frac{f(x)}{f(x)+f(a-x)}\,dx = \frac{a}{2}\]
+          <p><strong>P6.</strong> Generalised king's property:</p>
+          \[\int_a^b f(x)\,dx = \int_a^b f(a+b-x)\,dx\]
+          <p>Deduction:</p>
+          \[\int_a^b \frac{f(x)}{f(x)+f(a+b-x)}\,dx = \frac{b-a}{2}\]
+          <p><strong>P7.</strong> Double interval property:</p>
+          \[\int_0^{2a} f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(2a-x)\,dx\]
+          <p><strong>P8.</strong> Symmetric about origin:</p>
+          \[\int_{-a}^a f(x)\,dx = \int_0^a f(x)\,dx + \int_0^a f(-x)\,dx\]
+        </div>
+      </div>
+
+      <!-- Nested: Even-Odd & Periodic -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Even–Odd &amp; Periodic Function Properties (P9 – P13)</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>P9.</strong> Consequence of P7:</p>
+          \[\int_0^{2a} f(x)\,dx = \begin{cases} 2\displaystyle\int_0^a f(x)\,dx & \text{if } f(2a-x)=f(x) \\ 0 & \text{if } f(2a-x)=-f(x) \end{cases}\]
+          <p><strong>P10.</strong> Symmetric midpoint property:</p>
+          \[\int_a^b f(x)\,dx = \begin{cases} 0 & \text{if } f(a+x)=-f(b-x) \\ 2\displaystyle\int_a^{\frac{a+b}{2}} f(x)\,dx & \text{if } f(a+x)=f(b-x) \end{cases}\]
+          <p><strong>P11.</strong> Even and Odd functions:</p>
+          \[\int_{-a}^a f(x)\,dx = \begin{cases} 2\displaystyle\int_0^a f(x)\,dx & \text{if } f(-x)=f(x) \text{ (even)} \\ 0 & \text{if } f(-x)=-f(x) \text{ (odd)} \end{cases}\]
+          <p><strong>P12.</strong> Linear substitution:</p>
+          \[\int_a^b f(x)\,dx = (b-a)\int_0^1 f\big[(b-a)x+a\big]\,dx\]
+          <p><strong>P13.</strong> Periodic functions — if \(f(x+T)=f(x)\):</p>
+          \[\int_a^{a+T} f(x)\,dx \text{ is independent of } a\]
+          \[\int_0^{nT} f(x)\,dx = n\int_0^T f(x)\,dx,\quad n\in\mathbb{I}\]
+          \[\int_a^{a+nT} f(x)\,dx = n\int_0^T f(x)\,dx,\quad n\in\mathbb{I}\]
+          \[\int_{a+mT}^{a+nT} f(x)\,dx = (n-m)\int_0^T f(x)\,dx,\quad m,n\in\mathbb{I}\]
+          \[\int_{a+mT}^{b+mT} f(x)\,dx = \int_a^b f(x)\,dx\]
+        </div>
+      </div>
+
+      <!-- Nested: Inequality Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Inequality &amp; Estimation Properties (P14 – P21)</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>P14.</strong> Leibnitz Rule for differentiation under integral sign:</p>
+          \[\frac{d}{dx}\int_{\varphi(x)}^{\psi(x)} f(t)\,dt = f[\psi(x)]\cdot\psi'(x) - f[\varphi(x)]\cdot\varphi'(x)\]
+          <p><strong>P15.</strong> Non-negativity: if \(f(x)\ge 0\) on \([a,b]\), then \(\displaystyle\int_a^b f(x)\,dx \ge 0\).</p>
+          <p><strong>P16.</strong> Comparison: if \(f(x)\le\varphi(x)\) on \([a,b]\), then \(\displaystyle\int_a^b f(x)\,dx \le \int_a^b \varphi(x)\,dx\).</p>
+          <p><strong>P17.</strong> Squeeze theorem: if \(g(x)\le f(x)\le h(x)\) on \([a,b]\), then:</p>
+          \[\int_a^b g(x)\,dx \le \int_a^b f(x)\,dx \le \int_a^b h(x)\,dx\]
+          <p><strong>P18.</strong> Absolute value:</p>
+          \[\left|\int_a^b f(x)\,dx\right| \le \int_a^b |f(x)|\,dx\]
+          <p><strong>P19.</strong> Estimation (Bound): if \(m \le f(x) \le M\) on \([a,b]\), then:</p>
+          \[m(b-a) \le \int_a^b f(x)\,dx \le M(b-a)\]
+          <p><strong>P20.</strong> Mean Value Theorem for integrals: there exists \(c\in[a,b]\) such that:</p>
+          \[f(c) = \frac{1}{b-a}\int_a^b f(x)\,dx \quad \text{(mean value of } f \text{ on } [a,b]\text{)}\]
+          <p><strong>P21.</strong> Cauchy–Schwarz inequality:</p>
+          \[\left|\int_a^b f(x)g(x)\,dx\right| \le \left(\int_a^b f^2(x)\,dx\right)^{1/2}\left(\int_a^b g^2(x)\,dx\right)^{1/2}\]
+
+          <div class="alert alert-info mt-3">
+            <strong>Even/Odd Integral Functions:</strong>
+            <ul class="mb-0">
+              <li>If \(f(t)\) is <strong>odd</strong>, then \(\varphi(x)=\displaystyle\int_a^x f(t)\,dt\) is an <strong>even</strong> function.</li>
+              <li>If \(f(t)\) is <strong>even</strong>, then \(\varphi(x)=\displaystyle\int_0^x f(t)\,dt\) is an <strong>odd</strong> function.</li>
+              <li>If \(f(t)\) is even, then \(\displaystyle\int_a^x f(t)\,dt\) is odd only if \(\displaystyle\int_0^a f(t)\,dt=0\).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nested: Improper Integrals -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Improper Integrals</h5>
+        </div>
+        <div class="card-body">
+          <p>If \(f(x)\) is continuous on \([a,\infty)\), then:</p>
+          \[\int_a^\infty f(x)\,dx = \lim_{b\to\infty}\int_a^b f(x)\,dx\]
+          \[\int_{-\infty}^b f(x)\,dx = \lim_{a\to-\infty}\int_a^b f(x)\,dx\]
+          \[\int_{-\infty}^\infty f(x)\,dx = \int_{-\infty}^b f(x)\,dx + \int_b^\infty f(x)\,dx\]
+          <p>Geometrically, for \(f(x)>0\), the improper integral \(\displaystyle\int_a^\infty f(x)\,dx\) gives the area bounded by \(y=f(x)\), the X-axis and the line \(x=a\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Walli's Formula & Important Results
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Walli's Formula &amp; Important Standard Results</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Walli's Formula -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Walli's Formula</h5>
+        </div>
+        <div class="card-body">
+          \[\int_0^{\pi/2}\sin^n x\,dx = \int_0^{\pi/2}\cos^n x\,dx\]
+          \[= \begin{cases} \dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{2}{3} & \text{if } n \text{ is odd} \\[10pt] \dfrac{n-1}{n}\cdot\dfrac{n-3}{n-2}\cdots\dfrac{1}{2}\cdot\dfrac{\pi}{2} & \text{if } n \text{ is even} \end{cases}\]
+
+          <p class="mt-3"><strong>Mixed power formula:</strong></p>
+          \[\int_0^{\pi/2}\sin^m x\cos^n x\,dx = \frac{[(m-1)(m-3)\cdots(2\text{ or }1)]\cdot[(n-1)(n-3)\cdots(2\text{ or }1)]}{(m+n)(m+n-2)\cdots(2\text{ or }1)}\]
+          <p>Multiply by \(\dfrac{\pi}{2}\) when both \(m\) and \(n\) are even.</p>
+
+          <p class="mt-3"><strong>Special cases (when \(m\) or \(n = 1\)):</strong></p>
+          \[\int_0^{\pi/2}\sin^m x\cos x\,dx = \frac{1}{m+1}, \qquad \int_0^{\pi/2}\cos^m x\sin x\,dx = \frac{1}{m+1}\]
+        </div>
+      </div>
+
+      <!-- Nested: Summation as Integral -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Summation of Series as Definite Integral</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f(x)\) be continuous on \([a,b]\), and let \(h\) be the length of \(n\) equal subintervals. Then:</p>
+          \[\int_a^b f(x)\,dx = \lim_{n\to\infty} h\sum_{r=0}^{n} f(a+rh), \quad nh = b-a\]
+          <p>For \(a=0,\; b=1\) (so \(h=\tfrac{1}{n}\)):</p>
+          \[\int_0^1 f(x)\,dx = \lim_{n\to\infty}\frac{1}{n}\sum_{r=0}^{n-1}f\!\left(\frac{r}{n}\right)\]
+          <p><strong>Method:</strong> Express the series as \(\displaystyle\lim_{n\to\infty}\sum\frac{1}{n}f\!\left(\frac{r}{n}\right)\). Replace \(\dfrac{r}{n}\) by \(x\) and \(\dfrac{1}{n}\) by \(dx\); the limit equals \(\displaystyle\int_0^1 f(x)\,dx\).</p>
+          <p>More generally: \(\displaystyle\lim_{n\to\infty}\sum_{r=1}^{pn}\frac{1}{n}f\!\left(\frac{r}{n}\right) = \int_0^p f(x)\,dx\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Standard Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Important Standard Results</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i) Symmetry results (all equal to \(\dfrac{\pi}{4}\)):</strong></p>
+          \[\int_0^{\pi/2}\frac{\sin^n x}{\sin^n x+\cos^n x}\,dx = \int_0^{\pi/2}\frac{\tan^n x}{1+\tan^n x}\,dx = \int_0^{\pi/2}\frac{\sec^n x}{\sec^n x+\csc^n x}\,dx = \frac{\pi}{4}\]
+
+          <p class="mt-3"><strong>(ii) Exponential result:</strong></p>
+          \[\int_0^{\pi/2}\frac{a^{\sin^n x}}{a^{\sin^n x}+a^{\cos^n x}}\,dx = \frac{\pi}{4}\]
+
+          <p class="mt-3"><strong>(iii) Logarithmic results:</strong></p>
+          \[\int_0^{\pi/2}\log\sin x\,dx = \int_0^{\pi/2}\log\cos x\,dx = -\frac{\pi}{2}\log 2\]
+          \[\int_0^{\pi/2}\log\tan x\,dx = \int_0^{\pi/2}\log\cot x\,dx = 0\]
+          \[\int_0^{\pi/2}\log\sec x\,dx = \int_0^{\pi/2}\log\csc x\,dx = \frac{\pi}{2}\log 2\]
+
+          <p class="mt-3"><strong>(iv) Laplace-type results:</strong></p>
+          \[\int_0^\infty e^{-ax}\sin bx\,dx = \frac{b}{a^2+b^2}, \qquad \int_0^\infty e^{-ax}\cos bx\,dx = \frac{a}{a^2+b^2}\]
+          \[\int_0^\infty e^{-ax}x^n\,dx = \frac{n!}{a^{n+1}}\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Applications — Area Under Curves
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Applications of Integrals — Area of Bounded Regions</h4>
+    </div>
+    <div class="card-body">
+      <p>The space occupied by a curve along with the axes, under given conditions, is called the <strong>area of the bounded region</strong>.</p>
+
+      <!-- Nested: Area formulas -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Standard Area Formulas</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i)</strong> Area bounded by \(y=F(x)\), <strong>above X-axis</strong>, between \(x=a\) and \(x=b\):</p>
+          \[A = \int_a^b y\,dx = \int_a^b F(x)\,dx\]
+
+          <p><strong>(ii)</strong> If curve lies <strong>below X-axis</strong> between \(x=a\) and \(x=b\):</p>
+          \[A = \left|\int_a^b(-y)\,dx\right| = \left|-\int_a^b F(x)\,dx\right|\]
+
+          <p><strong>(iii)</strong> Area bounded by \(x=F(y)\), <strong>right of Y-axis</strong>, between \(y=c\) and \(y=d\):</p>
+          \[A = \int_c^d x\,dy = \int_c^d F(y)\,dy\]
+
+          <p><strong>(iv)</strong> If curve lies <strong>left of Y-axis</strong> between \(y=c\) and \(y=d\):</p>
+          \[A = \left|\int_c^d(-x)\,dy\right| = \left|-\int_c^d F(y)\,dy\right|\]
+
+          <p><strong>(v)</strong> Area between two curves \(y=F(x)\) and \(y=G(x)\) (\(F(x)\ge G(x)\)) from \(x=a\) to \(x=b\):</p>
+          \[A = \int_a^b \{F(x)-G(x)\}\,dx\]
+
+          <p><strong>(vi)</strong> Area between two curves \(x=F(y)\) and \(x=G(y)\) (\(F(y)\ge G(y)\)) from \(y=c\) to \(y=d\):</p>
+          \[A = \int_c^d \{F(y)-G(y)\}\,dy\]
+
+          <p><strong>(vii)</strong> Mixed case — if \(F(x)\ge G(x)\) on \([a,c]\) and \(F(x)\le G(x)\) on \([c,b]\):</p>
+          \[A = \int_a^c\{F(x)-G(x)\}\,dx + \int_c^b\{G(x)-F(x)\}\,dx\]
+        </div>
+      </div>
+
+      <!-- Nested: Polar & Parametric -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Area for Polar &amp; Parametric Curves</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Polar curves:</strong> Area bounded by \(r=f(\theta)\) and radii \(\theta=\alpha,\;\theta=\beta\):</p>
+          \[A = \frac{1}{2}\int_\alpha^\beta r^2\,d\theta\]
+
+          <p><strong>Parametric curves:</strong> \(x=\varphi(t),\; y=\psi(t)\) — area between the curve, X-axis and ordinates \(x=\varphi(t_1),\; x=\varphi(t_2)\):</p>
+          \[A = \left|\int_{t_1}^{t_2} y\cdot\frac{dx}{dt}\,dt\right|\]
+        </div>
+      </div>
+
+      <!-- Nested: Standard Areas Table -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Standard Areas to Remember</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+              <thead class="table-dark">
+                <tr><th>Curves / Region</th><th>Area</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Parabola \(y^2=4ax\) bounded by its latus rectum \(x=a\)</td>
+                  <td>\(\dfrac{8a^2}{3}\)</td>
+                </tr>
+                <tr>
+                  <td>Between parabolas \(y^2=4ax\) and \(x^2=4by\)</td>
+                  <td>\(\dfrac{16ab}{3}\)</td>
+                </tr>
+                <tr>
+                  <td>Ellipse \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</td>
+                  <td>\(\pi ab\)</td>
+                </tr>
+                <tr>
+                  <td>Circle \(x^2+y^2=r^2\)</td>
+                  <td>\(\pi r^2\)</td>
+                </tr>
+                <tr>
+                  <td>Between \(y^2=4ax\) and line \(y=mx\)</td>
+                  <td>\(\dfrac{8a^2}{3m^3}\)</td>
+                </tr>
+                <tr>
+                  <td>Curve \(xy=p^2\), X-axis, ordinates \(x=\alpha,\;x=\beta\)</td>
+                  <td>\(p^2\log\!\left(\dfrac{\alpha}{\beta}\right)\)</td>
+                </tr>
+                <tr>
+                  <td>Ellipse \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}\le1\) and \(\dfrac{x}{a}+\dfrac{y}{b}\ge1\) (\(x,y\ge0\))</td>
+                  <td>\(\dfrac{ab(\pi-2)}{4}\)</td>
+                </tr>
+                <tr>
+                  <td>Between parabolas \(y^2=4a(x+a)\) and \(y^2=4b(b-x)\)</td>
+                  <td>\(\dfrac{8}{3}ab(a+b)\) sq units</td>
+                </tr>
+                <tr>
+                  <td>Common area between ellipse \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) and circle \(x^2+y^2=1\)</td>
+                  <td>\(\dfrac{4a^2b^2}{a^2+b^2}\left(\dfrac{\pi}{4}-\dfrac{1}{2}\right)\cdot4\)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Curve Sketching
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Curve Sketching</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Steps for Curve Sketching -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Steps for Curve Sketching</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>1. Symmetry:</strong></p>
+          <ul>
+            <li>All powers of \(y\) even → symmetric about <strong>X-axis</strong>.</li>
+            <li>All powers of \(x\) even → symmetric about <strong>Y-axis</strong>.</li>
+            <li>Replace \(x\to -x\) and \(y\to -y\), equation unchanged → symmetric in <strong>opposite quadrants</strong>.</li>
+            <li>Interchanging \(x\) and \(y\) leaves equation unchanged → symmetric about line \(y=x\).</li>
+          </ul>
+          <p><strong>2. Nature of Origin:</strong></p>
+          <ul>
+            <li>If \((0,0)\) satisfies the equation, curve passes through origin.</li>
+            <li>Equate lowest degree terms to zero for tangent(s) at origin. Two tangents → origin is a double point.</li>
+          </ul>
+          <p><strong>3. Intersection with Axes:</strong></p>
+          <ul>
+            <li>Put \(y=0\) for X-axis intersections; put \(x=0\) for Y-axis intersections.</li>
+            <li>Find tangent at these points by shifting origin and equating lowest degree terms.</li>
+            <li>Identify regions where curve does not exist (imaginary values).</li>
+          </ul>
+          <p><strong>4. Asymptotes:</strong></p>
+          <ul>
+            <li>Equate coefficient of highest power of \(x\) to zero → asymptote parallel to X-axis.</li>
+            <li>Equate coefficient of highest power of \(y\) to zero → asymptote parallel to Y-axis.</li>
+          </ul>
+          <p><strong>5. Sign of \(\dfrac{dy}{dx}\):</strong> Find points where \(\dfrac{dy}{dx}=0\) or \(\to\infty\) to locate horizontal/vertical tangents.</p>
+          <p><strong>6. Points of Inflexion:</strong> Set \(\dfrac{d^2y}{dx^2}=0\) or \(\dfrac{d^2x}{dy^2}=0\) and solve.</p>
+        </div>
+      </div>
+
+      <!-- Nested: Shapes of Standard Curves -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Shapes of Standard Curves</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+              <thead class="table-dark">
+                <tr><th>Equation</th><th>Name / Nature</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>\(ay^2 = x^3\)</td><td>Semi-cubical parabola (cusp at origin)</td></tr>
+                <tr><td>\(y = x^3\)</td><td>Cubical parabola (point of inflexion at origin)</td></tr>
+                <tr><td>\((x^2+4a^2)y = 8a^3\)</td><td>Witch of Agnesi (bell-shaped, asymptote \(y=0\))</td></tr>
+                <tr><td>\(ay^2 = x^2(a-x)\)</td><td>Cissoid (loop, passes through origin, \(x=a\) asymptote)</td></tr>
+                <tr><td>\(a^2y^2 = x^2(a^2-x^2)\)</td><td>Figure-of-eight curve (symmetric about both axes)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Volume & Surface Area of Revolution
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Volume &amp; Surface Area of Solid of Revolution</h4>
+    </div>
+    <div class="card-body">
+      <p>When a plane curve is revolved about any line, the solid so generated is called a <strong>solid of revolution</strong>.</p>
+
+      <!-- Nested: Volume -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Volume of Solid of Revolution</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i) Revolution about X-axis</strong> — curve \(y=f(x)\), between \(x=a\) and \(x=b\):</p>
+          \[V = \int_a^b \pi y^2\,dx\]
+
+          <p><strong>(ii) Revolution about Y-axis</strong> — curve \(x=g(y)\), between \(y=c\) and \(y=d\):</p>
+          \[V = \int_c^d \pi x^2\,dy\]
+        </div>
+      </div>
+
+      <!-- Nested: Surface Area -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Surface Area of Solid of Revolution</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i) Revolution about X-axis</strong> — curve \(y=f(x)\), between \(x=a\) and \(x=b\):</p>
+          \[S = 2\pi\int_a^b y\sqrt{1+\left(\frac{dy}{dx}\right)^2}\,dx\]
+
+          <p><strong>(ii) Revolution about Y-axis</strong> — curve \(x=f(y)\), between \(y=c\) and \(y=d\):</p>
+          \[S = 2\pi\int_c^d x\sqrt{1+\left(\frac{dx}{dy}\right)^2}\,dy\]
+        </div>
+      </div>
+
+      <!-- Nested: Standard Volumes & Surfaces -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Standard Volumes &amp; Surface Areas</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+              <thead class="table-dark">
+                <tr><th>Solid</th><th>Volume</th><th>Surface Area</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Sphere of radius \(r\)</td><td>\(\dfrac{4}{3}\pi r^3\)</td><td>\(4\pi r^2\)</td></tr>
+                <tr><td>Cone (base radius \(r\), height \(h\))</td><td>\(\dfrac{1}{3}\pi r^2 h\)</td><td>\(\pi r l\) (curved), where \(l=\sqrt{r^2+h^2}\)</td></tr>
+                <tr><td>Cylinder (radius \(r\), height \(h\))</td><td>\(\pi r^2 h\)</td><td>\(2\pi r h\) (curved)</td></tr>
+                <tr><td>Ellipsoid \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1\)</td><td>\(\dfrac{4}{3}\pi abc\)</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Important Results to Remember
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Important Results to Remember</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>\(\displaystyle\int_0^{\pi/2}\sin^n x\,dx = \int_0^{\pi/2}\cos^n x\,dx\) (Walli's formula — crucial for competition problems).</li>
+        <li>\(\displaystyle\int_0^\pi xf(\sin x)\,dx = \frac{\pi}{2}\int_0^\pi f(\sin x)\,dx\)</li>
+        <li>\(\displaystyle\int_0^{2\pi} f(|\sin x|)\,dx = 4\int_0^{\pi/2} f(\sin x)\,dx\)</li>
+        <li>If \(f(x)\) is integrable and \(\displaystyle\int_0^T f(x)\,dx = 0\), then \(\displaystyle\int_0^{nT} f(x)\,dx = 0\).</li>
+        <li>Area of the region between the parabola \(y^2=4ax\) and any double ordinate \(x=h\) is \(\dfrac{2}{3}\) of the area of the corresponding rectangle.</li>
+        <li>For any positive integer \(n\): \(\displaystyle\int_0^1 x^n(1-x)^m\,dx = \frac{n!\,m!}{(n+m+1)!}\) (Beta function).</li>
+        <li>\(\displaystyle\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}\) (Gaussian integral).</li>
+        <li>Leibnitz rule is used when both limits are functions of \(x\): \(\dfrac{d}{dx}\displaystyle\int_{\varphi(x)}^{\psi(x)} f(t)\,dt = f(\psi(x))\psi'(x) - f(\varphi(x))\varphi'(x)\).</li>
+        <li>King's property is the most powerful tool: \(\displaystyle\int_a^b f(x)\,dx = \int_a^b f(a+b-x)\,dx\).</li>
+        <li>The area enclosed by \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) is \(\pi ab\); for a circle of radius \(r\), it is \(\pi r^2\).</li>
+        <li>Volume of revolution of ellipse \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) about X-axis: \(\dfrac{4}{3}\pi ab^2\); about Y-axis: \(\dfrac{4}{3}\pi a^2 b\).</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

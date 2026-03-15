@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Straight Line</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Straight Line</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Basics — Slope & Angle
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Definition, Slope &amp; Angle Between Lines</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>straight line</strong> is the locus of all points which are collinear with two given points. The general equation of a line is \(ax + by + c = 0\).</p>
+      <ul>
+        <li>Through a fixed point in a given direction, there is one and only one line.</li>
+        <li>Through a given point, there are infinitely many lines.</li>
+      </ul>
+
+      <!-- Nested: Slope -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Slope (Gradient) of a Line</h5>
+        </div>
+        <div class="card-body">
+          <p>The slope \(m\) of a line is the trigonometric tangent of the angle \(\theta\) that the line makes with the positive direction of the X-axis (anti-clockwise):</p>
+          \[ m = \tan\theta \]
+          <ul>
+            <li>Slope of a line <strong>parallel to X-axis</strong>: \(m = 0\)</li>
+            <li>Slope of a line <strong>parallel to Y-axis</strong>: \(m = \infty\)</li>
+            <li>Slope of a line <strong>equally inclined to axes</strong>: \(m = 1\) or \(m = -1\) (angles \(45°\) or \(135°\))</li>
+            <li>Slope of a line through \((x_1, y_1)\) and \((x_2, y_2)\):
+              \[ m = \frac{y_2 - y_1}{x_2 - x_1} \]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Angle between lines -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Angle Between Two Lines</h5>
+        </div>
+        <div class="card-body">
+          <p>The angle \(\theta\) between two lines with slopes \(m_1\) and \(m_2\) is:</p>
+          \[ \tan\theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right| \]
+          <ul>
+            <li>Lines are <strong>parallel</strong> iff \(m_1 = m_2\)</li>
+            <li>Lines are <strong>perpendicular</strong> iff \(m_1 m_2 = -1\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Different Forms of Equation
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Different Forms of the Equation of a Straight Line</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Standard equations -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white">
+          <h5>Standard Lines</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Line <strong>parallel to X-axis</strong> at distance \(b\): \(y = b\)</li>
+            <li>Line <strong>parallel to Y-axis</strong> at distance \(a\): \(x = a\)</li>
+            <li><strong>X-axis</strong>: \(y = 0\)</li>
+            <li><strong>Y-axis</strong>: \(x = 0\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Slope-Intercept -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>(i) Slope–Intercept Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Line with slope \(m\) and Y-intercept \(c\):</p>
+          \[ y = mx + c \]
+          <p>If passing through origin: \(y = mx\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: One Point Slope -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>(ii) One Point–Slope Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Line through \((x_1, y_1)\) with slope \(m\):</p>
+          \[ y - y_1 = m(x - x_1) \]
+        </div>
+      </div>
+
+      <!-- Nested: Two Points -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>(iii) Two Points Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Line through \((x_1, y_1)\) and \((x_2, y_2)\):</p>
+          \[ \frac{y - y_1}{x - x_1} = \frac{y_2 - y_1}{x_2 - x_1} \]
+          <p>Equivalently, by determinant:</p>
+          \[ \begin{vmatrix} x & y & 1 \\ x_1 & y_1 & 1 \\ x_2 & y_2 & 1 \end{vmatrix} = 0 \]
+        </div>
+      </div>
+
+      <!-- Nested: Intercept Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>(iv) Intercept Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Line cutting X-intercept \(a\) and Y-intercept \(b\):</p>
+          \[ \frac{x}{a} + \frac{y}{b} = 1 \]
+          <p>General equation \(Ax + By + C = 0\) converts to intercept form as:</p>
+          \[ \frac{x}{-C/A} + \frac{y}{-C/B} = 1 \]
+        </div>
+      </div>
+
+      <!-- Nested: Normal Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>(v) Normal Form</h5>
+        </div>
+        <div class="card-body">
+          <p>If the perpendicular from origin has length \(p\) and makes angle \(\alpha\) with the X-axis:</p>
+          \[ x\cos\alpha + y\sin\alpha = p \]
+        </div>
+      </div>
+
+      <!-- Nested: Parametric (Distance) Form -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>(vi) Distance (Parametric) Form</h5>
+        </div>
+        <div class="card-body">
+          <p>Line through \((x_1, y_1)\) making angle \(\theta\) with positive X-axis:</p>
+          \[ \frac{x - x_1}{\cos\theta} = \frac{y - y_1}{\sin\theta} = r \]
+          <p>where \(r\) is the distance from \((x_1, y_1)\) to the point \((x, y)\). The coordinates of any point at distance \(r\) from \((x_1, y_1)\) are:</p>
+          \[ (x_1 + r\cos\theta,\; y_1 + r\sin\theta) \]
+          <p>\(r > 0\) if the point is on the right side of \((x_1, y_1)\); \(r < 0\) if on the left side.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Position of Points, Concurrency, Distance
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Position of Points, Concurrency &amp; Distance</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Position of Points -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Position of Point(s) Relative to a Line</h5>
+        </div>
+        <div class="card-body">
+          <p>For points \(P(x_1, y_1)\) and \(Q(x_2, y_2)\) relative to line \(ax + by + c = 0\):</p>
+          <ul>
+            <li><strong>Same side</strong> if \((ax_1+by_1+c)\) and \((ax_2+by_2+c)\) have the <strong>same sign</strong>.</li>
+            <li><strong>Opposite sides</strong> if they have <strong>opposite signs</strong>.</li>
+            <li>\((x_1, y_1)\) lies on <strong>same side as origin</strong> if \((ax_1+by_1+c)\) and \(c\) have the same sign.</li>
+            <li>\((x_1, y_1)\) lies on <strong>opposite side to origin</strong> if \((ax_1+by_1+c)\) and \(c\) have opposite signs.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Concurrency -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Condition of Concurrency</h5>
+        </div>
+        <div class="card-body">
+          <p>Three lines \(a_1x+b_1y+c_1=0\), \(a_2x+b_2y+c_2=0\), \(a_3x+b_3y+c_3=0\) are concurrent if:</p>
+          \[ \begin{vmatrix} a_1 & b_1 & c_1 \\ a_2 & b_2 & c_2 \\ a_3 & b_3 & c_3 \end{vmatrix} = 0 \]
+          <p>Equivalently: \(a_1(b_2c_3 - b_3c_2) - b_1(a_2c_3 - a_3c_2) + c_1(a_2b_3 - a_3b_2) = 0\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Distance -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Distance of a Point from a Line</h5>
+        </div>
+        <div class="card-body">
+          <p>Perpendicular distance of point \((x_1, y_1)\) from line \(Ax + By + C = 0\):</p>
+          \[ d = \frac{|Ax_1 + By_1 + C|}{\sqrt{A^2 + B^2}} \]
+          <p>Distance of <strong>origin</strong> from line \(Ax + By + C = 0\):</p>
+          \[ d = \frac{|C|}{\sqrt{A^2 + B^2}} \]
+        </div>
+      </div>
+
+      <!-- Nested: Distance between parallel lines -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Distance Between Two Parallel Lines</h5>
+        </div>
+        <div class="card-body">
+          <p>Distance between \(y = mx + c_1\) and \(y = mx + c_2\):</p>
+          \[ d = \frac{|c_1 - c_2|}{\sqrt{1 + m^2}} \]
+          <p>Distance between \(ax + by + c_1 = 0\) and \(ax + by + c_2 = 0\):</p>
+          \[ d = \frac{|c_2 - c_1|}{\sqrt{a^2 + b^2}} \]
+        </div>
+      </div>
+
+      <!-- Nested: Point of Intersection -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Point of Intersection of Two Lines</h5>
+        </div>
+        <div class="card-body">
+          <p>For lines \(a_1x + b_1y + c_1 = 0\) and \(a_2x + b_2y + c_2 = 0\), the point of intersection is:</p>
+          \[ \left(\frac{b_1c_2 - b_2c_1}{a_1b_2 - a_2b_1},\; \frac{c_1a_2 - c_2a_1}{a_1b_2 - a_2b_1}\right) \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Parallel, Perpendicular & Image
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Parallel, Perpendicular Lines &amp; Image of a Point</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Parallel/Perpendicular -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Lines Parallel and Perpendicular to a Given Line</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Line <strong>parallel</strong> to \(ax + by + c = 0\): \(\;ax + by + \lambda = 0\)</li>
+            <li>Line <strong>perpendicular</strong> to \(ax + by + c = 0\): \(\;bx - ay + \lambda = 0\)</li>
+          </ul>
+          <p>(\(\lambda\) is an arbitrary constant determined by additional conditions.)</p>
+        </div>
+      </div>
+
+      <!-- Nested: Image -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Image of a Point with Respect to a Line</h5>
+        </div>
+        <div class="card-body">
+          <p>Image of \((x_1, y_1)\) in line \(ax + by + c = 0\) is \((x_2, y_2)\) where:</p>
+          \[ \frac{x_2 - x_1}{a} = \frac{y_2 - y_1}{b} = \frac{-2(ax_1 + by_1 + c)}{a^2 + b^2} \]
+          <p>Special cases:</p>
+          <ul>
+            <li>Image of \(P(x_1, y_1)\) in <strong>X-axis</strong>: \(Q(x_1, -y_1)\)</li>
+            <li>Image of \(P(x_1, y_1)\) in <strong>Y-axis</strong>: \(Q(-x_1, y_1)\)</li>
+            <li>Image of \(P(x_1, y_1)\) in line \(y = x\): \(Q(y_1, x_1)\)</li>
+            <li>Image of \(P(x_1, y_1)\) in <strong>origin</strong>: \(Q(-x_1, -y_1)\)</li>
+            <li>Image of \(P(x_1, y_1)\) in line \(y = x\tan\theta\):
+              \[ x_2 = x_1\cos 2\theta + y_1\sin 2\theta, \quad y_2 = x_1\sin 2\theta - y_1\cos 2\theta \]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Angle Bisectors
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Equation of Angle Bisectors</h4>
+    </div>
+    <div class="card-body">
+      <p>The equation of the bisectors of the angles between lines \(a_1x + b_1y + c_1 = 0\) and \(a_2x + b_2y + c_2 = 0\) are:</p>
+      \[ \frac{a_1x + b_1y + c_1}{\sqrt{a_1^2 + b_1^2}} = \pm\frac{a_2x + b_2y + c_2}{\sqrt{a_2^2 + b_2^2}} \]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Identifying Acute and Obtuse Bisectors</h5>
+        </div>
+        <div class="card-body">
+          <p>First make the constant terms positive in both equations, then compute \(a_1a_2 + b_1b_2\):</p>
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Positive sign gives</th><th>Negative sign gives</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\(a_1a_2 + b_1b_2 > 0\)</td>
+                <td>Obtuse bisector</td>
+                <td>Acute bisector</td>
+              </tr>
+              <tr>
+                <td>\(a_1a_2 + b_1b_2 < 0\)</td>
+                <td>Acute bisector</td>
+                <td>Obtuse bisector</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Pair of Straight Lines
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Pair of Straight Lines</h4>
+    </div>
+    <div class="card-body">
+      <p>The general second-degree equation \(ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0\) represents a <strong>pair of straight lines</strong> if and only if:</p>
+      \[ \Delta = abc + 2fgh - af^2 - bg^2 - ch^2 = 0 \quad\text{i.e.}\quad \begin{vmatrix} a & h & g \\ h & b & f \\ g & f & c \end{vmatrix} = 0 \]
+
+      <!-- Nested: Homogeneous -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Homogeneous Equation of Second Degree</h5>
+        </div>
+        <div class="card-body">
+          <p>The equation \(ax^2 + 2hxy + by^2 = 0\) always represents <strong>two straight lines through the origin</strong>.</p>
+          <p>If the two lines have slopes \(m_1\) and \(m_2\), then:</p>
+          \[ m_1 + m_2 = -\frac{2h}{b} = -\frac{\text{coeff of }xy}{\text{coeff of }y^2}, \qquad m_1 m_2 = \frac{a}{b} = \frac{\text{coeff of }x^2}{\text{coeff of }y^2} \]
+          <p>The lines are:</p>
+          <ul>
+            <li><strong>Real and distinct</strong> if \(h^2 > ab\)</li>
+            <li><strong>Coincident</strong> if \(h^2 = ab\)</li>
+            <li><strong>Imaginary</strong> if \(h^2 < ab\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Angle between pair -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Angle Between the Pair of Lines</h5>
+        </div>
+        <div class="card-body">
+          <p>For \(ax^2 + 2hxy + by^2 = 0\), the angle \(\theta\) between the two lines is:</p>
+          \[ \tan\theta = \frac{2\sqrt{h^2 - ab}}{|a + b|} \]
+          <ul>
+            <li>Lines are <strong>coincident</strong> if \(h^2 = ab\)</li>
+            <li>Lines are <strong>perpendicular</strong> if \(a + b = 0\)</li>
+          </ul>
+          <p class="mt-2"><em>Note:</em> The angle between lines represented by \(ax^2+2hxy+by^2+2gx+2fy+c=0\) equals the angle between lines represented by \(ax^2+2hxy+by^2=0\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Bisectors of pair -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Angle Bisectors &amp; Perpendicular Pair</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Bisectors</strong> of the pair \(ax^2 + 2hxy + by^2 = 0\):</p>
+          \[ \frac{x^2 - y^2}{a - b} = \frac{xy}{h} \quad\Rightarrow\quad hx^2 - (a-b)xy - hy^2 = 0 \]
+          <p><strong>Pair of lines perpendicular</strong> to \(ax^2 + 2hxy + by^2 = 0\) and through origin:</p>
+          \[ bx^2 - 2hxy + ay^2 = 0 \]
+          <p><strong>Bisectors</strong> of the general pair \(ax^2+2hxy+by^2+2gx+2fy+c=0\) at intersection point \((x_1, y_1)\):</p>
+          \[ \frac{(x-x_1)^2 - (y-y_1)^2}{a - b} = \frac{(x-x_1)(y-y_1)}{h} \]
+        </div>
+      </div>
+
+      <!-- Nested: Point of intersection -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Point of Intersection of the Pair</h5>
+        </div>
+        <div class="card-body">
+          <p>For the general pair \(ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0\), the point of intersection is:</p>
+          \[ \left(\frac{hf - bg}{ab - h^2},\; \frac{gh - af}{ab - h^2}\right) \]
+        </div>
+      </div>
+
+      <!-- Nested: Parallel lines from general -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Parallel Lines from General Second Degree</h5>
+        </div>
+        <div class="card-body">
+          <p>The equation \(ax^2+2hxy+by^2+2gx+2fy+c=0\) represents <strong>two parallel lines</strong> if \(h^2 = ab\) and \(g^2 - ac > 0\). The distance between them is:</p>
+          \[ 2\sqrt{\frac{g^2 - ac}{a(a+b)}} \quad\text{or}\quad 2\sqrt{\frac{f^2 - bc}{b(a+b)}} \]
+        </div>
+      </div>
+
+      <!-- Nested: Pair joined to origin -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Lines Joining Origin to Intersection of a Curve and a Line</h5>
+        </div>
+        <div class="card-body">
+          <p>To find the pair of lines joining the origin to the points of intersection of the curve \(ax^2+2hxy+by^2+2gx+2fy+c=0\) and the line \(lx+my+n=0\), homogenise the curve using \(1 = -\dfrac{lx+my}{n}\):</p>
+          \[ ax^2 + 2hxy + by^2 + 2gx\!\left(\frac{-lx-my}{n}\right) + 2fy\!\left(\frac{-lx-my}{n}\right) + c\!\left(\frac{lx+my}{-n}\right)^{\!2} = 0 \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Family of Lines & Division Ratio
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Family of Lines &amp; Division of a Line Segment</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Family of lines -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-success text-white">
+          <h5>Family of Lines Through Intersection of Two Lines</h5>
+        </div>
+        <div class="card-body">
+          <p>The equation of the family of lines passing through the intersection of \(a_1x+b_1y+c_1=0\) and \(a_2x+b_2y+c_2=0\) is:</p>
+          \[ (a_1x + b_1y + c_1) + \lambda(a_2x + b_2y + c_2) = 0 \quad (\lambda \in \mathbb{R}) \]
+        </div>
+      </div>
+
+      <!-- Nested: Division -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Division of a Line Segment by a Line</h5>
+        </div>
+        <div class="card-body">
+          <p>The line \(ax+by+c=0\) divides the segment joining \((x_1,y_1)\) and \((x_2,y_2)\) in the ratio \(\lambda : 1\), where:</p>
+          \[ \lambda = -\frac{ax_1 + by_1 + c}{ax_2 + by_2 + c} \]
+          <ul>
+            <li>\(\lambda > 0\) → divides <strong>internally</strong></li>
+            <li>\(\lambda < 0\) → divides <strong>externally</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Line making angle with given line -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Line Through a Point Making Angle \(\alpha\) with a Given Line</h5>
+        </div>
+        <div class="card-body">
+          <p>Lines through \((x_1, y_1)\) making angle \(\alpha\) with \(y = mx + c\):</p>
+          \[ y - y_1 = \frac{m \pm \tan\alpha}{1 \mp m\tan\alpha}(x - x_1) \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Important Results
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Important Results to Remember</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>A triangle is <strong>isosceles</strong> if any two of its medians are equal.</li>
+        <li>In an <strong>equilateral triangle</strong>, orthocentre, centroid, circumcentre and incentre all coincide.</li>
+        <li>The <strong>circumcentre</strong> of a right-angled triangle is the mid-point of the hypotenuse.</li>
+        <li><strong>Orthocentre, centroid, circumcentre</strong> of a triangle are collinear (Euler's line). Centroid divides the segment joining orthocentre and circumcentre in ratio \(2 : 1\).</li>
+        <li>If \(D, E, F\) are midpoints of sides \(BC, CA, AB\) of \(\triangle ABC\), then centroid of \(\triangle ABC\) = centroid of \(\triangle DEF\).</li>
+        <li>Orthocentre of a right-angled \(\triangle ABC\) right-angled at \(A\) is \(A\) itself.</li>
+        <li><strong>Area of triangle</strong> formed by lines \(y = m_1x+c_1\), \(y = m_2x+c_2\), \(y = m_3x+c_3\):
+          \[\Delta = \frac{1}{2}\left|\sum\frac{(c_1-c_2)^2}{m_1-m_2}\right|\]
+        </li>
+        <li><strong>Area of triangle</strong> formed by line \(ax+by+c=0\) with coordinate axes:
+          \[\Delta = \frac{c^2}{2|ab|}\]
+        </li>
+        <li><strong>Foot of perpendicular</strong> \((h, k)\) from \((x_1, y_1)\) to line \(ax+by+c=0\):
+          \[\frac{h-x_1}{a} = \frac{k-y_1}{b} = -\frac{ax_1+by_1+c}{a^2+b^2}\]
+        </li>
+        <li><strong>Area of rhombus</strong> formed by \(ax \pm by \pm c = 0\):
+          \[\Delta = \frac{2c^2}{ab}\]
+        </li>
+        <li><strong>Area of parallelogram</strong> formed by lines \(a_1x+b_1y+c_1=0\), \(a_1x+b_1y+d_1=0\), \(a_2x+b_2y+c_2=0\), \(a_2x+b_2y+d_2=0\):
+          \[\Delta = \frac{(c_1-d_1)(c_2-d_2)}{|a_1b_2 - a_2b_1|}\]
+        </li>
+        <li><strong>Foot of perpendicular from \((a,b)\) on \(x - y = 0\)</strong>: \(\displaystyle\left(\frac{a+b}{2}, \frac{a+b}{2}\right)\)</li>
+        <li><strong>Foot of perpendicular from \((a,b)\) on \(x + y = 0\)</strong>: \(\displaystyle\left(\frac{a-b}{2}, \frac{b-a}{2}\right)\)</li>
+        <li><strong>Image of line \(a_1x+b_1y+c_1=0\) about line \(ax+by+c=0\)</strong>:
+          \[(aa_1+bb_1)(ax+by+c) = 2(a^2+b^2)(a_1x+b_1y+c_1)\]
+          ... wait, the correct formula from the PDF is: replace \(a_1x+b_1y+c_1\) by its image. The combined form is \((aa_1+bb_1)^2 = (a^2+b^2)(a_1^2+b_1^2)\).
+        </li>
+        <li><strong>Third vertex of equilateral triangle</strong> given two vertices \((x_1,y_1)\) and \((x_2,y_2)\):
+          \[\left(\frac{x_1+x_2 \pm \sqrt{3}(y_1-y_2)}{2},\; \frac{y_1+y_2 \mp \sqrt{3}(x_1-x_2)}{2}\right)\]
+        </li>
+        <li><strong>Area of polygon</strong> with vertices \((x_1,y_1), (x_2,y_2), \ldots, (x_n,y_n)\) (in order):
+          \[\Delta = \frac{1}{2}\left|\sum_{i=1}^{n}(x_i y_{i+1} - x_{i+1} y_i)\right|\]
+          (indices mod \(n\))
+        </li>
+        <li><strong>Pair of lines through \((\alpha,\beta)\) perpendicular to</strong> \(ax^2+2hxy+by^2=0\):
+          \[b(x-\alpha)^2 - 2h(x-\alpha)(y-\beta) + a(y-\beta)^2 = 0\]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

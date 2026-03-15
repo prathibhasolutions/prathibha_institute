@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Permutations and Combinations</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Permutations and Combinations</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Fundamental Principles of Counting
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Fundamental Principles of Counting</h4>
+    </div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-success text-white">
+          <h5>1. Multiplication Principle</h5>
+        </div>
+        <div class="card-body">
+          <p>If a first operation can be performed in \(m\) ways and then a second operation can be performed in \(n\) ways, then the two operations together can be performed in <strong>\(mn\) ways</strong>. This extends to any finite number of operations.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>2. Addition Principle</h5>
+        </div>
+        <div class="card-body">
+          <p>If an operation can be performed in \(m\) ways and another <em>independent</em> operation can be performed in \(n\) ways, then either of the two operations can be performed in <strong>\(m + n\) ways</strong>. This extends to any finite number of mutually exclusive events.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Factorial
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Factorial</h4>
+    </div>
+    <div class="card-body">
+      <p>For any natural number \(n\), the factorial is defined as:</p>
+      \[ n! = n \times (n-1) \times (n-2) \times \cdots \times 3 \times 2 \times 1 \]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Important Results Related to Factorial</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\(0! = 1\) and \(1! = 1\)</li>
+            <li>Factorials of negative integers and fractions are <strong>not defined</strong>.</li>
+            <li>\(n! = n \cdot (n-1)!\)</li>
+            <li>\(\dfrac{n!}{r!} = n(n-1)(n-2)\cdots(r+1)\) and \(\dfrac{n!}{(n-r)!} = n(n-1)\cdots(n-r+1)\)</li>
+            <li>\(n! + 1\) is not divisible by any natural number between 2 and \(n\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Exponent of a Prime \(p\) in \(n!\)</h5>
+        </div>
+        <div class="card-body">
+          <p>If \(p\) is prime and \(p^r\) divides \(n!\), then the maximum exponent of prime \(p\) in \(n!\) is:</p>
+          \[ E_p(n!) = \left\lfloor\frac{n}{p}\right\rfloor + \left\lfloor\frac{n}{p^2}\right\rfloor + \left\lfloor\frac{n}{p^3}\right\rfloor + \cdots \]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Permutation
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Permutation</h4>
+    </div>
+    <div class="card-body">
+      <p>Each of the different <strong>arrangements</strong> which can be made by taking some or all of a number of things is called a <strong>permutation</strong>.</p>
+      <p>The number of ways of arranging \(n\) distinct objects taken \(r\) at a time \((0 < r \le n)\):</p>
+      \[ {}^nP_r = P(n,r) = \frac{n!}{(n-r)!} \]
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Properties of Permutation</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\({}^nP_n = n!\)</li>
+            <li>\({}^nP_0 = 1\)</li>
+            <li>\({}^nP_1 = n\)</li>
+            <li>\({}^nP_{n-1} = n!\)</li>
+            <li>\({}^nP_r = n \cdot {}^{n-1}P_{r-1} = n(n-1)\cdot{}^{n-2}P_{r-2} = n(n-1)(n-2)\cdot{}^{n-3}P_{r-3}\)</li>
+            <li>\({}^nP_r = {}^{n-1}P_r + r\cdot{}^{n-1}P_{r-1}\)</li>
+            <li>\(\dfrac{{}^nP_r}{{}^nP_{r-1}} = n - r + 1\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Important Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Important Results on Permutation</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Permutations of \(n\) different things taken \(r\) at a time, <strong>with repetition allowed</strong>: \(n^r\)</li>
+            <li>Permutations of \(n\) different things taken \(r\) at a time <strong>without repetition</strong>: \({}^nP_r = n(n-1)(n-2)\cdots(n-r+1)\)</li>
+            <li>Permutations of \(n\) different things taken <strong>all at a time</strong>: \({}^nP_n = n!\)</li>
+            <li>Permutations of \(n\) things taken all at a time, in which \(p\) are alike of one kind, \(q\) alike of second kind, \(r\) alike of third kind:
+              \[\frac{n!}{p!\, q!\, r!}\]
+            </li>
+            <li>Permutations of \(n\) things where \(p_1\) alike of 1st kind, \(p_2\) alike of 2nd kind, …, \(p_r\) alike of \(r\)-th kind and \(p_1+p_2+\cdots+p_r = n\):
+              \[\frac{n!}{p_1!\, p_2!\, p_3!\cdots p_r!}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Restricted Permutation -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Restricted Permutation</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Permutations of \(n\) things taken \(r\) at a time:
+              <ul>
+                <li>When a <strong>particular thing is always included</strong>: \(r \cdot {}^{n-1}P_{r-1}\)</li>
+                <li>When a <strong>particular thing is always excluded</strong>: \({}^{n-1}P_r\)</li>
+              </ul>
+            </li>
+            <li>When \(m\) particular objects are always:
+              <ul>
+                <li><strong>Excluded</strong>: \({}^{n-m}P_r\)</li>
+                <li><strong>Included</strong>: \({}^{n-m}P_{r-m} \times r!\)</li>
+              </ul>
+            </li>
+            <li>When \(m\) specified things <strong>always come together</strong> (all \(n\) taken): \(m!\,(n-m+1)!\)</li>
+            <li>When \(m\) specified things <strong>never come together</strong> (all \(n\) taken): \(n! - m!\,(n-m+1)!\)</li>
+            <li>When \(p\) particular things are always included (taken \(r\) at a time, \(p < r\)): \(p!\,\{{}^{n-p}P_{r-p}\}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Circular Permutation -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Circular Permutation</h5>
+        </div>
+        <div class="card-body">
+          <p>In a circular permutation, one position is fixed and the remaining objects are arranged.</p>
+          <ul>
+            <li>Circular permutations of \(n\) different things taken all at a time (clockwise ≠ anticlockwise): \((n-1)!\)</li>
+            <li>Circular permutations of \(n\) things (clockwise = anticlockwise, e.g. necklaces): \(\dfrac{(n-1)!}{2}\)</li>
+            <li>Circular permutations of \(n\) things taken \(r\) at a time (clockwise ≠ anticlockwise): \(\dfrac{{}^nP_r}{r}\)</li>
+            <li>Circular permutations of \(n\) things taken \(r\) at a time (clockwise = anticlockwise): \(\dfrac{{}^nP_r}{2r}\)</li>
+            <li>If chairs are numbered 1 to \(n\) at a round table, then \(n\) persons sitting = \(n!\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Combination
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Combination</h4>
+    </div>
+    <div class="card-body">
+      <p>Each of the different <strong>groups or selections</strong> which can be made without regard to the order of things is called a <strong>combination</strong>.</p>
+      <p>The number of combinations of \(n\) different things taken \(r\) at a time \((0 \le r \le n)\):</p>
+      \[ {}^nC_r = \binom{n}{r} = \frac{n!}{r!\,(n-r)!} \]
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Properties of Combination</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\({}^nC_0 = {}^nC_n = 1\)</li>
+            <li>\({}^nC_1 = n\)</li>
+            <li>\({}^nC_r = {}^nC_{n-r}\)</li>
+            <li>If \({}^nC_r = {}^nC_p\), then either \(r = p\) or \(r + p = n\)</li>
+            <li>\({}^nC_r = \dfrac{{}^nP_r}{r!}\)</li>
+            <li>\({}^nC_r + {}^nC_{r-1} = {}^{n+1}C_r\) &nbsp;(Pascal's Rule)</li>
+            <li>\(n \cdot {}^{n-1}C_{r-1} = (n-r+1)\cdot{}^nC_{r-1}\)</li>
+            <li>\({}^nC_r = \dfrac{n}{r}\cdot{}^{n-1}C_{r-1} = \dfrac{n(n-1)}{r(r-1)}\cdot{}^{n-2}C_{r-2}\)</li>
+            <li>\({}^nC_0 + {}^nC_1 + {}^nC_2 + \cdots + {}^nC_n = 2^n\)</li>
+            <li>\({}^nC_0 + {}^nC_2 + {}^nC_4 + \cdots = {}^nC_1 + {}^nC_3 + {}^nC_5 + \cdots = 2^{n-1}\)</li>
+            <li>\({}^nC_1 + 2\cdot{}^nC_2 + \cdots = n\cdot 2^{n-1}\)</li>
+            <li>\({}^nC_{n/2}\) is the greatest value of \({}^nC_r\) when \(n\) is <strong>even</strong></li>
+            <li>\({}^nC_{(n+1)/2} = {}^nC_{(n-1)/2}\) is the greatest value when \(n\) is <strong>odd</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Important Results on Combination -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Important Results on Combination</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Combinations of \(n\) different things taken \(r\) at a time <strong>with repetitions allowed</strong>: \({}^{n+r-1}C_r\)</li>
+            <li>Combinations of \(n\) objects taken \(r\) at a time in which:
+              <ul>
+                <li>\(m\) particular objects are <strong>excluded</strong>: \({}^{n-m}C_r\)</li>
+                <li>\(m\) particular objects are <strong>included</strong>: \({}^{n-m}C_{r-m}\)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Number of Functions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Important Points — Number of Functions</h4>
+    </div>
+    <div class="card-body">
+      <p>If set \(A\) has \(m\) elements and set \(B\) has \(n\) elements, then:</p>
+      <table class="table table-bordered table-sm mt-2">
+        <thead class="table-dark">
+          <tr><th>Type of Function</th><th>Count</th><th>Condition</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>All functions from \(A\) to \(B\)</td>
+            <td>\(n^m\)</td>
+            <td>Any \(m, n\)</td>
+          </tr>
+          <tr>
+            <td>One-one (injective) functions</td>
+            <td>\({}^nP_m\)</td>
+            <td>\(m \le n\)</td>
+          </tr>
+          <tr>
+            <td>Onto (surjective) functions</td>
+            <td>\(\displaystyle\sum_{k=0}^{n}(-1)^k\binom{n}{k}(n-k)^m\)</td>
+            <td>\(m \ge n\)</td>
+          </tr>
+          <tr>
+            <td>Increasing (or Decreasing) functions</td>
+            <td>\({}^nC_m\)</td>
+            <td>\(m \le n\)</td>
+          </tr>
+          <tr>
+            <td>Non-increasing (or Non-decreasing) functions</td>
+            <td>\({}^{m+n-1}C_m\)</td>
+            <td>Any \(m, n\)</td>
+          </tr>
+          <tr>
+            <td>Bijective (one-one onto) functions</td>
+            <td>\(n!\)</td>
+            <td>\(m = n\)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Use in Geometry
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Use in Geometry</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>\(n\) distinct points, no three collinear → number of <strong>line segments</strong> \(= {}^nC_2\)</li>
+        <li>\(n\) distinct points, \(m\) of which are collinear \((m \ge 3)\) → number of <strong>line segments</strong> \(= {}^nC_2 - {}^mC_2 + 1\)</li>
+        <li>\(n\) distinct points, no three collinear → number of <strong>triangles</strong> \(= {}^nC_3\)</li>
+        <li>\(n\) distinct points, \(m\) collinear \((m \ge 3)\) → number of <strong>triangles</strong> \(= {}^nC_3 - {}^mC_3\)</li>
+        <li>Number of <strong>diagonals</strong> in an \(n\)-sided polygon \(= {}^nC_2 - n = \dfrac{n(n-3)}{2}\)</li>
+        <li>\(n\) points on a circle:
+          <ul>
+            <li>Number of <strong>straight lines</strong> \(= {}^nC_2\)</li>
+            <li>Number of <strong>triangles</strong> \(= {}^nC_3\)</li>
+            <li>Number of <strong>quadrilaterals</strong> \(= {}^nC_4\)</li>
+          </ul>
+        </li>
+        <li>Number of <strong>rectangles</strong> in an \(n \times n\) square \(= \displaystyle\sum_{r=1}^{n} r^3\)</li>
+        <li>Number of <strong>squares</strong> in an \(n \times n\) grid \(= \displaystyle\sum_{r=1}^{n} r^2\)</li>
+        <li>In a rectangle of \(n \times p\) \((p < n)\), number of <strong>rectangles</strong> \(= {}^{n+1}C_2 \cdot {}^{p+1}C_2\)</li>
+        <li>\(n\) straight lines, no two parallel, no three concurrent → number of <strong>parts of plane</strong> \(= 1 + \displaystyle\sum_{k=1}^{n} k = 1 + \dfrac{n(n+1)}{2}\)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Prime Factors
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Prime Factors</h4>
+    </div>
+    <div class="card-body">
+      <p>Let \(n = p_1^{\alpha_1} p_2^{\alpha_2} p_3^{\alpha_3} \cdots p_r^{\alpha_r}\) where \(p_1, p_2, \ldots, p_r\) are distinct prime numbers.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Results on Divisors</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Total positive divisors</strong> (including 1 and \(n\)):
+              \[(\alpha_1+1)(\alpha_2+1)(\alpha_3+1)\cdots(\alpha_r+1)\]
+            </li>
+            <li><strong>Sum of all positive divisors:</strong>
+              \[\frac{p_1^{\alpha_1+1}-1}{p_1-1} \cdot \frac{p_2^{\alpha_2+1}-1}{p_2-1} \cdot \frac{p_3^{\alpha_3+1}-1}{p_3-1} \cdots \frac{p_r^{\alpha_r+1}-1}{p_r-1}\]
+            </li>
+            <li><strong>Total divisors excluding 1 and \(n\):</strong>
+              \[(\alpha_1+1)(\alpha_2+1)\cdots(\alpha_r+1) - 2\]
+            </li>
+            <li><strong>Total divisors excluding only 1 or only \(n\):</strong>
+              \[(\alpha_1+1)(\alpha_2+1)\cdots(\alpha_r+1) - 1\]
+            </li>
+            <li><strong>Ways to resolve \(n\) as product of two factors:</strong>
+              <ul>
+                <li>\(\dfrac{1}{2}(\alpha_1+1)(\alpha_2+1)\cdots(\alpha_r+1)\) &nbsp; if \(n\) is <strong>not</strong> a perfect square</li>
+                <li>\(\dfrac{1}{2}\big[(\alpha_1+1)(\alpha_2+1)\cdots(\alpha_r+1) + 1\big]\) &nbsp; if \(n\) <strong>is</strong> a perfect square</li>
+              </ul>
+            </li>
+            <li><strong>Ways to resolve \(n\) into two coprime factors:</strong> \(2^{r-1}\) (where \(r\) = number of distinct prime factors)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Integral Solutions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Integral Solutions</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>Number of <strong>non-negative</strong> integral solutions of \(x_1 + x_2 + \cdots + x_r = n\) (where \(x_i \ge 0\)):
+          \[{}^{n+r-1}C_{r-1}\]
+        </li>
+        <li>Number of <strong>positive</strong> integral solutions of \(x_1 + x_2 + \cdots + x_r = n\) (where \(x_i \ge 1\)):
+          \[{}^{n-1}C_{r-1}\]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 9: Sum of Digits
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Sum of Digits</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li><strong>Sum of all \(n\)-digit numbers</strong> formed using given \(n\) digits (no repetition):
+          \[= (\text{Sum of all digits}) \times (n-1)! \times \underbrace{111\cdots1}_{n \text{ times}}\]
+        </li>
+        <li><strong>Sum of digits in unit place</strong> of all numbers formed with \(n\) digits \(a_1, a_2, \ldots, a_n\) (no repetition):
+          \[= (n-1)!\,(a_1 + a_2 + \cdots + a_n)\]
+        </li>
+        <li><strong>Sum of all numbers</strong> formed using digits \(a_1, a_2, \ldots, a_n\) (no repetition):
+          \[= (n-1)!\,(a_1 + a_2 + \cdots + a_n) \times \frac{10^n - 1}{9}\]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 10: Arrangements
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Arrangements</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>\(m\) things of one type and \(n\) things of another type arranged in a row so that <strong>all second-type come together</strong>:
+          \[n!\,(m+1)!\]
+        </li>
+        <li>\(m\) things and \(n\) things arranged in a row so that <strong>no two of the same type come together</strong> (when \(m = n\)):
+          \[2 \times m!\,n!\]
+        </li>
+        <li>\(m\) things and \(n\) things \((m \ge n)\) arranged in a <strong>circle</strong> so that no two of second type come together:
+          \[(m-1)!\cdot{}^mP_n\]
+          and when things of second type <strong>come together</strong>:
+          \[(m-1)!\cdot n!\]
+        </li>
+        <li>\(m\) things and \(n\) things \((m \ge n)\) arranged as a <strong>garland</strong>:
+          <ul>
+            <li>All of second type come together: \(\dfrac{m!\,n!}{2}\)</li>
+            <li>No two of second type come together: \(\dfrac{(m-1)!\,{}^mP_n}{2}\)</li>
+          </ul>
+        </li>
+        <li>Number of permutations of \(r\) objects from \(l\) of one kind, \(m\) of second kind, \(n\) of third kind, …  = coefficient of \(x^r\) in:
+          \[r!\left(1 + x + \frac{x^2}{2!} + \cdots + \frac{x^l}{l!}\right)\left(1 + x + \frac{x^2}{2!} + \cdots + \frac{x^m}{m!}\right)\left(1 + x + \frac{x^2}{2!} + \cdots + \frac{x^n}{n!}\right)\cdots\]
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 11: Dearrangements
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Dearrangements (Derangements)</h4>
+    </div>
+    <div class="card-body">
+      <p>If \(n\) distinct objects are arranged in a row, the number of ways they can be rearranged so that <strong>no object occupies its original position</strong> is denoted by \(D(n)\):</p>
+      \[ D(n) = n!\left(1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \cdots + \frac{(-1)^n}{n!}\right) \]
+      <p>This can also be written as:</p>
+      \[ D(n) = n!\sum_{k=0}^{n}\frac{(-1)^k}{k!} \]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Values of \(D(n)\)</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm text-center">
+            <thead class="table-dark">
+              <tr><th>\(n\)</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\(D(n)\)</td><td>0</td><td>1</td><td>2</td><td>9</td><td>44</td><td>265</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-2">Recurrence: \(D(n) = (n-1)\,[D(n-1) + D(n-2)]\)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 12: Selection
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Selection</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Different Items -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-success text-white">
+          <h5>1. Selection from Different Items</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Number of ways of selecting <strong>at least one</strong> item from \(n\) distinct items: \(2^n - 1\)</li>
+            <li>Ways of answering <strong>one or more</strong> of \(n\) questions: \(2^n - 1\)</li>
+            <li>Ways of answering one or more of \(n\) questions when each has an <strong>alternative</strong>: \(3^n - 1\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Identical Items -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>2. Selection from Identical Items</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Ways of selecting \(r\) items from \(n\) <strong>identical</strong> items: \(1\)</li>
+            <li>Ways of selecting <strong>zero or more</strong> from \(n\) identical items: \((n+1)\)</li>
+            <li>Ways of selecting <strong>one or more</strong> from \(p\) alike of one kind, \(q\) alike of second, \(r\) alike of third:
+              \[(p+1)(q+1)(r+1) - 1\]
+            </li>
+            <li>Ways of selecting one or more from \(p\) alike of one kind, \(q\) alike of second, \(r\) alike of third, and \(n\) <strong>distinct</strong>:
+              \[(p+1)(q+1)(r+1) \cdot 2^n - 1\]
+            </li>
+            <li>Ways of selecting \(r\) items from \(n\) items of which \(p\) are identical:
+              <ul>
+                <li>If \(r \le p\): \({}^{n-p}C_r + {}^{n-p}C_{r-1} + {}^{n-p}C_{r-2} + \cdots + {}^{n-p}C_0\)</li>
+                <li>If \(r > p\): \({}^{n-p}C_r + {}^{n-p}C_{r-1} + \cdots + {}^{n-p}C_{r-p}\)</li>
+              </ul>
+            </li>
+            <li>Ways of choosing \(r\) items from \(m\) of one kind, \(n\) of another, …  = coefficient of \(x^r\) in:
+              \[(1 + x + x^2 + \cdots + x^m)(1 + x + x^2 + \cdots + x^n)\cdots\]
+            </li>
+            <li>Ways of choosing \(r\) items with <strong>at least one of each kind</strong> = coefficient of \(x^r\) in:
+              \[(x + x^2 + \cdots + x^m)(x + x^2 + \cdots + x^n)\cdots\]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 13: Division into Groups
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Division into Groups</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Distinct Items -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>1. Division of Distinct Items into Groups</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\((m+n)\) different things into <strong>two groups</strong> of \(m\) and \(n\) \((m \ne n)\):
+              \[\frac{(m+n)!}{m!\,n!}\]
+            </li>
+            <li>\((m+n+p)\) things into <strong>three groups</strong> of \(m, n, p\) \((m \ne n \ne p)\):
+              \[\frac{(m+n+p)!}{m!\,n!\,p!}\]
+            </li>
+            <li>\(2n\) things into <strong>two equal groups</strong> (groups are distinct):
+              \[\frac{(2n)!}{(n!)^2}\]
+            </li>
+            <li>\(3n\) things into <strong>three equal groups</strong> (groups are distinct):
+              \[\frac{(3n)!}{(n!)^3}\]
+            </li>
+            <li>\(2n\) things into two equal groups (groups are <strong>not distinct</strong>, order doesn't matter):
+              \[\frac{(2n)!}{2!\,(n!)^2}\]
+            </li>
+            <li>\(3n\) things into three equal groups (groups are <strong>not distinct</strong>):
+              \[\frac{(3n)!}{3!\,(n!)^3}\]
+            </li>
+            <li>\(mn\) things into \(m\) equal groups of \(n\) each (<strong>order not important</strong>):
+              \[\frac{(mn)!}{m!\,(n!)^m}\]
+            </li>
+            <li>\(mn\) things into \(m\) distinct groups of \(n\) each (<strong>order important</strong>):
+              \[\frac{(mn)!}{(n!)^m}\]
+            </li>
+            <li>Number of ways of dividing \(n\) different things into \(r\) groups:
+              \[\frac{1}{r!}\left[{}^rC_1(r-1)^n - {}^rC_2(r-2)^n + {}^rC_3(r-3)^n - \cdots\right]\]
+            </li>
+            <li>Dividing \(n\) things into \(r\) groups considering <strong>order of groups and things within groups</strong>:
+              \[{}^{n+r-1}P_n = r(r+1)(r+2)\cdots(r+n-1)\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Identical Items -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>2. Division of Identical Items into Groups</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Dividing \(n\) identical items among \(r\) persons (each can get 0 or more):
+              \[{}^{n+r-1}C_{r-1}\]
+            </li>
+            <li>Dividing \(n\) identical items among \(r\) persons (each gets at least one):
+              \[{}^{n-1}C_{r-1}\]
+            </li>
+            <li>Dividing \(n\) identical items among \(r\) persons where each gets \(1, 2, \ldots,\) or \(k\) items = coefficient of \(x^n\) in:
+              \[(x + x^2 + \cdots + x^k)^r = x^r(1 + x + \cdots + x^{k-1})^r\]
+            </li>
+            <li>Dividing \(n\) identical items into \(r\) groups so that no group has fewer than \(m\) and more than \(k\) items = coefficient of \(x^n\) in:
+              \[(x^m + x^{m+1} + \cdots + x^k)^r\]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conic Sections</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Conic Sections</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 0: Introduction to Conics
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Introduction to Conic Sections</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>conic</strong> is the locus of a point whose distance from a fixed point (focus \(S\)) bears a constant ratio (eccentricity \(e\)) to its distance from a fixed line (directrix \(l\)).</p>
+      <ul>
+        <li>If \(0 < e < 1\) → conic is an <strong>Ellipse</strong></li>
+        <li>If \(e = 1\) → conic is a <strong>Parabola</strong></li>
+        <li>If \(e > 1\) → conic is a <strong>Hyperbola</strong></li>
+      </ul>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>General Equation of a Conic</h5>
+        </div>
+        <div class="card-body">
+          <p>If fixed point is \((x_1, y_1)\) and fixed line is \(ax+by+c=0\), the conic is:</p>
+          \[(a^2+b^2)\left[(x-x_1)^2+(y-y_1)^2\right] = e^2(ax+by+c)^2\]
+          <p>Simplified: \(ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0\). The second degree equation represents:</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Conic</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\(\Delta = 0\)</td><td>A pair of straight lines</td></tr>
+              <tr><td>\(\Delta = 0,\; h^2 = ab\)</td><td>Pair of parallel/coincident lines</td></tr>
+              <tr><td>\(\Delta = 0,\; a+b = 0\)</td><td>Pair of perpendicular lines</td></tr>
+              <tr><td>\(\Delta = 0,\; h^2 < ab\)</td><td>A point</td></tr>
+              <tr><td>\(a = b \neq 0,\; h = 0,\; \Delta \neq 0\)</td><td>Circle</td></tr>
+              <tr><td>\(h^2 = ab,\; \Delta \neq 0\)</td><td>Parabola</td></tr>
+              <tr><td>\(h^2 < ab,\; \Delta \neq 0\)</td><td>Ellipse</td></tr>
+              <tr><td>\(h^2 > ab,\; \Delta \neq 0\)</td><td>Hyperbola</td></tr>
+              <tr><td>\(h^2 > ab,\; a+b = 0,\; \Delta \neq 0\)</td><td>Rectangular Hyperbola</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Important Terms</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Axis:</strong> Line perpendicular to the directrix passing through the focus.</li>
+            <li><strong>Vertex:</strong> Intersection of the conic and the axis.</li>
+            <li><strong>Centre:</strong> Point which bisects every chord of the conic passing through it.</li>
+            <li><strong>Focal Chord:</strong> Any chord passing through the focus.</li>
+            <li><strong>Double Ordinate:</strong> A chord perpendicular to the axis of a conic.</li>
+            <li><strong>Latus Rectum:</strong> A double ordinate passing through the focus.</li>
+            <li><strong>Focal Distance:</strong> Distance of a point \(P(x,y)\) on the conic from the focus \(S\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Circle
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Circle</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>circle</strong> is the locus of a point which moves in a plane such that its distance from a fixed point (centre) is constant (radius).</p>
+
+      <!-- Standard Equations -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Standard &amp; Special Equations</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Centre \((h,k)\), radius \(a\):</strong> \((x-h)^2+(y-k)^2=a^2\)</li>
+            <li><strong>Centre \((0,0)\):</strong> \(x^2+y^2=a^2\)</li>
+            <li><strong>Passes through origin:</strong> \(x^2+y^2-2hx-2ky=0\)</li>
+            <li><strong>Touches X-axis:</strong> \(x^2+y^2-2hx-2ay+h^2=0\)</li>
+            <li><strong>Touches Y-axis:</strong> \(x^2+y^2-2ax-2ky+k^2=0\)</li>
+            <li><strong>Touches both axes:</strong> \(x^2+y^2-2ax-2ay+a^2=0\)</li>
+            <li><strong>Through origin, centre on X-axis:</strong> \(x^2+y^2-2ax=0\)</li>
+            <li><strong>Through origin, centre on Y-axis:</strong> \(x^2+y^2-2ay=0\)</li>
+            <li><strong>Through origin, intercepts \(a,b\):</strong> \(x^2+y^2-ax-by=0\)</li>
+          </ul>
+          <p><strong>Diameter form</strong> — endpoints \((x_1,y_1)\) and \((x_2,y_2)\):</p>
+          \[(x-x_1)(x-x_2)+(y-y_1)(y-y_2)=0\]
+          <p><strong>Three points form:</strong></p>
+          \[\begin{vmatrix}x^2+y^2 & x & y & 1\\ x_1^2+y_1^2 & x_1 & y_1 & 1\\ x_2^2+y_2^2 & x_2 & y_2 & 1\\ x_3^2+y_3^2 & x_3 & y_3 & 1\end{vmatrix}=0\]
+          <p><strong>Parametric equations:</strong> For \((x-h)^2+(y-k)^2=a^2\):</p>
+          \[x = h+a\cos\theta,\quad y = k+a\sin\theta,\quad 0\le\theta\le 2\pi\]
+        </div>
+      </div>
+
+      <!-- General Equation -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>General Equation of a Circle</h5>
+        </div>
+        <div class="card-body">
+          <p>\(x^2+y^2+2gx+2fy+c=0\), where centre \(=(-g,-f)\) and radius \(=\sqrt{g^2+f^2-c}\)</p>
+          <ul>
+            <li>\(g^2+f^2-c > 0\) → real circle</li>
+            <li>\(g^2+f^2-c = 0\) → point circle</li>
+            <li>\(g^2+f^2-c < 0\) → imaginary circle</li>
+          </ul>
+          <p><strong>Position of point \((x_1,y_1)\):</strong> outside/on/inside circle \(S=0\) according as \(S_1 >,=,< 0\)</p>
+          <p><strong>X-intercept:</strong> \(2\sqrt{g^2-c}\) &emsp; <strong>Y-intercept:</strong> \(2\sqrt{f^2-c}\)</p>
+        </div>
+      </div>
+
+      <!-- Tangent -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Equation of Tangent</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\) to \(x^2+y^2+2gx+2fy+c=0\):</p>
+          \[xx_1+yy_1+g(x+x_1)+f(y+y_1)+c=0\]
+          <p><strong>Point form</strong> at \((x_1,y_1)\) to \(x^2+y^2=r^2\):</p>
+          \[xx_1+yy_1=r^2\]
+          <p><strong>Slope form</strong> to \(x^2+y^2=r^2\):</p>
+          \[y=mx\pm r\sqrt{1+m^2}\]
+          <p><strong>Parametric form</strong> at \((r\cos\theta, r\sin\theta)\):</p>
+          \[x\cos\theta + y\sin\theta = r\]
+          <p><strong>Condition of tangency:</strong> Line \(lx+my+n=0\) touches \(x^2+y^2=r^2\) iff \(r^2(l^2+m^2)=n^2\).</p>
+        </div>
+      </div>
+
+      <!-- Normal -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Equation of Normal</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\) to \(x^2+y^2+2gx+2fy+c=0\):</p>
+          \[(y_1+f)x-(x_1+g)y+(gy_1-fx_1)=0\]
+          <p><strong>Point form</strong> at \((x_1,y_1)\) to \(x^2+y^2=r^2\):</p>
+          \[\frac{x}{x_1}=\frac{y}{y_1}\]
+        </div>
+      </div>
+
+      <!-- Chord, Pair of Tangents, Pole-Polar -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Chord, Pair of Tangents &amp; Pole–Polar</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Chord bisected at \((x_1,y_1)\):</strong> \(T = S_1\)</p>
+          <p><strong>Pair of tangents</strong> from \((x_1,y_1)\) to \(x^2+y^2=r^2\):</p>
+          \[SS_1 = T^2\]
+          <p><strong>Length of tangent</strong> from \((x_1,y_1)\) to \(x^2+y^2+2gx+2fy+c=0\) is \(\sqrt{S_1}\).</p>
+          <p><strong>Chord of contact</strong> from \((x_1,y_1)\):</p>
+          \[xx_1+yy_1=r^2 \quad (T=0)\]
+          <p><strong>Polar</strong> of point \((x_1,y_1)\) w.r.t. \(x^2+y^2=r^2\): &emsp; \(xx_1+yy_1=r^2\)</p>
+          <p><strong>Director circle</strong> of \(x^2+y^2=r^2\): &emsp; \(x^2+y^2=2r^2\)</p>
+        </div>
+      </div>
+
+      <!-- Common Tangents & Radical Axis -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Common Tangents, Radical Axis &amp; Orthogonal Circles</h5>
+        </div>
+        <div class="card-body">
+          <p>For two circles with centres \(C_1,C_2\) and radii \(r_1, r_2\):</p>
+          <table class="table table-bordered table-sm">
+            <thead class="table-secondary">
+              <tr><th>Condition</th><th>Position</th><th>Common Tangents</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\(C_1C_2 > r_1+r_2\)</td><td>Separate</td><td>4</td></tr>
+              <tr><td>\(C_1C_2 = r_1+r_2\)</td><td>Externally tangent</td><td>3</td></tr>
+              <tr><td>\(|r_1-r_2| < C_1C_2 < r_1+r_2\)</td><td>Intersecting</td><td>2</td></tr>
+              <tr><td>\(C_1C_2 = |r_1-r_2|\)</td><td>Internally tangent</td><td>1</td></tr>
+              <tr><td>\(C_1C_2 < |r_1-r_2|\)</td><td>One inside other</td><td>0</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Length of direct common tangent:</strong> \(\sqrt{(C_1C_2)^2-(r_1-r_2)^2}\)</p>
+          <p><strong>Length of transverse common tangent:</strong> \(\sqrt{(C_1C_2)^2-(r_1+r_2)^2}\)</p>
+          <p><strong>Radical axis</strong> of \(S_1=0\) and \(S_2=0\): \(S_1-S_2=0\)</p>
+          <p><strong>Orthogonal circles condition:</strong> \(2g_1g_2+2f_1f_2=c_1+c_2\)</p>
+          <p><strong>Angle of intersection:</strong> \(\cos\theta=\dfrac{r_1^2+r_2^2-d^2}{2r_1r_2}\)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Parabola
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Parabola</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>parabola</strong> is the locus of a point which moves such that its distance from a fixed point (focus) is always equal to its distance from a fixed straight line (directrix). Eccentricity \(e=1\).</p>
+
+      <!-- Standard forms table -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Standard Forms &amp; Related Terms</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-sm">
+              <thead class="table-dark">
+                <tr><th>Term</th><th>\(y^2=4ax\)</th><th>\(y^2=-4ax\)</th><th>\(x^2=4ay\)</th><th>\(x^2=-4ay\)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Vertex</td><td>\((0,0)\)</td><td>\((0,0)\)</td><td>\((0,0)\)</td><td>\((0,0)\)</td></tr>
+                <tr><td>Focus</td><td>\((a,0)\)</td><td>\((-a,0)\)</td><td>\((0,a)\)</td><td>\((0,-a)\)</td></tr>
+                <tr><td>Axis</td><td>\(y=0\)</td><td>\(y=0\)</td><td>\(x=0\)</td><td>\(x=0\)</td></tr>
+                <tr><td>Directrix</td><td>\(x+a=0\)</td><td>\(x-a=0\)</td><td>\(y+a=0\)</td><td>\(y-a=0\)</td></tr>
+                <tr><td>Latus rectum</td><td>\(4a\)</td><td>\(4a\)</td><td>\(4a\)</td><td>\(4a\)</td></tr>
+                <tr><td>Eccentricity</td><td>\(e=1\)</td><td>\(e=1\)</td><td>\(e=1\)</td><td>\(e=1\)</td></tr>
+                <tr><td>Extremities of LR</td><td>\((a,\pm 2a)\)</td><td>\((-a,\pm 2a)\)</td><td>\((\pm 2a,a)\)</td><td>\((\pm 2a,-a)\)</td></tr>
+                <tr><td>Parametric</td><td>\((at^2,2at)\)</td><td>\((-at^2,2at)\)</td><td>\((2at,at^2)\)</td><td>\((2at,-at^2)\)</td></tr>
+                <tr><td>Focal distance of \(P(h,k)\)</td><td>\(h+a\)</td><td>\(a-h\)</td><td>\(k+a\)</td><td>\(a-k\)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Position of point \((x_1,y_1)\):</strong> outside/on/inside \(y^2=4ax\) according as \(y_1^2-4ax_1 >,=,< 0\)</p>
+        </div>
+      </div>
+
+      <!-- Other forms -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Other Forms of Parabola (Vertex at \((h,k)\))</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Opens right: \((y-k)^2=4a(x-h)\)</li>
+            <li>Opens left: \((y-k)^2=-4a(x-h)\)</li>
+            <li>Opens up: \((x-h)^2=4a(y-k)\)</li>
+            <li>Opens down: \((x-h)^2=-4a(y-k)\)</li>
+            <li>Axis parallel to X-axis: \(x=ay^2+by+c\)</li>
+            <li>Axis parallel to Y-axis: \(y=ax^2+bx+c\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Chord -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Chord of Parabola</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Chord joining</strong> \(P(at_1^2,2at_1)\) and \(Q(at_2^2,2at_2)\):</p>
+          \[y(t_1+t_2)=2x+2at_1t_2\]
+          <p><strong>Focal chord:</strong> If \(P(at^2,2at)\) is one end, the other end is \(\left(\dfrac{a}{t^2},\dfrac{-2a}{t}\right)\) and \(t_1t_2=-1\).</p>
+          <p><strong>Length of focal chord</strong> with parameters \(t_1,t_2\): \(a(t_2-t_1)^2\)</p>
+          <p><strong>Latus rectum relation:</strong> \(4a=\dfrac{4l_1l_2}{l_1+l_2}\) (where \(l_1,l_2\) are focal segment lengths)</p>
+          <p><strong>Chord bisected at \((x_1,y_1)\):</strong> \(T=S_1\), i.e. \(yy_1-2a(x+x_1)=y_1^2-4ax_1\)</p>
+          <p><strong>Diameter</strong> bisecting chords of slope \(m\): \(y=\dfrac{2a}{m}\)</p>
+        </div>
+      </div>
+
+      <!-- Tangent -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Equation of Tangent</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\) to \(y^2=4ax\):</p>
+          \[yy_1=2a(x+x_1)\]
+          <p><strong>Parametric form</strong> at \((at^2,2at)\):</p>
+          \[yt=x+at^2\]
+          <p><strong>Slope form</strong> — tangent of slope \(m\):</p>
+          \[y=mx+\frac{a}{m}, \quad\text{point of contact: }\left(\frac{a}{m^2},\frac{2a}{m}\right)\]
+          <p><strong>Condition of tangency:</strong> \(y=mx+c\) touches \(y^2=4ax\) iff \(c=\dfrac{a}{m}\)</p>
+          <p><strong>Intersection of two tangents</strong> at \(P(at_1^2,2at_1)\) and \(Q(at_2^2,2at_2)\): point \((at_1t_2,\;a(t_1+t_2))\)</p>
+          <p><strong>Angle between tangents</strong> at \(P(at_1^2,2at_1)\) and \(Q(at_2^2,2at_2)\):</p>
+          \[\tan\theta=\frac{t_2-t_1}{1+t_1t_2}\]
+          <p><strong>Pair of tangents</strong> from \((x_1,y_1)\): \(SS_1=T^2\)</p>
+          <p><strong>Chord of contact</strong> from \((x_1,y_1)\): \(yy_1=2a(x+x_1)\)</p>
+        </div>
+      </div>
+
+      <!-- Normal -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Equation of Normal</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\) to \(y^2=4ax\):</p>
+          \[y-y_1=-\frac{y_1}{2a}(x-x_1)\]
+          <p><strong>Parametric form</strong> at \((at^2,2at)\):</p>
+          \[y+tx=2at+at^3\]
+          <p><strong>Slope form</strong> — normal of slope \(m\):</p>
+          \[y=mx-2am-am^3,\quad\text{at point }(am^2,-2am)\]
+          <p>If normal at \(P(at_1^2,2at_1)\) meets the parabola again at \(Q(at_2^2,2at_2)\), then: \(t_2=-t_1-\dfrac{2}{t_1}\)</p>
+          <p>Maximum <strong>3 normals</strong> can be drawn from a point to a parabola.</p>
+          <p><strong>Conormal points:</strong> sum of ordinates = 0; centroid of triangle formed lies on axis.</p>
+        </div>
+      </div>
+
+      <!-- Important Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Important Results on Parabola</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>The tangent at any point bisects the angle between the focal distance and perpendicular to the directrix.</li>
+            <li>Tangents at extremities of a focal chord intersect at right angles on the directrix.</li>
+            <li>Orthocentre of triangle formed by three tangents lies on the directrix.</li>
+            <li>Area of triangle formed by three points on parabola = twice area of triangle formed by their tangents.</li>
+            <li>Director circle of a parabola = its directrix.</li>
+            <li>Polar of \((x_1,y_1)\) w.r.t. \(y^2=4ax\): \(yy_1=2a(x+x_1)\)</li>
+            <li>If \(y_1,y_2,y_3\) are ordinates of vertices of a triangle inscribed in \(y^2=4ax\), its area \(= \dfrac{1}{8a}|(y_1-y_2)(y_2-y_3)(y_3-y_1)|\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Ellipse
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Ellipse</h4>
+    </div>
+    <div class="card-body">
+      <p>An <strong>ellipse</strong> is the locus of a point such that the ratio of its distance from a fixed point (focus) to a fixed line (directrix) is always constant and less than unity (\(0 < e < 1\)).</p>
+
+      <!-- Horizontal Ellipse -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Horizontal Ellipse \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) &nbsp;\((a > b > 0)\)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Vertices: \(A(a,0),\; A'(-a,0)\)</li>
+            <li>Foci: \(S(ae,0),\; S'(-ae,0)\)</li>
+            <li>Directrices: \(x=\pm\dfrac{a}{e}\)</li>
+            <li>Major axis: \(2a\); Minor axis: \(2b\)</li>
+            <li>Latus rectum: \(\dfrac{2b^2}{a}\)</li>
+            <li>Eccentricity: \(e=\sqrt{1-\dfrac{b^2}{a^2}} < 1\)</li>
+            <li>Relation: \(b^2=a^2(1-e^2)\)</li>
+            <li>Focal distances of \(P(x,y)\): \(|a-ex|\) and \(|a+ex|\); sum \(=2a\)</li>
+            <li>Distance between foci \(=2ae\); between directrices \(=\dfrac{2a}{e}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Vertical Ellipse -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Vertical Ellipse \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\) &nbsp;\((b > a > 0)\)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Vertices: \(B(0,b),\; B'(0,-b)\)</li>
+            <li>Foci: \(S(0,be),\; S'(0,-be)\)</li>
+            <li>Directrices: \(y=\pm\dfrac{b}{e}\)</li>
+            <li>Major axis: \(2b\); Minor axis: \(2a\)</li>
+            <li>Latus rectum: \(\dfrac{2a^2}{b}\)</li>
+            <li>Eccentricity: \(e=\sqrt{1-\dfrac{a^2}{b^2}} < 1\)</li>
+            <li>Focal distances of \(P(x,y)\): \(|b-ey|\) and \(|b+ey|\); sum \(=2b\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Parametric & Position -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Parametric Equation &amp; Position of a Point</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Parametric:</strong> \(x=a\cos\phi,\quad y=b\sin\phi\) — \(\phi\) is the eccentric angle.</p>
+          <p><strong>Auxiliary circle:</strong> \(x^2+y^2=a^2\) (described on major axis as diameter).</p>
+          <p><strong>Special form</strong> with centre \((h,k)\): \(\dfrac{(x-h)^2}{a^2}+\dfrac{(y-k)^2}{b^2}=1\)</p>
+          <p><strong>Position of \((x_1,y_1)\):</strong> outside/on/inside according as \(\dfrac{x_1^2}{a^2}+\dfrac{y_1^2}{b^2}-1 >,=,< 0\)</p>
+        </div>
+      </div>
+
+      <!-- Tangent to Ellipse -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Equation of Tangent</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\):</p>
+          \[\frac{xx_1}{a^2}+\frac{yy_1}{b^2}=1\]
+          <p><strong>Parametric form</strong> at \((a\cos\theta,b\sin\theta)\):</p>
+          \[\frac{x\cos\theta}{a}+\frac{y\sin\theta}{b}=1\]
+          <p><strong>Slope form</strong> — tangent of slope \(m\):</p>
+          \[y=mx\pm\sqrt{a^2m^2+b^2},\quad\text{contacts: }\left(\pm\frac{a^2m}{\sqrt{a^2m^2+b^2}},\;\mp\frac{b^2}{\sqrt{a^2m^2+b^2}}\right)\]
+          <p><strong>Condition of tangency:</strong> \(y=mx+c\) touches ellipse iff \(c^2=a^2m^2+b^2\)</p>
+          <p><strong>Director circle:</strong> \(x^2+y^2=a^2+b^2\)</p>
+          <p><strong>Pair of tangents</strong> from \((x_1,y_1)\): \(SS_1=T^2\)</p>
+          <p><strong>Chord of contact:</strong> \(\dfrac{xx_1}{a^2}+\dfrac{yy_1}{b^2}=1\)</p>
+          <p><strong>Chord bisected at \((x_1,y_1)\):</strong> \(T=S_1\)</p>
+        </div>
+      </div>
+
+      <!-- Normal to Ellipse -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Equation of Normal</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\):</p>
+          \[\frac{a^2x}{x_1}-\frac{b^2y}{y_1}=a^2-b^2\]
+          <p><strong>Parametric form</strong> at \((a\cos\theta,b\sin\theta)\):</p>
+          \[ax\sec\theta - by\csc\theta = a^2-b^2\]
+          <p><strong>Slope form</strong> — normal of slope \(m\):</p>
+          \[y=mx\pm\frac{m(a^2-b^2)}{\sqrt{a^2+b^2m^2}}\]
+          <p><strong>Condition:</strong> \(y=mx+c\) is normal iff \(c^2=\dfrac{m^2(a^2-b^2)^2}{a^2+b^2m^2}\)</p>
+          <p>Maximum <strong>4 normals</strong> can be drawn from a point to an ellipse.</p>
+        </div>
+      </div>
+
+      <!-- Conjugate Diameters & Key Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Diameter, Conjugate Diameters &amp; Key Results</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Diameter</strong> bisecting chords of slope \(m\): \(y=-\dfrac{b^2}{a^2m}x\)</p>
+          <p><strong>Conjugate diameters:</strong> \(y=m_1x\) and \(y=m_2x\) are conjugate iff \(m_1m_2=-\dfrac{b^2}{a^2}\)</p>
+          <p>For conjugate semi-diameters \(CP\) and \(CD\): \(CP^2+CD^2=a^2+b^2\)</p>
+          <ul>
+            <li>Tangent and normal at any point bisect the external and internal angles between focal radii.</li>
+            <li>Polar of \((x_1,y_1)\) w.r.t. ellipse: \(\dfrac{xx_1}{a^2}+\dfrac{yy_1}{b^2}=1\)</li>
+            <li>Pole of \(lx+my+n=0\): \(\left(-\dfrac{a^2l}{n},\;-\dfrac{b^2m}{n}\right)\)</li>
+            <li>Locus of mid-point of focal chords: \(\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=\dfrac{ex}{a}\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Hyperbola
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Hyperbola</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>hyperbola</strong> is the locus of a point such that the ratio of its distance from a fixed point (focus) to a fixed line (directrix) is always constant and greater than unity (\(e > 1\)).</p>
+
+      <!-- Standard Hyperbola -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Standard Hyperbola \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Centre: \(O(0,0)\)</li>
+            <li>Vertices: \(A(a,0),\; A'(-a,0)\)</li>
+            <li>Foci: \(S(ae,0),\; S'(-ae,0)\)</li>
+            <li>Directrices: \(x=\pm\dfrac{a}{e}\)</li>
+            <li>Transverse axis: \(2a\); Conjugate axis: \(2b\)</li>
+            <li>Latus rectum: \(\dfrac{2b^2}{a}\)</li>
+            <li>Eccentricity: \(e=\sqrt{1+\dfrac{b^2}{a^2}} > 1\); \(\quad b^2=a^2(e^2-1)\)</li>
+            <li>Distance between foci: \(2ae\); between directrices: \(\dfrac{2a}{e}\)</li>
+            <li>Ends of latus rectum: \(\left(\pm ae,\;\pm\dfrac{b^2}{a}\right)\)</li>
+            <li>Focal radii: \(|SP|=|ex_1-a|\), \(|S'P|=|ex_1+a|\); difference \(=2a\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Conjugate Hyperbola -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Conjugate Hyperbola \(-\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Vertices: \(A(0,b),\; A'(0,-b)\)</li>
+            <li>Foci: \(S(0,be),\; S'(0,-be)\)</li>
+            <li>Directrices: \(y=\pm\dfrac{b}{e}\)</li>
+            <li>Transverse axis: \(2b\); Conjugate axis: \(2a\)</li>
+            <li>Latus rectum: \(\dfrac{2a^2}{b}\)</li>
+            <li>Eccentricity: \(e=\sqrt{1+\dfrac{a^2}{b^2}}\)</li>
+            <li>Focal radii: \(|SP|=|ey_1-b|\), \(|S'P|=|ey_1+b|\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Parametric -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Parametric Form &amp; Position of Point</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Parametric:</strong> \(x=a\sec\theta,\quad y=b\tan\theta\)</p>
+          <p><strong>Hyperbola with centre \((h,k)\):</strong> \(\dfrac{(x-h)^2}{a^2}-\dfrac{(y-k)^2}{b^2}=1\)</p>
+          <p><strong>Position of \((x_1,y_1)\):</strong> outside/on/inside according as \(\dfrac{x_1^2}{a^2}-\dfrac{y_1^2}{b^2}-1 <,=,> 0\)</p>
+        </div>
+      </div>
+
+      <!-- Tangent to Hyperbola -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Equation of Tangent</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\):</p>
+          \[\frac{xx_1}{a^2}-\frac{yy_1}{b^2}=1\]
+          <p><strong>Parametric form</strong> at \((a\sec\theta,b\tan\theta)\):</p>
+          \[\frac{x\sec\theta}{a}-\frac{y\tan\theta}{b}=1\]
+          <p><strong>Slope form</strong> — tangent of slope \(m\):</p>
+          \[y=mx\pm\sqrt{a^2m^2-b^2},\quad\text{contacts: }\left(\pm\frac{a^2m}{\sqrt{a^2m^2-b^2}},\;\pm\frac{b^2}{\sqrt{a^2m^2-b^2}}\right)\]
+          <p><strong>Condition of tangency:</strong> \(y=mx+c\) touches hyperbola iff \(c^2=a^2m^2-b^2\)</p>
+          <p><strong>Director circle:</strong> \(x^2+y^2=a^2-b^2\) (exists only when \(a^2>b^2\))</p>
+          <p><strong>Pair of tangents</strong> from \((x_1,y_1)\): \(SS_1=T^2\)</p>
+          <p><strong>Chord of contact:</strong> \(\dfrac{xx_1}{a^2}-\dfrac{yy_1}{b^2}=1\)</p>
+          <p><strong>Chord bisected at \((x_1,y_1)\):</strong> \(T=S_1\)</p>
+        </div>
+      </div>
+
+      <!-- Normal to Hyperbola -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Equation of Normal</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Point form</strong> at \((x_1,y_1)\):</p>
+          \[\frac{a^2x}{x_1}+\frac{b^2y}{y_1}=a^2+b^2\]
+          <p><strong>Parametric form</strong> at \((a\sec\theta,b\tan\theta)\):</p>
+          \[ax\cos\theta+by\cot\theta=a^2+b^2\]
+          <p><strong>Slope form</strong> — normal of slope \(m\):</p>
+          \[y=mx\mp\frac{m(a^2+b^2)}{\sqrt{a^2-b^2m^2}}\]
+          <p>Maximum <strong>4 normals</strong> can be drawn from a point to a hyperbola.</p>
+        </div>
+      </div>
+
+      <!-- Asymptotes -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Asymptotes</h5>
+        </div>
+        <div class="card-body">
+          <p>An <strong>asymptote</strong> is a straight line at finite distance from origin, to which the tangent to a curve tends as the point of contact goes to infinity.</p>
+          <p>Asymptotes of \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\): &emsp; \(y=\pm\dfrac{b}{a}x\) &emsp; or &emsp; \(\dfrac{x}{a}\pm\dfrac{y}{b}=0\)</p>
+          <p><strong>Combined equation:</strong> \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=0\)</p>
+          <ul>
+            <li>Asymptotes pass through the centre of the hyperbola.</li>
+            <li>A hyperbola and its conjugate have the same asymptotes.</li>
+            <li>Angle between asymptotes: \(2\tan^{-1}\dfrac{b}{a}=2\sec^{-1}(e)\)</li>
+            <li>Hyperbola \(-\) Asymptotes \(=\) Asymptotes \(-\) Conjugate hyperbola (same constant)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Rectangular Hyperbola -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Rectangular Hyperbola</h5>
+        </div>
+        <div class="card-body">
+          <p>A hyperbola whose asymptotes include a right angle. Eccentricity \(e=\sqrt{2}\) always.</p>
+
+          <p><strong>Form \(x^2-y^2=a^2\):</strong></p>
+          <ul>
+            <li>Asymptotes: \(x\pm y=0\) (perpendicular)</li>
+            <li>Centre: \((0,0)\); Foci: \((\pm\sqrt{2}a,0)\)</li>
+            <li>Directrices: \(x=\pm\dfrac{a}{\sqrt{2}}\)</li>
+            <li>Latus rectum: \(2a\)</li>
+            <li>Parametric: \(x=a\sec\theta,\;y=a\tan\theta\)</li>
+          </ul>
+
+          <p class="mt-3"><strong>Form \(xy=c^2\):</strong></p>
+          <ul>
+            <li>Asymptotes: \(x=0\) and \(y=0\)</li>
+            <li>Centre: \((0,0)\); Foci: \((\sqrt{2}c,\sqrt{2}c),\;(-\sqrt{2}c,-\sqrt{2}c)\)</li>
+            <li>Vertices: \(A(c,c),\;A'(-c,-c)\)</li>
+            <li>Directrices: \(x+y=\pm\sqrt{2}c\)</li>
+            <li>Latus rectum: \(2\sqrt{2}c\)</li>
+            <li>Parametric: \(x=ct,\;y=\dfrac{c}{t}\)</li>
+          </ul>
+
+          <p><strong>Tangent at \((x_1,y_1)\) to \(xy=c^2\):</strong></p>
+          \[xy_1+yx_1=2c^2 \quad\text{or}\quad \frac{x}{x_1}+\frac{y}{y_1}=2\]
+          <p><strong>Tangent at \(\left(ct,\dfrac{c}{t}\right)\):</strong> \(\dfrac{x}{t}+yt=2c\)</p>
+          <p><strong>Normal at \((x_1,y_1)\) to \(xy=c^2\):</strong> \(xx_1-yy_1=x_1^2-y_1^2\)</p>
+          <p><strong>Normal at \(\left(ct,\dfrac{c}{t}\right)\):</strong> \(xt^3-yt-ct^4+c=0\) (4th degree in \(t\) → max 4 normals)</p>
+          <p>If a triangle is inscribed in a rectangular hyperbola, its <strong>orthocentre lies on the hyperbola</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Conjugate Diameters & Key Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Diameter &amp; Key Results</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Diameter</strong> bisecting chords of slope \(m\): \(y=\dfrac{b^2}{a^2m}x\)</p>
+          <p><strong>Conjugate diameters</strong> \(y=m_1x\) and \(y=m_2x\): conjugate iff \(m_1m_2=\dfrac{b^2}{a^2}\)</p>
+          <p><strong>Chord of \(xy=c^2\) with midpoint \((x_1,y_1)\):</strong> \(xy_1+yx_1=2x_1y_1\) (i.e. \(T=S_1\))</p>
+          <p><strong>Chord joining \(t_1,t_2\) on \(xy=c^2\):</strong> \(x+yt_1t_2=c(t_1+t_2)\)</p>
+          <p><strong>Polar of \((x_1,y_1)\) w.r.t. \(\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1\):</strong> \(\dfrac{xx_1}{a^2}-\dfrac{yy_1}{b^2}=1\)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Important Results to Remember
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Important Results to Remember</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>For a parabola \(y^2=4ax\): tangent at vertex is \(x=0\); focal chord has \(t_1t_2=-1\).</li>
+        <li>The foot of perpendicular from focus on any tangent to a parabola lies on the tangent at the vertex.</li>
+        <li>For ellipse, the normal bisects the internal angle between focal radii; tangent bisects external angle.</li>
+        <li>If \(SM\) and \(S'M'\) are perpendiculars from foci on any tangent to an ellipse, then \(SM\cdot S'M'=b^2\) and \(M,M'\) lie on the auxiliary circle.</li>
+        <li>Two tangents can be drawn from a point to a parabola/ellipse/hyperbola — real and distinct/coincident/imaginary according as point lies outside/on/inside the conic.</li>
+        <li>Max 3 normals from a point to a parabola; max 4 normals to an ellipse, hyperbola, or \(xy=c^2\).</li>
+        <li>For \(xy=c^2\): if a triangle is inscribed, its orthocentre also lies on the curve.</li>
+        <li>Any straight line parallel to an asymptote of a hyperbola intersects the hyperbola at only one point.</li>
+        <li>Common chord of two circles \(S_1=0,S_2=0\) is given by \(S_1-S_2=0\).</li>
+        <li>Radical axes of three circles (non-collinear centres) taken in pairs are concurrent (radical centre).</li>
+        <li>Pole of \(lx+my+n=0\) w.r.t. \(x^2+y^2=a^2\) is \(\left(-\dfrac{a^2l}{n},-\dfrac{a^2m}{n}\right)\).</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
