@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Application of Derivatives</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Application of Derivatives</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Rate of Change
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Derivatives as the Rate of Change</h4>
+    </div>
+    <div class="card-body">
+      <p>If a variable quantity \(y\) is some function of time \(t\), i.e. \(y = f(t)\), then a small change \(\Delta t\) causes a corresponding change \(\Delta y\) in \(y\).</p>
+      \[\text{Average rate of change} = \frac{\Delta y}{\Delta t}\]
+      <p>The <strong>instantaneous rate of change</strong> is obtained as \(\Delta t \to 0\):</p>
+      \[\lim_{\Delta t \to 0}\frac{\Delta y}{\Delta t} = \frac{dy}{dt}\]
+      <p>Similarly, \(\dfrac{dy}{dx}\) is the rate of change of \(y\) relative to \(x\). It is <strong>positive</strong> if \(y\) increases as \(x\) increases, and <strong>negative</strong> if \(y\) decreases as \(x\) increases.</p>
+
+      <!-- Nested: Two Variables -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Rate of Change of Two Variables</h5>
+        </div>
+        <div class="card-body">
+          <p>If two variables \(x\) and \(y\) both vary with another variable \(t\), i.e. \(y = f(t)\) and \(x = g(t)\), then:</p>
+          \[\frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{dy}{dt} \times \frac{dt}{dx}\]
+        </div>
+      </div>
+
+      <!-- Nested: Marginal Cost & Revenue -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Marginal Cost &amp; Marginal Revenue</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Marginal Cost (MC):</strong> Instantaneous rate of change of total cost w.r.t. number of items produced.
+              \[\text{MC} = \frac{d}{dx}\{C(x)\}\]
+            </li>
+            <li><strong>Marginal Revenue (MR):</strong> Rate of change of total revenue w.r.t. number of items sold.
+              \[\text{MR} = \frac{d}{dx}\{R(x)\}\]
+            </li>
+            <li><strong>Total cost:</strong> \(C(x) = \text{fixed cost} + \text{variable cost}\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Tangents and Normals
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Tangents and Normals</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>tangent</strong> is a straight line that touches the curve \(y = f(x)\) at a point. A <strong>normal</strong> is a straight line perpendicular to the tangent at the point of contact.</p>
+
+      <!-- Nested: Slope -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Slope of Tangent and Normal</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Slope of tangent at \(P(x,y)\) \(= \left.\dfrac{dy}{dx}\right|_P\)</li>
+            <li>Tangent <strong>parallel to Y-axis</strong> (perpendicular to X-axis): \(\left.\dfrac{dy}{dx}\right|_P = \infty\)</li>
+            <li>Tangent <strong>parallel to X-axis</strong> (perpendicular to Y-axis): \(\left.\dfrac{dy}{dx}\right|_P = 0\)</li>
+            <li>Slope of normal \(= -\dfrac{1}{\text{slope of tangent}} = -\left.\dfrac{dx}{dy}\right|_P\)</li>
+            <li>If \(\left.\dfrac{dy}{dx}\right|_P = 0\): normal is parallel to Y-axis.</li>
+            <li>If \(\left.\dfrac{dy}{dx}\right|_P = \infty\): normal is parallel to X-axis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Equations -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Equations of Tangent and Normal</h5>
+        </div>
+        <div class="card-body">
+          <p>At point \(P(x_0, y_0)\) on curve \(y = f(x)\):</p>
+          <ul>
+            <li><strong>Equation of tangent:</strong>
+              \[Y - y_0 = \left.\frac{dy}{dx}\right|_P (X - x_0)\]
+            </li>
+            <li><strong>Equation of normal:</strong>
+              \[Y - y_0 = -\left.\frac{dx}{dy}\right|_P (X - x_0)\]
+            </li>
+            <li>If \(\left.\dfrac{dy}{dx}\right|_P = 0\): tangent is \(Y = y_0\) (horizontal); normal is \(X = x_0\) (vertical).</li>
+            <li>If \(\left.\dfrac{dy}{dx}\right|_P = \pm\infty\): tangent is \(X = x_0\) (vertical); normal is \(Y = y_0\) (horizontal).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Lengths -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Lengths of Tangent, Normal, Subtangent &amp; Subnormal</h5>
+        </div>
+        <div class="card-body">
+          <p>At a point \(P(x, y)\) on the curve, where the tangent makes angle \(\theta\) with X-axis:</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Quantity</th><th>Formula</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Length of tangent (PA)</td>
+                <td>\(\displaystyle y\,\text{cosec}\,\theta = y\sqrt{1 + \left(\frac{dy}{dx}\right)^2}\bigg/\frac{dy}{dx}\)</td>
+              </tr>
+              <tr>
+                <td>Length of normal (PB)</td>
+                <td>\(\displaystyle y\,\sec\theta = y\sqrt{1 + \left(\frac{dy}{dx}\right)^2}\)</td>
+              </tr>
+              <tr>
+                <td>Length of subtangent (AS)</td>
+                <td>\(\displaystyle y\cot\theta = \frac{y}{dy/dx}\)</td>
+              </tr>
+              <tr>
+                <td>Length of subnormal (BS)</td>
+                <td>\(\displaystyle y\tan\theta = y\cdot\frac{dy}{dx}\)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Angle of Intersection of Two Curves
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Angle of Intersection of Two Curves</h4>
+    </div>
+    <div class="card-body">
+      <p>Let \(y = f_1(x)\) and \(y = f_2(x)\) meet at point \(P(x_1, y_1)\). The angle of intersection is the angle between their tangents at \(P\):</p>
+      \[\tan\theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right|\]
+      <p>where \(m_1 = \left.\dfrac{df_1}{dx}\right|_{(x_1,y_1)}\) and \(m_2 = \left.\dfrac{df_2}{dx}\right|_{(x_1,y_1)}\).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Special Cases</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Orthogonal curves</strong> (\(\theta = 90°\)): \(m_1 m_2 = -1\), i.e. \(\left.\dfrac{df_1}{dx}\right|_P \cdot \left.\dfrac{df_2}{dx}\right|_P = -1\)</li>
+            <li><strong>Tangential curves</strong> (\(\theta = 0°\)): \(m_1 = m_2\), i.e. curves touch each other at \(P\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Rolle's & Lagrange's Theorems
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Rolle's Theorem &amp; Lagrange's Mean Value Theorem</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Rolle's -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Rolle's Theorem</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f\) be defined on \([a,b]\) such that:</p>
+          <ol>
+            <li>\(f\) is <strong>continuous</strong> on \([a,b]\).</li>
+            <li>\(f\) is <strong>differentiable</strong> on \((a,b)\).</li>
+            <li>\(f(a) = f(b)\).</li>
+          </ol>
+          <p>Then, there exists at least one point \(c \in (a,b)\) such that \(f'(c) = 0\).</p>
+          <p><strong>Geometric meaning:</strong> The tangent to the graph at some interior point is parallel to the X-axis.</p>
+          <p><strong>Algebraic interpretation:</strong> Between any two roots of a polynomial \(f(x)\), there is always a root of \(f'(x)\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Lagrange's MVT -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Lagrange's Mean Value Theorem (LMVT)</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f\) be continuous on \([a,b]\) and differentiable on \((a,b)\). Then, there exists at least one point \(c \in (a,b)\) such that:</p>
+          \[f'(c) = \frac{f(b) - f(a)}{b - a}\]
+          <p><strong>Geometric meaning:</strong> For any chord of the curve \(y = f(x)\), there is a point on the graph where the tangent is parallel to that chord.</p>
+          <p><strong>Note:</strong> Rolle's theorem is a special case of LMVT when \(f(a) = f(b)\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Approximations and Errors
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Approximations and Errors</h4>
+    </div>
+    <div class="card-body">
+      <p>Let \(y = f(x)\) and \(\Delta x\) be a small increment in \(x\). Then for small increments:</p>
+      \[\Delta y \approx dy = \frac{dy}{dx}\cdot\Delta x\]
+      \[f(x + \Delta x) \approx f(x) + \frac{dy}{dx}\cdot\Delta x\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Types of Errors</h5>
+        </div>
+        <div class="card-body">
+          <p>If \(\Delta x\) is the error in measuring \(x\), then the error \(\Delta y\) in \(y\) is:</p>
+          \[\Delta y = \frac{dy}{dx}\cdot\Delta x\]
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Type of Error</th><th>Formula</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Absolute error in \(y\)</td><td>\(\Delta y\)</td></tr>
+              <tr><td>Relative error in \(y\)</td><td>\(\dfrac{\Delta y}{y}\)</td></tr>
+              <tr><td>Percentage error in \(y\)</td><td>\(\dfrac{\Delta y}{y} \times 100\%\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Increasing and Decreasing Functions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Increasing and Decreasing Functions</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Definitions -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Definitions</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Increasing (non-decreasing):</strong> \(f\) is increasing on domain \(D\) if \(x_1 < x_2 \Rightarrow f(x_1) \le f(x_2)\) for all \(x_1, x_2 \in D\).</li>
+            <li><strong>Strictly increasing:</strong> \(x_1 < x_2 \Rightarrow f(x_1) < f(x_2)\).</li>
+            <li><strong>Decreasing (non-increasing):</strong> \(x_1 < x_2 \Rightarrow f(x_1) \ge f(x_2)\).</li>
+            <li><strong>Strictly decreasing:</strong> \(x_1 < x_2 \Rightarrow f(x_1) > f(x_2)\).</li>
+            <li><strong>Monotonic:</strong> A function that is either entirely increasing or entirely decreasing on an interval.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Derivative Tests -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Derivative Conditions for Monotonicity</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f\) be differentiable on \((a,b)\):</p>
+          <ul>
+            <li>\(f'(x) > 0\) for all \(x \in (a,b)\) \(\Rightarrow\) \(f\) is <strong>strictly increasing</strong> on \((a,b)\).</li>
+            <li>\(f'(x) < 0\) for all \(x \in (a,b)\) \(\Rightarrow\) \(f\) is <strong>strictly decreasing</strong> on \((a,b)\).</li>
+            <li>\(f'(x) \ge 0\) for all \(x \in (a,b)\) (and \(f'(x) = 0\) only at finitely many points) \(\Rightarrow\) \(f\) is <strong>increasing</strong> on \((a,b)\).</li>
+          </ul>
+          <p><strong>Injectivity test:</strong> A strictly monotonic function is always one-one (injective). So \(f\) is one-one on \([a,b]\) if \(f'(x) > 0\) or \(f'(x) < 0\) for all \(x \in [a,b]\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Properties of Monotonic Functions</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>If \(f\) is strictly increasing (decreasing) on \([a,b]\), then \(f^{-1}\) exists and is also strictly increasing (decreasing).</li>
+            <li>If \(f\) and \(g\) are both strictly increasing (or both strictly decreasing) on \([a,b]\), then \(g \circ f\) and \(f \circ g\) are strictly <strong>increasing</strong>.</li>
+            <li>If one of \(f\) or \(g\) is strictly increasing and the other strictly decreasing, then \(g \circ f\) and \(f \circ g\) are strictly <strong>decreasing</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Maxima and Minima
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Maxima and Minima of Functions</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Definitions -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white">
+          <h5>Definitions</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Local maximum:</strong> \(f\) has a local maximum at \(x = a\) if \(f(x) \le f(a)\) for all \(x \in (a-h, a+h)\), \(h\) small and positive.</li>
+            <li><strong>Local minimum:</strong> \(f\) has a local minimum at \(x = a\) if \(f(x) \ge f(a)\) for all \(x \in (a-h, a+h)\).</li>
+            <li><strong>Critical points:</strong> Points where \(f'(x) = 0\) or \(f'(x)\) does not exist. Maxima/minima can only occur at critical points.</li>
+            <li><strong>Extreme value:</strong> \(f(c)\) is an extreme value if it is either a local maximum or local minimum. At an extreme point \(a\), \(f'(a) = 0\) (if it exists).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Properties of Maxima and Minima</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>In a continuous function, at least one maxima and one minima must lie between two equal values of \(f(x)\).</li>
+            <li>Maxima and minima <strong>occur alternately</strong>: between two maxima there is one minima and vice versa.</li>
+            <li>If \(f(x) \to \infty\) as \(x \to a\) or \(x \to b\), and \(f'(x) = 0\) for only one value \(c\), then \(f(c)\) is the minimum value.</li>
+            <li>If \(f(x) \to -\infty\) as \(x \to a\) or \(x \to b\), and \(f'(c) = 0\) for only one value \(c\), then \(f(c)\) is the maximum value.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: First Derivative Test -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>1. First Derivative Test</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f\) be differentiable on \(I\) and \(a \in I\) with \(f'(a) = 0\):</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Sign of \(f'(x)\)</th><th>Left of \(a\)</th><th>Right of \(a\)</th><th>Conclusion</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Changes \(+ \to -\)</td><td>\(f'(x) > 0\)</td><td>\(f'(x) < 0\)</td><td><strong>Local maximum</strong> at \(x = a\)</td></tr>
+              <tr><td>Changes \(- \to +\)</td><td>\(f'(x) < 0\)</td><td>\(f'(x) > 0\)</td><td><strong>Local minimum</strong> at \(x = a\)</td></tr>
+              <tr><td>No change</td><td colspan="2">Same sign on both sides</td><td><strong>Point of inflection</strong> (neither max nor min)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Second Derivative Test -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>2. Second Derivative Test</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f'(a) = 0\) and \(f''(a)\) exist:</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Conclusion</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\(f'(a) = 0\) and \(f''(a) < 0\)</td><td><strong>Local maximum</strong> at \(x = a\)</td></tr>
+              <tr><td>\(f'(a) = 0\) and \(f''(a) > 0\)</td><td><strong>Local minimum</strong> at \(x = a\)</td></tr>
+              <tr><td>\(f'(a) = 0\) and \(f''(a) = 0\) but \(f'''(a) \ne 0\)</td><td><strong>Point of inflection</strong></td></tr>
+              <tr><td>\(f'(a) = f''(a) = f'''(a) = 0\) and \(f^{(4)}(a) < 0\)</td><td><strong>Local maximum</strong></td></tr>
+              <tr><td>\(f'(a) = f''(a) = f'''(a) = 0\) and \(f^{(4)}(a) > 0\)</td><td><strong>Local minimum</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: nth Derivative Test -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>3. \(n\)th Derivative Test</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(f'(a) = f''(a) = \cdots = f^{(n-1)}(a) = 0\) and \(f^{(n)}(a) \ne 0\):</p>
+          <ul>
+            <li>If \(n\) is <strong>even</strong> and \(f^{(n)}(a) < 0\) \(\Rightarrow\) <strong>local maximum</strong> at \(x = a\).</li>
+            <li>If \(n\) is <strong>even</strong> and \(f^{(n)}(a) > 0\) \(\Rightarrow\) <strong>local minimum</strong> at \(x = a\).</li>
+            <li>If \(n\) is <strong>odd</strong> \(\Rightarrow\) <strong>neither</strong> local maximum nor local minimum (point of inflection).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Global Maximum and Minimum
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Global Maximum and Minimum</h4>
+    </div>
+    <div class="card-body">
+      <p>The <strong>global (absolute) maximum/minimum</strong> of \(f(x)\) on \([a,b]\) is the greatest/least value of \(f\) on that interval.</p>
+      <p>It always occurs either at a <strong>critical point</strong> of \(f\) within \([a,b]\) or at an <strong>endpoint</strong> of the interval.</p>
+
+      <!-- Nested: Finding Global Extrema -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Steps to Find Global Extrema on \([a,b]\)</h5>
+        </div>
+        <div class="card-body">
+          <ol>
+            <li>Find all critical points \(c_1, c_2, \ldots, c_n\) in \([a,b]\) (where \(f'(x) = 0\) or \(f'(x)\) does not exist).</li>
+            <li>Evaluate \(f\) at all critical points and at the endpoints \(a\) and \(b\).</li>
+            <li>The greatest value is the <strong>global maximum</strong>:
+              \[M_1 = \max\{f(a),\, f(c_1),\, f(c_2),\, \ldots,\, f(c_n),\, f(b)\}\]
+            </li>
+            <li>The least value is the <strong>global minimum</strong>:
+              \[M_2 = \min\{f(a),\, f(c_1),\, f(c_2),\, \ldots,\, f(c_n),\, f(b)\}\]
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 9: Important Points to Remember
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Important Points to Remember</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>If \(f(x)\) is differentiable, then \(f'(x)\) vanishes at every local maximum and every local minimum.</li>
+        <li>The converse is <strong>not true</strong>: \(f'(c) = 0\) does not necessarily mean \(c\) is a local maximum or minimum (e.g. \(f(x) = x^3\) at \(x = 0\)). Such points are called <strong>points of inflection</strong>.</li>
+        <li>A function may have an extreme value at a point where it is not differentiable (e.g. \(f(x) = |x|\) at \(x = 0\)).</li>
+        <li>A function can have several local maxima and minima in an interval; a local maximum at one point may be less than a local minimum at another point.</li>
+        <li>\(f'(a) = 0\) is a <strong>necessary</strong> condition for an extreme value, but <strong>not sufficient</strong>.</li>
+        <li>Geometrically, at a maximum or minimum, the tangent to the curve is parallel to the X-axis.</li>
+        <li>Points where \(f'(x) = 0\) are called <strong>stationary values (critical values)</strong> of \(x\); the corresponding \(f\)-values are called <strong>stationary (turning) values</strong> of \(f\).</li>
+        <li><strong>Range of a continuous function</strong> on \([a,b]\): If the least value is \(m\) and greatest is \(M\), then range \(= [m, M]\).</li>
+        <li><strong>Extreme points (turning points):</strong> Points where local maxima or minima occur. The corresponding values are called <strong>extreme values</strong> of \(f\).</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

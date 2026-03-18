@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indefinite Integrals</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Indefinite Integrals</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Introduction & Standard Formulae
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Introduction &amp; Standard Integral Formulae</h4>
+    </div>
+    <div class="card-body">
+      <p>If \(\dfrac{d}{dx}\{\varphi(x)\} = f(x)\), then \(\displaystyle\int f(x)\,dx = \varphi(x) + C\), where \(C\) is the <strong>constant of integration</strong>.</p>
+      <ul>
+        <li>\(f(x)\) → Integrand &nbsp;|&nbsp; \(f(x)\,dx\) → Element of integration &nbsp;|&nbsp; \(\varphi(x)\) → Anti-derivative (primitive)</li>
+        <li>The derivative of a function is unique, but the integral is not unique.</li>
+      </ul>
+
+      <!-- Nested: Algebraic & Exponential -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Algebraic, Exponential &amp; Logarithmic</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>#</th><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>(i)</td><td>\(\displaystyle\int x^n\,dx\)</td><td>\(\dfrac{x^{n+1}}{n+1} + C,\quad n \ne -1\)</td></tr>
+              <tr><td>(ii)</td><td>\(\displaystyle\int \frac{1}{x}\,dx\)</td><td>\(\log_e|x| + C\)</td></tr>
+              <tr><td>(iii)</td><td>\(\displaystyle\int e^x\,dx\)</td><td>\(e^x + C\)</td></tr>
+              <tr><td>(iv)</td><td>\(\displaystyle\int a^x\,dx\)</td><td>\(\dfrac{a^x}{\log_e a} + C,\quad a > 0,\; a \ne 1\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Trigonometric -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Trigonometric</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>#</th><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>(v)</td><td>\(\displaystyle\int \sin x\,dx\)</td><td>\(-\cos x + C\)</td></tr>
+              <tr><td>(vi)</td><td>\(\displaystyle\int \cos x\,dx\)</td><td>\(\sin x + C\)</td></tr>
+              <tr><td>(vii)</td><td>\(\displaystyle\int \sec^2 x\,dx\)</td><td>\(\tan x + C\)</td></tr>
+              <tr><td>(viii)</td><td>\(\displaystyle\int \text{cosec}^2 x\,dx\)</td><td>\(-\cot x + C\)</td></tr>
+              <tr><td>(ix)</td><td>\(\displaystyle\int \sec x\tan x\,dx\)</td><td>\(\sec x + C\)</td></tr>
+              <tr><td>(x)</td><td>\(\displaystyle\int \text{cosec}\,x\cot x\,dx\)</td><td>\(-\text{cosec}\,x + C\)</td></tr>
+              <tr><td>(xi)</td><td>\(\displaystyle\int \tan x\,dx\)</td><td>\(\log|\sec x| + C = -\log|\cos x| + C\)</td></tr>
+              <tr><td>(xii)</td><td>\(\displaystyle\int \cot x\,dx\)</td><td>\(\log|\sin x| + C = -\log|\text{cosec}\,x| + C\)</td></tr>
+              <tr><td>(xiii)</td><td>\(\displaystyle\int \sec x\,dx\)</td><td>\(\log|\sec x + \tan x| + C = \log\left|\tan\!\left(\dfrac{\pi}{4}+\dfrac{x}{2}\right)\right| + C\)</td></tr>
+              <tr><td>(xiv)</td><td>\(\displaystyle\int \text{cosec}\,x\,dx\)</td><td>\(\log|\text{cosec}\,x - \cot x| + C = \log\left|\tan\dfrac{x}{2}\right| + C\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Inverse Trig -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Inverse Trigonometric</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>#</th><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>(xv)</td><td>\(\displaystyle\int \frac{dx}{\sqrt{a^2 - x^2}}\)</td><td>\(\sin^{-1}\!\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>(xvi)</td><td>\(\displaystyle\int \frac{dx}{\sqrt{a^2 - x^2}}\)</td><td>\(-\cos^{-1}\!\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>(xvii)</td><td>\(\displaystyle\int \frac{dx}{a^2 + x^2}\)</td><td>\(\dfrac{1}{a}\tan^{-1}\!\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>(xviii)</td><td>\(\displaystyle\int \frac{dx}{a^2 + x^2}\)</td><td>\(-\dfrac{1}{a}\cot^{-1}\!\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>(xix)</td><td>\(\displaystyle\int \frac{dx}{x\sqrt{x^2 - a^2}}\)</td><td>\(\dfrac{1}{a}\sec^{-1}\!\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>(xx)</td><td>\(\displaystyle\int \frac{dx}{x\sqrt{x^2 - a^2}}\)</td><td>\(-\dfrac{1}{a}\text{cosec}^{-1}\!\dfrac{x}{a} + C\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Properties of Integration</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\(\dfrac{d}{dx}\left\{\displaystyle\int f(x)\,dx\right\} = f(x)\)</li>
+            <li>\(\displaystyle\int k\,f(x)\,dx = k\displaystyle\int f(x)\,dx\)</li>
+            <li>\(\displaystyle\int [f_1(x) \pm f_2(x) \pm \cdots \pm f_n(x)]\,dx = \displaystyle\int f_1\,dx \pm \displaystyle\int f_2\,dx \pm \cdots \pm \displaystyle\int f_n\,dx\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Integration by Substitution
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>1. Integration by Substitution</h4>
+    </div>
+    <div class="card-body">
+      <p>For \(\displaystyle\int f\{g(x)\}\cdot g'(x)\,dx\), put \(t = g(x)\) so \(dt = g'(x)\,dx\). Then:</p>
+      \[\int f\{g(x)\}\cdot g'(x)\,dx = \int f(t)\,dt = F(t) + C = F\{g(x)\} + C\]
+      <p><strong>Key shortcuts:</strong></p>
+      <ul>
+        <li>\(\displaystyle\int \frac{f'(x)}{f(x)}\,dx = \log|f(x)| + C\)</li>
+        <li>\(\displaystyle\int [f(x)]^n \cdot f'(x)\,dx = \dfrac{[f(x)]^{n+1}}{n+1} + C,\quad n \ne -1\)</li>
+        <li>If \(\displaystyle\int f(x)\,dx = \varphi(x) + C\), then \(\displaystyle\int f(ax+b)\,dx = \dfrac{1}{a}\varphi(ax+b) + C\)</li>
+      </ul>
+
+      <!-- Nested: Standard Substitution Formulae (ax+b) -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Standard Formulae with \((ax+b)\)</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>\(\displaystyle\int (ax+b)^n\,dx\)</td><td>\(\dfrac{(ax+b)^{n+1}}{a(n+1)} + C,\quad n\ne -1\)</td></tr>
+              <tr><td>\(\displaystyle\int \frac{1}{ax+b}\,dx\)</td><td>\(\dfrac{1}{a}\log|ax+b| + C\)</td></tr>
+              <tr><td>\(\displaystyle\int e^{ax+b}\,dx\)</td><td>\(\dfrac{e^{ax+b}}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int a^{bx+c}\,dx\)</td><td>\(\dfrac{a^{bx+c}}{b\log_e a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \sin(ax+b)\,dx\)</td><td>\(-\dfrac{\cos(ax+b)}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \cos(ax+b)\,dx\)</td><td>\(\dfrac{\sin(ax+b)}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \sec^2(ax+b)\,dx\)</td><td>\(\dfrac{\tan(ax+b)}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \text{cosec}^2(ax+b)\,dx\)</td><td>\(-\dfrac{\cot(ax+b)}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \sec(ax+b)\tan(ax+b)\,dx\)</td><td>\(\dfrac{\sec(ax+b)}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \text{cosec}(ax+b)\cot(ax+b)\,dx\)</td><td>\(-\dfrac{\text{cosec}(ax+b)}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \tan(ax+b)\,dx\)</td><td>\(-\dfrac{1}{a}\log|\cos(ax+b)| + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \cot(ax+b)\,dx\)</td><td>\(\dfrac{1}{a}\log|\sin(ax+b)| + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \sec(ax+b)\,dx\)</td><td>\(\dfrac{1}{a}\log|\sec(ax+b)+\tan(ax+b)| + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \text{cosec}(ax+b)\,dx\)</td><td>\(\dfrac{1}{a}\log|\text{cosec}(ax+b)-\cot(ax+b)| + C\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Trig Identities for Conversion -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Trigonometric Identities Used for Conversion</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\(\sin^2 nx = \dfrac{1 - \cos 2nx}{2}\)</li>
+            <li>\(\cos^2 nx = \dfrac{1 + \cos 2nx}{2}\)</li>
+            <li>\(\sin^3 nx = \dfrac{3\sin nx - \sin 3nx}{4}\)</li>
+            <li>\(\cos^3 nx = \dfrac{3\cos nx + \cos 3nx}{4}\)</li>
+            <li>\(\tan^2 nx = \sec^2 nx - 1\)</li>
+            <li>\(\cot^2 nx = \text{cosec}^2 nx - 1\)</li>
+            <li>\(2\sin A\cos B = \sin(A+B) + \sin(A-B)\)</li>
+            <li>\(2\cos A\sin B = \sin(A+B) - \sin(A-B)\)</li>
+            <li>\(2\cos A\cos B = \cos(A+B) + \cos(A-B)\)</li>
+            <li>\(2\sin A\sin B = \cos(A-B) - \cos(A+B)\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Standard Substitutions table -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Standard Substitutions</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Expression</th><th>Substitution</th></tr></thead>
+            <tbody>
+              <tr><td>\(\sqrt{a^2+x^2}\), \(a^2+x^2\), \(\dfrac{1}{a^2+x^2}\)</td><td>\(x = a\tan\theta\) or \(a\cot\theta\) or \(a\sinh\theta\)</td></tr>
+              <tr><td>\(\sqrt{a^2-x^2}\), \(a^2-x^2\), \(\dfrac{1}{a^2-x^2}\)</td><td>\(x = a\sin\theta\) or \(a\cos\theta\)</td></tr>
+              <tr><td>\(\sqrt{x^2-a^2}\), \(x^2-a^2\), \(\dfrac{1}{x^2-a^2}\)</td><td>\(x = a\sec\theta\) or \(a\text{cosec}\,\theta\) or \(a\cosh\theta\)</td></tr>
+              <tr><td>\(\sqrt{\dfrac{a+x}{a-x}}\) or \(\sqrt{\dfrac{a-x}{a+x}}\)</td><td>\(x = a\cos 2\theta\)</td></tr>
+              <tr><td>\(\sqrt{(x-\alpha)(\beta-x)}\)</td><td>\(x = \alpha\cos^2\theta + \beta\sin^2\theta\)</td></tr>
+              <tr><td>\(x^{1/n}\) with sum of two terms</td><td>Expression inside bracket \(= t\)</td></tr>
+              <tr><td>\(\sqrt{\dfrac{x+a}{x+b}}\)</td><td>\(\dfrac{x+a}{x+b} = t\)</td></tr>
+              <tr><td>\(\dfrac{1}{x(x+a)}\) or \(\dfrac{1}{x\cdot x(x-a)}\)</td><td>\(x = a\tan^2\theta\) or \(a\cot^2\theta\)</td></tr>
+              <tr><td>\(\sqrt{x(a+x)}\) or \(\sqrt{x(a-x)}\) or \(\sqrt{x(x-a)}\)</td><td>\(x = a\sin^2\theta\) or \(a\cos^2\theta\)</td></tr>
+              <tr><td>\(\sqrt{2ax - x^2}\)</td><td>\(x = a(1-\cos\theta)\)</td></tr>
+              <tr><td>\((x\pm a)^{1/n}\) with \(n \in \mathbb{N}\), \(n > 1\)</td><td>Inner expression \(= t^n\)</td></tr>
+              <tr><td>\(\left(\dfrac{x-a}{x+b}\right)^{1/n}\)</td><td>\(\dfrac{x-a}{x+b} = t\)</td></tr>
+              <tr><td>\(x^m(a+bx^n)^p\), Case III</td><td>\(a + bx^n = t^k\)</td></tr>
+              <tr><td>\(x^m(a+bx^n)^p\), Case IV (\(\frac{m+1}{n}\) integer)</td><td>\(\dfrac{a}{x^n} + b = t^k\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Special Integrals -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Special Integrals</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>\(\displaystyle\int \frac{dx}{a^2+x^2}\)</td><td>\(\dfrac{1}{a}\tan^{-1}\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \frac{dx}{a^2-x^2}\)</td><td>\(\dfrac{1}{2a}\log\left|\dfrac{a+x}{a-x}\right| + C = \dfrac{1}{a}\tanh^{-1}\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \frac{dx}{x^2-a^2}\)</td><td>\(\dfrac{1}{2a}\log\left|\dfrac{x-a}{x+a}\right| + C = -\dfrac{1}{a}\coth^{-1}\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \frac{dx}{\sqrt{a^2-x^2}}\)</td><td>\(\sin^{-1}\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \frac{dx}{\sqrt{x^2-a^2}}\)</td><td>\(\log\left|x + \sqrt{x^2-a^2}\right| + C = \cosh^{-1}\dfrac{x}{a} + C\)</td></tr>
+              <tr><td>\(\displaystyle\int \frac{dx}{\sqrt{x^2+a^2}}\)</td><td>\(\log\left|x + \sqrt{x^2+a^2}\right| + C = \sinh^{-1}\dfrac{x}{a} + C\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Important Conversion Forms -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>Important Forms Converted into Special Integrals</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Form I:</strong> \(\displaystyle\int \frac{dx}{ax^2+bx+c}\) or \(\displaystyle\int \frac{dx}{\sqrt{ax^2+bx+c}}\)</p>
+          <p>Express \(ax^2+bx+c = a\!\left[\left(x+\dfrac{b}{2a}\right)^2 + \dfrac{4ac-b^2}{4a^2}\right]\) as sum/difference of squares.</p>
+
+          <p><strong>Form II:</strong> \(\displaystyle\int \frac{px+q}{ax^2+bx+c}\,dx\) or \(\displaystyle\int \frac{px+q}{\sqrt{ax^2+bx+c}}\,dx\)</p>
+          <p>Write \(px+q = \lambda \cdot \dfrac{d}{dx}(ax^2+bx+c) + \mu\), find \(\lambda, \mu\), then integrate.</p>
+
+          <p><strong>Form III:</strong> \(\displaystyle\int \frac{P(x)}{ax^2+bx+c}\,dx\) where \(\deg P \ge 2\)</p>
+          <p>Perform polynomial long division first to reduce to proper form.</p>
+
+          <p><strong>Form IV:</strong> \(\displaystyle\int \frac{dx}{a+b\sin^2 x},\ \displaystyle\int \frac{dx}{a+b\cos^2 x},\) etc.</p>
+          <p>Divide numerator and denominator by \(\cos^2 x\), then put \(t = \tan x \Rightarrow dt = \sec^2 x\,dx\).</p>
+
+          <p><strong>Form V:</strong> \(\displaystyle\int \frac{dx}{a+b\cos x},\ \displaystyle\int \frac{dx}{a+b\sin x},\) etc.</p>
+          <p>Put \(\sin x = \dfrac{2\tan(x/2)}{1+\tan^2(x/2)}\), \(\cos x = \dfrac{1-\tan^2(x/2)}{1+\tan^2(x/2)}\), then \(t = \tan\dfrac{x}{2} \Rightarrow dt = \dfrac{1}{2}\sec^2\dfrac{x}{2}\,dx\).</p>
+
+          <p><strong>Form VI:</strong> \(\displaystyle\int \frac{a\sin x + b\cos x + c}{d\sin x + e\cos x + f}\,dx\)</p>
+          <p>Write numerator \(= \lambda(\text{denominator}) + \mu(\text{derivative of denominator}) + \gamma\).</p>
+
+          <p><strong>Form VII:</strong> \(\displaystyle\int \frac{p\sin x + q\cos x + r}{a\sin x + b\cos x + c}\,dx\)</p>
+          <p>Write \(p\sin x + q\cos x + r = \lambda(a\sin x + b\cos x + c) + \mu(-a\cos x + b\sin x) + \gamma\).</p>
+          \[\Rightarrow \lambda\!\int dx + \mu\!\int\frac{-a\cos x + b\sin x}{a\sin x+b\cos x+c}\,dx + \gamma\!\int\frac{dx}{a\sin x+b\cos x+c}\]
+
+          <p><strong>Form VIII:</strong> \(\displaystyle\int \frac{x^2+1}{x^4+\lambda x^2+1}\,dx\), \(\displaystyle\int \frac{x^2-1}{x^4+\lambda x^2+1}\,dx\), etc.</p>
+          <p>Divide by \(x^2\), write denominator as \(\left(x \mp \dfrac{1}{x}\right)^2 \pm k\), introduce \(d\!\left(x \pm \dfrac{1}{x}\right)\).</p>
+
+          <p><strong>Form IX:</strong> \(\displaystyle\int\sqrt{\tan x}\,dx\), \(\displaystyle\int\sqrt{\cot x}\,dx\), etc.</p>
+          <p>Put \(\tan x = t^2\), then proceed as Form VIII.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Integration by Parts
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>2. Integration by Parts</h4>
+    </div>
+    <div class="card-body">
+      <p>Used to integrate the <strong>product of two functions</strong>:</p>
+      \[\int \underbrace{f(x)}_{\text{I}} \cdot \underbrace{g(x)}_{\text{II}}\,dx = f(x)\int g(x)\,dx - \int\left[\frac{d}{dx}f(x)\cdot\int g(x)\,dx\right]dx\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>ILATE Rule — Order of Priority for First Function</h5>
+        </div>
+        <div class="card-body">
+          <p>Choose the <strong>first function</strong> according to priority:</p>
+          <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+            <span class="badge bg-primary fs-6">I — Inverse trig</span>
+            <span class="text-muted fs-5">→</span>
+            <span class="badge bg-success fs-6">L — Logarithmic</span>
+            <span class="text-muted fs-5">→</span>
+            <span class="badge bg-warning text-dark fs-6">A — Algebraic</span>
+            <span class="text-muted fs-5">→</span>
+            <span class="badge bg-info fs-6">T — Trigonometric</span>
+            <span class="text-muted fs-5">→</span>
+            <span class="badge bg-danger fs-6">E — Exponential</span>
+          </div>
+          <ul>
+            <li>If one function is not directly integrable, take it as the first function.</li>
+            <li>If only one function is present (e.g. \(\int\log x\,dx\)), take \(1\) as the second function.</li>
+            <li>If both are integrable, choose the one whose derivative simplifies faster as the first function.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: e^x[f(x)+f'(x)] -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Integral of \(e^x[f(x) + f'(x)]\)</h5>
+        </div>
+        <div class="card-body">
+          \[\int e^x\{f(x) + f'(x)\}\,dx = e^x f(x) + C\]
+          <p>Similarly: \(\displaystyle\int \{xf'(x) + f(x)\}\,dx = xf(x) + C\)</p>
+        </div>
+      </div>
+
+      <!-- Nested: e^ax sin/cos -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Integrals of \(e^{ax}\sin(bx+c)\) and \(e^{ax}\cos(bx+c)\)</h5>
+        </div>
+        <div class="card-body">
+          \[\int e^{ax}\sin(bx+c)\,dx = \frac{e^{ax}}{a^2+b^2}\{a\sin(bx+c) - b\cos(bx+c)\} + k\]
+          \[\int e^{ax}\cos(bx+c)\,dx = \frac{e^{ax}}{a^2+b^2}\{a\cos(bx+c) + b\sin(bx+c)\} + k\]
+        </div>
+      </div>
+
+      <!-- Nested: Special Integrals by parts -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Special Integrals via Integration by Parts</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>\(\displaystyle\int\sqrt{x^2+a^2}\,dx\)</td>
+                <td>\(\dfrac{x}{2}\sqrt{x^2+a^2} + \dfrac{a^2}{2}\log\left|x+\sqrt{x^2+a^2}\right| + C\)</td>
+              </tr>
+              <tr>
+                <td>\(\displaystyle\int\sqrt{a^2-x^2}\,dx\)</td>
+                <td>\(\dfrac{x}{2}\sqrt{a^2-x^2} + \dfrac{a^2}{2}\sin^{-1}\dfrac{x}{a} + C\)</td>
+              </tr>
+              <tr>
+                <td>\(\displaystyle\int\sqrt{x^2-a^2}\,dx\)</td>
+                <td>\(\dfrac{x}{2}\sqrt{x^2-a^2} - \dfrac{a^2}{2}\log\left|x+\sqrt{x^2-a^2}\right| + C\)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mt-2"><strong>Reduction formulae from Form II (for above):</strong></p>
+          <p>\(\displaystyle\int(px+q)\sqrt{ax^2+bx+c}\,dx\): Write \(px+q = A\cdot\dfrac{d}{dx}(ax^2+bx+c) + B\), find \(A, B\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Integration by Partial Fractions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>3. Integration by Partial Fractions</h4>
+    </div>
+    <div class="card-body">
+      <p>Used to integrate \(\displaystyle\int\dfrac{P(x)}{Q(x)}\,dx\) where \(P(x)\) and \(Q(x)\) are polynomials.</p>
+      <ul>
+        <li><strong>Proper rational function:</strong> \(\deg P < \deg Q\).</li>
+        <li><strong>Improper rational function:</strong> \(\deg P \ge \deg Q\) → perform long division first to get \(\dfrac{P(x)}{Q(x)} = \varphi(x) + \dfrac{h(x)}{Q(x)}\).</li>
+      </ul>
+
+      <!-- Nested: Partial Fraction Types -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Partial Fraction Decomposition Table</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark">
+              <tr><th>#</th><th>Rational Function</th><th>Partial Fraction Form</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>(i)</td>
+                <td>\(\dfrac{px+q}{(x-a)(x-b)},\; a\ne b\)</td>
+                <td>\(\dfrac{A}{x-a} + \dfrac{B}{x-b}\)</td>
+              </tr>
+              <tr>
+                <td>(ii)</td>
+                <td>\(\dfrac{px^2+qx+r}{(x-a)(x-b)(x-c)},\; a\ne b\ne c\)</td>
+                <td>\(\dfrac{A}{x-a} + \dfrac{B}{x-b} + \dfrac{C}{x-c}\)</td>
+              </tr>
+              <tr>
+                <td>(iii)</td>
+                <td>\(\dfrac{px+q}{(x-a)^2}\)</td>
+                <td>\(\dfrac{A}{x-a} + \dfrac{B}{(x-a)^2}\)</td>
+              </tr>
+              <tr>
+                <td>(iv)</td>
+                <td>\(\dfrac{px^2+qx+r}{(x-a)^3}\)</td>
+                <td>\(\dfrac{A}{x-a} + \dfrac{B}{(x-a)^2} + \dfrac{C}{(x-a)^3}\)</td>
+              </tr>
+              <tr>
+                <td>(v)</td>
+                <td>\(\dfrac{px^2+qx+r}{(x-a)(x^2+bx+c)}\) (irreducible quadratic)</td>
+                <td>\(\dfrac{A}{x-a} + \dfrac{Bx+C}{x^2+bx+c}\)</td>
+              </tr>
+              <tr>
+                <td>(vi)</td>
+                <td>\(\dfrac{px^3+qx^2+rx+s}{(x^2+ax+b)(x^2+cx+d)}\)</td>
+                <td>\(\dfrac{Ax+B}{x^2+ax+b} + \dfrac{Cx+D}{x^2+cx+d}\)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mt-3"><strong>Shortcut (Cover-up method)</strong> for non-repeated linear factors: To find \(A_p\), put \(x = a_p\) in the numerator and in the denominator after deleting the factor \((x - a_p)\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Irrational Functions & Hyperbolic Integrals
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Irrational Functions &amp; Hyperbolic Integrals</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Irrational -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Integration of Irrational Algebraic Functions</h5>
+        </div>
+        <div class="card-body">
+          <p>Integrands of the form \(\displaystyle\int f\!\left\{x,\,(ax+b)^{1/n}\right\}\,dx\): put \((ax+b)^{1/n} = t\).</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Form</th><th>Substitution</th></tr></thead>
+            <tbody>
+              <tr><td>\(\displaystyle\int\frac{dx}{(Ax+B)\sqrt{Cx+D}}\)</td><td>\(Cx+D = t^2\)</td></tr>
+              <tr><td>\(\displaystyle\int\frac{dx}{(Ax^2+B)\sqrt{Cx+D}}\)</td><td>\(Cx+D = t^2\)</td></tr>
+              <tr><td>\(\displaystyle\int\frac{dx}{(x-r)^k\sqrt{Ax^2+Bx+C}}\)</td><td>\(x - r = \dfrac{1}{t}\)</td></tr>
+              <tr><td>\(\displaystyle\int\frac{dx}{(Ax^2+B)\sqrt{Cx^2+D}}\)</td><td>\(x = \dfrac{1}{t}\), then \(C + Dt^2 = u^2\)</td></tr>
+              <tr><td>\(\displaystyle\int x^m(a+bx^n)^p\,dx\), \(p \in \mathbb{Z}^-\)</td><td>\(x^k = t\) where \(k = \text{LCM of denom of } m, n\)</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-2"><strong>Binomial integral \(x^m(a+bx^n)^p\):</strong></p>
+          <ul>
+            <li><strong>Case I:</strong> \(p \in \mathbb{N}\) → expand using binomial theorem.</li>
+            <li><strong>Case II:</strong> \(p\) = negative integer, \(m, n\) rational → put \(x^k = t\).</li>
+            <li><strong>Case III:</strong> \(\dfrac{m+1}{n}\) is an integer → put \((a+bx^n) = t^k\).</li>
+            <li><strong>Case IV:</strong> \(\dfrac{m+1}{n} + p\) is an integer → put \(\dfrac{a}{x^n}+b = t^k\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Hyperbolic -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Integration of Hyperbolic Functions</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Integral</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>\(\displaystyle\int\sinh x\,dx\)</td><td>\(\cosh x + C\)</td></tr>
+              <tr><td>\(\displaystyle\int\cosh x\,dx\)</td><td>\(\sinh x + C\)</td></tr>
+              <tr><td>\(\displaystyle\int\text{sech}^2 x\,dx\)</td><td>\(\tanh x + C\)</td></tr>
+              <tr><td>\(\displaystyle\int\text{cosech}^2 x\,dx\)</td><td>\(-\coth x + C\)</td></tr>
+              <tr><td>\(\displaystyle\int\text{sech}\,x\tanh x\,dx\)</td><td>\(-\text{sech}\,x + C\)</td></tr>
+              <tr><td>\(\displaystyle\int\text{cosech}\,x\coth x\,dx\)</td><td>\(-\text{cosech}\,x + C\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Important Results of Integration
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Important Results of Integration</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Key Results -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Key Results</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Anti-derivative of signum function exists only on intervals <strong>not containing</strong> \(x = 0\).</li>
+            <li>Anti-derivative of an <strong>odd</strong> function is always <strong>even</strong>; of an <strong>even</strong> function is always <strong>odd</strong>.</li>
+            <li><strong>Reduction formula:</strong> If \(I_n = \displaystyle\int x^n e^{ax}\,dx\), then \(I_n = \dfrac{x^n e^{ax}}{a} - \dfrac{n}{a}I_{n-1}\)</li>
+            <li>\(\displaystyle\int \log x\,dx = x\log x - x + C\)</li>
+            <li>\(\displaystyle\int \frac{1}{\log x}\,dx = x\log(\log x) + \frac{x}{\log x} + \frac{x^2}{2(\log x)^2\cdot 2!} + \frac{x^3}{3(\log x)^3\cdot 3!} + \cdots\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: sin/cos ratio -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>\(\displaystyle\int\frac{a\cos x + b\sin x}{c\cos x + d\sin x}\,dx\)</h5>
+        </div>
+        <div class="card-body">
+          \[\int\frac{a\cos x+b\sin x}{c\cos x+d\sin x}\,dx = \frac{ac+bd}{c^2+d^2}\,x + \frac{bc-ad}{c^2+d^2}\log|c\cos x + d\sin x| + k\]
+        </div>
+      </div>
+
+      <!-- Nested: Reduction for sin^m cos^n -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Reduction Formula for \(\displaystyle\int\sin^m x\cos^n x\,dx\)</h5>
+        </div>
+        <div class="card-body">
+          \[\int\sin^n x\cos^m x\,dx = \frac{\sin^{n-1}x\cos^{m+1}x}{n+m-1} \cdot \frac{1}{-(m+1)} + \cdots\]
+          <p>Specifically:</p>
+          <ul>
+            <li>\(\displaystyle\int\sin^n x\,dx = -\dfrac{1}{n}\sin^{n-1}x\cos x + \dfrac{n-1}{n}\displaystyle\int\sin^{n-2}x\,dx\)</li>
+            <li>\(\displaystyle\int\cos^n x\,dx = \dfrac{1}{n}\cos^{n-1}x\sin x + \dfrac{n-1}{n}\displaystyle\int\cos^{n-2}x\,dx\)</li>
+            <li>\(\displaystyle\int\tan^n x\,dx = \dfrac{\tan^{n-1}x}{n-1} - \displaystyle\int\tan^{n-2}x\,dx\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: a^x cos/sin -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Integrals of \(a^x\sin(bx+c)\) and \(a^x\cos(bx+c)\)</h5>
+        </div>
+        <div class="card-body">
+          \[\int a^x\cos(bx+c)\,dx = \frac{a^x}{(\log a)^2+b^2}\left[(\log a)\cos(bx+c) + b\sin(bx+c)\right] + k\]
+          \[\int a^x\sin(bx+c)\,dx = \frac{a^x}{(\log a)^2+b^2}\left[(\log a)\sin(bx+c) - b\cos(bx+c)\right] + k\]
+        </div>
+      </div>
+
+      <!-- Nested: xe^ax cos/sin -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Integrals of \(xe^{ax}\sin(bx+c)\) and \(xe^{ax}\cos(bx+c)\)</h5>
+        </div>
+        <div class="card-body">
+          \[\begin{aligned}
+            \int xe^{ax}\cos(bx+c)\,dx &= \frac{xe^{ax}}{a^2+b^2}\Big[a\cos(bx+c)+b\sin(bx+c)\Big]\\
+            &\quad - \frac{e^{ax}}{(a^2+b^2)^2}\Big[(a^2-b^2)\cos(bx+c)+2ab\sin(bx+c)\Big] + k
+          \end{aligned}\]
+          \[\begin{aligned}
+            \int xe^{ax}\sin(bx+c)\,dx &= \frac{xe^{ax}}{a^2+b^2}\Big[a\sin(bx+c)-b\cos(bx+c)\Big]\\
+            &\quad - \frac{e^{ax}}{(a^2+b^2)^2}\Big[(a^2-b^2)\sin(bx+c)-2ab\cos(bx+c)\Big] + k
+          \end{aligned}\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

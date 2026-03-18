@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Probability</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Probability</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Basic Definitions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Experiments &amp; Basic Definitions</h4>
+    </div>
+    <div class="card-body">
+      <p>An <strong>experiment</strong> is an operation which produces well-defined results or outcomes.</p>
+
+      <!-- Nested: Types of Experiments -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Types of Experiments</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Deterministic Experiment:</strong> When repeated under identical conditions, always produces the same result.</li>
+            <li><strong>Probabilistic / Random Experiment:</strong> When repeated under identical conditions, may produce different outcomes — but every outcome is one of several possible outcomes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Key Terms -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Key Definitions</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Trial:</strong> Performing an experiment once.</li>
+            <li><strong>Sample Space (\(S\)):</strong> The set of all possible outcomes of a random experiment.</li>
+            <li><strong>Sample Point:</strong> Each element of the sample space \(S\).</li>
+            <li><strong>Event:</strong> Any subset of the sample space \(S\).</li>
+            <li><strong>Elementary (Simple) Event:</strong> An event containing exactly one sample point.</li>
+            <li><strong>Compound Event:</strong> An event containing more than one sample point.</li>
+            <li><strong>Occurrence of an Event:</strong> An event \(E\) occurs if any one of its elementary events is the outcome.</li>
+            <li><strong>Certain (Sure) Event:</strong> An event that must occur whatever the outcome — i.e. \(S\) itself. \(P(\text{sure event}) = 1\).</li>
+            <li><strong>Impossible Event:</strong> An event that can never occur — i.e. \(\phi\). \(P(\phi) = 0\).</li>
+            <li><strong>Favourable Outcomes:</strong> For event \(E \subset S\), the elementary events belonging to \(E\).</li>
+            <li><strong>Equally Likely Outcomes:</strong> Each outcome is as likely to occur as any other.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Algebra of Events -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Algebra of Events</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Not A (Complement):</strong> \(A' = S - A\)</li>
+            <li><strong>A or B:</strong> \(A \cup B\)</li>
+            <li><strong>A and B:</strong> \(A \cap B\)</li>
+            <li><strong>A but not B:</strong> \(A - B = A \cap B'\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Classical & Axiomatic Probability
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Classical &amp; Axiomatic Probability</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Classical -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Theoretical (Classical) Approach</h5>
+        </div>
+        <div class="card-body">
+          <p>If there are \(n\) equally likely outcomes and \(m\) are favourable to event \(A\):</p>
+          \[P(A) = \frac{m}{n} = \frac{\text{Number of favourable outcomes}}{\text{Total number of possible outcomes}}\]
+          <p><em>Valid only when outcomes are equally likely and the total number is known.</em></p>
+        </div>
+      </div>
+
+      <!-- Nested: Axiomatic -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Axiomatic Approach</h5>
+        </div>
+        <div class="card-body">
+          <p>For sample space \(S = \{w_1, w_2, \ldots, w_n\}\):</p>
+          <ul>
+            <li>\(0 \le P(w_i) \le 1\) for each \(w_i \in S\)</li>
+            <li>\(P(w_1) + P(w_2) + \cdots + P(w_n) = 1\)</li>
+            <li>For any event \(A\): \(P(A) = \displaystyle\sum_{w_i \in A} P(w_i)\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Types of Events & Their Probabilities
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Types of Events &amp; Their Probabilities</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Equally Likely -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Equally Likely Events</h5>
+        </div>
+        <div class="card-body">
+          <p>Events \(E\) and \(F\) are equally likely if \(P(E) = P(F)\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Mutually Exclusive -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Mutually Exclusive Events</h5>
+        </div>
+        <div class="card-body">
+          <p>Events are mutually exclusive if the occurrence of one prevents the occurrence of another:</p>
+          \[A \cap B = \phi \implies P(A \cap B) = 0\]
+        </div>
+      </div>
+
+      <!-- Nested: Exhaustive Events -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Exhaustive Events</h5>
+        </div>
+        <div class="card-body">
+          <p>Events \(E_1, E_2, \ldots, E_n\) are exhaustive if at least one of them must occur:</p>
+          \[E_1 \cup E_2 \cup \cdots \cup E_n = S \implies P(E_1) + P(E_2) + \cdots + P(E_n) = 1\]
+          <p>If \(E_i \cap E_j = \phi\) for \(i \ne j\) and \(\bigcup_{i=1}^n E_i = S\), the events are called <strong>mutually exclusive and exhaustive</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Nested: Independent Events -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Independent Events</h5>
+        </div>
+        <div class="card-body">
+          <p>Events \(A\) and \(B\) are <strong>independent</strong> if the occurrence/non-occurrence of one does not affect the other:</p>
+          \[P(A \cap B) = P(A)\cdot P(B)\]
+          <p>If \(A\) and \(B\) are independent, then so are: \(A\) and \(B'\); \(A'\) and \(B\); \(A'\) and \(B'\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Complementary -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Complementary Event</h5>
+        </div>
+        <div class="card-body">
+          <p>The complement of \(A\) is \(A' = \{w \in S : w \notin A\}\).</p>
+          <ul>
+            <li>\(P(A) + P(A') = 1\)</li>
+            <li>\(P(A \cap A') = P(\phi) = 0\)</li>
+            <li>\(P(A \cup A') = P(S) = 1\)</li>
+            <li>\(P(A'') = P(A)\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Important Results on Probability
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Important Results on Probability</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Addition Theorem -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Addition Theorem</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>For two events:</strong></p>
+          \[P(A \cup B) = P(A) + P(B) - P(A \cap B)\]
+          <p><strong>For three events:</strong></p>
+          \[P(A \cup B \cup C) = P(A)+P(B)+P(C)-P(A\cap B)-P(B\cap C)-P(A\cap C)+P(A\cap B\cap C)\]
+          <p><strong>For \(n\) events (Inclusion-Exclusion):</strong></p>
+          \[P\!\left(\bigcup_{i=1}^n A_i\right) = \sum_i P(A_i) - \sum_{i<j}P(A_i\cap A_j) + \sum_{i<j<k}P(A_i\cap A_j\cap A_k) - \cdots + (-1)^{n-1}P(A_1\cap\cdots\cap A_n)\]
+        </div>
+      </div>
+
+      <!-- Nested: Two Event Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Results for Two Events \(A\) and \(B\)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\(P(A \cap B') = P(A) - P(A \cap B)\)</li>
+            <li>\(P(A' \cap B) = P(B) - P(A \cap B)\)</li>
+            <li>\(P(A' \cap B') = 1 - P(A \cup B)\)</li>
+            <li>\(P(A \cup B) = P(A \cap B') + P(A' \cap B) + P(A \cap B)\)</li>
+            <li>\(P(A) = P(A \cap B) + P(A \cap B')\)</li>
+            <li>\(P(B) = P(A \cap B) + P(A' \cap B)\)</li>
+            <li><strong>Exactly one of \(A, B\) occurs:</strong>
+              \[P(A \cap B') + P(A' \cap B) = P(A) + P(B) - 2P(A \cap B)\]
+            </li>
+            <li><strong>Neither \(A\) nor \(B\) occurs:</strong>
+              \[P(A' \cap B') = 1 - P(A \cup B)\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Three Event Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Results for Three Events \(A, B, C\)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Exactly one of \(A, B, C\) occurs:</strong>
+              \[\begin{aligned}
+                &P(A)+P(B)+P(C)\\
+                &\quad -2P(A\cap B)-2P(B\cap C)-2P(A\cap C)+3P(A\cap B\cap C)
+              \end{aligned}\]
+            </li>
+            <li><strong>At least two of \(A, B, C\) occur:</strong>
+              \[P(A\cap B)+P(B\cap C)+P(C\cap A)-2P(A\cap B\cap C)\]
+            </li>
+            <li><strong>Exactly two of \(A, B, C\) occur:</strong>
+              \[P(A\cap B)+P(B\cap C)+P(A\cap C)-3P(A\cap B\cap C)\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Monotonicity & Boole's -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Monotonicity &amp; Inequalities</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>If \(B \subseteq A\): \(P(A \cap B') = P(A) - P(B)\) and \(P(B) \le P(A)\)</li>
+            <li>\(P(A \cap B) \le P(A) \le P(A \cup B) \le P(A) + P(B)\)</li>
+            <li><strong>Mutually exclusive events:</strong> \(P(A_1 \cup A_2 \cup \cdots \cup A_n) = \sum P(A_i)\)</li>
+            <li><strong>Independent events — P(at least one occurs):</strong>
+              \[P(A_1 \cup A_2 \cup \cdots \cup A_n) = 1 - P(A_1')P(A_2')\cdots P(A_n')\]
+            </li>
+            <li><strong>Bonferroni's Inequality:</strong>
+              \[P(A_1 \cap A_2 \cap \cdots \cap A_n) \ge \sum_{i=1}^n P(A_i) - (n-1)\]
+            </li>
+            <li><strong>Boole's Inequality:</strong>
+              \[P(A_1 \cap A_2 \cap \cdots \cap A_n) \ge 1 - P(A_1') - P(A_2') - \cdots - P(A_n')\]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Odds, Conditional Probability & Multiplication Theorem
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Odds, Conditional Probability &amp; Multiplication Theorem</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Odds -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Odds in Favour and Against</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Odds in favour of \(E\):</strong> \(\dfrac{P(E)}{P(E')}\)</li>
+            <li><strong>Odds against \(E\):</strong> \(\dfrac{P(E')}{P(E)}\)</li>
+            <li>If odds in favour are \(a : b\), then \(P(E) = \dfrac{a}{a+b}\) and \(P(E') = \dfrac{b}{a+b}\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Conditional Probability -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Conditional Probability</h5>
+        </div>
+        <div class="card-body">
+          <p>The probability of event \(A\) given that \(B\) has already occurred \((P(B) \ne 0)\):</p>
+          \[P(A|B) = \frac{P(A \cap B)}{P(B)}\]
+          <p>Similarly: \(P(B|A) = \dfrac{P(A \cap B)}{P(A)},\quad P(A) \ne 0\)</p>
+          <p><strong>Note:</strong> If \(A\) and \(B\) are independent, then \(P(A|B) = P(A)\) and \(P(B|A) = P(B)\).</p>
+          <p><strong>Properties of Conditional Probability:</strong></p>
+          <ul>
+            <li>\(P(A'|B) + P(A|B) = 1\)</li>
+            <li>\(P((A \cup B)|F) = P(A|F) + P(B|F) - P((A \cap B)|F)\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Multiplication Theorem -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Multiplication Theorem</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>For two events:</strong></p>
+          \[P(A \cap B) = P(A)\cdot P(B|A) = P(B)\cdot P(A|B)\]
+          <p><strong>For \(n\) events:</strong></p>
+          \[\begin{aligned}
+            P(A_1 \cap A_2 \cap \cdots \cap A_n) = &\;P(A_1)\cdot P(A_2|A_1)\cdot P(A_3|A_1\cap A_2)\\
+            &\cdots P(A_n|A_1\cap A_2\cap\cdots\cap A_{n-1})
+          \end{aligned}\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Partition, Total Probability & Bayes' Theorem
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Partition, Total Probability &amp; Bayes' Theorem</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Partition -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-info text-white">
+          <h5>Partition of a Sample Space</h5>
+        </div>
+        <div class="card-body">
+          <p>Events \(A_1, A_2, \ldots, A_n\) form a <strong>partition</strong> of \(S\) if:</p>
+          <ul>
+            <li>\(A_i \cap A_j = \phi\) for \(i \ne j\) (pairwise disjoint)</li>
+            <li>\(A_1 \cup A_2 \cup \cdots \cup A_n = S\) (exhaustive)</li>
+            <li>\(P(A_i) > 0\) for all \(i = 1, 2, \ldots, n\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Total Probability -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Theorem of Total Probability</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(E_1, E_2, \ldots, E_n\) be a partition of \(S\). If \(A\) is any event, then:</p>
+          \[P(A) = \sum_{r=1}^{n} P(E_r)\cdot P(A|E_r)\]
+          \[= P(E_1)P(A|E_1) + P(E_2)P(A|E_2) + \cdots + P(E_n)P(A|E_n)\]
+        </div>
+      </div>
+
+      <!-- Nested: Bayes' Theorem -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Bayes' Theorem</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \(E_1, E_2, \ldots, E_n\) be a partition of \(S\) and \(A\) be any event. The probability of \(E_i\) given \(A\) has occurred:</p>
+          \[P(E_i|A) = \frac{P(E_i)\cdot P(A|E_i)}{\displaystyle\sum_{i=1}^{n} P(E_i)\cdot P(A|E_i)}, \quad i = 1, 2, \ldots, n\]
+          <ul>
+            <li>\(P(E_i)\) is called the <strong>priori probability</strong> (known before the experiment).</li>
+            <li>\(P(E_i|A)\) is called the <strong>posteriori probability</strong> (updated after observing \(A\)).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Random Variable & Probability Distribution
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Random Variable &amp; Probability Distribution</h4>
+    </div>
+    <div class="card-body">
+      <p>A <strong>random variable</strong> is a real-valued function \(X : S \to \mathbb{R}\) defined on the sample space \(S\).</p>
+      <ul>
+        <li><strong>Discrete Random Variable:</strong> Range is finite or countably infinite (e.g. number of heads in coin tosses).</li>
+        <li><strong>Continuous Random Variable:</strong> Range is an interval \((a, b) \subseteq \mathbb{R}\).</li>
+      </ul>
+
+      <!-- Nested: Distribution Table -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Probability Distribution</h5>
+        </div>
+        <div class="card-body">
+          <p>If \(X\) takes values \(x_1, x_2, \ldots, x_n\) with probabilities \(p_1, p_2, \ldots, p_n\):</p>
+          <table class="table table-bordered table-sm text-center mt-2">
+            <thead class="table-dark">
+              <tr><th>\(X\)</th><th>\(x_1\)</th><th>\(x_2\)</th><th>\(x_3\)</th><th>\(\cdots\)</th><th>\(x_n\)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>\(P(X)\)</td><td>\(p_1\)</td><td>\(p_2\)</td><td>\(p_3\)</td><td>\(\cdots\)</td><td>\(p_n\)</td></tr>
+            </tbody>
+          </table>
+          <p>with \(\displaystyle\sum_{i=1}^n p_i = 1\) and \(0 \le p_i \le 1\).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Mean, Variance, SD -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Mean, Variance &amp; Standard Deviation</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Mean (Mathematical Expectation):</strong></p>
+          \[\mu = E(X) = \sum_{i=1}^n p_i x_i\]
+          <p><strong>Variance:</strong></p>
+          \[\sigma^2 = V(X) = E(X^2) - [E(X)]^2 \quad\text{where } E(X^2) = \sum_{i=1}^n x_i^2\,p_i\]
+          <p><strong>Standard Deviation:</strong></p>
+          \[\sigma = \sqrt{V(X)} = \sqrt{E(X^2) - [E(X)]^2}\]
+        </div>
+      </div>
+
+      <!-- Nested: Transformations -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Important Results on Transformations</h5>
+        </div>
+        <div class="card-body">
+          <p>If \(Y = aX + b\):</p>
+          <ul>
+            <li>\(E(Y) = aE(X) + b\)</li>
+            <li>\(V(Y) = a^2 V(X)\)</li>
+            <li>\(\sigma_Y = |a|\,\sigma_X\)</li>
+          </ul>
+          <p>If \(Y = aX^2 + bX + c\):</p>
+          \[E(Y) = aE(X^2) + bE(X) + c\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Bernoulli Trials & Binomial Distribution
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Bernoulli Trials &amp; Binomial Distribution</h4>
+    </div>
+    <div class="card-body">
+      <p>Trials are <strong>Bernoulli trials</strong> if:</p>
+      <ul>
+        <li>Number of trials is finite.</li>
+        <li>Trials are independent.</li>
+        <li>Each trial has exactly two outcomes: <em>success</em> or <em>failure</em>.</li>
+        <li>Probability of success remains the same in each trial.</li>
+      </ul>
+
+      <!-- Nested: Binomial Distribution -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Binomial Distribution \(B(n, p)\)</h5>
+        </div>
+        <div class="card-body">
+          <p>Probability of exactly \(r\) successes in \(n\) Bernoulli trials:</p>
+          \[P(X = r) = {}^nC_r\,p^r\,q^{n-r}, \quad r = 0, 1, 2, \ldots, n\]
+          <p>where \(p\) = probability of success, \(q = 1-p\) = probability of failure.</p>
+          <table class="table table-bordered table-sm text-center mt-3">
+            <thead class="table-dark">
+              <tr><th>\(X\)</th><th>0</th><th>1</th><th>2</th><th>\(\cdots\)</th><th>\(n\)</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\(P(X)\)</td>
+                <td>\({}^nC_0\,p^0\,q^n\)</td>
+                <td>\({}^nC_1\,p^1\,q^{n-1}\)</td>
+                <td>\({}^nC_2\,p^2\,q^{n-2}\)</td>
+                <td>\(\cdots\)</td>
+                <td>\({}^nC_n\,p^n\)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Nested: Binomial Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Important Results of Binomial Distribution</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark">
+              <tr><th>Parameter</th><th>Formula</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Mean</td><td>\(\mu = E(X) = np\)</td></tr>
+              <tr><td>Variance</td><td>\(\sigma^2 = npq\)</td></tr>
+              <tr><td>Standard Deviation</td><td>\(\sigma = \sqrt{npq}\)</td></tr>
+              <tr><td>Mean &gt; Variance</td><td>Always true since \(q < 1\)</td></tr>
+              <tr><td>If \(p = q\)</td><td>\(P(X=r) = {}^nC_r\,p^n\)</td></tr>
+              <tr><td>Total successes in \(N\) attempts</td><td>\(N\cdot{}^nC_r\,p^r\,q^{n-r}\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 9: Geometrical Probability & Important Results
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Geometrical Probability &amp; Important Results</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Geometrical -->
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white">
+          <h5>Geometrical Probability</h5>
+        </div>
+        <div class="card-body">
+          <p>When the total number of outcomes is infinite:</p>
+          \[P = \frac{\text{Measure of region occupied by the event}}{\text{Measure of the whole region}}\]
+          <p>where <em>measure</em> means length (1D), area (2D), or volume (3D).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Common Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Standard Results to Remember</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Two dice — number of ways of getting total \(r\):</strong></p>
+          <ul>
+            <li>\((r - 1)\) ways, if \(2 \le r \le 7\)</li>
+            <li>\((13 - r)\) ways, if \(8 \le r \le 12\)</li>
+          </ul>
+
+          <p class="mt-3"><strong>Playing Cards (pack of 52):</strong></p>
+          <ul>
+            <li>4 suits (spades, hearts, diamonds, clubs), 13 cards each.</li>
+            <li>Face cards: King, Queen, Jack — total 12 face cards.</li>
+            <li>Honour cards: Ace, King, Queen, Jack — total 16 (4 per suit).</li>
+            <li>Red cards (hearts + diamonds): 26 &nbsp;|&nbsp; Black cards (clubs + spades): 26.</li>
+          </ul>
+
+          <p class="mt-3"><strong>\(n\) letters in \(n\) addressed envelopes:</strong></p>
+          <ul>
+            <li>P(all in right envelopes) \(= \dfrac{1}{n!}\)</li>
+            <li>P(at least one in wrong envelope) \(= 1 - \dfrac{1}{n!}\)</li>
+            <li>P(all in wrong envelopes — derangement) \(= \dfrac{1}{2!} - \dfrac{1}{3!} + \cdots + \dfrac{(-1)^n}{n!}\)</li>
+            <li>P(exactly \(r\) in right envelopes) \(= \dfrac{1}{r!}\!\left(\dfrac{1}{2!}-\dfrac{1}{3!}+\cdots+\dfrac{(-1)^{n-r}}{(n-r)!}\right)\)</li>
+          </ul>
+
+          <p class="mt-3"><strong>Selection of shoes from \(n\) pairs (\(k\) selected):</strong></p>
+          <ul>
+            <li>P(no complete pair) \(= \dfrac{2^k\cdot{}^nC_k}{{}^{2n}C_k}\)</li>
+            <li>P(at least one complete pair) \(= 1 - \dfrac{2^k\cdot{}^nC_k}{{}^{2n}C_k}\)</li>
+          </ul>
+
+          <p class="mt-3"><strong>Mappings from set \(A\) (size \(m\)) to set \(B\) (size \(n\)), \(n \ge m\):</strong></p>
+          <ul>
+            <li>P(one-one function) \(= \dfrac{{}^nP_m}{n^m}\)</li>
+            <li>P(many-one function) \(= 1 - \dfrac{{}^nP_m}{n^m}\)</li>
+            <li>P(constant function) \(= \dfrac{n}{n^m}\)</li>
+            <li>P(bijective function) \(= \dfrac{n!}{n^n}\) (when \(m = n\))</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

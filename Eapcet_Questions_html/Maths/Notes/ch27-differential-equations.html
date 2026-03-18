@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Differential Equations</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Differential Equations</h1>
+
+  <!-- CARD 1: Basics -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Introduction — Order, Degree &amp; Types</h4></div>
+    <div class="card-body">
+      <p>A <strong>differential equation</strong> involves an independent variable, a dependent variable, and differential coefficients of the dependent variable w.r.t. the independent variable.</p>
+      <ul>
+        <li><strong>Order:</strong> The order of the highest derivative in the equation (always a positive integer).</li>
+        <li><strong>Degree:</strong> The exponent of the highest-order derivative, when the equation is a polynomial in derivatives. (Not defined if the equation is not polynomial in derivatives — e.g. \(\cos\!\left(\dfrac{dy}{dx}\right) = 0\).)</li>
+      </ul>
+      <p><em>Example:</em> \(\left(\dfrac{d^3y}{dx^3}\right)^2 + \left(\dfrac{d^2y}{dx^2}\right)^3 = 0\) has <strong>order 3, degree 2</strong>.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Linear vs Non-Linear</h5></div>
+        <div class="card-body">
+          <p>A DE is <strong>linear</strong> if the dependent variable and all its derivatives appear in the first power with no products between them. General linear DE of order \(n\):</p>
+          \[P_0\frac{d^ny}{dx^n} + P_1\frac{d^{n-1}y}{dx^{n-1}} + \cdots + P_{n-1}\frac{dy}{dx} + P_ny = Q\]
+          <p>where \(P_0, P_1, \ldots, P_n\) and \(Q\) are functions of \(x\) only (or constants).</p>
+          <p>A linear DE is always of the first degree, but a first-degree DE need not be linear.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>General &amp; Particular Solution</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>General Solution:</strong> Contains as many arbitrary constants as the order of the DE.</li>
+            <li><strong>Particular Solution:</strong> Obtained by assigning specific values to the arbitrary constants in the general solution.</li>
+          </ul>
+          <p><strong>Formation:</strong> To form a DE from \(f(x, y, c_1, c_2, \ldots, c_n) = 0\), differentiate \(n\) times and eliminate the \(n\) constants.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Standard Methods -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Methods of Solution — First Order &amp; First Degree</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>1. Exact Differential Form</h5></div>
+        <div class="card-body">
+          <p>If the DE can be written as \(f_1(x,y)\,d[f_1(x,y)] + f_2(x,y)\,d[f_2(x,y)] + \cdots = 0\), integrate each term separately. Key exact differentials:</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Expression</th><th>Exact Differential</th></tr></thead>
+            <tbody>
+              <tr><td>\(x\,dy + y\,dx\)</td><td>\(d(xy)\)</td></tr>
+              <tr><td>\(x\,dy - y\,dx\)</td><td>\(d\!\left(\dfrac{y}{x}\right) \cdot x^2\) or \(d\!\left(\dfrac{x}{y}\right) \cdot (-y^2)\)</td></tr>
+              <tr><td>\(dx + dy\)</td><td>\(d(x+y)\)</td></tr>
+              <tr><td>\(\dfrac{x\,dy - y\,dx}{x^2+y^2}\)</td><td>\(d\!\left(\tan^{-1}\dfrac{y}{x}\right)\)</td></tr>
+              <tr><td>\(\dfrac{y\,dx - x\,dy}{x^2+y^2}\)</td><td>\(d\!\left(\tan^{-1}\dfrac{x}{y}\right)\)</td></tr>
+              <tr><td>\(\dfrac{x\,dx + y\,dy}{x^2+y^2}\)</td><td>\(d\!\left(\dfrac{\log(x^2+y^2)}{2}\right)\)</td></tr>
+              <tr><td>\(\dfrac{x\,dy + y\,dx}{xy}\)</td><td>\(d(\log xy)\)</td></tr>
+              <tr><td>\(\dfrac{x\,dy - y\,dx}{xy}\)</td><td>\(d\!\left(\log\dfrac{y}{x}\right)\)</td></tr>
+              <tr><td>\(\dfrac{-y\,dx + x\,dy}{x^2-y^2}\)</td><td>\(d\!\left(\dfrac{1}{2}\log\dfrac{x+y}{x-y}\right)\)</td></tr>
+              <tr><td>\(\dfrac{x\,dy - y\,dx}{x^2-y^2}\)</td><td>\(d\!\left(\dfrac{1}{2}\log\left|\dfrac{x-y}{x+y}\right|\right)\)</td></tr>
+              <tr><td>\(x\,dx + y\,dy\)</td><td>\(d\!\left(\dfrac{x^2+y^2}{2}\right)\)</td></tr>
+              <tr><td>\(x^{m-1}y^{n-1}(my\,dx + nx\,dy)\)</td><td>\(d(x^m y^n)\)</td></tr>
+              <tr><td>\(ye^x\,dx + e^x\,dy\)</td><td>\(d(ye^x)\)</td></tr>
+              <tr><td>\(xe^y\,dy + e^y\,dx\)</td><td>\(d(xe^y)\)</td></tr>
+            </tbody>
+          </table>
+          <p>Also: \(\dfrac{f'(x,y)}{[f(x,y)]^n}\,d[f(x,y)] = d\!\left[\dfrac{[f(x,y)]^{1-n}}{1-n}\right]\) and \(\dfrac{dx}{x^2} - \dfrac{dy}{y^2} = d\!\left(\dfrac{1}{y} - \dfrac{1}{x}\right)\)</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>2. Variables Separable</h5></div>
+        <div class="card-body">
+          <p>If the DE reduces to \(f(x)\,dx = g(y)\,dy\), integrate both sides:</p>
+          \[\int f(x)\,dx = \int g(y)\,dy + C\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>3. Reducible to Variables Separable — \(dy/dx = f(ax+by+c)\)</h5></div>
+        <div class="card-body">
+          <p>Substitute \(z = ax + by + c \Rightarrow \dfrac{dz}{dx} = a + b\dfrac{dy}{dx}\). The equation becomes:</p>
+          \[\frac{dz}{dx} = a + b\,f(z) \implies \frac{dz}{bf(z)+a} = dx\]
+          <p>which is now separable.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>4. Homogeneous Differential Equation</h5></div>
+        <div class="card-body">
+          <p>DE of the form \(\dfrac{dy}{dx} = \dfrac{f(x,y)}{g(x,y)}\) where \(f\) and \(g\) are homogeneous of the same degree, i.e. \(\dfrac{dy}{dx} = F\!\left(\dfrac{y}{x}\right)\).</p>
+          <p><strong>Solution:</strong> Put \(y = vx \Rightarrow \dfrac{dy}{dx} = v + x\dfrac{dv}{dx}\). Equation becomes:</p>
+          \[v + x\frac{dv}{dx} = F(v) \implies \frac{dv}{F(v)-v} = \frac{dx}{x}\]
+          <p>which is separable. Similarly for \(\dfrac{dx}{dy} = G\!\left(\dfrac{x}{y}\right)\), put \(x = vy\).</p>
+          <p><em>Note:</em> \(f(x,y)\) is homogeneous of degree \(n\) if \(f(\lambda x, \lambda y) = \lambda^n f(x,y)\).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>5. Reducible to Homogeneous Form</h5></div>
+        <div class="card-body">
+          <p>For \(\dfrac{dy}{dx} = \dfrac{a_1x+b_1y+c_1}{a_2x+b_2y+c_2}\) with \(\dfrac{a_1}{a_2} \ne \dfrac{b_1}{b_2}\):</p>
+          <p>Put \(x = X+h\), \(y = Y+k\) and choose \(h, k\) to make constant terms vanish:</p>
+          \[h = \frac{b_1c_2 - b_2c_1}{a_1b_2 - a_2b_1}, \qquad k = \frac{c_1a_2 - c_2a_1}{a_1b_2 - a_2b_1}\]
+          <p>Equation becomes homogeneous in \(X, Y\).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>6. Linear Differential Equation</h5></div>
+        <div class="card-body">
+          <p><strong>Form (i):</strong> \(\dfrac{dy}{dx} + Py = Q\), where \(P, Q\) are functions of \(x\).</p>
+          \[\text{Integrating Factor (IF)} = e^{\int P\,dx}\]
+          \[\text{Solution: } y\cdot\text{IF} = \int Q\cdot\text{IF}\,dx + C\]
+          <p><strong>Form (ii):</strong> \(\dfrac{dx}{dy} + Rx = S\), where \(R, S\) are functions of \(y\).</p>
+          \[\text{IF} = e^{\int R\,dy}, \qquad x\cdot\text{IF} = \int S\cdot\text{IF}\,dy + C\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>7. Reducible to Linear Form</h5></div>
+        <div class="card-body">
+          <p>Equation of the form \(f'(y)\dfrac{dy}{dx} + f(y)P = Q\) (where \(P, Q\) are functions of \(x\)):</p>
+          <p>Substitute \(u = f(y) \Rightarrow \dfrac{du}{dx} = f'(y)\dfrac{dy}{dx}\). Becomes \(\dfrac{du}{dx} + Pu = Q\) — linear in \(u\).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>8. Bernoulli's Equation</h5></div>
+        <div class="card-body">
+          <p>Form: \(\dfrac{dy}{dx} + Py = Qy^n\) \((n \ne 0, 1)\), where \(P, Q\) are functions of \(x\).</p>
+          <p>Divide by \(y^n\), then put \(z = y^{1-n} \Rightarrow \dfrac{dz}{dx} = (1-n)y^{-n}\dfrac{dy}{dx}\). Equation becomes:</p>
+          \[\frac{dz}{dx} + (1-n)Pz = (1-n)Q\]
+          which is linear in \(z\).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Orthogonal Trajectories -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark"><h4>Orthogonal Trajectory</h4></div>
+    <div class="card-body">
+      <p>A curve that cuts every member of a given family of curves at <strong>right angles</strong> is called an orthogonal trajectory of that family.</p>
+      <p><strong>Procedure:</strong></p>
+      <ol>
+        <li>Let \(f(x, y, c) = 0\) be the given family. Differentiate w.r.t. \(x\) and eliminate \(c\) to get the DE of the family.</li>
+        <li>Replace \(\dfrac{dy}{dx}\) by \(-\dfrac{dx}{dy}\) in the DE.</li>
+        <li>Solve the resulting DE to get the orthogonal trajectories.</li>
+      </ol>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

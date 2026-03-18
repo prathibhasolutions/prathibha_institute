@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limits, Continuity & Differentiability</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Limits, Continuity &amp; Differentiability</h1>
+
+  <!-- CARD 1: Limits -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Limits</h4></div>
+    <div class="card-body">
+      <p>If \(f(x)\) takes an indeterminate form at \(x = a\) \(\left(\dfrac{0}{0},\,\dfrac{\infty}{\infty},\,0\times\infty,\,\infty-\infty,\,1^\infty,\,0^0,\,\infty^0\right)\), we consider values near \(a\). If these tend to a unique number, that number is the <strong>limit</strong>:</p>
+      \[\lim_{x \to a} f(x) = L\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Left Hand &amp; Right Hand Limits; Existence</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>LHL:</strong> \(\displaystyle\lim_{x \to a^-} f(x) = \lim_{h \to 0} f(a-h)\)</li>
+            <li><strong>RHL:</strong> \(\displaystyle\lim_{x \to a^+} f(x) = \lim_{h \to 0} f(a+h)\)</li>
+            <li>\(\lim_{x\to a} f(x)\) exists iff LHL and RHL both exist and are equal.</li>
+            <li>If the limit exists, it is <strong>unique</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Fundamental Theorems on Limits</h5></div>
+        <div class="card-body">
+          <p>If \(\lim_{x\to a}f(x)\) and \(\lim_{x\to a}g(x)\) both exist:</p>
+          <ul>
+            <li>\(\lim[f \pm g] = \lim f \pm \lim g\)</li>
+            <li>\(\lim[kf] = k\lim f\)</li>
+            <li>\(\lim[fg] = \lim f \cdot \lim g\)</li>
+            <li>\(\lim\dfrac{f}{g} = \dfrac{\lim f}{\lim g}\) (provided \(\lim g \ne 0\))</li>
+            <li>\(\lim[f(x)]^{g(x)} = \left[\lim f(x)\right]^{\lim g(x)}\)</li>
+            <li>\(\lim(g \circ f)(x) = g\!\left(\lim_{x\to a} f(x)\right)\)</li>
+            <li>\(\lim \log f(x) = \log\!\left(\lim f(x)\right)\) provided \(\lim f(x) > 0\)</li>
+            <li>If \(f(x) \le g(x)\) near \(a\), then \(\lim f \le \lim g\)</li>
+            <li>If \(\lim f(x) = +\infty\) or \(-\infty\), then \(\lim\dfrac{1}{f(x)} = 0\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Standard Limits</h5></div>
+        <div class="card-body">
+          <p><strong>Algebraic:</strong></p>
+          <ul>
+            <li>\(\displaystyle\lim_{x\to a}\frac{x^n - a^n}{x - a} = na^{n-1},\quad n \in \mathbb{Q}\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{(1+x)^n - 1}{x} = n,\quad n \in \mathbb{Q}\)</li>
+          </ul>
+          <p><strong>Trigonometric:</strong></p>
+          <ul>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{\sin x}{x} = 1\), \(\quad\lim_{x\to 0}\frac{\tan x}{x} = 1\), \(\quad\lim_{x\to 0}\frac{\sin^{-1}x}{x} = 1\), \(\quad\lim_{x\to 0}\frac{\tan^{-1}x}{x} = 1\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}\cos x = 1\), \(\quad\lim_{x\to 0}\frac{1-\cos x}{x^2} = \frac{1}{2}\)</li>
+            <li>\(\displaystyle\lim_{x\to a}\frac{\sin(x-a)}{x-a} = 1\), \(\quad\lim_{x\to a}\frac{\tan(x-a)}{x-a} = 1\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{\sin mx}{\sin nx} = \frac{m}{n}\), \(\quad\lim_{x\to 0}\frac{\tan(ax)}{\tan(bx)} = \frac{a}{b}\)</li>
+            <li>\(\displaystyle\lim_{x\to\infty}\frac{\sin x}{x} = 0\), \(\quad\lim_{x\to\infty}\frac{\cos x}{x} = 0\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{\sin x°}{x} = \frac{\pi}{180}\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{\cos mx - \cos nx}{x^2} = \frac{n^2 - m^2}{2}\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{1 - \cos ax}{1 - \cos bx} = \frac{a^2}{b^2}\)</li>
+            <li>\(\displaystyle\lim_{x\to\infty}\cos\frac{x}{2}\cos\frac{x}{4}\cos\frac{x}{8}\cdots = \frac{\sin x}{x}\)</li>
+          </ul>
+          <p><strong>Exponential:</strong></p>
+          <ul>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{e^x - 1}{x} = 1\), \(\quad\lim_{x\to 0}\frac{a^x - 1}{x} = \log_e a\), \(\quad\lim_{x\to 0}\frac{e^{\lambda x}-1}{x} = \lambda\)</li>
+            <li>\(\displaystyle\lim_{x\to\infty}a^x = \begin{cases}0 & 0 < a < 1\\ 1 & a = 1\\ \infty & a > 1\end{cases}\)</li>
+            <li>\(\displaystyle\lim_{x\to\infty}\frac{x^n}{e^x} = 0\) for all \(n\)</li>
+          </ul>
+          <p><strong>Logarithmic:</strong></p>
+          <ul>
+            <li>\(\displaystyle\lim_{x\to 0}\frac{\log_e(1+x)}{x} = 1\), \(\quad\lim_{x\to 0}\frac{\log_e(1-x)}{x} = -1\)</li>
+            <li>\(\displaystyle\lim_{x\to e}\log_e x = 1\), \(\quad\lim_{x\to 0}\frac{\log_a(1+x)}{x} = \log_a e\)</li>
+          </ul>
+          <p><strong>Form \(1^\infty\):</strong></p>
+          <ul>
+            <li>\(\displaystyle\lim_{x\to 0}(1+x)^{1/x} = e\), \(\quad\lim_{x\to\infty}\left(1+\frac{1}{x}\right)^x = e\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}(1+\lambda x)^{1/x} = e^\lambda\), \(\quad\lim_{x\to\infty}\left(1+\frac{\lambda}{x}\right)^x = e^\lambda\)</li>
+            <li>If \(\lim f(x) = 1\) and \(\lim g(x) = \infty\): \(\lim [f(x)]^{g(x)} = e^{\lim[f(x)-1]g(x)}\)</li>
+            <li>\(\displaystyle\lim_{x\to 0}(\cos x + a\sin bx)^{1/x} = e^{ab}\)</li>
+            <li>\(\displaystyle\lim_{n\to\infty}(x^n + y^n)^{1/n} = y\) for \(0 < x < y\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Methods of Evaluating Limits</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Direct substitution:</strong> Substitute \(x = a\) if result is definite.</li>
+            <li><strong>Factorisation:</strong> For \(0/0\) form — cancel common factor \((x-a)\).</li>
+            <li><strong>Rationalisation:</strong> For \(0/0\) or \(\infty/\infty\) involving square roots.</li>
+            <li><strong>Substitution:</strong> Put \(x = a+h\) so \(h \to 0\).</li>
+            <li><strong>When \(x \to \infty\):</strong> Divide numerator and denominator by highest power of \(x\). If degrees are \(m\) and \(n\):
+              \[\lim_{x\to\infty}\frac{a_0x^m + \cdots}{b_0x^n + \cdots} = \begin{cases}a_0/b_0 & m = n\\ 0 & m < n\\ \pm\infty & m > n\end{cases}\]
+            </li>
+            <li><strong>L'Hospital's Rule:</strong> If \(\lim f(a) = \lim g(a) = 0\) (or \(\infty\)) and both are differentiable:
+              \[\lim_{x\to a}\frac{f(x)}{g(x)} = \lim_{x\to a}\frac{f'(x)}{g'(x)}\]
+              Apply repeatedly if needed.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Standard Expansions for Limits</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>\((1+x)^n = 1 + nx + \dfrac{n(n-1)}{2!}x^2 + \cdots\) &nbsp;\((|x| < 1, n \in \mathbb{Q})\)</li>
+            <li>\(e^x = 1 + x + \dfrac{x^2}{2!} + \dfrac{x^3}{3!} + \cdots\)</li>
+            <li>\(\log_e(1+x) = x - \dfrac{x^2}{2} + \dfrac{x^3}{3} - \cdots\) &nbsp;\((-1 < x \le 1)\)</li>
+            <li>\(\sin x = x - \dfrac{x^3}{3!} + \dfrac{x^5}{5!} - \cdots\)</li>
+            <li>\(\cos x = 1 - \dfrac{x^2}{2!} + \dfrac{x^4}{4!} - \cdots\)</li>
+            <li>\(\tan x = x + \dfrac{x^3}{3} + \dfrac{2x^5}{15} + \cdots\)</li>
+            <li>\(\sin^{-1}x = x + \dfrac{x^3}{6} + \dfrac{3x^5}{40} + \cdots\)</li>
+            <li>\(\tan^{-1}x = x - \dfrac{x^3}{3} + \dfrac{x^5}{5} - \cdots\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Sandwich (Squeeze) Theorem</h5></div>
+        <div class="card-body">
+          <p>If \(f(x) \le g(x) \le h(x)\) for all \(x\) near \(a\), and \(\displaystyle\lim_{x\to a}f(x) = \lim_{x\to a}h(x) = l\), then:</p>
+          \[\lim_{x\to a}g(x) = l\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Continuity -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Continuity</h4></div>
+    <div class="card-body">
+      <p>A function \(f\) is <strong>continuous at \(x = a\)</strong> if:</p>
+      \[\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a)\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Discontinuity</h5></div>
+        <div class="card-body">
+          <p>\(f\) is discontinuous at \(x = a\) if any of:</p>
+          <ul>
+            <li>\(f(a)\) is not defined.</li>
+            <li>LHL ≠ RHL (both finite).</li>
+            <li>LHL or RHL does not exist or is infinite.</li>
+            <li>LHL = RHL ≠ \(f(a)\).</li>
+          </ul>
+          <p><strong>Types of discontinuity:</strong></p>
+          <ul>
+            <li><strong>Removable:</strong> \(\lim_{x\to a}f(x)\) exists but \(\ne f(a)\) (or \(f(a)\) undefined). Can be fixed by redefining \(f(a)\).</li>
+            <li><strong>Jump (1st kind):</strong> LHL and RHL both exist but LHL ≠ RHL. Jump \(= |\text{LHL} - \text{RHL}|\).</li>
+            <li><strong>2nd kind:</strong> At least one of LHL or RHL does not exist or is infinite.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Theorems of Continuity</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>If \(f\) and \(g\) are continuous, so are \(f \pm g\), \(fg\), \(cf\), and \(\dfrac{f}{g}\) (where \(g \ne 0\)).</li>
+            <li>If \(g\) is continuous at \(a\) and \(f\) is continuous at \(g(a)\), then \(f \circ g\) is continuous at \(a\).</li>
+            <li>If \(f\) is continuous on \([a,b]\), it is <strong>bounded</strong> on \([a,b]\).</li>
+            <li>If \(f\) is continuous on \([a,b]\) and \(f(a)\cdot f(b) < 0\), then \(f(c) = 0\) for some \(c \in (a,b)\). (Intermediate Value Theorem)</li>
+            <li>If \(f\) is continuous on \([a,b]\), then \(|f|\) is also continuous.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Continuity &amp; Differentiability of Standard Functions</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Function</th><th>Domain</th><th>Range</th><th>Continuous &amp; Differentiable</th></tr></thead>
+            <tbody>
+              <tr><td>Polynomial, \(e^x\), \(\log x\), \(\sin x\), \(\cos x\), inverse trig</td><td>Their domain</td><td>Varies</td><td>Everywhere in their domain</td></tr>
+              <tr><td>\(\sqrt{x}\)</td><td>\([0,\infty)\)</td><td>\([0,\infty)\)</td><td>Continuous and differentiable on \((0,\infty)\)</td></tr>
+              <tr><td>\([x]\) (greatest integer)</td><td>\(\mathbb{R}\)</td><td>\(\mathbb{Z}\)</td><td>Continuous and differentiable except at integers</td></tr>
+              <tr><td>\(\{x\} = x - [x]\)</td><td>\(\mathbb{R}\)</td><td>\([0,1)\)</td><td>Continuous and differentiable except at integers</td></tr>
+              <tr><td>Signum \(\text{sgn}(x)\)</td><td>\(\mathbb{R}\)</td><td>\(\{-1,0,1\}\)</td><td>Continuous and differentiable except at \(x=0\)</td></tr>
+              <tr><td>\(\tan x\), \(\sec x\)</td><td>\(\mathbb{R} \setminus \{(2n+1)\pi/2\}\)</td><td>Varies</td><td>In their domain</td></tr>
+              <tr><td>\(\cot x\), \(\text{cosec}\,x\)</td><td>\(\mathbb{R} \setminus \{n\pi\}\)</td><td>Varies</td><td>In their domain</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Differentiability -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark"><h4>Differentiability</h4></div>
+    <div class="card-body">
+      <p>\(f(x)\) is <strong>differentiable at \(x = a\)</strong> if:</p>
+      \[\lim_{x\to a}\frac{f(x)-f(a)}{x-a} \text{ exists finitely, i.e. } Lf'(a) = Rf'(a)\]
+      <p>where \(Lf'(a) = \lim_{x\to a^-}\dfrac{f(x)-f(a)}{x-a}\) (LHD) and \(Rf'(a) = \lim_{x\to a^+}\dfrac{f(x)-f(a)}{x-a}\) (RHD).</p>
+      <p>Geometrically, \(f\) is differentiable at \(P\) iff the curve has a unique tangent at \(P\) (no corners, holes, cusps, or vertical tangents).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Key Theorems on Differentiability</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>Sum, difference, product, quotient (when defined) of differentiable functions are differentiable.</li>
+            <li>Composition of differentiable functions is differentiable.</li>
+            <li>If \(f\) and \(g\) are both non-differentiable, their sum or product may still be differentiable.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Relation between Continuity and Differentiability</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Differentiable \(\Rightarrow\) Continuous</strong> (converse is NOT true).</li>
+            <li><strong>Not continuous \(\Rightarrow\) Not differentiable.</strong></li>
+            <li>A function can be continuous but not differentiable (e.g. \(f(x) = |x|\) at \(x=0\)).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

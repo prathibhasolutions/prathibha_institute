@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Theory of Equations & Quadratic Expressions</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Theory of Equations &amp; Quadratic Expressions</h1>
+
+  <!-- CARD 1: Polynomials & Quadratic -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Polynomials &amp; Quadratic Equations</h4></div>
+    <div class="card-body">
+      <p>A polynomial \(f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\) has <strong>degree \(n\)</strong> if \(a_n \ne 0\). Types: Linear (degree 1), Quadratic (degree 2), Cubic (degree 3), Biquadratic (degree 4).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Quadratic Equation \(ax^2+bx+c=0\)</h5></div>
+        <div class="card-body">
+          <p>Roots by <strong>Sridharacharya formula</strong>: \(\alpha, \beta = \dfrac{-b \pm \sqrt{D}}{2a}\), where \(D = b^2 - 4ac\).</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Discriminant \(D\)</th><th>Nature of Roots</th></tr></thead>
+            <tbody>
+              <tr><td>\(D < 0\)</td><td>Complex (non-real) conjugate roots</td></tr>
+              <tr><td>\(D > 0\)</td><td>Real and distinct</td></tr>
+              <tr><td>\(D = 0\)</td><td>Real and equal: \(\alpha = \beta = -b/2a\)</td></tr>
+              <tr><td>\(D > 0\), perfect square, \(a,b,c \in \mathbb{Q}\)</td><td>Rational and unequal</td></tr>
+              <tr><td>\(D > 0\), not perfect square, \(a,b,c \in \mathbb{Q}\)</td><td>Irrational and unequal (conjugate surds)</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Conjugate roots:</strong> If \(a,b,c \in \mathbb{R}\): irrational roots occur as \(\alpha+\sqrt{\beta}\) and \(\alpha-\sqrt{\beta}\). If \(a,b,c \in \mathbb{R}\): complex roots occur as \(\alpha+i\beta\) and \(\alpha-i\beta\).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Roots under Particular Conditions</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>\(b = 0\): roots are equal in magnitude, opposite sign.</li>
+            <li>\(c = 0\): one root is 0, other is \(-b/a\).</li>
+            <li>\(b = c = 0\): both roots are 0.</li>
+            <li>\(a = c\): roots are reciprocals of each other.</li>
+            <li>\(a > 0, c < 0\) (or \(a < 0, c > 0\)): roots are of opposite sign.</li>
+            <li>\(a, b, c\) same sign with \(D \ge 0\): both roots negative.</li>
+            <li>\(a, c\) same sign, \(b\) opposite with \(D \ge 0\): both roots positive.</li>
+            <li>\(\text{sign}(a) = \text{sign}(b) \ne \text{sign}(c)\): greater root in magnitude is negative.</li>
+            <li>\(\text{sign}(b) = \text{sign}(c) \ne \text{sign}(a)\): greater root in magnitude is positive.</li>
+            <li>\(a + b + c = 0\): one root is 1, other is \(c/a\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Relations between roots -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Relations between Roots &amp; Coefficients</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>Quadratic: \(ax^2+bx+c=0\)</h5></div>
+        <div class="card-body">
+          \[\alpha+\beta = -\frac{b}{a}, \quad \alpha\beta = \frac{c}{a}, \quad |\alpha-\beta| = \frac{\sqrt{D}}{|a|}\]
+          <p><strong>Equation from roots:</strong> \(x^2 - (\alpha+\beta)x + \alpha\beta = 0\)</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Cubic: \(ax^3+bx^2+cx+d=0\)</h5></div>
+        <div class="card-body">
+          \[\alpha+\beta+\gamma = -\frac{b}{a}, \quad \alpha\beta+\beta\gamma+\gamma\alpha = \frac{c}{a}, \quad \alpha\beta\gamma = -\frac{d}{a}\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Biquadratic: \(ax^4+bx^3+cx^2+dx+e=0\)</h5></div>
+        <div class="card-body">
+          \[S_1 = \alpha+\beta+\gamma+\delta = -\frac{b}{a}\]
+          \[S_2 = \sum\alpha\beta = \frac{c}{a}\]
+          \[S_3 = \sum\alpha\beta\gamma = -\frac{d}{a}\]
+          \[S_4 = \alpha\beta\gamma\delta = \frac{e}{a}\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Symmetric Expressions in Roots \(\alpha, \beta\)</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Expression</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>\(\alpha^2+\beta^2\)</td><td>\((\alpha+\beta)^2 - 2\alpha\beta = \dfrac{b^2-2ac}{a^2}\)</td></tr>
+              <tr><td>\((\alpha-\beta)^2\)</td><td>\((\alpha+\beta)^2-4\alpha\beta = \dfrac{D}{a^2}\)</td></tr>
+              <tr><td>\(\alpha^3+\beta^3\)</td><td>\((\alpha+\beta)^3 - 3\alpha\beta(\alpha+\beta) = \dfrac{-b(b^2-3ac)}{a^3}\)</td></tr>
+              <tr><td>\(\alpha^4+\beta^4\)</td><td>\((\alpha^2+\beta^2)^2 - 2\alpha^2\beta^2\)</td></tr>
+              <tr><td>\(\dfrac{\alpha}{\beta}+\dfrac{\beta}{\alpha}\)</td><td>\(\dfrac{\alpha^2+\beta^2}{\alpha\beta} = \dfrac{b^2-2ac}{ac}\)</td></tr>
+              <tr><td>\(\alpha^2+\alpha\beta+\beta^2\)</td><td>\((\alpha+\beta)^2 - \alpha\beta = \dfrac{b^2-ac}{a^2}\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Quadratic Expression & Graph -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark"><h4>Quadratic Expression \(ax^2+bx+c\)</h4></div>
+    <div class="card-body">
+      <p>The graph of \(y = ax^2+bx+c\) is a <strong>parabola</strong> with vertex at \(\left(-\dfrac{b}{2a},\,-\dfrac{D}{4a}\right)\).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Sign of Quadratic Expression</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Condition</th><th>Sign of \(f(x)\)</th></tr></thead>
+            <tbody>
+              <tr><td>\(a > 0,\; D < 0\)</td><td>\(f(x) > 0\) for all \(x \in \mathbb{R}\)</td></tr>
+              <tr><td>\(a < 0,\; D < 0\)</td><td>\(f(x) < 0\) for all \(x \in \mathbb{R}\)</td></tr>
+              <tr><td>\(a > 0,\; D = 0\)</td><td>\(f(x) \ge 0\) for all \(x\) (= 0 at vertex)</td></tr>
+              <tr><td>\(a < 0,\; D = 0\)</td><td>\(f(x) \le 0\) for all \(x\) (= 0 at vertex)</td></tr>
+              <tr><td>\(a > 0,\; D > 0\), roots \(\alpha < \beta\)</td><td>\(f(x) > 0\) for \(x < \alpha\) or \(x > \beta\); \(f(x) < 0\) for \(x \in (\alpha,\beta)\)</td></tr>
+              <tr><td>\(a < 0,\; D > 0\), roots \(\alpha < \beta\)</td><td>\(f(x) < 0\) for \(x < \alpha\) or \(x > \beta\); \(f(x) > 0\) for \(x \in (\alpha,\beta)\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Max &amp; Min Values</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>If \(a > 0\): minimum value \(= -\dfrac{D}{4a}\) at \(x = -\dfrac{b}{2a}\). No maximum.</li>
+            <li>If \(a < 0\): maximum value \(= -\dfrac{D}{4a}\) at \(x = -\dfrac{b}{2a}\). No minimum.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Position of Roots in an Interval</h5></div>
+        <div class="card-body">
+          <p>For \(f(x) = ax^2+bx+c\), let \(D = b^2-4ac\) and vertex \(x_v = -b/2a\):</p>
+          <ul>
+            <li><strong>Both roots \(> k\):</strong> \(D \ge 0\), \(x_v > k\), and \(af(k) > 0\)</li>
+            <li><strong>Both roots \(< k\):</strong> \(D \ge 0\), \(x_v < k\), and \(af(k) > 0\)</li>
+            <li><strong>Both roots in \((k_1, k_2)\):</strong> \(D \ge 0\), \(k_1 < x_v < k_2\), \(af(k_1) > 0\), \(af(k_2) > 0\)</li>
+            <li><strong>Exactly one root in \((k_1, k_2)\):</strong> \(D > 0\) and \(f(k_1)\cdot f(k_2) < 0\)</li>
+            <li><strong>\(k\) lies between the roots:</strong> \(D > 0\) and \(af(k) < 0\)</li>
+            <li><strong>Roots of opposite sign:</strong> \(f(0) < 0\), i.e. \(c/a < 0\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: Common Roots & Properties -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white"><h4>Common Roots, Properties &amp; Transformations</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>Condition for Common Roots</h5></div>
+        <div class="card-body">
+          <p>For \(a_1x^2+b_1x+c_1=0\) and \(a_2x^2+b_2x+c_2=0\):</p>
+          <ul>
+            <li><strong>Exactly one common root</strong> (by Cramer's rule):
+              \[(c_1a_2-c_2a_1)^2 = (b_1c_2-b_2c_1)(a_1b_2-a_2b_1)\]
+            </li>
+            <li><strong>Both roots common:</strong> \(\dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} = \dfrac{c_1}{c_2}\)</li>
+          </ul>
+          <p><em>Trick to find common root:</em> Make coefficients of \(x^2\) equal and subtract.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Transformation of Roots</h5></div>
+        <div class="card-body">
+          <p>If \(\alpha, \beta\) are roots of \(ax^2+bx+c=0\), then the equation with roots:</p>
+          <ul>
+            <li>\(-\alpha, -\beta\): replace \(x\) by \(-x\) → \(ax^2-bx+c=0\)</li>
+            <li>\(\alpha^n, \beta^n\): replace \(x\) by \(x^{1/n}\) → \(a(x^{1/n})^2+b(x^{1/n})+c=0\)</li>
+            <li>\(k\alpha, k\beta\): replace \(x\) by \(x/k\) → \(ax^2+kbx+k^2c=0\)</li>
+            <li>\(k+\alpha, k+\beta\): replace \(x\) by \((x-k)\) → \(a(x-k)^2+b(x-k)+c=0\)</li>
+            <li>\(1/\alpha, 1/\beta\): replace \(x\) by \(1/x\) → \(cx^2+bx+a=0\)</li>
+            <li>\(k/\alpha, k/\beta\): replace \(x\) by \(kx\) → \(ax^2+kbx+k^2c=0\) (then flip)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Properties of Polynomial Equations</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>An equation of degree \(n\) has exactly \(n\) roots (real or complex).</li>
+            <li>Irrational roots of polynomial with rational coefficients occur in conjugate pairs: if \(p+\sqrt{q}\) is a root, so is \(p-\sqrt{q}\).</li>
+            <li>Complex roots of polynomial with real coefficients occur in conjugate pairs: if \(a+ib\) is a root, so is \(a-ib\).</li>
+            <li>If \(f(a)\cdot f(b) < 0\): odd number of roots lie between \(a\) and \(b\).</li>
+            <li>If \(f(a)\cdot f(b) > 0\): even number of roots (or none) between \(a\) and \(b\).</li>
+            <li>\(\alpha\) is a repeated root of multiplicity \(n\) iff \(f(\alpha) = f'(\alpha) = \cdots = f^{(n-1)}(\alpha) = 0\) and \(f^{(n)}(\alpha) \ne 0\).</li>
+            <li>An odd degree equation has at least one real root with sign opposite to its constant term.</li>
+            <li>Every even degree equation with negative constant term and positive leading coefficient has at least two real roots (one positive, one negative).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Descartes' Rule &amp; Lagrange's Identity</h5></div>
+        <div class="card-body">
+          <p><strong>Descartes' Rule:</strong> Maximum number of positive real roots of \(f(x)=0\) = number of sign changes in \(f(x)\). Maximum number of negative real roots = number of sign changes in \(f(-x)\).</p>
+          <p><strong>Lagrange's Identity:</strong> For \(a_1,a_2,a_3,b_1,b_2,b_3 \in \mathbb{R}\):</p>
+          \[(a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2) = (a_1b_1+a_2b_2+a_3b_3)^2 + (a_1b_2-a_2b_1)^2 + (a_2b_3-a_3b_2)^2 + (a_3b_1-a_1b_3)^2\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5: Inequalities -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white"><h4>Inequalities</h4></div>
+    <div class="card-body">
+      <p>An <strong>inequality</strong> is a statement involving \(>, <, \le, \ge\).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Properties &amp; Rules</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>Adding or subtracting the same number from both sides preserves the inequality.</li>
+            <li>Multiplying/dividing by a <strong>positive</strong> number preserves the inequality.</li>
+            <li>Multiplying/dividing by a <strong>negative</strong> number <strong>reverses</strong> the inequality.</li>
+            <li>If \(a > b > 0\): \(a^2 > b^2\), \(|a| > |b|\), \(1/a < 1/b\).</li>
+            <li>Transitivity: \(a > b, b > c \Rightarrow a > c\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Absolute Value Inequalities</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>\(|x| < a \Leftrightarrow -a < x < a\) &nbsp;\((a > 0)\)</li>
+            <li>\(|x| \le a \Leftrightarrow -a \le x \le a\)</li>
+            <li>\(|x| > a \Leftrightarrow x < -a\) or \(x > a\)</li>
+            <li>\(|x| \ge a \Leftrightarrow x \le -a\) or \(x \ge a\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>AM–GM–HM Inequalities</h5></div>
+        <div class="card-body">
+          <p>For positive reals \(a_1, a_2, \ldots, a_n\):</p>
+          \[\text{AM} \ge \text{GM} \ge \text{HM}\]
+          \[\frac{a_1+a_2+\cdots+a_n}{n} \ge (a_1 a_2 \cdots a_n)^{1/n} \ge \frac{n}{\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n}}\]
+          <p><strong>Weighted AM-GM:</strong> \(\dfrac{m_1a_1+m_2a_2+\cdots}{m_1+m_2+\cdots} \ge a_1^{m_1/(m_1+m_2+\cdots)}\cdot a_2^{m_2/(\cdots)}\cdots\)</p>
+          <p>Equality holds iff all values are equal.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Finding Range of Rational Expressions</h5></div>
+        <div class="card-body">
+          <p>To find values of \(\dfrac{a_1x^2+b_1x+c_1}{a_2x^2+b_2x+c_2}\) for real \(x\):</p>
+          <ol>
+            <li>Set the expression equal to \(y\).</li>
+            <li>Rearrange to get a quadratic in \(x\).</li>
+            <li>For real \(x\), discriminant \(\ge 0\).</li>
+            <li>Solve the resulting inequality for \(y\).</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
