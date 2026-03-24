@@ -194,14 +194,15 @@
     const studentName = document.getElementById("userName").value.trim();
 
     if (!studentName) {
+      
       alert("Please enter your name.");
       return;
     }
-    if (!isStudentAllowed(studentName)) {
-        alert("Your name is not registered for this full test.");
-        window.location.href = "../../../payment.html"; // Redirect to another page
-        return;
-      }
+    // if (!isStudentAllowed(studentName)) {
+    //     alert("Your name is not registered for this full test.");
+    //     window.location.href = "../../../payment.html"; // Redirect to another page
+    //     return;
+    //   }
 
     // Store all data in localStorage
     localStorage.setItem("studentName", studentName);
