@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binomial Theorem & Mathematical Induction</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav>
+    <img src="../logo.png" alt="" class="logo">
+  </nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Binomial Theorem &amp; Principle of Mathematical Induction</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Introduction
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Binomial Expression</h4>
+    </div>
+    <div class="card-body">
+      <p>An algebraic expression consisting of <strong>two terms</strong> with a positive or negative sign between them is called a <strong>binomial expression</strong>.</p>
+      <p><strong>Examples:</strong> \( (x + a) \), \( (2x - 3y) \), \( \left(x + \dfrac{1}{x}\right) \)</p>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Binomial Theorem for Positive Integer
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Binomial Theorem for Positive Integer</h4>
+    </div>
+    <div class="card-body">
+      <p>If \( n \) is any positive integer, then:</p>
+      <p>
+        \[
+          (x + a)^n = \binom{n}{0}x^n + \binom{n}{1}x^{n-1}a + \binom{n}{2}x^{n-2}a^2 + \cdots + \binom{n}{n}a^n
+        \]
+      </p>
+      <p>i.e., \(\displaystyle (x+a)^n = \sum_{r=0}^{n} \binom{n}{r} x^{n-r} a^r \)</p>
+      <p>where \( x \) and \( a \) are real numbers, and \( \binom{n}{0}, \binom{n}{1}, \binom{n}{2}, \ldots, \binom{n}{n} \) are called <strong>binomial coefficients</strong>.</p>
+      <p>Also, \(\displaystyle \binom{n}{r} = {}^nC_r = \frac{n!}{r!(n-r)!} \) for \( 0 \le r \le n \).</p>
+
+      <!-- Nested: Properties -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Properties of Binomial Theorem for Positive Integer</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Total number of terms in the expansion of \( (x+a)^n \) is \( (n+1) \), i.e., a finite number of terms.</li>
+            <li>The sum of the indices of \( x \) and \( a \) in each term is \( n \).</li>
+            <li>The expansion is also true when \( x \) and \( a \) are complex numbers.</li>
+            <li>The coefficients of terms equidistant from the beginning and end are equal: \( {}^nC_r = {}^nC_{n-r} \).</li>
+            <li>The values of the binomial coefficients steadily increase to a maximum and then steadily decrease.</li>
+            <li>In the expansion of \( (x+a)^n \), the \( r \)-th term from the end is \( (n-r+2) \)-th term from the beginning.</li>
+            <li>If \( n \) is a positive integer, then the number of terms in \( (x+y+z)^n \) is \( \dfrac{(n+1)(n+2)}{2} \).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Special Cases -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Special Cases</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(i)</strong> \(\displaystyle (x-a)^n = \sum_{r=0}^{n} (-1)^r \cdot {}^nC_r \cdot x^{n-r} \cdot a^r \)</p>
+          <p><strong>(ii)</strong> \(\displaystyle (1+x)^n = \sum_{r=0}^{n} {}^nC_r \cdot x^r = {}^nC_0 + {}^nC_1 x + {}^nC_2 x^2 + \cdots + {}^nC_n x^n \)</p>
+          <p><strong>(iii)</strong> \(\displaystyle (1-x)^n = \sum_{r=0}^{n} (-1)^r \cdot {}^nC_r \cdot x^r \)</p>
+          <p><strong>(iv)</strong>
+            The coefficient of \( x^r \) in \( (1+x)^n \) is \( {}^nC_r \) and in \( (1-x)^n \) is \( (-1)^r \cdot {}^nC_r \).
+          </p>
+          <p><strong>(v)</strong>
+            \[
+              (x+a)^n + (x-a)^n = 2\!\left[{}^nC_0 x^n a^0 + {}^nC_2 x^{n-2}a^2 + {}^nC_4 x^{n-4}a^4 + \cdots \right]
+            \]
+            \[
+              (x+a)^n - (x-a)^n = 2\!\left[{}^nC_1 x^{n-1}a + {}^nC_3 x^{n-3}a^3 + \cdots \right]
+            \]
+          </p>
+          <p><strong>(vi)</strong>
+            <ul>
+              <li>If \( n \) is odd, then \( (x+a)^n \) and \( (x-a)^n \) both have the same number of terms equal to \( \dfrac{n+1}{2} \).</li>
+              <li>If \( n \) is even, then \( (x+a)^n + (x-a)^n \) has \( \dfrac{n}{2}+1 \) terms and \( (x+a)^n - (x-a)^n \) has \( \dfrac{n}{2} \) terms.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: General Term
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>General Term in a Binomial Expansion</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>(i)</strong> General term in the expansion of \( (x+a)^n \):</p>
+      <p>\[ T_{r+1} = {}^nC_r \cdot x^{n-r} \cdot a^r \]</p>
+      <p><strong>(ii)</strong> General term in the expansion of \( (x-a)^n \):</p>
+      <p>\[ T_{r+1} = (-1)^r \cdot {}^nC_r \cdot x^{n-r} \cdot a^r \]</p>
+      <p><strong>(iii)</strong> General term in the expansion of \( (1+x)^n \):</p>
+      <p>\[ T_{r+1} = {}^nC_r \cdot x^r \]</p>
+      <p><strong>(iv)</strong> General term in the expansion of \( (1-x)^n \):</p>
+      <p>\[ T_{r+1} = (-1)^r \cdot {}^nC_r \cdot x^r \]</p>
+
+      <!-- Nested: Important Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white">
+          <h5>Some Important Results</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              Coefficient of \( x^m \) in the expansion of \( \left(ax^p + \dfrac{b}{x^q}\right)^n \) is the coefficient of \( T_{r+1} \), where
+              \( r = \dfrac{np - m}{p+q} \).
+            </li>
+            <li>
+              The term independent of \( x \) in the expansion of \( \left(ax^p + \dfrac{b}{x^q}\right)^n \) is \( T_{r+1} \), where \( r = \dfrac{np}{p+q} \).
+            </li>
+            <li>
+              If the coefficients of \( r \)-th, \( (r+1) \)-th and \( (r+2) \)-th terms of \( (1+x)^n \) are in AP, then \( n^2 - 4r + 4n - 2 = 0 \) or
+              \( n^2 - (4r-1)n + 4r^2 - 2 = 0 \).
+            </li>
+            <li>In the expansion of \( (1+x)^n \): \( \dfrac{T_{r+1}}{T_r} = \dfrac{n-r+1}{r} \).</li>
+            <li>
+              Coefficient of \( x^{n-1} \) in the expansion of \( (x-1)(x-2)\cdots(x-n) = -\dfrac{n(n+1)}{2} \).
+            </li>
+            <li>
+              Coefficient of \( x^{n-1} \) in the expansion of \( (x+1)(x+2)\cdots(x+n) = \dfrac{n(n+1)}{2} \).
+            </li>
+            <li>
+              If the coefficients of \( p \)-th and \( q \)-th terms in the expansion of \( (1+x)^n \) are equal, then \( p + q = n + 2 \).
+            </li>
+            <li>
+              If the coefficients of \( x^r \) and \( x^{r+1} \) in \( \left(a + \dfrac{x}{b}\right)^n \) are equal, then \( n = (r+1)(ab+1) - 1 \).
+            </li>
+            <li>
+              Number of terms in the expansion of \( (x_1 + x_2 + \cdots + x_r)^n \) is \( {}^{n+r-1}C_{r-1} \).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Middle Term
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Middle Term in a Binomial Expansion</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li>
+          If \( n \) is <strong>even</strong> in \( (x+a)^n \) or \( (x-a)^n \), then the <strong>middle term</strong> is the \( \left(\dfrac{n}{2}+1\right) \)-th term.
+        </li>
+        <li>
+          If \( n \) is <strong>odd</strong> in \( (x+a)^n \) or \( (x-a)^n \), then there are <strong>two middle terms</strong>: the \( \left(\dfrac{n+1}{2}\right) \)-th term and the \( \left(\dfrac{n+3}{2}\right) \)-th term.
+        </li>
+      </ul>
+      <div class="tip-note p-2 mt-2 rounded" style="background:#e8f5e9; border-left:4px solid #198754;">
+        <strong>Note:</strong> When there are two middle terms in the expansion, their binomial coefficients are equal.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Greatest Coefficient & Greatest Term
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Greatest Coefficient &amp; Greatest Term</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Nested: Greatest Coefficient -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Greatest Coefficient</h5>
+        </div>
+        <div class="card-body">
+          <p>The binomial coefficient of the middle term is the <strong>greatest binomial coefficient</strong>.</p>
+          <ul>
+            <li>If \( n \) is <strong>even</strong>, the greatest coefficient in \( (x+a)^n \) is \( {}^nC_{n/2} \).</li>
+            <li>If \( n \) is <strong>odd</strong>, the greatest coefficient in \( (x+a)^n \) is \( {}^nC_{(n-1)/2} \) or \( {}^nC_{(n+1)/2} \).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Greatest Term -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Greatest Term</h5>
+        </div>
+        <div class="card-body">
+          <p>In the expansion of \( (x+a)^n \):</p>
+          <ul>
+            <li>
+              If \( \dfrac{(n+1)\left|\frac{x}{a}\right|}{1+\left|\frac{x}{a}\right|} \) is an integer \( = p \) (say), then the greatest terms are \( T_p \) and \( T_{p+1} \).
+            </li>
+            <li>
+              If \( \dfrac{(n+1)\left|\frac{x}{a}\right|}{1+\left|\frac{x}{a}\right|} \) is <strong>not</strong> an integer with \( m \) as its integral part, then \( T_{m+1} \) is the greatest term.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Divisibility Problems
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Divisibility Problems</h4>
+    </div>
+    <div class="card-body">
+      <p>From the expansion \( (1+x)^n = 1 + {}^nC_1 x + {}^nC_2 x^2 + \cdots + {}^nC_n x^n \), we conclude:</p>
+      <ul>
+        <li>
+          \( (1+x)^n - 1 = {}^nC_1 x + {}^nC_2 x^2 + \cdots + {}^nC_n x^n \) is divisible by \( x \), i.e., it is a multiple of \( x \). This can be written as \( M(x) \).
+        </li>
+        <li>
+          \( (1+x)^n - 1 - nx = {}^nC_2 x^2 + {}^nC_3 x^3 + \cdots = M(x^2) \) is divisible by \( x^2 \).
+        </li>
+        <li>
+          \( (1+x)^n - 1 - nx - \binom{n}{2}x^2 = {}^nC_3 x^3 + {}^nC_4 x^4 + \cdots = M(x^3) \) is divisible by \( x^3 \).
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Important Results on Binomial Coefficients
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Important Results on Binomial Coefficients</h4>
+    </div>
+    <div class="card-body">
+      <p>If \( C_0, C_1, C_2, \ldots, C_n \) are the coefficients of \( (1+x)^n \), then:</p>
+
+      <!-- Nested: Basic Relations -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Basic Relations</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\( {}^nC_r + {}^nC_{r-1} = {}^{n+1}C_r \)</li>
+            <li>\( \dfrac{{}^nC_r}{{}^nC_{r-1}} = \dfrac{n-r+1}{r} \)</li>
+            <li>\( \dfrac{{}^nC_r}{{}^{n-1}C_r} = \dfrac{n}{n-r} \)</li>
+            <li>\( C_0 + C_1 + C_2 + \cdots + C_n = 2^n \)</li>
+            <li>\( C_0 + C_2 + C_4 + \cdots = C_1 + C_3 + C_5 + \cdots = 2^{n-1} \)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Trigonometric Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Trigonometric &amp; Algebraic Results</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\( C_0 - C_2 + C_4 - C_6 + \cdots = \left(\sqrt{2}\right)^n \cos\dfrac{n\pi}{4} \)</li>
+            <li>\( C_1 - C_3 + C_5 - C_7 + \cdots = \left(\sqrt{2}\right)^n \sin\dfrac{n\pi}{4} \)</li>
+            <li>\( C_0 - C_1 + C_2 - C_3 + \cdots + (-1)^n C_n = 0 \)</li>
+            <li>\( C_1 + 2C_2 + 3C_3 + \cdots + nC_n = n \cdot 2^{n-1} \)</li>
+            <li>\( C_0 \cdot 3 + C_1 \cdot 2 + C_2 \cdot 1 + \cdots + (-1)^n(n+1)C_n = 0 \) (when \( n \geq 2 \))</li>
+            <li>\( C_0 C_r + C_1 C_{r+1} + \cdots + C_{n-r}C_n = {}^{2n}C_{n-r} = \dfrac{(2n)!}{(n-r)!(n+r)!} \)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Sum of Squares -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Sum of Squares and Ratios</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>(xii)</strong> \(\displaystyle C_0^2 + C_1^2 + C_2^2 + \cdots + C_n^2 = {}^{2n}C_n = \frac{(2n)!}{(n!)^2} \)</p>
+          <p><strong>(xiii)</strong> \(\displaystyle C_0^2 - C_1^2 + C_2^2 - C_3^2 + \cdots + (-1)^n C_n^2\)</p>
+          <table class="table table-bordered table-sm w-auto ms-4 mb-3">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\( n \) is <strong>odd</strong></td>
+                <td>\( = \ 0 \)</td>
+              </tr>
+              <tr>
+                <td>\( n \) is <strong>even</strong></td>
+                <td>\(\displaystyle = \ (-1)^{n/2} \cdot {}^{n}C_{n/2} \)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>(xiv)</strong> \(\displaystyle \frac{C_1}{2} - \frac{C_2}{2^2} + \frac{C_3}{3} - \cdots + (-1)^{n-1} \cdot \frac{n \cdot C_n}{} \)</p>
+          <table class="table table-bordered table-sm w-auto ms-4 mb-3">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\( n \) is <strong>odd</strong></td>
+                <td>\( = \ 0 \)</td>
+              </tr>
+              <tr>
+                <td>\( n \) is <strong>even</strong></td>
+                <td>\(\displaystyle = \ (-1)^{n/2 - 1} \cdot \frac{n}{2} \cdot {}^{n}C_{n/2} \)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>(xv)</strong> \(\displaystyle C_0 + \frac{C_1}{2} + \frac{C_2}{3} + \cdots + \frac{C_n}{n+1} = \frac{2^{n+1}-1}{n+1} \)</p>
+          <p><strong>(xvi)</strong> \(\displaystyle C_0 - \frac{C_1}{2} + \frac{C_2}{3} - \frac{C_3}{4} + \cdots + (-1)^n \frac{C_n}{n+1} = \frac{1}{n+1} \)</p>
+          <p><strong>(xvii)</strong> \(\displaystyle C_0 + \frac{C_1}{2^2} + \frac{C_2}{3 \cdot 2^2} + \frac{C_3}{4 \cdot 2^3} + \cdots + \frac{C_n}{(n+1) \cdot 2^n} = \frac{3^{n+1}-1}{(n+1)\cdot 2^n} \)</p>
+          <p><strong>(xviii)</strong>
+            \[\displaystyle \sum_{r=0}^{n} (-1)^r \cdot {}^nC_r \cdot \left(\frac{1}{r+2}\right) = \frac{1}{n+2} \cdot \left(\frac{2^{mn} - (2^m - 1)^n}{1}\right)\]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 8: Multinomial Theorem
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Multinomial Theorem</h4>
+    </div>
+    <div class="card-body">
+      <p>For any \( n \in \mathbb{N} \):</p>
+
+      <p><strong>(i)</strong> \(\displaystyle (x_1 + x_2)^n = \sum_{r_1+r_2=n} \frac{n!}{r_1!\, r_2!}\, x_1^{r_1} x_2^{r_2} \)</p>
+
+      <p><strong>(ii)</strong> \(\displaystyle (x_1 + x_2 + \cdots + x_k)^n = \sum_{r_1+r_2+\cdots+r_k=n} \frac{n!}{r_1!\, r_2!\, \cdots\, r_k!}\, x_1^{r_1} x_2^{r_2} \cdots x_k^{r_k} \)</p>
+
+      <p><strong>(iii)</strong> The general term in the above expansion is:
+        \[ \frac{n!}{r_1!\, r_2!\, \cdots\, r_k!}\; x_1^{r_1}\, x_2^{r_2}\, \cdots\, x_k^{r_k} \]
+      </p>
+
+      <p><strong>(iv)</strong> The greatest coefficient in the expansion of \( (x_1 + x_2 + \cdots + x_m)^n \) is:
+        \[ \frac{n!}{(q!)^{m-r}\, [(q+1)!]^r} \]
+        where \( q \) and \( r \) are the quotient and remainder respectively when \( n \) is divided by \( m \).
+      </p>
+
+      <!-- Nested: Important Result -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Important Results</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>
+              If \( n \) is a positive integer and \( a_1, a_2, \ldots, a_m \in \mathbb{R} \), then the coefficient of \( x^r \) in the expansion of
+              \( (a_1 + a_2 x + a_3 x^2 + \cdots + a_m x^{m-1})^n \) is
+              \( \displaystyle \sum \frac{n!}{n_1!\, n_2!\, \cdots\, n_m!}\, a_1^{n_1} a_2^{n_2} \cdots a_m^{n_m} \).
+            </li>
+            <li>
+              Total number of terms in the expansion of \( (a + b + c + d)^n \) is \( \dfrac{(n+1)(n+2)(n+3)}{6} \).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 9: R-f Factor Relations
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>R-f Factor Relations</h4>
+    </div>
+    <div class="card-body">
+      <p>
+        If \( (\sqrt{A} + \sqrt{B})^n = I + f \), where \( I \) is a positive integer and \( 0 \le f &lt; 1 \), and let \( f' = (\sqrt{A} - \sqrt{B})^n \)
+        where \( A - B = k &gt; 0 \) and \( 0 &lt; f' &lt; 1 \), then:
+      </p>
+      <ul>
+        <li>When \( n \) is odd: \( (I + f) + f' = I + f + f' \) and \( f \cdot f' = k^n \).</li>
+        <li>When \( n \) is even: \( f = f' \) and \( (I + f)(f') = k^n \), i.e., \( (I + f)(1 - f) = k^n \).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 10: Binomial Theorem for Any Index
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Binomial Theorem for Any Index (Rational / Negative)</h4>
+    </div>
+    <div class="card-body">
+      <p>If \( n \) is any <strong>rational number</strong> and \( |x| &lt; 1 \), then:</p>
+      <p>
+        \[
+          (1+x)^n = 1 + nx + \frac{n(n-1)}{1 \cdot 2}x^2 + \frac{n(n-1)(n-2)}{1 \cdot 2 \cdot 3}x^3 + \cdots
+        \]
+      </p>
+
+      <!-- Nested: Notes -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Important Notes</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>If \( n \) is a positive integer, the series on the RHS is finite. If \( n \) is a negative or rational number, there are infinitely many terms.</li>
+            <li>
+              General term in the expansion of \( (1+x)^n \):
+              \[ T_{r+1} = \frac{n(n-1)(n-2)\cdots(n-r+1)}{r!}\, x^r \]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nested: Expansion of (x+a)^n for rational index -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white">
+          <h5>Expansion of \( (x+a)^n \) for Rational Index</h5>
+        </div>
+        <div class="card-body">
+          <p><strong>Case I</strong> — When \( x &gt; a \) (i.e., \( \left|\frac{a}{x}\right| &lt; 1 \)):</p>
+          <p>
+            \[
+              (x+a)^n = x^n\!\left(1+\frac{a}{x}\right)^n = x^n\!\left[1 + n\cdot\frac{a}{x} + \frac{n(n-1)}{2!}\left(\frac{a}{x}\right)^{\!2} + \cdots \right]
+            \]
+          </p>
+          <p><strong>Case II</strong> — When \( x &lt; a \) (i.e., \( \left|\frac{x}{a}\right| &lt; 1 \)):</p>
+          <p>
+            \[
+              (x+a)^n = a^n\!\left(1+\frac{x}{a}\right)^n = a^n\!\left[1 + n\cdot\frac{x}{a} + \frac{n(n-1)}{2!}\left(\frac{x}{a}\right)^{\!2} + \cdots \right]
+            \]
+          </p>
+        </div>
+      </div>
+
+      <!-- Nested: Standard Expansions -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark">
+          <h5>Standard Expansions \( (|x| &lt; 1) \)</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\( (1-x)^{-1} = 1 + x + x^2 + x^3 + \cdots + x^r + \cdots \)</li>
+            <li>\( (1+x)^{-1} = 1 - x + x^2 - x^3 + \cdots + (-1)^r x^r + \cdots \)</li>
+            <li>\( (1-x)^{-2} = 1 + 2x + 3x^2 + 4x^3 + \cdots + (r+1)x^r + \cdots \)</li>
+            <li>\( (1+x)^{-2} = 1 - 2x + 3x^2 - 4x^3 + \cdots + (-1)^r(r+1)x^r + \cdots \)</li>
+            <li>\( (1-x)^{-3} = 1 + 3x + 6x^2 + 10x^3 + \cdots + \dfrac{(r+1)(r+2)}{2}x^r + \cdots \)</li>
+            <li>\( (1+x)^{-3} = 1 - 3x + 6x^2 - 10x^3 + \cdots + (-1)^r \dfrac{(r+1)(r+2)}{2}x^r + \cdots \)</li>
+            <li>\( (1+x)^n \approx 1 + nx \) if \( x, x^2, x^3, \ldots \) are all very small compared to 1.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 11: Principle of Mathematical Induction
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Principle of Mathematical Induction</h4>
+    </div>
+    <div class="card-body">
+      <p>
+        In algebra, there are certain results formulated in terms of \( n \), where \( n \) is a positive integer.
+        Such results can be proved by a specific technique known as the <strong>Principle of Mathematical Induction</strong>.
+      </p>
+
+      <h5 class="mt-3">Statement</h5>
+      <p>A sentence or description which can be judged as either <em>true</em> or <em>false</em> is called a <strong>statement</strong>.</p>
+      <p><em>Examples:</em></p>
+      <ul>
+        <li>3 divides 9. <span class="badge bg-success">True</span></li>
+        <li>Lucknow is the capital of Uttar Pradesh. <span class="badge bg-success">True</span></li>
+      </ul>
+
+      <!-- Nested: First Principle -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white">
+          <h5>First Principle of Mathematical Induction</h5>
+        </div>
+        <div class="card-body">
+          <p>Let \( P(n) \) be a statement involving natural number \( n \). To prove \( P(n) \) is true for all natural numbers:</p>
+          <ol>
+            <li>Prove that \( P(1) \) is true. <em>(Base case)</em></li>
+            <li>Assume \( P(k) \) is true for some arbitrary positive integer \( k \). <em>(Inductive hypothesis)</em></li>
+            <li>Using steps (i) and (ii), prove that \( P(k+1) \) is true. <em>(Inductive step)</em></li>
+          </ol>
+          <p>By the First Principle of Mathematical Induction, \( P(n) \) is true for all \( n \in \mathbb{N} \).</p>
+        </div>
+      </div>
+
+      <!-- Nested: Second Principle -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white">
+          <h5>Second Principle of Mathematical Induction</h5>
+        </div>
+        <div class="card-body">
+          <p>In the second principle, the following steps are used:</p>
+          <ol>
+            <li>Prove that \( P(1) \) is true.</li>
+            <li>Assume \( P(n) \) is true for all natural numbers \( n \) such that \( 2 \le n &lt; k \).</li>
+            <li>Using (i) and (ii), prove that \( P(k+1) \) is true.</li>
+          </ol>
+          <p>This is sometimes called the <em>Strong Induction</em> or <em>Complete Induction</em> principle.</p>
+        </div>
+      </div>
+
+      <!-- Nested: Common Induction Results -->
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white">
+          <h5>Common Results Proved by Mathematical Induction</h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>\( 1 + 2 + 3 + \cdots + n = \dfrac{n(n+1)}{2} \)</li>
+            <li>\( 1^2 + 2^2 + 3^2 + \cdots + n^2 = \dfrac{n(n+1)(2n+1)}{6} \)</li>
+            <li>\( 1^3 + 2^3 + 3^3 + \cdots + n^3 = \left[\dfrac{n(n+1)}{2}\right]^2 \)</li>
+            <li>\( 2^n &gt; n \) for all \( n \geq 1 \)</li>
+            <li>\( n! &gt; 2^n \) for all \( n \geq 4 \)</li>
+            <li>\( (1+x)^n \geq 1 + nx \) for \( x &gt; -1 \) (Bernoulli's Inequality)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
