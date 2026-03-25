@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mathematical Reasoning</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Mathematical Reasoning</h1>
+
+  <!-- CARD 1: Statements -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Statements (Propositions)</h4></div>
+    <div class="card-body">
+      <p>A <strong>statement</strong> is an assertive sentence which is either <strong>true or false</strong>, but not both. Statements are denoted by small letters \(p, q, r, \ldots\)</p>
+      <ul>
+        <li>A <strong>true</strong> statement is a <em>valid</em> statement; a <strong>false</strong> statement is an <em>invalid</em> statement.</li>
+        <li>Imperative, exclamatory, interrogative, and optative sentences are <strong>not</strong> statements.</li>
+      </ul>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Types of Statements</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Simple Statement:</strong> Cannot be broken into two or more statements. e.g. "\(2\) is a real number."</li>
+            <li><strong>Open Statement:</strong> Contains one or more variables; becomes a statement when variables are assigned values. e.g. "\(x > 0\)".</li>
+            <li><strong>Compound Statement:</strong> Two or more simple statements combined by logical connectives ('and', 'or', 'if…then', 'if and only if'). The individual parts are called <em>component statements</em>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Logical Connectives -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Logical Connectives &amp; Truth Tables</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white"><h5>Elementary Logical Connectives</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark">
+              <tr><th>Connective</th><th>Symbol</th><th>Key Word</th><th>Meaning</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Negation</td><td>\(\sim p\)</td><td>not</td><td>Changes truth value of \(p\)</td></tr>
+              <tr><td>Conjunction</td><td>\(p \wedge q\)</td><td>and</td><td>True only when both \(p\) and \(q\) are true</td></tr>
+              <tr><td>Disjunction</td><td>\(p \vee q\)</td><td>or</td><td>True when at least one of \(p, q\) is true</td></tr>
+              <tr><td>Conditional (Implication)</td><td>\(p \Rightarrow q\)</td><td>if…then</td><td>False only when \(p\) is true and \(q\) is false</td></tr>
+              <tr><td>Biconditional (Bi-implication)</td><td>\(p \Leftrightarrow q\)</td><td>if and only if (iff)</td><td>True when \(p\) and \(q\) have the same truth value</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Master Truth Table</h5></div>
+        <div class="card-body">
+          <p>For two statements \(p\) and \(q\), the number of rows in the truth table is \(2^2 = 4\).</p>
+          <table class="table table-bordered table-sm text-center">
+            <thead class="table-dark">
+              <tr><th>\(p\)</th><th>\(q\)</th><th>\(\sim p\)</th><th>\(\sim q\)</th><th>\(p\wedge q\)</th><th>\(p\vee q\)</th><th>\(p\Rightarrow q\)</th><th>\(q\Rightarrow p\)</th><th>\(p\Leftrightarrow q\)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>T</td><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td></tr>
+              <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td><td>T</td><td>F</td></tr>
+              <tr><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+              <tr><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Tautology &amp; Contradiction</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Tautology:</strong> A compound statement that is <em>true for every</em> assignment of truth values to its components. e.g. \((p \Rightarrow q) \vee (q \Rightarrow p)\)</li>
+            <li><strong>Contradiction (Fallacy):</strong> A compound statement that is <em>false for every</em> assignment. e.g. \(p \wedge \sim p\)</li>
+            <li><strong>Contingency:</strong> A statement that is neither a tautology nor a contradiction.</li>
+          </ul>
+          <table class="table table-bordered table-sm text-center mt-2">
+            <thead class="table-dark"><tr><th>\(p\)</th><th>\(q\)</th><th>\(p\Rightarrow q\)</th><th>\(q\Rightarrow p\)</th><th>Tautology: \((p\Rightarrow q)\vee(q\Rightarrow p)\)</th><th>Contradiction: \(\sim[(p\Rightarrow q)\vee(q\Rightarrow p)]\)</th></tr></thead>
+            <tbody>
+              <tr><td>T</td><td>T</td><td>T</td><td>T</td><td>T</td><td>F</td></tr>
+              <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td></tr>
+              <tr><td>F</td><td>T</td><td>T</td><td>F</td><td>T</td><td>F</td></tr>
+              <tr><td>F</td><td>F</td><td>T</td><td>T</td><td>T</td><td>F</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Logically Equivalent Statements</h5></div>
+        <div class="card-body">
+          <p>Two compound statements \(S_1\) and \(S_2\) are <strong>logically equivalent</strong> (written \(S_1 \equiv S_2\)) if they have identical truth tables for all possible truth values.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Laws of Algebra of Statements -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark"><h4>Laws of Algebra of Statements</h4></div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark"><tr><th>Law</th><th>Form 1</th><th>Form 2</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Idempotent</strong></td><td>\(p \vee p \equiv p\)</td><td>\(p \wedge p \equiv p\)</td></tr>
+          <tr><td><strong>Associative</strong></td><td>\((p\vee q)\vee r \equiv p\vee(q\vee r)\)</td><td>\((p\wedge q)\wedge r \equiv p\wedge(q\wedge r)\)</td></tr>
+          <tr><td><strong>Commutative</strong></td><td>\(p\vee q \equiv q\vee p\)</td><td>\(p\wedge q \equiv q\wedge p\)</td></tr>
+          <tr><td><strong>Distributive</strong></td><td>\(p\vee(q\wedge r)\equiv(p\vee q)\wedge(p\vee r)\)</td><td>\(p\wedge(q\vee r)\equiv(p\wedge q)\vee(p\wedge r)\)</td></tr>
+          <tr><td><strong>De Morgan's</strong></td><td>\(\sim(p\wedge q)\equiv\,\sim p\,\vee\sim q\)</td><td>\(\sim(p\vee q)\equiv\,\sim p\,\wedge\sim q\)</td></tr>
+          <tr><td><strong>Identity</strong></td><td>\(p\wedge T\equiv p\), \(\quad p\vee F\equiv p\)</td><td>\(p\vee T\equiv T\), \(\quad p\wedge F\equiv F\)</td></tr>
+          <tr><td><strong>Complement</strong></td><td>\(p\vee\sim p\equiv T\)</td><td>\(p\wedge\sim p\equiv F\)</td></tr>
+          <tr><td><strong>Involution</strong></td><td>\(\sim(\sim p)\equiv p\)</td><td>\(\sim T\equiv F\), \(\quad\sim F\equiv T\)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CARD 4: Converse, Inverse, Contrapositive & Quantifiers -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white"><h4>Converse, Inverse, Contrapositive &amp; Quantifiers</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>Related Conditional Statements</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Statement</th><th>Form</th></tr></thead>
+            <tbody>
+              <tr><td>Original (Conditional)</td><td>\(p \Rightarrow q\)</td></tr>
+              <tr><td>Converse</td><td>\(q \Rightarrow p\)</td></tr>
+              <tr><td>Inverse</td><td>\(\sim p \Rightarrow \sim q\)</td></tr>
+              <tr><td>Contrapositive</td><td>\(\sim q \Rightarrow \sim p\)</td></tr>
+            </tbody>
+          </table>
+          <p class="mt-2"><strong>Note:</strong> A conditional statement and its contrapositive are logically equivalent. A statement and its converse are NOT necessarily equivalent.</p>
+          <ul>
+            <li>If \(p\) is true, then \(\sim p\) is false; if \(p\) is false, then \(\sim p\) is true.</li>
+            <li>Number of rows in truth table for \(n\) statements \(= 2^n\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Quantifiers</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Universal Quantifier \(\forall\)</strong>: "for all values of" — used with statements true for every element.</li>
+            <li><strong>Existential Quantifier \(\exists\)</strong>: "there exists" — used with statements true for at least one element.</li>
+          </ul>
+          <p>An open statement with a quantifier becomes a <strong>quantified statement</strong>. e.g. \(\forall x \in \mathbb{R}, x^4 \ge 0\) (true).</p>
+          <p><strong>Negation of quantified statements:</strong></p>
+          <ul>
+            <li>\(\sim\{\forall x \in A, p(x) \text{ is true}\} = \exists x \in A \text{ such that } \sim p(x) \text{ is true}\)</li>
+            <li>\(\sim\{\exists x \in A, p(x) \text{ is true}\} = \forall x \in A, \sim p(x) \text{ is true}\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5: Validity of Statements -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white"><h4>Validity of Statements</h4></div>
+    <div class="card-body">
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>Methods of Checking Validity</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>'AND' (\(p \wedge q\)):</strong> Show that both \(p\) is true and \(q\) is true.</li>
+            <li><strong>'OR' (\(p \vee q\)):</strong> Either (a) assume \(p\) is false, show \(q\) must be true; or (b) assume \(q\) is false, show \(p\) must be true.</li>
+            <li><strong>'If-then' (\(p \Rightarrow q\)):</strong>
+              <ul>
+                <li><em>Direct method:</em> Assume \(p\) is true, show \(q\) must be true.</li>
+                <li><em>Contrapositive method:</em> Assume \(q\) is false, show \(p\) must be false.</li>
+              </ul>
+            </li>
+            <li><strong>'If and only if' (\(p \Leftrightarrow q\)):</strong> Show (i) \(p\) true \(\Rightarrow\) \(q\) true, and (ii) \(q\) true \(\Rightarrow\) \(p\) true.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

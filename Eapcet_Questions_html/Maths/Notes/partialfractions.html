@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partial Fractions</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Partial Fractions</h1>
+
+  <!-- CARD 1: Introduction -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Rational Expressions &amp; Partial Fractions</h4></div>
+    <div class="card-body">
+      <p>If \(f(x)\) and \(g(x)\) are polynomials with \(g(x) \ne 0\), then \(\dfrac{f(x)}{g(x)}\) is called a <strong>rational expression</strong>.</p>
+      <ul>
+        <li>Every polynomial is a rational expression, but not vice versa.</li>
+        <li>\(\dfrac{f(x)}{g(x)}\) is in <strong>lowest form</strong> if \(f(x)\) and \(g(x)\) have no common factor.</li>
+        <li><strong>Proper rational function:</strong> \(\deg f < \deg g\).</li>
+        <li><strong>Improper rational function:</strong> \(\deg f \ge \deg g\). In this case, perform long division first:
+          \[\frac{f(x)}{g(x)} = \varphi(x) + \frac{h(x)}{g(x)}\]
+          where \(h(x)\) is the remainder with \(\deg h < \deg g\).
+        </li>
+      </ul>
+      <p><strong>Partial fractions</strong> decompose a proper rational function \(\dfrac{f(x)}{g(x)}\) into a sum of simpler fractions, each having a simple factor of \(g(x)\) as the denominator.</p>
+    </div>
+  </div>
+
+  <!-- CARD 2: Types of Partial Fractions -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Partial Fraction Decomposition — All Cases</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white"><h5>Case I: Non-repeated Linear Factors</h5></div>
+        <div class="card-body">
+          <p>If \(g(x) = (x-a_1)(x-a_2)\cdots(x-a_n)\) with all \(a_i\) distinct:</p>
+          \[\frac{f(x)}{g(x)} = \frac{A_1}{x-a_1} + \frac{A_2}{x-a_2} + \cdots + \frac{A_n}{x-a_n}\]
+          <p><strong>Shortcut (Cover-up method):</strong> To find \(A_k\), substitute \(x = a_k\) in \(\dfrac{f(x)}{g(x)}\) after cancelling the factor \((x - a_k)\):</p>
+          \[A_k = \frac{f(a_k)}{(a_k-a_1)\cdots(a_k-a_{k-1})(a_k-a_{k+1})\cdots(a_k-a_n)}\]
+          <p><strong>Example:</strong></p>
+          \[\frac{px+q}{(x-a)(x-b)} = \frac{A}{x-a} + \frac{B}{x-b}, \quad a \ne b\]
+          \[\frac{px^2+qx+r}{(x-a)(x-b)(x-c)} = \frac{A}{x-a} + \frac{B}{x-b} + \frac{C}{x-c}, \quad a \ne b \ne c\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Case II: Repeated Linear Factors</h5></div>
+        <div class="card-body">
+          <p>If \((x-a)\) is a factor of multiplicity \(k\):</p>
+          \[\frac{f(x)}{(x-a)^k\cdots} = \frac{A_1}{x-a} + \frac{A_2}{(x-a)^2} + \cdots + \frac{A_k}{(x-a)^k} + \cdots\]
+          <p><strong>Examples:</strong></p>
+          \[\frac{px+q}{(x-a)^2} = \frac{A}{x-a} + \frac{B}{(x-a)^2}\]
+          \[\frac{px^2+qx+r}{(x-a)^3} = \frac{A}{x-a} + \frac{B}{(x-a)^2} + \frac{C}{(x-a)^3}\]
+          <p><em>Note:</em> The shortcut (cover-up) applies only to <strong>non-repeated</strong> factors. Constants for repeated factors must be found by comparing coefficients or substituting convenient values.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Case III: Irreducible Quadratic Factors</h5></div>
+        <div class="card-body">
+          <p>If \(g(x)\) contains a quadratic factor \((x^2+bx+c)\) that cannot be factorised over \(\mathbb{R}\):</p>
+          \[\frac{px^2+qx+r}{(x-a)(x^2+bx+c)} = \frac{A}{x-a} + \frac{Bx+C}{x^2+bx+c}\]
+          <p>The numerator of the quadratic factor term is <strong>linear</strong> (\(Bx + C\)), not a constant.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Case IV: Repeated Quadratic Factors</h5></div>
+        <div class="card-body">
+          <p>For a quadratic factor \((x^2+bx+c)^2\) (irreducible, repeated):</p>
+          \[\frac{f(x)}{(x^2+bx+c)^2} = \frac{Ax+B}{x^2+bx+c} + \frac{Cx+D}{(x^2+bx+c)^2}\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Case V: Two Distinct Irreducible Quadratic Factors</h5></div>
+        <div class="card-body">
+          \[\frac{px^3+qx^2+rx+s}{(x^2+ax+b)(x^2+cx+d)} = \frac{Ax+B}{x^2+ax+b} + \frac{Cx+D}{x^2+cx+d}\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Complete Decomposition Table -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white"><h4>Quick Reference Table</h4></div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark">
+          <tr><th>#</th><th>Rational Function</th><th>Partial Fraction Form</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>\(\dfrac{px+q}{(x-a)(x-b)},\; a\ne b\)</td>
+            <td>\(\dfrac{A}{x-a}+\dfrac{B}{x-b}\)</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>\(\dfrac{px^2+qx+r}{(x-a)(x-b)(x-c)},\; a\ne b\ne c\)</td>
+            <td>\(\dfrac{A}{x-a}+\dfrac{B}{x-b}+\dfrac{C}{x-c}\)</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>\(\dfrac{px+q}{(x-a)^2}\)</td>
+            <td>\(\dfrac{A}{x-a}+\dfrac{B}{(x-a)^2}\)</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>\(\dfrac{px^2+qx+r}{(x-a)^3}\)</td>
+            <td>\(\dfrac{A}{x-a}+\dfrac{B}{(x-a)^2}+\dfrac{C}{(x-a)^3}\)</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>\(\dfrac{px^2+qx+r}{(x-a)(x^2+bx+c)}\) (irreducible quadratic)</td>
+            <td>\(\dfrac{A}{x-a}+\dfrac{Bx+C}{x^2+bx+c}\)</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>\(\dfrac{px^3+\cdots}{(x^2+ax+b)(x^2+cx+d)}\)</td>
+            <td>\(\dfrac{Ax+B}{x^2+ax+b}+\dfrac{Cx+D}{x^2+cx+d}\)</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>\(\dfrac{px^2+qx+r}{(x-a)^2(x-b)}\)</td>
+            <td>\(\dfrac{A}{x-a}+\dfrac{B}{(x-a)^2}+\dfrac{C}{x-b}\)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CARD 4: Method of Finding Constants -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white"><h4>Methods for Finding Unknown Constants</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-success text-white"><h5>Method 1: Substitution (for Linear Factors)</h5></div>
+        <div class="card-body">
+          <p>After clearing denominators, substitute the root of each linear factor to get the constants directly (cover-up rule).</p>
+          <p><strong>Example:</strong> \(\dfrac{2x+3}{(x-1)(x+2)} = \dfrac{A}{x-1}+\dfrac{B}{x+2}\)</p>
+          <p>Multiply both sides by \((x-1)(x+2)\): \(2x+3 = A(x+2) + B(x-1)\)</p>
+          <p>Put \(x=1\): \(5 = 3A \Rightarrow A = 5/3\) &nbsp;|&nbsp; Put \(x=-2\): \(-1 = -3B \Rightarrow B = 1/3\)</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Method 2: Comparing Coefficients</h5></div>
+        <div class="card-body">
+          <p>After clearing denominators, expand and equate coefficients of like powers of \(x\) on both sides to get a system of equations, then solve for the unknowns. This works for all cases.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Method 3: Mixed (for Repeated &amp; Quadratic Factors)</h5></div>
+        <div class="card-body">
+          <ol>
+            <li>Use cover-up rule for all non-repeated linear factors.</li>
+            <li>Substitute convenient values or compare coefficients for the remaining constants (those corresponding to repeated or quadratic factors).</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Properties of Rational Expressions</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Addition:</strong> \(\dfrac{f}{g} + \dfrac{p}{r} = \dfrac{fr + pg}{gr}\)</li>
+            <li><strong>Subtraction:</strong> \(\dfrac{f}{g} - \dfrac{p}{r} = \dfrac{fr - pg}{gr}\)</li>
+            <li><strong>Multiplication:</strong> \(\dfrac{f}{g} \times \dfrac{p}{r} = \dfrac{fp}{gr}\)</li>
+            <li><strong>Division:</strong> \(\dfrac{f}{g} \div \dfrac{p}{r} = \dfrac{f}{g} \times \dfrac{r}{p} = \dfrac{fr}{gp}\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

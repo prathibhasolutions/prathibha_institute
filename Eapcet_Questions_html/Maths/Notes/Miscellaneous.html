@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miscellaneous — Elementary Algebra & Logarithms</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Miscellaneous — Elementary Algebra &amp; Logarithms</h1>
+
+  <!-- CARD 1: Polynomials -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Polynomials — Operations &amp; Key Theorems</h4></div>
+    <div class="card-body">
+      <p>A polynomial \(f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\) with \(a_n \ne 0\) has degree \(n\).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Operations on Polynomials</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Division Algorithm:</strong> \(p(x) = q(x)\cdot g(x) + r(x)\), where \(\deg r < \deg g\).</li>
+            <li><strong>Synthetic Division (Horner's Method):</strong> For dividing by \((x - h)\): write coefficients of \(f(x)\), carry \(b_0 = a_0\) and compute each \(b_{k+1} = a_{k+1} + h\cdot b_k\). The last value is the remainder \(R\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Remainder &amp; Factor Theorems</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Remainder Theorem:</strong> When \(p(x)\) is divided by \((x-a)\), the remainder is \(p(a)\).</li>
+            <li><strong>Factor Theorem:</strong> \((x-a)\) is a factor of \(p(x)\) iff \(p(a) = 0\).</li>
+            <li>If \(p(x)\) is divided by \((ax-b)\), remainder is \(p(b/a)\).</li>
+            <li>If \(p(x)\) is divided by \((ax+b)\), remainder is \(p(-b/a)\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Roots of a Polynomial of Degree \(n\)</h5></div>
+        <div class="card-body">
+          <p>For \(p(x) = a_0x^n + a_1x^{n-1} + \cdots + a_n\) with roots \(\alpha_1, \alpha_2, \ldots, \alpha_n\):</p>
+          <ul>
+            <li>Sum of roots: \(\displaystyle\sum \alpha_i = -\frac{a_1}{a_0}\)</li>
+            <li>Sum of products of two at a time: \(\displaystyle\sum_{i<j}\alpha_i\alpha_j = \frac{a_2}{a_0}\)</li>
+            <li>Sum of products of three at a time: \(\displaystyle\sum_{i<j<k}\alpha_i\alpha_j\alpha_k = -\frac{a_3}{a_0}\)</li>
+            <li>Product of all roots: \(\alpha_1\alpha_2\cdots\alpha_n = (-1)^n\dfrac{a_n}{a_0}\)</li>
+            <li>A quadratic has at most 2 zeroes; cubic at most 3; degree \(n\) polynomial at most \(n\) zeroes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>HCF &amp; LCM of Polynomials</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>\(\text{LCM} = \dfrac{\text{Product of polynomials}}{\text{HCF}}\)</li>
+            <li>\(\text{HCF} = \dfrac{\text{Product of polynomials}}{\text{LCM}}\)</li>
+            <li>For any two polynomials \(p(x)\) and \(q(x)\): \(p(x) \times q(x) = \text{HCF} \times \text{LCM}\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Factorisation Identities -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Important Factorisation Identities</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white"><h5>Standard Algebraic Identities</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>\((x+a)^2 = x^2 + 2xa + a^2\)</li>
+            <li>\((x-a)^2 = x^2 - 2xa + a^2\)</li>
+            <li>\((x+a)^3 = x^3 + 3x^2a + 3xa^2 + a^3\)</li>
+            <li>\((x-a)^3 = x^3 - 3x^2a + 3xa^2 - a^3\)</li>
+            <li>\(a^3+b^3+c^3-3abc = (a+b+c)(a^2+b^2+c^2-ab-bc-ca)\)</li>
+            <li>If \(a+b+c=0\): \(a^3+b^3+c^3 = 3abc\)</li>
+            <li>\((x-a)(x^2+ax+a^2) = x^3-a^3\)</li>
+            <li>\((x+a)(x^2-ax+a^2) = x^3+a^3\)</li>
+            <li>For even \(n\): \((x+a)(x^{n-1}-x^{n-2}a+\cdots-a^{n-1}) = x^n - a^n\)</li>
+            <li>For odd \(n\): \((x+a)(x^{n-1}-x^{n-2}a+\cdots+a^{n-1}) = x^n + a^n\)</li>
+            <li>\((x^2+xy+y^2)(x^2-xy+y^2) = x^4+x^2y^2+y^4\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Reciprocal Identities</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>\(x^2 + \dfrac{1}{x^2} = \left(x+\dfrac{1}{x}\right)^2 - 2 = \left(x-\dfrac{1}{x}\right)^2 + 2\)</li>
+            <li>\(x^3 + \dfrac{1}{x^3} = \left(x+\dfrac{1}{x}\right)^3 - 3\left(x+\dfrac{1}{x}\right)\)</li>
+            <li>\(x^3 - \dfrac{1}{x^3} = \left(x-\dfrac{1}{x}\right)^3 + 3\left(x-\dfrac{1}{x}\right)\)</li>
+            <li>\(\left(x+\dfrac{1}{x}\right)^2 + \left(x-\dfrac{1}{x}\right)^2 = 2\left(x^2+\dfrac{1}{x^2}\right)\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Linear Equations -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark"><h4>Linear Equations &amp; Simultaneous Equations</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>Solving Simultaneous Linear Equations in Two Variables</h5></div>
+        <div class="card-body">
+          <p>For system \(a_1x + b_1y + c_1 = 0\) and \(a_2x + b_2y + c_2 = 0\):</p>
+          <p><strong>Cross-multiplication method:</strong></p>
+          \[\frac{x}{b_1c_2 - b_2c_1} = \frac{y}{c_1a_2 - c_2a_1} = \frac{1}{a_1b_2 - a_2b_1}\]
+          <p><strong>Consistency conditions:</strong></p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Condition</th><th>Nature of Solution</th></tr></thead>
+            <tbody>
+              <tr><td>\(\dfrac{a_1}{a_2} \ne \dfrac{b_1}{b_2}\)</td><td>Unique solution (consistent)</td></tr>
+              <tr><td>\(\dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} \ne \dfrac{c_1}{c_2}\)</td><td>No solution (inconsistent)</td></tr>
+              <tr><td>\(\dfrac{a_1}{a_2} = \dfrac{b_1}{b_2} = \dfrac{c_1}{c_2}\)</td><td>Infinitely many solutions</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Other methods:</strong> Substitution, Elimination by equating coefficients, Graphical method.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: Logarithms -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white"><h4>Logarithms</h4></div>
+    <div class="card-body">
+      <p>If \(a^x = m\) where \(a > 0, a \ne 1, m > 0\), then \(x = \log_a m\).</p>
+      <ul>
+        <li>If \(m \le 0\): \(\log_a m\) is not defined.</li>
+        <li>\(\log_a m\) exists only if \(m > 0, a > 0, a \ne 1\).</li>
+      </ul>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Types of Logarithms</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Natural (Napier) Logarithm:</strong> Base \(e \approx 2.718\). Written as \(\ln x\) or \(\log_e x\).</li>
+            <li><strong>Common (Brigg's) Logarithm:</strong> Base 10. Written as \(\log_{10} x\) or simply \(\log x\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Characteristic &amp; Mantissa</h5></div>
+        <div class="card-body">
+          <p>Every logarithm consists of two parts: <strong>characteristic</strong> (integer part) and <strong>mantissa</strong> (decimal part, always \(\ge 0\)).</p>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Number \(x\)</th><th>Condition</th><th>Characteristic of \(\log_{10}x\)</th></tr></thead>
+            <tbody>
+              <tr><td>6.125</td><td>1 digit before decimal</td><td>\(1-1=0\)</td></tr>
+              <tr><td>61.321</td><td>2 digits before decimal</td><td>\(2-1=1\)</td></tr>
+              <tr><td>725.132</td><td>3 digits before decimal</td><td>\(3-1=2\)</td></tr>
+              <tr><td>0.7684</td><td>0 zeros after decimal</td><td>\(-(0+1)=\bar{1}\)</td></tr>
+              <tr><td>0.06712</td><td>1 zero after decimal</td><td>\(-(1+1)=\bar{2}\)</td></tr>
+              <tr><td>0.00031</td><td>3 zeros after decimal</td><td>\(-(3+1)=\bar{4}\)</td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li>For \(x > 1\): characteristic \(=\) (number of digits before decimal) \(-1\).</li>
+            <li>For \(0 < x < 1\): characteristic is negative \(= -(n+1)\) where \(n\) = zeros after decimal before first significant digit.</li>
+            <li><strong>Bar notation:</strong> \(\bar{2}\) means \(-2\) (only the characteristic is negative; mantissa remains positive).</li>
+            <li>Numbers with the same sequence of significant digits have the same mantissa, regardless of the decimal point position.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Laws of Logarithms</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Law</th><th>Formula</th><th>Condition</th></tr></thead>
+            <tbody>
+              <tr><td>Product</td><td>\(\log_a(mn) = \log_a m + \log_a n\)</td><td>\(m,n,a>0,\,a\ne1\)</td></tr>
+              <tr><td>Quotient</td><td>\(\log_a\!\left(\dfrac{m}{n}\right) = \log_a m - \log_a n\)</td><td>\(m,n,a>0,\,a\ne1\)</td></tr>
+              <tr><td>Power</td><td>\(\log_a m^n = n\log_a m\)</td><td>\(m,a>0,\,a\ne1\)</td></tr>
+              <tr><td>Change of base</td><td>\(\log_a m = \dfrac{\log_b m}{\log_b a}\)</td><td>\(a,b,m>0,\,a,b\ne1\)</td></tr>
+              <tr><td>Reciprocal base</td><td>\(\log_{1/a} m = -\log_a m\)</td><td></td></tr>
+              <tr><td>Identity</td><td>\(\log_a a = 1\) and \(\log_a 1 = 0\)</td><td>\(a>0,\,a\ne1\)</td></tr>
+              <tr><td>Exponent</td><td>\(a^{\log_a x} = x\)</td><td>\(a,x>0,\,a\ne1\)</td></tr>
+              <tr><td>Power of base</td><td>\(a^{\log_b x} = x^{\log_b a}\)</td><td>\(a,b,x>0,\,b\ne1\)</td></tr>
+            </tbody>
+          </table>
+          <ul class="mt-2">
+            <li>\(\log_a b = \dfrac{1}{\log_b a}\)</li>
+            <li>\(\log_a b \cdot \log_b c \cdot \log_c d = \log_a d\) (chain rule)</li>
+            <li>If \(\log_a x = \log_b x\) and \(x \ne 1\), then \(a = b\).</li>
+            <li>If \(\log_a x = \log_a y\), then \(x = y\).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Antilogarithm &amp; Key Results</h5></div>
+        <div class="card-body">
+          <p>\(a = \text{antilog}(b) \Leftrightarrow \log a = b \Leftrightarrow 10^b = a\).</p>
+          <ul>
+            <li>If \(a > 1\): \(\log_a x > 0\) for \(x > 1\); \(\log_a x < 0\) for \(0 < x < 1\).</li>
+            <li>If \(0 < a < 1\): \(\log_a x < 0\) for \(x > 1\); \(\log_a x > 0\) for \(0 < x < 1\).</li>
+            <li>\(\log_a x = \log_a y \Rightarrow x = y\).</li>
+            <li>\(\log_a x > \log_a y \Rightarrow x > y\) if \(a > 1\); \(x < y\) if \(0 < a < 1\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Statistics — Measures of Dispersion</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Statistics — Measures of Dispersion</h1>
+
+  <!-- CARD 1: Basic Terms -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white"><h4>Basic Terms &amp; Frequency Distributions</h4></div>
+    <div class="card-body">
+      <p><strong>Statistics</strong> is the science of collection, organisation, presentation, analysis, and interpretation of numerical data.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Key Definitions</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Primary Data:</strong> Collected by the investigator directly.</li>
+            <li><strong>Secondary Data:</strong> Obtained from some existing source.</li>
+            <li><strong>Variable/Variate:</strong> A characteristic that varies in magnitude (e.g. weight, height).</li>
+            <li><strong>Class Interval:</strong> Groups used to condense data.</li>
+            <li><strong>Class Limits:</strong> Lower and upper values of each class.</li>
+            <li><strong>Class Mark:</strong> \(\dfrac{\text{Lower limit} + \text{Upper limit}}{2}\)</li>
+            <li><strong>Class Width:</strong> Upper boundary \(-\) Lower boundary.</li>
+            <li><strong>Frequency:</strong> Number of times an observation occurs.</li>
+            <li><strong>Cumulative Frequency:</strong> Running total of frequencies (less than / more than type).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Graphical Representations</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Bar Diagram:</strong> Heights of bars proportional to frequencies.</li>
+            <li><strong>Histogram:</strong> Rectangles on class intervals; area proportional to frequency (height \(\propto\) frequency/class width for unequal widths).</li>
+            <li><strong>Pie Diagram:</strong> Central angle \(= \dfrac{\text{Frequency}}{\text{Total frequency}} \times 360°\)</li>
+            <li><strong>Frequency Polygon:</strong> Points (class mark, frequency) joined by straight lines.</li>
+            <li><strong>Ogive (Cumulative Frequency Curve):</strong> 'Less than' ogive or 'More than' ogive. Their intersection gives the <strong>median</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2: Measures of Central Tendency -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white"><h4>Measures of Central Tendency</h4></div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>1. Arithmetic Mean (AM)</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Raw data:</strong> \(\bar{x} = \dfrac{\sum x_i}{n}\)</li>
+            <li><strong>Discrete frequency distribution:</strong> \(\bar{x} = \dfrac{\sum f_i x_i}{\sum f_i}\)</li>
+            <li><strong>Grouped data (direct):</strong> \(\bar{x} = \dfrac{\sum f_i x_i}{\sum f_i}\) (\(x_i\) = class mark)</li>
+            <li><strong>Shortcut method:</strong> \(\bar{x} = A_1 + \dfrac{\sum f_i d_i}{\sum f_i}\), where \(d_i = x_i - A_1\)</li>
+            <li><strong>Step deviation method:</strong> \(\bar{x} = A_1 + \dfrac{\sum f_i u_i}{\sum f_i} \times h\), where \(u_i = \dfrac{x_i - A_1}{h}\)</li>
+            <li><strong>Combined mean:</strong> \(\bar{x} = \dfrac{n_1A_1 + n_2A_2 + \cdots + n_rA_r}{n_1 + n_2 + \cdots + n_r}\)</li>
+            <li><strong>Weighted AM:</strong> \(A_w = \dfrac{\sum w_i x_i}{\sum w_i}\)</li>
+          </ul>
+          <p><strong>Properties:</strong> Algebraic sum of deviations from mean \(= 0\). Sum of squares of deviations is minimum when taken about the mean.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>2. Geometric Mean (GM)</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Raw data:</strong> \(G = (x_1 \cdot x_2 \cdots x_n)^{1/n}\), or \(G = \text{antilog}\!\left(\dfrac{\sum\log x_i}{n}\right)\)</li>
+            <li><strong>Frequency distribution:</strong> \(G = \text{antilog}\!\left(\dfrac{\sum f_i \log x_i}{N}\right)\) where \(N = \sum f_i\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>3. Harmonic Mean (HM)</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Raw data:</strong> \(\text{HM} = \dfrac{n}{\sum\frac{1}{x_i}}\)</li>
+            <li><strong>Frequency distribution:</strong> \(\text{HM} = \dfrac{\sum f_i}{\sum\frac{f_i}{x_i}}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>4. Median</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Raw data (sorted):</strong> If \(n\) is odd → \(\left(\dfrac{n+1}{2}\right)\)th term. If \(n\) is even → mean of \(\left(\dfrac{n}{2}\right)\)th and \(\left(\dfrac{n}{2}+1\right)\)th terms.</li>
+            <li><strong>Grouped data:</strong>
+              \[M_d = l + \frac{\dfrac{N}{2} - C}{f} \times h\]
+              where \(l\) = lower limit of median class, \(f\) = its frequency, \(C\) = cumulative frequency before median class, \(h\) = class width, \(N = \sum f_i\).
+            </li>
+            <li><strong>Quartiles</strong> (grouped):
+              \[Q_1 = l + \frac{\dfrac{N}{4}-C}{f}\times h, \qquad Q_3 = l + \frac{\dfrac{3N}{4}-C}{f}\times h\]
+            </li>
+            <li>Inter-quartile range \(= Q_3 - Q_1\)</li>
+            <li>Quartile deviation \(= \dfrac{Q_3 - Q_1}{2}\)</li>
+            <li>Coefficient of quartile deviation \(= \dfrac{Q_3-Q_1}{Q_3+Q_1}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>5. Mode</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Raw data:</strong> Value that appears most frequently.</li>
+            <li><strong>Discrete frequency:</strong> Value with maximum frequency.</li>
+            <li><strong>Grouped data:</strong>
+              \[M_O = l + \frac{f_0 - f_1}{2f_0 - f_1 - f_2} \times h\]
+              where \(l\) = lower limit of modal class, \(f_0\) = frequency of modal class, \(f_1\) = pre-modal class frequency, \(f_2\) = post-modal class frequency, \(h\) = class width.
+            </li>
+          </ul>
+          <p><strong>Relation between Mean, Median, Mode (empirical formula):</strong></p>
+          \[\text{Mode} = 3\,\text{Median} - 2\,\text{Mean}\]
+          <p>In a <strong>symmetric distribution</strong>: Mean \(=\) Median \(=\) Mode.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 3: Measures of Dispersion -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark"><h4>Measures of Dispersion</h4></div>
+    <div class="card-body">
+      <p>The degree to which data tends to spread about an average value is called <strong>dispersion</strong>.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>1. Range</h5></div>
+        <div class="card-body">
+          \[\text{Range} = X_{\max} - X_{\min}\]
+          \[\text{Coefficient of Range} = \frac{X_{\max} - X_{\min}}{X_{\max} + X_{\min}}\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>2. Mean Deviation (MD)</h5></div>
+        <div class="card-body">
+          <p>Arithmetic mean of absolute deviations from a central value (\(\bar{x}\), \(M_d\), or \(M_O\)):</p>
+          <ul>
+            <li><strong>Raw data:</strong> \(\delta = \dfrac{\sum|x_i - \bar{x}|}{n}\)</li>
+            <li><strong>Discrete frequency:</strong> \(\delta = \dfrac{\sum f_i|x_i - \bar{x}|}{\sum f_i}\)</li>
+            <li><strong>Grouped data:</strong> \(\delta = \dfrac{\sum f_i|x_i - \bar{x}|}{\sum f_i}\) (\(x_i\) = class mark)</li>
+          </ul>
+          <p><strong>Coefficient of MD:</strong> \(\dfrac{\delta}{\bar{x}}\) or \(\dfrac{\delta}{M_d}\) or \(\dfrac{\delta}{M_O}\)</p>
+          <p><em>Note:</em> MD is least when measured from the <strong>median</strong>.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>3. Standard Deviation (SD) &amp; Variance</h5></div>
+        <div class="card-body">
+          <p><strong>Variance</strong> \(\sigma^2\) and <strong>SD</strong> \(\sigma\):</p>
+          <ul>
+            <li><strong>Raw data:</strong>
+              \[\sigma = \sqrt{\frac{\sum(x_i - \bar{x})^2}{n}} = \sqrt{\frac{\sum x_i^2}{n} - \bar{x}^2}\]
+            </li>
+            <li><strong>Discrete frequency:</strong>
+              \[\sigma = \sqrt{\frac{\sum f_i(x_i-\bar{x})^2}{N}} = \frac{1}{N}\sqrt{N\sum f_ix_i^2 - \left(\sum f_ix_i\right)^2}\]
+              Shortcut: \(\sigma = \sqrt{\dfrac{\sum f_i d_i^2}{N} - \left(\dfrac{\sum f_i d_i}{N}\right)^2}\), where \(d_i = x_i - A\)
+            </li>
+            <li><strong>Grouped data (step deviation):</strong>
+              \[\sigma = h\sqrt{\frac{\sum f_i u_i^2}{N} - \left(\frac{\sum f_i u_i}{N}\right)^2}, \quad u_i = \frac{x_i-A}{h}\]
+            </li>
+            <li><strong>Combined SD:</strong> \(\sigma = \sqrt{\dfrac{n_1(\sigma_1^2+d_1^2)+n_2(\sigma_2^2+d_2^2)}{n_1+n_2}}\), where \(d_1 = X_1 - \bar{X}\), \(d_2 = X_2 - \bar{X}\), \(\bar{X} = \dfrac{n_1X_1+n_2X_2}{n_1+n_2}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>4. Root Mean Square (RMS) Deviation</h5></div>
+        <div class="card-body">
+          <p>Square root of AM of squared deviations from assumed mean \(A'\):</p>
+          <ul>
+            <li>Raw data: \(S = \sqrt{\dfrac{\sum(x_i-A')^2}{n}}\)</li>
+            <li>Frequency distribution: \(S = \sqrt{\dfrac{\sum f_i(x_i-A')^2}{\sum f_i}}\)</li>
+          </ul>
+          <p><strong>Note:</strong> If \(A' = \bar{x}\), then \(S = \sigma\). RMS deviation is least when measured from AM.</p>
+          <p>Relation: \(\sigma^2 = S^2 - (A' - \bar{x})^2\), i.e. \(\sigma^2 + \bar{x}^2 = \dfrac{\sum f_ix_i^2}{\sum f_i}\)</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Important Results</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Measure</th><th>Change of Origin</th><th>Change of Scale</th></tr></thead>
+            <tbody>
+              <tr><td>Mean, Median, Mode</td><td>Dependent</td><td>Dependent</td></tr>
+              <tr><td>SD, Variance</td><td>Independent</td><td>Dependent</td></tr>
+              <tr><td>MD, Range</td><td>Independent</td><td>Dependent</td></tr>
+            </tbody>
+          </table>
+          <ul>
+            <li><strong>Coefficient of variation (CV):</strong> \(\dfrac{\sigma}{\bar{x}} \times 100\). More consistent distribution has <em>smaller</em> CV.</li>
+            <li>SD of first \(n\) natural numbers: \(\sqrt{\dfrac{n^2-1}{12}}\)</li>
+            <li>SD is independent of change of origin, but depends on change of scale.</li>
+            <li>Quartile deviation \(= \dfrac{2}{3}\,\sigma\) and Mean deviation \(= \dfrac{4}{5}\,\sigma\) (approximately, for normal distribution).</li>
+            <li>MD about mean \(\le \sigma\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 4: Correlation -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white"><h4>Correlation</h4></div>
+    <div class="card-body">
+      <p><strong>Correlation</strong> measures the degree of simultaneous variation between two variables. Types: Perfect, Positive (direct), Negative (indirect).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Covariance</h5></div>
+        <div class="card-body">
+          \[\text{cov}(x,y) = \frac{1}{n}\sum(x_i-\bar{x})(y_i-\bar{y}) = \frac{\sum x_iy_i}{n} - \bar{x}\,\bar{y}\]
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Karl Pearson's Coefficient of Correlation</h5></div>
+        <div class="card-body">
+          \[r(x,y) = \frac{\text{cov}(x,y)}{\sigma_x\,\sigma_y} = \frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum(x_i-\bar{x})^2\cdot\sum(y_i-\bar{y})^2}}\]
+          \[= \frac{n\sum x_iy_i - \sum x_i\sum y_i}{\sqrt{n\sum x_i^2 - (\sum x_i)^2}\cdot\sqrt{n\sum y_i^2-(\sum y_i)^2}}\]
+          <p><strong>Properties:</strong></p>
+          <ul>
+            <li>\(-1 \le r \le 1\)</li>
+            <li>\(r = 1\): perfect positive; \(r = -1\): perfect negative; \(r = 0\): uncorrelated.</li>
+            <li>Independent of change of origin and scale.</li>
+            <li>No units (pure number).</li>
+            <li>If \(x\) and \(y\) are independent, \(r = 0\) (converse need not hold).</li>
+            <li>For constants \(a, c \ne 0\): \(r(ax+b, cy+d) = \dfrac{|ac|}{ac}\cdot r(x,y)\)</li>
+            <li>Probable error \(= 0.6745\dfrac{1-r^2}{\sqrt{n}}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Spearman's Rank Correlation</h5></div>
+        <div class="card-body">
+          <p>Let \(d_i\) = difference of paired ranks, \(n\) = number of items.</p>
+          <ul>
+            <li><strong>Ranks not repeated:</strong>
+              \[r = 1 - \frac{6\sum d_i^2}{n(n^2-1)}\]
+            </li>
+            <li><strong>Ranks repeated</strong> (with correction factor for each repeated rank of multiplicity \(m\)):
+              \[r = 1 - \frac{6\!\left[\sum d_i^2 + \frac{1}{12}\sum(m_i^3-m_i)\right]}{n(n^2-1)}\]
+            </li>
+          </ul>
+          <p>Rank correlation coefficient lies between \(-1\) and \(1\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 5: Regression -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white"><h4>Regression</h4></div>
+    <div class="card-body">
+      <p><strong>Regression</strong> estimates the unknown value of one variable from known values of another related variable. A <strong>line of regression</strong> gives the best fit in the least-squares sense.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Regression Equations &amp; Coefficients</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Line of regression of \(y\) on \(x\):</strong>
+              \[y - \bar{y} = b_{yx}(x - \bar{x}), \qquad b_{yx} = r\frac{\sigma_y}{\sigma_x} = \frac{\text{cov}(x,y)}{\sigma_x^2}\]
+            </li>
+            <li><strong>Line of regression of \(x\) on \(y\):</strong>
+              \[x - \bar{x} = b_{xy}(y - \bar{y}), \qquad b_{xy} = r\frac{\sigma_x}{\sigma_y} = \frac{\text{cov}(x,y)}{\sigma_y^2}\]
+            </li>
+            <li><strong>Angle between two regression lines:</strong>
+              \[\tan\theta = \frac{1-r^2}{r}\cdot\frac{\sigma_x\sigma_y}{\sigma_x^2+\sigma_y^2}\]
+              <ul>
+                <li>If \(r = 0\): lines are perpendicular (\(\theta = \pi/2\)).</li>
+                <li>If \(|r| = 1\): lines coincide (\(\theta = 0\)).</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Properties of Regression Coefficients</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>Both \(b_{xy}\), \(b_{yx}\), and \(r\) have the <strong>same sign</strong>.</li>
+            <li>Correlation coefficient is the geometric mean of regression coefficients:
+              \[r = \sqrt{b_{xy} \cdot b_{yx}}\]
+            </li>
+            <li>\(0 \le |b_{xy}| \cdot |b_{yx}| \le 1\). If \(|b_{xy}| > 1\), then \(|b_{yx}| < 1\).</li>
+            <li>Regression coefficients are independent of change of <strong>origin</strong> but not of <strong>scale</strong>.</li>
+            <li>If the two regression coefficients have different signs, then \(r = 0\).</li>
+            <li>AM of regression coefficients \(\ge r\): \(\dfrac{b_{yx}+b_{xy}}{2} \ge r\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
