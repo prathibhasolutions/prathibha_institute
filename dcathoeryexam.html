@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DCA Full Exam</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body { background:#f4f7fb; }
+.container { margin-top:40px; margin-bottom:50px; }
+.mcq-card { margin-bottom:15px; }
+.correct { border-left:5px solid green; background:#d1e7dd; }
+.wrong { border-left:5px solid red; background:#f8d7da; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1 class="text-center text-success">DCA Theory Exam</h1>
+
+<form id="quizForm">
+<h3 class="text-center text-danger">MCQs Section</h3>
+<div id="mcq-container"></div>
+
+<div class="text-center">
+<button type="button" class="btn btn-primary mt-3" onclick="checkAnswers()">Submit</button>
+</div>
+
+<div id="result" class="alert alert-info mt-3 d-none text-center"></div>
+
+
+
+<!-- Theory -->
+<div class="mt-5">
+<h3 class="text-danger text-center">Theory Questions</h3>
+<ol class="list-group">
+<div class="theory-section mt-5">
+<h2 class="text-danger text-center">Theory Questions</h2>
+
+<ol class="list-group list-group-numbered" id="theory-container"></ol>
+
+<div class="text-center">
+<button type="button" class="btn btn-success mt-3" onclick="showTheoryAnswers()">Submit Theory</button>
+</div>
+</div>
+
+<script>
+const theoryQuestions = [
+
+{q:"Explain generations of computers.",a:"Computers are divided into 5 generations: First (Vacuum tubes, ENIAC, Pioneering Machines), Second (Transistors, Magnetic Core Memory, High-Level Languages, IBM 1401), Third (Integrated Circuits(IC), Operating Systems, Time-Sharing, Minicomputers), Fourth (Microprocessors, Personal Computers, Microsoft and Apple, Laptops and Workstations, Graghical User Interfaces (GUIs)), Fifth (Advancements in Microprocessors, Internet and World Wide Web , Mobile Computing , Cloud Computing and AI and advanced technologies)."},
+
+{q:"Define hardware and software.",a:"Hardware refers to physical components like CPU, keyboard. Software refers to programs like MS Word, Excel."},
+
+{q:"Explain RAM and ROM.",a:"RAM is temporary memory used during processing. ROM is permanent memory used to store boot instructions."},
+
+
+{q:"What is a computer? Explain its basic functions.",a:"A computer is an electronic device that processes data. Functions: Input, Processing, Output, Storage."},
+
+{q:"Describe the main components of a computer system.",a:"CPU, Memory, Input devices, Output devices, Storage devices."},
+
+{q:"Explain the working of CPU and its parts.",a:"CPU consists of Control Unit, ALU, Registers. It performs fetch, decode, execute cycle."},
+
+{q:"Explain types of computers.",a:"Types include PCs, Servers, Mainframes, Supercomputers, Embedded systems, Wearables."},
+
+{q:"Define input devices.",a:"Input devices are used to enter data like keyboard, mouse, scanner."},
+
+{q:"Define output devices.",a:"Output devices display results like monitor, printer, speakers."},
+
+{q:"Explain RAM.",a:"RAM is volatile memory used for temporary storage during processing."},
+
+{q:"Explain ROM.",a:"ROM is non-volatile memory used to store permanent instructions."},
+
+{q:"What are memory units?",a:"Bit, Byte, KB, MB, GB, TB are used to measure memory."},
+
+{q:"Define bit and byte.",a:"Bit is smallest unit (0 or 1). Byte is 8 bits."},
+
+{q:"Explain computer ports.",a:"Ports connect external devices like USB, HDMI, Ethernet, Audio Jacks, Thunderbolt ."},
+
+{q:"Explain USB port.",a:"USB is used to connect devices like keyboard, mouse, pen drive."},
+
+{q:"Explain HDMI port.",a:"HDMI connects computer to display devices like monitor and TV."},
+
+{q:"Explain Ethernet port.",a:"Ethernet is used for wired internet connection."},
+
+{q:"What is number system?",a:"System to represent numbers using digits like binary, decimal, hexadecimal."},
+
+{q:"Explain binary system.",a:"Binary uses digits 0 and 1."},
+
+{q:"Explain decimal system.",a:"Decimal uses digits 0 to 9."},
+
+{q:"Explain hexadecimal system.",a:"Uses digits 0-9 and A-F."},
+
+{q:"Define data.",a:"Data is raw facts and figures."},
+
+{q:"Types of data.",a:"Text, numbers, images, audio, video."},
+
+{q:"Explain uses of computers.",a:"Used in education, business, healthcare, entertainment."},
+
+
+{q:"What is hardware?",a:"Physical parts of computer."},
+
+{q:"What is software?",a:"Programs that run on computer."},
+
+{q:"Explain cloud computing.",a:"Provides storage and services over internet."},
+
+{q:"What is a bit?",a:"A bit is the smallest unit of data in a computer and can have a value of 0 or 1."},
+
+{q:"What is a byte?",a:"A byte consists of 8 bits and is used to represent a single character."},
+
+{q:"Define kilobyte (KB).",a:"1 Kilobyte (KB) is equal to 1024 bytes."},
+
+{q:"Define megabyte (MB).",a:"1 Megabyte (MB) is equal to 1024 kilobytes."},
+
+{q:"Define gigabyte (GB).",a:"1 Gigabyte (GB) is equal to 1024 megabytes."},
+
+{q:"Define terabyte (TB).",a:"1 Terabyte (TB) is equal to 1024 gigabytes."},
+
+{q:"What is the relationship between bit and byte?",a:"1 byte = 8 bits."},
+
+{q:"Which is the smallest memory unit?",a:"Bit is the smallest memory unit."},
+
+{q:"Arrange the memory units in ascending order.",a:"Bit < Byte < KB < MB < GB < TB."},
+
+{q:"Convert 1 KB into bytes.",a:"1 KB = 1024 bytes."},
+
+{q:"Convert 1 MB into KB.",a:"1 MB = 1024 KB."},
+
+{q:"Convert 1 GB into MB.",a:"1 GB = 1024 MB."},
+
+{q:"Convert 1 TB into GB.",a:"1 TB = 1024 GB."},
+
+];
+
+
+
+const theoryContainer = document.getElementById("theory-container");
+
+theoryQuestions.forEach((item,index)=>{
+theoryContainer.innerHTML += `
+<li class="list-group-item">
+<p><strong>${index+1}. ${item.q}</strong></p>
+
+<textarea class="form-control mb-2" rows="3" placeholder="Write your answer here..."></textarea>
+
+<div class="correct-answer text-success fw-bold d-none">
+Answer: ${item.a}
+</div>
+</li>
+`;
+});
+
+function showTheoryAnswers(){
+const answers = document.querySelectorAll(".correct-answer");
+answers.forEach(ans=>{
+ans.classList.remove("d-none");
+});
+}
+</script>
+
+
+
+
+
+</ol>
+</div>
+
+</form>
+</div>
+
+<script>
+const questions = [
+
+{q:"Which generation used vacuum tubes?",o:["First","Second","Third","Fourth"],a:"First"},
+{q:"ENIAC belongs to which generation?",o:["First","Second","Third","Fifth"],a:"First"},
+{q:"Which replaced vacuum tubes?",o:["IC","Transistor","Microprocessor","RAM"],a:"Transistor"},
+{q:"IBM 1401 belongs to?",o:["First","Second","Third","Fourth"],a:"Second"},
+{q:"IC stands for?",o:["Internal Chip","Integrated Circuit","Input Circuit","None"],a:"Integrated Circuit"},
+{q:"Which generation introduced microprocessors?",o:["Second","Third","Fourth","Fifth"],a:"Fourth"},
+{q:"AI belongs to which generation?",o:["Third","Fourth","Fifth","Second"],a:"Fifth"},
+{q:"Computer is a?",o:["Machine","Electronic device","Software","None"],a:"Electronic device"},
+{q:"CPU stands for?",o:["Central Process Unit","Central Processing Unit","Control Unit","None"],a:"Central Processing Unit"},
+{q:"ALU performs?",o:["Input","Logic & arithmetic","Storage","Output"],a:"Logic & arithmetic"},
+
+{q:"RAM is?",o:["Permanent","Temporary","External","None"],a:"Temporary"},
+{q:"ROM is?",o:["Volatile","Permanent","Cache","None"],a:"Permanent"},
+{q:"Keyboard is?",o:["Input","Output","Storage","None"],a:"Input"},
+{q:"Monitor is?",o:["Input","Output","Storage","CPU"],a:"Output"},
+{q:"1 Byte equals?",o:["4 bits","8 bits","16 bits","32 bits"],a:"8 bits"},
+{q:"1024 KB equals?",o:["1 MB","1 GB","1 TB","1 Byte"],a:"1 MB"},
+{q:"USB is used for?",o:["Display","Storage","Connecting devices","None"],a:"Connecting devices"},
+{q:"HDMI is used for?",o:["Audio","Video","Display","All"],a:"All"},
+{q:"Ethernet is used for?",o:["Printing","Networking","Storage","None"],a:"Networking"},
+{q:"Binary uses digits?",o:["0-9","0-1","A-F","1-9"],a:"0-1"},
+
+{q:"Decimal base is?",o:["2","8","10","16"],a:"10"},
+{q:"Hexadecimal base?",o:["8","10","16","2"],a:"16"},
+
+{q:"Hardware is?",o:["Programs","Physical parts","Data","None"],a:"Physical parts"},
+{q:"Software is?",o:["Programs","Devices","Input","None"],a:"Programs"},
+
+{q:"Printer is?",o:["Input","Output","Storage","None"],a:"Output"},
+
+{q:"Scanner is?",o:["Input","Output","Storage","None"],a:"Input"},
+{q:"Speaker is?",o:["Input","Output","Storage","None"],a:"Output"},
+{q:"Which stores large data?",o:["RAM","ROM","Hard Disk","CPU"],a:"Hard Disk"},
+{q:"Brain of computer?",o:["RAM","CPU","Monitor","Mouse"],a:"CPU"},
+{q:"Control Unit does?",o:["Calculate","Control operations","Store","None"],a:"Control operations"},
+{q:"Example of output?",o:["Keyboard","Monitor","Mouse","Scanner"],a:"Monitor"},
+{q:"Example of input?",o:["Printer","Speaker","Keyboard","Projector"],a:"Keyboard"},
+{q:"Port connects?",o:["Software","Hardware devices","Data","None"],a:"Hardware devices"},
+{q:"Cloud computing provides?",o:["Storage","Processing","Both","None"],a:"Both"},
+{q:"Internet used for?",o:["Communication","Storage","Entertainment","All"],a:"All"}
+
+];
+
+const container = document.getElementById("mcq-container");
+
+questions.forEach((q,i)=>{
+let html = `<div class="card mcq-card"><div class="card-body">
+<p>${i+1}. ${q.q}</p>`;
+q.o.forEach(opt=>{
+html+=`<div><input type="radio" name="q${i}" value="${opt}"> ${opt}</div>`;
+});
+html+=`</div></div>`;
+container.innerHTML+=html;
+});
+
+function checkAnswers(){
+let score=0;
+const cards=document.querySelectorAll(".mcq-card");
+
+questions.forEach((q,i)=>{
+let selected=document.querySelector(`input[name=q${i}]:checked`);
+cards[i].classList.remove("correct","wrong");
+
+if(selected){
+if(selected.value===q.a){
+score++;
+cards[i].classList.add("correct");
+}else{
+cards[i].classList.add("wrong");
+}
+}else{
+cards[i].classList.add("wrong");
+}
+});
+
+let result=document.getElementById("result");
+result.classList.remove("d-none");
+result.innerHTML=`Your Score: ${score} / ${questions.length}`;
+}
+</script>
+
+</body>
+</html>
