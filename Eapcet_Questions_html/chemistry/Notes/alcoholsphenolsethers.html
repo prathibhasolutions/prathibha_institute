@@ -1,663 +1,938 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Alcohols, Phenols & Ethers – Ultimate JEE Main Notes</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap 5.3 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body);"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alcohols, Phenols &amp; Ethers | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
-    body { background: #f9fafa; }
-    .topic-card { border-left: 6px solid #0072b1;}
-    .subtopic-card { background: #f3f5fa;}
-    .nested-card { border-left: 4px solid #31708f; }
-    .reaction, .mech, .formula { background: #eafcff; padding: .35rem 0.7rem; border-left: 3px solid #17a2b8; margin-bottom: .4rem; }
-    .labtest { background: #fffbef; border-left: 3px solid #b79c18;}
-    .arrow { font-weight: bold; color: #13a146;}
-    .imp { color: #d90429; font-weight: bold;}
-    .highlight { background: #f2f0fd; padding:0 3px; border-radius:4px;}
-    .sec-title { color: #1741c7; font-size: 1.4rem; font-weight: bold;margin-top: 36px;}
-    .sub-title { color: #0984e3; font-size: 1.08rem; font-weight: bold; margin-top:22px;}
-    .katex-display { font-size: 1.16em; }
+    body { background: #f8f9fa; }
+    .chapter-header { background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 60%, #52b788 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #1b4332; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+    .chapter-badge { font-size: 0.85rem; }
   </style>
 </head>
 <body>
-  <div class="container py-3">
-    <h1 class="text-center mb-3 text-primary">Alcohols, Phenols, Ethers</h1>
-    <h4 class="text-center text-muted mb-4">Ultimate JEE Mains Notes: Concepts, Complete Reactions, Mechanisms</h4>
 
-    <!-- Syllabus Overview Card -->
-    <div class="card topic-card mb-3">
-      <div class="card-body">
-        <b>Syllabus Focus:</b>
-        <ul>
-          <li>Preparation, properties, distinction, and uses of alcohols, phenols, ethers</li>
-          <li>All important <span class="imp">named-reactions and mechanisms</span></li>
-          <li>Tests, IUPAC and common naming, trends & exceptions</li>
-        </ul>
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 27</div>
+        <h1>Alcohols, Phenols &amp; Ethers</h1>
+        <p class="mb-0">Complete Notes · Arihant Handbook of Chemistry</p>
       </div>
     </div>
+  </div>
 
-    <!-- ALCOHOLS SECTION -->
-    <div class="card topic-card mb-4">
-      <div class="card-header fs-3" style="background: #e6faff;">1. Alcohols</div>
+  <div class="container pb-4">
+
+    <!-- ══════════════════════════════════════════
+         SECTION A — ALCOHOLS & PHENOLS
+    ══════════════════════════════════════════ -->
+    <div class="text-center mb-3">
+      <span class="badge bg-success fs-6 px-4 py-2">Part A — Alcohols &amp; Phenols</span>
+    </div>
+
+    <!-- 1. Introduction & Classification -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F33F; Introduction, Classification &amp; Structure</div>
       <div class="card-body">
+        <p>Alcohols and phenols are formed when a hydrogen atom in a hydrocarbon (aliphatic and aromatic respectively) is replaced by a <strong>hydroxyl group (–OH)</strong>.</p>
 
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">1.1. Introduction & Classification</div>
-          <div class="card-body">
-            <b>Definition:</b> Alcohols are hydroxy derivatives of aliphatic hydrocarbons where the –OH is attached to sp<sup>3</sup> carbon.<br>
-            <b>Formula: C<sub>n</sub>H<sub>2n+1</sub>OH</b>
-            <div class="nested-card card mt-2 mb-2">
-              <div class="card-body py-2">
-                <b>Classification by:</b>
-                <ul>
-                  <li>Number of –OH Groups: <b>Monohydric, Dihydric (Glycols), Trihydric (Glycerol)</b></li>
-                  <li>Class: <b>Primary (1°):</b> –CH<sub>2</sub>OH; <b>Secondary (2°):</b> –CHOH–; <b>Tertiary (3°):</b> –C(OH)–</li>
-                </ul>
-                <b>Nomenclature:</b>
-                <ul>
-                  <li>IUPAC: Longest chain with –OH, suffix "-ol"</li>
-                  <li>Common Names: Alkyl alcohol (e.g. ethyl alcohol)</li>
-                </ul>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Classification of Alcohols</div>
+              <div class="card-body">
+                <p>In alcohols, –OH is attached to <strong>sp3-hybridised carbon</strong>.</p>
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Formula</th><th>Example</th></tr>
+                  <tr><td>1° (Primary)</td><td>R–CH2–OH</td><td>C2H5OH (ethanol)</td></tr>
+                  <tr><td>2° (Secondary)</td><td>R–CH(OH)–R'</td><td>(CH3)2CHOH</td></tr>
+                  <tr><td>3° (Tertiary)</td><td>R–C(OH)(R')(R'')</td><td>(CH3)3COH</td></tr>
+                  <tr><td>Monohydric</td><td>One –OH group</td><td>CH3OH (methanol)</td></tr>
+                  <tr><td>Dihydric</td><td>Two –OH groups</td><td>HOCH2CH2OH (glycol)</td></tr>
+                  <tr><td>Polyhydric</td><td>Three or more –OH</td><td>HOCH2–CHOH–CH2OH (glycerol)</td></tr>
+                  <tr><td>Allylic</td><td>sp3 C, next to C=C</td><td>CH2=CH–CH2OH</td></tr>
+                  <tr><td>Benzylic</td><td>sp3 C, next to ring</td><td>C6H5–CH2OH</td></tr>
+                </table>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- PREPARATION OF ALCOHOLS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">1.2. Methods of Preparation</div>
-          <div class="card-body">
-            <ul class="mb-2">
-              <li>
-                <b>From Alkenes</b>
-                <ul>
-                  <li><b>Acid-catalyzed hydration (Markovnikov rule):</b></li>
-                </ul>
-                <div class="reaction">
-                  <b>CH<sub>2</sub>=CH<sub>2</sub> + H<sub>2</sub>O &rarr;(H<sup>+</sup>) CH<sub>3</sub>CH<sub>2</sub>OH</b> <br>
-                  (Carbocation rearrangement possible; gives 2°/3° alcohol if applicable)
-                </div>
-                <ul>
-                  <li><b>Hydroboration-Oxidation</b> (Anti-Markovnikov):</li>
-                </ul>
-                <div class="reaction">
-                  <b>CH<sub>2</sub>=CH<sub>2</sub> + BH<sub>3</sub>→ [trialkylborane] →(H<sub>2</sub>O<sub>2</sub>/OH⁻) CH<sub>3</sub>CH<sub>2</sub>OH</b>
-                </div>
-              </li>
-              <li>
-                <b>From Carbonyl Compounds (Reduction)</b>
-                <ul>
-                  <li><b>Aldehyde</b> + NaBH<sub>4</sub>/LiAlH<sub>4</sub> → 1° alcohol</li>
-                  <li><b>Ketone</b> + NaBH<sub>4</sub>/LiAlH<sub>4</sub> → 2° alcohol</li>
-                </ul>
-                <div class="reaction">
-                  <b>RCHO + 2[H] &rarr; RCH<sub>2</sub>OH</b>
-                </div>
-              </li>
-              <li>
-                <b>By Grignard Reagent on Carbonyls:</b>
-                <div class="reaction">
-                  <b>R–MgX + R'CHO &rarr; R'CH(OH)R</b> <i>(2° alcohol)</i>
-                </div>
-                <div class="reaction">
-                  <b>R–MgX + HCHO &rarr; RCH<sub>2</sub>OH</b> <i>(1° alcohol)</i>
-                </div>
-                <div class="reaction">
-                  <b>R–MgX + R'<sub>2</sub>CO &rarr; R'<sub>2</sub>C(OH)R</b> <i>(3° alcohol)</i>
-                </div>
-              </li>
-              <li>
-                <b>From Alkyl Halides (Nucleophilic Substitution):</b>
-                <div class="reaction">
-                  <b>R–X + KOH(aq) &rarr; R–OH + KX</b>
-                </div>
-              </li>
-              <li>
-                <b>By Fermentation (Ethanol):</b>
-                <div class="reaction">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> &rarr;(Yeast) 2C<sub>2</sub>H<sub>5</sub>OH + 2CO<sub>2</sub></div>
-              </li>
-            </ul>
-            <div class="nested-card card">
-              <div class="card-body py-2">
-                <b>Reagent Selection Table:</b>
-                <table class="table table-bordered table-sm">
-                  <tr><th>Alcohol Type</th><th>Preparation</th><th>Reagents</th></tr>
-                  <tr><td>1°</td><td>Reduction of aldehyde, Hydroboration of 1-alkene, Grignard on formaldehyde</td><td>NaBH<sub>4</sub>, LiAlH<sub>4</sub>, B<sub>2</sub>H<sub>6</sub></td></tr>
-                  <tr><td>2°</td><td>Reduction of ketone, Hydration of 2-alkene, Grignard on aldehyde</td><td>NaBH<sub>4</sub>, H<sub>2</sub>/Ni</td></tr>
-                  <tr><td>3°</td><td>Grignard on ketone, Hydration of 3° alkene</td><td>R–MgX, H<sub>2</sub>O/H<sup>+</sup></td></tr>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Classification of Phenols</div>
+              <div class="card-body">
+                <p>In phenols, –OH is attached to <strong>sp2-hybridised carbon</strong> (benzene ring).</p>
+                <table class="chem-table">
+                  <tr><th>Name</th><th>Structure</th></tr>
+                  <tr><td>Phenol (monohydric)</td><td>C6H5–OH</td></tr>
+                  <tr><td>Catechol (o-dihydric)</td><td>1,2-dihydroxybenzene</td></tr>
+                  <tr><td>Resorcinol (m-dihydric)</td><td>1,3-dihydroxybenzene</td></tr>
+                  <tr><td>Quinol / Hydroquinone (p-dihydric)</td><td>1,4-dihydroxybenzene</td></tr>
                 </table>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- PHYSICAL PROPERTIES -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">1.3. Physical Properties</div>
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Structure of Alcohols</div>
+              <div class="card-body">
+                Oxygen in alcohols is <strong>sp3-hybridised</strong> → tetrahedral positions.
+                <div class="formula-box">R–O–H
+Bond angle (C–O–H) = 108.9° (methanol)
+[Due to repulsion of two lone pairs on O]
+O–H bond length = 96 pm</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Structure of Phenols</div>
+              <div class="card-body">
+                –OH attached to sp2 carbon; <strong>C–O bond acquires partial double bond character</strong> due to resonance.
+                <div class="formula-box">C–O bond length in phenol = 136 pm
+Bond angle (C–O–H) = 109°
+(shorter than alcohol C–O = 142 pm)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-secondary text-white">IUPAC Nomenclature</div>
           <div class="card-body">
-            <ul>
-              <li>Boiling point: ↑ (due to strong H-bond, alcohol > ether > alkane)</li>
-              <li>Solubility: Decreases with ↑mol. mass; lower alcohols miscible with H<sub>2</sub>O</li>
-              <li>Density: Alcohols denser than hydrocarbons of same size</li>
+            <ul class="mb-0">
+              <li><strong>Alcohols:</strong> Replace final 'e' of alkane with <strong>–ol</strong>. e.g. CH3OH → methanol; CH3CH2OH → ethanol; HOCH2–CHOH–CH2OH → propane-1,2,3-triol.</li>
+              <li><strong>Phenols:</strong> Parent name = phenol; substituents numbered from OH carbon. e.g. 2-methylphenol (o-cresol); 2,4-dimethylcyclopentanol.</li>
             </ul>
           </div>
         </div>
-
-        <!-- CHEMICAL PROPERTIES AND REACTIONS ALCOHOLS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">1.4. Chemical Reactions</div>
-          <div class="card-body pb-1">
-
-            <!-- REACTIONS DUE TO -OH GROUP -->
-            <div class="nested-card card mb-3">
-              <div class="card-header">A. Reactions of –OH group (Acidic character)</div>
-              <div class="card-body">
-                <ul>
-                  <li>With sodium: <span class="reaction">2R–OH + 2Na &rarr; 2R–O⁻Na⁺ + H<sub>2</sub>↑</span></li>
-                  <li>With PCl<sub>5</sub>, PCl<sub>3</sub>, SOCl<sub>2</sub>: <span class="reaction">R–OH + PCl<sub>5</sub> &rarr; R–Cl + POCl<sub>3</sub> + HCl</span></li>
-                  <li>With carboxylic acid (Esterification, Fischer-Speier): <span class="reaction">R–OH + R'COOH &rarr;(H<sup>+</sup>, Δ) R'COOR + H<sub>2</sub>O</span></li>
-                  <li>Dehydration (intramolecular): <span class="reaction">R–CH<sub>2</sub>–CH<sub>2</sub>–OH &rarr;(conc H<sub>2</sub>SO<sub>4</sub>, 170°C) R–CH=CH<sub>2</sub> + H<sub>2</sub>O</span></li>
-                  <li>Oxidation: (see next nested card for details)</li>
-                </ul>
-              </div>
-            </div>
-            <!-- OXIDATION -->
-            <div class="nested-card card mb-3">
-              <div class="card-header">B. Oxidation Pathways</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <b>1° Alcohol</b>
-                    <span class="arrow">&rarr;(mild oxidant)</span> Aldehyde
-                    <span class="arrow">&rarr;(strong oxidant)</span> Acid
-                  </li>
-                  <li>
-                    <b>2° Alcohol</b>
-                    <span class="arrow">&rarr;(oxidant)</span> Ketone
-                    <span class="arrow">&rarr;(strong/hot oxidant)</span> Acid + Shorter Chain Compounds
-                  </li>
-                  <li>
-                    <b>3° Alcohols</b> 
-                    <span class="arrow">&rarr; Resistance to oxidation</span>
-                  </li>
-                </ul>
-                <span class="reaction">R–CH<sub>2</sub>OH + [O] &rarr; R–CHO &rarr; R–COOH</span>
-                <span class="reaction">R<sub>2</sub>CH–OH + [O] &rarr; R<sub>2</sub>CO</span>
-                <br>(<b>Oxidants:</b> KMnO<sub>4</sub>, K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>/H<sub>2</sub>SO<sub>4</sub>, PCC, etc.)
-              </div>
-            </div>
-
-            <!-- Mechanism: Dehydration (E1/E2) -->
-            <div class="nested-card card mb-3">
-              <div class="card-header">C. Mechanism: Dehydration of Alcohols</div>
-              <div class="card-body">
-                <b>2°/3° alcohols:</b> E<sub>1</sub> mechanism (carbocation intermediate, arrangement possible).<br>
-                <b>1° alcohols:</b> E<sub>2</sub> (concerted elimination, no rearrangement).
-                <ul>
-                  <li><b>Step 1:</b> Protonation of –OH</li>
-                  <li><b>Step 2:</b> Departure as H<sub>2</sub>O, forming carbocation (if stable)</li>
-                  <li><b>Step 3:</b> Loss of β-H<sup>+</sup> to give alkene</li>
-                </ul>
-                <span class="imp">Saytzeff's Rule</span>: More substituted alkene is major.
-              </div>
-            </div>
-
-            <!-- Lucas Test, Victor Meyer Test, Other Distinctions -->
-            <div class="nested-card card mb-3">
-              <div class="card-header">D. Distinguishing 1°, 2°, 3° Alcohols (Lab Tests)</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <div class="labtest mb-1"><b>Lucas Test</b>: ZnCl<sub>2</sub>/conc HCl + alcohol. <br>
-                    3° alcohol – turbidity instantly; 2° – minutes; 1° – no/little turbidity.</div>
-                  </li>
-                  <li>
-                    <div class="labtest mb-1"><b>Victor Meyer Test:</b> Red (1°), Blue (2°), No colour (3°)</div>
-                  </li>
-                  <li>
-                    <div class="labtest mb-1"><b>Oxidation Test:</b> 1° gives acid, 2° gives ketone, 3° unchanged (resist oxidants).</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Other name reactions -->
-            <div class="nested-card card mb-3">
-              <div class="card-header">E. Other Important Reactions</div>
-              <div class="card-body pb-1">
-                <ul>
-                  <li><span class="reaction">R–OH + R'–COOH (conc. H<sub>2</sub>SO<sub>4</sub>) &rarr; R'COOR + H<sub>2</sub>O</span><b>(Esterification)</b></li>
-                  <li><span class="reaction">R–CH<sub>2</sub>OH + Na &rarr; R–CH<sub>2</sub>O⁻Na⁺ + ½H<sub>2</sub></span></li>
-                  <li><span class="reaction">R–OH + SOCl<sub>2</sub> &rarr; R–Cl + SO<sub>2</sub> + HCl</span></li>
-                  <li class="imp"><b>Pinacol-Pinacolone Rearrangement</b> (for 1,2-diols)</li>
-                  <li><span class="reaction">Pinacol (glycol) + H<sup>+</sup> &rarr; Pinacolone + H<sub>2</sub>O</span></li>
-                  <li>Oxidative cleavage of glycols with HIO<sub>4</sub></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- USES OF ALCOHOLS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">1.5. Uses & Applications</div>
-          <div class="card-body">
-            <ul>
-              <li>Solvents (ethanol, methanol)</li>
-              <li>Starting materials for organic syntheses</li>
-              <li>Antifreeze (ethylene glycol)</li>
-              <li>Fuel (bioethanol)</li>
-              <li>Sterilizer/disinfectant</li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- ALCOHOLS CARD END -->
-    </div>
-
-    <!-- PHENOLS SECTION -->
-    <div class="card topic-card mb-4">
-      <div class="card-header fs-3" style="background:#f3efec;">2. Phenols</div>
-      <div class="card-body">
-
-        <!-- PHENOL BASICS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">2.1. Introduction, Structure, and Acidity</div>
-          <div class="card-body">
-            <b>Definition:</b> Hydroxy derivatives of benzene, –OH group directly bonded to aromatic ring.<br>
-            <b>Structure: C<sub>6</sub>H<sub>5</sub>OH</b><br>
-            <b>Acidity (trend):</b>
-            <ul>
-              <li>Phenol &gt; Alcohols (due to resonance stabilization of phenoxide anion)</li>
-              <li>Easily gives H<sup>+</sup> with alkali and sodium</li>
-            </ul>
-            <span class="formula">C<sub>6</sub>H<sub>5</sub>OH + Na &rarr; C<sub>6</sub>H<sub>5</sub>O⁻Na⁺ + ½H<sub>2</sub>↑</span>
-          </div>
-        </div>
-
-        <!-- PHENOL PREPARATION -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">2.2. Methods of Preparation</div>
-          <div class="card-body">
-            <ul>
-              <li>
-                <b>From Chlorobenzene (Dow’s process):</b>
-                <span class="reaction">C<sub>6</sub>H<sub>5</sub>Cl + NaOH (623K, 300atm) &rarr; C<sub>6</sub>H<sub>5</sub>OH + NaCl</span>
-              </li>
-              <li>
-                <b>From Benzene Sulfonic Acid:</b>
-                <span class="reaction">C<sub>6</sub>H<sub>5</sub>SO<sub>3</sub>H + 2NaOH (fused) &rarr; C<sub>6</sub>H<sub>5</sub>ONa + H<sub>2</sub>O + Na<sub>2</sub>SO<sub>3</sub> (acidify) &rarr; C<sub>6</sub>H<sub>5</sub>OH</span>
-              </li>
-              <li>
-                <b>From Diazonium Salts:</b>
-                <span class="reaction">C<sub>6</sub>H<sub>5</sub>N<sub>2</sub>Cl + H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>5</sub>OH + N<sub>2</sub> + HCl</span>
-              </li>
-              <li>
-                <b>From Cumene:</b>
-                <span class="reaction">Cumene O<sub>2</sub> (air oxidation) &rarr; Cumene hydroperoxide (acid) &rarr; Phenol + Acetone</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- PHENOL PROPERTIES -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">2.3. Physical & Chemical Properties</div>
-          <div class="card-body pb-1">
-            <div class="nested-card card mb-2">
-              <div class="card-body py-2">
-                <b>Boiling Point:</b> Very high (H-bonding, ortho effect).<br>
-                <b>Solubility:</b> Moderately soluble in water, ↑ with temp (breaks at high conc.).<br>
-                <b>Acidity:</b> Phenols more acidic than alcohols; acidity ↑ with electron withdrawing groups (E.g. –NO<sub>2</sub> at ortho/para).
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PHENOL REACTIONS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">2.4. Chemical Reactions</div>
-          <div class="card-body">
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">A. Reactions Due to –OH (Acidic Nature)</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <span class="reaction">C<sub>6</sub>H<sub>5</sub>OH + Na &rarr; C<sub>6</sub>H<sub>5</sub>ONa + ½H<sub>2</sub></span>
-                  </li>
-                  <li>
-                    <span class="reaction">C<sub>6</sub>H<sub>5</sub>OH + NaOH &rarr; C<sub>6</sub>H<sub>5</sub>ONa + H<sub>2</sub>O</span>
-                  </li>
-                  <li>
-                    <span class="reaction">With FeCl<sub>3</sub>: Violet colour (test for phenolic –OH)</span>
-                  </li>
-                  <li>
-                    <span class="reaction">With Zn: Hexa phenolate of Zn</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">B. Electrophilic Aromatic Substitution Reactions</div>
-              <div class="card-body">
-                <b>Phenol is highly reactive at o-/p-places due to +M effect of –OH.</b>
-                <ul>
-                  <li>
-                    <b>Halogenation:</b>
-                    <span class="reaction">
-                      C<sub>6</sub>H<sub>5</sub>OH + 3Br<sub>2</sub>(aq) &rarr; 2,4,6-tribromophenol (white ppt)
-                    </span>
-                  </li>
-                  <li>
-                    <b>Nitration:</b>
-                    <span class="reaction">
-                      C<sub>6</sub>H<sub>5</sub>OH + dil. HNO<sub>3</sub> &rarr; o-& p-nitrophenol<br>
-                      conc. HNO<sub>3</sub>: Picric acid (2,4,6-trinitrophenol)
-                    </span>
-                  </li>
-                  <li>
-                    <b>Sulphonation:</b>
-                    <span class="reaction">
-                      C<sub>6</sub>H<sub>5</sub>OH + H<sub>2</sub>SO<sub>4</sub>(dil.) &rarr; o-/p-phenolsulfonic acid
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">C. Kolbe’s Reaction</div>
-              <div class="card-body">
-                <b>Kolbe-Schmitt Reaction:</b>
-                <span class="reaction">
-                  C<sub>6</sub>H<sub>5</sub>ONa + CO<sub>2</sub> (6 atm, 125°C) → o-Hydroxybenzoic acid (salicylic acid, Aspirin precursor)
-                </span>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">D. Reimer-Tiemann Reaction</div>
-              <div class="card-body">
-                <b>Formylation of phenols at ortho-position using CHCl<sub>3</sub> + NaOH → Salicylaldehyde:</b>
-                <span class="reaction">
-                  C<sub>6</sub>H<sub>5</sub>OH + CHCl<sub>3</sub> + 3NaOH &rarr; o-HO–C<sub>6</sub>H<sub>4</sub>–CHO + 3NaCl + 2H<sub>2</sub>O
-                </span>
-                <div class="imp">Mechanism: formation of dichlorocarbene (:CCl<sub>2</sub>) as electrophile.</div>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">E. Oxidation & Other Reactions</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <b>Oxidation:</b>
-                    <span class="reaction">Phenol —[K<sub>2</sub>Cr<sub>2</sub>O<sub>7</sub>]→ p-benzoquinone</span>
-                  </li>
-                  <li>
-                    <b>Reduction:</b>
-                    <span class="reaction">Phenol —[Zn/H]→ Benzene</span>
-                  </li>
-                  <li>
-                    <b>Esterification:</b>
-                    <span class="reaction">C<sub>6</sub>H<sub>5</sub>OH + RCOCl &rarr; C<sub>6</sub>H<sub>5</sub>OCO–R + HCl</span>
-                  </li>
-                  <li>
-                    <b>Formation of Azo Dye:</b>
-                    <span class="reaction">Phenol + diazonium salt (NaNO<sub>2</sub>/HCl) → p-hydroxyazobenzene (bright colour)</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">F. Laboratory and Distinction Tests</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <div class="labtest">
-                      <b>FeCl<sub>3</sub> test:</b> Gives violet/purple colour with (most) phenols.<br>
-                      <b>Bromine water:</b> White ppt indicates 2,4,6-tribromophenol.<br>
-                      <b>Litmus Test:</b> Turns blue litmus red (weak acid).
-                    </div>
-                  </li>
-                  <li>
-                    <div class="labtest">
-                      <b>Compound Distinction:</b> Phenol does not reduce Tollens'/Fehling's reagent, unlike aldehydes; reacts with NaOH, not carboxylic acids.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">G. Special Named Reactions with Phenols</div>
-              <div class="card-body">
-                <ul>
-                  <li>
-                    <b>Fries Rearrangement:</b>
-                    <span class="reaction">
-                      Phenyl ester + AlCl<sub>3</sub> → o-& p-hydroxy ketones (acyl phenols)
-                    </span>
-                  </li>
-                  <li>
-                    <b>Claisen Rearrangement (allyl phenyl ether only):</b>
-                    <span class="reaction">
-                      Allyl phenyl ether →(Δ) o-allyl phenol
-                    </span>
-                  </li>
-                  <li>
-                    <b>Phthalein Reaction:</b>
-                    <span class="reaction">
-                      Phenol + phthalic anhydride + H<sub>2</sub>SO<sub>4</sub> → Phenolphthalein (indicator)
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-          </div> <!-- Phenol chemical body -->
-        </div>
-
-        <!-- USES -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">2.5. Applications & Uses</div>
-          <div class="card-body">
-            <ul>
-              <li>Antiseptics (Dettol contains chloroxylenol + phenol)</li>
-              <li>Disinfectants, dyes (azo dye synthesis)</li>
-              <li>Pesticides, resins, plastics, aspirin precursor</li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- PHENOLS CARD END -->
-    </div>
-
-    <!-- ETHERS SECTION -->
-    <div class="card topic-card mb-4">
-      <div class="card-header fs-3" style="background:#f9f6ee;">3. Ethers</div>
-      <div class="card-body">
-
-        <!-- STRUCTURE, CLASSIFICATION -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">3.1. Introduction, Structure, Nomenclature</div>
-          <div class="card-body">
-            <b>Definition:</b> Compounds with general formula R–O–R', oxygen linked to two carbons.<br>
-            <b>Types:</b> Simple (R = R'); Mixed (R ≠ R')<br>
-            <b>Naming: IUPAC—Alkoxyalkanes (e.g., methoxyethane); Common—ethyl methyl ether.<br>
-            <b>Structure:</b> Oxygen is sp<sup>3</sup> hybrid, bent geometry (similar to H<sub>2</sub>O).
-          </div>
-        </div>
-
-        <!-- PREPARATION OF ETHERS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">3.2. Methods of Preparation</div>
-          <div class="card-body">
-            <ul>
-              <li>
-                <b>Williamson Ether Synthesis:</b>
-                <span class="reaction">
-                  R–O⁻Na⁺ + R'–X &rarr; R–O–R' + NaX <br>
-                  <b>Note:</b> <span class="imp">1° alkyl halides best, steric hindered conditions give elimination.
-                </span>
-              </li>
-              <li>
-                <b>Dehydration of Alcohols (Intermolecular):</b>
-                <span class="reaction">2R–OH —(conc H<sub>2</sub>SO<sub>4</sub>, 413K)→ R–O–R + H<sub>2</sub>O</span>
-              </li>
-              <li>
-                <b>By reaction of diazomethane with alcohols (for methyl ethers):</b>
-                <span class="reaction">ROH + CH<sub>2</sub>N<sub>2</sub> &rarr; R–O–CH<sub>3</sub> + N<sub>2</sub></span>
-              </li>
-            </ul>
-            <div class="nested-card card mt-3">
-              <div class="card-body py-2">
-                <b>Williamson Ether Synthesis: Tips</b>
-                <ol>
-                  <li>Best for asymmetrical ethers: use 1° alkyl halide to prevent E2 elimination.
-                  </li>
-                  <li>Aryl halides (Ar–X) not reactive in Williamson (except with phenoxide, not aryl halide).
-                  </li>
-                  <li>For aromatic ethers (e.g., anisole): <span class="reaction">C<sub>6</sub>H<sub>5</sub>O⁻Na⁺ + CH<sub>3</sub>I &rarr; C<sub>6</sub>H<sub>5</sub>OCH<sub>3</sub> + NaI</span></li>
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROPERTIES OF ETHERS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">3.3. Physical & Chemical Properties</div>
-          <div class="card-body">
-            <ul>
-              <li>Low boiling (no H-bonding with self); soluble in organic solvents; slightly soluble in water</li>
-              <li>Highly volatile, pleasant odour, extremely flammable</li>
-              <li>Higher density than hydrocarbons of similar mass</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- REACTIONS OF ETHERS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">3.4. Chemical Reactions</div>
-          <div class="card-body">
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">A. Cleavage by Hydrogen Halides (HI, HBr, HCl)</div>
-              <div class="card-body">
-                <b>Cleavage order:</b> HI > HBr > HCl (I⁻ is best nucleophile)
-                <ul>
-                  <li>
-                    <span class="reaction">R–O–R' + HX &rarr; R–X + R'–OH</span>
-                    <b>(excess HX)</b> <span class="arrow">&rarr;</span> R–X + R'–X + H<sub>2</sub>O
-                  </li>
-                  <li>
-                    <b>Aryl Ethers (Anisole):</b> Cleavage at methyl group, not the aromatic ring
-                    <span class="reaction">C<sub>6</sub>H<sub>5</sub>–O–CH<sub>3</sub> + HI &rarr; C<sub>6</sub>H<sub>5</sub>–OH + CH<sub>3</sub>I</span>
-                  </li>
-                </ul>
-                <b>Mechanism: SN1 for 3°, SN2 for 1° and methyl ethers</b>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">B. Formation of Peroxides</div>
-              <div class="card-body">
-                <span class="reaction">R–O–R' + O<sub>2</sub> (slow, air, light) &rarr; R–O–O–R'</span>
-                <ul>
-                  <li>Peroxides are explosive, especially on storage</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">C. With PCl<sub>5</sub> or SOCl<sub>2</sub> (Chlorination)</div>
-              <div class="card-body">
-                <span class="reaction">R–O–R' + PCl<sub>5</sub> &rarr; R–Cl + R'–Cl + POCl<sub>3</sub></span>
-              </div>
-            </div>
-
-            <div class="nested-card card mb-3">
-              <div class="card-header">D. Electrophilic Substitution in Aromatic Ethers</div>
-              <div class="card-body">
-                Aryl ethers (anisole, etc.) are activated towards electrophilic substitution at ortho, para positions.
-                <span class="reaction">Anisole + Br<sub>2</sub> &rarr; 2-bromoanisole / 4-bromoanisole</span>
-                <ul>
-                  <li><span class="imp">NO reaction with NaOH (distinction from phenol)</span></li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- USES OF ETHERS -->
-        <div class="card subtopic-card mb-3">
-          <div class="card-header">3.5. Applications & Lab Importance</div>
-          <div class="card-body">
-            <ul>
-              <li>Common solvents (diethyl ether, petroleum ether)</li>
-              <li>Starting materials for plastics, drugs, perfumes</li>
-              <li>Former anesthetic (diethyl ether, obsolete for safety)</li>
-            </ul>
-          </div>
-        </div>
-      </div> <!-- ETHERS end -->
-    </div>
-
-    <!-- REACTION SUMMARY TABLE -->
-    <div class="card mb-4">
-      <div class="card-header fw-bold" style="background:#eaf2ff;"><span class="sec-title">Summary: Key Named Reactions and Mechanisms</span></div>
-      <div class="card-body p-0">
-        <table class="table table-bordered table-sm m-0">
-          <thead class="table-light">
-            <tr>
-              <th>Name Reaction</th>
-              <th>Reactants</th>
-              <th>Products / Significance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Williamson Synthesis</td><td>R–O⁻Na⁺ + R'–X</td><td>R–O–R' (Ether)</td></tr>
-            <tr><td>Kolbe Reaction</td><td>Phenoxide + CO<sub>2</sub>, Δ, pressure</td><td>Salicylic acid (o-Hydroxybenzoic acid)</td></tr>
-            <tr><td>Reimer-Tiemann</td><td>Phenol + CHCl<sub>3</sub> + NaOH</td><td>Salicylaldehyde (o-hydroxybenzaldehyde)</td></tr>
-            <tr><td>Hydroboration-Oxidation</td><td>Alkene, BH<sub>3</sub>, H<sub>2</sub>O<sub>2</sub>/OH⁻</td><td>Anti-Markovnikov alcohol</td></tr>
-            <tr><td>Lucas Test</td><td>Alcohol + ZnCl<sub>2</sub>/conc. HCl</td><td>Turbidity (differentiates 1°/2°/3°)</td></tr>
-            <tr><td>Fischer Esterification</td><td>Alcohol + carboxylic acid (H<sup>+</sup>)</td><td>Ester + H<sub>2</sub>O</td></tr>
-            <tr><td>Cleavage by HX</td><td>Ether + HX</td><td>Alkyl halide + alcohol</td></tr>
-            <tr><td>Pinacol-Pinacolone</td><td>Glycol + H<sup>+</sup></td><td>Ketone (Pinacolone)</td></tr>
-            <tr><td>Claisen Rearrangement</td><td>Allyl phenyl ether (heat)</td><td>o-Allyl phenol</td></tr>
-          </tbody>
-        </table>
       </div>
     </div>
 
-    <!-- TRENDS, CHARTS, KEY NOTES -->
-    <div class="card mb-4">
-      <div class="card-header sec-title">Trends & Miscellaneous Concepts</div>
+    <!-- 2. Preparation of Alcohols -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x2697;&#xFE0F; Preparation of Alcohols</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(i) From Alkenes</div>
+              <div class="card-body">
+                <strong>(a) Acid-catalysed hydration (Markownikoff):</strong>
+                <div class="reaction-box">C=C + H2O (H+) → C–C(OH)–
+CH3–CH=CH2 + H2O (H+) → CH3–CHOH–CH3
+(2-propanol, Markownikoff product)
+
+Mechanism:
+Step I: Alkene + H3O+ → carbocation
+Step II: Nu attack by H2O on carbocation
+Step III: Deprotonation → alcohol</div>
+                <strong>(b) Hydroboration–Oxidation (anti-Markownikoff, anti-addition):</strong>
+                <div class="reaction-box">6(R–CH=CH2) + 2BH3 → 2(R–CH2–CH2)3B (trialkylborane)
+OH⁻/H2O2 → 3 R–CH2–CH2–OH  (primary alcohol)
+Syn-addition of reagent.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(ii) From Carbonyl Compounds</div>
+              <div class="card-body">
+                <strong>(a) Reduction of aldehydes and ketones:</strong>
+                <div class="reaction-box">R–CHO + H2 (Pd) → R–CH2–OH  (1° alcohol)
+R–CO–R' + NaBH4 → R–CHOH–R'  (2° alcohol)</div>
+                <strong>(b) Reduction of carboxylic acids and esters:</strong>
+                <div class="reaction-box">RCOOH + LiAlH4 (then H2O) → R–CH2–OH
+RCOOR' + H2 (catalyst) → R–CH2–OH + R'OH
+
+Reduction with Na/alcohol = Bouveault-Blanc reduction</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(iii) From Grignard's Reagents</div>
+              <div class="card-body">
+                <div class="reaction-box">C=O + R'–Mg–X → [C–OMgX] → C–OH + Mg(OH)X
+                             (dry ether)  (adduct)  (H2O)
+
+HCHO + R'MgX → R'–CH2–OH  (1° alcohol)
+RCHO + R'MgX → R–CHOH–R'  (2° alcohol)
+RCOR + R'MgX → R–C(OH)(R')–R  (3° alcohol)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(iv–vii) Other Methods</div>
+              <div class="card-body">
+                <strong>(iv) Hydrolysis of alkyl halides:</strong>
+                <div class="reaction-box">R–X + KOH(aq) → R–OH + KX
+Use moist Ag2O (mild) to avoid elimination.
+Order: RI > RBr > RCl; t > s > p</div>
+                <strong>(v) Hydrolysis of ethers:</strong>
+                <div class="reaction-box">R–O–R + H2O (H2SO4) → 2R–OH</div>
+                <strong>(vi) From primary amines (nitrous acid):</strong>
+                <div class="reaction-box">RNH2 + HONO (NaNO2+HCl) → ROH + N2 + H2O
+(Note: methylamine → CH3OCH3 + CH3ONO, NOT CH3OH)</div>
+                <strong>(vii) Alcoholic fermentation:</strong>
+                <div class="reaction-box">C12H22O11 + H2O (invertase) → C6H12O6 + C6H12O6
+C6H12O6 (zymase) → 2C2H5OH + 2CO2↑
+(sucrose → glucose + fructose → ethanol)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Preparation of Phenols -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x2697;&#xFE0F; Preparation of Phenols</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-3">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark small">(i) From Haloarenes (Dow Process)</div>
+              <div class="card-body small">
+                <div class="reaction-box">C6H5Cl + NaOH (623K, 300atm)
+→ C6H5ONa⁻ + HCl
+→ C6H5OH (phenol)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark small">(ii) From Benzene Sulphonic Acid</div>
+              <div class="card-body small">
+                <div class="reaction-box">C6H5SO3H (oleum)
+→ benzene sulphonic acid
++ NaOH then H+
+→ C6H5OH</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark small">(iii) From Diazonium Salts</div>
+              <div class="card-body small">
+                <div class="reaction-box">C6H5NH2 + NaNO2 + HCl (273K)
+→ C6H5N2+Cl⁻
+(warm with H2O) → C6H5OH + N2 + HCl</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark small">(iv) Cumene Process (Industrial)</div>
+              <div class="card-body small">
+                <div class="reaction-box">Cumene (C6H5CH(CH3)2) + O2
+→ cumene hydroperoxide (C6H5C(CH3)2–O–O–H)
++ H+/H2O → C6H5OH + CH3COCH3
+(phenol + acetone)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Physical Properties -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4CA; Physical Properties of Alcohols &amp; Phenols</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Alcohols</div>
+              <div class="card-body">
+                <ul>
+                  <li>Lower alcohols (C1–C4): colourless liquids; C5–C11: oily liquids; higher: waxy solids.</li>
+                  <li>–OH groups form <strong>H-bonds with water</strong> → alcohols are miscible with water. Solubility decreases with increase in molecular mass.</li>
+                  <li>BP higher than expected due to <strong>intermolecular H-bonding</strong>.</li>
+                  <li>BP order: <strong>1° &gt; 2° &gt; 3°</strong> (van der Waals forces decrease with branching).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Phenols</div>
+              <div class="card-body">
+                <ul>
+                  <li>Colourless liquids or crystalline solids; become coloured due to slow oxidation with air.</li>
+                  <li>Phenol is also called <strong>carbolic acid</strong>.</li>
+                  <li>Form intermolecular H-bonds with both other phenol molecules and with water.</li>
+                  <li>Higher melting and boiling points due to H-bonding.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Chemical Reactions Common to Both -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x21C4; Chemical Reactions Common to Alcohols &amp; Phenols</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-danger text-white">(i) Reactions Involving Cleavage of O–H Bond</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-7">
+                <strong>(a) Acidity — Reaction with Sodium:</strong>
+                <div class="reaction-box">2R–OH + 2Na → 2R–O⁻Na⁺ + H2↑  (sodium alkoxide)
+2C6H5OH + 2Na → 2C6H5O⁻Na⁺ + H2↑  (sodium phenoxide)</div>
+                <div class="formula-box">Acidity order:
+RCOOH > H2CO3 > C6H5OH > H2O > R–OH
+
+Alcohols: 1° > 2° > 3°  (more alkyl groups = more +I = less acidic)
+
+Phenol more acidic than alcohols:
+stabilisation of phenoxide ion by resonance.
+
+Effect on phenol acidity:
+EWG (–NO2, –Cl) at o/p → MORE acidic (stabilise phenoxide)
+EDG (–CH3, –OH) at o/p → LESS acidic (destabilise phenoxide)
+
+Increasing acidity:
+o-cresol < p-cresol < m-cresol < phenol
+< o-nitrophenol < 2,4,6-trinitrophenol (picric acid)</div>
+              </div>
+              <div class="col-md-5">
+                <strong>(b) Esterification:</strong>
+                <div class="reaction-box">R/Ar–OH + R'COOH (H+) ⇌ R/Ar–OCOR' + H2O
+R/Ar–OH + (R'CO)2O (H+) → R/Ar–OCOR' + R'COOH
+R/Ar–OH + R'COCl (Pyridine) → R/Ar–OCOR' + HCl</div>
+                <div class="note-box">
+                  Conc. H2SO4 removes water → drives equilibrium forward.<br/>
+                  Introduction of acetyl (CH3CO–) group = <strong>acetylation</strong>.<br/>
+                  <strong>Aspirin synthesis:</strong><br/>
+                  Salicylic acid + (CH3CO)2O → acetylsalicylic acid (aspirin) + CH3COOH
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. Chemical Reactions of Alcohols only -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x1F9EA; Chemical Reactions of Alcohols (C–O Bond Cleavage)</div>
+      <div class="card-body">
+
+        <div class="note-box mb-2"><strong>Reactivity order for C–O bond cleavage:</strong> Methyl &lt; 1° &lt; 2° &lt; 3° (alkyl groups increase electron density on C–OH, easing bond cleavage)</div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(a) Reaction with Halogen Acids</div>
+              <div class="card-body">
+                <div class="reaction-box">R–OH + HX → R–X + H2O
+Reactivity of HX: HI > HBr > HCl
+Reactivity of alcohols: 3° > 2° > 1°
+
+Lucas reagent = Anhy. ZnCl2 + Conc. HCl
+→ distinguishes 1°, 2°, 3° alcohols (turbidity test)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(b) Reaction with Phosphorus Halides</div>
+              <div class="card-body">
+                <div class="reaction-box">ROH + PCl5 → RCl + POCl3 + HCl
+3ROH + PBr3 → 3RBr + H3PO3
+3ROH + PI3  → 3RI  + H3PO3</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(c) Reaction with Thionyl Chloride (Darzen)</div>
+              <div class="card-body">
+                <div class="reaction-box">ROH + SOCl2 → RCl + SO2↑ + HCl↑
+Both byproducts gaseous → pure RCl obtained.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(d) Dehydration</div>
+              <div class="card-body">
+                <div class="reaction-box">C2H5OH + Conc. H2SO4 (443K) → CH2=CH2 + H2O
+(CH3)3COH + 20% H2SO4 (358K) → CH2=C(CH3)2 + H2O
+
+Ease: 3° > 2° > 1°  (Saytzeff rule → most substituted alkene major)
+Major product if cis-trans possible → trans isomer (major).
+Rate-determining step = carbocation formation.
+
+PCC (pyridinium chlorochromate):
+CH3CH=CHCH2OH → CH3CH=CHCHO  (1° → aldehyde only)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(e) Oxidation Reactions</div>
+              <div class="card-body">
+                <div class="reaction-box">1° Alcohols: RCH2OH → [O] → RCHO → [O] → RCOOH
+   (aldehyde then carboxylic acid)
+2° Alcohols: RCHOH–R → [O] → R–CO–R  (ketone)
+3° Alcohols: resistant to oxidation; under vigorous [O] → cleavage
+
+Reagents: Alk. KMnO4, Acidic K2Cr2O7</div>
+                <div class="formula-box">Oxidation summary:
+CH3CH2OH → CH3CHO → CH3COOH
+CH3CHOH–CH3 → CH3COCH3
+(CH3)3COH → CH3COCH3 + CO2 + H2O (vigorous)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(f) Dehydrogenation</div>
+              <div class="card-body">
+                <div class="reaction-box">R–CH2–OH (Cu/300°C) → RCHO + H2  (1° → aldehyde)
+R–CHOH–R (Cu/300°C) → R–CO–R + H2  (2° → ketone)
+(CH3)3COH (Cu/300°C) → CH2=C(CH3)2 + H2O  (3° → alkene)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-warning text-dark">Lucas Test &amp; Victor Meyer's Test (Distinguishing 1°, 2°, 3° Alcohols)</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>Lucas Test (Anhy. ZnCl₂ + Conc. HCl):</strong>
+                <table class="chem-table mt-1">
+                  <tr><th>Alcohol</th><th>Observation</th></tr>
+                  <tr><td>1° (RCH2OH)</td><td>No reaction; no turbidity at room temperature</td></tr>
+                  <tr><td>2° (RCHOHR)</td><td>Turbidity within ~5 minutes</td></tr>
+                  <tr><td>3° (R3COH)</td><td>Immediate turbidity/cloudiness</td></tr>
+                </table>
+              </div>
+              <div class="col-md-6">
+                <strong>Victor Meyer's Test:</strong>
+                <table class="chem-table mt-1">
+                  <tr><th>Alcohol</th><th>Colour</th></tr>
+                  <tr><td>1° → P/I2 → AgNO2 → HNO2/alkali</td><td><strong>Red</strong> (nitrolic acid)</td></tr>
+                  <tr><td>2° → P/I2 → AgNO2 → HNO2/alkali</td><td><strong>Blue</strong> (pseudonitrol)</td></tr>
+                  <tr><td>3° → P/I2 → AgNO2 → HNO2</td><td><strong>No colour</strong></td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Chemical Reactions of Phenols only -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F534; Chemical Reactions Specific to Phenols</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-success text-white">(i) Electrophilic Substitution Reactions (–OH activates ring, ortho/para directing)</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>(a) Bromination:</strong>
+                <div class="reaction-box">C6H5OH + Br2 (excess) → 2,4,6-tribromophenol↓ + 3HBr
+(immediate white ppt — test for phenol)
+
+C6H5OH + Br2 (CS2 / CHCl3, 0°C) →
+  o-bromophenol (minor) + p-bromophenol (major)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(b) Sulphonation:</strong>
+                <div class="reaction-box">C6H5OH + Conc. H2SO4 →
+  o-hydroxybenzene sulphonic acid (minor)
++ p-hydroxybenzene sulphonic acid (major)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(c) Nitration:</strong>
+                <div class="reaction-box">C6H5OH + Conc. HNO3/Conc. H2SO4 →
+→ 2,4,6-trinitrophenol (picric acid)
+
+C6H5OH + Dil. HNO3 (room temperature) →
+  o-nitrophenol (minor) + p-nitrophenol (major)
+
+⚠️ o-nitrophenol is steam volatile (intramolecular H-bonding)
+   p-nitrophenol is NOT steam volatile (intermolecular H-bonding → association)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(d) Reimer–Tiemann Reaction (formylation):</strong>
+                <div class="reaction-box">C6H5OH + CHCl3 (Aq. NaOH, 57°C)
+→ [C6H4(OH)(CHO)]⁻Na⁺  then HCl
+→ o-hydroxybenzaldehyde (salicylaldehyde) — main product
++ small amount of p-hydroxybenzaldehyde
+
+Electrophile = dichlorocarbene (:CCl2) [formed from CHCl3 + OH⁻]
+This is an electrophilic substitution reaction.</div>
+                <div class="note-box">With CCl4 + Aq. NaOH → o- and p-hydroxybenzoic acid (salicylic acid as major).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-warning text-dark">(ii) Kolbe's Reaction (Carboxylation)</div>
+          <div class="card-body">
+            <div class="reaction-box">C6H5OH + NaOH → C6H5O⁻Na⁺
++ CO2 (high pressure) → sodium salicylate
+→ H+ → salicylic acid (2-hydroxybenzoic acid)
+
+Salicylic acid reactions:
++ CH3OH → methyl salicylate (iodex — oil of wintergreen)
++ CH3COCl or (CH3CO)2O → acetylsalicylic acid (aspirin)
++ C6H5OH (esterification) → phenyl salicylate (salol)</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">(iii) Reaction with Zinc Dust</div>
+          <div class="card-body">
+            <div class="reaction-box">C6H5OH + Zn, Δ → C6H6 (benzene) + ZnO</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">(iv) Oxidation of Phenol</div>
+          <div class="card-body">
+            <div class="reaction-box">C6H5OH + Na2Cr2O7/H2SO4 → C6H4O2 (benzoquinone)</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-primary text-white">(v) Fries Rearrangement</div>
+          <div class="card-body">
+            <div class="reaction-box">C6H5–O–CO–CH3 (phenyl acetate) + AlCl3, Δ →
+  o-hydroxyacetophenone (o-hydroxy acetophenone)
++ p-hydroxyacetophenone (major)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Commercially Important Alcohols -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x1F4A7; Commercially Important Alcohols</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Methanol (Wood Spirit)</div>
+              <div class="card-body">
+                <ul>
+                  <li>BP = 337 K; colourless liquid.</li>
+                  <li>Produced by destructive distillation of wood → "wood spirit".</li>
+                  <li><strong>Highly poisonous</strong> — even small amounts cause blindness; large quantities cause death.</li>
+                  <li>Uses: solvent in paints/varnishes; manufacturing formaldehyde, dyes, medicines, perfumes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Ethanol (Grain Alcohol)</div>
+              <div class="card-body">
+                <ul>
+                  <li>BP = 351 K; colourless liquid.</li>
+                  <li>Used in alcoholic beverages (produced by fermentation).</li>
+                  <li>Solvent in paint industry; good industrial solvent.</li>
+                  <li><strong>Denatured</strong> by adding CH3OH (methanol) + pyridine + CuSO4 to make it unfit for drinking.</li>
+                  <li>Used as CNS (Central Nervous System) <strong>depressant</strong>.</li>
+                  <li>Burns cleanly → used as fuel (power alcohol when mixed with petrol).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Special Terms</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Rectified spirit:</strong> 95.5% ethanol + 4.5% water; azeotrope; BP 74°C.</li>
+                  <li><strong>Absolute alcohol:</strong> 100% CH3CH2OH (no water); prepared by quick lime process or azeotropic method.</li>
+                  <li><strong>Methylated spirit:</strong> Rectified spirit + 4–5% CH3OH + pyridine + CuSO4 = denatured alcohol (poisonous, undrinkable).</li>
+                  <li><strong>Power alcohol:</strong> Alcohol mixed with petrol for use in internal combustion engines.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Dihydric & Trihydric Alcohols -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F9EA; Dihydric &amp; Trihydric Alcohols</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-success text-white">Ethylene Glycol (Ethan-1,2-diol)</div>
+              <div class="card-body">
+                <div class="formula-box">HOCH2–CH2OH
+Dihydric alcohol — sweet taste (glycol = sugar-like)
+Colourless syrupy liquid; miscible with H2O and ethanol; insoluble in ether.</div>
+                <strong>Preparation:</strong>
+                <div class="reaction-box">(i) CH2=CH2 + [O] + H2O (Baeyer's 1% alk. KMnO4)
+    → HOCH2–CH2OH
+(ii) CH2=CH2 + OsO4/pyridine then Na2SO3/H2O
+    → HOCH2–CH2OH
+(iii) CHO–CHO (glyoxal) + [H] (LiAlH4)
+    → HOCH2–CH2OH</div>
+                <strong>Important Reactions:</strong>
+                <div class="reaction-box">+ Na (50°C) → mono-sodium salt
++ Na (160°C) → di-sodium salt
++ PCl5 → ClCH2–CH2Cl
++ dil. HNO3 [O] → COOH–COOH (oxalic acid)
++ conc. H2SO4 (Δ) → 1,4-dioxane (cyclic)
++ HIO4 or (CH3COO)3Pb → 2HCHO (Malaprade reaction)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-success text-white">Glycerol (Propane-1,2,3-triol / Glycerine)</div>
+              <div class="card-body">
+                <div class="formula-box">HOCH2–CHOH–CH2OH
+Colourless, odourless, viscous, hygroscopic, sweet liquid.
+Steam volatile; soluble in water; insoluble in ether.
+High BP due to excessive H-bonding.</div>
+                <strong>Preparation (By-product of saponification):</strong>
+                <div class="reaction-box">Fat/oil + 3NaOH → glycerol + 3RCOONa (soap)</div>
+                <strong>Important Reactions:</strong>
+                <div class="reaction-box">(i) + 3HI (warm) → CH2I–CHI–CH2I (unstable)
+    → CH2=CH–CH2I (allyl iodide, –I2)
+
+(ii) + Conc. HNO3/Conc. H2SO4 → glyceryl trinitrate (TNG/nitroglycerin)
+    TNG absorbed on kieselguhr = DYNAMITE
+    TNG + cellulose trinitrate = blasting gelatin
+
+(iii) With oxalic acid at 110°C → glycerol monooxalate
+    → HCOOH (formic acid) + glycerol monoformate
+
+(iv) With oxalic acid at 260°C → allyl alcohol (CH2=CH–CH2OH)
+
+(v) Dehydration (KHSO4/P2O5, Δ):
+    glycerol → acraldehyde / acrolein (bad smell)
+
+(vi) Oxidation products:
+    conc. HNO3 → glyceric acid
+    dil. HNO3 → glyceric acid + tartronic acid
+    Fenton's / NaOBr / Br2(Na2CO3) → glyceraldehyde + dihydroxyacetone
+    solid KMnO4 → oxalic acid + CO2 + H2O
+    HIO4 → HCOOH + HCHO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         SECTION B — ETHERS
+    ══════════════════════════════════════════ -->
+    <div class="text-center mb-3 mt-4">
+      <span class="badge bg-primary fs-6 px-4 py-2">Part B — Ethers</span>
+    </div>
+
+    <!-- 10. Introduction to Ethers -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F4A7; Introduction, Classification &amp; Structure of Ethers</div>
+      <div class="card-body">
+        <p>Ethers are organic compounds in which <strong>two alkyl or aryl groups are attached to a divalent oxygen</strong> (ethereal oxygen). General formula: <strong>R–O–R'</strong>.</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Types of Ethers</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Example</th></tr>
+                  <tr><td>Simple ether (symmetrical)</td><td>CH3–O–CH3 (dimethyl ether); C2H5–O–C2H5 (diethyl ether)</td></tr>
+                  <tr><td>Mixed ether (unsymmetrical)</td><td>CH3–O–C2H5 (ethyl methyl ether); CH3–O–C3H7 (methyl n-propyl ether)</td></tr>
+                  <tr><td>Aryl ether</td><td>C6H5–O–CH3 (anisole); C6H5–O–C2H5 (phenetole)</td></tr>
+                </table>
+                <div class="note-box mt-1">Ethers are <strong>functional isomers of alcohols</strong>. They also exhibit <strong>chain isomerism</strong> and <strong>metamerism</strong>.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Structure &amp; Nomenclature</div>
+              <div class="card-body">
+                <strong>Structure:</strong>
+                <div class="formula-box">O in ether = sp3 hybridised → V-shape
+Dimethyl ether: C–O–C bond angle = 117.7°</div>
+                <strong>IUPAC Nomenclature (Alkoxyalkanes):</strong>
+                <ul>
+                  <li>Smaller alkyl group + O = alkoxy group (prefix)</li>
+                  <li>Larger alkyl group = parent alkane</li>
+                </ul>
+                <div class="formula-box">CH3–O–C4H9 → 1-methoxybutane
+C2H5–O–CH3  → methoxyethane
+C6H5–O–CH3  → methoxybenzene (anisole)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Preparation of Ethers -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x2697;&#xFE0F; Preparation of Ethers</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(i) Dehydration of Alcohols</div>
+              <div class="card-body">
+                <div class="reaction-box">2C2H5OH + Conc. H2SO4 (excess, 413K)
+→ C2H5–O–C2H5 + H2O
+(diethyl ether)
+
+Mechanism:
+I.  C2H5OH + H+ → C2H5–OH2+ → C2H5+ (carbocation)
+II. C2H5–OH + C2H5+ → C2H5–OH2+–C2H5
+III. → C2H5–O–C2H5 + H+</div>
+                <div class="note-box">At 443K → dehydration to alkene. At 413K → ether formation.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(ii) Williamson's Synthesis</div>
+              <div class="card-body">
+                <div class="reaction-box">R–X + R'–O⁻Na⁺ → R–O–R' + NaX
+
+CH3CH2Br + CH3CH2ONa → CH3CH2–O–CH2CH3 + NaBr
+
+For phenyl ether:
+C6H5ONa + R–X → C6H5–O–R + NaX (alkoxybenzene)</div>
+                <div class="important-box">
+                  <strong>Only primary alkyl halides</strong> give ethers (SN2).<br/>
+                  Tertiary alkyl halides give <strong>alkenes</strong> (elimination — steric hindrance):
+                  <div class="reaction-box">(CH3)3CBr + NaOCH3 → CH2=C(CH3)2 + NaBr + CH3OH</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Physical Properties of Ethers -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4CA; Physical Properties of Ethers</div>
       <div class="card-body">
         <ul>
-          <li><span class="highlight">Acidity order:</span> Water > Alcohol > Alkyne, <span class="highlight">Phenol > Water > Alcohol</span></li>
-          <li><span class="highlight">Boiling point order:</span> 1° Alcohol > 2° > 3° > Ether &gt; Alkane (of similar mass)</li>
-          <li><span class="highlight">Oxidation:</span> 3° alcohols resist; 1° → acid (via aldehyde); 2° → ketone</li>
-          <li><span class="highlight">Phenol does not react with NaHCO<sub>3</sub></span>; carboxylic acid does (CO<sub>2</sub> effervescence test)</li>
-          <li><span class="highlight">Ethers are less reactive due to resonance and poor leaving ability of alkoxide</span></li>
+          <li>Ethers are <strong>polar</strong> but <strong>insoluble in water</strong> (cannot form H-bonds with water due to absence of N–H or O–H).</li>
+          <li>BP is <strong>lower than alcohols</strong> of comparable molecular mass because ethers do not form H-bonds with water.</li>
+          <li><strong>Dimethyl ether and ethyl methyl ether are both gases</strong> at room temperature.</li>
+          <li>Diethyl ether is a volatile, highly flammable liquid used as <strong>anaesthesia in surgery</strong>.</li>
         </ul>
       </div>
     </div>
 
-    <div class="alert alert-success fw-bold mb-4">
-      <span class="imp">JEE Mastery Tip:</span> Make flowcharts for all <i>named reactions, major tests, reagent selection (oxidation, dehydration, reductions!)</i>. For mechanisms, practice stepwise arrow-pushing for Williamson, dehydration, Kolbe, Reimer-Tiemann.<br>
-      Review exceptions/limitations for robust conceptual clarity!
+    <!-- 13. Chemical Reactions of Ethers -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x21C4; Chemical Reactions of Ethers</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">(i) Reaction with HX (Cleavage)</div>
+              <div class="card-body">
+                <div class="reaction-box">R–O–R + HX → R–X + R–OH
+(symmetric ether)
+
+R–O–R' + HX → R–X + R'–OH  (SN2; smaller/less complex alkyl → halide)
+Reactivity order: HI > HBr > HCl
+
+If one group is tertiary:
+(CH3)3C–O–CH3 + HI → (CH3)3C–I (tert. halide, SN1) + CH3OH
+
+Aryl ethers:
+C6H5–O–R + HX → C6H5–OH (phenol) + RX
+(C–O of phenyl side NOT broken; ArO–C bond much stronger)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(ii) Halogenation</div>
+              <div class="card-body">
+                <div class="reaction-box">(a) C2H5–O–C2H5 + Cl2 (dark) → CH3CHCl–O–C2H5
+   (α-monochlorodiethyl ether, at α-carbon)
+
+(b) C2H5–O–C2H5 + 10Cl2 (excess, light)
+   → CCl3–O–CCl3 + 10HCl
+   (perchlorodiethyl ether)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(iii) Reaction with PCl₅</div>
+              <div class="card-body">
+                <div class="reaction-box">R–O–R + PCl5, Δ → 2RCl + POCl3</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">(iv) Reaction with CO</div>
+              <div class="card-body">
+                <div class="reaction-box">ROR + CO (BF3, 150°C, 500 atm) → RCOOR
+(ester formation)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-success text-white">(v) Electrophilic Substitution Reactions (Aryl Ethers)</div>
+              <div class="card-body">
+                <p>In ethers, –OR group is <strong>ortho, para directing and activates the ring</strong> towards electrophilic substitution.</p>
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <strong>Bromination of anisole (methoxybenzene):</strong>
+                    <div class="reaction-box">C6H5–OCH3 + Br2 (CS2) →
+  o-bromoanisole (minor)
++ p-bromoanisole (major)</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>Nitration of anisole:</strong>
+                    <div class="reaction-box">C6H5–OCH3 + Conc. HNO3/H2SO4 →
+  o-nitroanisole (minor)
++ p-nitroanisole (major)</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>Friedel-Crafts acylation:</strong>
+                    <div class="reaction-box">C6H5–OCH3 + CH3COCl (Anhy. AlCl3) →
+  2-methoxyacetophenone (minor)
++ 4-methoxyacetophenone (major)</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>Friedel-Crafts alkylation:</strong>
+                    <div class="reaction-box">C6H5–OCH3 + CH3Cl (Anhy. AlCl3) →
+  2-methoxytoluene (minor)
++ 4-methoxytoluene (major)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="mb-5"></div>
+
+    <!-- 14. Uses of Ethers -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x1F4A1; Uses of Ethers</div>
+      <div class="card-body">
+        <ul>
+          <li><strong>Dimethyl ether:</strong> Refrigerant and solvent at low temperature.</li>
+          <li><strong>Diethyl ether:</strong> Anaesthesia in surgery (general anaesthetic). Also used as a solvent for organic reactions (Grignard reagents).</li>
+          <li><strong>Phenetole (ethyl phenyl ether, C6H5–O–C2H5):</strong> Solvent and intermediate in organic synthesis.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 15. Quick Comparison Summary -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F5FA;&#xFE0F; Quick Comparison — Alcohols vs Phenols vs Ethers</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr>
+              <th>Property</th>
+              <th>Alcohols (R–OH)</th>
+              <th>Phenols (Ar–OH)</th>
+              <th>Ethers (R–O–R')</th>
+            </tr>
+            <tr><td>Hybridisation of O</td><td>sp3</td><td>sp2 C bonded (resonance)</td><td>sp3</td></tr>
+            <tr><td>H-bonding</td><td>Yes (inter + intra)</td><td>Yes (inter + intra)</td><td>No O–H; weak H-bond acceptor</td></tr>
+            <tr><td>Acidity (pKa)</td><td>pKa ~16 (very weak acid)</td><td>pKa ~10 (weak acid, stronger than alcohol)</td><td>Not acidic</td></tr>
+            <tr><td>Reaction with Na</td><td>H2↑ (alkoxide)</td><td>H2↑ (phenoxide)</td><td>No reaction</td></tr>
+            <tr><td>Reaction with HX</td><td>R–OH → R–X</td><td>C–O not cleaved easily</td><td>R–O–R → R–X + R–OH</td></tr>
+            <tr><td>FeCl3 test</td><td>No colour</td><td>Violet/purple colour</td><td>No colour</td></tr>
+            <tr><td>BP vs alkanes</td><td>Much higher (H-bonds)</td><td>Much higher (H-bonds)</td><td>Slightly higher (polar)</td></tr>
+            <tr><td>Solubility in H2O</td><td>Lower alcohols soluble</td><td>Slightly soluble (6g/100mL)</td><td>Slightly soluble; insoluble higher ethers</td></tr>
+            <tr><td>EAS on aromatic ring</td><td>–OH is o/p director (strong activator)</td><td>–OH is o/p director (very strong activator)</td><td>–OR is o/p director (activator)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16. Named Reactions Quick Reference -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4CB; Named Reactions — Quick Reference</div>
+      <div class="card-body">
+        <table class="chem-table">
+          <tr>
+            <th>#</th><th>Name</th><th>Reagents/Conditions</th><th>Substrate → Product</th>
+          </tr>
+          <tr><td>1</td><td><strong>Williamson's Synthesis</strong></td><td>R'ONa + RX (1° only)</td><td>Alcohol/phenol + alkyl halide → Ether</td></tr>
+          <tr><td>2</td><td><strong>Reimer–Tiemann</strong></td><td>CHCl3 + Aq. NaOH, 57°C</td><td>Phenol → salicylaldehyde (o-formylation)</td></tr>
+          <tr><td>3</td><td><strong>Kolbe's Reaction</strong></td><td>NaOH then CO2 (pressure)</td><td>Phenol → salicylic acid (o-carboxylation)</td></tr>
+          <tr><td>4</td><td><strong>Fries Rearrangement</strong></td><td>ArOCOR + AlCl3, Δ</td><td>Aryl ester → o/p-hydroxyaryl ketone</td></tr>
+          <tr><td>5</td><td><strong>Cumene Process</strong></td><td>Cumene + O2 then H+</td><td>Cumene → phenol + acetone</td></tr>
+          <tr><td>6</td><td><strong>Lucas Test</strong></td><td>Anhy. ZnCl2 + Conc. HCl</td><td>1°/2°/3° alcohol identification (turbidity)</td></tr>
+          <tr><td>7</td><td><strong>Victor Meyer's Test</strong></td><td>P/I2 → AgNO2 → HNO2/alkali</td><td>1° red, 2° blue, 3° no colour</td></tr>
+          <tr><td>8</td><td><strong>Bouveault-Blanc</strong></td><td>Na/alcohol (reduction)</td><td>Ester/aldehyde/ketone → alcohol</td></tr>
+          <tr><td>9</td><td><strong>Malaprade Reaction</strong></td><td>HIO4 (periodic acid)</td><td>1,2-glycol cleavage → 2 aldehydes</td></tr>
+          <tr><td>10</td><td><strong>Aspirin Synthesis</strong></td><td>Salicylic acid + (CH3CO)2O, H+</td><td>Salicylic acid → aspirin (acetylsalicylic acid)</td></tr>
+          <tr><td>11</td><td><strong>PCC Oxidation</strong></td><td>Pyridinium chlorochromate</td><td>1° alcohol → aldehyde (selective, no further)</td></tr>
+          <tr><td>12</td><td><strong>Dow Process</strong></td><td>Chlorobenzene + NaOH (623K, 300 atm)</td><td>Haloarene → phenol</td></tr>
+        </table>
+      </div>
+    </div>
+
   </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

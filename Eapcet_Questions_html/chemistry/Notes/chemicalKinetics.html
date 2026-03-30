@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chemical Kinetics</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Chemical Kinetics</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Rate of Reaction
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Rate of Reaction</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Chemical Kinetics</strong> deals with the rate of chemical reactions, the factors affecting the rate, and the mechanism of reactions.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Types of Reactions Based on Rate</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Fast/Instantaneous:</strong> Complete in less than 1 ps (10⁻¹² s). e.g. ionic reactions, organic substitution reactions.</li>
+            <li><strong>Slow:</strong> Complete in minutes to years. e.g. rusting of iron, transformation of diamond to graphite.</li>
+            <li><strong>Moderately slow:</strong> Intermediate between fast and slow.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Average Rate of Reaction</h5></div>
+        <div class="card-body">
+          <p>Rate of reaction = change in concentration of reactant/product per unit time. Units: mol L⁻¹ s⁻¹ or Ms⁻¹.</p>
+          <p>For the reaction \(aA + bB \rightarrow cC + dD\):</p>
+          \[r_{av} = -\frac{1}{a}\frac{\Delta[A]}{\Delta t} = -\frac{1}{b}\frac{\Delta[B]}{\Delta t} = +\frac{1}{c}\frac{\Delta[C]}{\Delta t} = +\frac{1}{d}\frac{\Delta[D]}{\Delta t}\]
+          <p>The <strong>slowest step</strong> of a reaction is called the <strong>rate determining step</strong> (van't Hoff).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Instantaneous Rate of Reaction</h5></div>
+        <div class="card-body">
+          <p>Rate at a particular moment in time. For \(R \rightarrow P\):</p>
+          \[r_{inst} = -\frac{d[R]}{dt} = +\frac{d[P]}{dt}\]
+          <p><strong>Methods to measure rate:</strong> pH measurement, change in optical activity, change in pressure, change in conductance.</p>
+          <p><strong>Factors affecting rate:</strong> Nature and concentration of reactants, temperature, surface area, radiation, catalyst, pressure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Rate Law & Rate Constant
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Rate Law &amp; Rate Constant</h4>
+    </div>
+    <div class="card-body">
+      <p>For \(aA + bB \rightarrow \text{Products}\), the experimentally determined rate law is:</p>
+      \[\text{Rate} = k[A]^\alpha[B]^\beta\]
+      <p>where \(\alpha\) and \(\beta\) are experimental orders (not necessarily equal to stoichiometric coefficients), and \(k\) is the <strong>rate constant</strong> (velocity constant).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Rate Constant \(k\)</h5></div>
+        <div class="card-body">
+          <p>Rate \(= k\) when all concentrations = 1 mol L⁻¹. Units of \(k\) for an \(n\)th order reaction:</p>
+          \[k = \frac{1}{\text{time}} \times \frac{1}{[\text{Conc.}]^{n-1}}\]
+          <table class="table table-bordered table-sm mt-2 text-center">
+            <thead class="table-dark"><tr><th>Order</th><th>Unit of \(k\)</th></tr></thead>
+            <tbody>
+              <tr><td>Zero (n = 0)</td><td>mol L⁻¹ s⁻¹</td></tr>
+              <tr><td>First (n = 1)</td><td>s⁻¹</td></tr>
+              <tr><td>Second (n = 2)</td><td>L mol⁻¹ s⁻¹</td></tr>
+              <tr><td>Third (n = 3)</td><td>L² mol⁻² s⁻¹</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Characteristics of \(k\):</strong> Greater \(k\) → faster reaction. \(k\) is specific to each reaction, changes with temperature but NOT with concentration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Order vs Molecularity
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Order vs Molecularity of Reaction</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark">
+          <tr><th>#</th><th>Order of Reaction</th><th>Molecularity of Reaction</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Sum of exponents in the experimental rate law</td><td>Number of atoms/ions/molecules colliding to form products</td></tr>
+          <tr><td>2</td><td>Can be fractional or zero</td><td>Cannot be zero or fractional; always a whole number</td></tr>
+          <tr><td>3</td><td>Experimentally determined</td><td>Theoretically determined</td></tr>
+          <tr><td>4</td><td>Applicable to elementary and complex reactions</td><td>Applicable to elementary reactions only</td></tr>
+          <tr><td>5</td><td>Can be negative (e.g. 2O₃ → 3O₂, order w.r.t O₂ = −1)</td><td>Can never be negative</td></tr>
+        </tbody>
+      </table>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Types of Reactions</h5></div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <p><strong>By Order:</strong></p>
+              <ul>
+                <li><strong>Zero order:</strong> H₂ + Cl₂ → 2HCl (hν); 2NH₃ → N₂ + 3H₂ (Pt)</li>
+                <li><strong>First order:</strong> H₂O₂ → H₂O + ½O₂; Radioactive decay; Inversion of cane sugar</li>
+                <li><strong>Second order:</strong> 2HI → H₂ + I₂; Alkaline hydrolysis of esters (saponification)</li>
+                <li><strong>Third order:</strong> 2NO + O₂ → 2NO₂</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <p><strong>By Molecularity:</strong></p>
+              <ul>
+                <li><strong>Unimolecular:</strong> N₂O₄(g) → 2NO₂(g)</li>
+                <li><strong>Bimolecular:</strong> 2HI(g) → H₂(g) + I₂(g)</li>
+                <li><strong>Trimolecular:</strong> 2NO(g) + O₂(g) → 2NO₂(g)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Integrated Rate Equations
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Integrated Rate Equations</h4>
+    </div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-danger text-white"><h5>Zero Order Reactions</h5></div>
+        <div class="card-body">
+          <p>Rate is independent of concentration:</p>
+          \[k_0 = \frac{[A]_0 - [A]}{t}\]
+          <ul>
+            <li>Half-life: \(t_{1/2} = \dfrac{[A]_0}{2k_0}\) &nbsp; (proportional to initial concentration)</li>
+            <li>Unit of \(k_0\): mol L⁻¹ s⁻¹ (same as rate)</li>
+            <li>For gaseous reactions: \(k_0 = \dfrac{p_0 - p}{t}\), &nbsp; \(t_{1/2} = \dfrac{p_0}{2k_0}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>First Order Reactions</h5></div>
+        <div class="card-body">
+          <p>Rate proportional to first power of concentration:</p>
+          \[k_1 = \frac{2.303}{t}\log\frac{[A]_0}{[A]} \qquad \Rightarrow \qquad [A] = [A]_0 e^{-k_1 t}\]
+          <ul>
+            <li>Half-life: \(t_{1/2} = \dfrac{0.693}{k_1}\) &nbsp; (<strong>concentration-independent</strong>)</li>
+            <li>Amount after \(n\) half-lives: \(\dfrac{[A]_0}{2^n}\)</li>
+            <li>\(t_{75\%} = 2 \times t_{50\%}\) &nbsp;|&nbsp; \(t_{99.9\%} = 10 \times t_{1/2}\)</li>
+            <li>All radioactive changes follow first order kinetics.</li>
+            <li>For gaseous first order: \(A(g) \rightarrow B(g) + C(g)\):
+              \[k_1 = \frac{2.303}{t}\log\frac{p_0}{2p_0 - p_t}\]
+            </li>
+            <li>For ester hydrolysis (using NaOH titration volumes):
+              \[k_1 = \frac{2.303}{t}\log\frac{V_\infty - V_0}{V_\infty - V_t}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Pseudo First Order Reaction</h5></div>
+        <div class="card-body">
+          <p>Reactions that appear higher order but behave as first order because one reactant is in large excess.</p>
+          <p>e.g. <strong>Ester hydrolysis:</strong> CH₃COOC₂H₅ + H₂O → CH₃COOH + C₂H₅OH</p>
+          <p>Rate = \(k\)[CH₃COOC₂H₅] (water is in excess, so its concentration is effectively constant).</p>
+          <p>For <strong>Inversion of cane sugar</strong> (using polarimetric readings \(r_0, r_t, r_\infty\)):
+            \[k = \frac{2.303}{t}\log\frac{r_0 - r_\infty}{r_t - r_\infty}\]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Methods to Determine Order
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Methods to Determine Order of Reaction</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark"><tr><th>Method</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>(i) Graphical Method</strong></td>
+            <td>Plot rate vs concentration: straight line through origin = zero order; rate vs [A] = first order; rate vs [A]² = second order.</td>
+          </tr>
+          <tr>
+            <td><strong>(ii) Initial Rate Method</strong></td>
+            <td>Vary concentration of one reactant while keeping others constant. Determine order from ratio of rates.</td>
+          </tr>
+          <tr>
+            <td><strong>(iii) Integrated Rate Law Method</strong></td>
+            <td>Use the integrated rate equation that gives the most constant value of \(k\).</td>
+          </tr>
+          <tr>
+            <td><strong>(iv) Half-life Method</strong></td>
+            <td>\(t_{1/2} \propto \dfrac{1}{[A]_0^{n-1}}\). Plot \(t_{1/2}\) vs \([A]_0\) (zero order: linear), vs \([A]_0\) (first order: constant), vs \(1/[A]_0\) (second order: linear).</td>
+          </tr>
+          <tr>
+            <td><strong>(v) Ostwald's Isolation Method</strong></td>
+            <td>Isolate one reactant at a time (keep all others in large excess) to determine its partial order.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Temperature Dependence & Arrhenius Equation
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Temperature Dependence &amp; Arrhenius Equation</h4>
+    </div>
+    <div class="card-body">
+      <p>For every <strong>10°C rise in temperature</strong>, the rate of reaction approximately <strong>doubles</strong> (only 16% more collisions, but exponentially more effective ones).</p>
+      <p><strong>Temperature coefficient:</strong> \(\dfrac{k_{t+10}}{k_t} \approx 2 \text{ to } 3\) (usually at 298 K and 308 K).</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Arrhenius Equation</h5></div>
+        <div class="card-body">
+          \[k = Ae^{-E_a/RT}\]
+          <p>Taking logarithm:</p>
+          \[\log_{10} k = \log_{10} A - \frac{E_a}{2.303RT}\]
+          <p>A plot of \(\log_{10} k\) vs \(1/T\) gives a <strong>straight line</strong> with:</p>
+          <ul>
+            <li>Slope \(= -\dfrac{E_a}{2.303R}\)</li>
+            <li>Intercept \(= \log_{10} A\)</li>
+          </ul>
+          <table class="table table-bordered table-sm mt-2">
+            <thead class="table-dark"><tr><th>Symbol</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td>\(A\)</td><td>Frequency factor (pre-exponential factor, Arrhenius factor)</td></tr>
+              <tr><td>\(E_a\)</td><td>Activation energy (J mol⁻¹)</td></tr>
+              <tr><td>\(R\)</td><td>Gas constant (8.314 J mol⁻¹ K⁻¹)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Key Results from Arrhenius Equation</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>Rate constant at two temperatures \(T_1\) and \(T_2\):
+              \[\log\frac{k_2}{k_1} = \frac{E_a}{2.303R}\left(\frac{T_2 - T_1}{T_1 T_2}\right)\]
+            </li>
+            <li><strong>Boltzmann factor</strong> (fraction of molecules with energy ≥ \(E_a\)):
+              \[x = \frac{n}{N} = e^{-E_a/RT} \qquad \Rightarrow \qquad \log_{10} x = \frac{-E_a}{2.303RT}\]
+            </li>
+            <li>\(E_a\) is constant for a given reaction — independent of T, V, P — but affected by catalyst.</li>
+            <li>When \(T \to \infty\) or \(E_a = 0\): \(k = A\) (rate independent of temperature).</li>
+            <li>Lower the activation energy \(E_a\), faster the reaction.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Activated Complex (Transition State)</h5></div>
+        <div class="card-body">
+          <p>The highest-energy, unstable intermediate between reactants and products — bonds of reactants are not completely broken and bonds of products are not completely formed.</p>
+          \[E_a = E_T - E_R\]
+          <ul>
+            <li>\(E_T\) = Threshold energy (minimum energy reactants must possess to form products)</li>
+            <li>\(E_R\) = Energy of reactants</li>
+            <li>Larger \(E_a\) → smaller \(k\) → greater effect of temperature rise on rate.</li>
+            <li>A catalyst lowers \(E_a\), providing an alternate reaction pathway:
+              \[\frac{k_P}{k_a} = e^{(E_a - E_P)/RT} = e^{\Delta E/RT}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 7: Collision Theory & Photochemical Reactions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Collision Theory &amp; Photochemical Reactions</h4>
+    </div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>Collision Theory of Reaction Rates</h5></div>
+        <div class="card-body">
+          <p>Reactant molecules are treated as hard spheres. Reaction occurs only when molecules collide with sufficient energy <strong>and</strong> proper orientation.</p>
+          <ul>
+            <li><strong>Collision frequency (\(Z_{AB}\)):</strong> Number of collisions per second per unit volume.</li>
+            <li><strong>Effective/fruitful collisions:</strong> Only those with energy ≥ \(E_a\) and correct orientation.</li>
+          </ul>
+          \[\text{Rate} = PZ_{AB} e^{-E_a/RT}\]
+          <p>where \(P\) = steric factor (probability/orientation factor), \(Z_{AB}\) = collision frequency, \(e^{-E_a/RT}\) = fraction of molecules with energy ≥ \(E_a\).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Activated Complex (Transition State) Theory</h5></div>
+        <div class="card-body">
+          <p>Reactants ⇌ Activated complex → Products</p>
+          <p>Bond cleavage and formation occur simultaneously. Reactants are converted to an intermediate activated complex (with partially formed bonds) before forming products. The height of the energy barrier = threshold energy.</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Photochemical Reactions</h5></div>
+        <div class="card-body">
+          <p>Reactions that occur on exposure to visible radiation.</p>
+          <ul>
+            <li>Rate is affected by <strong>intensity of light</strong>.</li>
+            <li>Temperature has <strong>little effect</strong> (unlike thermal reactions).</li>
+            <li><strong>Quantum yield (φ):</strong>
+              \[\phi = \frac{\text{Number of reactant molecules reacting in a given time}}{\text{Number of photons (quanta) absorbed in the same time}}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

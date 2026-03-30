@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chemical Equilibrium</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Chemical Equilibrium</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Introduction & Types of Reactions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Introduction, Processes &amp; Types of Reactions</h4>
+    </div>
+    <div class="card-body">
+      <p>In a closed vessel at a fixed temperature, reactant concentration decreases and product concentration increases initially. A stage is eventually reached where <strong>no net change</strong> occurs — this is the <strong>state of equilibrium</strong>.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Physical vs Chemical Processes</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Physical processes:</strong> Change only physical properties, not chemical composition (e.g. melting, evaporation).</li>
+            <li><strong>Chemical processes:</strong> Involve changes in chemical composition and properties.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Types of Chemical Reactions</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Decomposition:</strong> A compound breaks into two or more substances. e.g. PCl₅(g) ⇌ PCl₃(g) + Cl₂(g). Thermal decomposition (heat) or photochemical decomposition (light).</li>
+            <li><strong>Displacement:</strong> One element/group replaces another (redox reactions). e.g. Zn(s) + H₂SO₄(aq) → ZnSO₄(aq) + H₂(g).</li>
+            <li><strong>Double Displacement (Metathesis):</strong> Two compounds exchange ions; no change in oxidation state. e.g. AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq).</li>
+          </ul>
+          <table class="table table-bordered table-sm mt-3">
+            <thead class="table-dark"><tr><th></th><th>Irreversible Reactions</th><th>Reversible Reactions</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Direction</strong></td><td>Proceed to completion in one direction only</td><td>Proceed in both forward and backward direction</td></tr>
+              <tr><td><strong>Equilibrium</strong></td><td>Never attain equilibrium</td><td>Attain dynamic equilibrium</td></tr>
+              <tr><td><strong>Example</strong></td><td>AgNO₃ + NaCl → AgCl↓ + NaNO₃</td><td>N₂(g) + 3H₂(g) ⇌ 2NH₃</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Physical vs Chemical Equilibrium</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Physical Equilibrium:</strong> Set up in physical processes (evaporation, melting, dissolution). e.g. Ice ⇌ Water. At equilibrium: Rate of melting = Rate of freezing.</li>
+            <li><strong>Chemical Equilibrium:</strong> In a closed vessel, rate of forward reaction equals rate of backward reaction. R<sub>f</sub> = R<sub>b</sub>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Characteristics & Types of Equilibrium
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Characteristics of Equilibrium &amp; Types</h4>
+    </div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-dark text-white"><h5>Characteristics of Chemical Equilibrium</h5></div>
+        <div class="card-body">
+          <ol>
+            <li>Equilibrium can be attained from <strong>either side</strong> (forward or backward).</li>
+            <li>It is <strong>dynamic</strong> in nature — the reaction does not stop at equilibrium.</li>
+            <li>Concentrations of all species remain <strong>constant</strong> at equilibrium.</li>
+            <li>A catalyst does <strong>not</strong> change the equilibrium position — it only helps to attain it faster.</li>
+            <li>Equilibrium can be achieved only in a <strong>closed container</strong>.</li>
+            <li>Observable physical properties (density, pressure, colour) become constant.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Homogeneous vs Heterogeneous Equilibrium</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Type</th><th>Definition</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Homogeneous</strong></td>
+                <td>Reactants and products in the <strong>same phase</strong></td>
+                <td>2SO₂(g) + O₂(g) ⇌ 2SO₃(g)</td>
+              </tr>
+              <tr>
+                <td><strong>Heterogeneous</strong></td>
+                <td>Reactants and products in <strong>different phases</strong></td>
+                <td>3Fe(s) + 4H₂O(g) ⇌ Fe₃O₄(s) + 4H₂(g)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mt-2"><em>Note:</em> In heterogeneous equilibria, the active mass of pure solids and pure liquids is taken as <strong>1</strong> (constant).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Law of Mass Action & Equilibrium Constants
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Law of Mass Action &amp; Equilibrium Constants</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Guldberg and Waage's Law of Mass Action:</strong> The rate of a chemical reaction is directly proportional to the product of the active masses of the reacting substances.</p>
+      <p>For the general reaction: \(aA + bB \rightleftharpoons cC + dD\)</p>
+      \[K_c = \frac{[C]^c[D]^d}{[A]^a[B]^b}\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>K<sub>p</sub> and Relation with K<sub>c</sub></h5></div>
+        <div class="card-body">
+          <p>For gaseous reactions, using partial pressures:</p>
+          \[K_p = \frac{p_C^c \cdot p_D^d}{p_A^a \cdot p_B^b}\]
+          \[K_p = K_c(RT)^{\Delta n_g}\]
+          <p>where \(\Delta n_g\) = moles of gaseous products − moles of gaseous reactants.</p>
+          <table class="table table-bordered table-sm mt-2 text-center">
+            <thead class="table-dark"><tr><th>Condition</th><th>Relationship</th></tr></thead>
+            <tbody>
+              <tr><td>\(\Delta n_g = 0\)</td><td>\(K_p = K_c\)</td></tr>
+              <tr><td>\(\Delta n_g > 0\)</td><td>\(K_p > K_c\)</td></tr>
+              <tr><td>\(\Delta n_g < 0\)</td><td>\(K_p < K_c\)</td></tr>
+            </tbody>
+          </table>
+          <ul class="mt-2">
+            <li>Unit of \(K_p = (\text{atm})^{\Delta n}\)</li>
+            <li>Unit of \(K_c = (\text{mol L}^{-1})^{\Delta n}\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Characteristics of Equilibrium Constant</h5></div>
+        <div class="card-body">
+          <ol>
+            <li>Has a <strong>definite value</strong> for every reaction at a particular temperature.</li>
+            <li>Larger \(K_c\) → greater extent of completion. (\(K \ge 10^3\): completion; \(K \le 10^{-3}\): reaction barely proceeds).</li>
+            <li>When a reaction = sum of two reactions, its \(K_c\) = <strong>product</strong> of individual \(K_c\) values.</li>
+            <li>Independent of <strong>initial concentrations</strong> and presence of <strong>catalyst</strong>.</li>
+            <li>\(K_c\) for reverse reaction = \(\dfrac{1}{K_c}\) for forward reaction.</li>
+            <li>If equation is multiplied by \(n\): new \(K = K^n\); divided by \(m\): new \(K = K^{1/m}\).</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Reaction Quotient (Q<sub>c</sub>)</h5></div>
+        <div class="card-body">
+          <p>At any stage other than equilibrium: \(Q_c = \dfrac{[C]^c[D]^d}{[A]^a[B]^b}\)</p>
+          <table class="table table-bordered table-sm text-center">
+            <thead class="table-dark"><tr><th>Condition</th><th>Direction of Reaction</th></tr></thead>
+            <tbody>
+              <tr><td>\(Q_c > K_c\)</td><td>Reaction proceeds <strong>backward</strong> (products → reactants)</td></tr>
+              <tr><td>\(Q_c < K_c\)</td><td>Reaction proceeds <strong>forward</strong> (reactants → products)</td></tr>
+              <tr><td>\(Q_c = K_c\)</td><td>System is at <strong>equilibrium</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>Relation with Gibbs Free Energy</h5></div>
+        <div class="card-body">
+          \[\Delta G = \Delta G^\circ + 2.303RT\log Q_c\]
+          <p>At equilibrium: \(\Delta G = 0\) and \(Q_c = K_c\), therefore:</p>
+          \[\Delta G^\circ = -2.303RT\log K_c = -2.303RT\log K_p \text{ (ideal gases)}\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Le-Chatelier's Principle
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Le-Chatelier's Principle</h4>
+    </div>
+    <div class="card-body">
+      <p><strong>Le-Chatelier's Principle:</strong> If a system at equilibrium is subjected to a change in concentration, pressure, or temperature, the equilibrium shifts in the direction that tends to <strong>nullify the effect</strong> of the change.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Effect of Various Factors</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Factor Changed</th><th>Effect on Equilibrium</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Increase in concentration of reactant</strong></td>
+                <td>Shifts <strong>forward</strong> (to consume added reactant)</td>
+              </tr>
+              <tr>
+                <td><strong>Increase in pressure</strong></td>
+                <td>Shifts toward side with <strong>fewer moles</strong> of gas. No effect if \(\Delta n_g = 0\).</td>
+              </tr>
+              <tr>
+                <td><strong>Increase in temperature (exothermic rxn)</strong></td>
+                <td>Shifts <strong>backward</strong> (low T favours forward)</td>
+              </tr>
+              <tr>
+                <td><strong>Increase in temperature (endothermic rxn)</strong></td>
+                <td>Shifts <strong>forward</strong> (high T favours forward)</td>
+              </tr>
+              <tr>
+                <td><strong>Addition of inert gas at constant pressure</strong></td>
+                <td>Volume increases → shifts toward side with <strong>more moles</strong> of gas</td>
+              </tr>
+              <tr>
+                <td><strong>Addition of inert gas at constant volume</strong></td>
+                <td><strong>No effect</strong> on equilibrium position</td>
+              </tr>
+              <tr>
+                <td><strong>Catalyst</strong></td>
+                <td>Does <strong>not</strong> change position — only speeds up attainment of equilibrium</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-success text-white"><h5>Le-Chatelier's Principle in Physical Equilibria</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Solubility of gases:</strong> Increased pressure → increased solubility (Henry's Law).</li>
+            <li><strong>Solubility of solids (endothermic dissolution):</strong> Increased temperature → increased solubility (e.g. NH₄Cl, KCl, KNO₃). Exothermic dissolution (e.g. Ca(OH)₂) shows opposite trend.</li>
+            <li><strong>Melting point of ice:</strong> Ice ⇌ Water. Ice occupies more volume, so increased pressure favours melting → ice melts at lower temperature under high pressure.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Favourable Conditions for Important Equilibria</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Equilibrium</th><th>Favourable Conditions for Higher Yield</th></tr></thead>
+            <tbody>
+              <tr><td>N₂ + 3H₂ ⇌ 2NH₃ (Haber Process)</td><td>High pressure, low temperature, removal of NH₃ by liquefaction</td></tr>
+              <tr><td>N₂ + O₂ ⇌ 2NO</td><td>High temperature, isolation of NO</td></tr>
+              <tr><td>PCl₅ ⇌ PCl₃ + Cl₂</td><td>Low pressure, high temperature, isolation of PCl₃ and Cl₂</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

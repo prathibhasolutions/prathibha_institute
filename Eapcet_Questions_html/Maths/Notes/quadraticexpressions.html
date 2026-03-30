@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadratic Expressions</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+</head>
+<body class="bg-light">
+
+<section class="header" style="font-family: sans-serif; color: rgb(23, 41, 84);">
+  <nav><img src="../logo.png" alt="" class="logo"></nav>
+</section>
+<br><br><br><br>
+
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Quadratic Expressions</h1>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 1: Introduction & Graph
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h4>Introduction &amp; Graph of a Quadratic Expression</h4>
+    </div>
+    <div class="card-body">
+      <p>An expression of the form \(ax^2 + bx + c\), where \(a, b, c \in \mathbb{R}\) and \(a \ne 0\), is called a <strong>quadratic expression</strong> in \(x\). Let \(y = f(x) = ax^2 + bx + c\).</p>
+
+      <p>Rewriting by completing the square:</p>
+      \[y = a\!\left(x + \frac{b}{2a}\right)^2 - \frac{D}{4a}\]
+      <p>Setting \(X = x + \dfrac{b}{2a}\) and \(Y = y + \dfrac{D}{4a}\), we get \(Y = aX^2\) — a <strong>parabola</strong>.</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Key Properties of the Parabola</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>Graph of \(y = ax^2 + bx + c\) is always <strong>parabolic</strong>.</li>
+            <li>Axis of the parabola: \(x = -\dfrac{b}{2a}\) (vertical line, parallel to Y-axis).</li>
+            <li>Vertex: \(\left(-\dfrac{b}{2a},\; -\dfrac{D}{4a}\right)\)</li>
+            <li>If \(a > 0\): parabola opens <strong>upward</strong> \(\cup\)</li>
+            <li>If \(a < 0\): parabola opens <strong>downward</strong> \(\cap\)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Position of Parabola w.r.t. X-axis (Discriminant \(D = b^2 - 4ac\))</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm text-center mt-2">
+            <thead class="table-dark">
+              <tr><th>Condition</th><th>Position</th><th>X-intercepts</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>\(D > 0\)</td>
+                <td>Cuts X-axis at <strong>two distinct</strong> points</td>
+                <td>\(x = \dfrac{-b \pm \sqrt{D}}{2a}\)</td>
+              </tr>
+              <tr>
+                <td>\(D = 0\)</td>
+                <td><strong>Touches</strong> X-axis at one point (vertex on X-axis)</td>
+                <td>\(x = -\dfrac{b}{2a}\)</td>
+              </tr>
+              <tr>
+                <td>\(D < 0\)</td>
+                <td>Does <strong>not cut</strong> X-axis (entirely above or below)</td>
+                <td>No real x-intercepts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 2: Max & Min Values
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-success text-white">
+      <h4>Maximum &amp; Minimum Values</h4>
+    </div>
+    <div class="card-body">
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-primary text-white"><h5>\(a > 0\): Minimum Value</h5></div>
+        <div class="card-body">
+          <p>The quadratic expression has a <strong>minimum</strong> (least value) at \(x = -\dfrac{b}{2a}\):</p>
+          \[\text{Minimum value} = -\frac{D}{4a} = \frac{4ac - b^2}{4a}\]
+          <p>There is <strong>no greatest value</strong> (expression → ∞ as \(x \to \pm\infty\)).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-danger text-white"><h5>\(a < 0\): Maximum Value</h5></div>
+        <div class="card-body">
+          <p>The quadratic expression has a <strong>maximum</strong> (greatest value) at \(x = -\dfrac{b}{2a}\):</p>
+          \[\text{Maximum value} = -\frac{D}{4a} = \frac{4ac - b^2}{4a}\]
+          <p>There is <strong>no least value</strong> (expression → −∞ as \(x \to \pm\infty\)).</p>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Quick Summary</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm text-center">
+            <thead class="table-dark"><tr><th>Sign of \(a\)</th><th>Extreme type</th><th>Extreme value</th><th>At \(x\) =</th></tr></thead>
+            <tbody>
+              <tr><td>\(a > 0\)</td><td>Minimum</td><td>\(-\dfrac{D}{4a}\)</td><td>\(-\dfrac{b}{2a}\)</td></tr>
+              <tr><td>\(a < 0\)</td><td>Maximum</td><td>\(-\dfrac{D}{4a}\)</td><td>\(-\dfrac{b}{2a}\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 3: Sign of Quadratic Expression
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-warning text-dark">
+      <h4>Sign of Quadratic Expression \(f(x) = ax^2 + bx + c\)</h4>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-sm">
+        <thead class="table-dark">
+          <tr><th>#</th><th>Conditions</th><th>Sign of \(f(x)\)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>(i)</td>
+            <td>\(a > 0\) and \(D < 0\)</td>
+            <td>\(f(x) > 0\) for all \(x \in \mathbb{R}\) &nbsp;<span class="badge bg-success">Always positive</span></td>
+          </tr>
+          <tr>
+            <td>(ii)</td>
+            <td>\(a < 0\) and \(D < 0\)</td>
+            <td>\(f(x) < 0\) for all \(x \in \mathbb{R}\) &nbsp;<span class="badge bg-danger">Always negative</span></td>
+          </tr>
+          <tr>
+            <td>(iii)</td>
+            <td>\(a > 0\) and \(D = 0\)</td>
+            <td>\(f(x) \ge 0\) for all \(x \in \mathbb{R}\); \(f(x) = 0\) only at vertex</td>
+          </tr>
+          <tr>
+            <td>(iv)</td>
+            <td>\(a < 0\) and \(D = 0\)</td>
+            <td>\(f(x) \le 0\) for all \(x \in \mathbb{R}\); \(f(x) = 0\) only at vertex</td>
+          </tr>
+          <tr>
+            <td>(v)</td>
+            <td>\(a > 0\),  \(D > 0\), roots \(\alpha < \beta\)</td>
+            <td>\(f(x) > 0\) for \(x \in (-\infty, \alpha) \cup (\beta, \infty)\) <br>\(f(x) < 0\) for \(x \in (\alpha, \beta)\)</td>
+          </tr>
+          <tr>
+            <td>(vi)</td>
+            <td>\(a < 0\),  \(D > 0\), roots \(\alpha < \beta\)</td>
+            <td>\(f(x) < 0\) for \(x \in (-\infty, \alpha) \cup (\beta, \infty)\) <br>\(f(x) > 0\) for \(x \in (\alpha, \beta)\)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Condition for \(f(x)\) to be Positive Definite / Negative Definite</h5></div>
+        <div class="card-body">
+          <ul>
+            <li><strong>Positive definite</strong> (\(f(x) > 0\) for all \(x \in \mathbb{R}\)): \(a > 0\) and \(D < 0\)</li>
+            <li><strong>Non-negative definite</strong> (\(f(x) \ge 0\) for all \(x\)): \(a > 0\) and \(D \le 0\)</li>
+            <li><strong>Negative definite</strong> (\(f(x) < 0\) for all \(x \in \mathbb{R}\)): \(a < 0\) and \(D < 0\)</li>
+            <li><strong>Non-positive definite</strong> (\(f(x) \le 0\) for all \(x\)): \(a < 0\) and \(D \le 0\)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 4: Intervals of Roots
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-info text-white">
+      <h4>Position of Roots in an Interval</h4>
+    </div>
+    <div class="card-body">
+      <p>For \(f(x) = ax^2 + bx + c\), let \(D = b^2 - 4ac\) and vertex \(x_v = -\dfrac{b}{2a}\). The conditions for the roots \(\alpha, \beta\) to satisfy various location criteria:</p>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-dark text-white"><h5>Root Location Conditions (with \(a > 0\) shown)</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark">
+              <tr><th>#</th><th>Requirement</th><th>Conditions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>(i)</td>
+                <td>Both roots <strong>positive</strong> (in \((0,\infty)\))</td>
+                <td>\(D \ge 0\), &nbsp; \(-\dfrac{b}{a} > 0\) (sum +ve), &nbsp; \(\dfrac{c}{a} > 0\) (product +ve)</td>
+              </tr>
+              <tr>
+                <td>(ii)</td>
+                <td>Both roots <strong>negative</strong> (in \((-\infty, 0)\))</td>
+                <td>\(D \ge 0\), &nbsp; \(-\dfrac{b}{a} < 0\) (sum −ve), &nbsp; \(\dfrac{c}{a} > 0\) (product +ve)</td>
+              </tr>
+              <tr>
+                <td>(iii)</td>
+                <td>Both roots <strong>greater than</strong> \(k\)</td>
+                <td>\(D \ge 0\), &nbsp; \(x_v > k\), &nbsp; \(a\,f(k) > 0\)</td>
+              </tr>
+              <tr>
+                <td>(iv)</td>
+                <td>Both roots <strong>less than</strong> \(k\)</td>
+                <td>\(D \ge 0\), &nbsp; \(x_v < k\), &nbsp; \(a\,f(k) > 0\)</td>
+              </tr>
+              <tr>
+                <td>(v)</td>
+                <td>Both roots lie in \((k_1, k_2)\)</td>
+                <td>\(D \ge 0\), &nbsp; \(k_1 < x_v < k_2\), &nbsp; \(a\,f(k_1) > 0\), &nbsp; \(a\,f(k_2) > 0\)</td>
+              </tr>
+              <tr>
+                <td>(vi)</td>
+                <td><strong>Exactly one</strong> root in \((k_1, k_2)\)</td>
+                <td>\(D > 0\) and \(f(k_1) \cdot f(k_2) < 0\)</td>
+              </tr>
+              <tr>
+                <td>(vii)</td>
+                <td>Given \(k\) lies <strong>between the roots</strong></td>
+                <td>\(D > 0\) and \(a\,f(k) < 0\)</td>
+              </tr>
+              <tr>
+                <td>(viii)</td>
+                <td>Roots of <strong>opposite sign</strong> (0 between roots)</td>
+                <td>\(D > 0\) and \(a\,f(0) < 0\), i.e. \(\dfrac{c}{a} < 0\)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 5: Quadratic Equation – Roots & Discriminant
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-danger text-white">
+      <h4>Quadratic Equation — Roots &amp; Discriminant</h4>
+    </div>
+    <div class="card-body">
+      <p>For the equation \(ax^2 + bx + c = 0\) (\(a \ne 0\)), the roots are:</p>
+      \[\alpha,\,\beta = \frac{-b \pm \sqrt{D}}{2a}, \quad D = b^2 - 4ac\]
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-primary text-white"><h5>Vieta's Formulae &amp; Symmetric Expressions</h5></div>
+        <div class="card-body">
+          \[\alpha + \beta = -\frac{b}{a}, \qquad \alpha\beta = \frac{c}{a}, \qquad |\alpha - \beta| = \frac{\sqrt{D}}{|a|}\]
+          <p><strong>Equation from roots:</strong> \(x^2 - (\alpha+\beta)x + \alpha\beta = 0\)</p>
+          <table class="table table-bordered table-sm mt-3">
+            <thead class="table-dark"><tr><th>Expression</th><th>Value in terms of \(a, b, c\)</th></tr></thead>
+            <tbody>
+              <tr><td>\(\alpha^2 + \beta^2\)</td><td>\(\dfrac{b^2 - 2ac}{a^2}\)</td></tr>
+              <tr><td>\((\alpha - \beta)^2\)</td><td>\(\dfrac{D}{a^2}\)</td></tr>
+              <tr><td>\(\alpha^3 + \beta^3\)</td><td>\(\dfrac{-b(b^2 - 3ac)}{a^3}\)</td></tr>
+              <tr><td>\(\alpha^2 + \alpha\beta + \beta^2\)</td><td>\(\dfrac{b^2 - ac}{a^2}\)</td></tr>
+              <tr><td>\(\dfrac{\alpha}{\beta} + \dfrac{\beta}{\alpha}\)</td><td>\(\dfrac{b^2 - 2ac}{ac}\)</td></tr>
+              <tr><td>\(\alpha^2\beta + \alpha\beta^2\)</td><td>\(-\dfrac{bc}{a^2}\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Nature of Roots — Summary Table</h5></div>
+        <div class="card-body">
+          <table class="table table-bordered table-sm">
+            <thead class="table-dark"><tr><th>Discriminant \(D\)</th><th>Nature of Roots</th></tr></thead>
+            <tbody>
+              <tr><td>\(D < 0\)</td><td>Complex conjugate roots</td></tr>
+              <tr><td>\(D = 0\)</td><td>Real and equal: \(\alpha = \beta = -b/2a\)</td></tr>
+              <tr><td>\(D > 0\)</td><td>Real and distinct</td></tr>
+              <tr><td>\(D > 0\), perfect square, \(a,b,c \in \mathbb{Q}\)</td><td>Rational and unequal</td></tr>
+              <tr><td>\(D > 0\), not perfect square, \(a,b,c \in \mathbb{Q}\)</td><td>Irrational and unequal (conjugate surds)</td></tr>
+              <tr><td>\(a+b+c=0\)</td><td>One root is always \(1\); other is \(c/a\)</td></tr>
+              <tr><td>\(a = c\)</td><td>Roots are reciprocals of each other</td></tr>
+              <tr><td>\(b = 0\)</td><td>Roots are equal in magnitude, opposite in sign</td></tr>
+              <tr><td>\(c = 0\)</td><td>One root is \(0\), other is \(-b/a\)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       CARD 6: Special Conditions
+  ══════════════════════════════════════════════ -->
+  <div class="card shadow-lg mt-4">
+    <div class="card-header bg-dark text-white">
+      <h4>Special Conditions on Roots</h4>
+    </div>
+    <div class="card-body">
+
+      <div class="card shadow-sm mt-2">
+        <div class="card-header bg-success text-white"><h5>Common Root Conditions</h5></div>
+        <div class="card-body">
+          <p>For equations \(a_1x^2+b_1x+c_1=0\) and \(a_2x^2+b_2x+c_2=0\):</p>
+          <ul>
+            <li><strong>Exactly one common root:</strong>
+              \[(c_1a_2 - c_2a_1)^2 = (b_1c_2 - b_2c_1)(a_1b_2 - a_2b_1)\]
+            </li>
+            <li><strong>Both roots common:</strong>
+              \[\frac{a_1}{a_2} = \frac{b_1}{b_2} = \frac{c_1}{c_2}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-info text-white"><h5>Roots in the Same Ratio &amp; One Root \(k\) Times Another</h5></div>
+        <div class="card-body">
+          <ul>
+            <li>If roots of \(a_1x^2+b_1x+c_1=0\) and \(a_2x^2+b_2x+c_2=0\) are in the same ratio:
+              \[\frac{b_1^2}{a_1c_1} = \frac{b_2^2}{a_2c_2}\]
+            </li>
+            <li>If one root of \(ax^2+bx+c=0\) is \(k\) times the other:
+              \[\frac{(k+1)^2}{k} = \frac{b^2}{ac}\]
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card shadow-sm mt-3">
+        <div class="card-header bg-warning text-dark"><h5>Condition for Quadratic Function to be Always Resolvable into Linear Factors</h5></div>
+        <div class="card-body">
+          <p>The function \(f(x,y) = ax^2 + 2hxy + by^2 + 2gx + 2fy + c\) is always resolvable into linear factors iff:</p>
+          \[\Delta = \begin{vmatrix} a & h & g \\ h & b & f \\ g & f & c \end{vmatrix} = abc + 2fgh - af^2 - bg^2 - ch^2 = 0\]
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0; margin-top: 3rem;">
+  <div class="container text-center">
+    <p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
+    <p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
