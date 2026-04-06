@@ -1,409 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Biomolecules</title>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="icon" type="image/png" href="../../../logo.png">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<script type="text/javascript" async
-src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biomolecules | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f4fbf7; }
+    .chapter-header { background: linear-gradient(135deg, #0a2e1a 0%, #1a6b40 60%, #27ae60 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; vertical-align: top; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #0a2e1a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
 </head>
-
-<body class="bg-light">
-
-<section class="header" style="font-family: sans-serif;color: rgb(23, 41, 84);">
-<nav>
-<img src="../logo.png" alt="" class="logo">
-</nav>
-</section>
-
-<br><br><br><br>
-
-<div class="container mt-5">
-
-<!-- TITLE -->
-
-<div class="card shadow-lg mb-4">
-<div class="card-header bg-dark text-white">
-<h1>Biomolecules</h1>
-</div>
-
-<div class="card-body">
-
-<p>
-Biomolecules are organic compounds present in living organisms that perform essential biological functions.
-</p>
-
-<ul>
-<li>Carbohydrates</li>
-<li>Proteins</li>
-<li>Lipids</li>
-<li>Nucleic acids</li>
-</ul>
-
-</div>
-</div>
-
-
-<!-- CARBOHYDRATES -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-primary text-white">
-<h5>Carbohydrates</h5>
-</div>
-
-<div class="card-body">
-
-<p>
-Carbohydrates are <strong>polyhydroxy aldehydes or ketones</strong> or compounds that produce them on hydrolysis.
-</p>
-
-<p class="text-center">
-\[
-C_x(H_2O)_y
-\]
-</p>
-
-<p><strong>Classification</strong></p>
-
-<ul>
-<li>Monosaccharides</li>
-<li>Oligosaccharides</li>
-<li>Polysaccharides</li>
-</ul>
-
-</div>
-</div>
-
-
-<!-- MONOSACCHARIDES -->
-
-<div class="card shadow-lg mb-4">
-<div class="card-header bg-success text-white">
-<h5>Monosaccharides</h5>
-</div>
-
-<div class="card-body">
-
-<h6>Glucose</h6>
-
-<ul>
-<li>Molecular formula \(C_6H_{12}O_6\)</li>
-<li>Also called <strong>dextrose</strong></li>
-<li>Reducing sugar</li>
-<li>Exists in cyclic and open chain form</li>
-<li>Main source of energy for body</li>
-</ul>
-
-<h6>Fructose</h6>
-
-<ul>
-<li>Ketose sugar</li>
-<li>Also called <strong>fruit sugar</strong></li>
-<li>Sweetest naturally occurring sugar</li>
-<li>Reducing sugar</li>
-</ul>
-
-</div>
-</div>
-
-
-<!-- OLIGOSACCHARIDES -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-warning text-white">
-<h5>Oligosaccharides</h5>
-</div>
-
-<div class="card-body">
-
-<p>Oligosaccharides yield 2–10 monosaccharide units on hydrolysis.</p>
-
-<table class="table table-bordered text-center">
-
-<thead class="table-dark">
-<tr>
-<th>Disaccharide</th>
-<th>Components</th>
-<th>Type</th>
-<th>Source</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Sucrose</td>
-<td>Glucose + Fructose</td>
-<td>Non-reducing sugar</td>
-<td>Table sugar</td>
-</tr>
-
-<tr>
-<td>Lactose</td>
-<td>Glucose + Galactose</td>
-<td>Reducing sugar</td>
-<td>Milk sugar</td>
-</tr>
-
-<tr>
-<td>Maltose</td>
-<td>Glucose + Glucose</td>
-<td>Reducing sugar</td>
-<td>Product of starch hydrolysis</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-</div>
-
-
-<!-- POLYSACCHARIDES -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-danger text-white">
-<h5>Polysaccharides</h5>
-</div>
-
-<div class="card-body">
-
-<table class="table table-bordered text-center">
-
-<thead class="table-dark">
-<tr>
-<th>Polysaccharide</th>
-<th>Function</th>
-<th>Source</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Starch</td>
-<td>Storage carbohydrate in plants</td>
-<td>Rice, wheat, potato</td>
-</tr>
-
-<tr>
-<td>Cellulose</td>
-<td>Structural component of plant cell wall</td>
-<td>Plants</td>
-</tr>
-
-<tr>
-<td>Glycogen</td>
-<td>Storage carbohydrate in animals</td>
-<td>Liver and muscles</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-</div>
-
-
-<!-- AMINO ACIDS -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-success text-white">
-<h5>Amino Acids</h5>
-</div>
-
-<div class="card-body">
-
-<p class="text-center">
-\[
-NH_2-CH(R)-COOH
-\]
-</p>
-
-<p>Exist as <strong>zwitter ions</strong></p>
-
-<table class="table table-bordered text-center">
-
-<thead class="table-dark">
-<tr>
-<th>Essential Amino Acids</th>
-<th>Non-Essential Amino Acids</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Valine</td>
-<td>Glycine</td>
-</tr>
-
-<tr>
-<td>Leucine</td>
-<td>Alanine</td>
-</tr>
-
-<tr>
-<td>Isoleucine</td>
-<td>Serine</td>
-</tr>
-
-<tr>
-<td>Phenylalanine</td>
-<td>Aspartic acid</td>
-</tr>
-
-<tr>
-<td>Threonine</td>
-<td>Glutamic acid</td>
-</tr>
-
-</tbody>
-
-</table>
-
-</div>
-</div>
-
-
-<!-- PEPTIDES -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-warning text-white">
-<h5>Peptides</h5>
-</div>
-
-<div class="card-body">
-
-<p>Peptide bond:</p>
-
-<p class="text-center">
-\[
--CO-NH-
-\]
-</p>
-
-<ul>
-<li>Dipeptide</li>
-<li>Tripeptide</li>
-<li>Polypeptide</li>
-</ul>
-
-</div>
-</div>
-
-
-<!-- VITAMINS -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-info text-white">
-<h5>Vitamins and Deficiency Diseases</h5>
-</div>
-
-<div class="card-body">
-
-<table class="table table-bordered text-center">
-
-<thead class="table-dark">
-<tr>
-<th>Vitamin</th>
-<th>Deficiency Disease</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr><td>Vitamin A</td><td>Night blindness</td></tr>
-<tr><td>Vitamin D</td><td>Rickets</td></tr>
-<tr><td>Vitamin E</td><td>Muscle weakness</td></tr>
-<tr><td>Vitamin K</td><td>Blood clotting disorder</td></tr>
-<tr><td>Vitamin B1</td><td>Beriberi</td></tr>
-<tr><td>Vitamin B2</td><td>Skin lesions</td></tr>
-<tr><td>Vitamin B3</td><td>Pellagra</td></tr>
-<tr><td>Vitamin B6</td><td>Anemia</td></tr>
-<tr><td>Vitamin B12</td><td>Pernicious anemia</td></tr>
-<tr><td>Vitamin C</td><td>Scurvy</td></tr>
-
-</tbody>
-
-</table>
-
-</div>
-</div>
-
-
-<!-- HORMONES -->
-
-<div class="card shadow-lg mb-4">
-
-<div class="card-header bg-secondary text-white">
-<h5>Hormones and Functions</h5>
-</div>
-
-<div class="card-body">
-
-<table class="table table-bordered text-center">
-
-<thead class="table-dark">
-<tr>
-<th>Hormone</th>
-<th>Function</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr><td>Insulin</td><td>Regulates blood glucose level</td></tr>
-<tr><td>Glucagon</td><td>Raises blood glucose</td></tr>
-<tr><td>Adrenaline</td><td>Fight or flight response</td></tr>
-<tr><td>Thyroxine</td><td>Controls metabolism</td></tr>
-<tr><td>Estrogen</td><td>Female reproductive hormone</td></tr>
-<tr><td>Progesterone</td><td>Maintains pregnancy</td></tr>
-<tr><td>Testosterone</td><td>Male reproductive hormone</td></tr>
-<tr><td>Growth hormone</td><td>Controls body growth</td></tr>
-
-</tbody>
-
-</table>
-
-</div>
-</div>
-
-
-</div>
-
-
-<footer id="footer" class="footer" style="background-color: rgb(23, 41, 84); color: #ffffff; padding: 10px 0;">
-
-<div class="container text-center">
-
-<p>&copy; 2024 Prathibha Institute. All rights reserved.</p>
-
-<p>Designed by <a href="https://www.prathibhasolutions.com" style="color:aquamarine;">Prathibha Solutions</a></p>
-
-</div>
-
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 31</div>
+        <h1>Biomolecules</h1>
+        <p class="mb-0">Carbohydrates · Amino Acids &amp; Proteins · Enzymes · Vitamins · Nucleic Acids · Lipids · Hormones</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- ===== CARBOHYDRATES ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F33F; Carbohydrates</div>
+      <div class="card-body">
+        <p>Carbohydrates are polyhydroxy aldehydes or ketones or compounds that yield these on hydrolysis. General formula: C<sub>x</sub>(H₂O)<sub>y</sub>. Also called <em>saccharides</em> (Latin <em>saccharum</em> = sugar).</p>
+
+        <div class="row g-3">
+          <!-- Classification -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Classification</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+                  <tr><td><strong>Monosaccharides</strong></td><td>Cannot be hydrolysed further</td><td>Glucose, Fructose, Galactose, Ribose</td></tr>
+                  <tr><td><strong>Oligosaccharides</strong></td><td>2–9 monosaccharide units on hydrolysis</td><td>Sucrose, Maltose, Lactose (disaccharides); Raffinose (trisaccharide)</td></tr>
+                  <tr><td><strong>Polysaccharides</strong></td><td>Polymers of monosaccharides; non-sweet, insoluble (non-sugars)</td><td>Starch, Cellulose, Glycogen</td></tr>
+                </table>
+                <div class="note-box mt-1">All naturally occurring monosaccharides belong to <strong>D-series</strong>. <strong>Killiani synthesis</strong> converts an aldose into next higher aldose.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glucose -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-success text-white">Glucose (C₆H₁₂O₆) — Dextrose</div>
+              <div class="card-body">
+                <p>Found in grape sugar, corn sugar, blood sugar. Aldohexose.</p>
+                <div class="formula-box">Manufacture:
+(C₁₂H₂₂O₁₁) + H₂O → C₆H₁₂O₆ + C₆H₁₂O₆  (sucrose hydrolysis)
+(C₆H₁₀O₅)ₙ + nH₂O → nC₆H₁₂O₆  (starch hydrolysis, H⁺/393K, 2–3 bar)
+
+α-D-glucose: specific rotation = +111.5°
+β-D-glucose: specific rotation = +19.5°
+Equilibrium mixture (mutarotation): +52.5°
+
+Anomeric carbon = C1 (hemiacetylic carbon)</div>
+                <div class="note-box"><strong>Mutarotation</strong>: Spontaneous change in optical rotation of α or β form until equilibrium (+52.5°) is reached in water.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Glucose reactions -->
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Properties/Reactions of Glucose ★★★</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>#</th><th>Reaction / Reagent</th><th>Product / Observation</th><th>Confirmed</th></tr>
+                  <tr><td>i</td><td>Acetic anhydride (acetylation)</td><td>Penta-acetate of glucose</td><td>5 —OH groups present</td></tr>
+                  <tr><td>ii</td><td>HCN (addition)</td><td>Glucose cyanohydrin</td><td>Carbonyl group (—CHO)</td></tr>
+                  <tr><td>ii</td><td>NH₂OH (hydroxylamine)</td><td>Glucose oxime</td><td>Carbonyl group (—CHO)</td></tr>
+                  <tr><td>iii</td><td>Tollen's reagent (amm. AgNO₃)</td><td>Silver mirror</td><td>Aldehydic group</td></tr>
+                  <tr><td>iii</td><td>Fehling's / Benedict's solution</td><td>Brick red Cu₂O precipitate</td><td>Reducing sugar</td></tr>
+                  <tr><td>iv</td><td>Bromine water (mild oxidation)</td><td>Gluconic acid (HOCH₂(CHOH)₄COOH)</td><td>—CHO group</td></tr>
+                  <tr><td>iv</td><td>Conc. HNO₃ (strong oxidation)</td><td>Saccharic acid (dicarboxylic)</td><td>—CHO and —CH₂OH</td></tr>
+                  <tr><td>v</td><td>HI (prolonged heating)</td><td>n-Hexane</td><td>6 C atoms linearly linked</td></tr>
+                  <tr><td>v</td><td>Na/Hg + water (reduction)</td><td>Sorbitol</td><td>—</td></tr>
+                  <tr><td>vi</td><td>Excess phenylhydrazine (3 mol)</td><td>Glucosazone (yellow crystals)</td><td>—</td></tr>
+                  <tr><td>vii</td><td>Dry HCl + methanol</td><td>α- and β-methyl glucosides</td><td>Reaction at anomeric —OH only</td></tr>
+                </table>
+                <div class="note-box mt-1"><strong>Glucose and fructose</strong> give the same osazone (glucosazone) because they differ only in configuration at C1 and C2. <strong>Fructose does NOT reduce Br₂ water</strong> (has ketone, not aldehyde).</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disaccharides -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-warning text-dark">Disaccharides (C₁₂H₂₂O₁₁)</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Sugar</th><th>Components</th><th>Bond</th><th>Reducing?</th><th>Source</th></tr>
+                  <tr><td>Sucrose (cane/table sugar)</td><td>Glucose + Fructose</td><td>α-1,2-glycosidic (both anomeric C locked)</td><td><strong>No</strong></td><td>Sugar cane/beet</td></tr>
+                  <tr><td>Maltose (malt sugar)</td><td>Glucose + Glucose</td><td>α-1,4-glycosidic</td><td>Yes</td><td>Malted barley, germinating seeds</td></tr>
+                  <tr><td>Lactose (milk sugar)</td><td>Glucose + Galactose</td><td>β-1,4-glycosidic</td><td>Yes</td><td>Milk of mammals</td></tr>
+                </table>
+                <div class="note-box mt-1">
+                  Sucrose = <strong>invert sugar</strong> after hydrolysis (mixture of glucose + fructose has −ve rotation though sucrose is +ve).<br/>
+                  <strong>Souring of milk</strong>: lactose → lactic acid.<br/>
+                  Raffinose (trisaccharide): glucose + fructose + galactose.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Polysaccharides -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-danger text-white">Polysaccharides</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Name</th><th>Monomer</th><th>Key Facts</th></tr>
+                  <tr><td>Starch</td><td>α-D-glucose</td><td>Amylose (20%, unbranched, water-soluble) + Amylopectin (80%, branched, insoluble); turns blue with I₂; found in potato, rice, wheat</td></tr>
+                  <tr><td>Cellulose</td><td>β-D-glucose</td><td>Most abundant polysaccharide; β-1,4-glycosidic bonds; structural in plants; wood (50%), cotton (90%)</td></tr>
+                  <tr><td>Glycogen</td><td>α-D-glucose</td><td>Animal starch; stored in liver and muscles; highly branched (like amylopectin)</td></tr>
+                </table>
+                <div class="formula-box mt-1">Cellulose derivatives:
+  Mercerised cotton: treated with conc. NaOH → silky lustre
+  Gun cotton: fully nitrated cellulose (explosive, blasting gelatin)
+  Cellulose acetate: acetate rayon, photographic films
+  Cellulose xanthate: viscose rayon</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tests & Sweetness -->
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Tests &amp; Relative Sweetness</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-5">
+                    <div class="reaction-box">Molisch Test (general carbohydrate test):
+  Compound + α-naphthol in alcohol + conc. H₂SO₄
+  → Purple ring at junction (positive for carbohydrates)
+
+Fehling's Test (reducing sugars):
+  Reducing sugar + Fehling's soln → Cu₂O (brick-red ppt)
+  Non-reducing: sucrose (does not reduce)
+
+Tollen's Test: Silver mirror → reducing sugar</div>
+                  </div>
+                  <div class="col-md-7">
+                    <table class="chem-table">
+                      <tr><th>Sugar</th><th>Relative Sweetness</th></tr>
+                      <tr><td>Saccharin (artificial)</td><td>300</td></tr>
+                      <tr><td>Fructose</td><td>17.3</td></tr>
+                      <tr><td>Invert sugar</td><td>12.6</td></tr>
+                      <tr><td>Cane sugar (sucrose)</td><td>10 (reference)</td></tr>
+                      <tr><td>Glucose</td><td>7.4</td></tr>
+                      <tr><td>Maltose</td><td>3.2</td></tr>
+                      <tr><td>Lactose</td><td>1.6</td></tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end row -->
+      </div>
+    </div>
+
+    <!-- ===== AMINO ACIDS & PROTEINS ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F9EC; Amino Acids &amp; Proteins</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Amino Acids</div>
+              <div class="card-body">
+                <p>Contain both <strong>—NH₂</strong> and <strong>—COOH</strong> groups. General formula: H₂N—CHR—COOH (α-amino acid).</p>
+                <div class="formula-box">Classification by position of —NH₂:
+  α-amino acid: —NH₂ on α-carbon
+  β-amino acid: —NH₂ on β-carbon
+  γ-amino acid: —NH₂ on γ-carbon
+
+Classification by side chain:
+  Neutral: one —NH₂ + one —COOH (e.g. glycine, alanine)
+  Acidic: one —NH₂ + two —COOH (e.g. aspartic acid)
+  Basic: two+ —NH₂ + one —COOH (e.g. lysine)
+
+Except glycine, all α-amino acids are optically active (L-form natural)
+L-amino acids: —NH₂ on left in Fischer projection
+D-amino acids: found in some antibiotics/bacterial cell walls</div>
+                <div class="note-box">
+                  <strong>Zwitter ion</strong> (isoelectric point): H₃N⁺—CHR—COO⁻<br/>
+                  At low pH (acidic): exists as cation (H₃N⁺—CHR—COOH)<br/>
+                  At high pH (basic): exists as anion (H₂N—CHR—COO⁻)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Essential Amino Acids (10)</div>
+              <div class="card-body">
+                <p>Human body can synthesise 10 (non-essential); the following <strong>10 must be obtained from diet</strong>:</p>
+                <div class="row">
+                  <div class="col-6">
+                    <ol>
+                      <li>Phenylalanine</li>
+                      <li>Histidine</li>
+                      <li>Tryptophan</li>
+                      <li>Valine</li>
+                      <li>Methionine</li>
+                    </ol>
+                  </div>
+                  <div class="col-6">
+                    <ol start="6">
+                      <li>Threonine</li>
+                      <li>Arginine</li>
+                      <li>Leucine</li>
+                      <li>Isoleucine</li>
+                      <li>Lysine</li>
+                    </ol>
+                  </div>
+                </div>
+                <div class="note-box mt-1">Amino acids are abbreviated by first three letters: glycine = <em>gly</em>, alanine = <em>ala</em>, etc.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Peptides &amp; Proteins</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="formula-box">Peptide bond: —CO—NH— (amide linkage)
+Dipeptide: 1 peptide bond
+Tripeptide: 2 peptide bonds
+n amino acids → polypeptide with (n−1) peptide bonds
+Polypeptide mol. mass > 10,000 = Protein
+
+Two different amino acids → 2 dipeptides possible
+Three different amino acids → 6 tripeptides possible</div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formula-box">Protein Structure:
+  1° (Primary): sequence of amino acids
+  2° (Secondary): α-helix (H-bonds) or β-pleated sheet
+  3° (Tertiary): 3D folding; stabilised by covalent,
+     ionic, H-bonds, disulphide bonds
+  4° (Quaternary): arrangement of multiple chains
+
+Haemoglobin: globular protein; heme = prosthetic group;
+  4 polypeptide chains (2α × 141 + 2β × 146 = 574 aa)
+  Sickle cell anaemia: glutamic acid → valine substitution</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-success text-white">Classification of Proteins</div>
+              <div class="card-body">
+                <p><strong>By shape:</strong></p>
+                <ul>
+                  <li><strong>Fibrous proteins:</strong> polypeptide chains run parallel; insoluble; e.g. keratin (hair, wool), myosin, collagen</li>
+                  <li><strong>Globular proteins:</strong> chains coil spherically; soluble; e.g. insulin, albumin, haemoglobin</li>
+                </ul>
+                <p><strong>By hydrolysis products:</strong></p>
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Prosthetic Group</th><th>Example</th></tr>
+                  <tr><td>Simple</td><td>Only α-amino acids</td><td>Albumin</td></tr>
+                  <tr><td>Nucleoprotein</td><td>Nucleic acid</td><td>Ribosomes</td></tr>
+                  <tr><td>Phosphoprotein</td><td>Phosphoric acid</td><td>Casein (milk)</td></tr>
+                  <tr><td>Glycoprotein</td><td>Carbohydrate</td><td>—</td></tr>
+                  <tr><td>Lipoprotein</td><td>Lipid</td><td>—</td></tr>
+                  <tr><td>Metalloprotein</td><td>Metal ion</td><td>Haemoglobin (Fe)</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-danger text-white">Tests for Proteins &amp; Denaturation</div>
+              <div class="card-body">
+                <div class="reaction-box">Biuret Test:
+  Protein + NaOH + dil. CuSO₄ → pink/violet colour
+  (Detects peptide bonds — ≥2 peptide bonds needed)
+
+Millon's Test:
+  Protein + Millon's reagent → red colour
+  (Detects tyrosine; Millon's = Hg(NO₃)₂ + HNO₃)
+
+Xanthoprotein Test:
+  Protein + conc. HNO₃ → yellow → NaOH → orange
+  (Detects aromatic amino acids: Phe, Tyr, Trp)
+
+Iodine Reaction:
+  Protein + I₂/KI → yellow colour</div>
+                <div class="note-box mt-1"><strong>Denaturation</strong>: change in 3D structure of native protein (not 1° structure). Caused by: change in pH, heat, electrolytes, organic solvents. Examples: boiling egg, curdling milk, coagulation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ENZYMES ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x26A1; Enzymes</div>
+      <div class="card-body">
+        <p>Enzymes are complex proteinoid organic compounds (biocatalysts) produced by living organisms. Mechanism: <strong>Lock and Key model</strong>.</p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Characteristics</div>
+              <div class="card-body">
+                <ul>
+                  <li>Increase reaction rate up to <strong>10⁶ to 10⁷ times</strong>.</li>
+                  <li>Highly specific (urease hydrolyses urea only, not methyl urea).</li>
+                  <li>Optimum temperature: <strong>20–30°C</strong>.</li>
+                  <li>Optimum pH: ~7 (pepsin: 1.8–2.2; trypsin: 7.5–8.3).</li>
+                  <li>Very small amounts sufficient.</li>
+                  <li><strong>Endoenzymes</strong>: act inside cell; <strong>exoenzymes</strong>: act outside.</li>
+                  <li>Named with suffix <em>-ase</em> after substrate: urease, maltase, diastase.</li>
+                </ul>
+                <div class="formula-box">Mechanism:
+Enzyme + Substrate → [Enzyme-Substrate complex] → Product + Enzyme
+
+Co-enzymes (non-protein enhancers):
+  Metal ions: Mn²⁺, Mg²⁺, K⁺, Na⁺, Zn²⁺, Co²⁺
+  Vitamins: thiamine, riboflavin, etc.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Common Enzymes</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Enzyme</th><th>Substrate</th><th>Products</th></tr>
+                  <tr><td>Urease</td><td>Urea</td><td>CO₂ + NH₃</td></tr>
+                  <tr><td>Maltase</td><td>Maltose</td><td>Glucose</td></tr>
+                  <tr><td>Invertase (sucrase)</td><td>Sucrose</td><td>Glucose + Fructose</td></tr>
+                  <tr><td>Amylase</td><td>Starch</td><td>Maltose</td></tr>
+                  <tr><td>Trypsin</td><td>Proteins</td><td>Amino acids</td></tr>
+                  <tr><td>Pepsin</td><td>Proteins</td><td>Peptides</td></tr>
+                  <tr><td>Zymase</td><td>Glucose</td><td>Ethanol + CO₂</td></tr>
+                  <tr><td>Diastase</td><td>Starch</td><td>Maltose</td></tr>
+                  <tr><td>Ascorbic acid oxidase</td><td>Ascorbic acid</td><td>Dehydroascorbic acid</td></tr>
+                  <tr><td>Streptokinase</td><td>Blood clot</td><td>Prevents clotting (heart disease)</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== VITAMINS ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F34A; Vitamins</div>
+      <div class="card-body">
+        <p>Organic compounds required in small amounts for normal health and growth. Not synthesised in body in adequate amounts. <strong>Vitamin H</strong> is neither fat-soluble nor water-soluble.</p>
+        <div class="important-box mb-2">Fat-soluble vitamins: <strong>A, D, E, K</strong> &nbsp;|&nbsp; Water-soluble vitamins: <strong>B complex, C</strong></div>
+        <table class="chem-table">
+          <tr><th>Vitamin</th><th>Chemical Name</th><th>Solubility</th><th>Deficiency Disease</th></tr>
+          <tr><td><strong>A</strong></td><td>Retinol / Axerophytol (Carotenoids)</td><td>Fat-soluble</td><td>Night blindness, Xerophthalmia (opaque cornea), dry skin</td></tr>
+          <tr><td><strong>B₁</strong></td><td>Thiamine</td><td>Water-soluble; destroyed by heat</td><td>Beri-beri, loss of appetite</td></tr>
+          <tr><td><strong>B₂</strong></td><td>Riboflavin</td><td>Water-soluble; stable to heat, destroyed by light</td><td>Cracked lips, sore tongue, skin disorders</td></tr>
+          <tr><td><strong>B₆</strong></td><td>Pyridoxine</td><td>Water-soluble</td><td>Nervous disturbances, convulsions</td></tr>
+          <tr><td><strong>B₁₂</strong></td><td>Cyanocobalamin (contains Co)</td><td>Water-soluble; red crystalline</td><td>Pernicious anaemia</td></tr>
+          <tr><td><strong>C</strong></td><td>Ascorbic acid (C₆H₈O₆)</td><td>Water-soluble; destroyed by cooking &amp; air</td><td>Scurvy, dental caries, pyorrhea, anaemia</td></tr>
+          <tr><td><strong>D</strong></td><td>Ergocalciferol (calciferol)</td><td>Fat-soluble; stable to heat &amp; oxidation</td><td>Infantile rickets, deformation of bones &amp; teeth</td></tr>
+          <tr><td><strong>E</strong></td><td>Tocopherol</td><td>Fat-soluble; stable to heat &amp; oxidation</td><td>Loss of sexual power; muscle fibre degeneration (animals)</td></tr>
+          <tr><td><strong>K</strong></td><td>Phylloquinone</td><td>Fat-soluble; stable to heat &amp; oxidation</td><td>Haemorrhage, impaired blood clotting</td></tr>
+        </table>
+        <div class="note-box mt-2">Vitamin D regulates absorption of <strong>Ca²⁺ and phosphate</strong> in intestine. Vitamin B₁₂ is the only vitamin containing a <strong>metal (cobalt)</strong>. Vitamin C is the only vitamin that must be taken daily (not stored).</div>
+      </div>
+    </div>
+
+    <!-- ===== NUCLEIC ACIDS ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F9EC; Nucleic Acids (DNA &amp; RNA)</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Key Terms</div>
+              <div class="card-body">
+                <div class="formula-box">Nitrogenous Bases:
+  Purines (double ring): Adenine (A), Guanine (G)
+  Pyrimidines (single ring): Thymine (T), Uracil (U), Cytosine (C)
+
+Base pairing (H-bonds):
+  A = T (2 H-bonds) [in DNA]
+  A = U (2 H-bonds) [in RNA]
+  C ≡ G (3 H-bonds)
+
+Pentose sugar:
+  Ribose (in RNA)
+  Deoxyribose (no —OH at C2) (in DNA)
+
+Nucleoside = Pentose + Nitrogenous base
+Nucleotide = Nucleoside + Phosphate group(s)
+Nucleic acid = Polymer of nucleotides</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">DNA vs RNA</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Feature</th><th>DNA</th><th>RNA</th></tr>
+                  <tr><td>Sugar</td><td>Deoxyribose</td><td>Ribose</td></tr>
+                  <tr><td>Bases</td><td>A, G, C, T</td><td>A, G, C, U</td></tr>
+                  <tr><td>Structure</td><td>Double helix (Watson-Crick)</td><td>Single strand</td></tr>
+                  <tr><td>Location</td><td>Nucleus</td><td>Nucleus &amp; cytoplasm</td></tr>
+                  <tr><td>Function</td><td>Genetic information storage</td><td>Protein synthesis</td></tr>
+                </table>
+                <div class="formula-box mt-1">Types of RNA:
+  m-RNA (messenger): carries info for protein synthesis
+  t-RNA (transfer/soluble): collects amino acids from cytoplasm
+  r-RNA (ribosomal): forms ribosomes</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Structure of DNA &amp; Genetic Code</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <ul>
+                      <li>Two polynucleotide chains, <strong>right-handed double helix</strong>.</li>
+                      <li><strong>10 base pairs per turn</strong> of helix.</li>
+                      <li>Two chains are antiparallel (5′→3′ and 3′→5′).</li>
+                      <li>Held by <strong>H-bonds</strong> between complementary bases.</li>
+                      <li>Heterocyclic base at C1, phosphate at C5′ of sugar.</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="formula-box">Gene: portion of DNA coding for a specific protein
+Replication: DNA duplicating itself (parent strand = template)
+Genetic code: relation between amino acid and nucleotide triplet
+Codon: base triplet in m-RNA coding for one amino acid
+Anticodon: complementary triplet in t-RNA
+  Code → DNA; Codon → m-RNA; Anticodon → t-RNA</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== LIPIDS ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x1F9C8; Lipids</div>
+      <div class="card-body">
+        <p>Constituents of animals and plants soluble in <strong>organic solvents</strong> (ether, CHCl₃, CCl₄) but <strong>insoluble in water</strong>. (Greek <em>lipose</em> = fat)</p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Types of Lipids</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Description</th><th>Examples</th></tr>
+                  <tr><td>Simple lipids (fats/oils)</td><td>Triesters of glycerol + fatty acids (glycerides)</td><td>Tripalmitin, tristearin (fats); olive oil, coconut oil</td></tr>
+                  <tr><td>Waxes</td><td>Long-chain fatty acid + long-chain alcohol</td><td>Beeswax (myricyl palmitate)</td></tr>
+                  <tr><td>Phospholipids</td><td>Glycerol + fatty acid + phosphate + N-base</td><td>Lecithin; emulsifying agents</td></tr>
+                  <tr><td>Glycolipids</td><td>Contain simple sugars</td><td>Cell membrane and chloroplast components</td></tr>
+                  <tr><td>Terpenes</td><td>Isoprene units</td><td>Menthol, camphor, carotenoids</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Fats vs Oils &amp; Important Values</div>
+              <div class="card-body">
+                <div class="formula-box">Fats: solid/semisolid above 20°C; higher saturated fatty acids
+Oils: liquid at ordinary temperature; lower or unsaturated fatty acids
+Both act as energy reservoirs (9 kcal/g)
+
+Common saturated fatty acids CH₃(CH₂)ₙCOOH:
+  n=4: caproic; n=6: caprylic; n=8: capric
+  n=10: lauric; n=12: myristic; n=14: palmitic; n=16: stearic
+Common unsaturated: oleic acid C₁₇H₃₃COOH; linoleic acid</div>
+                <div class="note-box mt-1">
+                  <strong>Acid value</strong>: mg KOH to neutralise free acid in 1 g fat.<br/>
+                  <strong>Saponification value</strong>: mg KOH to saponify 1 g fat.<br/>
+                  <strong>Iodine value</strong>: g I₂ absorbed by 100 g fat (measures unsaturation).<br/>
+                  <strong>R/M value</strong>: cc N/10 KOH to neutralise distillate of 5 g hydrolysed fat.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== HORMONES ===== -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F9EA; Hormones</div>
+      <div class="card-body">
+        <p>Chemical substances produced by <strong>endocrine (ductless) glands</strong> that act as chemical messengers. Three types: <strong>Steroids, Peptides/Proteins, Amines</strong>.</p>
+        <table class="chem-table">
+          <tr><th>Hormone</th><th>Source</th><th>Chemical Nature</th><th>Function</th></tr>
+          <tr><td>Thyroxin</td><td>Thyroid</td><td>Amino acid</td><td>Stimulates metabolism</td></tr>
+          <tr><td>Adrenaline (epinephrine)</td><td>Adrenal medulla</td><td>Amine</td><td>Increases pulse rate &amp; BP; releases glucose and fatty acids ("fight or flight")</td></tr>
+          <tr><td>Insulin</td><td>β-cells of Pancreas</td><td>Peptide (51 aa)</td><td>Decreases blood glucose; deficiency → diabetes mellitus</td></tr>
+          <tr><td>Glucagon</td><td>α-cells of Pancreas</td><td>Peptide</td><td>Increases blood glucose</td></tr>
+          <tr><td>Testosterone</td><td>Testes</td><td>Steroid</td><td>Male sex organ functioning</td></tr>
+          <tr><td>Estrone &amp; Estradiol</td><td>Ovary</td><td>Steroid</td><td>Female sex organ functioning</td></tr>
+          <tr><td>Progesterone</td><td>Ovary</td><td>Steroid</td><td>Prepares uterus for pregnancy; menstrual cycle</td></tr>
+          <tr><td>Cortisone</td><td>Adrenal cortex</td><td>Steroid</td><td>Metabolism of water, minerals, fats, proteins, carbohydrates</td></tr>
+        </table>
+        <div class="note-box mt-2"><strong>Insulin</strong> was the first polypeptide whose amino acid sequence was determined experimentally (Sanger). Endocrine glands: thyroid, pituitary, adrenal, pancreas, testes, ovaries.</div>
+      </div>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F5FA;&#xFE0F; Quick Summary — Biomolecules</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr><th>Topic</th><th>Key Fact</th></tr>
+            <tr><td>Molisch test</td><td>General test for carbohydrates → purple ring</td></tr>
+            <tr><td>Sucrose</td><td>Non-reducing sugar (both anomeric C locked in glycosidic bond)</td></tr>
+            <tr><td>Mutarotation</td><td>α-D-glucose (+111.5°) or β-D-glucose (+19.5°) → equilibrium +52.5°</td></tr>
+            <tr><td>Glucose + fructose</td><td>Give same osazone (glucosazone); differ at C1 and C2 only</td></tr>
+            <tr><td>Starch + iodine</td><td>Blue-black colour (amylose + I₂ inclusion complex)</td></tr>
+            <tr><td>Cellulose</td><td>β-1,4-glycosidic bonds; cannot be digested by humans</td></tr>
+            <tr><td>Peptide bond</td><td>—CO—NH—; n amino acids → (n−1) peptide bonds</td></tr>
+            <tr><td>Biuret test</td><td>Detects 2+ peptide bonds → pink/violet with NaOH + CuSO₄</td></tr>
+            <tr><td>Zwitter ion</td><td>Both —NH₃⁺ and —COO⁻ present at isoelectric point</td></tr>
+            <tr><td>Vitamin B₁₂</td><td>Only vitamin with metal (Co); deficiency = pernicious anaemia</td></tr>
+            <tr><td>DNA helix</td><td>Right-handed; 10 bp/turn; A=T (2H), C≡G (3H); antiparallel</td></tr>
+            <tr><td>RNA bases</td><td>A, G, C, U (Uracil instead of Thymine)</td></tr>
+            <tr><td>Insulin</td><td>First protein with known amino acid sequence; β-cells of pancreas</td></tr>
+            <tr><td>Iodine value</td><td>Measures degree of unsaturation in fats/oils</td></tr>
+            <tr><td>Essential amino acids</td><td>10 (body cannot synthesise): Phe, His, Trp, Val, Met, Thr, Arg, Leu, Ile, Lys</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

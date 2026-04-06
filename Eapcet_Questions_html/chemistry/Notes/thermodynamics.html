@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thermodynamics | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f8f4f4; }
+    .chapter-header { background: linear-gradient(135deg, #2e0a0a 0%, #5c1a1a 60%, #a03030 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #2e0a0a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 7</div>
+        <h1>Thermodynamics</h1>
+        <p class="mb-0">Laws of Thermodynamics · Enthalpy · Entropy · Gibbs Energy · Spontaneity</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- Basic Terms -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F321;&#xFE0F; Basic Terminology</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">System &amp; Surroundings</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Matter</th><th>Energy</th><th>Example</th></tr>
+                  <tr><td>Open system</td><td>Exchanged</td><td>Exchanged</td><td>Open beaker</td></tr>
+                  <tr><td>Closed system</td><td>Not exchanged</td><td>Exchanged</td><td>Sealed piston</td></tr>
+                  <tr><td>Isolated system</td><td>Not exchanged</td><td>Not exchanged</td><td>Thermos flask</td></tr>
+                </table>
+                <div class="note-box mt-1"><strong>State functions</strong> (path-independent): U, H, S, G, T, P, V<br/><strong>Path functions</strong> (path-dependent): work (W), heat (q)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Types of Processes</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Process</th><th>Condition</th></tr>
+                  <tr><td>Isothermal</td><td>dT = 0; ΔU = 0 (ideal gas)</td></tr>
+                  <tr><td>Isochoric</td><td>ΔV = 0; W = 0</td></tr>
+                  <tr><td>Isobaric</td><td>ΔP = 0</td></tr>
+                  <tr><td>Adiabatic</td><td>q = 0; ΔU = W</td></tr>
+                  <tr><td>Cyclic</td><td>ΔU = 0, ΔH = 0</td></tr>
+                </table>
+                <div class="note-box mt-1"><strong>Extensive properties</strong>: depend on amount (U, V, H, S, G, n).<br/><strong>Intensive properties</strong>: independent of amount (T, P, density, specific heat).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- First Law & Work -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x26A1; First Law of Thermodynamics</div>
+      <div class="card-body">
+        <div class="formula-box mb-2">Zeroth Law: If A is in thermal equilibrium with C, and B is in thermal equilibrium with C → A and B are in thermal equilibrium.
+
+First Law: ΔU = q + W
+  q = heat absorbed by system (+ve: added, −ve: released)
+  W = work done on system (+ve: compression, −ve: expansion)
+
+Work of expansion: W = − ∫ pext dV</div>
+        <div class="row g-3">
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Work Expressions (Summary)</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>#</th><th>Condition</th><th>Expression</th></tr>
+                  <tr><td>i</td><td>Irreversible expansion at constant P</td><td>\(W = -p_{ext} \times \Delta V\)</td></tr>
+                  <tr><td>ii</td><td>Reversible isothermal (ideal gas)</td><td>\(W = 2.303\,nRT\log\dfrac{V_2}{V_1} = 2.303\,nRT\log\dfrac{p_1}{p_2}\)</td></tr>
+                  <tr><td>iii</td><td>Reversible adiabatic</td><td>\(W = \dfrac{nR(T_1 - T_2)}{\gamma - 1}\)</td></tr>
+                  <tr><td>iv</td><td>Irreversible adiabatic</td><td>\(W = -p_{ext} \times \dfrac{nR(p_2T_1 - p_1T_2)}{p_1 p_2}\)</td></tr>
+                  <tr><td>v</td><td>Free expansion (in vacuum)</td><td>\(p_{ext} = 0; \quad W = 0, \quad \Delta U = 0\)</td></tr>
+                </table>
+                <div class="note-box">Maximum work is obtained in a reversible process. Reversible &gt; irreversible work.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Heat Capacity:
+q = mcΔT (specific heat)
+Cp − Cv = R (molar); Cp − Cv = R/M (specific)
+
+For monoatomic ideal gas:
+  Cv = (3/2)R;  Cp = (5/2)R;  γ = 5/3 = 1.66
+For diatomic gas:
+  γ = 1.40
+For triatomic gas:
+  γ = 1.33</div>
+          </div>
+          <div class="col-md-6">
+            <div class="note-box">
+              <strong>Calorimetry:</strong><br/>
+              • Bomb calorimeter → constant volume → measures <strong>ΔU</strong><br/>
+              • Coffee-cup calorimeter → constant pressure → measures <strong>ΔH</strong><br/>
+              • Joule-Thomson coefficient: \(\mu = (dT/dp)_H\)<br/>
+              • Joule-Thomson inversion temperature: \(T_i = 2a/Rb\)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enthalpy & Thermochemistry -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x1F525; Enthalpy &amp; Thermochemistry</div>
+      <div class="card-body">
+        <div class="formula-box mb-2">H = U + pV  (state function, extensive)
+ΔH = ΔU + ΔngRT
+  where Δng = Σ moles gaseous products − Σ moles gaseous reactants
+
+At constant pressure: ΔH = qp
+ΔH = qp; ΔU = qv;  ∴ ΔH = ΔU + pΔV</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-warning text-dark">Types of Enthalpy Changes</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Symbol</th><th>Name</th><th>Key Point</th></tr>
+                  <tr><td>ΔfH°</td><td>Formation</td><td>Elements in standard state → compound; ΔfH° of elements = 0</td></tr>
+                  <tr><td>ΔcH°</td><td>Combustion</td><td>Always negative; used in calorimetry</td></tr>
+                  <tr><td>ΔsolH°</td><td>Solution</td><td>ΔsolH° = ΔlatticeH° + ΔhydH°</td></tr>
+                  <tr><td>ΔhydH°</td><td>Hydration</td><td>Always exothermic (−ve)</td></tr>
+                  <tr><td>ΔfusH°</td><td>Fusion (melting)</td><td>Endothermic; solid → liquid</td></tr>
+                  <tr><td>ΔvapH°</td><td>Vaporisation</td><td>Endothermic; liquid → vapour</td></tr>
+                  <tr><td>ΔsubH°</td><td>Sublimation</td><td>= ΔfusH° + ΔvapH°</td></tr>
+                  <tr><td>ΔnH°</td><td>Neutralisation</td><td>Strong acid + strong base = −57.1 kJ/mol always</td></tr>
+                  <tr><td>ΔaH°</td><td>Atomisation</td><td>Substance → gaseous atoms</td></tr>
+                  <tr><td>ΔtH°</td><td>Transition</td><td>One allotrope → another</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Thermochemistry Laws</div>
+              <div class="card-body">
+                <div class="reaction-box">Lavoisier-Laplace Law:
+  ΔH(forward) = −ΔH(reverse)
+
+Hess's Law (constant heat summation):
+  ΔH = ΔH₁ + ΔH₂ + ΔH₃ + ...
+  (Independent of path; depends only on initial/final states)
+
+Applications: heat of formation, transition, hydration,
+  lattice enthalpy (Born-Haber cycle), bond energies</div>
+                <div class="formula-box">Trouton's Rule:
+  ΔHvap / Tb ≈ 88 J mol⁻¹ K⁻¹
+
+Kirchhoff's Equation:
+  ΔH₂ − ΔH₁ = ΔCp(T₂ − T₁)
+
+Dulong & Petit Law:
+  Specific heat × Molar mass ≈ 6.4 cal/mol/°C
+  (for most metals at 25°C)
+
+Clausius-Clapeyron:
+  log(p₂/p₁) = ΔHv/2.303R × (T₂ − T₁)/(T₁T₂)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Bond Enthalpy</div>
+              <div class="card-body">
+                <div class="formula-box">For diatomic molecules: unique bond dissociation energy
+For polyatomic molecules: mean (average) bond enthalpy
+  e.g. O-H bond: ΔH = [(H₂O(g) → 2H(g) + O(g)) / 2]
+
+ΔrH° = Σ bond energies of reactants − Σ bond energies of products
+      = Σ (energies of bonds broken) − Σ (energies of bonds formed)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Entropy & Second Law -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x2744;&#xFE0F; Entropy &amp; Second Law of Thermodynamics</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">Entropy S: state function, extensive
+Units: J K⁻¹ mol⁻¹
+
+ΔS = qrev / T = ΔH / T
+
+ΔS > 0: randomness/disorder increases
+ΔS < 0: randomness/disorder decreases
+
+For ideal gas: ΔS = nCv ln(T₂/T₁) + nR ln(V₂/V₁)
+
+Standard entropy change:
+  ΔS°rxn = ΣS°(products) − ΣS°(reactants)</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Phase transition entropies:
+  ΔSmelting = ΔHfusion / Tm
+  ΔSvap = ΔHvap / Tb (Trouton's: ≈ 88 J mol⁻¹ K⁻¹)
+  ΔSsub = ΔHsub / Tsub
+
+Second Law: For a spontaneous process,
+  ΔSuniverse > 0
+  ΔSsys + ΔSsurr > 0
+
+Third Law (Nernst, 1906): Entropy of a perfectly
+  crystalline substance at 0 K is zero.
+  ΔS = ∫₀ᵀ Cp d(ln T)</div>
+          </div>
+        </div>
+        <div class="note-box mt-2">
+          <strong>Factors that increase entropy (ΔS &gt; 0):</strong> gas &gt; liquid &gt; solid; increase in no. of moles of gas; dissolving a solid/liquid in solvent; mixing; higher T.
+        </div>
+      </div>
+    </div>
+
+    <!-- Gibbs Energy & Spontaneity -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F7E2; Gibbs Energy &amp; Spontaneity</div>
+      <div class="card-body">
+        <div class="formula-box mb-3">Gibbs energy: G = H − TS   (state function, extensive)
+Gibbs-Helmholtz equation: ΔG = ΔH − TΔS
+
+At constant T and P:
+  ΔG < 0 → spontaneous (thermodynamically favourable)
+  ΔG = 0 → at equilibrium
+  ΔG > 0 → non-spontaneous (reverse reaction spontaneous)</div>
+        <div class="row g-3">
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-warning text-dark">Spontaneity Table (ΔG = ΔH − TΔS)</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>ΔH</th><th>ΔS</th><th>ΔG = ΔH − TΔS</th><th>Spontaneity</th></tr>
+                  <tr><td>−</td><td>+</td><td>Always −</td><td>Spontaneous at ALL temperatures</td></tr>
+                  <tr><td>+</td><td>−</td><td>Always +</td><td>Non-spontaneous at ALL temperatures</td></tr>
+                  <tr><td>+</td><td>+</td><td>− at high T (TΔS dominates)</td><td>Spontaneous only at HIGH temperature</td></tr>
+                  <tr><td>−</td><td>−</td><td>− at low T (ΔH dominates)</td><td>Spontaneous only at LOW temperature</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Standard Gibbs energy:
+  ΔG° = ΔH° − TΔS°
+  ΔG° = ΣΔGf°(products) − ΣΔGf°(reactants)
+  ΔGf° of elements in standard state = 0
+
+Relation with equilibrium constant:
+  ΔG° = −RT ln K = −2.303RT log K
+  log K = −ΔG° / (2.303 RT)
+  K = e^(−ΔG°/RT)
+
+Relation with cell potential:
+  ΔG° = −nFE°cell</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">At any condition (reaction quotient Q):
+  ΔG = ΔG° + RT ln Q
+
+At equilibrium (Q = K):
+  ΔG = 0;  ΔG° = −RT ln K
+
+Summary:
+  K >> 1 → ΔG° << 0 (products favoured)
+  K << 1 → ΔG° >> 0 (reactants favoured)
+  K = 1  → ΔG° = 0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carnot Cycle -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x1F501; Carnot Cycle</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-7">
+            <table class="chem-table">
+              <tr><th>Step</th><th>Process</th><th>Work / Heat</th></tr>
+              <tr><td>1 → 2</td><td>Isothermal reversible expansion (at T₂)</td><td>q₂ absorbed; w₁ = −nRT₂ ln(V₂/V₁)</td></tr>
+              <tr><td>2 → 3</td><td>Adiabatic reversible expansion</td><td>q = 0; work done by gas</td></tr>
+              <tr><td>3 → 4</td><td>Isothermal reversible compression (at T₁)</td><td>q₁ released; w₃ = −nRT₁ ln(V₄/V₃)</td></tr>
+              <tr><td>4 → 1</td><td>Adiabatic reversible compression</td><td>q = 0; work done on gas</td></tr>
+            </table>
+          </div>
+          <div class="col-md-5">
+            <div class="formula-box">Efficiency (η):
+η = (T₂ − T₁) / T₂ = w / q₂
+
+  T₂ = hot reservoir temperature
+  T₁ = cold reservoir temperature (T₂ > T₁)
+  w = net work done by engine
+  q₂ = heat absorbed from hot source
+
+Efficiency = 1 only if T₁ = 0 K (impossible)
+Maximum efficiency for reversible (Carnot) engine
+No real engine can be more efficient than Carnot engine</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F5FA;&#xFE0F; Quick Summary — Thermodynamics</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr><th>Concept</th><th>Key Formula / Fact</th></tr>
+            <tr><td>First Law</td><td>ΔU = q + W; W = −pΔV; max work in reversible process</td></tr>
+            <tr><td>Enthalpy</td><td>ΔH = ΔU + ΔngRT; at const P: ΔH = qp</td></tr>
+            <tr><td>Neutralisation</td><td>Strong acid + strong base = −57.1 kJ mol⁻¹</td></tr>
+            <tr><td>Hess's Law</td><td>ΔH is path-independent; additive</td></tr>
+            <tr><td>Kirchhoff's eq.</td><td>ΔH₂ − ΔH₁ = ΔCp(T₂ − T₁)</td></tr>
+            <tr><td>Trouton's Rule</td><td>ΔHvap/Tb ≈ 88 J mol⁻¹ K⁻¹</td></tr>
+            <tr><td>Entropy</td><td>ΔS = qrev/T; 2nd Law: ΔSuniverse &gt; 0 for spontaneous process</td></tr>
+            <tr><td>Third Law</td><td>S = 0 for perfect crystal at 0 K</td></tr>
+            <tr><td>Gibbs energy</td><td>ΔG = ΔH − TΔS; ΔG &lt; 0 = spontaneous</td></tr>
+            <tr><td>ΔG° and K</td><td>ΔG° = −RT ln K = −nFE°cell</td></tr>
+            <tr><td>Carnot efficiency</td><td>η = (T₂ − T₁)/T₂; always &lt; 1</td></tr>
+            <tr><td>Joule-Thomson</td><td>Adiabatic expansion → cooling; Ti = 2a/Rb</td></tr>
+            <tr><td>Spontaneous: −ΔH, +ΔS</td><td>Spontaneous at ALL temperatures</td></tr>
+            <tr><td>Spontaneous: +ΔH, +ΔS</td><td>Spontaneous only at HIGH temperature</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solutions | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f4f7fb; }
+    .chapter-header { background: linear-gradient(135deg, #0a1e2e 0%, #1a3d5c 60%, #1a6fa0 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #0a1e2e; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 10</div>
+        <h1>Solutions</h1>
+        <p class="mb-0">Types · Concentration · Henry's Law · Raoult's Law · Colligative Properties</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- Types and Classification -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F4A7; Types of Solutions</div>
+      <div class="card-body">
+        <p>A <strong>solution</strong> is a homogeneous mixture of two or more components. The component in excess is <strong>solvent</strong>; the other is <strong>solute</strong>.</p>
+        <table class="chem-table">
+          <tr><th>State of Solute</th><th>State of Solvent</th><th>Example</th></tr>
+          <tr><td>Gas</td><td>Gas</td><td>Air (N₂, O₂, Ar, CO₂ in N₂)</td></tr>
+          <tr><td>Liquid</td><td>Gas</td><td>Chloroform in N₂; humidified air</td></tr>
+          <tr><td>Solid</td><td>Gas</td><td>Camphor vapour in N₂; iodine vapour</td></tr>
+          <tr><td>Gas</td><td>Liquid</td><td>CO₂ in water; O₂ in water (soda/blood)</td></tr>
+          <tr><td>Liquid</td><td>Liquid</td><td>Ethanol in water; benzene in toluene</td></tr>
+          <tr><td>Solid</td><td>Liquid</td><td>NaCl in water; glucose in water</td></tr>
+          <tr><td>Gas</td><td>Solid</td><td>H₂ in Pd; dissolved gases in metals</td></tr>
+          <tr><td>Liquid</td><td>Solid</td><td>Mercury in gold (amalgam)</td></tr>
+          <tr><td>Solid</td><td>Solid</td><td>Alloys: Cu-Zn (brass), Cu-Sn (bronze)</td></tr>
+        </table>
+        <div class="note-box mt-2">Based on amount of solute: <strong>Unsaturated</strong> (can dissolve more) → <strong>Saturated</strong> (maximum solute at given T) → <strong>Supersaturated</strong> (unstable, more than saturated; forms by cooling or evaporation).</div>
+      </div>
+    </div>
+
+    <!-- Concentration Methods -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F9EE; Concentration Expressions</div>
+      <div class="card-body">
+        <table class="chem-table">
+          <tr><th>#</th><th>Expression</th><th>Formula</th><th>Temperature Dependent?</th></tr>
+          <tr><td>1</td><td>Mass percent (w/w %)</td><td>\(\dfrac{\text{mass of solute}}{\text{mass of solution}} \times 100\)</td><td>No</td></tr>
+          <tr><td>2</td><td>Volume percent (v/V %)</td><td>\(\dfrac{\text{vol of solute}}{\text{vol of solution}} \times 100\)</td><td>Yes</td></tr>
+          <tr><td>3</td><td>Mole fraction (χ)</td><td>\(\chi_A = \dfrac{n_A}{n_A + n_B}\); \(\chi_A + \chi_B = 1\)</td><td>No</td></tr>
+          <tr><td>4</td><td>Parts per million (ppm)</td><td>\(\dfrac{\text{parts of component}}{\text{total parts}} \times 10^6\)</td><td>No</td></tr>
+          <tr><td>5</td><td>Molarity (M)</td><td>\(M = \dfrac{\text{moles of solute}}{V(\text{litres})}\)</td><td>Yes (volume changes)</td></tr>
+          <tr><td>6</td><td>Molality (m)</td><td>\(m = \dfrac{\text{moles of solute}}{\text{kg of solvent}}\)</td><td>No ✓</td></tr>
+          <tr><td>7</td><td>Normality (N)</td><td>\(N = \dfrac{\text{g-equivalents}}{V(\text{litres})}\)</td><td>Yes</td></tr>
+          <tr><td>8</td><td>Formality (F)</td><td>\(\dfrac{\text{formula weights}}{\text{V(L)}}\)</td><td>Yes</td></tr>
+        </table>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <div class="formula-box">Molarity formula:
+M = (mass of solute × 1000) / (mol. wt × V in mL)
+
+Dilution: M₁V₁ = M₂V₂
+Normality-Molarity: N = n × M  (n = valence factor)
+Demal (D): 1 mol solute in 1 L solution at 0°C
+
+Molality-Molarity relation:
+m = 1000 M / (ρ × 1000 − M × mol.wt)</div>
+          </div>
+          <div class="col-md-6">
+            <div class="note-box"><strong>Temperature-independent</strong> (preferred for thermodynamic studies): Molality, mole fraction, mass fraction, ppm.<br/><strong>Temperature-dependent</strong>: Molarity, Normality, Volume percent.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Solubility & Henry's Law -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x2600;&#xFE0F; Solubility &amp; Henry's Law</div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Henry's Law</div>
+              <div class="card-body">
+                <div class="formula-box">p = KH × x
+
+where:
+  p = partial pressure of gas
+  x = mole fraction of gas in solution
+  KH = Henry's law constant
+
+Higher KH → lower solubility
+KH increases with temperature → solubility decreases with ↑T</div>
+                <p class="mt-2">Applications:</p>
+                <ul>
+                  <li>CO₂ dissolved in soft drinks under high pressure</li>
+                  <li>Deep-sea divers use He-O₂ mixture (N₂ causes narcosis/"bends")</li>
+                  <li>Anoxia at high altitude (low pO₂)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Solubility of Solids in Liquids</div>
+              <div class="card-body">
+                <ul>
+                  <li><em>"Like dissolves like"</em> — polar solvent dissolves polar/ionic solutes</li>
+                  <li>Temperature effect depends on dissolution enthalpy: if ΔHsol &gt; 0 (endothermic) → solubility ↑ with T</li>
+                  <li>Most ionic solids — solubility increases with T</li>
+                  <li>CaCl₂, CeSO₄, Li₂CO₃ — solubility decreases with T</li>
+                </ul>
+                <div class="note-box">Raoult's law is a special case of Henry's law for volatile solutes, where KH = p° (vapour pressure of pure solvent).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raoult's Law -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F30A; Raoult's Law &amp; Vapour Pressure</div>
+      <div class="card-body">
+        <div class="formula-box mb-3">Raoult's Law: pA = p°A × χA;   pB = p°B × χB
+pTotal = pA + pB = p°A·χA + p°B·χB</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-success text-white">Ideal Solutions</div>
+              <div class="card-body">
+                <ul>
+                  <li>Obey Raoult's law at all compositions and temperatures.</li>
+                  <li>ΔHmix = 0; ΔVmix = 0</li>
+                  <li>A-B interactions ≈ A-A ≈ B-B</li>
+                </ul>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                  <li>Benzene + Toluene</li>
+                  <li>n-Hexane + n-Heptane</li>
+                  <li>Ethyl bromide + Ethyl iodide</li>
+                  <li>Chlorobenzene + Bromobenzene</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-danger text-white">Non-Ideal Solutions</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>A-B vs A-A, B-B</th><th>ΔHmix, ΔVmix</th><th>Azeotrope</th></tr>
+                  <tr><td><strong>+ve deviation</strong> from Raoult's law</td><td>A-B &lt; A-A or B-B (weaker forces)</td><td>&gt;0, &gt;0</td><td>Minimum boiling</td></tr>
+                  <tr><td><strong>−ve deviation</strong> from Raoult's law</td><td>A-B &gt; A-A or B-B (stronger forces)</td><td>&lt;0, &lt;0</td><td>Maximum boiling</td></tr>
+                </table>
+                <div class="note-box mt-1">
+                  <strong>+ve deviation examples:</strong> Ethanol+water, CS₂+acetone, CCl₄+C₆H₆<br/>
+                  <em>Min. boiling azeotrope:</em> C₂H₅OH 95.57% + H₂O 4.43% (boils at 78.13°C)<br/><br/>
+                  <strong>−ve deviation examples:</strong> CHCl₃+CH₃COCH₃, H₂O+HCl, H₂O+HNO₃<br/>
+                  <em>Max. boiling azeotrope:</em> H₂O 20.22% + HCl 79.78%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Colligative Properties -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F4CA; Colligative Properties</div>
+      <div class="card-body">
+        <div class="important-box mb-2">Colligative properties depend only on the <strong>number</strong> of solute particles, not on their nature. They are applicable to dilute solutions.</div>
+        <div class="row g-3">
+
+          <!-- RLVP -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm border-primary">
+              <div class="card-header bg-primary text-white">1. Relative Lowering of Vapour Pressure (RLVP)</div>
+              <div class="card-body">
+                <div class="formula-box">p° − p     n        W/M
+——————— = χsolute = ———— = ——————
+   p°          n + N     W₀/M₀
+
+For finding molecular mass:
+M = (W × M₀ × p°) / (W₀ × (p° − p))
+
+where: W=mass of solute, W₀=mass of solvent,
+       M=mol.wt of solute, M₀=mol.wt of solvent</div>
+                <div class="note-box">Determined by Ostwald-Walker dynamic method.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Boiling Point Elevation -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm border-warning">
+              <div class="card-header bg-warning text-dark">2. Elevation of Boiling Point (ΔTb)</div>
+              <div class="card-body">
+                <div class="formula-box">ΔTb = Kb × m
+
+where: m = molality; Kb = ebullioscopic constant
+
+Kb = 1000 × R × Tb°² / (ΔHvap × M₀)
+
+Finding mol. mass:
+M = (Kb × W × 1000) / (ΔTb × W₀)
+
+Kb (water) = 0.52 K kg mol⁻¹
+Kb (benzene) = 2.53 K kg mol⁻¹</div>
+                <div class="note-box">Determined by Beckmann method or Cottrell's method.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Depression of Freezing Point -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm border-danger">
+              <div class="card-header bg-danger text-white">3. Depression of Freezing Point (ΔTf)</div>
+              <div class="card-body">
+                <div class="formula-box">ΔTf = Kf × m
+
+where: m = molality; Kf = cryoscopic constant
+
+Kf = 1000 × R × Tf°² / (ΔHfus × M₀)
+
+Finding mol. mass:
+M = (Kf × W × 1000) / (ΔTf × W₀)
+
+Kf (water) = 1.86 K kg mol⁻¹
+Kf (benzene) = 5.12 K kg mol⁻¹
+Kf (camphor) = 40 K kg mol⁻¹ (Rast method)</div>
+                <div class="note-box">Applications: antifreeze (ethylene glycol) in car radiators; NaCl/CaCl₂ to melt snow on roads.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Osmotic Pressure -->
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm border-success">
+              <div class="card-header bg-success text-white">4. Osmotic Pressure (π)</div>
+              <div class="card-body">
+                <div class="formula-box">π = CRT = (n/V)RT
+
+Finding mol. mass:
+M = WRT / πV
+
+where: W = mass of solute, V = volume of solution
+
+π = dRT/M (d = density, M = molar mass)</div>
+                <ul>
+                  <li>Semipermeable membranes: natural (animal bladder, cell membrane), artificial (Cu₂[Fe(CN)₆])</li>
+                  <li><strong>Hypertonic:</strong> π(sol) &gt; π(cell) → cell shrinks (plasmolysis)</li>
+                  <li><strong>Hypotonic:</strong> π(sol) &lt; π(cell) → cell bursts (haemolysis)</li>
+                  <li><strong>Isotonic:</strong> π(sol) = π(cell); 0.9% NaCl = isotonic with blood</li>
+                  <li>Best method for determining polymer molecular masses.</li>
+                  <li>Reverse osmosis: applied P &gt; π → solvent flows out (desalination).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Van't Hoff Factor & Abnormal Molecular Mass -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x26A0;&#xFE0F; Abnormal Molecular Mass &amp; van't Hoff Factor</div>
+      <div class="card-body">
+        <p>Solutes that <strong>dissociate</strong> or <strong>associate</strong> in solution give abnormal colligative properties.</p>
+        <div class="formula-box mb-3">van't Hoff factor (i):
+
+i = Observed colligative property / Calculated colligative property
+i = Normal molecular mass / Observed molecular mass
+i = Number of particles after / Number of particles before
+
+i > 1 → dissociation (electrolytes)
+i < 1 → association (e.g. acetic acid in benzene)
+i = 1 → no dissociation/association (non-electrolytes)</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">Dissociation: A → nP (degree of dissociation = α)
+i = 1 + α(n − 1)
+∴ α = (i − 1) / (n − 1)
+
+Example: NaCl → Na⁺ + Cl⁻ (n=2)
+i = 1 + α(2−1) = 1 + α</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Association: nA → Aₙ (degree of association = α)
+i = 1 − α(1 − 1/n)
+∴ α = (1 − i) / (1 − 1/n)
+
+Example: CH₃COOH in benzene (dimer, n=2)
+i = 1 − α/2</div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Modified Colligative Property Expressions</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Property</th><th>Normal</th><th>With van't Hoff factor</th></tr>
+                  <tr><td>Relative lowering of VP</td><td>\(\frac{p^\circ - p}{p^\circ} = \chi_{solute}\)</td><td>\(\frac{p^\circ - p}{p^\circ} = i \cdot \chi_{solute}\)</td></tr>
+                  <tr><td>Elevation of BP</td><td>ΔTb = Kb × m</td><td>ΔTb = i × Kb × m</td></tr>
+                  <tr><td>Depression of FP</td><td>ΔTf = Kf × m</td><td>ΔTf = i × Kf × m</td></tr>
+                  <tr><td>Osmotic pressure</td><td>π = CRT</td><td>π = i × CRT</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F5FA;&#xFE0F; Quick Summary — Solutions</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr><th>Concept</th><th>Key Fact</th></tr>
+            <tr><td>Henry's law</td><td>p = KH·x; higher KH → lower solubility; gas solubility ↓ with T</td></tr>
+            <tr><td>Raoult's law ideal</td><td>ΔHmix = 0; ΔVmix = 0; A-B ≈ A-A ≈ B-B</td></tr>
+            <tr><td>+ve deviation azeotrope</td><td>Minimum boiling: EtOH+H₂O (95.57%+4.43%)</td></tr>
+            <tr><td>−ve deviation azeotrope</td><td>Maximum boiling: HCl+H₂O</td></tr>
+            <tr><td>Kf (water)</td><td>1.86 K kg mol⁻¹ (used for cryo. M.wt determination)</td></tr>
+            <tr><td>Kb (water)</td><td>0.52 K kg mol⁻¹ (ebullioscopic)</td></tr>
+            <tr><td>Isotonic saline</td><td>0.9% NaCl = isotonic with RBCs</td></tr>
+            <tr><td>Polymer M.wt</td><td>Best by osmotic pressure (low ΔTb/ΔTf for polymers)</td></tr>
+            <tr><td>Dissociation factor</td><td>i &gt; 1; α = (i−1)/(n−1)</td></tr>
+            <tr><td>Association factor</td><td>i &lt; 1; α = (1−i)/(1−1/n)</td></tr>
+            <tr><td>T-independent units</td><td>Molality, mole fraction, mass fraction, ppm</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
