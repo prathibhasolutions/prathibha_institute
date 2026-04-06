@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Magnetism and Matter | Physics</title><link rel="stylesheet" href="../styles.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><style>body{background:#f6f8fc}.chapter-header{background:linear-gradient(135deg,#0a3a1d 0%,#1f8f4c 60%,#46d97a 100%);color:#fff;padding:2.5rem 2rem 2rem;border-radius:0 0 18px 18px;margin-bottom:2rem}.section-card{border-radius:12px;margin-bottom:1.5rem}.section-card .card-header{border-radius:12px 12px 0 0!important;font-weight:600}.formula-box{background:#e8f4fd;border-left:4px solid #0d6efd;border-radius:6px;padding:.8rem 1rem;margin:.5rem 0;font-family:monospace;white-space:pre-wrap}.note-box{background:#fff8e1;border-left:4px solid #ffc107;border-radius:6px;padding:.7rem 1rem;margin:.5rem 0}table.phy-table{width:100%;border-collapse:collapse;font-size:.93rem}table.phy-table th{background:#343a40;color:#fff;padding:7px 10px}table.phy-table td{padding:6px 10px;border-bottom:1px solid #dee2e6}table.phy-table tr:nth-child(even) td{background:#f8f9fa}footer{background:#0a3a1d;color:#adb5bd;padding:1.5rem;text-align:center;margin-top:3rem}footer a{color:aquamarine;text-decoration:none}</style></head><body><div class="chapter-header text-center"><div class="text-uppercase small opacity-75">Physics Handbook — Chapter 23</div><h1>Magnetism and Matter</h1><p class="mb-0">Magnetic Dipole · Earth Magnetism · Magnetometers · Magnetic Materials · Hysteresis</p></div><div class="container pb-4">
+
+<div class="card section-card shadow-lg"><div class="card-header bg-primary text-white">🧲 Magnetic Dipole & Magnetic Moment</div><div class="card-body"><div class="formula-box">Magnetic dipole moment:
+M = m(2l)
+Direction: S → N
+SI unit: A·m² = J/T</div><p>Magnetic field lines form closed loops; outside magnet N→S and inside S→N.</p></div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-success text-white">📘 Magnetic Field due to Dipole</div><div class="card-body"><table class="phy-table"><tr><th>Location</th><th>Field expression</th></tr><tr><td>Axial line</td><td>\(B=\frac{\mu_0}{4\pi}\frac{2Mr}{(r^2-l^2)^2}\), for \(r\gg l\): \(B\approx\frac{\mu_0}{4\pi}\frac{2M}{r^3}\)</td></tr><tr><td>Equatorial line</td><td>\(B=\frac{\mu_0}{4\pi}\frac{M}{(r^2+l^2)^{3/2}}\), for \(r\gg l\): \(B\approx\frac{\mu_0}{4\pi}\frac{M}{r^3}\)</td></tr><tr><td>General angle θ</td><td>Depends on axial and equatorial components; \(B\propto 1/r^3\) for far field</td></tr></table><div class="formula-box">Torque on dipole in uniform field:
+τ = MB sinθ
+Potential energy:
+U = -MB cosθ = -M·B</div></div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-warning text-dark">⚛️ Magnetic Moment of Current Loop & Atom</div><div class="card-body"><div class="formula-box">Current loop:
+M = IA
+For N turns: M = NIA
+
+Atomic orbital magnetic moment:
+M = (e/2mₑ)L
+
+Bohr magneton:
+μ_B = eh/(4πmₑ) ≈ 9.27×10⁻²⁴ A·m²</div></div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-info text-dark">🌍 Earth’s Magnetism</div><div class="card-body"><table class="phy-table"><tr><th>Quantity</th><th>Definition/Relation</th></tr><tr><td>Declination (θ)</td><td>Angle between magnetic meridian and geographic meridian</td></tr><tr><td>Inclination or dip (δ)</td><td>Angle made by earth’s magnetic field with horizontal</td></tr><tr><td>Horizontal component</td><td>\(H=B\cos\delta\)</td></tr><tr><td>Vertical component</td><td>\(V=B\sin\delta\)</td></tr><tr><td>Resultant field</td><td>\(B=\sqrt{H^2+V^2}\), \(\tan\delta=V/H\)</td></tr></table><div class="formula-box">Magnetic latitude λ relation:
+tanδ = 2tanλ
+
+Total intensity:
+I = I₀√(1+3sin²λ),  where I₀ = M/R³</div></div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-danger text-white">🗺️ Magnetic Maps, Neutral Points & Instruments</div><div class="card-body"><ul><li>Isogonic line: equal declination</li><li>Agonic line: zero declination</li><li>Isoclinic line: equal dip</li><li>Aclinic line: zero dip</li><li>Isodynamic line: equal H</li></ul><div class="formula-box">Neutral points:
+When bar magnet N towards Earth S → neutral points on axial line.
+When bar magnet N towards Earth N → neutral points on equatorial line.</div><div class="formula-box">Tangent law:
+tanθ = B₁/B₂
+
+Deflection magnetometer:
+Used to determine M and H.
+
+Vibration magnetometer:
+T = 2π√(I/MB)
+⇒ B = 4π²I/(MT²)
+
+Tangent galvanometer:
+I = (2RH tanθ)/(μ₀N)</div></div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-secondary text-white">🧪 Magnetic Materials & Hysteresis</div><div class="card-body"><table class="phy-table"><tr><th>Type</th><th>Behavior</th><th>Examples</th></tr><tr><td>Diamagnetic</td><td>Weakly repelled; χm negative</td><td>Bi, Cu, Ag, Au</td></tr><tr><td>Paramagnetic</td><td>Weakly attracted; χm positive small</td><td>Al, Pt, O₂</td></tr><tr><td>Ferromagnetic</td><td>Strongly attracted; large χm</td><td>Fe, Co, Ni</td></tr></table><div class="formula-box">Hysteresis loop terms:
+Retentivity: residual magnetism at H=0
+Coercivity: reverse field to reduce magnetism to zero
+Hysteresis loss = area of B-H loop</div></div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-dark text-white">🗺️ Quick Revision</div><div class="card-body"><div class="formula-box">M = m(2l),  M_loop = NIA
+B_axial ≈ (μ₀/4π)(2M/r³)
+B_equatorial ≈ (μ₀/4π)(M/r³)
+τ = MBsinθ,  U = -MBcosθ
+μ_B = eh/(4πmₑ)
+H=Bcosδ, V=Bsinδ, tanδ=V/H
+T = 2π√(I/MB)
+tanθ=B₁/B₂</div></div></div>
+
+</div><footer><p class="mb-1">&copy; Prathibha Institute — All Rights Reserved</p><p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p></footer></body></html>

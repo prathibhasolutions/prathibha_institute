@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Electricity | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f6f8fc; }
+    .chapter-header { background: linear-gradient(135deg, #0a1a3a 0%, #193f85 60%, #2f6fe4 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.9; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.phy-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.phy-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.phy-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; vertical-align: top; }
+    table.phy-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #0a1a3a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Physics Handbook — Chapter 20</div>
+        <h1>Current Electricity</h1>
+        <p class="mb-0">Current · Drift Velocity · Ohm’s Law · Resistance Network · Cells · Kirchhoff · Wheatstone Bridge · Potentiometer</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">⚡ Electric Current &amp; Basic Concepts</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Electric Current</div>
+              <div class="card-body">
+                <div class="formula-box">Electric current: I = q/t
+SI unit: ampere (A)
+Dimension: [A]
+
+Equivalent current due to revolving charge:
+i = qf</div>
+                <ul>
+                  <li>Conventional current direction = direction of positive charge flow.</li>
+                  <li>In metals, current is due to electrons; in electrolytes/ionized gases, due to ions + electrons.</li>
+                  <li>For non-uniform conductor, current remains same through every cross-section.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Types of Current</div>
+              <div class="card-body">
+                <table class="phy-table">
+                  <tr><th>Type</th><th>Nature</th><th>Sources</th></tr>
+                  <tr><td><strong>DC</strong> (Direct Current)</td><td>Magnitude and direction do not change with time</td><td>Cell, battery, DC dynamo</td></tr>
+                  <tr><td><strong>AC</strong> (Alternating Current)</td><td>Magnitude changes continuously and direction reverses periodically</td><td>AC dynamo, mains supply</td></tr>
+                </table>
+                <div class="note-box mt-1">AC is used in power transmission due to easy transformation and reduced loss at high voltage.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">🧲 Drift Velocity, Relaxation Time &amp; Current Density</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">Thermal velocity of free electrons ≈ 10⁵ m s⁻¹
+Average thermal velocity in any direction = 0
+
+Relaxation time:
+τ = mean free path / v_rms
+
+Drift velocity:
+v_d = eEτ/m = eVτ/(ml)
+where,
+ e = electron charge,
+ m = electron mass,
+ E = electric field,
+ V = potential difference,
+ l = conductor length</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Relation with current:
+I = n A e v_d
+⇒ v_d = I/(nAe)
+
+Current density:
+J = I/A = n e v_d
+SI unit: A m⁻²
+Dimension: [A L⁻²]
+
+J = σE (microscopic Ohm’s law)
+Direction of J: same as conventional current</div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Mobility of Electrons</div>
+              <div class="card-body">
+                <div class="formula-box">Mobility μ = v_d/E = eτ/m
+SI unit: m² V⁻¹ s⁻¹
+Dimension: [M⁻¹ T² A]</div>
+                <div class="note-box">Large mobility means electrons acquire high drift speed for a given electric field.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">📏 Ohm’s Law, Resistance &amp; Resistivity</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">Ohm's law (at constant physical conditions):
+V ∝ I  ⇒  V = IR
+
+Resistance:
+R = V/I
+SI unit: ohm (Ω)
+Dimension: [M L² T⁻³ A⁻²]
+
+For wire:
+R = ρl/A</div>
+            <div class="note-box">Ohmic conductors (metals) follow linear V-I graph. Non-ohmic: diode, transistor, vacuum tube etc.</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Microscopic resistance relation:
+R = ml/(A n e² τ)
+
+Resistivity:
+ρ = m/(n e² τ)
+
+Conductivity:
+σ = 1/ρ = ne²τ/m
+Unit: Ω⁻¹ m⁻¹ = S m⁻¹ = mho m⁻¹
+
+Relation:
+J = σE</div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Geometrical Variations of Resistance</div>
+              <div class="card-body">
+                <div class="formula-box">If volume remains constant and wire is stretched:
+R ∝ l²  ⇒  R₁/R₂ = (l₁/l₂)²
+
+Since A = πr²,
+R ∝ 1/r⁴  ⇒  R₁/R₂ = (r₂/r₁)⁴</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-danger text-white">Temperature Dependence of Resistivity</div>
+              <div class="card-body">
+                <div class="formula-box">For metals:
+ρ_t = ρ₀(1 + αt)
+where α = temperature coefficient of resistivity
+
+α > 0 : metals (ρ increases with T)
+α small positive : alloys (nichrome, manganin, constantan)
+α < 0 : semiconductors, insulators (ρ decreases with T)</div>
+                <ul>
+                  <li>Resistivity depends on nature of material and temperature.</li>
+                  <li>Resistivity is independent of dimensions (length/area).</li>
+                  <li>In magnetic field: resistivity of most metals increases; for ferromagnets (Fe, Ni, Co) it decreases.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">🧊 Superconductivity &amp; Carbon Resistor Colour Code</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Superconductivity</div>
+              <div class="card-body">
+                <p>Below a critical temperature, electrical resistance of some materials suddenly becomes zero.</p>
+                <table class="phy-table">
+                  <tr><th>Material</th><th>Critical Temperature</th></tr>
+                  <tr><td>Mercury</td><td>4.2 K</td></tr>
+                  <tr><td>Lead</td><td>7.25 K</td></tr>
+                  <tr><td>Niobium</td><td>9.2 K</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Carbon Resistor Colour Coding</div>
+              <div class="card-body">
+                <table class="phy-table">
+                  <tr><th>Colour</th><th>Figure</th><th>Multiplier</th></tr>
+                  <tr><td>Black</td><td>0</td><td>10⁰</td></tr>
+                  <tr><td>Brown</td><td>1</td><td>10¹</td></tr>
+                  <tr><td>Red</td><td>2</td><td>10²</td></tr>
+                  <tr><td>Orange</td><td>3</td><td>10³</td></tr>
+                  <tr><td>Yellow</td><td>4</td><td>10⁴</td></tr>
+                  <tr><td>Green</td><td>5</td><td>10⁵</td></tr>
+                  <tr><td>Blue</td><td>6</td><td>10⁶</td></tr>
+                  <tr><td>Violet</td><td>7</td><td>10⁷</td></tr>
+                  <tr><td>Grey</td><td>8</td><td>10⁸</td></tr>
+                  <tr><td>White</td><td>9</td><td>10⁹</td></tr>
+                </table>
+                <div class="note-box mt-1">Tolerance: Gold = ±5%, Silver = ±10%, No colour = ±20%<br/>Mnemonic: <strong>B B ROY Great Britain Very Good Wife</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">🔗 Combination of Resistors</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Series Combination</div>
+              <div class="card-body">
+                <div class="formula-box">Equivalent resistance:
+R_eq = R₁ + R₂ + R₃ + ...
+
+Properties:
+1) Current through each resistor is same.
+2) Total potential difference = sum of potential drops.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Parallel Combination</div>
+              <div class="card-body">
+                <div class="formula-box">1/R_eq = 1/R₁ + 1/R₂ + 1/R₃ + ...
+
+Properties:
+1) Potential difference across each resistor is same.
+2) Source current = sum of branch currents.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="formula-box">If n identical resistors are connected:
+Series first ⇒ R_s = nR
+Parallel first ⇒ R_p = R/n
+Hence: R_s / R_p = n²
+
+For a cube of 12 equal resistors (each R):
+(a) Across body diagonal = 5R/6
+(b) Across face diagonal = 3R/4
+(c) Along an edge = 7R/12</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">🔋 Electric Cell, emf &amp; Internal Resistance</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <table class="phy-table">
+              <tr><th>Type</th><th>Feature</th><th>Examples</th></tr>
+              <tr><td>Primary cell</td><td>Cannot be recharged</td><td>Voltaic, Daniel, Leclanche</td></tr>
+              <tr><td>Secondary cell</td><td>Rechargeable</td><td>Acid accumulator, alkali accumulator</td></tr>
+            </table>
+            <div class="formula-box mt-1">emf of cell:
+ε = W/q  (energy per unit charge for complete circuit)
+Unit: volt (V)
+
+Terminal potential difference V:
+Energy per unit charge delivered in external circuit
+V < ε (when cell is discharging)</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Internal resistance r:
+Obstruction offered by electrolyte inside cell.
+
+Variation of r:
+1) Increases with concentration of electrolyte
+2) Increases with distance between electrodes
+3) Decreases with area of electrode dipped
+
+Relations (discharging):
+ε = V + Ir
+r = (ε/V − 1)R
+
+Charging state:
+ε = V − Ir</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">🔋 Grouping of Cells</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">(i) Cells in Series</div>
+              <div class="card-body">
+                <div class="formula-box">For n cells (each emf ε, internal resistance r):
+ε_eq = nε
+r_eq = nr
+
+Current:
+I = ε_eq/(R + r_eq)
+= nε/(R + nr)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">(ii) Cells in Parallel</div>
+              <div class="card-body">
+                <div class="formula-box">For n identical cells in parallel:
+ε_eq = ε
+r_eq = r/n
+
+Current:
+I = ε/(R + r/n)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">(iii) Mixed Grouping</div>
+              <div class="card-body">
+                <div class="formula-box">n cells in series in each row, m such rows parallel:
+ε_eq = nε
+r_eq = nr/m
+
+I = nε / (R + nr/m)
+= m n ε / (mR + nr)
+
+Maximum current condition:
+R = nr/m  (i.e., external resistance = equivalent internal resistance)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">🧮 Kirchhoff’s Laws &amp; Bridge Circuits</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Kirchhoff’s Laws</div>
+              <div class="card-body">
+                <div class="formula-box">1) Junction rule:
+ΣI = 0 at a junction
+(Conservation of charge)
+
+2) Loop rule:
+ΣΔV = 0 around any closed loop
+(Conservation of energy)</div>
+                <div class="note-box">These two laws are used to solve multi-loop and multi-branch circuits where simple series/parallel reduction is not possible.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Wheatstone Bridge</div>
+              <div class="card-body">
+                <p>Arrangement of four resistances, one unknown, with galvanometer in bridge arm.</p>
+                <div class="formula-box">Balance condition (I_G = 0):
+P/Q = R/S
+
+Unknown resistance:
+S = (Q/P)R</div>
+                <div class="note-box">Bridge is most sensitive when all four resistances are of same order.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Meter Bridge (Slide Wire Bridge)</div>
+              <div class="card-body">
+                <div class="formula-box">At balance point:
+R/S = l₁/(100 − l₁)
+
+where l₁ = balancing length from one end (in cm)</div>
+                <ul>
+                  <li>Simplest practical form of Wheatstone bridge.</li>
+                  <li>Used for precise comparison of resistances and finding unknown resistance.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">📐 Potentiometer</div>
+      <div class="card-body">
+        <div class="important-box">Potentiometer is an ideal voltmeter for accurate potential difference comparison and internal resistance measurement.</div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Principle &amp; Potential Gradient</div>
+              <div class="card-body">
+                <div class="formula-box">For uniform wire carrying constant current:
+V ∝ l  ⇒  V = kl
+
+k = potential gradient
+Unit: V m⁻¹
+
+Sensitivity increases by increasing potentiometer wire length.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Comparison of emf of Two Cells</div>
+              <div class="card-body">
+                <div class="formula-box">If balancing lengths are l₁ and l₂:
+ε₁ = x l₁ I
+ε₂ = x l₂ I
+
+Hence:
+ε₁/ε₂ = l₁/l₂</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-warning text-dark">Internal Resistance of a Cell using Potentiometer</div>
+              <div class="card-body">
+                <div class="formula-box">Without load (K₂ open):
+ε = k l₁
+
+With load resistance R (K₂ closed):
+V = k l₂
+
+Internal resistance:
+r = ((ε − V)/V)R
+  = ((l₁ − l₂)/l₂)R</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">🗺️ Quick Revision Sheet</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="phy-table">
+            <tr><th>Topic</th><th>Key Result</th></tr>
+            <tr><td>Electric current</td><td>I = q/t</td></tr>
+            <tr><td>Drift velocity</td><td>v_d = eEτ/m = I/(nAe)</td></tr>
+            <tr><td>Current density</td><td>J = I/A = ne v_d = σE</td></tr>
+            <tr><td>Mobility</td><td>μ = v_d/E = eτ/m</td></tr>
+            <tr><td>Ohm’s law</td><td>V = IR</td></tr>
+            <tr><td>Wire resistance</td><td>R = ρl/A</td></tr>
+            <tr><td>Resistivity</td><td>ρ = m/(ne²τ)</td></tr>
+            <tr><td>Conductivity</td><td>σ = 1/ρ = ne²τ/m</td></tr>
+            <tr><td>Temperature relation</td><td>ρ_t = ρ₀(1 + αt)</td></tr>
+            <tr><td>Series resistors</td><td>R_eq = ΣR</td></tr>
+            <tr><td>Parallel resistors</td><td>1/R_eq = Σ(1/R)</td></tr>
+            <tr><td>Cell relation</td><td>ε = V + Ir (discharging), ε = V − Ir (charging)</td></tr>
+            <tr><td>Kirchhoff</td><td>ΣI = 0, ΣΔV = 0</td></tr>
+            <tr><td>Wheatstone bridge</td><td>P/Q = R/S at balance</td></tr>
+            <tr><td>Meter bridge</td><td>R/S = l₁/(100 − l₁)</td></tr>
+            <tr><td>Potentiometer</td><td>V = kl, ε₁/ε₂ = l₁/l₂, r = ((l₁ − l₂)/l₂)R</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

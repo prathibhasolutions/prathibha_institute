@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The d and f Block Elements | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f8f9fa; }
+    .chapter-header { background: linear-gradient(135deg, #2c003e 0%, #5c1a5a 60%, #9b2c9b 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #2c003e; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 20</div>
+        <h1>The d and f Block Elements</h1>
+        <p class="mb-0">Complete Notes · Arihant Handbook of Chemistry</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- ════════════════════════════
+         PART A: d-BLOCK (TRANSITION)
+    ════════════════════════════ -->
+    <div class="text-center mb-3">
+      <span class="badge bg-primary fs-6 px-4 py-2">Part A — d-Block Elements (Transition Metals)</span>
+    </div>
+
+    <!-- 1. Introduction -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x269B;&#xFE0F; Introduction &amp; Electronic Configurations</div>
+      <div class="card-body">
+        <p>d-block contains elements of <strong>groups 3–12</strong> in which d-orbitals are progressively filled. Three main series: 3d (Sc–Zn), 4d (Y–Cd), 5d (La–Hg, omitting Ce–Lu). A fourth 6d series begins at Ac.</p>
+        <p><strong>Transition elements:</strong> Elements with partially filled d-orbitals in ground state OR in excited state.</p>
+        <div class="note-box"><strong>Zn, Cd, Hg</strong> have d¹⁰s² configuration — do NOT show transition element properties → called <strong>non-typical transition elements</strong>. <strong>Iron</strong> is the most abundant and widely used transition metal.</div>
+
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-dark text-white">Electronic Configuration Table (3d-Series)</div>
+          <div class="card-body">
+            <div class="formula-box">General configuration: (n-1)d¹⁻¹⁰  ns⁰⁻²
+
+Exceptions (half-filled and fully-filled d are extra stable):
+Cr:  [Ar] 3d⁵ 4s¹  (NOT 3d⁴4s²)  ← half-filled d
+Cu:  [Ar] 3d¹⁰ 4s¹ (NOT 3d⁹4s²)  ← fully-filled d
+Mo:  [Kr] 4d⁵ 5s¹  (like Cr)
+Ag:  [Kr] 4d¹⁰ 5s¹ (like Cu)
+Pd:  [Kr] 4d¹⁰ 5s⁰
+
+3d series: Sc(3d¹4s²) Ti(3d²4s²) V(3d³4s²) Cr(3d⁵4s¹) Mn(3d⁵4s²)
+           Fe(3d⁶4s²) Co(3d⁷4s²) Ni(3d⁸4s²) Cu(3d¹⁰4s¹) Zn(3d¹⁰4s²)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. General Properties -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F4CA; General Properties of Transition Elements</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(i) Atomic &amp; Ionic Size</div>
+              <div class="card-body">
+                <ul>
+                  <li>Ions of same charge in a series show <strong>regular decrease</strong> in radius as atomic number increases (new electron enters d-orbital, nuclear charge increases).</li>
+                  <li>At end of series, slight increase due to electron-electron repulsion.</li>
+                  <li>Radii increase from 3d → 4d series; <strong>3d and 5d have similar radii</strong> due to lanthanoid contraction (poor shielding of 4f).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(ii) Ionisation Enthalpies</div>
+              <div class="card-body">
+                <ul>
+                  <li>Increases across a period (increasing nuclear charge) but not in regular trend.</li>
+                  <li>Irregular trend due to relative energies of 4s and 3d orbitals.</li>
+                  <li>The low value for Sc³⁺/Sc²⁺ → Sc³⁺ has noble gas configuration.</li>
+                  <li>Highest value for Zn³⁺/Zn²⁺ → removal of electron from stable d¹⁰.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(iii) Oxidation States</div>
+              <div class="card-body">
+                <ul>
+                  <li>Show <strong>variable oxidation states</strong> due to two incomplete outermost shells (3d and 4s).</li>
+                  <li>Lower oxidation states (+2, +3) → ionic compounds.</li>
+                  <li>Higher oxidation states → normally covalent.</li>
+                  <li>Only <strong>Os and Ru</strong> show +8 oxidation state (in fluorides and oxides).</li>
+                  <li>Ni in Ni(CO)₄ and Fe in Fe(CO)₅ show <strong>zero oxidation state</strong>.</li>
+                </ul>
+                <div class="formula-box">Stable oxidation states:
+Sc(+3), Ti(+4), V(+5), Cr(+3,+6)
+Mn(+2,+7), Fe(+2,+3), Co(+2,+3)
+Ni(+2), Cu(+2), Zn(+2)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(iv–v) Enthalpy &amp; Standard Electrode Potential</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>High enthalpies of atomisation</strong> due to large number of unpaired electrons → stronger interatomic interactions.</li>
+                  <li>E°(M²⁺/M) governed by: enthalpy of sublimation, ionisation enthalpy, hydration enthalpy.</li>
+                  <li><strong>Except copper</strong>, all 3d series elements are good reducing agents (E° negative).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(vi) Melting &amp; Boiling Points</div>
+              <div class="card-body">
+                <ul>
+                  <li>High m.p. and b.p. due to strong metallic bonding.</li>
+                  <li>Maximum m.p. in the middle of series; decreases with increasing atomic number.</li>
+                  <li><strong>Mn and Tc</strong> show abnormal values.</li>
+                  <li><strong>Tungsten</strong> has highest m.p. (3410°C) of all metals.</li>
+                  <li><strong>Mercury</strong> is liquid at room temperature (m.p. = −38.9°C) due to absence of unpaired electrons → weak metallic bonding.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">(vii) Density</div>
+              <div class="card-body">
+                <p>High density due to small atomic size and strong metallic bonding.</p>
+                <table class="chem-table mt-1">
+                  <tr><th>Element</th><th>Sc</th><th>Ti</th><th>V</th><th>Cr</th><th>Mn</th><th>Fe</th><th>Co</th><th>Ni</th><th>Cu</th><th>Zn</th></tr>
+                  <tr><td>Density (g/cm³)</td><td>3.0</td><td>4.54</td><td>6.12</td><td>7.19</td><td>7.40</td><td>7.87</td><td>8.74</td><td>8.90</td><td>8.92</td><td>7.13</td></tr>
+                </table>
+                <div class="note-box mt-1"><strong>Highest density</strong> among transition metals: <strong>Iridium</strong> (22.61 g/cm³) > Osmium (22.52 g/cm³).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-warning text-dark">(xi) Magnetic Properties</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Paramagnetic</strong>: due to unpaired electrons in d-orbitals. Increases with number of unpaired electrons (n). Highest paramagnetic character: <strong>Mn²⁺</strong> (5 unpaired e⁻) among 3d series.</li>
+                  <li><strong>Diamagnetic</strong>: repelled by magnetic field; no unpaired electrons.</li>
+                  <li><strong>Ferromagnetic</strong>: permanent magnetic character. e.g. <strong>Fe, Co, Ni</strong>.</li>
+                </ul>
+                <div class="formula-box">Magnetic moment:
+μ = √[n(n+2)]  BM (Bohr magneton)
+n = number of unpaired electrons</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-warning text-dark">(xii) Coloured Ions</div>
+              <div class="card-body">
+                <ul>
+                  <li>Colour due to <strong>d-d transitions</strong> (unpaired electrons in d-orbitals absorb visible light → electron excited from lower to higher d-orbital).</li>
+                  <li>Colour depends on metal, oxidation state, and ligands.</li>
+                  <li>[Cu(H₂O)₄]²⁺: pale blue; [Cu(NH₃)₄]²⁺: dark blue; CuSO₄·5H₂O: blue; anhydrous CuSO₄: colourless.</li>
+                  <li><strong>Charge transfer:</strong> MnO₄⁻ (d⁰) has purple colour due to O→Mn charge transfer.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-danger text-white">(xiii) Catalytic Properties</div>
+              <div class="card-body">
+                Due to (a) variable oxidation states; (b) formation of intermediate complexes; (c) rough surface area → active sites.
+                <table class="chem-table mt-2">
+                  <tr><th>Catalyst</th><th>Composition</th><th>Use</th></tr>
+                  <tr><td>Ziegler-Natta</td><td>TiCl₄ + (C₂H₅)₃Al</td><td>Polymerisation of ethylene</td></tr>
+                  <tr><td>Lindlar's</td><td>Pd/BaSO₄</td><td>Selective reduction of alkynes</td></tr>
+                  <tr><td>Wilkinson's</td><td>[Ph₃P]₃RhCl</td><td>Hydrogenation of alkenes</td></tr>
+                  <tr><td>Adam's</td><td>Pt/PtO</td><td>Hydrogenation</td></tr>
+                  <tr><td>Brown's (P-2)</td><td>Nickel boride</td><td>Selective hydrogenation</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-danger text-white">(xv–xvi) Interstitial &amp; Non-stoichiometric Compounds</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Interstitial compounds:</strong> Small non-metal atoms (H, N, C) occupy voids in crystal lattice → hard and rigid. e.g. cast iron, steel.</li>
+                  <li><strong>Non-stoichiometric:</strong> Elements not in exact ratio. e.g. Fe₀.₉₄O (Fe:O ≈ 0.94:1) due to variable oxidation state of transition metals.</li>
+                  <li><strong>Spinel:</strong> Mixed oxides where O atoms form fcc lattice. e.g. ZnFe₂O₄ (normal spinel: Fe³⁺ in octahedral holes, Zn²⁺ in tetrahedral holes); Fe₃O₄ (inverse spinel).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Alloys -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4AB; Alloys of d-Block Elements</div>
+      <div class="card-body">
+        <p>d-block elements form alloys easily due to similar atomic sizes. Alloys have <strong>high m.p.</strong> Mo, W, Cr, Ni, V used for stainless steel. <strong>Amalgam</strong> = alloy with Hg (Fe and Pt do NOT form amalgam).</p>
+        <table class="chem-table">
+          <tr><th>Alloy</th><th>Composition (%)</th><th>Uses</th></tr>
+          <tr><td>Stainless steel</td><td>Fe=73, Cr=18, Ni=8, C (traces)</td><td>Cutlery, machine parts</td></tr>
+          <tr><td>Coinage silver</td><td>Ag=92.5, Cu=7.5</td><td>Coins, jewellery</td></tr>
+          <tr><td>Dental alloy</td><td>Ag=33, Hg=52, Sn=12.5, Cu=2, Zn=0.5</td><td>Filling teeth</td></tr>
+          <tr><td>Brass</td><td>Cu=80, Zn=20</td><td>Utensils, condenser tubes</td></tr>
+          <tr><td>Bronze</td><td>Cu=80, Sn=20</td><td>Utensils, statues, coins</td></tr>
+          <tr><td>Gun metal</td><td>Cu=87, Sn=10, Zn=3</td><td>Guns, gears</td></tr>
+          <tr><td>Bell metal</td><td>Cu=80, Sn=20</td><td>Bells, gongs</td></tr>
+          <tr><td>German silver</td><td>Cu=60, Zn=20, Ni=20</td><td>Cutlery, resistance wires</td></tr>
+          <tr><td>Duralumin</td><td>Al=95, Cu=4, Mg+Mn=1</td><td>Aircraft/airships</td></tr>
+          <tr><td>Misch metal</td><td>Ce(25%)+lanthanides+Fe(5%)+traces S,C,Si,Ca,Al</td><td>Lighter flints</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 4. Important Compounds -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x1F9EA; Important Compounds of d-Block Elements</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">Potassium Dichromate (K₂Cr₂O₇)</div>
+              <div class="card-body">
+                <strong>Ore:</strong> Ferrochrome/Chromite (FeO·Cr₂O₃ or FeCr₂O₄)<br/>
+                <strong>Preparation:</strong>
+                <div class="reaction-box">4FeO·Cr₂O₃ + 8Na₂CO₃ + 7O₂ → 8Na₂CrO₄ + 2Fe₂O₃ + 8CO₂
+                                              (yellow chromate)
+2Na₂CrO₄ + 2H⁺ → Na₂Cr₂O₇ + 2Na⁺ + H₂O
+                    (orange dichromate)
+Na₂Cr₂O₇ + 2KCl → K₂Cr₂O₇ + 2NaCl</div>
+                <div class="note-box">Sodium dichromate is MORE SOLUBLE than potassium dichromate.<br/>
+                Chromates and dichromates are interconvertible depending on pH.</div>
+                <strong>Oxidising reactions (in acidic medium):</strong>
+                <div class="reaction-box">Cr₂O₇²⁻ + 14H⁺ + 6I⁻ → 2Cr³⁺ + 7H₂O + 3I₂
+Cr₂O₇²⁻ + 8H⁺ + 3H₂S → 2Cr³⁺ + 3S + 7H₂O
+Cr₂O₇²⁻ + 14H⁺ + 3Sn²⁺ → 2Cr³⁺ + 3Sn⁴⁺ + 7H₂O</div>
+                <strong>Uses:</strong> Volumetric analysis oxidising agent; mordant dyes; leather industry; photography (hardening film); cleaning glassware; chromyl chloride test.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">Potassium Permanganate (KMnO₄)</div>
+              <div class="card-body">
+                <strong>Ore:</strong> Pyrolusite (MnO₂)<br/>
+                <strong>Preparation:</strong>
+                <div class="reaction-box">2MnO₂ + 4KOH + O₂ → 2K₂MnO₄ + 2H₂O  (green manganate)
+3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂ + 2H₂O
+Commercial: MnO₂ fused with KOH (oxidised by air/KNO₃)
+→ K₂MnO₄ (manganate) → electrolytic oxidation → KMnO₄ (purple)</div>
+                <strong>In acidic medium (dilute H₂SO₄):</strong>
+                <div class="reaction-box">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O
+5C₂O₄²⁻ → 10CO₂ + 10e⁻  (oxalates)
+5Fe²⁺ → 5Fe³⁺ + 5e⁻
+5NO₂⁻ + 5H₂O → 5NO₃⁻ + 10H⁺ + 10e⁻
+10I⁻ → 5I₂ + 10e⁻
+
+NOTE: Acidify with H₂SO₄ only (not HCl → Cl₂; not HNO₃ → self-oxidising)</div>
+                <strong>In alkaline medium:</strong>
+                <div class="reaction-box">MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻
+Oxidises: I⁻ → IO₃⁻; S₂O₃²⁻ → SO₄²⁻; Mn²⁺ → MnO₂
+2KMnO₄ + 2NH₃ → 2KOH + 2MnO₂ + N₂ + 2H₂O</div>
+                <strong>Uses:</strong> Lab preparation of Cl₂; oxidising agent and disinfectant; Baeyer's reagent (1% alk. KMnO₄); bleaching wool, cotton, silk, decolourisation of oils.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Copper Sulphate (CuSO₄·5H₂O) — Blue Vitriol</div>
+              <div class="card-body">
+                <div class="reaction-box">2Cu + 2H₂SO₄ + O₂ → 2CuSO₄ + 2H₂O  (air + dil H₂SO₄ on copper scrap)</div>
+                <ul>
+                  <li>Heating → turns white (loss of water of crystallisation).</li>
+                  <li>At 1000K: CuSO₄ → CuO + SO₃</li>
+                  <li>Gives blue solution with NH₄OH; white ppt of Cu₂I₂ with KI.</li>
+                  <li><strong>Uses:</strong> Electroplating, mordant in dyeing, Bordeaux mixture [Ca(OH)₂ + CuSO₄].</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Silver Nitrate (AgNO₃) — Lunar Caustic</div>
+              <div class="card-body">
+                <div class="reaction-box">3Ag(s) + 4HNO₃(dil) → 3AgNO₃ + NO + 2H₂O</div>
+                <ul>
+                  <li>Colourless crystalline; <strong>blackens</strong> on contact with organic matter (skin, cloth).</li>
+                  <li>With K₂Cr₂O₇ → red ppt of Ag₂CrO₄.</li>
+                  <li>On strong heating: 2AgNO₃ → 2Ag + 2NO₂ + O₂</li>
+                  <li>Ammoniacal AgNO₃ = <strong>Tollen's reagent</strong> [Ag(NH₃)₂]OH.</li>
+                  <li><strong>Uses:</strong> Laboratory reagent, silvering mirrors, inks, hair dyes.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-secondary text-white">Important Reagents Containing Transition Metals</div>
+          <div class="card-body">
+            <table class="chem-table">
+              <tr><th>#</th><th>Reagent</th><th>Composition</th><th>Use</th></tr>
+              <tr><td>1</td><td>Baeyer's reagent</td><td>Dilute alkaline KMnO₄</td><td>Test for unsaturation</td></tr>
+              <tr><td>2</td><td>Tollen's reagent</td><td>[Ag(NH₃)₂]OH</td><td>Test for aldehyde group (silver mirror)</td></tr>
+              <tr><td>3</td><td>Nessler's reagent</td><td>Alkaline K₂HgI₄</td><td>Test for NH₃(g) and NH₄⁺</td></tr>
+              <tr><td>4</td><td>Benedict's solution</td><td>CuSO₄ + Na-citrate + Na₂CO₃</td><td>Test for aldehyde (reducing sugar)</td></tr>
+              <tr><td>5</td><td>Lucas reagent</td><td>Conc. HCl + Anhy. ZnCl₂</td><td>Distinguish 1°, 2°, 3° alcohols</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-secondary text-white">Applications of Transition Elements</div>
+          <div class="card-body">
+            <ul>
+              <li>TiO₂ + BaSO₄ = <strong>titanox</strong>; ZnS + BaSO₄ = <strong>lithopone</strong> (white pigments)</li>
+              <li>TiCl₂ and TiO₂: used in smoke screens; TiO₂ as white paint pigment.</li>
+              <li>Tantalum: surgical venals and analytical weights.</li>
+              <li>Chromium: stainless steel and chrome plating.</li>
+              <li>Mo: X-ray tubes; Pt: resistance thermometers.</li>
+              <li>Cd: making joints in jewellery.</li>
+              <li>Ce: scavenger of oxygen and sulphur in metals.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════════════════
+         PART B: f-BLOCK
+    ═════════════════════ -->
+    <div class="text-center mb-3 mt-4">
+      <span class="badge bg-danger fs-6 px-4 py-2">Part B — f-Block Elements (Inner-Transition Metals)</span>
+    </div>
+
+    <!-- 5. Introduction to f-Block -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F30F; f-Block Elements — Introduction</div>
+      <div class="card-body">
+        <p>Elements in which filling of electrons takes place in <strong>f-subshells (two levels inside outer subshell)</strong> are called <strong>inner-transition elements</strong>.</p>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">4f-Series: Lanthanoids (Lanthanides)</div>
+              <div class="card-body">
+                <ul>
+                  <li>Elements 57 (La) to 71 (Lu); also called <strong>rare earths</strong>.</li>
+                  <li>Last electron enters <strong>4f orbital</strong>.</li>
+                  <li>La [Xe]4f⁰5d¹6s² and Lu [Xe]4f¹⁴5d¹6s² have no partially filled 4f orbital in ground state but are still classified as lanthanoids.</li>
+                </ul>
+                <div class="formula-box">General e⁻ config: [Xe] 4f⁰⁻¹⁴ 5d⁰⁻¹ 6s²</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">5f-Series: Actinoids (Actinides)</div>
+              <div class="card-body">
+                <ul>
+                  <li>Elements 89 (Ac) to 103 (Lr); constitute the <strong>5f-series</strong>.</li>
+                  <li>From <strong>neptunium (Np, 93) onwards</strong>: man-made (artificially prepared), also called <strong>transuranic elements</strong>.</li>
+                  <li>Little difference between 5f and 6d energies → configuration harder to predict.</li>
+                </ul>
+                <div class="formula-box">General e⁻ config: [Rn] 5f⁰⁻¹⁴ 6d⁰⁻¹ 7s²</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Lanthanoids in Detail -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F9F2; Lanthanoids — Detailed Properties</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-dark text-white">Oxidation States</div>
+              <div class="card-body">
+                <p>Most common and most stable: <strong>+3</strong>. Some show +2 and +4 (by leaving behind stable ions).</p>
+                <table class="chem-table">
+                  <tr><th>Ion</th><th>Configuration</th><th>Note</th></tr>
+                  <tr><td>Eu²⁺</td><td>[Xe]4f⁷</td><td>Good reducing agent (half-filled 4f)</td></tr>
+                  <tr><td>Yb²⁺</td><td>[Xe]4f¹⁴</td><td>Good reducing agent (fully-filled 4f)</td></tr>
+                  <tr><td>Ce⁴⁺</td><td>[Xe]4f⁰</td><td>Good oxidising agent (approaches noble gas config)</td></tr>
+                  <tr><td>Tb⁴⁺</td><td>[Xe]4f⁷</td><td>Half-filled stability</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-dark text-white">Magnetic Properties</div>
+              <div class="card-body">
+                <p>Magnetic moments have BOTH spin and orbital contributions:</p>
+                <div class="formula-box">μ = √[4S(S+1) + L(L+1)]
+(L = orbital quantum number, S = spin quantum number)
+
+For first-row transition metals, orbital contribution
+is quenched → use spin-only formula:
+μₛ = √[n(n+2)]  BM</div>
+                <p>All lanthanoid ions except La³⁺, Lu³⁺ and Ce⁴⁺ are <strong>paramagnetic</strong>.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-success text-white">Lanthanoid Contraction ★★★</div>
+              <div class="card-body">
+                <p>Steady decrease in atomic and ionic (Ln³⁺) radii as atomic number of lanthanoids increases.</p>
+                <div class="important-box">
+                  <strong>Cause:</strong> Additional electron goes to <strong>4f-subshell</strong>. 4f orbitals are large and diffuse → poor shielding effect. Effective nuclear charge increases → contraction of electron cloud. Contraction is quite regular.
+                </div>
+                <strong>Consequences of Lanthanoid Contraction:</strong>
+                <ol>
+                  <li>Covalent character of cations increases.</li>
+                  <li>Electronegativity of trivalent ions increases slightly.</li>
+                  <li>Basic strength of oxides and hydroxides <strong>decreases</strong> from La to Lu.</li>
+                  <li>Small increase in standard electrode potential values.</li>
+                  <li><strong>Sizes of Zr and Hf are similar; Nb and Ta are similar</strong> → called <strong>chemical twins</strong> (due to lanthanoid contraction of lanthanoids in 4f series before 5d series).</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Other Properties</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Colour:</strong> Species with unpaired electrons are coloured; f-f transitions from visible region absorption.</li>
+                  <li><strong>M.p. and B.p.:</strong> High values but no regular trend.</li>
+                  <li><strong>Density:</strong> 6.67–9.7 g/cm³; no regular trend.</li>
+                  <li><strong>Electronegativity:</strong> Same as s-block elements → form ionic compounds.</li>
+                  <li><strong>Ionisation energy:</strong> Low (large size) → comparable to alkaline earth metals → very reactive.</li>
+                  <li><strong>Complex formation:</strong> Little tendency due to large ionic size.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Chemical Reactions of Lanthanoids</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Reaction</th><th>Product</th></tr>
+                  <tr><td>Ln + H₂</td><td>LnH₂ (or LnH₃)</td></tr>
+                  <tr><td>Ln + halogens</td><td>LnX₃</td></tr>
+                  <tr><td>Ln + O₂ (burns)</td><td>Ln₂O₃</td></tr>
+                  <tr><td>Ln + S (heated)</td><td>Ln₂S₃</td></tr>
+                  <tr><td>Ln + N₂ (heated)</td><td>LnN</td></tr>
+                  <tr><td>Ln + C (heated, 2773K)</td><td>LnC₂</td></tr>
+                  <tr><td>Ln + H₂O</td><td>Ln(OH)₃ + H₂</td></tr>
+                  <tr><td>Ln + acids</td><td>Ln³⁺ salts + H₂</td></tr>
+                </table>
+                <div class="note-box mt-1"><strong>Alloys:</strong> Misch metal = lanthanoid metal (94–95%) + Fe (~5%) + traces S, C, Ca, Al. Mg + 3% misch metal → jet engine parts.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Actinoids -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x269C;&#xFE0F; Actinoids — Properties &amp; Comparison</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Key Properties</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Oxidation states:</strong> +3 (most common) up to +7 (maximum).</li>
+                  <li><strong>Actinoid contraction:</strong> Similar to lanthanoid contraction; due to poor shielding of 5f electrons. <strong>Greater than lanthanoid contraction</strong>.</li>
+                  <li><strong>Magnetic properties:</strong> Magnetic moments smaller than theoretical; hard to interpret due to large spin-orbit coupling.</li>
+                  <li><strong>Colour:</strong> Actinoid ions are coloured due to unpaired electrons and f-f transitions.</li>
+                  <li><strong>Complex formation:</strong> Higher tendency to form complexes than lanthanoids.</li>
+                  <li><strong>Reducing character:</strong> Strong reducing agents (E° ≈ −2.0 V).</li>
+                  <li><strong>Reactivity:</strong> Very reactive; combine with O₂ and halogens like lanthanoids.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Lanthanoids vs Actinoids</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Property</th><th>Lanthanoids</th><th>Actinoids</th></tr>
+                  <tr><td>f-subshell filled</td><td>4f</td><td>5f</td></tr>
+                  <tr><td>Atomic numbers</td><td>57–71</td><td>89–103</td></tr>
+                  <tr><td>Main oxidation state</td><td>+3</td><td>+3 (up to +7)</td></tr>
+                  <tr><td>Contraction</td><td>Lanthanoid contraction</td><td>Actinoid contraction (greater)</td></tr>
+                  <tr><td>Magnetic moments</td><td>Due to spin + orbit</td><td>Smaller than theoretical; spin-orbit coupling</td></tr>
+                  <tr><td>Colour</td><td>Some coloured</td><td>All coloured (f-f transitions)</td></tr>
+                  <tr><td>Complex tendency</td><td>Less (large ionic size)</td><td>More than lanthanoids</td></tr>
+                  <tr><td>Reducing ability</td><td>Moderate</td><td>Strong (E° ≈ −2 V)</td></tr>
+                  <tr><td>Radioactivity</td><td>Generally stable</td><td>All radioactive</td></tr>
+                  <tr><td>Transuranic</td><td>—</td><td>From Np (93) onwards</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Mind Map -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F5FA;&#xFE0F; Quick Summary — d and f Block</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr><th>Topic</th><th>Key Fact</th></tr>
+            <tr><td>Highest m.p. metal</td><td>Tungsten (W): 3410°C</td></tr>
+            <tr><td>Liquid metal at room temp</td><td>Mercury (Hg): m.p. = −38.9°C</td></tr>
+            <tr><td>Highest density transition</td><td>Iridium: 22.61 g/cm³</td></tr>
+            <tr><td>Most abundant transition metal</td><td>Iron (Fe)</td></tr>
+            <tr><td>Maximum oxidation state</td><td>Os and Ru: +8; Mn: +7</td></tr>
+            <tr><td>Zero oxidation state</td><td>Fe(CO)₅, Ni(CO)₄</td></tr>
+            <tr><td>Most paramagnetic</td><td>Mn²⁺ (5 unpaired e⁻) in 3d series</td></tr>
+            <tr><td>Colour of KMnO₄</td><td>Purple (charge transfer, d⁰ ion)</td></tr>
+            <tr><td>Lanthanoid contraction causes</td><td>Zr ≈ Hf; Nb ≈ Ta (chemical twins)</td></tr>
+            <tr><td>Actinoid contraction vs Lanthanoid</td><td>Actinoid contraction is GREATER</td></tr>
+            <tr><td>Most stable lanthanide O.S.</td><td>+3</td></tr>
+            <tr><td>Good oxidising agent</td><td>Ce⁴⁺ (aqueous)</td></tr>
+            <tr><td>Good reducing agents</td><td>Eu²⁺, Yb²⁺ (in aqueous solution)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electromagnetic Waves | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f6f8fc; }
+    .chapter-header { background: linear-gradient(135deg, #0a2a3a 0%, #1f6f8f 60%, #45b8d9 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    table.phy-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.phy-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.phy-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.phy-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #0a2a3a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; }
+    footer a { color: aquamarine; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="chapter-header text-center">
+    <div class="text-uppercase small opacity-75">Physics Handbook — Chapter 26</div>
+    <h1>Electromagnetic Waves</h1>
+    <p class="mb-0">Displacement Current · Maxwell’s Equations · EM Wave Properties · Poynting Vector · Spectrum</p>
+  </div>
+
+  <div class="container pb-4">
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">📘 Displacement Current & Maxwell’s Equations</div>
+      <div class="card-body">
+        <div class="formula-box">Displacement current:
+I_D = ϵ₀ (dΦ_E/dt)
+
+where Φ_E is electric flux.</div>
+
+        <div class="formula-box">Maxwell’s equations:
+1) ∮ E·dS = q/ϵ₀   (Gauss law in electrostatics)
+2) ∮ B·dS = 0      (Gauss law in magnetostatics)
+3) ∮ E·dl = -dΦ_B/dt   (Faraday law)
+4) ∮ B·dl = μ₀(I_C + I_D) = μ₀(I_C + ϵ₀ dΦ_E/dt)   (Ampere-Maxwell law)</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">🌊 Electromagnetic Waves: Equation & Core Properties</div>
+      <div class="card-body">
+        <div class="formula-box">Plane progressive EM wave:
+E = E₀ sin(ωt − x/c)
+B = B₀ sin(ωt − x/c)
+ω = 2πν</div>
+        <ul>
+          <li>Produced by accelerated charge particles.</li>
+          <li>Transverse in nature.</li>
+          <li>Electric field, magnetic field, and direction of propagation are mutually perpendicular.</li>
+          <li>Speed in vacuum: c = 1/√(μ₀ϵ₀) = 3×10⁸ m/s.</li>
+        </ul>
+        <div class="formula-box">Field amplitude relation:
+c = E₀/B₀</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">⚡ Energy Transport, Intensity & Momentum</div>
+      <div class="card-body">
+        <div class="formula-box">Poynting vector:
+S = (1/μ₀)(E × B)
+SI unit: W m⁻²
+
+It gives rate of flow of EM energy per unit area.</div>
+
+        <div class="formula-box">Average electric energy density:
+U_E = (1/4)ϵ₀E₀²
+
+Average magnetic energy density:
+U_B = (1/4)(B₀²/μ₀)
+
+In EM wave:
+U_E = U_B</div>
+
+        <div class="formula-box">Intensity:
+I = <u>c = (1/2)ϵ₀E₀²c
+
+Momentum of EM wave:
+p = U/c
+
+Radiation pressure:
+Absorbing surface: p = U/c
+Reflecting surface: p = 2U/c</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">🌈 Electromagnetic Spectrum & Uses</div>
+      <div class="card-body">
+        <p>Electromagnetic spectrum is arrangement of EM radiations in order of wavelength or frequency.</p>
+        <table class="phy-table">
+          <tr><th>Region</th><th>Typical uses</th></tr>
+          <tr><td>Radio waves / Microwaves</td><td>Radio/TV communication</td></tr>
+          <tr><td>Infrared</td><td>Muscular strain treatment, fog photography, greenhouse heating, weather forecasting</td></tr>
+          <tr><td>Visible</td><td>Human vision</td></tr>
+          <tr><td>Ultraviolet</td><td>Molecular studies, sterilization, forged document/fingerprint detection</td></tr>
+          <tr><td>X-rays</td><td>Industrial flaw detection, crystal structure studies, medical/inspection uses</td></tr>
+          <tr><td>Gamma rays</td><td>Nuclear structure studies</td></tr>
+        </table>
+        <div class="note-box mt-1">EM waves were experimentally confirmed by Hertz (1888).</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">🗺️ Quick Revision</div>
+      <div class="card-body">
+        <div class="formula-box">I_D = ϵ₀ dΦ_E/dt
+c = 1/√(μ₀ϵ₀)
+E = E₀ sin(ωt − x/c)
+B = B₀ sin(ωt − x/c)
+E₀/B₀ = c
+S = (1/μ₀)(E×B)
+I = (1/2)ϵ₀E₀²c
+U_E = U_B
+p = U/c (absorbing), 2U/c (reflecting)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+    <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+  </footer>
+</body>
+</html>

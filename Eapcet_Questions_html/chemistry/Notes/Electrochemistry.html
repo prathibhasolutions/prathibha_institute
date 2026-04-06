@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrochemistry | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f8f9fa; }
+    .chapter-header { background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 60%, #2e6da4 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #0a1628; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 12</div>
+        <h1>Electrochemistry</h1>
+        <p class="mb-0">Complete Notes · Arihant Handbook of Chemistry</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- 1. Introduction & Conductors -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x26A1; Introduction, Conductors &amp; Electrolytes</div>
+      <div class="card-body">
+        <p>Electrochemistry deals with <strong>production of electricity from spontaneous chemical reactions</strong> and the <strong>use of electrical energy to bring about non-spontaneous reactions</strong>.</p>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Types of Conductors</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Metallic/Electronic conductors:</strong> Conduct via movement of electrons. e.g. metals.</li>
+                  <li><strong>Electrolytic conductors:</strong> Conduct via ions in fused/aqueous state; undergo chemical decomposition. e.g. NaCl(aq), HCl(aq).</li>
+                  <li><strong>Superconductors:</strong> Zero resistivity/infinite conductivity. e.g. ceramic materials and mixed oxides at up to 150 K.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Strong vs Weak Electrolytes</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Strong electrolytes:</strong> Completely dissociate into ions. e.g. KNO₃, KCl, NaOH, H₂SO₄.</li>
+                  <li><strong>Weak electrolytes:</strong> Partially ionise. e.g. CH₃COOH, NH₃, HCN.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Types of Cells</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Electrochemical (Galvanic) cell:</strong> Chemical → electrical energy. Spontaneous redox reaction. e.g. Daniell cell.</li>
+                  <li><strong>Electrolytic cell:</strong> Electrical → chemical energy. Non-spontaneous reaction (electrolysis). Does not need salt bridge.</li>
+                  <li><strong>Standard cell (Weston cell):</strong> Cell of almost constant emf.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Electrochemical Cell -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F4A1; Electrochemical Cell (Galvanic Cell)</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Cell Representation &amp; Daniell Cell</div>
+              <div class="card-body">
+                <div class="formula-box">General representation:
+M₁(s) | M₁ⁿ⁺(aq) || M₂ⁿ⁺(aq) | M₂(s)
+Anode (−)  LHS  ||  Cathode (+)  RHS
+
+Daniell Cell:
+Zn(s) | Zn²⁺(aq) || Cu²⁺(aq) | Cu(s)
+Anode: Zn → Zn²⁺ + 2e⁻  (oxidation)
+Cathode: Cu²⁺ + 2e⁻ → Cu  (reduction)
+Net: Zn + Cu²⁺ → Zn²⁺ + Cu;  E°cell = 1.1 V</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Galvanic vs Electrolytic Cell Comparison</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Feature</th><th>Galvanic Cell</th><th>Electrolytic Cell</th></tr>
+                  <tr><td>Energy conversion</td><td>Chemical → Electrical</td><td>Electrical → Chemical</td></tr>
+                  <tr><td>Anode</td><td>Negative</td><td>Positive</td></tr>
+                  <tr><td>Cathode</td><td>Positive</td><td>Negative</td></tr>
+                  <tr><td>Electron flow</td><td>Anode → Cathode (external)</td><td>Cathode → Anode (external)</td></tr>
+                  <tr><td>Reaction</td><td>Spontaneous</td><td>Non-spontaneous</td></tr>
+                  <tr><td>Salt bridge</td><td>Required</td><td>Not required</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-secondary text-white">Salt Bridge &amp; Transport Number</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Salt bridge:</strong> U-shaped glass tube with agar-agar paste containing NH₄NO₃, KNO₃ or KCl (conducting electrolytes). <strong>KCl preferred</strong> because transport numbers of K⁺ and Cl⁻ are almost equal. KCl NOT used when electrode is Ag.</li>
+              <li>Functions: (1) Completes circuit; (2) Maintains electrical neutrality on both sides.</li>
+            </ul>
+            <div class="formula-box">Transport number (transference number):
+nₓ = current carried by ion / total current
+
+Transport number of cation (nₓ) + Transport number of anion (nₐ) = 1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Electrode Potential & EMF -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x1F4C8; Electrode Potential, EMF &amp; Standard Hydrogen Electrode</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Electrode Potential</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Electrode potential:</strong> Tendency of electrode to lose or gain electrons when in contact with its ion solution. Expressed in volts. <strong>Intensive property</strong>.</li>
+                  <li><strong>Oxidation potential:</strong> Tendency to lose electrons (inversely proportional to concentration of ions).</li>
+                  <li><strong>Reduction potential:</strong> Tendency to gain electrons.</li>
+                  <li>By IUPAC convention: <strong>Electrode potential = reduction potential</strong> unless stated.</li>
+                </ul>
+                <div class="formula-box">E°red = −E°oxidation</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">Standard Hydrogen Electrode (SHE/NHE)</div>
+              <div class="card-body">
+                <ul>
+                  <li>Pt wire + Pt foil coated with Pt black in 1 M HCl; H₂ gas bubbled at 1 atm, 298 K.</li>
+                  <li>Half-cell: Pt, H₂(1 atm) | H⁺(1 M)</li>
+                  <li>E°(SHE) = <strong>0.00 V</strong> at all temperatures (defined standard).</li>
+                </ul>
+                <strong>Drawbacks:</strong>
+                <ol>
+                  <li>Difficult to maintain H₂ at exactly 1 atm.</li>
+                  <li>Difficult to maintain [H⁺] = 1 M.</li>
+                  <li>Pt electrode easily poisoned by impurities.</li>
+                </ol>
+                <div class="note-box">Alternative: <strong>Calomel electrode</strong> (Hg in contact with Hg₂Cl₂ paste in KCl solution). Used as secondary reference electrode.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">EMF of a Cell</div>
+              <div class="card-body">
+                <div class="formula-box">E°cell = E°cathode − E°anode = E°right − E°left = E°red + E°oxi
+
+EMF vs Cell Potential:
+EMF: potential difference when NO current flows; measured by potentiometer.
+Cell potential: potential difference when current flows (always < EMF); measured by voltmeter.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Electrochemical Series + Standard Electrode Potentials -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F50B; Electrochemical Series (ECS) &amp; Standard Electrode Potentials</div>
+      <div class="card-body">
+        <p>Arrangement of electrodes in <strong>increasing order of standard reduction potentials</strong>.</p>
+        <table class="chem-table">
+          <tr><th>Half-reaction (Reduction)</th><th>E° (V)</th></tr>
+          <tr><td>F₂ + 2e⁻ → 2F⁻</td><td>+2.87</td></tr>
+          <tr><td>Co³⁺ + e⁻ → Co²⁺</td><td>+1.81</td></tr>
+          <tr><td>MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</td><td>+1.51</td></tr>
+          <tr><td>Au³⁺ + 3e⁻ → Au(s)</td><td>+1.40</td></tr>
+          <tr><td>Cl₂ + 2e⁻ → 2Cl⁻</td><td>+1.36</td></tr>
+          <tr><td>Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O</td><td>+1.33</td></tr>
+          <tr><td>O₂ + 4H⁺ + 4e⁻ → 2H₂O</td><td>+1.23</td></tr>
+          <tr><td>Br₂ + 2e⁻ → 2Br⁻</td><td>+1.09</td></tr>
+          <tr><td>Ag⁺ + e⁻ → Ag(s)</td><td>+0.80</td></tr>
+          <tr><td>Fe³⁺ + e⁻ → Fe²⁺</td><td>+0.77</td></tr>
+          <tr><td>I₂ + 2e⁻ → 2I⁻</td><td>+0.54</td></tr>
+          <tr><td>Cu²⁺ + 2e⁻ → Cu(s)</td><td>+0.34</td></tr>
+          <tr><td>AgCl(s) + e⁻ → Ag(s) + Cl⁻</td><td>+0.22</td></tr>
+          <tr><td>2H⁺ + 2e⁻ → H₂(g)</td><td>0.00</td></tr>
+          <tr><td>Pb²⁺ + 2e⁻ → Pb(s)</td><td>−0.13</td></tr>
+          <tr><td>Ni²⁺ + 2e⁻ → Ni(s)</td><td>−0.25</td></tr>
+          <tr><td>Fe²⁺ + 2e⁻ → Fe(s)</td><td>−0.44</td></tr>
+          <tr><td>Zn²⁺ + 2e⁻ → Zn(s)</td><td>−0.76</td></tr>
+          <tr><td>2H₂O + 2e⁻ → H₂ + 2OH⁻</td><td>−0.83</td></tr>
+          <tr><td>Al³⁺ + 3e⁻ → Al(s)</td><td>−1.66</td></tr>
+          <tr><td>Mg²⁺ + 2e⁻ → Mg(s)</td><td>−2.36</td></tr>
+          <tr><td>Na⁺ + e⁻ → Na(s)</td><td>−2.71</td></tr>
+          <tr><td>Ca²⁺ + 2e⁻ → Ca(s)</td><td>−2.87</td></tr>
+          <tr><td>K⁺ + e⁻ → K(s)</td><td>−2.93</td></tr>
+          <tr><td>Li⁺ + e⁻ → Li(s)</td><td>−3.05</td></tr>
+        </table>
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-info text-dark">Applications of Electrochemical Series</div>
+          <div class="card-body">
+            <ol>
+              <li>Lower E° → greater tendency to form cation (better reducing agent).</li>
+              <li>Metals below H in ECS replace H₂ from dilute acids; metals above H cannot. (Cu + dil.H₂SO₄ → no reaction)</li>
+              <li>Oxides of metals below H: NOT reduced by H₂. Oxides of metals above Fe: reduced by H₂.</li>
+              <li>Reducing character increases <strong>down</strong> the series.</li>
+              <li>emf = E°(RHS) − E°(LHS); positive emf = spontaneous reaction.</li>
+              <li>Greater reduction potential → higher oxidising power (F₂ > Cl₂ > Br₂ > I₂).</li>
+              <li>Negative standard reduction potential → site of oxidation.</li>
+              <li>Oxides of metals with E°red ≥ +0.79 V decompose on heating: e.g. HgO → Hg + ½O₂.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Nernst Equation -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F9EE; Nernst Equation &amp; Concentration Cells</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Nernst Equation</div>
+              <div class="card-body">
+                <div class="formula-box">For electrode:  Mⁿ⁺ + ne⁻ → M
+E = E° − (RT/nF) × log [1/[Mⁿ⁺]]
+E = E° − (0.0591/n) × log [1/[Mⁿ⁺]]   at 298 K
+
+For cell:  aA + bB → cC + dD
+Ecell = E°cell − (2.303RT/nF) × log ([C]ᶜ[D]ᵈ / [A]ᵃ[B]ᵇ)
+Ecell = E°cell − (0.0591/n) × log Q   at 298 K
+(Concentration of pure solids/liquids = 1)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Nernst Equation &amp; Kc</div>
+              <div class="card-body">
+                <div class="formula-box">At equilibrium: Ecell = 0
+∴ E°cell = (0.0591/n) × log Kc  at 298 K
+
+ΔG° = −nFE°cell
+
+Relationship table:
+ΔG°   |  E°cell  | Type
+−ve   |   +ve    | Spontaneous (galvanic)
++ve   |   −ve    | Non-spontaneous (electrolytic)
+ 0    |    0     | Equilibrium (dead battery)
+
+ΔG° = −2.303 RT log Kc</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Concentration Cells</div>
+              <div class="card-body">
+                <p>Both electrodes of same type; electrolytic solutions of <strong>different concentrations</strong>.</p>
+                <div class="formula-box">(i) Electrode concentration cells:
+  Pt, H₂(p₁) | H⁺(1M) | H₂(p₂), Pt  (p₁ > p₂)
+  Ecell = (2.303RT/nF) × log(p₂/p₁)
+
+(ii) Electrolyte concentration cells:
+  Zn | Zn²⁺(C₁) || Zn²⁺(C₂) | Zn  (C₂ > C₁)
+  Ecell = (0.0591/n) × log(C₂/C₁)  at 298 K</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Conductance -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F4CA; Conductance, Molar Conductivity &amp; Kohlrausch's Law</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-dark text-white">Definitions</div>
+              <div class="card-body">
+                <div class="formula-box">Conductance G = 1/R
+Units: ohm⁻¹ = Ω⁻¹ = mho = Siemens (S)
+
+Specific conductivity κ = (1/ρ) = G × (l/a) = G × cell constant
+Cell constant = l/a  (units: cm⁻¹ or m⁻¹)
+Units of κ: S cm⁻¹
+
+κ decreases on dilution (fewer ions per cc)
+
+Molar conductivity Λm = (κ × 1000) / M
+(M = molarity, units: Ω⁻¹ cm² mol⁻¹ or S cm² mol⁻¹)
+
+Equivalent conductivity Λeq = (κ × 1000) / N
+(N = normality)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-dark text-white">Variation with Concentration</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Strong electrolytes:</strong> Λm increases with dilution (interionic attractions decrease). Limiting value Λ°m obtained by extrapolating graph.</li>
+                  <li><strong>Weak electrolytes:</strong> Degree of ionisation increases on dilution → Λm increases sharply. Limiting value Λ°m <strong>cannot</strong> be obtained by graph extrapolation → use Kohlrausch's law.</li>
+                </ul>
+                <div class="formula-box">Debye-Hückel-Onsager equation:
+Λm = Λ°m − A√C
+A = constant (depends on solvent nature,
+    temperature, type of electrolyte)</div>
+                <div class="note-box">Factors: Nature of electrolyte, concentration, temperature (increasing T → increases Λm).</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Kohlrausch's Law of Independent Migration of Ions ★★★</div>
+              <div class="card-body">
+                <p>At <strong>infinite dilution</strong>, molar conductivity of an electrolyte = <strong>sum of ionic conductivities</strong> of cations and anions.</p>
+                <div class="formula-box">Λ°m (AₓBᵧ) = x × λ°₊(A) + y × λ°₋(B)
+
+Applications:
+(i) Λ°m of weak electrolytes:
+   Λ°(CH₃COOH) = Λ°(CH₃COONa) + Λ°(HCl) − Λ°(NaCl)
+   Λ°(NH₄OH) = Λ°(NH₄Cl) + Λ°(NaOH) − Λ°(NaCl)
+
+(ii) Degree of dissociation (α):
+   α = Λm(C) / Λ°m
+
+(iii) Dissociation constant:
+   Kc = Cα² / (1−α)
+
+(iv) Solubility of sparingly soluble salts:
+   Λ°m = κ × 1000 / solubility(mol/L)
+   Solubility = κ × 1000 / Λ°m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Electrolysis & Faraday's Laws -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x26A1; Electrolysis &amp; Faraday's Laws</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">Faraday's First Law</div>
+              <div class="card-body">
+                <p>Amount of substance deposited at an electrode is <strong>directly proportional to quantity of electricity</strong> passed.</p>
+                <div class="formula-box">W ∝ Q = I × t
+W = Z × I × t = Z × Q
+Z = electrochemical equivalent
+  = mass deposited by 1 A current for 1 sec (= 1 coulomb)
+
+1 Faraday = 96500 C = charge on 1 mole of electrons</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">Faraday's Second Law</div>
+              <div class="card-body">
+                <p>When same quantity of electricity passes through <strong>different electrolytes</strong>, masses deposited are proportional to their <strong>equivalent weights</strong>.</p>
+                <div class="formula-box">W₁/W₂ = E₁/E₂  (for same Q)
+Z₁/Z₂ = E₁/E₂
+
+∴ Electrochemical equivalent ∝ equivalent weight</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Key Facts About Electrolysis</div>
+              <div class="card-body">
+                <ul>
+                  <li>In electrolytic cell: both oxidation and reduction in same cell. Anode (+), Cathode (−).</li>
+                  <li>In molten electrolyte: cations liberated at cathode, anions at anode.</li>
+                  <li>When multiple ions compete: ion with <strong>higher reduction potential</strong> → liberated at cathode; ion with <strong>lower reduction potential</strong> → liberated at anode.</li>
+                  <li><strong>Overvoltage/bubble voltage:</strong> Extra voltage required beyond theoretical value for liberation of gases.</li>
+                </ul>
+                <div class="important-box">
+                  <strong>Predicting products of electrolysis (aqueous solution):</strong><br/>
+                  At cathode: if cation E° > −0.83 V (water) → cation deposited (e.g. Cu, Ag). Else H₂ liberated (for K, Na, Ca salts).<br/>
+                  At anode: if anion E° > −1.23 V (water) → anion liberated (e.g. Br⁻). Else O₂ liberated (e.g. F⁻, SO₄²⁻ in Na₂SO₄ since E°(SO₄²⁻) = −0.2 V).
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Batteries -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F50B; Batteries — Primary &amp; Secondary</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-success text-white">Primary Batteries (Non-rechargeable)</div>
+              <div class="card-body">
+                <strong>(i) Dry Cell (Leclanché cell):</strong>
+                <div class="formula-box">Anode: Zinc container
+Cathode: Graphite rod (surrounded by MnO₂ powder)
+Electrolyte: Paste of NH₄Cl + ZnCl₂
+
+Cathode: 2MnO₂ + 2NH₄⁺ + 2e⁻ → Mn₂O₃ + 2NH₃ + H₂O
+Anode: Zn → Zn²⁺ + 2e⁻
+Cell potential: 1.25–1.5 V</div>
+                <strong>(ii) Mercury Cell:</strong>
+                <div class="formula-box">Anode: Zn-Hg amalgam
+Cathode: Paste of HgO + C
+Electrolyte: Moist KOH-ZnO paste
+
+Cathode: HgO + H₂O + 2e⁻ → Hg(l) + 2OH⁻
+Anode: Zn(Hg) + 2OH⁻ → ZnO(s) + H₂O + 2e⁻
+Net: Zn(Hg) + HgO → ZnO + Hg
+Cell potential: 1.35 V (remains constant throughout life)</div>
+                <div class="note-box">Constant potential because net reaction involves no ions whose concentration can change.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">Secondary Batteries (Rechargeable)</div>
+              <div class="card-body">
+                <strong>(i) Lead Storage Battery:</strong>
+                <div class="formula-box">Anode: Spongy lead
+Cathode: Grid of lead packed with PbO₂
+Electrolyte: 38% H₂SO₄ (by mass)
+
+Anode: Pb + SO₄²⁻ → PbSO₄ + 2e⁻
+Cathode: PbO₂ + SO₄²⁻ + 4H⁺ + 2e⁻ → PbSO₄ + 2H₂O
+Net: Pb + PbO₂ + 4H⁺ + 2SO₄²⁻ → 2PbSO₄ + 2H₂O
+(Reactions reversed on recharging)</div>
+                <strong>(ii) Nickel-Cadmium (Ni-Cd) cell:</strong>
+                <div class="formula-box">Anode: Cadmium
+Cathode: Metal grid containing NiO₂
+Electrolyte: KOH solution
+
+Anode: Cd + 2OH⁻ → Cd(OH)₂ + 2e⁻
+Cathode: NiO₂ + 2H₂O + 2e⁻ → Ni(OH)₂ + 2OH⁻
+Net: Cd + NiO₂ + 2H₂O → Cd(OH)₂ + Ni(OH)₂
+Cell potential: 1.4 V</div>
+                <div class="note-box"><strong>Ni-Cd cell has longer life than lead storage battery</strong>.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Fuel Cells -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F525; Fuel Cells</div>
+      <div class="card-body">
+        <p>Galvanic cells using combustion energy of fuels (H₂, CH₄, CH₃OH, etc.) to produce electrical energy. Pollution-free, high efficiency (~70% vs ~40% for thermal plants).</p>
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">Hydrogen-Oxygen Fuel Cell</div>
+          <div class="card-body">
+            <div class="formula-box">Electrodes: Porous graphite impregnated with catalyst (Pt, Ag, or metal oxide)
+Electrolyte: Aqueous KOH or NaOH
+(H₂ and O₂ continuously fed)
+
+Anode: 2H₂ + 4OH⁻ → 4H₂O + 4e⁻  (oxidation)
+Cathode: O₂ + 2H₂O + 4e⁻ → 4OH⁻  (reduction)
+Net: 2H₂(g) + O₂(g) → 2H₂O(l)
+
+EMF of the cell = 1 V
+
+Thermodynamic efficiency:  η = (ΔG/ΔH) × 100% = −nFEcell/ΔH × 100%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Corrosion -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x1F534; Corrosion — Electrochemical Theory &amp; Prevention</div>
+      <div class="card-body">
+        <p><strong>Corrosion:</strong> Slow formation of undesirable compounds (oxides, sulphides, carbonates) at metal surfaces by reaction with atmospheric moisture and gases.</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-warning text-dark">Factors Affecting Corrosion</div>
+              <div class="card-body">
+                <ol>
+                  <li>Reactivity of metals</li>
+                  <li>Presence of moisture and atmospheric gases (CO₂, SO₂)</li>
+                  <li>Presence of impurities</li>
+                  <li>Strains in the metal</li>
+                  <li>Presence of electrolyte</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-warning text-dark">Rusting of Iron — Electrochemical Theory</div>
+              <div class="card-body">
+                <div class="formula-box">A corrosion cell forms at iron surface:
+Anode: Pure iron
+Cathode: Impure surface
+Electrolyte: CO₂ + H₂O → H₂CO₃ → 2H⁺ + CO₃²⁻
+
+Anode: 2Fe(s) → 2Fe²⁺(aq) + 4e⁻
+Cathode: O₂(g) + 4H⁺(aq) + 4e⁻ → 2H₂O(l)
+Net: 2Fe + 4H⁺ + O₂ → 2Fe²⁺ + 2H₂O
+
+At surface:
+4Fe²⁺ + O₂ + 8H₂O → 2Fe₂O₃ + 8H⁺
+Fe₂O₃ + xH₂O → Fe₂O₃·xH₂O  (hydrated iron oxide = RUST)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-success text-white">Prevention of Corrosion</div>
+              <div class="card-body">
+                <ol>
+                  <li><strong>Barrier protection</strong> — coating with paints or electroplating (Ni, Cr).</li>
+                  <li><strong>Galvanisation</strong> — coating with Zn (reactive metal oxidises preferentially protecting Fe).</li>
+                  <li><strong>Tinning</strong> — coating with tin (but if tin layer breaks, Fe corrodes faster).</li>
+                  <li><strong>Antirust solutions</strong> — bisphenol, etc.</li>
+                  <li><strong>Cathodic protection (sacrificial anode)</strong> — connect to more easily oxidised metal (e.g. Mg or Zn block connected to buried iron pipelines). The Mg/Zn oxidises preferentially, protecting Fe.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Quick Summary -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F5FA;&#xFE0F; Quick Summary — Electrochemistry</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr><th>Concept</th><th>Key Formula / Fact</th></tr>
+            <tr><td>Cell emf</td><td>E°cell = E°cathode − E°anode; positive emf → spontaneous</td></tr>
+            <tr><td>Nernst equation</td><td>Ecell = E°cell − (0.0591/n)logQ at 298K</td></tr>
+            <tr><td>At equilibrium</td><td>E°cell = (0.0591/n)log Kc; ΔG° = −nFE°cell</td></tr>
+            <tr><td>Molar conductivity</td><td>Λm = (κ × 1000)/M; increases on dilution</td></tr>
+            <tr><td>Kohlrausch's law</td><td>Λ°m = x·λ°₊ + y·λ°₋; α = Λm/Λ°m</td></tr>
+            <tr><td>Faraday's 1st law</td><td>W = Z × I × t; 1F = 96500 C</td></tr>
+            <tr><td>Faraday's 2nd law</td><td>W₁/W₂ = E₁/E₂; Z ∝ E</td></tr>
+            <tr><td>Dry cell emf</td><td>1.25–1.5 V (Zn | NH₄Cl paste | C/MnO₂)</td></tr>
+            <tr><td>Mercury cell emf</td><td>1.35 V (constant throughout life)</td></tr>
+            <tr><td>Lead storage battery</td><td>Pb | 38% H₂SO₄ | PbO₂; rechargeable</td></tr>
+            <tr><td>Ni-Cd cell emf</td><td>1.4 V; longer life than lead battery</td></tr>
+            <tr><td>Fuel cell efficiency</td><td>~70% (vs ~40% for thermal plants)</td></tr>
+            <tr><td>Rust formula</td><td>Fe₂O₃·xH₂O (hydrated iron oxide)</td></tr>
+            <tr><td>Cathodic protection</td><td>Connect Fe to more reactive metal (Mg/Zn)</td></tr>
+            <tr><td>Strongest oxidising agent</td><td>F₂ (E° = +2.87 V)</td></tr>
+            <tr><td>Strongest reducing agent</td><td>Li (E° = −3.05 V)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

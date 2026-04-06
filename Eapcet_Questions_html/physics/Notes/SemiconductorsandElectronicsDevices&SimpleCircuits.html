@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semiconductors and Electronics Devices & Simple Circuits | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body{background:#f6f8fc}.chapter-header{background:linear-gradient(135deg,#3b0a0a 0%,#8e2020 60%,#d35f5f 100%);color:#fff;padding:2.5rem 2rem 2rem;border-radius:0 0 18px 18px;margin-bottom:2rem}.section-card{border-radius:12px;margin-bottom:1.5rem}.section-card .card-header{border-radius:12px 12px 0 0!important;font-weight:600}.formula-box{background:#e8f4fd;border-left:4px solid #0d6efd;border-radius:6px;padding:.8rem 1rem;margin:.5rem 0;font-family:monospace;white-space:pre-wrap}.note-box{background:#fff8e1;border-left:4px solid #ffc107;border-radius:6px;padding:.7rem 1rem;margin:.5rem 0}table.phy-table{width:100%;border-collapse:collapse;font-size:.93rem}table.phy-table th{background:#343a40;color:#fff;padding:7px 10px}table.phy-table td{padding:6px 10px;border-bottom:1px solid #dee2e6}table.phy-table tr:nth-child(even) td{background:#f8f9fa}footer{background:#3b0a0a;color:#adb5bd;padding:1.5rem;text-align:center;margin-top:3rem}footer a{color:aquamarine;text-decoration:none}
+  </style>
+</head>
+<body>
+<div class="chapter-header text-center">
+  <div class="text-uppercase small opacity-75">Physics Handbook — Chapter 32</div>
+  <h1>Semiconductors and Electronics: Devices & Simple Circuits</h1>
+  <p class="mb-0">Band Theory · p-n Junction · Diodes · Rectifiers · Transistors · Logic Gates</p>
+</div>
+
+<div class="container pb-4">
+
+<div class="card section-card shadow-lg"><div class="card-header bg-primary text-white">🧱 Solids, Energy Bands & Conductivity</div><div class="card-body">
+<table class="phy-table"><tr><th>Class</th><th>Band gap (Eg)</th><th>Conduction behavior</th></tr>
+<tr><td>Conductors</td><td>Eg ≈ 0 (bands overlap)</td><td>High conductivity</td></tr>
+<tr><td>Semiconductors</td><td>Eg &lt; 3 eV (small)</td><td>Moderate conductivity</td></tr>
+<tr><td>Insulators</td><td>Eg &gt; 3 eV (large)</td><td>Very low conductivity</td></tr>
+</table>
+<div class="formula-box">Electrical conductivity:
+σ = e(nμₑ + pμₕ)
+
+Resistivity:
+ρ = 1/σ</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-success text-white">🔬 Intrinsic and Extrinsic Semiconductors</div><div class="card-body">
+<ul>
+  <li><b>Intrinsic:</b> pure semiconductor; electrons and holes are generated thermally.</li>
+  <li><b>Extrinsic:</b> doped semiconductor to increase conductivity.</li>
+  <li><b>n-type:</b> pentavalent impurity (donor), majority carriers are electrons.</li>
+  <li><b>p-type:</b> trivalent impurity (acceptor), majority carriers are holes.</li>
+</ul>
+<div class="formula-box">Mass action law:
+np = nᵢ²
+
+For intrinsic semiconductor:
+n = p = nᵢ</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-warning text-dark">⚡ p-n Junction & Diode Characteristics</div><div class="card-body">
+<p>At p-n junction, a depletion region and potential barrier are formed.</p>
+<div class="formula-box">Diode current equation:
+I = I₀ (e^{eV/(ηkT)} - 1)
+
+Dynamic resistance:
+r_d = ΔV/ΔI</div>
+<table class="phy-table"><tr><th>Bias</th><th>Connection</th><th>Behavior</th></tr>
+<tr><td>Forward bias</td><td>p to +, n to −</td><td>Barrier decreases, large current after knee voltage</td></tr>
+<tr><td>Reverse bias</td><td>p to −, n to +</td><td>Small reverse saturation current</td></tr>
+</table>
+<div class="note-box">Typical knee voltage: ~0.2 V (Ge), ~0.7 V (Si). Breakdown may be Zener or avalanche.</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-info text-dark">🧪 Special Diodes and Rectifiers</div><div class="card-body">
+<ul>
+  <li><b>Zener diode:</b> heavily doped reverse-biased diode used in breakdown region as voltage regulator.</li>
+  <li><b>LED:</b> emits light in forward bias due to recombination.</li>
+  <li><b>Photodiode:</b> reverse-biased diode for light detection.</li>
+  <li><b>Solar cell:</b> converts light energy to electrical energy.</li>
+</ul>
+<div class="formula-box">Rectification:
+Half-wave rectifier: ripple frequency = input frequency
+Full-wave rectifier: ripple frequency = 2 × input frequency</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-danger text-white">🔁 Transistors, Amplifiers & Oscillator</div><div class="card-body">
+<p>BJT types: <b>p-n-p</b> and <b>n-p-n</b>; terminals are emitter, base and collector.</p>
+<div class="formula-box">Current gains:
+α = I_C/I_E   (common base)
+β = I_C/I_B   (common emitter)
+γ = I_E/I_B   (common collector)
+
+Relations:
+β = α/(1-α),   α = β/(1+β),   γ = 1 + β</div>
+<ul>
+  <li>CE amplifier gives current, voltage and power gain.</li>
+  <li>Transistor as switch: cut-off (OFF), saturation (ON).</li>
+</ul>
+<div class="formula-box">LC oscillator frequency:
+f = 1/(2π√(LC))</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-secondary text-white">🧠 Logic Gates</div><div class="card-body">
+<table class="phy-table"><tr><th>Gate</th><th>Boolean expression</th><th>Key output rule</th></tr>
+<tr><td>OR</td><td>Y = A + B</td><td>1 if any input is 1</td></tr>
+<tr><td>AND</td><td>Y = A·B</td><td>1 only if all inputs are 1</td></tr>
+<tr><td>NOT</td><td>Y = Ā</td><td>Inverts input</td></tr>
+<tr><td>NAND</td><td>Y = \overline{A·B}</td><td>NOT of AND</td></tr>
+<tr><td>NOR</td><td>Y = \overline{A+B}</td><td>NOT of OR</td></tr>
+<tr><td>XOR</td><td>Y = A⊕B</td><td>1 when inputs are different</td></tr>
+</table>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-dark text-white">🗺️ Quick Revision</div><div class="card-body"><div class="formula-box">σ = e(nμₑ + pμₕ)
+ρ = 1/σ
+np = nᵢ²
+I = I₀(e^{eV/(ηkT)} - 1)
+r_d = ΔV/ΔI
+Half-wave ripple freq = f
+Full-wave ripple freq = 2f
+α = I_C/I_E, β = I_C/I_B, γ = I_E/I_B
+β = α/(1-α)
+f_osc = 1/(2π√(LC))
+OR: Y=A+B, AND: Y=A·B, NOT: Y=Ā</div></div></div>
+
+</div>
+<footer><p class="mb-1">&copy; Prathibha Institute — All Rights Reserved</p><p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p></footer>
+</body>
+</html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haloalkanes &amp; Haloarenes | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f8f9fa; }
+    .chapter-header { background: linear-gradient(135deg, #0a3d62 0%, #1e3799 60%, #4a69bd 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #0a3d62; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 26</div>
+        <h1>Haloalkanes &amp; Haloarenes</h1>
+        <p class="mb-0">Complete Notes · Arihant Handbook of Chemistry</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- 1. Introduction & Classification -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F9EA; Introduction &amp; Classification</div>
+      <div class="card-body">
+        <p>The replacement of hydrogen atom(s) in a hydrocarbon by <strong>halogen atom(s)</strong> results in the formation of <strong>alkyl halide (haloalkane)</strong> and <strong>aryl halide (haloarene)</strong> respectively.</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Classification by Number of Halogen Atoms</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Example</th></tr>
+                  <tr><td>Monohaloalkane</td><td>CH3X, C2H5X</td></tr>
+                  <tr><td>Monohaloarene</td><td>C6H5X</td></tr>
+                  <tr><td>Dihaloalkane (geminal or vicinal)</td><td>CH2X–CH2X</td></tr>
+                  <tr><td>Trihaloalkane</td><td>CH2X–CHX–CH2X</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Classification by Nature of Carbon (C–X bond)</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>C–X carbon</th><th>Example</th></tr>
+                  <tr><td>1° (Primary)</td><td>sp3, bonded to 1 C</td><td>CH3CH2Cl</td></tr>
+                  <tr><td>2° (Secondary)</td><td>sp3, bonded to 2 C</td><td>(CH3)2CHCl</td></tr>
+                  <tr><td>3° (Tertiary)</td><td>sp3, bonded to 3 C</td><td>(CH3)3CCl</td></tr>
+                  <tr><td>Allylic</td><td>sp3, next to C=C</td><td>CH2=CH–CH2Cl</td></tr>
+                  <tr><td>Benzylic</td><td>sp3, next to benzene ring</td><td>C6H5–CH2Cl</td></tr>
+                  <tr><td>Vinylic</td><td>sp2, on C=C</td><td>CH2=CHCl</td></tr>
+                  <tr><td>Aryl</td><td>sp2, on benzene ring</td><td>C6H5Cl</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mt-3">
+          <div class="card-header bg-secondary text-white">Nature of C–X Bond</div>
+          <div class="card-body">
+            <p>Due to high electronegativity of the halogen (X) atom, the <strong>C–X bond is polar</strong> (δ+C–Xδ–). The bond of <em>haloarene is less polar</em> than that of haloalkanes (due to resonance in aryl halides giving partial double bond character to C–X).</p>
+            <div class="formula-box">Bond polarity: C–F > C–Cl > C–Br > C–I   (electronegativity order)
+Bond strength: C–F > C–Cl > C–Br > C–I   (decreases with size of halogen)
+Bond length:   C–F < C–Cl < C–Br < C–I   (increases with size of halogen)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Preparation of Haloalkanes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x2697;&#xFE0F; General Methods of Preparation of Haloalkanes</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">1. From Alcohols</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>(a) Groove's Process (Lucas Reagent = Anhy. ZnCl₂ + Conc. HCl):</strong>
+                <div class="reaction-box">R–OH + HCl + Anhy. ZnCl2 → R–Cl + H2O
+(Groove's process)
+ZnCl2 weakens the C–OH bond.
+For 3° alcohols, ZnCl2 is NOT required.</div>
+                <div class="note-box"><strong>Reactivity of HX:</strong> HI &gt; HBr &gt; HCl</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(b) With Phosphorus Halides:</strong>
+                <div class="reaction-box">R–OH + PCl5 → R–Cl + POCl3 + HCl
+3R–OH + PBr3 → 3R–Br + H3PO3
+3R–OH + PI3  → 3R–I  + H3PO3</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(c) Darzen Procedure (with SOCl₂ — BEST method):</strong>
+                <div class="reaction-box">R–OH + SOCl2 (Pyridine) → R–Cl + SO2↑ + HCl↑
+Both byproducts (SO2 & HCl) are gaseous and escape easily.
+This gives the purest alkyl halide.</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(d) With NaBr/H₂SO₄:</strong>
+                <div class="reaction-box">R–OH + NaBr + H2SO4 → R–Br + H2O  (reflux)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">2. Free Radical Halogenation of Alkanes</div>
+          <div class="card-body">
+            <div class="reaction-box">CH3CH2CH2CH3 + Cl2 → CH3CH2CH2CH2Cl  (1-chlorobutane, minor)
+                              + CH3CH2CHClCH3  (2-chlorobutane, major)
+(UV light or heat)
+Reactivity of C–H: 3° > 2° > 1°
+Selectivity: F2 (least selective) < Cl2 < Br2 (most selective)</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">3. Addition of Hydrogen Halides to Alkenes &amp; Alkynes</div>
+          <div class="card-body">
+            <div class="row g-2">
+              <div class="col-md-6">
+                <strong>Markownikoff addition (from alkenes):</strong>
+                <div class="reaction-box">CH3–CH=CH2 + HBr → CH3–CHBr–CH3
+(2-bromopropane, major — Markownikoff)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>Anti-Markownikoff (organic peroxide / Kharash effect):</strong>
+                <div class="reaction-box">CH3–CH=CH2 + HBr (organic peroxide) → CH3–CH2–CH2Br
+(1-bromopropane, major — anti-Markownikoff)
+Only HBr shows peroxide effect (not HCl or HI)</div>
+              </div>
+              <div class="col-md-12">
+                <strong>From Alkynes:</strong>
+                <div class="reaction-box">CH3–C≡CH + HBr → CH3–CBr=CH2 (2-bromopropene)
+              + HBr → CH3–CBr2–CH3 (2,2-dibromopropane)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-warning text-dark">4. Special Reactions for Haloalkane Preparation</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <strong>Finkelstein Reaction:</strong>
+                <div class="reaction-box">R–Cl + NaI → R–I + NaCl  (acetone)
+R–Br + NaI → R–I + NaBr  (acetone)
+(NaCl/NaBr precipitate drives forward)</div>
+              </div>
+              <div class="col-md-4">
+                <strong>Swarts Reaction:</strong>
+                <div class="reaction-box">CH3–Br + AgF → CH3–F + AgBr
+Also: Hg2F2, CoF2, SbF3 can be used
+(to prepare alkyl fluorides)</div>
+              </div>
+              <div class="col-md-4">
+                <strong>Hunsdiecker Reaction:</strong>
+                <div class="reaction-box">CH3COOAg + Br2 → CH3Br + AgBr + CO2
+(in CCl4)
+RCOOAg + Br2 → R–Br + AgBr + CO2
+(descends chain by one C atom)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. Physical Properties of Haloalkanes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4CA; Physical Properties of Haloalkanes</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Boiling Point Orders</div>
+              <div class="card-body">
+                <div class="formula-box">(i)  R–I > R–Br > R–Cl > R–F  (same alkyl group)
+     (↑ molar mass → ↑ van der Waals forces → ↑ BP)
+
+(ii) CH3(CH2)2CH2Br > (CH3)2CHCH2Br > (CH3)3CBr
+     (↑ branching → ↓ surface area → ↓ BP)
+
+(iii) CH3CH2CH2X > CH3CH2X > CH3X
+      (↑ chain length → ↑ BP)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Other Physical Properties</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Bond strength</strong> decreases with size of halogen:<br/>
+                    <span class="font-monospace small">CH3F &gt; CH3Cl &gt; CH3Br &gt; CH3I</span></li>
+                  <li><strong>Dipole moment</strong> decreases as electronegativity of halogen decreases:<br/>
+                    <span class="font-monospace small">C–F &gt; C–Cl &gt; C–Br &gt; C–I</span></li>
+                  <li><strong>Density order</strong> (same alkyl group):<br/>
+                    <span class="font-monospace small">RI &gt; RBr &gt; RCl &gt; RF</span><br/>
+                    <span class="font-monospace small">CH3I &gt; C2H5I &gt; C3H7I</span></li>
+                  <li>Haloalkanes though <strong>polar</strong> are <strong>insoluble in water</strong> (do not form H-bonds with water).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Chemical Reactions of Haloalkanes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x21C4; Chemical Reactions of Haloalkanes</div>
+      <div class="card-body">
+
+        <!-- SN reactions -->
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">A. Nucleophilic Substitution Reactions (SN)</div>
+          <div class="card-body">
+            <div class="formula-box">General: Nu:⁻ + δ+C–Xδ– → C–Nu + X⁻</div>
+
+            <p class="mt-3"><strong>Common SN Reactions of C₂H₅Br (Ethyl Bromide):</strong></p>
+            <table class="chem-table mb-3">
+              <tr><th>Reagent</th><th>Product</th><th>Reaction Name / Notes</th></tr>
+              <tr><td>KOH (aq)</td><td>C2H5OH (ethyl alcohol)</td><td>Hydrolysis</td></tr>
+              <tr><td>NH3</td><td>C2H5NH2, (C2H5)2NH, (C2H5)3N, (C2H5)4N+Br⁻</td><td>Hofmann's ammonolysis</td></tr>
+              <tr><td>KCN</td><td>C2H5–CN (ethyl cyanide) + KBr</td><td>Cyanide ion attacks via C → nitrile</td></tr>
+              <tr><td>AgCN</td><td>C2H5–NC (ethyl isocyanide) + AgBr</td><td>AgCN covalent → isocyanide (N attacks)</td></tr>
+              <tr><td>KNO2</td><td>C2H5–ONO (ethyl nitrite) + KBr</td><td>K–O ionic → O attacks</td></tr>
+              <tr><td>AgNO2</td><td>C2H5–NO2 (nitroethane) + AgBr</td><td>Ag–O covalent → N attacks</td></tr>
+              <tr><td>R'ONa, Δ</td><td>C2H5–O–R' + NaBr</td><td>Williamson's synthesis (ether)</td></tr>
+              <tr><td>Na–C≡C–H, Δ</td><td>C2H5–C≡CH (but-1-yne) + NaBr</td><td>Alkynide ion as nucleophile</td></tr>
+              <tr><td>R'COOAg, Δ</td><td>C2H5–O–CO–R' + AgBr</td><td>Silver carboxylate (ester)</td></tr>
+            </table>
+
+            <div class="important-box">
+              <strong>Ambident Nucleophiles:</strong> KCN (ionic) provides CN⁻ → attacks via <strong>carbon</strong> → nitrile (major). AgCN (covalent) → attacks via <strong>nitrogen</strong> → isocyanide (major). Similarly, KNO2 gives nitrite (O-attack), AgNO2 gives nitroalkane (N-attack).
+            </div>
+            <div class="note-box mt-2">
+              <strong>Vinyl chloride</strong> (CH2=CHCl) is <em>less reactive towards nucleophilic substitution</em> due to resonance (partial double bond character of C–Cl bond, stabilisation by electron delocalisation).
+            </div>
+
+            <div class="row g-3 mt-2">
+              <!-- SN1 -->
+              <div class="col-md-6">
+                <div class="card sub-card shadow-sm h-100">
+                  <div class="card-header bg-warning text-dark">SN1 — Unimolecular Nucleophilic Substitution (2-step)</div>
+                  <div class="card-body">
+                    <div class="formula-box">Step 1 (SLOW, rate-determining):
+(CH3)3C–X → (CH3)3C⁺ + X⁻  (carbocation)
+
+Step 2 (FAST):
+(CH3)3C⁺ + Nu⁻ → (CH3)3C–Nu</div>
+                    <ul class="mt-2">
+                      <li><strong>Rate</strong> = k[RX] (1st order)</li>
+                      <li>Depends on stability of carbocation formed.</li>
+                      <li><strong>Reactivity:</strong> 3° &gt; 2° &gt; 1°</li>
+                      <li>Favoured by: <strong>polar solvents</strong>, low [Nu], <strong>weak nucleophiles</strong>.</li>
+                      <li>Gives <strong>partial racemisation</strong> — planar carbocation attacked from both sides (frontal + backside).</li>
+                    </ul>
+                    <div class="formula-box">SN1 relative rates:
+(CH3)3CX > C6H5CH2X > CH2=CHCH2X
+> (CH3)2CHX > CH3CH2X > CH3X</div>
+                  </div>
+                </div>
+              </div>
+              <!-- SN2 -->
+              <div class="col-md-6">
+                <div class="card sub-card shadow-sm h-100">
+                  <div class="card-header bg-success text-white">SN2 — Bimolecular Nucleophilic Substitution (1-step)</div>
+                  <div class="card-body">
+                    <div class="formula-box">Nu⁻ + R–X → [Nu---C---X]‡ → Nu–C + X⁻
+           (transition state — backside attack)</div>
+                    <ul class="mt-2">
+                      <li><strong>Rate</strong> = k[RX][Nu] (2nd order)</li>
+                      <li>Proceeds with <strong>inversion of configuration</strong> (Walden inversion). d-halide → l-product and vice versa.</li>
+                      <li><strong>Reactivity:</strong> 1° &gt; 2° &gt; 3° (steric hindrance)</li>
+                      <li>Favoured by: <strong>non-polar solvents</strong>, <strong>strong nucleophiles</strong>, high [Nu].</li>
+                    </ul>
+                    <div class="formula-box">Nucleophilicity order:
+CN⁻ > I⁻ > OR⁻ > OH⁻ > CH3COO⁻ > H2O > F⁻
+
+SN2 relative rates:
+CH3CH2X > CH2=CHCH2X > CH3X
+> CH3CH2X > (CH3)2CHX > (CH3)3CX</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="note-box mt-3">
+              <strong>Relative reactivity for same alkyl group:</strong> RI &gt; RBr &gt; RCl &gt; RF (for both SN1 and SN2).<br/>
+              <strong>Resonance-stabilised carbocations:</strong> Benzyl (C6H5CH2+) and allyl (CH2=CH–CH2+) are more stable → react faster in SN1.
+            </div>
+          </div>
+        </div>
+
+        <!-- Elimination -->
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-danger text-white">B. Elimination Reactions (Dehydrohalogenation)</div>
+          <div class="card-body">
+            <p>Beta-elimination — halogen lost from α-carbon; H lost from β-carbon. Follows <strong>Saytzeff Rule</strong>: more substituted (stable) alkene is the major product.</p>
+            <div class="reaction-box">CH3–CH2–CHBr–CH3  + alc. KOH, Δ
+(2-bromobutane)
+→ CH3–CH=CH–CH3  (but-2-ene, MAJOR — Saytzeff product)
++ CH3–CH2–CH=CH2 (but-1-ene, minor)</div>
+            <div class="formula-box">Ease of dehydrohalogenation:  3° > 2° > 1°
+i.e.  (CH3)3CCl > (CH3)2CHCl > CH3CH2Cl</div>
+          </div>
+        </div>
+
+        <!-- Reduction -->
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-secondary text-white">C. Reduction</div>
+          <div class="card-body">
+            <div class="reaction-box">C2H5Br + H2 (Ni, 575K) → C2H6 + HBr
+C2H5I  + HI  (Red P, 420K) → C2H6 + I2</div>
+          </div>
+        </div>
+
+        <!-- Reaction with Metals -->
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-secondary text-white">D. Reaction with Metals</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>(i) Wurtz Reaction:</strong>
+                <div class="reaction-box">R–X + 2Na + X–R → R–R + 2NaX  (dry ether)
+e.g. 2C2H5Br + 2Na → C4H10 + 2NaBr  (butane)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(ii) Reaction with Mg — Grignard Reagent:</strong>
+                <div class="reaction-box">C2H5Br + Mg → C2H5–Mg–Br  (dry ether)
+(Grignard's reagent — ethyl magnesium bromide)
+
+⚠️ Grignard reagent is NEVER isolated in solid state
+(explodes when dry). Always used in ethereal solution.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Isomerisation -->
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-secondary text-white">E. Isomerisation</div>
+          <div class="card-body">
+            <div class="reaction-box">CH3CH2CH2Cl  → CH3–CHCl–CH3
+(1-chloropropane)  (573K, anhy. AlCl3)  (2-chloropropane)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Preparation of Haloarenes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x2697;&#xFE0F; General Methods of Preparation of Haloarenes (Aryl Halides)</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">1. Halogenation of Aromatic Hydrocarbons (EAS)</div>
+              <div class="card-body">
+                <div class="reaction-box">C6H6 + Cl2 (FeCl3, dark, 310–320K) → C6H5Cl + HCl
+(chlorobenzene)
+Electrophilic substitution reaction.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">2. Side Chain Halogenation (Free Radical)</div>
+              <div class="card-body">
+                <div class="reaction-box">C6H5CH3 + Cl2 (sunlight) → C6H5CH2Cl (benzyl chloride)
+      + Cl2 (sunlight) → C6H5CHCl2 (benzal chloride)
+      + Cl2 (sunlight) → C6H5CCl3 (benzotrichloride)
+Free radical mechanism (side chain substitution)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">3. From Benzene Diazonium Salt</div>
+              <div class="card-body">
+                <div class="reaction-box">Diazonium salt → Chlorobenzene:
+  C6H5N2+Cl⁻ + CuCl/HCl → C6H5Cl + N2  (Sandmeyer)
+  C6H5N2+Cl⁻ + Cu/HCl   → C6H5Cl + N2  (Gattermann)
+
+→ Bromobenzene:
+  + CuBr/HBr → C6H5Br + N2  (Sandmeyer)
+  + Cu/HBr   → C6H5Br + N2  (Gattermann)
+
+→ Fluorobenzene (Balz-Schiemann):
+  C6H5N2+Cl⁻ + HBF4 (273K) → C6H5N2+BF4⁻
+                     Δ, –N2, –BF3 → C6H5F
+
+→ Iodobenzene:
+  C6H5N2+Cl⁻ + KI, Δ → C6H5I + N2 + KCl</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-success text-white">4. From Phenol</div>
+              <div class="card-body">
+                <div class="reaction-box">C6H5OH + PCl5 → C6H5Cl + HCl + POCl3
+(chlorobenzene)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Physical Properties of Haloarenes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4CA; Physical Properties of Haloarenes</div>
+      <div class="card-body">
+        <ul>
+          <li>Aryl halides are <strong>colourless liquids or colourless solids</strong> with characteristic odour.</li>
+          <li><strong>Boiling point</strong> generally increases with increase in size of aryl group or halogen atom:
+            <div class="formula-box">Ar–I > Ar–Br > Ar–Cl > Ar–F</div>
+          </li>
+          <li><strong>Melting point of para-isomer</strong> is more than ortho and meta isomers, because para-isomer is more symmetrical (fits better in crystal lattice).</li>
+          <li>Due to <strong>resonance in chlorobenzene</strong>, C–Cl bond has partial double bond character → <em>C–Cl bond is shorter</em> and dipole moment is <em>less</em> than that of cyclohexyl chloride.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. Chemical Properties of Haloarenes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x21C4; Chemical Properties of Haloarenes</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-danger text-white">1. Nucleophilic Substitution Reactions</div>
+          <div class="card-body">
+            <p>Aryl halides are <strong>less reactive</strong> towards nucleophilic substitution reactions. Reasons:</p>
+            <ol>
+              <li>Due to <strong>resonance</strong>, C–X bond has partial double bond character → harder to break.</li>
+              <li><strong>Stabilisation</strong> of the molecule by delocalisation of electrons.</li>
+              <li><strong>Instability of phenyl carbocation</strong> (sp2 C cannot easily hold +ve charge).</li>
+            </ol>
+            <div class="reaction-box">C6H5Cl + NaOH (623K, 300 atm) → C6H5ONa → C6H5OH  (phenol)
+(only under drastic conditions — Dow process)</div>
+
+            <div class="note-box mt-2">
+              <strong>Effect of electron-withdrawing groups:</strong> Presence of –NO2, –SO3H, etc. at <strong>ortho and para positions</strong> increases the reactivity of aryl halides towards nucleophilic substitution (stabilise the carbanion intermediate).
+            </div>
+            <div class="reaction-box">2,4-dinitrochlorobenzene + NaOH (443K) → 2,4-dinitrophenol
+(much more reactive than plain chlorobenzene)
+
+2,4,6-trinitrochlorobenzene + H2O (warm) → 2,4,6-trinitrophenol
+(picric acid — very reactive)</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-success text-white">2. Electrophilic Substitution Reactions</div>
+          <div class="card-body">
+            <p>Halogens are <strong>deactivating but ortho/para-directing</strong> (–I deactivates ring; +R directs to o/p). Thus, halogenation, nitration, sulphonation, and Friedel-Crafts reactions give mixtures of <strong>ortho</strong> and <strong>para</strong> substituted products.</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>(i) Halogenation:</strong>
+                <div class="reaction-box">C6H5Cl + Cl2 (Anhy. FeCl3) →
+  1,2-dichlorobenzene (minor)
++ 1,4-dichlorobenzene (major)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(ii) Nitration:</strong>
+                <div class="reaction-box">C6H5Cl + Conc. HNO3 + Conc. H2SO4 →
+  1-chloro-2-nitrobenzene (minor)
++ 1-chloro-4-nitrobenzene (major)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(iii) Sulphonation:</strong>
+                <div class="reaction-box">C6H5Cl + Conc. H2SO4, Δ →
+  2-chlorobenzene sulphonic acid (minor)
++ 4-chlorobenzene sulphonic acid (major)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>(iv) Friedel-Crafts Alkylation:</strong>
+                <div class="reaction-box">C6H5Cl + CH3Cl (Anhy. AlCl3) →
+  1-chloro-2-methylbenzene (minor)
++ 1-chloro-4-methylbenzene (major)</div>
+              </div>
+              <div class="col-md-12">
+                <strong>(v) Friedel-Crafts Acylation:</strong>
+                <div class="reaction-box">C6H5Cl + CH3COCl (Anhy. AlCl3) →
+  2-chloroacetophenone (minor)
++ 4-chloroacetophenone (major)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">3. Reaction with Metals</div>
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-4">
+                <strong>(i) Wurtz-Fittig Reaction (aryl + alkyl halide + Na):</strong>
+                <div class="reaction-box">C6H5X + 2Na + RX → C6H5–R + 2NaX
+(dry ether)
+e.g. C6H5Br + 2Na + CH3Br → C6H5CH3 + 2NaBr
+(toluene)</div>
+              </div>
+              <div class="col-md-4">
+                <strong>(ii) Fittig Reaction (two aryl halides + Na):</strong>
+                <div class="reaction-box">2C6H5X + 2Na → C6H5–C6H5 + 2NaX
+(dry ether)
+(diphenyl / biphenyl)</div>
+              </div>
+              <div class="col-md-4">
+                <strong>(iii) Ullmann Reaction (Cu powder):</strong>
+                <div class="reaction-box">2C6H5I + Cu powder, Δ → C6H5–C6H5 + CuI2
+(biphenyl)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Dihalogen Derivatives -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F9EC; Dihalogen Derivatives</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-secondary text-white">Geminal Dihalides (Gem-dihalides)</div>
+              <div class="card-body">
+                Both halogen atoms on the <strong>same carbon atom</strong>.
+                <div class="formula-box">    Cl
+    |
+CH3–CH–CH2  (1,1-dichloropropane)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-secondary text-white">Vicinal Dihalides (Vic-dihalides)</div>
+              <div class="card-body">
+                Halogen atoms on <strong>adjacent carbon atoms</strong>.
+                <div class="formula-box">    Cl   Cl
+    |    |
+CH3–CH–CH2  (1,2-dichloropropane)</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-secondary text-white">Isolated Dihalides</div>
+              <div class="card-body">
+                Halogen atoms on <strong>non-adjacent carbons</strong>.
+                <div class="formula-box">ClCH2–CH2–CH2–CH2Cl
+(1,4-dichlorobutane)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="note-box mt-2">
+          <strong>Dichloromethane (CH2Cl2):</strong> Widely used as a <em>solvent</em> and as a <em>propellant in aerosols</em>. Direct contact causes intense burning and mild redness of skin.
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Trihalogen Derivatives -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">&#x26A0;&#xFE0F; Trihalogen Derivatives</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-warning text-dark">1. Chloroform (Trichloromethane, CHCl₃)</div>
+          <div class="card-body">
+            <div class="card sub-card shadow-sm mb-2">
+              <div class="card-header bg-info text-dark small">Methods of Preparation</div>
+              <div class="card-body">
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <strong>(i) Chlorination of methane:</strong>
+                    <div class="reaction-box">CH4 + 3Cl2 (sunlight, controlled) → CHCl3 + 3HCl</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>(ii) Haloform Reaction:</strong>
+                    <div class="reaction-box">CH3CH2OH + Cl2 → CH3CHO + 2HCl  (oxidation)
+CH3CHO + 3Cl2 → CCl3CHO + 3HCl  (chlorination)
+2CCl3CHO + Ca(OH)2 → 2CHCl3 + (HCOO)2Ca  (hydrolysis)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark small">Important Chemical Properties</div>
+              <div class="card-body">
+                <div class="row g-2">
+                  <div class="col-md-6">
+                    <strong>(i) Oxidation → Phosgene (poisonous!):</strong>
+                    <div class="reaction-box">2CHCl3 + O2 (light) → 2COCl2 + 2HCl
+               (phosgene — deadly poison)
+⚠️ Stored in dark brown bottles filled to brim.
+1% ethanol converts COCl2 → diethyl carbonate (safe).</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>(ii) Production of Freon R-22:</strong>
+                    <div class="reaction-box">CHCl3 + 2HF → CHClF2 + 2HCl
+(Freon R-22, refrigerant)</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>(iii) Nitration → Chloropicrin (tear-producing insecticide):</strong>
+                    <div class="reaction-box">CHCl3 + HO–NO2 (conc.) → NO2–CCl3 + H2O
+(chloropicrin)</div>
+                  </div>
+                  <div class="col-md-6">
+                    <strong>(iv) Dehalogenation → Acetylene:</strong>
+                    <div class="reaction-box">CHCl3 + 6Ag + CHCl3 → CH≡CH + 6AgCl  (Δ)</div>
+                  </div>
+                  <div class="col-md-12">
+                    <strong>(v) Hydrolysis → Formate:</strong>
+                    <div class="reaction-box">CHCl3 + 3NaOH → HC(OH)3 → HCOONa (sodium formate)
+                      (–2H2O)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-warning text-dark">2. Iodoform (Tri-iodomethane, CHI₃)</div>
+          <div class="card-body">
+            <p>Prepared by the <strong>Iodoform Reaction</strong>:</p>
+            <div class="reaction-box">CH3COCH3 + 3I2 + 4NaOH → CHI3↓ + 3NaI + CH3COONa + 3H2O
+(acetone)                    (iodoform — yellow crystals)</div>
+            <div class="note-box mt-2">
+              Compounds containing <strong>CH3CO– group</strong> (methyl ketones) or <strong>CH3CH(OH)– group</strong> (secondary alcohols with adjacent –CH3) give yellow-coloured iodoform precipitate with I2 and NaOH.<br/>
+              This is the <strong>Iodoform test</strong> for detection of these groups.
+            </div>
+            <div class="note-box">
+              Iodoform decomposes easily to free iodine (antiseptic). Due to its objectionable smell, it has been replaced by other iodine formulations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Polyhalogen Derivatives -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F9EA; Polyhalogen Derivatives</div>
+      <div class="card-body">
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-secondary text-white">1. Carbon Tetrachloride (CCl₄ / Tetrachloromethane)</div>
+              <div class="card-body">
+                <strong>Preparation:</strong>
+                <div class="reaction-box">CH4 + 4Cl2 (sunlight, hv) → CCl4 + 4HCl
+CHCl3 + Cl2 (hv) → CCl4 + 2HCl</div>
+                <p><strong>Properties:</strong> Colourless, <em>non-inflammable</em>, poisonous liquid; soluble in alcohol and ether.</p>
+                <strong>Uses:</strong>
+                <ul>
+                  <li>Solvent for oils, fats, resins</li>
+                  <li>Dry cleaning</li>
+                  <li>Fire extinguisher — sold as <strong>'Pyrene'</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-secondary text-white">2. Freons (Chlorofluorocarbons — CFCs)</div>
+              <div class="card-body">
+                <p>Chlorofluorocarbon compounds of methane and ethane collectively called <strong>freons</strong>. Produced for aerosol propellants, refrigeration, and air conditioning.</p>
+                <div class="reaction-box">CCl4 + SbF3 (SbCl5 catalyst) → CCl2F2 + SbCl3
+(dichlorodifluoromethane — Freon-12)
+
+CCl3H + 2HF → CClF2H + 2HCl
+(Freon R-22)</div>
+                <div class="important-box">CFCs deplete the ozone layer (release Cl• radicals in stratosphere).</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">3. DDT (p,p'-Dichlorodiphenyltrichloroethane)</div>
+              <div class="card-body">
+                <div class="formula-box">Full name: 2,2-bis(4-chlorophenyl)-1,1,1-trichloroethane
+
+Structure:
+  Cl–C6H4–CHCCl3–C6H4–Cl
+  (two p-chlorophenyl groups + CCl3 group)</div>
+                <ul>
+                  <li><strong>First chlorinated organic insecticide.</strong></li>
+                  <li>Prepared from <strong>chloral + chlorobenzene + conc. H2SO4</strong>.</li>
+                  <li>Its <strong>stability and fat solubility</strong> is a major problem (bioaccumulation → carcinogenic).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-secondary text-white">4. Perchloroethane (C₂Cl₆)</div>
+              <div class="card-body">
+                <ul>
+                  <li>Used as <strong>moth repellant</strong>.</li>
+                  <li>Also known as <strong>artificial camphor</strong>.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quick Comparison / Mind Map -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x1F5FA;&#xFE0F; Quick Comparison — SN1 vs SN2</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr>
+              <th>Feature</th>
+              <th>SN1</th>
+              <th>SN2</th>
+            </tr>
+            <tr><td>Steps</td><td>2 (stepwise)</td><td>1 (concerted)</td></tr>
+            <tr><td>Rate</td><td>k[RX]   — 1st order</td><td>k[RX][Nu]   — 2nd order</td></tr>
+            <tr><td>Intermediate</td><td>Carbocation (planar)</td><td>Transition state (pentavalent)</td></tr>
+            <tr><td>Stereochemistry</td><td>Partial racemisation</td><td>Complete inversion (Walden)</td></tr>
+            <tr><td>Reactivity order</td><td>3° &gt; 2° &gt; 1°</td><td>1° &gt; 2° &gt; 3°</td></tr>
+            <tr><td>Favoured by</td><td>Polar solvents, weak Nu, low [Nu]</td><td>Non-polar solvents, strong Nu, high [Nu]</td></tr>
+            <tr><td>Best substrate</td><td>3° alkyl halide, benzyl, allyl</td><td>1° (methyl is fastest)</td></tr>
+            <tr><td>Nucleophile role</td><td>Doesn't affect rate</td><td>Directly affects rate</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Named Reactions Summary -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x1F4CB; Named Reactions — Quick Reference</div>
+      <div class="card-body">
+        <table class="chem-table">
+          <tr>
+            <th>#</th><th>Name</th><th>Reagents / Conditions</th><th>Product</th>
+          </tr>
+          <tr><td>1</td><td><strong>Finkelstein</strong></td><td>RCl/RBr + NaI (acetone)</td><td>R–I + NaCl/NaBr ↓</td></tr>
+          <tr><td>2</td><td><strong>Swarts</strong></td><td>RBr + AgF (or Hg2F2, CoF2, SbF3)</td><td>R–F + AgBr</td></tr>
+          <tr><td>3</td><td><strong>Hunsdiecker</strong></td><td>RCOOAg + Br2 (CCl4)</td><td>R–Br + AgBr + CO2</td></tr>
+          <tr><td>4</td><td><strong>Sandmeyer</strong></td><td>C6H5N2+Cl⁻ + CuCl/HCl or CuBr/HBr</td><td>C6H5Cl or C6H5Br</td></tr>
+          <tr><td>5</td><td><strong>Gattermann</strong></td><td>C6H5N2+Cl⁻ + Cu/HCl or Cu/HBr</td><td>C6H5Cl or C6H5Br</td></tr>
+          <tr><td>6</td><td><strong>Balz-Schiemann</strong></td><td>C6H5N2+Cl⁻ + HBF4, then Δ</td><td>C6H5F</td></tr>
+          <tr><td>7</td><td><strong>Wurtz</strong></td><td>2RX + 2Na (dry ether)</td><td>R–R (higher alkane)</td></tr>
+          <tr><td>8</td><td><strong>Wurtz-Fittig</strong></td><td>ArX + RX + 2Na (ether)</td><td>Ar–R (alkylarene)</td></tr>
+          <tr><td>9</td><td><strong>Fittig</strong></td><td>2ArX + 2Na (ether)</td><td>Ar–Ar (biaryl)</td></tr>
+          <tr><td>10</td><td><strong>Ullmann</strong></td><td>2ArI + Cu powder, Δ</td><td>Ar–Ar (biphenyl)</td></tr>
+          <tr><td>11</td><td><strong>Haloform</strong></td><td>CH3CO–R or CH3CH(OH)–R + X2/NaOH</td><td>CHX3 (haloform) + RCOONa</td></tr>
+          <tr><td>12</td><td><strong>Williamson's synthesis</strong></td><td>RX + R'ONa</td><td>R–O–R' (ether)</td></tr>
+          <tr><td>13</td><td><strong>Darzen procedure</strong></td><td>ROH + SOCl2 (pyridine)</td><td>RCl + SO2↑ + HCl↑</td></tr>
+          <tr><td>14</td><td><strong>Grove's process</strong></td><td>ROH + HCl + Anhy. ZnCl2</td><td>RCl + H2O</td></tr>
+          <tr><td>15</td><td><strong>Hofmann's ammonolysis</strong></td><td>RX + excess NH3</td><td>RNH2, R2NH, R3N, R4N+X⁻ (mixture)</td></tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magnetic Effects of Current | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body{background:#f6f8fc}.chapter-header{background:linear-gradient(135deg,#0a2a3a 0%,#1f6f8f 60%,#45b8d9 100%);color:#fff;padding:2.5rem 2rem 2rem;border-radius:0 0 18px 18px;margin-bottom:2rem}.section-card{border-radius:12px;margin-bottom:1.5rem}.section-card .card-header{border-radius:12px 12px 0 0!important;font-weight:600}.formula-box{background:#e8f4fd;border-left:4px solid #0d6efd;border-radius:6px;padding:.8rem 1rem;margin:.5rem 0;font-family:monospace;white-space:pre-wrap}.note-box{background:#fff8e1;border-left:4px solid #ffc107;border-radius:6px;padding:.7rem 1rem;margin:.5rem 0}table.phy-table{width:100%;border-collapse:collapse;font-size:.93rem}table.phy-table th{background:#343a40;color:#fff;padding:7px 10px}table.phy-table td{padding:6px 10px;border-bottom:1px solid #dee2e6}table.phy-table tr:nth-child(even) td{background:#f8f9fa}footer{background:#0a2a3a;color:#adb5bd;padding:1.5rem;text-align:center;margin-top:3rem}footer a{color:aquamarine;text-decoration:none}
+  </style>
+</head>
+<body>
+<div class="chapter-header text-center">
+  <div class="text-uppercase small opacity-75">Physics Handbook — Chapter 22</div>
+  <h1>Magnetic Effects of Current</h1>
+  <p class="mb-0">Biot-Savart Law · Ampere Law · Lorentz Force · Cyclotron · Moving Coil Galvanometer</p>
+</div>
+<div class="container pb-4">
+
+<div class="card section-card shadow-lg"><div class="card-header bg-primary text-white">🧭 Oersted Experiment & Magnetic Field Basics</div><div class="card-body">
+<p>Oersted showed that a current-carrying conductor produces magnetic field (compass needle deflects near wire).</p>
+<div class="formula-box">Magnetic field unit:
+1 tesla = 1 Wb m⁻² = 1 N A⁻¹ m⁻¹
+1 gauss = 10⁻⁴ tesla</div>
+<div class="note-box">Direction rules: Maxwell’s cork screw rule, Ampere’s swimming rule, Right-hand thumb rule.</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-success text-white">📘 Biot-Savart Law & Standard Field Results</div><div class="card-body">
+<div class="formula-box">Biot-Savart law:
+dB = (μ₀/4π) (I dl sinθ / r²)
+Vector form: dB = (μ₀/4π) [I (dl × r̂)/r²]</div>
+<table class="phy-table"><tr><th>Configuration</th><th>Magnetic field</th></tr>
+<tr><td>Infinite straight conductor at distance r</td><td>\(B=\frac{\mu_0 I}{2\pi r}\)</td></tr>
+<tr><td>Centre of circular loop (radius R)</td><td>\(B=\frac{\mu_0 I}{2R}\); for N turns: \(B=\frac{\mu_0 NI}{2R}\)</td></tr>
+<tr><td>Arc of angle θ (radian), radius R</td><td>\(B=\frac{\mu_0 I\theta}{4\pi R}\)</td></tr>
+<tr><td>Long solenoid (inside)</td><td>\(B=\mu_0 nI\)</td></tr>
+<tr><td>One end of long solenoid</td><td>\(B=\frac{1}{2}\mu_0 nI\)</td></tr>
+<tr><td>Toroid at radius r</td><td>\(B=\frac{\mu_0 NI}{2\pi r}\)</td></tr>
+</table>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-warning text-dark">🧲 Ampere Circuital Law</div><div class="card-body">
+<div class="formula-box">Ampere’s circuital law:
+∮ B·dl = μ₀ I_enclosed</div>
+<p>Valid for any closed path; very useful for high-symmetry current distributions (wire, solenoid, toroid, cylindrical conductors).</p>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-info text-dark">⚡ Force on Moving Charges and Currents</div><div class="card-body">
+<div class="formula-box">Magnetic force on moving charge:
+F = q(v × B),  |F| = qvB sinθ
+
+Lorentz force:
+F = q(E + v × B)</div>
+<div class="formula-box">For q moving ⟂ B:
+r = mv/(qB),  ω = qB/m,
+T = 2πm/(qB)
+
+Force on current carrying conductor:
+F = BIl sinθ
+
+Force between parallel currents:
+F/l = μ₀I₁I₂/(2πd)</div>
+<div class="note-box">Parallel currents in same direction attract; opposite directions repel. Ampere definition is based on this force relation.</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-danger text-white">🌀 Cyclotron</div><div class="card-body">
+<div class="formula-box">Cyclotron frequency:
+ν = qB/(2πm)
+
+Radius of path:
+r = mv/(qB)
+
+Maximum kinetic energy:
+K_max = q²B²r₀²/(2m)
+
+Maximum speed:
+v_max = qBr₀/m</div>
+<p>Cannot accelerate neutral particles (e.g., neutron). Relativistic mass increase limits speed.</p>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-secondary text-white">🧪 Moving Coil Galvanometer, Ammeter, Voltmeter</div><div class="card-body">
+<div class="formula-box">Torque on coil:
+τ = NBIA
+Restoring torque = Cθ
+
+At equilibrium:
+NBIA = Cθ
+Current sensitivity:
+θ/I = NBA/C
+Voltage sensitivity:
+θ/V = (NBA)/(CG)</div>
+<div class="formula-box">Ammeter conversion (shunt S):
+S = (Ig G)/(I - Ig)
+(I = ammeter range, Ig = full-scale galvanometer current)
+
+Voltmeter conversion (series resistance R):
+R = (V/Ig) - G</div>
+<div class="note-box">Ideal ammeter resistance = 0, ideal voltmeter resistance = ∞.</div>
+</div></div>
+
+<div class="card section-card shadow-lg"><div class="card-header bg-dark text-white">🗺️ Quick Revision</div><div class="card-body"><div class="formula-box">dB = (μ₀/4π)(I dl sinθ/r²)
+B_wire = μ₀I/(2πr)
+B_loop = μ₀NI/(2R)
+∮B·dl = μ₀I
+F = q(v×B),  F = BIl sinθ
+r = mv/(qB),  ν = qB/(2πm)
+F/l = μ₀I₁I₂/(2πd)
+NBIA = Cθ
+S_shunt = IgG/(I-Ig)
+R_series = V/Ig - G</div></div></div>
+
+</div>
+<footer><p class="mb-1">&copy; Prathibha Institute — All Rights Reserved</p><p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p></footer>
+</body></html>

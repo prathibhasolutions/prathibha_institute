@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alternating Current | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f6f8fc; }
+    .chapter-header { background: linear-gradient(135deg, #120a3a 0%, #3d1f8f 60%, #6a46d9 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.9; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.phy-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.phy-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.phy-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; vertical-align: top; }
+    table.phy-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #120a3a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Physics Handbook — Chapter 25</div>
+        <h1>Alternating Current</h1>
+        <p class="mb-0">AC Basics · Reactance · Impedance · AC Circuits · Resonance · Transients · AC Generator · Motor · Transformer</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">~ AC Fundamentals</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">Alternating current:
+I = I₀ sin(ωt)
+
+where,
+I₀ = peak (maximum) current
+ω = angular frequency = 2πf = 2π/T
+f = frequency, T = time period</div>
+            <ul>
+              <li>AC changes both magnitude and direction periodically.</li>
+              <li>Instantaneous value changes sinusoidally with time.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <table class="phy-table">
+              <tr><th>Quantity</th><th>Expression</th></tr>
+              <tr><td>Angular frequency</td><td>\(\omega = 2\pi f = \dfrac{2\pi}{T}\)</td></tr>
+              <tr><td>Time period</td><td>\(T = \dfrac{1}{f}\)</td></tr>
+              <tr><td>Peak current</td><td>\(I_0\)</td></tr>
+              <tr><td>Peak voltage</td><td>\(V_0\)</td></tr>
+            </table>
+            <div class="note-box mt-1">In a complete cycle of ideal sinusoidal AC, average current is zero due to equal positive and negative halves.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">📊 Mean, RMS, Form Factor &amp; Peak Factor</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">Mean value over half cycle:
+I_mean = (2/π) I₀ = 0.637 I₀
+V_mean = (2/π) V₀ = 0.637 V₀
+
+Mean value over complete cycle:
+I_mean = 0</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">RMS values:
+I_rms = I₀/√2 = 0.707 I₀
+V_rms = V₀/√2 = 0.707 V₀
+
+Form factor:
+= I_rms / I_mean(half cycle)
+= 0.707/0.637 ≈ 1.11
+
+Peak factor (crest factor):
+= I₀ / I_rms = √2 ≈ 1.414</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">🧲 Reactance, Impedance &amp; Power Factor</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <table class="phy-table">
+              <tr><th>Quantity</th><th>Formula</th><th>Trend</th></tr>
+              <tr><td>Inductive reactance \(X_L\)</td><td>\(X_L = \omega L = 2\pi fL = \dfrac{2\pi L}{T}\)</td><td>\(X_L \propto f\)</td></tr>
+              <tr><td>Capacitive reactance \(X_C\)</td><td>\(X_C = \dfrac{1}{\omega C} = \dfrac{1}{2\pi fC} = \dfrac{T}{2\pi C}\)</td><td>\(X_C \propto 1/f\)</td></tr>
+            </table>
+            <div class="note-box mt-1">For DC (\(f=0\)): \(X_L=0\) and \(X_C=\infty\).</div>
+          </div>
+          <div class="col-md-6">
+            <div class="formula-box">Impedance of LCR circuit:
+Z = √[R² + (X_L − X_C)²]
+
+Power factor:
+cosφ = R/Z
+
+Average AC power:
+P_av = V_rms I_rms cosφ
+= VI cosφ (if V, I represent rms values)</div>
+            <div class="important-box">\(\cos\phi\) determines usable power in AC circuits. Higher power factor means better efficiency.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">🔁 AC Circuits (R, L, C, RC, LC, LCR)</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">(i) Pure Resistive Circuit (R)</div>
+          <div class="card-body">
+            <div class="formula-box">E = E₀ sin(ωt)
+I = I₀ sin(ωt)
+
+Phase relation: current and voltage in same phase (φ = 0)
+Power factor: cosφ = 1
+Average power: maximum (non-zero)</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">(ii) Pure Inductive Circuit (L)</div>
+          <div class="card-body">
+            <div class="formula-box">E = E₀ sin(ωt)
+I = I₀ sin(ωt − π/2)
+
+Current lags voltage by π/2
+X_L = ωL
+Power factor: cos 90° = 0
+Average power: 0</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">(iii) Pure Capacitive Circuit (C)</div>
+          <div class="card-body">
+            <div class="formula-box">E = E₀ sin(ωt)
+I = I₀ sin(ωt + π/2)
+
+Current leads voltage by π/2
+X_C = 1/(ωC)
+Power factor: cos 90° = 0
+Average power: 0</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">(iv) R-C Circuit</div>
+          <div class="card-body">
+            <div class="formula-box">I = I₀ sin(ωt + φ)
+Current leads voltage by φ
+
+Impedance:
+Z = √[R² + (1/ωC)²]
+
+Phase angle:
+tanφ = (1/ωCR)
+
+Voltage relation:
+V² = V_R² + V_C²</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">(v) L-C Circuit</div>
+          <div class="card-body">
+            <div class="formula-box">I = I₀ sin(ωt − φ)
+
+For ideal LC:
+Z ~ |X_L − X_C|
+
+If X_L > X_C, φ = +π/2
+If X_L < X_C, φ = −π/2
+If X_L = X_C at ω = 1/√(LC), then Z = 0 (ideal)</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">(vi) L-C-R Circuit (General AC Circuit)</div>
+          <div class="card-body">
+            <div class="formula-box">E = E₀ sin(ωt)
+I = I₀ sin(ωt ± φ)
+
+Resultant voltage:
+V = √[V_R² + (V_L − V_C)²]
+
+Impedance:
+Z = √[R² + (X_L − X_C)²]
+
+Power factor:
+cosφ = R/Z
+
+Average power:
+P_av = V_rms I_rms cosφ</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">🎯 Resonance, Q-Factor &amp; Wattless Current</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Series Resonance (RLC Series)</div>
+              <div class="card-body">
+                <div class="formula-box">Resonance condition:
+X_L = X_C
+
+Resonant frequency:
+f₀ = 1/(2π√(LC))
+
+At resonance:
+Z_min = R
+Current = maximum
+
+Q-factor (sharpness):
+Q = (1/R)√(L/C)</div>
+                <div class="note-box">Series resonant circuit is also called <strong>acceptor circuit</strong>.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Parallel Resonance</div>
+              <div class="card-body">
+                <div class="formula-box">Resonance condition:
+X_L = X_C
+
+At resonance:
+Impedance = maximum
+Current = minimum</div>
+                <div class="important-box mt-1">Wattless current: current that consumes no average power (purely reactive circuit, \(R=0\), \(\cos\phi=0\), \(P_{av}=0\)).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">⏱️ LC Oscillations, Choke Coil &amp; Transient Current</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="formula-box">LC oscillation equation:
+d²q/dt² + (1/LC)q = 0
+
+Angular frequency:
+ω = 1/√(LC)
+
+Frequency:
+ν = 1/(2π√(LC))</div>
+            <div class="note-box">When a charged capacitor discharges through an ideal inductor, electrical oscillations of constant amplitude are produced.</div>
+          </div>
+          <div class="col-md-6">
+            <div class="reaction-box">Choke coil:
+A high inductance, negligible resistance coil used in AC circuits to control current with minimum power loss.
+Based on wattless current principle.
+Used in fluorescent tube circuits.
+
+Transient current:
+Current that changes for finite short duration while rising/decaying.</div>
+          </div>
+          <div class="col-md-12">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-dark text-white">Growth/Decay in L-R and Charging/Discharging in R-C</div>
+              <div class="card-body">
+                <table class="phy-table">
+                  <tr><th>Process</th><th>Expression</th><th>Time Constant</th></tr>
+                  <tr><td>Current growth in LR</td><td>\(I = I_0(1 - e^{-Rt/L})\)</td><td>\(\tau = L/R\), current reaches 63.2% of \(I_0\)</td></tr>
+                  <tr><td>Current decay in LR</td><td>\(I = I_0 e^{-Rt/L}\)</td><td>\(\tau = L/R\), current falls to 36.8% of \(I_0\)</td></tr>
+                  <tr><td>Charge growth in RC</td><td>\(q = q_0(1 - e^{-t/RC})\)</td><td>\(\tau = RC\), charge reaches ~63.2%</td></tr>
+                  <tr><td>Charge decay in RC</td><td>\(q = q_0 e^{-t/RC}\)</td><td>\(\tau = RC\), charge falls to ~36.8%</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">⚙️ AC Generator, DC Motor &amp; Transformer</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">AC Generator (Dynamo)</div>
+          <div class="card-body">
+            <p>Converts mechanical energy into alternating electrical energy (based on electromagnetic induction).</p>
+            <div class="formula-box">Induced emf:
+e = NBAω sin(ωt) = e₀ sin(ωt)
+
+Main parts:
+1) Armature (rectangular coil)
+2) Field magnets
+3) Slip rings
+4) Carbon/metal brushes</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">DC Motor</div>
+          <div class="card-body">
+            <p>Converts electrical energy into mechanical energy.</p>
+            <div class="formula-box">Torque on current-carrying coil:
+τ = NBIA sinθ
+
+Motor efficiency:
+η = Back emf / Applied emf = E/V</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-dark text-white">Transformer</div>
+          <div class="card-body">
+            <p>Device based on mutual induction that changes AC voltage/current level.</p>
+            <table class="phy-table">
+              <tr><th>Type</th><th>Condition</th><th>Effect</th></tr>
+              <tr><td>Step-up transformer</td><td>\(N_s > N_p\)</td><td>\(E_s > E_p\), \(I_s < I_p\)</td></tr>
+              <tr><td>Step-down transformer</td><td>\(N_s < N_p\)</td><td>\(E_s < E_p\), \(I_s > I_p\)</td></tr>
+            </table>
+            <div class="formula-box mt-1">Transformation ratio:
+K = N_s/N_p = E_s/E_p = I_p/I_s
+
+For step-up: K > 1
+For step-down: K < 1</div>
+            <div class="important-box mt-1">Transformer works only with AC, not DC.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">🔧 Transformer Losses &amp; Important Points</div>
+      <div class="card-body">
+        <table class="phy-table">
+          <tr><th>Loss Type</th><th>Cause</th><th>Reduction Method</th></tr>
+          <tr><td>Flux leakage</td><td>Not all primary flux links secondary</td><td>Windings one over another, better core design</td></tr>
+          <tr><td>Copper loss (\(I^2R\))</td><td>Resistance of windings</td><td>Use thicker wires in high-current windings</td></tr>
+          <tr><td>Eddy current loss</td><td>Induced currents in iron core</td><td>Laminated core</td></tr>
+          <tr><td>Hysteresis loss</td><td>Repeated magnetization reversal</td><td>Low-hysteresis magnetic material</td></tr>
+          <tr><td>Magnetostriction</td><td>Mechanical vibration of core</td><td>Design optimization (appears as humming noise)</td></tr>
+        </table>
+        <div class="note-box mt-2">Transformer efficiency: \(\eta = \dfrac{\text{Output power}}{\text{Input power}}\), typically 70% to 90%.</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">🗺️ Quick Revision Sheet</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="phy-table">
+            <tr><th>Topic</th><th>Key Formula / Fact</th></tr>
+            <tr><td>Instantaneous AC current</td><td>\(I = I_0\sin\omega t\)</td></tr>
+            <tr><td>Mean over half-cycle</td><td>\(I_m = (2/\pi)I_0 = 0.637I_0\)</td></tr>
+            <tr><td>RMS current</td><td>\(I_{rms} = I_0/\sqrt{2} = 0.707I_0\)</td></tr>
+            <tr><td>Inductive reactance</td><td>\(X_L = \omega L = 2\pi fL\)</td></tr>
+            <tr><td>Capacitive reactance</td><td>\(X_C = 1/\omega C = 1/(2\pi fC)\)</td></tr>
+            <tr><td>Impedance</td><td>\(Z = \sqrt{R^2 + (X_L-X_C)^2}\)</td></tr>
+            <tr><td>Power factor</td><td>\(\cos\phi = R/Z\)</td></tr>
+            <tr><td>Average AC power</td><td>\(P = V_{rms}I_{rms}\cos\phi\)</td></tr>
+            <tr><td>Series resonance frequency</td><td>\(f_0 = 1/(2\pi\sqrt{LC})\)</td></tr>
+            <tr><td>At series resonance</td><td>\(Z=R\), current maximum</td></tr>
+            <tr><td>Wattless circuit</td><td>\(R=0\Rightarrow\cos\phi=0\Rightarrow P=0\)</td></tr>
+            <tr><td>LR time constant</td><td>\(\tau = L/R\)</td></tr>
+            <tr><td>RC time constant</td><td>\(\tau = RC\)</td></tr>
+            <tr><td>AC generator emf</td><td>\(e = e_0\sin\omega t\), \(e_0=NBA\omega\)</td></tr>
+            <tr><td>Transformer ratio</td><td>\(K = N_s/N_p = E_s/E_p = I_p/I_s\)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

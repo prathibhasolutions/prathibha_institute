@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrostatic Potential and Capacitance | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f6f8fc; }
+    .chapter-header { background: linear-gradient(135deg, #3a1a0a 0%, #8f4f1f 60%, #d98a46 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    table.phy-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.phy-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.phy-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.phy-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #3a1a0a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; }
+    footer a { color: aquamarine; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="chapter-header text-center">
+    <div class="text-uppercase small opacity-75">Physics Handbook — Electrostatics Section</div>
+    <h1>Electrostatic Potential and Capacitance</h1>
+    <p class="mb-0">Potential · Equipotential Surface · Dipole Potential Energy · Dielectrics · Capacitors</p>
+  </div>
+
+  <div class="container pb-4">
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">🔋 Electric Potential & Potential Difference</div>
+      <div class="card-body">
+        <div class="formula-box">Electric potential:
+V = W/q
+SI unit: volt (V = J/C)
+Dimension: [M L² T⁻³ A⁻¹]
+
+Potential difference:
+ΔV = V_A - V_B = W_AB/q</div>
+        <div class="formula-box">Potential due to point charge:
+V = (1/4πϵ₀)(q/r)
+
+Potential due to system of charges:
+V = Σ (1/4πϵ₀)(qᵢ/rᵢ)</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">📐 Potential Gradient & Equipotential Surfaces</div>
+      <div class="card-body">
+        <div class="formula-box">Potential gradient:
+dV/dr
+
+Relation with electric field:
+E = -dV/dr</div>
+        <ul>
+          <li>Equipotential surface has same potential at all points.</li>
+          <li>Electric field is always perpendicular (normal) to equipotential surface.</li>
+          <li>Point charge → spherical equipotential surfaces.</li>
+          <li>Uniform field → parallel plane equipotential surfaces.</li>
+          <li>Line charge → cylindrical equipotential surfaces.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">🧲 Dipole: Potential, Work, Torque, Potential Energy</div>
+      <div class="card-body">
+        <table class="phy-table">
+          <tr><th>Location</th><th>Electric Potential</th><th>Electric Field (far field)</th></tr>
+          <tr><td>Axial line</td><td>\(V = \frac{1}{4\pi\epsilon_0}\frac{p}{r^2-a^2} \approx \frac{1}{4\pi\epsilon_0}\frac{p}{r^2}\)</td><td>\(E \approx \frac{1}{4\pi\epsilon_0}\frac{2p}{r^3}\)</td></tr>
+          <tr><td>Equatorial line</td><td>\(V = 0\)</td><td>\(E \approx \frac{1}{4\pi\epsilon_0}\frac{p}{r^3}\)</td></tr>
+          <tr><td>General angle \(\theta\)</td><td>\(V \approx \frac{1}{4\pi\epsilon_0}\frac{p\cos\theta}{r^2}\)</td><td>Depends on \(\sqrt{1+3\cos^2\theta}\)</td></tr>
+        </table>
+
+        <div class="formula-box mt-1">Torque on dipole in uniform field:
+τ = pE sinθ = |p×E|
+τ_max = pE (at θ = 90°)
+
+Work done rotating dipole from θ₁ to θ₂:
+W = pE(cosθ₁ − cosθ₂)
+
+Potential energy:
+U = -pEcosθ = -p·E</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">🛡️ Conductor, Shielding & Dielectrics</div>
+      <div class="card-body">
+        <ul>
+          <li>Inside a conductor in electrostatic equilibrium, electric field is zero.</li>
+          <li>Potential inside conductor is constant and equal to surface potential.</li>
+          <li>Electrostatic shielding: enclosing region in closed conducting shell.</li>
+          <li>Lightning conductor protects buildings by safely carrying charge to earth.</li>
+        </ul>
+        <div class="formula-box">Dielectric constant:
+K = E₀/E = 1 + χₑ
+
+Polarisation:
+P = χₑE
+
+For vacuum: χₑ = 0</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">📦 Capacitors and Capacitance</div>
+      <div class="card-body">
+        <div class="formula-box">Capacitance:
+C = q/V
+SI unit: farad (F)
+1 μF = 10⁻⁶ F, 1 pF = 10⁻¹² F</div>
+
+        <table class="phy-table">
+          <tr><th>Configuration</th><th>Formula</th></tr>
+          <tr><td>Isolated spherical conductor</td><td>C = 4πϵ₀KR (for air K=1)</td></tr>
+          <tr><td>Concentric spherical capacitor (radii a,b)</td><td>C = 4πϵ₀ab/(b-a)</td></tr>
+          <tr><td>Parallel plate capacitor</td><td>C = Kϵ₀A/d (air: C₀ = ϵ₀A/d)</td></tr>
+          <tr><td>Partial dielectric slab (thickness t)</td><td>C = ϵ₀A/(d - t + t/K)</td></tr>
+          <tr><td>Conducting slab inserted (thickness t)</td><td>C = ϵ₀A/(d - t)</td></tr>
+          <tr><td>Multiple dielectric slabs</td><td>C = ϵ₀A / (t₁/K₁ + t₂/K₂ + ...)</td></tr>
+          <tr><td>Force between capacitor plates</td><td>F = Q²/(2ϵ₀A)</td></tr>
+        </table>
+
+        <div class="formula-box mt-1">Induced charge due to dielectric:
+q' = q(1 - 1/K)</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">🔗 Capacitor Combinations & Energy</div>
+      <div class="card-body">
+        <table class="phy-table">
+          <tr><th>Combination</th><th>Result</th><th>Equal quantity</th></tr>
+          <tr><td>Series</td><td>1/C = 1/C₁ + 1/C₂ + ...</td><td>Charge same</td></tr>
+          <tr><td>Parallel</td><td>C = C₁ + C₂ + ...</td><td>Voltage same</td></tr>
+        </table>
+
+        <div class="formula-box">Energy stored in capacitor:
+U = (1/2)qV = (1/2)CV² = q²/(2C)
+
+      Standard form: U = (1/2)CV²
+
+Energy density:
+u = U/Volume = (1/2)ϵ₀E²</div>
+
+        <div class="formula-box">Charge redistribution (two conductors connected):
+Common potential:
+V = (q₁+q₂)/(C₁+C₂) = (C₁V₁ + C₂V₂)/(C₁+C₂)
+
+Energy loss:
+ΔU = [C₁C₂(V₁-V₂)²]/[2(C₁+C₂)]
+(loss as heat in connecting wire)</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">🧪 Charged Drops & Van-de-Graaff Generator</div>
+      <div class="card-body">
+        <div class="formula-box">If n identical charged drops coalesce:
+Total charge = nq
+New capacitance = n^(1/3)C
+New potential = n^(2/3)V
+New surface charge density = n^(1/3)σ
+New potential energy = n^(5/3)U</div>
+
+        <div class="note-box">Van-de-Graaff generator produces very high potential (few MV), based on corona discharge and charge residing on outer surface of spherical shell.</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">🗺️ Quick Revision</div>
+      <div class="card-body">
+        <div class="formula-box">V = W/q
+V_point = (1/4πϵ₀)(q/r)
+E = -dV/dr
+τ = pE sinθ
+U_dipole = -pEcosθ
+K = E₀/E = 1 + χₑ
+C = q/V
+C_parallel plate = Kϵ₀A/d
+Series capacitors: 1/C = Σ(1/Cᵢ)
+Parallel capacitors: C = ΣCᵢ
+U_cap = (1/2)CV²
+u = (1/2)ϵ₀E²</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+    <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+  </footer>
+</body>
+</html>

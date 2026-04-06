@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electromagnetic Induction | Physics</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f6f8fc; }
+    .chapter-header { background: linear-gradient(135deg, #1d0a3a 0%, #5c1f8f 60%, #8a46d9 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    table.phy-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.phy-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.phy-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.phy-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #1d0a3a; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; }
+    footer a { color: aquamarine; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="chapter-header text-center">
+    <div class="text-uppercase small opacity-75">Physics Handbook — Chapter 24</div>
+    <h1>Electromagnetic Induction</h1>
+    <p class="mb-0">Faraday’s Law · Lenz’s Law · Motional emf · Eddy Currents · Self & Mutual Induction</p>
+  </div>
+
+  <div class="container pb-4">
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">⚙️ Basics & Magnetic Flux</div>
+      <div class="card-body">
+        <p>When magnetic flux linked with an electric circuit changes, an emf is induced. This is electromagnetic induction.</p>
+        <div class="formula-box">Magnetic flux:
+Φ = ∫ B·dS = B S cosθ
+SI unit: weber (Wb) = T·m²
+CGS unit: maxwell
+1 weber = 10⁸ maxwell
+Dimension: [M L² T⁻² A⁻¹]</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">📘 Faraday’s Laws & Lenz’s Law</div>
+      <div class="card-body">
+        <div class="formula-box">Faraday’s law:
+e = -dΦ/dt
+
+Induced current:
+I = e/R = -(1/R)(dΦ/dt)
+
+Induced charge:
+q = (1/R)ΔΦ</div>
+        <div class="note-box">Negative sign indicates Lenz’s law: induced current always opposes the cause producing it (conservation of energy).</div>
+        <div class="formula-box">For rotating coil in uniform B:
+I = I₀ sin(ωt)
+I₀ = NBAω/R
+
+where N=turns, A=area, B=field, ω=angular speed</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">🧲 Direction of Induced Current & Motional emf</div>
+      <div class="card-body">
+        <ul>
+          <li>If flux through loop increases → induced current creates opposite field.</li>
+          <li>If flux decreases → induced current supports existing field.</li>
+          <li>Direction by Fleming’s right-hand rule: thumb (motion), forefinger (B), middle finger (induced current).</li>
+        </ul>
+        <div class="formula-box">Motional emf for rod:
+e = B l v (for v ⟂ B)
+
+General case:
+e = B l v sinθ
+
+Rotating rod/disc in uniform B:
+e = (1/2)Bωl² = BAf
+(where A = swept area, f = frequency)</div>
+        <div class="note-box">If a rectangular coil translates with constant velocity in uniform magnetic field, flux remains constant and induced emf is zero.</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">🔁 Eddy Currents, Self Induction & LR Energy</div>
+      <div class="card-body">
+        <div class="formula-box">Eddy currents:
+I_eddy = e/R = -(1/R)(dΦ/dt)
+
+Reduced by laminated cores.</div>
+        <p>Eddy currents cause heating and power loss (Foucault currents).</p>
+        <div class="formula-box">Self-induction:
+Φ = LI
+e = -L(dI/dt)
+Unit of L: henry (H)
+Dimension: [M L² T⁻² A⁻²]</div>
+        <div class="formula-box">Self inductance formulas:
+Long solenoid: L = μ₀N²A/l = μ₀n²Al
+With magnetic core: L = μ₀μrN²A/l
+Toroid: L = μ₀N²A/(2πr)
+
+Energy stored in inductor:
+U = (1/2)LI²</div>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-danger text-white">🔄 Mutual Induction, Coupling & Coil Grouping</div>
+      <div class="card-body">
+        <div class="formula-box">Mutual induction:
+Φ = MI
+e = -M(dI/dt)
+
+Mutual inductance of coaxial long solenoids:
+M = μ₀N₁N₂A/l = μ₀n₁n₂Al
+
+Coefficient of coupling:
+K = M/√(L₁L₂)
+K max = 1 (coaxial), minimum when coils at right angles</div>
+
+        <table class="phy-table">
+          <tr><th>Combination</th><th>Equivalent Inductance</th></tr>
+          <tr><td>Series, uncoupled (K=0)</td><td>L = L₁ + L₂ + L₃ + ...</td></tr>
+          <tr><td>Parallel, uncoupled (K=0)</td><td>1/L = 1/L₁ + 1/L₂ + 1/L₃ + ...</td></tr>
+          <tr><td>Series, coupled (same current direction)</td><td>L = L₁ + L₂ + 2M</td></tr>
+          <tr><td>Series, coupled (opposite current direction)</td><td>L = L₁ + L₂ − 2M</td></tr>
+          <tr><td>Parallel, coupled (same direction)</td><td>L = (L₁L₂ − M²)/(L₁ + L₂ + 2M)</td></tr>
+          <tr><td>Parallel, coupled (opposite direction)</td><td>L = (L₁L₂ − M²)/(L₁ + L₂ − 2M)</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">🗺️ Quick Revision</div>
+      <div class="card-body">
+        <div class="formula-box">Φ = BScosθ
+Faraday: e = -dΦ/dt
+Lenz: induced effect opposes cause
+Motional emf: e = Blv sinθ
+Self induction: e = -L(dI/dt)
+Mutual induction: e = -M(dI/dt)
+L_solenoid = μ₀N²A/l
+U_inductor = (1/2)LI²
+K = M/√(L₁L₂)</div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+    <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+  </footer>
+</body>
+</html>

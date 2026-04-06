@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coordination Compounds | Chemistry</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+    body { background: #f8f9fa; }
+    .chapter-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: white; padding: 2.5rem 2rem 2rem; border-radius: 0 0 18px 18px; margin-bottom: 2rem; }
+    .chapter-header h1 { font-size: 2rem; font-weight: 700; letter-spacing: 1px; }
+    .chapter-header p { opacity: 0.85; font-size: 1.05rem; }
+    .section-card { border-radius: 12px; margin-bottom: 1.5rem; }
+    .section-card .card-header { border-radius: 12px 12px 0 0 !important; font-size: 1.1rem; font-weight: 600; }
+    .sub-card { border-radius: 8px; margin-bottom: 0.8rem; }
+    .sub-card .card-header { border-radius: 8px 8px 0 0 !important; }
+    .formula-box { background: #e8f4fd; border-left: 4px solid #0d6efd; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-family: monospace; font-size: 0.93rem; white-space: pre-wrap; }
+    .reaction-box { background: #f0fff4; border-left: 4px solid #198754; border-radius: 6px; padding: 0.8rem 1rem; margin: 0.5rem 0; font-size: 0.93rem; white-space: pre-wrap; }
+    .note-box { background: #fff8e1; border-left: 4px solid #ffc107; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .important-box { background: #fdecea; border-left: 4px solid #dc3545; border-radius: 6px; padding: 0.7rem 1rem; margin: 0.5rem 0; }
+    .mind-map-box { background: #f3f0ff; border-left: 4px solid #6f42c1; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+    table.chem-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+    table.chem-table th { background: #343a40; color: white; padding: 7px 10px; }
+    table.chem-table td { padding: 6px 10px; border-bottom: 1px solid #dee2e6; }
+    table.chem-table tr:nth-child(even) td { background: #f8f9fa; }
+    footer { background: #1a1a2e; color: #adb5bd; padding: 1.5rem; text-align: center; margin-top: 3rem; border-radius: 12px 12px 0 0; }
+    footer a { color: aquamarine; text-decoration: none; }
+    ul li, ol li { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+
+  <div class="chapter-header text-center">
+    <div class="d-flex align-items-center justify-content-center gap-3 mb-2">
+      <img src="../logo.png" height="50" alt="Logo" />
+      <div>
+        <div class="text-uppercase small opacity-75">Chemistry Handbook — Chapter 21</div>
+        <h1>Coordination Compounds</h1>
+        <p class="mb-0">Complete Notes · Arihant Handbook of Chemistry</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container pb-4">
+
+    <!-- 1. Introduction & Basic Terms -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x1F9EC; Introduction &amp; Basic Terminology</div>
+      <div class="card-body">
+        <p><strong>Coordination compounds</strong> are molecular compounds that retain their identity in solid state as well as in dissolved state. The central metal atom/ion is linked by ions or molecules with coordinate bonds.</p>
+        <p><strong>Double salts</strong> vs <strong>Coordination compounds</strong>: Double salts (e.g. Mohr's salt) are stable in solid state but dissociate into constituent ions in solution. Coordination compounds retain the complex entity in solution.</p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Key Terms</div>
+              <div class="card-body">
+                <ul>
+                  <li><strong>Complex Ion / Coordination Entity:</strong> Electrically charged species where central metal atom/ion is surrounded by ions or neutral molecules (ligands). e.g. [Fe(CN)₆]⁴⁻, [Pt(NH₃)₄]²⁺</li>
+                  <li><strong>Central Atom/Ion:</strong> Atom or ion to which ligands are bound; acts as a Lewis acid. Usually a transition/inner-transition element.</li>
+                  <li><strong>Coordination Sphere:</strong> Central metal/ion + attached ligands enclosed in square brackets [ ]. Ionisable groups written outside = counter ions.</li>
+                  <li><strong>Coordination Polyhedron:</strong> Spatial arrangement of ligands attached to the central atom. e.g. [Co(NH₃)₆]³⁺ is octahedral; [Ni(CO)₄] is tetrahedral; [PtCl₄]²⁻ is square planar.</li>
+                  <li><strong>Oxidation Number:</strong> Charge on complex if all ligands are removed with their electron pairs. e.g. in [Cu(CN)₄]³⁻, Cu = +1.</li>
+                  <li><strong>Homoleptic:</strong> Metal linked to only one kind of donor atoms. e.g. [Co(NH₃)₆]³⁺</li>
+                  <li><strong>Heteroleptic:</strong> Metal linked to more than one kind of donor atoms. e.g. [Co(NH₃)₄Cl₂]⁺</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Ligands — Types &amp; Examples</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Type</th><th>Denticity</th><th>Examples</th></tr>
+                  <tr><td>Unidentate</td><td>1 donor site</td><td>H₂O, NH₃, CO, Cl⁻, CN⁻, NO⁺</td></tr>
+                  <tr><td>Didentate (bidentate)</td><td>2 donor sites</td><td>en (ethylenediamine), ox²⁻ (oxalate), acetylacetonate</td></tr>
+                  <tr><td>Polydentate</td><td>3+ donor sites</td><td>EDTA⁴⁻ (hexadentate), DIEN (tridentate)</td></tr>
+                  <tr><td>Ambidentate</td><td>2 possible sites</td><td>NO₂⁻ (via N or O), SCN⁻ (via S or N), CN⁻</td></tr>
+                  <tr><td>Chelating</td><td>Forms ring</td><td>en, ox²⁻, EDTA — chelate effect increases stability</td></tr>
+                  <tr><td>π-acid ligands</td><td>σ donor + π acceptor</td><td>CO, NO, CN⁻ — accept π electron density into empty π*/p orbitals</td></tr>
+                </table>
+                <div class="note-box mt-1">More chelate rings → more stable complex (chelate effect).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Coordination Number</div>
+              <div class="card-body">
+                <ul>
+                  <li>= Number of coordinate bonds formed by central metal with ligands.</li>
+                  <li>For monodentate ligands: CN = number of ligands.</li>
+                  <li>For polydentate: CN = number of ligands × denticity.</li>
+                  <li>e.g. [PtCl₆]²⁻: CN = 6 (Pt); [Ni(en)₃]²⁺: CN = 6 (Ni, en is bidentate)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-secondary text-white">Effective Atomic Number (EAN)</div>
+              <div class="card-body">
+                <p>Proposed by Sidgwick. EAN = total number of electrons in a complex.</p>
+                <div class="formula-box">EAN = Z − ON + 2 × CN
+Z = atomic number of metal
+ON = oxidation number of metal
+CN = coordination number
+
+Stable complex: EAN = atomic number of next noble gas.
+e.g. [Fe(CO)₅]:  Z(Fe)=26, ON=0, CN=5
+EAN = 26 − 0 + 2×5 = 36 (Kr) → stable!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-secondary text-white">Labile vs Inert Complexes</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Labile complexes:</strong> Ligand substitution is fast (half-life &lt; 30 s at 25°C). e.g. most Co(II), Ni(II), Cu(II) complexes.</li>
+              <li><strong>Inert complexes:</strong> Ligand substitution is slow. e.g. Cr(III) and Co(III) complexes. [Co(NH₃)₆]³⁺ is kinetically inert.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. IUPAC Nomenclature -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F4DD; IUPAC Nomenclature of Coordination Compounds</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Rules</div>
+              <div class="card-body">
+                <ol>
+                  <li>Name: <strong>Cation first</strong>, then anion (in both positively and negatively charged complexes).</li>
+                  <li>Within complex: <strong>Ligands in alphabetical order</strong> before name of metal ion.</li>
+                  <li>Multiple identical ligands: <strong>di, tri, tetra</strong>; if name contains di/tri etc., use <strong>bis, tris, tetrakis</strong>.</li>
+                  <li>Anionic complex: metal name ends in <strong>–ate</strong> (with Latin name).</li>
+                  <li>Anionic ligands: end in <strong>–o</strong>; Positive ligands: end in <strong>–ium</strong>; Neutral: unchanged.</li>
+                  <li>Exceptions: H₂O = <strong>aqua</strong>; NH₃ = <strong>ammine</strong>; CO = <strong>carbonyl</strong>; NO = <strong>nitrosyl</strong>.</li>
+                  <li>Oxidation state: <strong>Roman numeral in parentheses</strong> after metal name.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm">
+              <div class="card-header bg-info text-dark">Ligand Names</div>
+              <div class="card-body">
+                <table class="chem-table">
+                  <tr><th>Ligand</th><th>IUPAC Name</th></tr>
+                  <tr><td>Cl⁻</td><td>chlorido</td></tr>
+                  <tr><td>Br⁻</td><td>bromido</td></tr>
+                  <tr><td>CN⁻</td><td>cyanido</td></tr>
+                  <tr><td>OH⁻</td><td>hydroxido</td></tr>
+                  <tr><td>NO₂⁻ (via N)</td><td>nitrito-N</td></tr>
+                  <tr><td>NO₂⁻ (via O)</td><td>nitrito-O</td></tr>
+                  <tr><td>SCN⁻ (via S)</td><td>thiocyanato-S</td></tr>
+                  <tr><td>H₂O</td><td>aqua</td></tr>
+                  <tr><td>NH₃</td><td>ammine</td></tr>
+                  <tr><td>CO</td><td>carbonyl</td></tr>
+                  <tr><td>en</td><td>ethane-1,2-diamine</td></tr>
+                  <tr><td>EDTA⁴⁻</td><td>ethylenediaminetetraacetato</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card sub-card shadow-sm mt-2">
+          <div class="card-header bg-dark text-white">Worked Examples</div>
+          <div class="card-body">
+            <div class="formula-box">[Cr(NH₃)₃(H₂O)₃]Cl₃  → triamminetriaquachromium(III) chloride
+[Co(H₂NCH₂CH₂NH₂)₃](SO₄)₃ → tris(ethane-1,2-diamine)cobalt(III) sulphate
+[Ag(NH₃)₂][Ag(CN)₂] → diamminesilver(I) dicyanoargentate(I)
+K₄[Fe(CN)₆]  → potassium hexacyanoferrate(II)
+[Co(NH₃)₅(NO₂)]Cl₂ → pentaamminenitrito-N-cobalt(III) chloride
+[Co(NH₃)₅(ONO)]Cl₂ → pentaamminenitrito-O-cobalt(III) chloride</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Isomerism -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-warning text-dark">&#x1F500; Isomerism in Coordination Compounds</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-danger text-white">1. Structural Isomerism</div>
+              <div class="card-body">
+                <p><em>Isomers with different bonding patterns.</em></p>
+                <strong>(i) Linkage isomerism</strong> — ambidentate ligands:
+                <div class="formula-box">[Co(NH₃)₅(NO₂)]Cl₂  nitrito-N (via N)
+[Co(NH₃)₅(ONO)]Cl₂  nitrito-O (via O)
+Both have same molecular formula, different donor atom.</div>
+                <strong>(ii) Coordination isomerism</strong> — interchange of ligands between cationic and anionic coordination entities:
+                <div class="formula-box">[Cr(NH₃)₆][Co(CN)₆]
+[Co(NH₃)₆][Cr(CN)₆]</div>
+                <strong>(iii) Ionisation isomerism</strong> — exchange of ionisable anion with anionic ligand:
+                <div class="formula-box">[Co(NH₃)₅SO₄]Br  (Red)
+[Co(NH₃)₅Br]SO₄  (Violet)</div>
+                <strong>(iv) Solvate/Hydrate isomerism</strong> — different number of solvent molecules inside/outside coordination sphere:
+                <div class="formula-box">[Co(H₂O)₆]Cl₃
+[Co(H₂O)₄Cl₂]Cl·2H₂O
+[Co(H₂O)₃Cl₃]·3H₂O</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-success text-white">2. Stereoisomerism</div>
+              <div class="card-body">
+                <p><em>Same chemical formula and bonds, different spatial arrangement.</em></p>
+                <strong>(i) Geometrical isomerism (cis–trans):</strong>
+                <ul>
+                  <li>Tetrahedral complexes: <strong>NO</strong> geometrical isomers.</li>
+                  <li>Square planar [MX₂L₂]: cis (X adjacent) and trans (X opposite). e.g. [Pt(NH₃)₂Cl₂]</li>
+                  <li>Square planar [MABXL]: 3 isomers (2 cis + 1 trans)</li>
+                  <li>Octahedral [MX₂L₄]: cis and trans. e.g. [Co(NH₃)₄Cl₂]⁺</li>
+                  <li>Octahedral [MA₃X₃]: <strong>fac</strong> (facial) — 3 same ligands on triangular face; <strong>mer</strong> (meridional) — 3 same ligands on meridian. e.g. [Co(NH₃)₃(NO₂)₃]</li>
+                </ul>
+                <strong>(ii) Optical isomerism:</strong>
+                <ul>
+                  <li>Chiral structures whose mirror images cannot be superimposed.</li>
+                  <li>Mirror images = enantiomers; d (dextro) and l (laevo) forms.</li>
+                  <li>Tetrahedral [M(AB)₂]: show optical isomers.</li>
+                  <li>Octahedral cis complexes: exhibit optical isomerism.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Bonding Theories -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-primary text-white">&#x269B;&#xFE0F; Bonding in Coordination Compounds</div>
+      <div class="card-body">
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-secondary text-white">Werner's Theory</div>
+          <div class="card-body">
+            <ul>
+              <li><strong>Primary valency</strong> = oxidation number (ionisable, non-directional, satisfied by anions).</li>
+              <li><strong>Secondary valency</strong> = coordination number (non-ionisable, directional, satisfied by ligands → decides geometry).</li>
+              <li>Metal ion must satisfy BOTH primary and secondary valencies.</li>
+            </ul>
+            <div class="note-box">Limitation: Could not explain geometry, magnetic properties, optical properties.</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mb-3">
+          <div class="card-header bg-info text-dark">Valence Bond Theory (VBT) — L. Pauling, 1930s</div>
+          <div class="card-body">
+            <p>Metal ion provides empty hybridised orbitals to receive electron pairs from ligands.</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>Inner Orbital Complexes (low spin):</strong>
+                <ul>
+                  <li>Formed by strong field/low spin ligands.</li>
+                  <li>Use (n–1)d orbitals → hybridisation = <strong>d²sp³</strong> (octahedral).</li>
+                  <li>e.g. [Co(NH₃)₆]³⁺: d²sp³, diamagnetic (all paired).</li>
+                </ul>
+                <strong>Outer Orbital Complexes (high spin):</strong>
+                <ul>
+                  <li>Formed by weak field/high spin ligands.</li>
+                  <li>Use nd orbitals → hybridisation = <strong>sp³d²</strong> (octahedral).</li>
+                  <li>e.g. [CoF₆]³⁻: sp³d², paramagnetic (unpaired electrons).</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <table class="chem-table">
+                  <tr><th>CN</th><th>Hybridisation</th><th>Geometry</th></tr>
+                  <tr><td>4</td><td>sp³</td><td>Tetrahedral</td></tr>
+                  <tr><td>4</td><td>dsp²</td><td>Square planar</td></tr>
+                  <tr><td>6</td><td>d²sp³ (inner)</td><td>Octahedral</td></tr>
+                  <tr><td>6</td><td>sp³d² (outer)</td><td>Octahedral</td></tr>
+                  <tr><td>2</td><td>sp</td><td>Linear</td></tr>
+                  <tr><td>5</td><td>sp³d or dsp³</td><td>TBP or SPy</td></tr>
+                </table>
+                <div class="formula-box mt-1">4-ligand examples:
+[Ni(CN)₄]²⁻: dsp², square planar, diamagnetic
+[NiCl₄]²⁻: sp³, tetrahedral, paramagnetic
+[CoCl₄]²⁻: sp³, tetrahedral, paramagnetic</div>
+              </div>
+            </div>
+            <div class="note-box mt-1"><strong>Limitations of VBT:</strong> Cannot explain quantised magnetic data, colour of complexes, temperature variation of magnetic moment, relative strength of ligands.</div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm">
+          <div class="card-header bg-danger text-white">Crystal Field Theory (CFT) — H. Bethe (1929), van Vleck &amp; Orgel (1935)</div>
+          <div class="card-body">
+            <p>Ligands are treated as <strong>point charges</strong> (anions) or <strong>dipoles</strong> (neutral molecules). Their electrostatic field causes splitting of degenerate d-orbitals.</p>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <strong>The Five d-orbitals Split into Two Sets:</strong>
+                <div class="formula-box">t₂g orbitals: dxy, dyz, dzx
+  (oriented BETWEEN coordinate axes)
+eg orbitals: dx²-y², dz²
+  (oriented ALONG coordinate axes)</div>
+                <strong>In Octahedral Field:</strong>
+                <div class="formula-box">6 ligands approach along x, y, z axes
+→ eg orbitals repelled MORE (face ligands directly)
+→ Energy of eg raises by +3/5 Δₒ
+→ Energy of t₂g lowers by −2/5 Δₒ
+→ Crystal field splitting = Δₒ (or 10Dq)</div>
+              </div>
+              <div class="col-md-6">
+                <strong>High Spin vs Low Spin:</strong>
+                <div class="formula-box">If Δₒ < P (pairing energy):
+→ 4th electron enters eg → t₂g³ eg¹ (high spin, weak field)
+
+If Δₒ > P (pairing energy):
+→ 4th electron enters t₂g → t₂g⁴ eg⁰ (low spin, strong field)</div>
+                <strong>In Tetrahedral Field:</strong>
+                <div class="formula-box">Splitting INVERTED:  t₂ > e
+Δₜ = (4/9) Δₒ  (smaller than octahedral)
+→ Always HIGH SPIN (Δₜ always < P)</div>
+              </div>
+            </div>
+
+            <div class="card sub-card mt-2">
+              <div class="card-header bg-dark text-white">Spectrochemical Series (Increasing Crystal Field Strength)</div>
+              <div class="card-body">
+                <div class="formula-box">I⁻ < Br⁻ < SCN⁻ < Cl⁻ < S²⁻ < F⁻ < OH⁻ < C₂O₄²⁻ < H₂O < NCS⁻ < EDTA⁴⁻ < NH₃ < en < CN⁻ < CO
+Weak field ←————————————————————————→ Strong field
+(high spin)                                                (low spin)</div>
+                <div class="note-box">CO and CN⁻ are strong field (π-acid) ligands; F⁻ and I⁻ are weak field ligands. Ligands beyond NH₃ cause low spin in octahedral complexes.</div>
+              </div>
+            </div>
+            <div class="note-box mt-2">
+              <strong>Colour in CFT:</strong> d-d transition of electrons from t₂g → eg level. Absorbed light wavelength determines colour.
+              [Ti(H₂O)₆]³⁺ = violet; [Cu(H₂O)₄]²⁺ = blue; [Ni(H₂O)₆]²⁺ = green.<br/>
+              In absence of ligands, no crystal field splitting → colourless. Charge transfer also gives intense colour (e.g. MnO₄⁻: purple from O→Mn transfer).
+            </div>
+            <div class="important-box mt-2">
+              <strong>Limitations of CFT:</strong>
+              <ul class="mb-0">
+                <li>Does not consider formation of π bonding in complexes.</li>
+                <li>Cannot explain why H₂O is stronger ligand than OH⁻.</li>
+                <li>No account of partial covalent character of metal–ligand bonds.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sub-card shadow-sm mt-3">
+          <div class="card-header bg-secondary text-white">Ligand Field / Molecular Orbital Theory (Hund &amp; Mulliken)</div>
+          <div class="card-body">
+            All atomic orbitals of participating atoms mix to give an equivalent number of new orbitals (molecular orbitals). Electrons are under the influence of all nuclei. This theory overcomes limitations of both VBT and CFT.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Stability of Complexes -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-info text-dark">&#x2696;&#xFE0F; Stability of Coordination Compounds</div>
+      <div class="card-body">
+        <div class="formula-box">M^x+ + nL^y⁻ ⇌ [ML_n]^(x-ny)
+
+Stability constant Kf = [ [MLₙ]^(x-ny) ] / [M^x+][L^y-]^n
+
+Instability (dissociation) constant Kd = 1/Kf</div>
+        <p><strong>Factors affecting stability:</strong></p>
+        <ul>
+          <li><strong>Charge on central metal atom:</strong> Higher charge → more stable complex.</li>
+          <li><strong>Nature of metal ion:</strong> Stability order: 3d &lt; 4d &lt; 5d series.</li>
+          <li><strong>Basic nature of ligands:</strong> Strong field/better donor ligands → more stable. More chelate rings → more stable (chelate effect).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 6. Applications -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-dark text-white">&#x1F4A1; Importance &amp; Applications of Coordination Compounds</div>
+      <div class="card-body">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <ul>
+              <li>Used in qualitative and quantitative analysis (EDTA titration for water hardness).</li>
+              <li>Na₂EDTA used for estimation of hardness of water.</li>
+              <li>Purification of metals via formation and decomposition of complexes (e.g. Ni via [Ni(CO)₄] — Mond process).</li>
+              <li>Great importance in biological systems.</li>
+              <li>Used as catalysts: Wilkinson's catalyst [Rh(PPh₃)₃Cl] — homogeneous hydrogenation; Ziegler-Natta catalyst [TiCl₄ + (C₂H₅)₃Al] — ethylene polymerisation.</li>
+              <li>Chelating therapy in medicine.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="important-box">
+              <strong>Biologically Important Complexes:</strong>
+              <ul>
+                <li>Haemoglobin: Fe²⁺ in porphyrin ring (octahedral; O₂ as ligand in lungs)</li>
+                <li>Chlorophyll: Mg²⁺ in porphyrin ring (photosynthesis)</li>
+                <li>Vitamin B₁₂ (cyanocobalamin): Co³⁺ complex</li>
+                <li>Cisplatin [Pt(NH₃)₂Cl₂]: cancer treatment (cis isomer active)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Organometallic Compounds -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-success text-white">&#x1F9EA; Organometallic Compounds</div>
+      <div class="card-body">
+        <p>Compounds containing one or more <strong>metal–carbon (M–C) bonds</strong>. Classified into:</p>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">σ-bonded Compounds</div>
+              <div class="card-body">
+                M–C bond is sigma bond.<br/>
+                e.g. (C₂H₅)₄Pb, Zn(C₂H₅)₂, R–Mg–X (Grignard reagent)
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">π-bonded Compounds</div>
+              <div class="card-body">
+                π-bonds act as ligands.<br/>
+                <strong>Zeise's salt:</strong> K[PtCl₃(η²-C₂H₄)] — ethylene as ligand without lone pair.<br/>
+                <strong>Ferrocene:</strong> Fe(η⁵-C₅H₅)₂ — η means 5 carbons directly bonded to Fe.<br/>
+                <strong>Dibenzene chromium:</strong> Cr(η⁶-C₆H₆)₂
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card sub-card shadow-sm h-100">
+              <div class="card-header bg-info text-dark">σ + π bonded (Metal Carbonyls)</div>
+              <div class="card-body">
+                M–C bond has both σ and π character. CO = ligand.<br/>
+                <div class="formula-box">Ni(CO)₄  — tetrahedral, Ni is 0
+Fe(CO)₅  — trigonal bipyramidal, Fe is 0
+Cr(CO)₆  — octahedral, Cr is 0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Mind Map -->
+    <div class="card section-card shadow-lg">
+      <div class="card-header bg-secondary text-white">&#x1F5FA;&#xFE0F; Quick Summary — Coordination Compounds</div>
+      <div class="card-body">
+        <div class="mind-map-box">
+          <table class="chem-table">
+            <tr><th>Concept</th><th>Key Point</th></tr>
+            <tr><td>Isomerism types</td><td>Structural (linkage, coordination, ionisation, solvate) + Stereo (geometrical cis/trans/fac/mer, optical d/l)</td></tr>
+            <tr><td>VBT hybridisation</td><td>d²sp³ (inner/low spin), sp³d² (outer/high spin), dsp² (square planar), sp³ (tetrahedral)</td></tr>
+            <tr><td>CFT splitting</td><td>Octahedral: eg > t₂g; Δₒ = 10Dq; Tetrahedral: t₂ > e; Δₜ = (4/9)Δₒ</td></tr>
+            <tr><td>Spectrochemical series</td><td>I⁻ &lt; Br⁻ &lt; Cl⁻ &lt; F⁻ &lt; OH⁻ &lt; H₂O &lt; NH₃ &lt; en &lt; CN⁻ &lt; CO</td></tr>
+            <tr><td>EAN rule</td><td>EAN = Z − ON + 2×CN; stable if EAN = noble gas config</td></tr>
+            <tr><td>Chelate effect</td><td>More rings → more stable; EDTA most stable (6-membered)</td></tr>
+            <tr><td>Colour</td><td>d-d transitions (CFT); charge transfer for d⁰/d¹⁰ ions</td></tr>
+            <tr><td>Bio-complexes</td><td>Hb (Fe), chlorophyll (Mg), B₁₂ (Co), cisplatin (Pt)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="container">
+      <p class="mb-1">&copy; Prathibha Institute &mdash; All Rights Reserved</p>
+      <p class="mb-0">Visit <a href="https://prathibhasolutions.com" target="_blank">Prathibha Solutions</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
