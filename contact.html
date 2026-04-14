@@ -11,6 +11,7 @@
     
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script><!--js file-->
 </head>
@@ -46,55 +47,54 @@
             </ul>
         </div>
         <div class="nav-links" id="navLinks">
-            <i class="fa-solid fa-xmark" onclick="hideNavMenu()"></i>
-            <ul><b>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="aboutus.html">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" aria-expanded="false">
-                        Courses
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
-                        <li><a class="dropdown-item" href="eapcet.html">EAPCET</a></li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Software</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="c.html">C</a></li>
-                                <li><a class="dropdown-item" href="python.html">Python</a></li>
-                                <li><a class="dropdown-item" href="java.html">Java</a></li>
-                                <li><a class="dropdown-item" href="html.html">HTML</a></li>
-                                <li><a class="dropdown-item" href="css.html">CSS</a></li>
-                                <li><a class="dropdown-item" href="javascript.html">Java Script</a></li>
-                                <li><a class="dropdown-item" href="ds.html">Data Structures and Algorithms</a></li>
-                                <li><a class="dropdown-item" href="sql.html">SQL</a></li>
-                                <li><a class="dropdown-item" href="selenium.html">Selenium</a></li>
-                                <li><a class="dropdown-item" href="aws.html">AWS</a></li>
-                                <li><a class="dropdown-item" href="powerbi.html">Power BI</a></li>
-                                <li><a class="dropdown-item" href="fullstack.html">Full Stack Development with Python and Django</a></li>
-                               
-                            </ul>
-                        </li>
-                        <li><a class="dropdown-item" href="aptitude.html">Aptitude</a></li>
-                    </ul>
-                </li>
-                
-                
-                <li><a href="New exams.html">Exams</a></li>
-               
-                <li><a href="contact.html">Contact</a></li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" aria-expanded="false">
-                      Quick Links 
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
-                      <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
-                      <li><a class="dropdown-item" href="/certificates/index.html">Certificates</a></li>
-                      <li><a class="dropdown-item" href="admin.html">Admin Portal</a></li>
+          <i class="fa-solid fa-xmark" onclick="hideNavMenu()"></i>
+          <ul><b>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" aria-expanded="false">
+                Courses
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                <li><a class="dropdown-item" href="eapcet.html">EAPCET</a></li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#">Software</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="c.html">C</a></li>
+                    <li><a class="dropdown-item" href="python.html">Python</a></li>
+                    <li><a class="dropdown-item" href="java.html">Java</a></li>
+                    <li><a class="dropdown-item" href="html.html">HTML</a></li>
+                    <li><a class="dropdown-item" href="css.html">CSS</a></li>
+                    <li><a class="dropdown-item" href="javascript.html">Java Script</a></li>
+                    <li><a class="dropdown-item" href="ds.html">Data Structures and Algorithms</a></li>
+                    <li><a class="dropdown-item" href="sql.html">SQL</a></li>
+                    <li><a class="dropdown-item" href="selenium.html">Selenium</a></li>
+                    <li><a class="dropdown-item" href="aws.html">AWS</a></li>
+                    <li><a class="dropdown-item" href="powerbi.html">Power BI</a></li>
+                    <li><a class="dropdown-item" href="fullstack.html">Full Stack Development with Python and Django</a></li>
                   </ul>
-              </li>
+                </li>
+                <li><a class="dropdown-item" href="aptitude.html">Aptitude</a></li>
+              </ul>
+            </li>
                 
-                <li><a href="tel:9030941099" class="call-now-btn">Call Now</a></li>
-            </b></ul>
+                
+            <li><a href="New exams.html">Exams</a></li>
+               
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" aria-expanded="false">
+                Quick Links 
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                <li><a class="dropdown-item" href="/certificates/index.html">Certificates</a></li>
+                <li><a class="dropdown-item" href="https://admin.prathibhainstitutions.com/">Admin Portal</a></li>
+              </ul>
+            </li>
+                
+            <li><a href="tel:9030941099" class="call-now-btn">Call Now</a></li>
+          </b></ul>
         </div>
         <i class="fa-solid fa-bars" onclick="showNavMenu()"></i>
     </nav>
@@ -103,16 +103,16 @@
 
         <!-- ======= Breadcrumbs ======= -->
         <section class="breadcrumbs">
-          <div class="container mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
-                </ol>
-              </nav>
-            <h3>Contact Us</h3>
-          </div>
-        </section><!-- End Breadcrumbs -->
+            <div class="container mt-3">
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Contact Us</li>
+                  </ol>
+                </nav>
+              <h3> Contact Us</h3>
+            </div>
+          </section><!-- End Breadcrumbs -->
 
        <br>
        <br>
